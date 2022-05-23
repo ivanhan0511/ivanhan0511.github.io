@@ -2,34 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://example.org/categories/</loc>
+    <loc>http://ivanhan0511.github.io/categories/</loc>
     <lastmod>2022-05-24T02:58:26+08:00</lastmod>
   </url><url>
-    <loc>http://example.org/categories/category/</loc>
+    <loc>http://ivanhan0511.github.io/categories/category/</loc>
     <lastmod>2022-05-24T02:58:26+08:00</lastmod>
   </url><url>
-    <loc>http://example.org/post/hello/</loc>
+    <loc>http://ivanhan0511.github.io/post/hello/</loc>
     <lastmod>2022-05-24T02:58:26+08:00</lastmod>
   </url><url>
-    <loc>http://example.org/</loc>
+    <loc>http://ivanhan0511.github.io/</loc>
     <lastmod>2022-05-24T02:58:26+08:00</lastmod>
   </url><url>
-    <loc>http://example.org/post/</loc>
+    <loc>http://ivanhan0511.github.io/post/</loc>
     <lastmod>2022-05-24T02:58:26+08:00</lastmod>
   </url><url>
-    <loc>http://example.org/categories/subcategory/</loc>
+    <loc>http://ivanhan0511.github.io/categories/subcategory/</loc>
     <lastmod>2022-05-24T02:58:26+08:00</lastmod>
   </url><url>
-    <loc>http://example.org/tags/tag1/</loc>
+    <loc>http://ivanhan0511.github.io/tags/tag1/</loc>
     <lastmod>2022-05-24T02:58:26+08:00</lastmod>
   </url><url>
-    <loc>http://example.org/tags/tag2/</loc>
+    <loc>http://ivanhan0511.github.io/tags/tag2/</loc>
     <lastmod>2022-05-24T02:58:26+08:00</lastmod>
   </url><url>
-    <loc>http://example.org/tags/</loc>
+    <loc>http://ivanhan0511.github.io/tags/</loc>
     <lastmod>2022-05-24T02:58:26+08:00</lastmod>
   </url><url>
-    <loc>http://example.org/post/testpage/</loc>
+    <loc>http://ivanhan0511.github.io/post/testpage/</loc>
     <lastmod>2022-05-24T02:31:08+08:00</lastmod>
   </url>
 </urlset>

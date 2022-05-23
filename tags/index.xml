@@ -6,7 +6,16 @@
     <description>Recent content in Tags on Ivan Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 24 May 2022 05:00:41 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 24 May 2022 05:36:20 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>tag2</title>
+      <link>https://ivanhan0511.github.io/tags/tag2/</link>
+      <pubDate>Tue, 24 May 2022 05:36:20 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/tags/tag2/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>AKG K240S</title>
       <link>https://ivanhan0511.github.io/tags/akg-k240s/</link>

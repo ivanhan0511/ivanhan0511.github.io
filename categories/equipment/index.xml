@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Equipment on Ivan Blog</title>
+    <link>https://ivanhan0511.github.io/categories/equipment/</link>
+    <description>Recent content in Equipment on Ivan Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 24 May 2022 03:09:48 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/categories/equipment/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>HELOR</title>
+      <link>https://ivanhan0511.github.io/post/coffee-pour_over_coffee/</link>
+      <pubDate>Tue, 24 May 2022 03:09:48 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/post/coffee-pour_over_coffee/</guid>
+      <description>HELOR 海勒设计</description>
+    </item>
+    
+  </channel>
+</rss>

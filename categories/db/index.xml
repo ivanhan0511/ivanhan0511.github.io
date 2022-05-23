@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DB on Ivan Blog</title>
+    <link>https://ivanhan0511.github.io/categories/db/</link>
+    <description>Recent content in DB on Ivan Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 24 May 2022 02:58:26 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/categories/db/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>INIT OPERATIONS</title>
+      <link>https://ivanhan0511.github.io/post/db-mysql8_init/</link>
+      <pubDate>Tue, 24 May 2022 02:58:26 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/post/db-mysql8_init/</guid>
+      <description>INIT MySQL version: 8.0</description>
+    </item>
+    
+  </channel>
+</rss>

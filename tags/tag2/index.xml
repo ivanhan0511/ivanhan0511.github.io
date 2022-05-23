@@ -1,39 +1,28 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>tag2 on Hugo tranquilpeak theme</title>
+    <title>tag2 on Ivan Blog</title>
     <link>https://ivanhan0511.github.io/tags/tag2/</link>
-    <description>Recent content in tag2 on Hugo tranquilpeak theme</description>
+    <description>Recent content in tag2 on Ivan Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 24 May 2022 03:09:48 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/tags/tag2/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Foo</title>
-      <link>https://ivanhan0511.github.io/post/foo/</link>
+      <link>https://ivanhan0511.github.io/post/coffee-pour_over_coffee/</link>
       <pubDate>Tue, 24 May 2022 03:09:48 +0800</pubDate>
       
-      <guid>https://ivanhan0511.github.io/post/foo/</guid>
+      <guid>https://ivanhan0511.github.io/post/coffee-pour_over_coffee/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Hello</title>
-      <link>https://ivanhan0511.github.io/post/hello/</link>
+      <link>https://ivanhan0511.github.io/post/db-mysql8_init/</link>
       <pubDate>Tue, 24 May 2022 02:58:26 +0800</pubDate>
       
-      <guid>https://ivanhan0511.github.io/post/hello/</guid>
+      <guid>https://ivanhan0511.github.io/post/db-mysql8_init/</guid>
       <description></description>
-    </item>
-    
-    <item>
-      <title>DEPLOY BLOG WITH GITHUB PAGES AND HUGO</title>
-      <link>https://ivanhan0511.github.io/post/blog_deployment/</link>
-      <pubDate>Tue, 24 May 2022 02:31:08 +0800</pubDate>
-      
-      <guid>https://ivanhan0511.github.io/post/blog_deployment/</guid>
-      <description>This is the first post here.
-Configurations on Github Create repository Create a respository which is named like .github.io
-Deployment with Hugo Configurations of theme </description>
     </item>
     
   </channel>

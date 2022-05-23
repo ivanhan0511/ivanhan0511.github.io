@@ -6,7 +6,16 @@
     <description>Recent content in Posts on IVAN BLOG</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 24 May 2022 02:58:26 +0800</lastBuildDate><atom:link href="http://ivanhan0511.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 24 May 2022 03:09:48 +0800</lastBuildDate><atom:link href="http://ivanhan0511.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Foo</title>
+      <link>http://ivanhan0511.github.io/post/foo/</link>
+      <pubDate>Tue, 24 May 2022 03:09:48 +0800</pubDate>
+      
+      <guid>http://ivanhan0511.github.io/post/foo/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Hello</title>
       <link>http://ivanhan0511.github.io/post/hello/</link>

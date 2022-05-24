@@ -6,14 +6,77 @@
     <description>Recent content on Ivan Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 24 May 2022 16:46:27 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 24 May 2022 18:59:42 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Hello Python</title>
-      <link>https://ivanhan0511.github.io/python/hello-python/</link>
-      <pubDate>Tue, 24 May 2022 16:46:27 +0800</pubDate>
+      <title>Sports Badminton</title>
+      <link>https://ivanhan0511.github.io/post/sports-badminton/</link>
+      <pubDate>Tue, 24 May 2022 18:59:42 +0800</pubDate>
       
-      <guid>https://ivanhan0511.github.io/python/hello-python/</guid>
-      <description>No theme?</description>
+      <guid>https://ivanhan0511.github.io/post/sports-badminton/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Music Theory</title>
+      <link>https://ivanhan0511.github.io/post/music-theory/</link>
+      <pubDate>Tue, 24 May 2022 18:57:01 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/post/music-theory/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Music Cabinet</title>
+      <link>https://ivanhan0511.github.io/post/music-cabinet/</link>
+      <pubDate>Tue, 24 May 2022 18:55:50 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/post/music-cabinet/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Music Headphones</title>
+      <link>https://ivanhan0511.github.io/post/music-headphones/</link>
+      <pubDate>Tue, 24 May 2022 18:50:54 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/post/music-headphones/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Photography Nikon D7100</title>
+      <link>https://ivanhan0511.github.io/post/photography-nikon-d7100/</link>
+      <pubDate>Tue, 24 May 2022 18:42:43 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/post/photography-nikon-d7100/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Flask Basic</title>
+      <link>https://ivanhan0511.github.io/post/flask-basic/</link>
+      <pubDate>Tue, 24 May 2022 16:57:10 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/post/flask-basic/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>C Basic</title>
+      <link>https://ivanhan0511.github.io/post/c-basic/</link>
+      <pubDate>Tue, 24 May 2022 16:51:56 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/post/c-basic/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python Normal</title>
+      <link>https://ivanhan0511.github.io/post/python-normal/</link>
+      <pubDate>Tue, 24 May 2022 16:50:44 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/post/python-normal/</guid>
+      <description></description>
     </item>
     
     <item>
@@ -36,10 +99,10 @@
     
     <item>
       <title>BASS GUITAR</title>
-      <link>https://ivanhan0511.github.io/post/bass-guitar/</link>
+      <link>https://ivanhan0511.github.io/post/music-bass-guitar/</link>
       <pubDate>Tue, 24 May 2022 05:00:41 +0800</pubDate>
       
-      <guid>https://ivanhan0511.github.io/post/bass-guitar/</guid>
+      <guid>https://ivanhan0511.github.io/post/music-bass-guitar/</guid>
       <description></description>
     </item>
     

@@ -6,7 +6,16 @@
     <description>Recent content in Tags on Ivan Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 25 May 2022 11:02:18 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 25 May 2022 13:41:34 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Visual Studio</title>
+      <link>https://ivanhan0511.github.io/tags/visual-studio/</link>
+      <pubDate>Wed, 25 May 2022 13:41:34 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/tags/visual-studio/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>tag1</title>
       <link>https://ivanhan0511.github.io/tags/tag1/</link>

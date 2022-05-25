@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Coffee on Ivan Blog</title>
+    <link>https://ivanhan0511.github.io/tags/coffee/</link>
+    <description>Recent content in Coffee on Ivan Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 24 May 2022 03:09:48 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/tags/coffee/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>HELOR</title>
+      <link>https://ivanhan0511.github.io/post/coffee-grinder-helor/</link>
+      <pubDate>Tue, 24 May 2022 03:09:48 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/post/coffee-grinder-helor/</guid>
+      <description>&lt;p&gt;Handy grinder&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

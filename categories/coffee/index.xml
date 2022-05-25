@@ -6,23 +6,14 @@
     <description>Recent content in Coffee on Ivan Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 24 May 2022 16:50:44 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/categories/coffee/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Python Normal</title>
-      <link>https://ivanhan0511.github.io/post/python-normal/</link>
-      <pubDate>Tue, 24 May 2022 16:50:44 +0800</pubDate>
-      
-      <guid>https://ivanhan0511.github.io/post/python-normal/</guid>
-      <description></description>
-    </item>
-    
+    <lastBuildDate>Tue, 24 May 2022 05:49:34 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/categories/coffee/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Coffee Grinder Mazzer</title>
       <link>https://ivanhan0511.github.io/post/coffee-grinder-mazzer/</link>
       <pubDate>Tue, 24 May 2022 05:49:34 +0800</pubDate>
       
       <guid>https://ivanhan0511.github.io/post/coffee-grinder-mazzer/</guid>
-      <description></description>
+      <description>&lt;p&gt;Which type of Mazzer grider?&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -31,16 +22,16 @@
       <pubDate>Tue, 24 May 2022 05:36:20 +0800</pubDate>
       
       <guid>https://ivanhan0511.github.io/post/coffee-beans/</guid>
-      <description></description>
+      <description>&lt;p&gt;Whick kind of coffee beans do you like?&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>HELOR</title>
-      <link>https://ivanhan0511.github.io/post/coffee-grinder/</link>
+      <link>https://ivanhan0511.github.io/post/coffee-grinder-helor/</link>
       <pubDate>Tue, 24 May 2022 03:09:48 +0800</pubDate>
       
-      <guid>https://ivanhan0511.github.io/post/coffee-grinder/</guid>
-      <description>HELOR 海勒设计</description>
+      <guid>https://ivanhan0511.github.io/post/coffee-grinder-helor/</guid>
+      <description>&lt;p&gt;Handy grinder&lt;/p&gt;</description>
     </item>
     
   </channel>

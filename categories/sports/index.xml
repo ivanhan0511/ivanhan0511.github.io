@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sports on Ivan Blog</title>
+    <link>https://ivanhan0511.github.io/categories/sports/</link>
+    <description>Recent content in Sports on Ivan Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 24 May 2022 18:59:42 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/categories/sports/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Sports Badminton</title>
+      <link>https://ivanhan0511.github.io/post/sports-badminton/</link>
+      <pubDate>Tue, 24 May 2022 18:59:42 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/post/sports-badminton/</guid>
+      <description>&lt;p&gt;Start with badminton at 38 ages&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

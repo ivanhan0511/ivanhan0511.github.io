@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on Ivan Blog</title>
+    <link>https://ivanhan0511.github.io/categories/python/</link>
+    <description>Recent content in Python on Ivan Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 24 May 2022 16:50:44 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/categories/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Python Normal</title>
+      <link>https://ivanhan0511.github.io/post/python-normal/</link>
+      <pubDate>Tue, 24 May 2022 16:50:44 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/post/python-normal/</guid>
+      <description>&lt;p&gt;This is a custom summary and does &lt;em&gt;not&lt;/em&gt; appear in the post.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

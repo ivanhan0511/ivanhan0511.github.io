@@ -53,27 +53,108 @@
     </item>
     
     <item>
-      <title>category</title>
-      <link>https://ivanhan0511.github.io/categories/category/</link>
+      <title>SQL</title>
+      <link>https://ivanhan0511.github.io/categories/sql/</link>
       <pubDate>Wed, 25 May 2022 11:02:18 +0800</pubDate>
       
-      <guid>https://ivanhan0511.github.io/categories/category/</guid>
+      <guid>https://ivanhan0511.github.io/categories/sql/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>subcategory</title>
-      <link>https://ivanhan0511.github.io/categories/subcategory/</link>
+      <title>SQLAlchemy</title>
+      <link>https://ivanhan0511.github.io/categories/sqlalchemy/</link>
       <pubDate>Wed, 25 May 2022 11:02:18 +0800</pubDate>
       
-      <guid>https://ivanhan0511.github.io/categories/subcategory/</guid>
+      <guid>https://ivanhan0511.github.io/categories/sqlalchemy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Badminton</title>
+      <link>https://ivanhan0511.github.io/categories/badminton/</link>
+      <pubDate>Tue, 24 May 2022 18:59:42 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/categories/badminton/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sports</title>
+      <link>https://ivanhan0511.github.io/categories/sports/</link>
+      <pubDate>Tue, 24 May 2022 18:59:42 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/categories/sports/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Music</title>
+      <link>https://ivanhan0511.github.io/categories/music/</link>
+      <pubDate>Tue, 24 May 2022 18:57:01 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/categories/music/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Theory</title>
+      <link>https://ivanhan0511.github.io/categories/theory/</link>
+      <pubDate>Tue, 24 May 2022 18:57:01 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/categories/theory/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Instrument</title>
+      <link>https://ivanhan0511.github.io/categories/instrument/</link>
+      <pubDate>Tue, 24 May 2022 18:55:50 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/categories/instrument/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Equipment</title>
+      <link>https://ivanhan0511.github.io/categories/equipment/</link>
+      <pubDate>Tue, 24 May 2022 18:42:43 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/categories/equipment/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Photography</title>
+      <link>https://ivanhan0511.github.io/categories/photography/</link>
+      <pubDate>Tue, 24 May 2022 18:42:43 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/categories/photography/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Basic</title>
+      <link>https://ivanhan0511.github.io/categories/basic/</link>
+      <pubDate>Tue, 24 May 2022 16:51:56 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/categories/basic/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://ivanhan0511.github.io/categories/python/</link>
+      <pubDate>Tue, 24 May 2022 16:50:44 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/categories/python/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Coffee</title>
       <link>https://ivanhan0511.github.io/categories/coffee/</link>
-      <pubDate>Tue, 24 May 2022 16:50:44 +0800</pubDate>
+      <pubDate>Tue, 24 May 2022 05:49:34 +0800</pubDate>
       
       <guid>https://ivanhan0511.github.io/categories/coffee/</guid>
       <description></description>
@@ -82,7 +163,7 @@
     <item>
       <title>Grinder</title>
       <link>https://ivanhan0511.github.io/categories/grinder/</link>
-      <pubDate>Tue, 24 May 2022 16:50:44 +0800</pubDate>
+      <pubDate>Tue, 24 May 2022 05:49:34 +0800</pubDate>
       
       <guid>https://ivanhan0511.github.io/categories/grinder/</guid>
       <description></description>
@@ -94,24 +175,6 @@
       <pubDate>Tue, 24 May 2022 05:36:20 +0800</pubDate>
       
       <guid>https://ivanhan0511.github.io/categories/beans/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Instrument</title>
-      <link>https://ivanhan0511.github.io/categories/instrument/</link>
-      <pubDate>Tue, 24 May 2022 05:00:41 +0800</pubDate>
-      
-      <guid>https://ivanhan0511.github.io/categories/instrument/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Music</title>
-      <link>https://ivanhan0511.github.io/categories/music/</link>
-      <pubDate>Tue, 24 May 2022 05:00:41 +0800</pubDate>
-      
-      <guid>https://ivanhan0511.github.io/categories/music/</guid>
       <description></description>
     </item>
     

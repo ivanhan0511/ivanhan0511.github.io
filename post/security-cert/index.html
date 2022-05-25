@@ -287,6 +287,71 @@
               <p>This is a custom summary and does <em>NOT</em> appear in the post.</p>
 <h1 id="table-of-contents">Table of Contents</h1>
 <nav id="TableOfContents"></nav>
+
+<p>格式转换</p>
+<p>格式说明</p>
+<p>PKCS 全称是 Public-Key Cryptography Standards ，是由 RSA 实验室与其它安全系统开发商为促进公钥密码的发展而制订的一系列标准，PKCS 目前共发布过 15 个标准。 常用的有：
+PKCS#7 Cryptographic Message Syntax Standard，常用的后缀是： .P7B .P7C .SPC
+PKCS#10 Certification Request Standard
+PKCS#12 Personal Information Exchange Syntax Standard，常用的后缀有： .P12 .PFX</p>
+<p>X.509是常见通用的证书格式。所有的证书都符合为Public Key Infrastructure (PKI) 制定的 ITU-T X509 国际标准
+X.509 DER 编码(ASCII)的后缀是： .DER .CER .CRT (Distinguished Encoding Rules，可辨别编码规则)
+X.509 PEM 编码(Base64)的后缀是： .PEM .CER .CRT (最初是“ Privacy Enhanced Mail”的缩写)</p>
+<p>.cer/.crt是用于存放证书，它是2进制形式存放的，不含私钥。
+.pem跟crt/cer的区别是它以Ascii来表示。
+pfx/p12用于存放个人证书/私钥，他通常包含保护密码，2进制方式
+p10是证书请求
+p7r是CA对证书请求的回复，只用于导入
+p7b以树状展示证书链(certificate chain)，同时也支持单个证书，不含私钥</p>
+<p>创建及转换</p>
+<p>用openssl创建CA证书的RSA密钥(PEM格式)：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>openssl genrsa -des3 -out ca.key <span style="color:#ae81ff">1024</span>
+</span></span></code></pre></div><p>用openssl创建CA证书(PEM格式,假如有效期为一年)：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>openssl req -new -x509 -days <span style="color:#ae81ff">365</span> -key ca.key -out ca.crt -config openssl.cnf
+</span></span></code></pre></div><p>x509转换为pfx</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>openssl pkcs12 -export -out server.pfx -inkey server.key -in server.crt
+</span></span></code></pre></div><p>PEM格式的ca.key转换为Microsoft可以识别的pvk格式</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>pvk -in ca.key -out ca.pvk -nocrypt -topvk
+</span></span></code></pre></div><p>PKCS#12 到 PEM 的转换</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>openssl pkcs12 -nocerts -nodes -in cert.p12 -out private.pem
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 验证</span>
+</span></span><span style="display:flex;"><span>openssl pkcs12 -clcerts -nokeys -in cert.p12 -out cert.pem
+</span></span></code></pre></div><p>PEM 到 PKCS#12 的转换</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>openssl pkcs12 -export -in cert.pem -out cert.p12 -inkey key.pem
+</span></span></code></pre></div><p>P12 文件导出公钥私钥</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># 生成key文件</span>
+</span></span><span style="display:flex;"><span>openssl pkcs12 -in demo.p12 -nocerts -nodes -out demo.key
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 导出私钥</span>
+</span></span><span style="display:flex;"><span>openssl rsa -in demo.key -out demo_pri.pem
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 导出公钥</span>
+</span></span><span style="display:flex;"><span>openssl rsa -in demo.key -pubout -out demo_pub.pem
+</span></span></code></pre></div><p>从 PFX 格式文件中提取私钥格式文件 (.key)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>openssl pkcs12 -in mycert.pfx -nocerts -nodes -out mycert.key
+</span></span></code></pre></div><p>转换 PEM 到 SPC</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>openssl crl2pkcs7 -nocrl -certfile venus.pem -outform DER -out venus.spc
+</span></span></code></pre></div><p>IIS 证书
+server.key和server.crt文件是Apache的证书文件，生成的server.pfx用于导入IIS</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span><span style="color:#66d9ef">cd</span> c:\openssl
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">set</span> OPENSSL_CONF=openssl.cnf
+</span></span><span style="display:flex;"><span>openssl pkcs12 -export -out server.pfx -inkey server.key -in server.crt
+</span></span></code></pre></div><p>Convert PFX Certificate to PEM Format for SOAP</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>openssl pkcs12 -in test.pfx -out client.pem Enter Import Password: MAC verified OK Enter PEM pass phrase: Verifying - Enter PEM pass phrase:
+</span></span></code></pre></div><p>PEM转DER(.crt .cer .der)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>openssl x509 -in cert.pem -inform PEM -out cert.der -outform DER
+</span></span></code></pre></div><p>cer(.crt .cer .der)转PEM,  然后导出公钥</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># cer格式转pem格式，都是证书</span>
+</span></span><span style="display:flex;"><span>openssl x509 -inform DER -in certificate.cer -out certificate.pem
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 再转公钥</span>
+</span></span><span style="display:flex;"><span>openssl x509 -in certificate.pem -pubkey -noout &gt; rsa_public_key.pem
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># cer证书直接转pem公钥</span>
+</span></span><span style="display:flex;"><span>openssl x509 -inform DER -in certificate.cer -pubkey -noout &gt; rsa_public_key.pem
+</span></span></code></pre></div><p>使用openssl把pem证书转换为crt和key</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># pem转crt格式</span>
+</span></span><span style="display:flex;"><span>openssl x509 -in fullchain.pem -out fullchain.crt  
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># pem转key格式</span>
+</span></span><span style="display:flex;"><span>openssl rsa -in privkey.pem -out privkey.key
+</span></span></code></pre></div>
               
 
 

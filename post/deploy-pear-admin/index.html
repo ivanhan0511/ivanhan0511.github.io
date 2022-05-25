@@ -18,7 +18,7 @@
   "name":"Ivan Blog",
   "description":"",
   "url":"https:\/\/ivanhan0511.github.io\/post\/deploy-pear-admin\/",
-  "keywords":"[coffee, grinder, Ivan, Python, C\/C\u002b\u002b, Coffee, Bass, Bike, Badminton]"
+  "keywords":"[deploy, flask, pear-admin, Ivan, Python, C\/C\u002b\u002b, Coffee, Bass, Bike, Badminton]"
 }
 
 </script>
@@ -27,14 +27,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="generator" content="Hugo 0.99.1 with theme Tranquilpeak 0.5.3-BETA">
 <meta name="author" content="Ivan Han">
-<meta name="keywords" content="coffee, grinder, Ivan, Python, C/C&#43;&#43;, Coffee, Bass, Bike, Badminton">
+<meta name="keywords" content="deploy, flask, pear-admin, Ivan, Python, C/C&#43;&#43;, Coffee, Bass, Bike, Badminton">
 <meta name="description" content="">
 
 
 <meta property="og:description" content="">
 <meta property="og:type" content="article">
-<meta property="og:title" content="EXAMPLE TITLE">
-<meta name="twitter:title" content="EXAMPLE TITLE">
+<meta property="og:title" content="Deploy Pear Admin">
+<meta name="twitter:title" content="Deploy Pear Admin">
 <meta property="og:url" content="https://ivanhan0511.github.io/post/deploy-pear-admin/">
 <meta property="twitter:url" content="https://ivanhan0511.github.io/post/deploy-pear-admin/">
 <meta property="og:site_name" content="Ivan Blog">
@@ -51,14 +51,16 @@
   
   
     
-      <meta property="article:section" content="Coffee">
+      <meta property="article:section" content="Deploy">
     
-      <meta property="article:section" content="Grinder">
+      <meta property="article:section" content="Flask">
     
   
   
     
-      <meta property="article:tag" content="Mazzer">
+      <meta property="article:tag" content="Flask">
+    
+      <meta property="article:tag" content="PearAdmin">
     
   
 
@@ -103,7 +105,7 @@
   <meta property="twitter:image" content="https://ivanhan0511.github.io/image-1.png">
 
 
-    <title>EXAMPLE TITLE</title>
+    <title>Deploy Pear Admin</title>
 
     <link rel="icon" href="https://ivanhan0511.github.io/favicon.png">
     
@@ -280,7 +282,7 @@
             <div class="post-header main-content-wrap text-center">
   
     <h1 class="post-title">
-      EXAMPLE TITLE
+      Deploy Pear Admin
     </h1>
   
   
@@ -302,9 +304,9 @@
   
     <span>in</span>
     
-      <a class="category-link" href="https://ivanhan0511.github.io/categories/coffee">Coffee</a>, 
+      <a class="category-link" href="https://ivanhan0511.github.io/categories/deploy">Deploy</a>, 
     
-      <a class="category-link" href="https://ivanhan0511.github.io/categories/grinder">Grinder</a>
+      <a class="category-link" href="https://ivanhan0511.github.io/categories/flask">Flask</a>
     
   
 
@@ -315,277 +317,9 @@
           <div class="post-content markdown">
             <div class="main-content-wrap">
               <h1 id="table-of-contents">Table of Contents</h1>
-<nav id="TableOfContents">
-  <ul>
-    <li><a href="#chapter-one">CHAPTER ONE</a></li>
-    <li><a href="#chapter-two">CHAPTER TWO</a>
-      <ul>
-        <li><a href="#some-content">Some Content</a></li>
-        <li><a href="#image-gallery">Image Gallery</a></li>
-      </ul>
-    </li>
-    <li><a href="#chapter-3">CHAPTER 3</a>
-      <ul>
-        <li><a href="#code">Code</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
+<nav id="TableOfContents"></nav>
 
-<h2 id="chapter-one">CHAPTER ONE</h2>
-<p>List some prerequisites:</p>
-<div class="alert info ">
-  <p>Alert info</p>
-</div>
-<div class="alert success ">
-  <p>Alert success</p>
-</div>
-<div class="alert warning ">
-  <p>Alert warning</p>
-</div>
-<div class="alert danger ">
-  <p>Alert danger</p>
-</div>
-<div class="alert no-icon ">
-  <p><del>Alert no-icon</del><br>
-So far, I don&rsquo;t know where to be used</p>
-</div>
-<div class="alert danger no-icon ">
-  <p>Alert danger no-icon</p>
-</div>
-<h2 id="chapter-two">CHAPTER TWO</h2>
-<h3 id="some-content">Some Content</h3>
-<p>Maybe I need HLD(High Level Design) after work-flow analysis</p>
-<p>And then I need LLD(Low Level Design)</p>
-<p>API file is important</p>
-<ul>
-<li>
-<p>Path parameter: <code>/api/express/addorder/</code></p>
-</li>
-<li>
-<p>Operation: <code>POST</code></p>
-</li>
-<li>
-<p>Body:</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Field</th>
-<th style="text-align:left">Type</th>
-<th style="text-align:left">Nullable</th>
-<th style="text-align:left">Remark</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">id_list</td>
-<td style="text-align:left">List[Int]</td>
-<td style="text-align:left">No</td>
-<td style="text-align:left">ID list</td>
-</tr>
-<tr>
-<td style="text-align:left">info_id</td>
-<td style="text-align:left">Int</td>
-<td style="text-align:left">No</td>
-<td style="text-align:left">Info ID</td>
-</tr>
-</tbody>
-</table>
-</li>
-<li>
-<p>Response</p>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Type</th>
-<th style="text-align:left">Remark</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>code</td>
-<td>int</td>
-<td style="text-align:left">0: True, the others is False</td>
-</tr>
-<tr>
-<td>msg</td>
-<td>string</td>
-<td style="text-align:left">Response message</td>
-</tr>
-<tr>
-<td>data</td>
-<td>MyData</td>
-<td style="text-align:left">Response data</td>
-</tr>
-</tbody>
-</table>
-</li>
-<li>
-<p>MyData structure</p>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Type</th>
-<th style="text-align:left">Remark</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>some_info</td>
-<td>String</td>
-<td style="text-align:left"></td>
-</tr>
-<tr>
-<td>some_status</td>
-<td>Int</td>
-<td style="text-align:left"></td>
-</tr>
-</tbody>
-</table>
-</li>
-<li>
-<p>Response example</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;code&#34;</span>:<span style="color:#ae81ff">0</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;data&#34;</span>:{
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;some_info&#34;</span>:<span style="color:#e6db74">&#34;xxx&#34;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;some_status&#34;</span>:<span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>    },
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;msg&#34;</span>:<span style="color:#e6db74">&#34;提交成功&#34;</span>
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><span class="highlight-text yellow">
-  *Please pay attention: xxx*
-  </span>
-</li>
-</ul>
-<h3 id="image-gallery">Image Gallery</h3>
-<p>Image example</p>
-
- 
-  
-  
-  
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-  
-
- 
-  
-  
-  
-  
-    
-  
-    
-      
-    
-  
-
-<div class="figure right" >
-  
-    <a class="fancybox" href="A.jpg" title="A beautiful Gundam" data-fancybox="group:travel">
-  
-    <img class="fig-img" src="http://cdn.zhzhiyu.com/_uploads/photos/2_gaoda_B.png" style="width: 250px;height: 250;" alt="A beautiful Gundam">
-  
-    </a>
-  
-   
-    <span class="caption">A beautiful Gundam</span>
-  
-</div>
-
-  <div style="clear:both;"></div>
-
-<h2 id="chapter-3">CHAPTER 3</h2>
-<h3 id="code">Code</h3>
-<p>Example:</p>
-
-
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
-
-
-  
-    
-  
-  
-
-<figure class="codeblock codeblock--tabbed">
-  <figcaption>
-    
-      <span>Gist</span>
-    
-    <ul class="tabs">
-      
-        <li class="tab active">python</li>
-      
-        <li class="tab ">python</li>
-      
-    </ul>
-  </figcaption>
-  <div class="tabs-content">
-    
-      
-      <figure class="highlight language-python python" style="display: block;">
-        <table>
-          <tbody>
-            <tr>
-              <td class="gutter">
-                <pre><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></pre>
-              </td>
-              <td class="code">
-                <pre class="code-highlight language-python python"><code class="python">def say_hello:
-    for _ in &#39;hello&#39;:
-        print(i)
-    </code></pre>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </figure>
-    
-      
-      <figure class="highlight language-python python" style="display: none;">
-        <table>
-          <tbody>
-            <tr>
-              <td class="gutter">
-                <pre><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></pre>
-              </td>
-              <td class="code">
-                <pre class="code-highlight language-python python"><code class="python">import datetime
-
-
-def print_time:
-    print(datetime.datetime.now())
-    </code></pre>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </figure>
-    
-  </div>
-</figure>
+<p>Deploy Pear Admin</p>
               
 
   
@@ -670,7 +404,9 @@ def print_time:
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">TAGGED IN</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="https://ivanhan0511.github.io/tags/mazzer/">Mazzer</a>
+  <a class="tag tag--primary tag--small" href="https://ivanhan0511.github.io/tags/flask/">Flask</a>
+
+  <a class="tag tag--primary tag--small" href="https://ivanhan0511.github.io/tags/pearadmin/">PearAdmin</a>
 
                   </div>
                 

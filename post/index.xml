@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Ivan Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 24 May 2022 18:59:42 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 25 May 2022 11:02:18 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Sql Sqlalchemy</title>
+      <link>https://ivanhan0511.github.io/post/sql-sqlalchemy/</link>
+      <pubDate>Wed, 25 May 2022 11:02:18 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/post/sql-sqlalchemy/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Sports Badminton</title>
       <link>https://ivanhan0511.github.io/post/sports-badminton/</link>
@@ -117,10 +126,10 @@
     
     <item>
       <title>INIT OPERATIONS</title>
-      <link>https://ivanhan0511.github.io/post/mysql8-init/</link>
+      <link>https://ivanhan0511.github.io/post/sql-mysql-init/</link>
       <pubDate>Tue, 24 May 2022 02:58:26 +0800</pubDate>
       
-      <guid>https://ivanhan0511.github.io/post/mysql8-init/</guid>
+      <guid>https://ivanhan0511.github.io/post/sql-mysql-init/</guid>
       <description>INIT MySQL version: 8.0</description>
     </item>
     

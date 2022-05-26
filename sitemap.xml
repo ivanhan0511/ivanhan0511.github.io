@@ -8,7 +8,7 @@
     <loc>https://ivanhan0511.github.io/</loc>
     <lastmod>2022-05-25T20:54:13+08:00</lastmod>
   </url><url>
-    <loc>https://ivanhan0511.github.io/categories/misc/</loc>
+    <loc>https://ivanhan0511.github.io/categories/miscellaneous/</loc>
     <lastmod>2022-05-25T20:54:13+08:00</lastmod>
   </url><url>
     <loc>https://ivanhan0511.github.io/post/</loc>
@@ -23,7 +23,7 @@
     <loc>https://ivanhan0511.github.io/tags/%E6%B0%94%E5%80%99%E5%8F%98%E6%9A%96/</loc>
     <lastmod>2022-05-25T20:54:13+08:00</lastmod>
   </url><url>
-    <loc>https://ivanhan0511.github.io/post/misc-co2/</loc>
+    <loc>https://ivanhan0511.github.io/post/miscellaneous-co2/</loc>
     <lastmod>2022-05-25T20:54:13+08:00</lastmod>
   </url><url>
     <loc>https://ivanhan0511.github.io/tags/%E9%A2%A0%E8%A6%86%E4%B8%96%E7%95%8C%E8%A7%82/</loc>
@@ -41,9 +41,6 @@
     <loc>https://ivanhan0511.github.io/categories/security/</loc>
     <lastmod>2022-05-25T20:10:41+08:00</lastmod>
   </url><url>
-    <loc>https://ivanhan0511.github.io/categories/db/</loc>
-    <lastmod>2022-05-25T15:48:48+08:00</lastmod>
-  </url><url>
     <loc>https://ivanhan0511.github.io/tags/mysql/</loc>
     <lastmod>2022-05-25T15:48:48+08:00</lastmod>
   </url><url>
@@ -51,6 +48,9 @@
     <lastmod>2022-05-25T15:48:48+08:00</lastmod>
   </url><url>
     <loc>https://ivanhan0511.github.io/post/sql-mysql-view/</loc>
+    <lastmod>2022-05-25T15:48:48+08:00</lastmod>
+  </url><url>
+    <loc>https://ivanhan0511.github.io/categories/sql/</loc>
     <lastmod>2022-05-25T15:48:48+08:00</lastmod>
   </url><url>
     <loc>https://ivanhan0511.github.io/tags/sqlview/</loc>
@@ -79,9 +79,6 @@
   </url><url>
     <loc>https://ivanhan0511.github.io/categories/visual-studio/</loc>
     <lastmod>2022-05-25T13:41:34+08:00</lastmod>
-  </url><url>
-    <loc>https://ivanhan0511.github.io/categories/sql/</loc>
-    <lastmod>2022-05-25T11:02:18+08:00</lastmod>
   </url><url>
     <loc>https://ivanhan0511.github.io/post/sql-sqlalchemy/</loc>
     <lastmod>2022-05-25T11:02:18+08:00</lastmod>

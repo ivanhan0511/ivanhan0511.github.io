@@ -304,7 +304,35 @@
             <div class="main-content-wrap">
               <p>Deploy a project of PearAdmin Flask</p>
 <h1 id="table-of-contents">Table of Contents</h1>
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#mysql">MySQL</a></li>
+  </ul>
+</nav>
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>apt update
+</span></span><span style="display:flex;"><span>apt install git python3.8-dev mysql-server-8.0
+</span></span></code></pre></div><h2 id="mysql">MySQL</h2>
+<p>方法1： 用SET PASSWORD命令
+首先登录MySQL。
+格式：mysql&gt; set password for 用户名@localhost = password(‘新密码’);
+例子：mysql&gt; set password for root@localhost = password(‘123’);</p>
+<p>方法2：用mysqladmin
+格式：mysqladmin -u用户名 -p旧密码 password 新密码
+例子：mysqladmin -uroot -p123456 password 123</p>
+<p>show grants for &rsquo;test1&rsquo;@&rsquo;localhost;
+create user &rsquo;test1&rsquo;@&rsquo;localhost&rsquo; identified by &lsquo;密码&rsquo;;
+Mysql8.0默认采用caching-sha2-password加密，目前好多客户端不支持，可改为mysql_native_password;
+create user &rsquo;test&rsquo;@&rsquo;%&rsquo; identified with mysql_native_password BY &lsquo;密码&rsquo;;
+Alter user &rsquo;test1&rsquo;@&rsquo;localhost&rsquo; identified by &lsquo;新密码&rsquo;;</p>
+<p>flush privileges;</p>
+<p>grant all privileges on <em>.</em> to &rsquo;test1&rsquo;@&rsquo;localhost&rsquo; with grant option;
+flush privileges;
+show grants for &rsquo;test1&rsquo;@&rsquo;localhost;
+revoke all privileges on <em>.</em> from &rsquo;test1&rsquo;@&rsquo;localhost&rsquo;;
+drop user &rsquo;test1&rsquo;@&rsquo;localhost&rsquo;;</p>
+<p>sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf
+bind comment</p>
               
 
 

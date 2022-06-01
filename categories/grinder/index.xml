@@ -6,7 +6,25 @@
     <description>Recent content in Grinder on Ivan Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 24 May 2022 05:49:34 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/categories/grinder/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 01 Jun 2022 17:01:07 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/categories/grinder/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>EXAMPLE TITLE</title>
+      <link>https://ivanhan0511.github.io/post/sports-road-bicycle/</link>
+      <pubDate>Wed, 01 Jun 2022 17:01:07 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/post/sports-road-bicycle/</guid>
+      <description>&lt;p&gt;This is a custom summary and does &lt;em&gt;NOT&lt;/em&gt; appear in the post.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>EXAMPLE TITLE</title>
+      <link>https://ivanhan0511.github.io/post/network-curl/</link>
+      <pubDate>Wed, 01 Jun 2022 16:56:35 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/post/network-curl/</guid>
+      <description>&lt;p&gt;This is a custom summary and does &lt;em&gt;NOT&lt;/em&gt; appear in the post.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Coffee Grinder Mazzer</title>
       <link>https://ivanhan0511.github.io/post/coffee-grinder-mazzer/</link>

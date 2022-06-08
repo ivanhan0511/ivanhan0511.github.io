@@ -6,7 +6,17 @@
     <description>Recent content on Ivan Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 01 Jun 2022 17:01:07 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 09 Jun 2022 01:02:32 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>English Distinguish</title>
+      <link>https://ivanhan0511.github.io/post/english-distinguish/</link>
+      <pubDate>Thu, 09 Jun 2022 01:02:32 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/post/english-distinguish/</guid>
+      <description>&lt;p&gt;Many records for distinguishing words.&lt;/p&gt;
+&lt;p&gt;In this post, I have to write with Chinese.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Road Bicycle</title>
       <link>https://ivanhan0511.github.io/post/sports-bicycle/</link>
@@ -139,7 +149,8 @@
       <pubDate>Tue, 24 May 2022 16:51:56 +0800</pubDate>
       
       <guid>https://ivanhan0511.github.io/post/c-basic/</guid>
-      <description>&lt;p&gt;Some basic knowledge of C/C++&lt;/p&gt;</description>
+      <description>&lt;p&gt;Hello, world!\n&lt;/p&gt;
+&lt;p&gt;Some basic knowledge or principles of C/C++&lt;/p&gt;</description>
     </item>
     
     <item>

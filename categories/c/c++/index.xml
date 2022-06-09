@@ -25,15 +25,5 @@
       <description>&lt;p&gt;Newbee to C/C++. Some records for using Visual Studio to start learning C/C++&lt;/p&gt;</description>
     </item>
     
-    <item>
-      <title>C Miscellaneous</title>
-      <link>https://ivanhan0511.github.io/post/c-miscellaneous/</link>
-      <pubDate>Tue, 24 May 2022 16:51:56 +0800</pubDate>
-      
-      <guid>https://ivanhan0511.github.io/post/c-miscellaneous/</guid>
-      <description>&lt;p&gt;Hello, world!\n&lt;/p&gt;
-&lt;p&gt;Some basic knowledge or principles of C/C++&lt;/p&gt;</description>
-    </item>
-    
   </channel>
 </rss>

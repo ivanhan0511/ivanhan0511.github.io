@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Coffee Life on Ivan Blog</title>
+    <link>https://ivanhan0511.github.io/tags/coffee-life/</link>
+    <description>Recent content in Coffee Life on Ivan Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 09 Jun 2022 21:38:22 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/tags/coffee-life/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Coffee Taste</title>
+      <link>https://ivanhan0511.github.io/post/coffee-taste/</link>
+      <pubDate>Thu, 09 Jun 2022 21:38:22 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/post/coffee-taste/</guid>
+      <description>&lt;p&gt;This is a custom summary and does &lt;em&gt;NOT&lt;/em&gt; appear in the post.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

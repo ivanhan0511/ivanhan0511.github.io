@@ -18,7 +18,7 @@
   "name":"Ivan Blog",
   "description":"\u003cp\u003eHello, world!\\n\u003c\/p\u003e\n\u003cp\u003eSome basic knowledge or principles of C\/C\u002b\u002b\u003c\/p\u003e",
   "url":"https:\/\/ivanhan0511.github.io\/post\/c-basic\/",
-  "keywords":"[c, c\u002b\u002b, Ivan, Python, C\/C\u002b\u002b, Coffee, Bass, Bicycle, Badminton]"
+  "keywords":"[c, naming convention, pointer, Ivan, Python, C\/C\u002b\u002b, Coffee, Bass, Bicycle, Badminton]"
 }
 
 </script>
@@ -27,7 +27,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="generator" content="Hugo 0.99.1 with theme Tranquilpeak 0.5.3-BETA">
 <meta name="author" content="Ivan Han">
-<meta name="keywords" content="c, c&#43;&#43;, Ivan, Python, C/C&#43;&#43;, Coffee, Bass, Bicycle, Badminton">
+<meta name="keywords" content="c, naming convention, pointer, Ivan, Python, C/C&#43;&#43;, Coffee, Bass, Bicycle, Badminton">
 <meta name="description" content="Hello, world!\n
 Some basic knowledge or principles of C/C&#43;&#43;">
 
@@ -62,9 +62,9 @@ Some basic knowledge or principles of C/C&#43;&#43;">
   
   
     
-      <meta property="article:tag" content="C/C&#43;&#43;">
+      <meta property="article:tag" content="C">
     
-      <meta property="article:tag" content="Gramma">
+      <meta property="article:tag" content="Naming Convention">
     
   
 
@@ -292,9 +292,44 @@ Some basic knowledge or principles of C/C&#43;&#43;">
             <div class="main-content-wrap">
               <p>Hello, world!\n</p>
 <p>Some basic knowledge or principles of C/C++</p>
-<h2 id="c">C</h2>
-<h3 id="gramma-style">Gramma Style</h3>
-<h4 id="heading"><code>*</code></h4>
+<h2 id="naming-convention">NAMING CONVENTION</h2>
+<h3 id="example-1">Example 1</h3>
+<ul>
+<li>类型大写首字母驼峰</li>
+<li>变量和函数名小写下划线</li>
+<li>常量大写下划线</li>
+<li>驼峰和下划线不混用</li>
+<li>需要 export 的类型和函数加对应的驼峰/小写下划线前缀前缀</li>
+<li>到处都有人人都知道的, 可以缩写, 后面部分尽量不要缩写</li>
+</ul>
+<p>个人喜欢用下划线, 也是赞同一个观点: 因为阅读需要空间<br>
+其实驼峰和下划线, 纯看个人信仰</p>
+<p>Web 语言也推荐下划线. 因为RFC4343 规定了域名是不分大小写的,
+url 的其他部分就各家有各家的玩法, 那请求参数还是用下划线的比较保险.
+然后你在语言里用驼峰的命名, 又天天处理各种请求参数, 就&hellip; 乱了&hellip;</p>
+<p>作者：luikore
+链接：https://www.zhihu.com/question/31498049/answer/120351303
+来源：知乎
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+<h3 id="example-2">Example 2</h3>
+<p>camelCase</p>
+<p>PascalCase</p>
+<p>underscore_case</p>
+<p>_private_underscore_case</p>
+<p>UPPERCASE_UNDERSCORE</p>
+<p>不要用匈牙利命名法，那是为没有IDE而且不面向对象的时代准备的，你在C++里面遇到的大部分是对象，拿什么前缀都是白费。</p>
+<p>camel还是下划线仅仅是一个信仰的差异，Python推荐用下划线是因为有_开头是私有的约定，
+对Java和C++这样有private和protected的功能的其实没啥用，
+而且我到现在仍然觉得下划线比camel丑……
+但终究来说，下划线还是camel是个信仰问题。</p>
+<p>其他的其实Python的约定挺合理的，类用PascalCase，全局常量用全部大写的下划线分割。
+局部变量尽量用比较短的表述。其他语言也都可以参考（而且实际上本来就是参考其他语言的规范制定的）</p>
+<p>作者：灵剑
+链接：https://www.zhihu.com/question/31498049/answer/120343046
+来源：知乎
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+<h2 id="gramma-style">GRAMMA STYLE</h2>
+<h3 id="pointer">Pointer</h3>
 <p>话说在 Objective－C 里声明指针变量时，星号(<code>*</code>) 该放到哪个位置，是紧贴变量类型，紧贴变量名还是放它们之间两边用空格，或者全挤在一起？到底还是在思考 C/C++ 中指针变量的声明风格，因为 Objective－C 是 C 的超集。</p>
 <p>纯粹讲 Objective－C 的代码风格，我觉得 Google 的 Google Objective-C Style Guide 非常有指导意义。转回来看 Objective－C 声明指针变量时什么风格好些，下面四种都符合语法：</p>
 <p>。看显然，第四种风格是最不好看的，就像有人写 SQL 喜欢 “select*from table1&quot; 一样
@@ -313,8 +348,6 @@ NSString* name = (NSSting*) anyType;</li>
 </ul>
 <p>最后我还是觉得第二种像 NSString* name1;  的写法比较写意，并且也非常合乎规范，我就较喜欢这咱风格，可偏偏很多教材里热衷于第三种，即 NSString *name1 这样的风格。</p>
 <p>你呢？也许本身就无足轻重！</p>
-<h2 id="c-1">C++</h2>
-<p>null</p>
               
 
 
@@ -328,9 +361,9 @@ NSString* name = (NSSting*) anyType;</li>
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">TAGGED IN</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="https://ivanhan0511.github.io/tags/c/c&#43;&#43;/">C/C&#43;&#43;</a>
+  <a class="tag tag--primary tag--small" href="https://ivanhan0511.github.io/tags/c/">C</a>
 
-  <a class="tag tag--primary tag--small" href="https://ivanhan0511.github.io/tags/gramma/">Gramma</a>
+  <a class="tag tag--primary tag--small" href="https://ivanhan0511.github.io/tags/naming-convention/">Naming Convention</a>
 
                   </div>
                 

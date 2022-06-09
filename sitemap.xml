@@ -2,25 +2,52 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://ivanhan0511.github.io/categories/beans/</loc>
+    <lastmod>2022-06-09T21:33:05+08:00</lastmod>
+  </url><url>
+    <loc>https://ivanhan0511.github.io/categories/</loc>
+    <lastmod>2022-06-09T21:33:05+08:00</lastmod>
+  </url><url>
+    <loc>https://ivanhan0511.github.io/categories/coffee/</loc>
+    <lastmod>2022-06-09T21:33:05+08:00</lastmod>
+  </url><url>
+    <loc>https://ivanhan0511.github.io/post/coffee-beans/</loc>
+    <lastmod>2022-06-09T21:33:05+08:00</lastmod>
+  </url><url>
+    <loc>https://ivanhan0511.github.io/tags/ethiopia/</loc>
+    <lastmod>2022-06-09T21:33:05+08:00</lastmod>
+  </url><url>
+    <loc>https://ivanhan0511.github.io/</loc>
+    <lastmod>2022-06-09T21:33:05+08:00</lastmod>
+  </url><url>
+    <loc>https://ivanhan0511.github.io/post/</loc>
+    <lastmod>2022-06-09T21:33:05+08:00</lastmod>
+  </url><url>
+    <loc>https://ivanhan0511.github.io/tags/</loc>
+    <lastmod>2022-06-09T21:33:05+08:00</lastmod>
+  </url><url>
+    <loc>https://ivanhan0511.github.io/tags/c/</loc>
+    <lastmod>2022-06-09T21:32:20+08:00</lastmod>
+  </url><url>
+    <loc>https://ivanhan0511.github.io/post/c-miscellaneous/</loc>
+    <lastmod>2022-06-09T21:32:20+08:00</lastmod>
+  </url><url>
+    <loc>https://ivanhan0511.github.io/categories/miscellaneous/</loc>
+    <lastmod>2022-06-09T21:32:20+08:00</lastmod>
+  </url><url>
+    <loc>https://ivanhan0511.github.io/tags/naming-convention/</loc>
+    <lastmod>2022-06-09T21:32:20+08:00</lastmod>
+  </url><url>
+    <loc>https://ivanhan0511.github.io/tags/pointer/</loc>
+    <lastmod>2022-06-09T21:32:20+08:00</lastmod>
+  </url><url>
     <loc>https://ivanhan0511.github.io/tags/c-memory/</loc>
     <lastmod>2022-06-09T16:55:06+08:00</lastmod>
   </url><url>
     <loc>https://ivanhan0511.github.io/post/c-memory/</loc>
     <lastmod>2022-06-09T16:55:06+08:00</lastmod>
   </url><url>
-    <loc>https://ivanhan0511.github.io/categories/</loc>
-    <lastmod>2022-06-09T16:55:06+08:00</lastmod>
-  </url><url>
-    <loc>https://ivanhan0511.github.io/</loc>
-    <lastmod>2022-06-09T16:55:06+08:00</lastmod>
-  </url><url>
     <loc>https://ivanhan0511.github.io/categories/memory/</loc>
-    <lastmod>2022-06-09T16:55:06+08:00</lastmod>
-  </url><url>
-    <loc>https://ivanhan0511.github.io/post/</loc>
-    <lastmod>2022-06-09T16:55:06+08:00</lastmod>
-  </url><url>
-    <loc>https://ivanhan0511.github.io/tags/</loc>
     <lastmod>2022-06-09T16:55:06+08:00</lastmod>
   </url><url>
     <loc>https://ivanhan0511.github.io/tags/distinguish/</loc>
@@ -58,9 +85,6 @@
   </url><url>
     <loc>https://ivanhan0511.github.io/categories/tools/</loc>
     <lastmod>2022-06-01T16:56:35+08:00</lastmod>
-  </url><url>
-    <loc>https://ivanhan0511.github.io/categories/miscellaneous/</loc>
-    <lastmod>2022-05-25T20:54:13+08:00</lastmod>
   </url><url>
     <loc>https://ivanhan0511.github.io/categories/thought/</loc>
     <lastmod>2022-05-25T20:54:13+08:00</lastmod>
@@ -206,9 +230,6 @@
     <loc>https://ivanhan0511.github.io/post/python-normal/</loc>
     <lastmod>2022-05-24T16:50:44+08:00</lastmod>
   </url><url>
-    <loc>https://ivanhan0511.github.io/categories/coffee/</loc>
-    <lastmod>2022-05-24T05:49:34+08:00</lastmod>
-  </url><url>
     <loc>https://ivanhan0511.github.io/post/coffee-grinder-mazzer/</loc>
     <lastmod>2022-05-24T05:49:34+08:00</lastmod>
   </url><url>
@@ -220,15 +241,6 @@
   </url><url>
     <loc>https://ivanhan0511.github.io/tags/mazzer/</loc>
     <lastmod>2022-05-24T05:49:34+08:00</lastmod>
-  </url><url>
-    <loc>https://ivanhan0511.github.io/categories/beans/</loc>
-    <lastmod>2022-05-24T05:36:20+08:00</lastmod>
-  </url><url>
-    <loc>https://ivanhan0511.github.io/post/coffee-beans/</loc>
-    <lastmod>2022-05-24T05:36:20+08:00</lastmod>
-  </url><url>
-    <loc>https://ivanhan0511.github.io/tags/ethiopia/</loc>
-    <lastmod>2022-05-24T05:36:20+08:00</lastmod>
   </url><url>
     <loc>https://ivanhan0511.github.io/post/music-bass-guitar/</loc>
     <lastmod>2022-05-24T05:00:41+08:00</lastmod>

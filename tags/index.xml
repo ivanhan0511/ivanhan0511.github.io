@@ -6,7 +6,25 @@
     <description>Recent content in Tags on Ivan Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 09 Jun 2022 21:38:22 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 16 Jun 2022 14:42:36 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DDL</title>
+      <link>https://ivanhan0511.github.io/tags/ddl/</link>
+      <pubDate>Thu, 16 Jun 2022 14:42:36 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/tags/ddl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MySQL</title>
+      <link>https://ivanhan0511.github.io/tags/mysql/</link>
+      <pubDate>Thu, 16 Jun 2022 14:42:36 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/tags/mysql/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Coffee Life</title>
       <link>https://ivanhan0511.github.io/tags/coffee-life/</link>
@@ -112,15 +130,6 @@
       <pubDate>Wed, 25 May 2022 20:10:41 +0800</pubDate>
       
       <guid>https://ivanhan0511.github.io/tags/cert/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>MySQL</title>
-      <link>https://ivanhan0511.github.io/tags/mysql/</link>
-      <pubDate>Wed, 25 May 2022 15:48:48 +0800</pubDate>
-      
-      <guid>https://ivanhan0511.github.io/tags/mysql/</guid>
       <description></description>
     </item>
     

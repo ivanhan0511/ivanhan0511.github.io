@@ -3,7 +3,31 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://ivanhan0511.github.io/categories/</loc>
-    <lastmod>2022-06-09T21:38:22+08:00</lastmod>
+    <lastmod>2022-06-16T14:42:36+08:00</lastmod>
+  </url><url>
+    <loc>https://ivanhan0511.github.io/tags/ddl/</loc>
+    <lastmod>2022-06-16T14:42:36+08:00</lastmod>
+  </url><url>
+    <loc>https://ivanhan0511.github.io/</loc>
+    <lastmod>2022-06-16T14:42:36+08:00</lastmod>
+  </url><url>
+    <loc>https://ivanhan0511.github.io/tags/mysql/</loc>
+    <lastmod>2022-06-16T14:42:36+08:00</lastmod>
+  </url><url>
+    <loc>https://ivanhan0511.github.io/categories/mysql/</loc>
+    <lastmod>2022-06-16T14:42:36+08:00</lastmod>
+  </url><url>
+    <loc>https://ivanhan0511.github.io/post/sql-mysql-ddl/</loc>
+    <lastmod>2022-06-16T14:42:36+08:00</lastmod>
+  </url><url>
+    <loc>https://ivanhan0511.github.io/post/</loc>
+    <lastmod>2022-06-16T14:42:36+08:00</lastmod>
+  </url><url>
+    <loc>https://ivanhan0511.github.io/categories/sql/</loc>
+    <lastmod>2022-06-16T14:42:36+08:00</lastmod>
+  </url><url>
+    <loc>https://ivanhan0511.github.io/tags/</loc>
+    <lastmod>2022-06-16T14:42:36+08:00</lastmod>
   </url><url>
     <loc>https://ivanhan0511.github.io/categories/coffee/</loc>
     <lastmod>2022-06-09T21:38:22+08:00</lastmod>
@@ -12,15 +36,6 @@
     <lastmod>2022-06-09T21:38:22+08:00</lastmod>
   </url><url>
     <loc>https://ivanhan0511.github.io/post/coffee-taste/</loc>
-    <lastmod>2022-06-09T21:38:22+08:00</lastmod>
-  </url><url>
-    <loc>https://ivanhan0511.github.io/</loc>
-    <lastmod>2022-06-09T21:38:22+08:00</lastmod>
-  </url><url>
-    <loc>https://ivanhan0511.github.io/post/</loc>
-    <lastmod>2022-06-09T21:38:22+08:00</lastmod>
-  </url><url>
-    <loc>https://ivanhan0511.github.io/tags/</loc>
     <lastmod>2022-06-09T21:38:22+08:00</lastmod>
   </url><url>
     <loc>https://ivanhan0511.github.io/categories/taste/</loc>
@@ -119,16 +134,7 @@
     <loc>https://ivanhan0511.github.io/categories/security/</loc>
     <lastmod>2022-05-25T20:10:41+08:00</lastmod>
   </url><url>
-    <loc>https://ivanhan0511.github.io/tags/mysql/</loc>
-    <lastmod>2022-05-25T15:48:48+08:00</lastmod>
-  </url><url>
-    <loc>https://ivanhan0511.github.io/categories/mysql/</loc>
-    <lastmod>2022-05-25T15:48:48+08:00</lastmod>
-  </url><url>
     <loc>https://ivanhan0511.github.io/post/sql-mysql-view/</loc>
-    <lastmod>2022-05-25T15:48:48+08:00</lastmod>
-  </url><url>
-    <loc>https://ivanhan0511.github.io/categories/sql/</loc>
     <lastmod>2022-05-25T15:48:48+08:00</lastmod>
   </url><url>
     <loc>https://ivanhan0511.github.io/tags/sqlview/</loc>

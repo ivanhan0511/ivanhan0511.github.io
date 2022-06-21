@@ -227,12 +227,12 @@
     </item>
     
     <item>
-      <title>INIT OPERATIONS</title>
+      <title>MySQL8.0 Init Operations</title>
       <link>https://ivanhan0511.github.io/post/sql-mysql-init/</link>
       <pubDate>Tue, 24 May 2022 02:58:26 +0800</pubDate>
       
       <guid>https://ivanhan0511.github.io/post/sql-mysql-init/</guid>
-      <description>&lt;p&gt;Init MySQL 8.0&lt;/p&gt;</description>
+      <description>&lt;p&gt;Init operations of MySQL 8.0&lt;/p&gt;</description>
     </item>
     
   </channel>

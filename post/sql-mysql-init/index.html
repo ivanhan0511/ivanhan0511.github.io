@@ -297,30 +297,164 @@
 <p><code>https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-20-04</code></p>
 <p>Ubuntu Server 20.04 LTS as example<br>
 Tencent Cloud Server</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo apt update
-</span></span><span style="display:flex;"><span>sudo apt install mysql-server-8.0 -y
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#sudo apt install mysql-server</span>
-</span></span><span style="display:flex;"><span>sudo systemctl status mysql.service
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>sudo mysql
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># or</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#mysql -u root -p  # Use the system user-password</span>
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SET</span> <span style="color:#66d9ef">GLOBAL</span> validate_password.policy<span style="color:#f92672">=</span>LOW;
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">DATABASE</span> xxxdb charset<span style="color:#f92672">=</span>utf8;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">USER</span> <span style="color:#e6db74">&#39;rd&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;%&#39;</span> IDENTIFIED <span style="color:#66d9ef">BY</span> <span style="color:#e6db74">&#39;password&#39;</span>;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">GRANT</span> <span style="color:#66d9ef">CREATE</span>, <span style="color:#66d9ef">ALTER</span>, <span style="color:#66d9ef">DROP</span>, <span style="color:#66d9ef">INSERT</span>, <span style="color:#66d9ef">UPDATE</span>, <span style="color:#66d9ef">DELETE</span>, <span style="color:#66d9ef">SELECT</span>, <span style="color:#66d9ef">REFERENCES</span>, RELOAD <span style="color:#66d9ef">on</span> <span style="color:#f92672">*</span>.<span style="color:#f92672">*</span> <span style="color:#66d9ef">TO</span> <span style="color:#e6db74">&#39;rd&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;%&#39;</span> <span style="color:#66d9ef">WITH</span> <span style="color:#66d9ef">GRANT</span> <span style="color:#66d9ef">OPTION</span>;
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span><span style="color:#66d9ef">GRANT</span> <span style="color:#66d9ef">ALL</span> <span style="color:#66d9ef">PRIVILEGES</span> <span style="color:#66d9ef">ON</span> <span style="color:#f92672">*</span>.<span style="color:#f92672">*</span> <span style="color:#66d9ef">TO</span> <span style="color:#e6db74">&#39;rd&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;%&#39;</span> <span style="color:#66d9ef">WITH</span> <span style="color:#66d9ef">GRANT</span> <span style="color:#66d9ef">OPTION</span>;  <span style="color:#f92672">#</span> This <span style="color:#66d9ef">is</span> deprecated<span style="color:#f92672">!</span>
-</span></span><span style="display:flex;"><span>FLUSH <span style="color:#66d9ef">PRIVILEGES</span>;
-</span></span><span style="display:flex;"><span>exit
-</span></span></code></pre></div><h2 id="in-a-docker">In a Docker</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>docker run -p 3306:3306 --name mysql-rd -e MYSQL_ROOT_PASSWORD<span style="color:#f92672">=</span>RandD268 -d mysql:8.0
-</span></span><span style="display:flex;"><span>mysql -h 127.0.0.1 -u root -p
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">DATABASE</span> xxxdb charset<span style="color:#f92672">=</span>utf8;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">USER</span> <span style="color:#e6db74">&#39;rd&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;%&#39;</span> IDENTIFIED <span style="color:#66d9ef">BY</span> <span style="color:#e6db74">&#39;password&#39;</span>;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">GRANT</span> <span style="color:#66d9ef">CREATE</span>, <span style="color:#66d9ef">ALTER</span>, <span style="color:#66d9ef">DROP</span>, <span style="color:#66d9ef">INSERT</span>, <span style="color:#66d9ef">UPDATE</span>, <span style="color:#66d9ef">DELETE</span>, <span style="color:#66d9ef">SELECT</span>, <span style="color:#66d9ef">REFERENCES</span>, RELOAD <span style="color:#66d9ef">on</span> <span style="color:#f92672">*</span>.<span style="color:#f92672">*</span> <span style="color:#66d9ef">TO</span> <span style="color:#e6db74">&#39;rd&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;%&#39;</span> <span style="color:#66d9ef">WITH</span> <span style="color:#66d9ef">GRANT</span> <span style="color:#66d9ef">OPTION</span>;
-</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span><span style="color:#66d9ef">GRANT</span> <span style="color:#66d9ef">ALL</span> <span style="color:#66d9ef">PRIVILEGES</span> <span style="color:#66d9ef">on</span> xxxdb.<span style="color:#f92672">*</span> <span style="color:#66d9ef">TO</span> <span style="color:#e6db74">&#39;rd&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;%&#39;</span>;
-</span></span><span style="display:flex;"><span>FLUSH <span style="color:#66d9ef">PRIVILEGES</span>;
-</span></span></code></pre></div>
+
+
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+
+
+  
+    
+  
+  
+
+<figure class="codeblock codeblock--tabbed">
+  <figcaption>
+    
+      <span>in_normal_server</span>
+    
+    <ul class="tabs">
+      
+        <li class="tab active">shell</li>
+      
+        <li class="tab ">sql</li>
+      
+    </ul>
+  </figcaption>
+  <div class="tabs-content">
+    
+      
+      <figure class="highlight language-shell shell" style="display: block;">
+        <table>
+          <tbody>
+            <tr>
+              <td class="gutter">
+                <pre><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br></pre>
+              </td>
+              <td class="code">
+                <pre class="code-highlight language-shell shell"><code class="shell">sudo apt update
+sudo apt install mysql-server-8.0 -y
+#sudo apt install mysql-server
+sudo systemctl status mysql.service
+
+sudo mysql
+# or
+#mysql -u root -p  # Use the system user-password</code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </figure>
+    
+      
+      <figure class="highlight language-sql sql" style="display: none;">
+        <table>
+          <tbody>
+            <tr>
+              <td class="gutter">
+                <pre><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br></pre>
+              </td>
+              <td class="code">
+                <pre class="code-highlight language-sql sql"><code class="sql">SET GLOBAL validate_password.policy=LOW;
+#CREATE DATABASE xxxdb charset=utf8;
+CREATE USER &#39;rd&#39;@&#39;%&#39; IDENTIFIED BY &#39;password&#39;;
+GRANT CREATE, ALTER, DROP, INSERT, UPDATE, DELETE, SELECT, REFERENCES, RELOAD on *.* TO &#39;rd&#39;@&#39;%&#39; WITH GRANT OPTION;
+#GRANT ALL PRIVILEGES ON *.* TO &#39;rd&#39;@&#39;%&#39; WITH GRANT OPTION;  # This is deprecated!
+FLUSH PRIVILEGES;
+exit</code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </figure>
+    
+  </div>
+</figure>
+
+<h2 id="in-a-docker">In a Docker</h2>
+
+
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+
+
+  
+    
+  
+  
+
+<figure class="codeblock codeblock--tabbed">
+  <figcaption>
+    
+      <span>in_docker</span>
+    
+    <ul class="tabs">
+      
+        <li class="tab active">shell</li>
+      
+        <li class="tab ">sql</li>
+      
+    </ul>
+  </figcaption>
+  <div class="tabs-content">
+    
+      
+      <figure class="highlight language-shell shell" style="display: block;">
+        <table>
+          <tbody>
+            <tr>
+              <td class="gutter">
+                <pre><span>1</span><br><span>2</span><br></pre>
+              </td>
+              <td class="code">
+                <pre class="code-highlight language-shell shell"><code class="shell">docker run -p 3306:3306 --name mysql-rd -e MYSQL_ROOT_PASSWORD=RandD268 -d mysql:8.0
+mysql -h 127.0.0.1 -u root -p</code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </figure>
+    
+      
+      <figure class="highlight language-sql sql" style="display: none;">
+        <table>
+          <tbody>
+            <tr>
+              <td class="gutter">
+                <pre><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br></pre>
+              </td>
+              <td class="code">
+                <pre class="code-highlight language-sql sql"><code class="sql">CREATE DATABASE xxxdb charset=utf8;
+CREATE USER &#39;rd&#39;@&#39;%&#39; IDENTIFIED BY &#39;password&#39;;
+GRANT CREATE, ALTER, DROP, INSERT, UPDATE, DELETE, SELECT, REFERENCES, RELOAD on *.* TO &#39;rd&#39;@&#39;%&#39; WITH GRANT OPTION;
+#GRANT ALL PRIVILEGES on xxxdb.* TO &#39;rd&#39;@&#39;%&#39;;
+FLUSH PRIVILEGES;</code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </figure>
+    
+  </div>
+</figure>
               
 
 

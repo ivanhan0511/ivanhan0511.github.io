@@ -6,7 +6,17 @@
     <description>Recent content on Ivan Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 16 Jun 2022 14:42:36 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 27 Jun 2022 12:48:05 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Double-entry Bookkeeping</title>
+      <link>https://ivanhan0511.github.io/post/ecnomics-double-entry-bookkeeping/</link>
+      <pubDate>Mon, 27 Jun 2022 12:48:05 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/post/ecnomics-double-entry-bookkeeping/</guid>
+      <description>&lt;p&gt;It is difficult to understand double-entry bookkeeping.&lt;br&gt;
+So here are some tips, wish to be helpful.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>MySQL DDL Operations</title>
       <link>https://ivanhan0511.github.io/post/sql-mysql-ddl/</link>
@@ -169,7 +179,7 @@
       <pubDate>Tue, 24 May 2022 18:50:54 +0800</pubDate>
       
       <guid>https://ivanhan0511.github.io/post/music-headphones/</guid>
-      <description>&lt;p&gt;AKG nice&lt;/p&gt;</description>
+      <description>&lt;p&gt;My music instruments on the desk in office.&lt;/p&gt;</description>
     </item>
     
     <item>

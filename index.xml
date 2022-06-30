@@ -6,7 +6,16 @@
     <description>Recent content on Ivan Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 27 Jun 2022 12:48:05 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 29 Jun 2022 16:52:42 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MQTT And Kafka</title>
+      <link>https://ivanhan0511.github.io/post/mq-mqtt-basic/</link>
+      <pubDate>Wed, 29 Jun 2022 16:52:42 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/post/mq-mqtt-basic/</guid>
+      <description>&lt;p&gt;Some relationship between MQTT and Kafka.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Double-entry Bookkeeping</title>
       <link>https://ivanhan0511.github.io/post/ecnomics-double-entry-bookkeeping/</link>

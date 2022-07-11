@@ -16,7 +16,7 @@
     
   },
   "name":"Ivan Blog",
-  "description":"\u003cp\u003eDeploy a project of PearAdmin Flask\u003c\/p\u003e",
+  "description":"\u003cp\u003eDeploy a project which is small or flexible project, with PearAdmin Flask\u003c\/p\u003e",
   "url":"https:\/\/ivanhan0511.github.io\/post\/deploy-pear-admin\/",
   "keywords":"[deploy, flask, pear-admin, Ivan, Python, C\/C\u002b\u002b, Coffee, Bass, Bicycle, Badminton]"
 }
@@ -28,18 +28,18 @@
 <meta name="generator" content="Hugo 0.99.1 with theme Tranquilpeak 0.5.3-BETA">
 <meta name="author" content="Ivan Han">
 <meta name="keywords" content="deploy, flask, pear-admin, Ivan, Python, C/C&#43;&#43;, Coffee, Bass, Bicycle, Badminton">
-<meta name="description" content="Deploy a project of PearAdmin Flask">
+<meta name="description" content="Deploy a project which is small or flexible project, with PearAdmin Flask">
 
 
-<meta property="og:description" content="Deploy a project of PearAdmin Flask">
+<meta property="og:description" content="Deploy a project which is small or flexible project, with PearAdmin Flask">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Deploy Pear Admin">
 <meta name="twitter:title" content="Deploy Pear Admin">
 <meta property="og:url" content="https://ivanhan0511.github.io/post/deploy-pear-admin/">
 <meta property="twitter:url" content="https://ivanhan0511.github.io/post/deploy-pear-admin/">
 <meta property="og:site_name" content="Ivan Blog">
-<meta property="og:description" content="Deploy a project of PearAdmin Flask">
-<meta name="twitter:description" content="Deploy a project of PearAdmin Flask">
+<meta property="og:description" content="Deploy a project which is small or flexible project, with PearAdmin Flask">
+<meta name="twitter:description" content="Deploy a project which is small or flexible project, with PearAdmin Flask">
 <meta property="og:locale" content="en-us">
 
   
@@ -302,37 +302,271 @@
           
           <div class="post-content markdown">
             <div class="main-content-wrap">
-              <p>Deploy a project of PearAdmin Flask</p>
+              <p>Deploy a project which is small or flexible project, with PearAdmin Flask</p>
 <h1 id="table-of-contents">Table of Contents</h1>
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#mysql">MySQL</a></li>
+    <li><a href="#system">SYSTEM</a></li>
+    <li><a href="#db">DB</a>
+      <ul>
+        <li><a href="#init-db">INIT DB</a></li>
+      </ul>
+    </li>
+    <li><a href="#tools">TOOLS</a>
+      <ul>
+        <li><a href="#宝塔">宝塔</a></li>
+      </ul>
+    </li>
+    <li><a href="#tinyproxy">TINYPROXY</a></li>
+    <li><a href="#lanproxy-or-frp">LANPROXY or Frp?</a>
+      <ul>
+        <li><a href="#server">SERVER</a></li>
+        <li><a href="#client">CLIENT</a></li>
+      </ul>
+    </li>
+    <li><a href="#redies">REDIES</a>
+      <ul>
+        <li><a href="#windows-env">WINDOWS ENV</a></li>
+        <li><a href="#linux-env">LINUX ENV</a></li>
+      </ul>
+    </li>
+    <li><a href="#operation-manage">OPERATION MANAGE</a>
+      <ul>
+        <li><a href="#全数据库备份">全数据库备份</a></li>
+      </ul>
+    </li>
+    <li><a href="#project-avatar">PROJECT AVATAR</a></li>
   </ul>
 </nav>
 
+<h2 id="system">SYSTEM</h2>
+<p>With Ubuntu Server 20.04 LTS as example</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>apt update
 </span></span><span style="display:flex;"><span>apt install git python3.8-dev mysql-server-8.0
-</span></span></code></pre></div><h2 id="mysql">MySQL</h2>
-<p>方法1： 用SET PASSWORD命令
-首先登录MySQL。
-格式：mysql&gt; set password for 用户名@localhost = password(‘新密码’);
-例子：mysql&gt; set password for root@localhost = password(‘123’);</p>
-<p>方法2：用mysqladmin
-格式：mysqladmin -u用户名 -p旧密码 password 新密码
-例子：mysqladmin -uroot -p123456 password 123</p>
-<p>show grants for &rsquo;test1&rsquo;@&rsquo;localhost;
-create user &rsquo;test1&rsquo;@&rsquo;localhost&rsquo; identified by &lsquo;密码&rsquo;;
-Mysql8.0默认采用caching-sha2-password加密，目前好多客户端不支持，可改为mysql_native_password;
-create user &rsquo;test&rsquo;@&rsquo;%&rsquo; identified with mysql_native_password BY &lsquo;密码&rsquo;;
-Alter user &rsquo;test1&rsquo;@&rsquo;localhost&rsquo; identified by &lsquo;新密码&rsquo;;</p>
-<p>flush privileges;</p>
-<p>grant all privileges on <em>.</em> to &rsquo;test1&rsquo;@&rsquo;localhost&rsquo; with grant option;
-flush privileges;
-show grants for &rsquo;test1&rsquo;@&rsquo;localhost;
-revoke all privileges on <em>.</em> from &rsquo;test1&rsquo;@&rsquo;localhost&rsquo;;
-drop user &rsquo;test1&rsquo;@&rsquo;localhost&rsquo;;</p>
-<p>sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf
-bind comment</p>
+</span></span></code></pre></div><h2 id="db">DB</h2>
+<p>With MySQL as example</p>
+<h3 id="init-db">INIT DB</h3>
+<p>Please refer to []this post](sql-mysql-init.md)</p>
+<h2 id="tools">TOOLS</h2>
+<h3 id="宝塔"><del>宝塔</del></h3>
+<ul>
+<li>
+<p><del>安装宝塔云</del></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>wget -O install.sh http://download.bt.cn/install/install-ubuntu_6.0.sh <span style="color:#f92672">&amp;&amp;</span> bash install.sh
+</span></span></code></pre></div></li>
+<li>
+<p><del>宝塔云, 软件商店极速安装MySQL服务</del></p>
+</li>
+<li>
+<p><del>宝塔云, 安全组中开放3306端口</del></p>
+</li>
+<li>
+<p><del>宝塔云, 数据库中添加数据库, 并设置外网可以访问</del></p>
+</li>
+<li>
+<p><del>添加私有桥接docker网络</del></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>apt install docker-compose
+</span></span><span style="display:flex;"><span>docker network ls
+</span></span><span style="display:flex;"><span>docker network create --driver bridge --subnet 172.18.0.0/16 --gateway 172.18.0.1 proxy-network
+</span></span><span style="display:flex;"><span>docker network inspect proxy-network
+</span></span><span style="display:flex;"><span>docker run -itd --name fuel_admin -p 25022:22 --network proxy-network ubuntu:20.04
+</span></span></code></pre></div></li>
+<li>
+<p>将服务器公钥添加到Gitee的部署公钥中</p>
+</li>
+<li>
+<p>配置nginx_reverse</p>
+</li>
+<li>
+<p>容器内部部署</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>apt install python3-venv iproute2 -y
+</span></span><span style="display:flex;"><span>git clone &lt;github or gitee projuect&gt;
+</span></span><span style="display:flex;"><span>cd &lt;project&gt;
+</span></span><span style="display:flex;"><span>python3 -m venv venv
+</span></span></code></pre></div></li>
+<li>
+<p>进入screen环境</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>screen -S run  <span style="color:#75715e"># 或screen -dr run</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># screen环境</span>
+</span></span><span style="display:flex;"><span>source venv/bin/activate
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## venv环境</span>
+</span></span><span style="display:flex;"><span>python -m pip install -r requirement/requirement-dev.txt
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#flask init  # 初始化数据库, 如果需要</span>
+</span></span><span style="display:flex;"><span>flask run
+</span></span></code></pre></div></li>
+</ul>
+<h2 id="tinyproxy">TINYPROXY</h2>
+<h2 id="lanproxy-or-frp">LANPROXY or Frp?</h2>
+<h3 id="server">SERVER</h3>
+<ul>
+<li>
+<p>Download lanproxy  server from the <a href="https://github.com/ffay/lanproxy/releases">github website</a>.</p>
+</li>
+<li>
+<p>开放端口</p>
+<ul>
+<li>8090: LanProxy的web配置端口</li>
+<li>4900: LanProxy对LanProxyClient的服务端口</li>
+<li>&lt;对外通信端口&gt;: LanProxy对外的服务端口</li>
+</ul>
+</li>
+<li>
+<p>Start</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>chmod <span style="color:#ae81ff">0755</span> <span style="color:#f92672">[</span>path_to_lanproxy<span style="color:#f92672">]</span>/bin/start.sh
+</span></span><span style="display:flex;"><span>./<span style="color:#f92672">[</span>path_to_lanproxy<span style="color:#f92672">]</span>/bin/start.sh
+</span></span></code></pre></div></li>
+</ul>
+<h3 id="client">CLIENT</h3>
+<p>下载<a href="https://github.com/ffay/lanproxy-go-client/releases">客户端</a>, 并使用screen保持会话</p>
+<ul>
+<li>
+<p>普通端口连接</p>
+<pre tabindex="0"><code># mac 64位
+nohup ./client_darwin_amd64 -s SERVER_IP -p SERVER_PORT -k CLIENT_KEY &amp;
+
+# linux 64位
+nohup ./client_linux_amd64 -s SERVER_IP -p SERVER_PORT -k CLIENT_KEY &amp;
+
+# windows 64 位
+./client_windows_amd64.exe -s SERVER_IP -p SERVER_PORT -k CLIENT_KEY
+</code></pre></li>
+<li>
+<p>SSL端口连接</p>
+<pre tabindex="0"><code># mac 64位
+nohup ./client_darwin_amd64 -s SERVER_IP -p SERVER_SSL_PORT -k CLIENT_KEY -ssl true &amp;
+
+# linux 64位
+nohup ./client_linux_amd64 -s SERVER_IP -p SERVER_SSL_PORT -k CLIENT_KEY -ssl true &amp;
+
+# windows 64 位
+./client_windows_amd64.exe -s SERVER_IP -p SERVER_SSL_PORT -k CLIENT_KEY -ssl true
+</code></pre></li>
+</ul>
+<h2 id="redies">REDIES</h2>
+<h3 id="windows-env">WINDOWS ENV</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span><span style="color:#66d9ef">cd</span> c:\program
+</span></span><span style="display:flex;"><span>redis-server redis.windows-service.conf
+</span></span><span style="display:flex;"><span># 重启Redis服务
+</span></span><span style="display:flex;"><span>redis-cli.exe
+</span></span><span style="display:flex;"><span>#config set requirepass CofH2020
+</span></span><span style="display:flex;"><span>auth CofH2020
+</span></span></code></pre></div><h3 id="linux-env">LINUX ENV</h3>
+<h2 id="operation-manage">OPERATION MANAGE</h2>
+<h3 id="全数据库备份">全数据库备份</h3>
+<ul>
+<li>
+<p>备份整个数据库</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e">#!/usr/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>number<span style="color:#f92672">=</span><span style="color:#ae81ff">365</span>  <span style="color:#75715e"># 保存备份个数，备份365天数据</span>
+</span></span><span style="display:flex;"><span>backup_dir<span style="color:#f92672">=</span>~/mysqlbackup  <span style="color:#75715e"># 备份保存路径</span>
+</span></span><span style="display:flex;"><span>dd<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>date +%Y-%m-%d_%H-%M-%S<span style="color:#e6db74">`</span>  <span style="color:#75715e"># 日期格式</span>
+</span></span><span style="display:flex;"><span>username<span style="color:#f92672">=</span>rd  <span style="color:#75715e"># 用户名</span>
+</span></span><span style="display:flex;"><span>password<span style="color:#f92672">=</span>RandD268  <span style="color:#75715e"># 密码</span>
+</span></span><span style="display:flex;"><span>database_name<span style="color:#f92672">=</span>fueldb  <span style="color:#75715e"># 将要备份的数据库</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 如果文件夹不存在则创建</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> ! -d $backup_dir <span style="color:#f92672">]</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    mkdir -p $backup_dir;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 备份</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Example: mysqldump -u root -p123456 users &gt; /root/mysqlbackup/users-$filename.sql</span>
+</span></span><span style="display:flex;"><span>mysqldump -u$username -p$password $database_name &gt; $backup_dir/$database_name-$dd.sql
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#找出需要删除的备份</span>
+</span></span><span style="display:flex;"><span>delfile<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>ls -l -crt $backup_dir/*.sql | awk <span style="color:#e6db74">&#39;{print $9 }&#39;</span> | head -1<span style="color:#e6db74">`</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#判断现在的备份数量是否大于$number</span>
+</span></span><span style="display:flex;"><span>count<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>ls -l -crt $backup_dir/*.sql | awk <span style="color:#e6db74">&#39;{print $9 }&#39;</span> | wc -l<span style="color:#e6db74">`</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> $count -gt $number <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">#写删除文件日志</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;Delete </span>$delfile<span style="color:#e6db74">&#34;</span> &gt;&gt; $backup_dir/log.txt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">#删除最早生成的备份，只保留number数量的备份</span>
+</span></span><span style="display:flex;"><span>    rm $delfile
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span></code></pre></div></li>
+<li>
+<p>备份导入</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>mysql -urd -pRandD268 fueldb &lt; fueldb-20220118_17:08:02.sql
+</span></span></code></pre></div></li>
+</ul>
+<h2 id="project-avatar">PROJECT AVATAR</h2>
+<ul>
+<li>
+<p>备份fuel_order表</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e">#!/usr/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>number<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>  <span style="color:#75715e"># 保存备份个数，阿凡达中转用, 只备份1天</span>
+</span></span><span style="display:flex;"><span>backup_dir<span style="color:#f92672">=</span>~/avatar_backup  <span style="color:#75715e"># 备份保存路径</span>
+</span></span><span style="display:flex;"><span>dd<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>date +%Y-%m-%d_%H-%M-%S<span style="color:#e6db74">`</span>  <span style="color:#75715e"># 日期格式</span>
+</span></span><span style="display:flex;"><span>username<span style="color:#f92672">=</span>rd  <span style="color:#75715e"># 用户名</span>
+</span></span><span style="display:flex;"><span>password<span style="color:#f92672">=</span>CofH2020  <span style="color:#75715e"># 密码</span>
+</span></span><span style="display:flex;"><span>database_name<span style="color:#f92672">=</span>fueldb  <span style="color:#75715e"># 将要备份的数据库</span>
+</span></span><span style="display:flex;"><span>table_name<span style="color:#f92672">=</span>fuel_order  <span style="color:#75715e"># 将要备份的表</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 如果文件夹不存在则创建</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> ! -d $backup_dir <span style="color:#f92672">]</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    mkdir -p $backup_dir;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 备份</span>
+</span></span><span style="display:flex;"><span>mysqldump -u$username -p$password $database_name $table_name &gt; $backup_dir/$database_name.$table_name-$dd.sql
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#找出需要删除的备份</span>
+</span></span><span style="display:flex;"><span>delfile<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>ls -l -crt $backup_dir/*.sql | awk <span style="color:#e6db74">&#39;{print $9 }&#39;</span> | head -1<span style="color:#e6db74">`</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#判断现在的备份数量是否大于$number</span>
+</span></span><span style="display:flex;"><span>count<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>ls -l -crt $backup_dir/*.sql | awk <span style="color:#e6db74">&#39;{print $9 }&#39;</span> | wc -l<span style="color:#e6db74">`</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> $count -gt $number <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">#写删除文件日志</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;Delete </span>$delfile<span style="color:#e6db74">&#34;</span> &gt;&gt; $backup_dir/log.txt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">#删除最早生成的备份，只保留number数量的备份</span>
+</span></span><span style="display:flex;"><span>    rm $delfile
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span></code></pre></div></li>
+<li>
+<p>Replicate a new DB with the data of table fuel_order</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>mysql -urd -pRandD268 fueldb2 &lt; fueldb.fuel_order-2022-01-18_17-08-02.sql
+</span></span></code></pre></div></li>
+<li>
+<p>每天4点查询前一天的数据并插入到tmp表格</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#f92672">#</span> <span style="color:#960050;background-color:#1e0010">确认使用的数据库</span>
+</span></span><span style="display:flex;"><span>use fadb;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> Replicate fuel_order <span style="color:#66d9ef">table</span> <span style="color:#66d9ef">for</span> the <span style="color:#66d9ef">first</span> time
+</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> fuel_order_tmp <span style="color:#66d9ef">LIKE</span> fuel_order;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> <span style="color:#960050;background-color:#1e0010">清空临时表</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">truncate</span> <span style="color:#66d9ef">table</span> fuel_order_tmp;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> <span style="color:#960050;background-color:#1e0010">获取前一天的数据</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">insert</span> <span style="color:#66d9ef">into</span> fuel_order_tmp <span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> fueldb.fuel_order <span style="color:#66d9ef">where</span> date(create_datetime) <span style="color:#f92672">=</span> date_sub(curdate(), INTERVAL <span style="color:#ae81ff">1</span> <span style="color:#66d9ef">day</span> );
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> <span style="color:#960050;background-color:#1e0010">筛选随机</span>X条数据(<span style="color:#960050;background-color:#1e0010">总金额的</span><span style="color:#ae81ff">10</span><span style="color:#f92672">%</span><span style="color:#960050;background-color:#1e0010">的条数</span>), <span style="color:#960050;background-color:#1e0010">并插入到</span>fuel_fake_order表中
+</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> <span style="color:#960050;background-color:#1e0010">暂且</span>(Feb <span style="color:#ae81ff">16</span>, <span style="color:#ae81ff">2022</span>)<span style="color:#960050;background-color:#1e0010">人工确认随机数</span>x
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">insert</span> <span style="color:#66d9ef">into</span> fuel_fake_order <span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> fuel_order_tmp <span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> rand() <span style="color:#66d9ef">LIMIT</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> <span style="color:#960050;background-color:#1e0010">删除</span>fuel_order中该随机数据
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">delete</span> <span style="color:#66d9ef">from</span> fuel_order_tmp <span style="color:#66d9ef">where</span> <span style="color:#66d9ef">select</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> <span style="color:#960050;background-color:#1e0010">更改临时表中剩余数据的时间</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">update</span> fuel_order_tmp <span style="color:#66d9ef">set</span> create_datetime <span style="color:#f92672">=</span> DATE_ADD(create_datetime, INTERVAL <span style="color:#ae81ff">1</span> <span style="color:#66d9ef">DAY</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">update</span> fuel_order_tmp <span style="color:#66d9ef">set</span> callback_datetime <span style="color:#f92672">=</span> DATE_ADD(callback_datetime, INTERVAL <span style="color:#ae81ff">1</span> <span style="color:#66d9ef">DAY</span>) <span style="color:#66d9ef">where</span> <span style="color:#66d9ef">not</span> <span style="color:#66d9ef">isnull</span>(callback_datetime);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> <span style="color:#960050;background-color:#1e0010">插入数据</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">insert</span> <span style="color:#66d9ef">into</span> fuel_order <span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> fuel_order_tmp;
+</span></span></code></pre></div></li>
+</ul>
               
 
 

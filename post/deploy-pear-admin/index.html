@@ -18,7 +18,7 @@
   "name":"Ivan Blog",
   "description":"\u003cp\u003eDeploy a project which is small or flexible project, with PearAdmin Flask\u003c\/p\u003e",
   "url":"https:\/\/ivanhan0511.github.io\/post\/deploy-pear-admin\/",
-  "keywords":"[deploy, flask, pear-admin, Ivan, Python, C\/C\u002b\u002b, Coffee, Bass, Bicycle, Badminton]"
+  "keywords":"[flask, pear-admin, deploy, Ivan, Python, C\/C\u002b\u002b, Coffee, Bass, Bicycle, Badminton]"
 }
 
 </script>
@@ -27,7 +27,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="generator" content="Hugo 0.99.1 with theme Tranquilpeak 0.5.3-BETA">
 <meta name="author" content="Ivan Han">
-<meta name="keywords" content="deploy, flask, pear-admin, Ivan, Python, C/C&#43;&#43;, Coffee, Bass, Bicycle, Badminton">
+<meta name="keywords" content="flask, pear-admin, deploy, Ivan, Python, C/C&#43;&#43;, Coffee, Bass, Bicycle, Badminton">
 <meta name="description" content="Deploy a project which is small or flexible project, with PearAdmin Flask">
 
 
@@ -61,6 +61,8 @@
       <meta property="article:tag" content="Flask">
     
       <meta property="article:tag" content="PearAdmin">
+    
+      <meta property="article:tag" content="Deploy">
     
   
 
@@ -358,16 +360,16 @@
 <h3 id="configuration">Configuration</h3>
 <ul>
 <li>
-<p>.flaskenv
+<p>.flaskenv<br>
 Checkout every line in this file</p>
 </li>
 <li>
-<p>gunicorn.conf.py
-Edit this line: <code>bind = '0.0.0.0:5001'</code></p>
+<p>gunicorn.conf.py</p>
+<p>Edit this line: <code>bind = '0.0.0.0:5001'</code></p>
 </li>
 <li>
-<p>start.sh
-Choose a pattern to run: <code>production</code>, <code>development</code>, <code>testing</code><br>
+<p>start.sh</p>
+<p>Choose a pattern to run: <code>production</code>, <code>development</code>, <code>testing</code><br>
 <code>exec gunicorn -c gunicorn.conf.py &quot;applications:create_app('production')&quot;</code></p>
 </li>
 </ul>
@@ -612,6 +614,8 @@ nohup ./client_linux_amd64 -s SERVER_IP -p SERVER_SSL_PORT -k CLIENT_KEY -ssl tr
   <a class="tag tag--primary tag--small" href="https://ivanhan0511.github.io/tags/flask/">Flask</a>
 
   <a class="tag tag--primary tag--small" href="https://ivanhan0511.github.io/tags/pearadmin/">PearAdmin</a>
+
+  <a class="tag tag--primary tag--small" href="https://ivanhan0511.github.io/tags/deploy/">Deploy</a>
 
                   </div>
                 

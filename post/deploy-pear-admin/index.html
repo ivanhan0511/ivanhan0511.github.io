@@ -309,25 +309,32 @@
     <li><a href="#system">SYSTEM</a></li>
     <li><a href="#db">DB</a>
       <ul>
-        <li><a href="#init-db">INIT DB</a></li>
+        <li><a href="#init-mysql">Init MySQL</a></li>
+      </ul>
+    </li>
+    <li><a href="#application">APPLICATION</a>
+      <ul>
+        <li><a href="#configuration">Configuration</a></li>
+        <li><a href="#init-db">Init DB</a></li>
+        <li><a href="#run">Run</a></li>
+      </ul>
+    </li>
+    <li><a href="#redies">REDIES</a>
+      <ul>
+        <li><a href="#windows-env">Windows Env</a></li>
+        <li><a href="#linux-env">Linux ENV</a></li>
       </ul>
     </li>
     <li><a href="#tools">TOOLS</a>
       <ul>
         <li><a href="#宝塔">宝塔</a></li>
-      </ul>
-    </li>
-    <li><a href="#tinyproxy">TINYPROXY</a></li>
-    <li><a href="#lanproxy-or-frp">LANPROXY or Frp?</a>
-      <ul>
-        <li><a href="#server">SERVER</a></li>
-        <li><a href="#client">CLIENT</a></li>
-      </ul>
-    </li>
-    <li><a href="#redies">REDIES</a>
-      <ul>
-        <li><a href="#windows-env">WINDOWS ENV</a></li>
-        <li><a href="#linux-env">LINUX ENV</a></li>
+        <li><a href="#tinyproxy">Tinyproxy</a></li>
+        <li><a href="#lanproxy-or-frp">Lanproxy or Frp?</a>
+          <ul>
+            <li><a href="#server">Server</a></li>
+            <li><a href="#client">Client</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
     <li><a href="#operation-manage">OPERATION MANAGE</a>
@@ -345,8 +352,39 @@
 </span></span><span style="display:flex;"><span>apt install git python3.8-dev mysql-server-8.0
 </span></span></code></pre></div><h2 id="db">DB</h2>
 <p>With MySQL as example</p>
-<h3 id="init-db">INIT DB</h3>
+<h3 id="init-mysql">Init MySQL</h3>
 <p>Please refer to []this post](sql-mysql-init.md)</p>
+<h2 id="application">APPLICATION</h2>
+<h3 id="configuration">Configuration</h3>
+<ul>
+<li>
+<p>.flaskenv
+Checkout every line in this file</p>
+</li>
+<li>
+<p>gunicorn.conf.py
+Edit this line: <code>bind = '0.0.0.0:5001'</code></p>
+</li>
+<li>
+<p>start.sh
+Choose a pattern to run: <code>production</code>, <code>development</code>, <code>testing</code><br>
+<code>exec gunicorn -c gunicorn.conf.py &quot;applications:create_app('production')&quot;</code></p>
+</li>
+</ul>
+<h3 id="init-db">Init DB</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>flask init
+</span></span></code></pre></div><h3 id="run">Run</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>chmod <span style="color:#ae81ff">0755</span> start.sh
+</span></span><span style="display:flex;"><span>./start.sh
+</span></span></code></pre></div><h2 id="redies">REDIES</h2>
+<h3 id="windows-env">Windows Env</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span><span style="color:#66d9ef">cd</span> c:\program
+</span></span><span style="display:flex;"><span>redis-server redis.windows-service.conf
+</span></span><span style="display:flex;"><span># 重启Redis服务
+</span></span><span style="display:flex;"><span>redis-cli.exe
+</span></span><span style="display:flex;"><span>#config set requirepass CofH2020
+</span></span><span style="display:flex;"><span>auth CofH2020
+</span></span></code></pre></div><h3 id="linux-env">Linux ENV</h3>
 <h2 id="tools">TOOLS</h2>
 <h3 id="宝塔"><del>宝塔</del></h3>
 <ul>
@@ -395,9 +433,9 @@
 </span></span><span style="display:flex;"><span>flask run
 </span></span></code></pre></div></li>
 </ul>
-<h2 id="tinyproxy">TINYPROXY</h2>
-<h2 id="lanproxy-or-frp">LANPROXY or Frp?</h2>
-<h3 id="server">SERVER</h3>
+<h3 id="tinyproxy">Tinyproxy</h3>
+<h3 id="lanproxy-or-frp">Lanproxy or Frp?</h3>
+<h4 id="server">Server</h4>
 <ul>
 <li>
 <p>Download lanproxy  server from the <a href="https://github.com/ffay/lanproxy/releases">github website</a>.</p>
@@ -416,7 +454,7 @@
 </span></span><span style="display:flex;"><span>./<span style="color:#f92672">[</span>path_to_lanproxy<span style="color:#f92672">]</span>/bin/start.sh
 </span></span></code></pre></div></li>
 </ul>
-<h3 id="client">CLIENT</h3>
+<h4 id="client">Client</h4>
 <p>下载<a href="https://github.com/ffay/lanproxy-go-client/releases">客户端</a>, 并使用screen保持会话</p>
 <ul>
 <li>
@@ -442,15 +480,6 @@ nohup ./client_linux_amd64 -s SERVER_IP -p SERVER_SSL_PORT -k CLIENT_KEY -ssl tr
 ./client_windows_amd64.exe -s SERVER_IP -p SERVER_SSL_PORT -k CLIENT_KEY -ssl true
 </code></pre></li>
 </ul>
-<h2 id="redies">REDIES</h2>
-<h3 id="windows-env">WINDOWS ENV</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span><span style="color:#66d9ef">cd</span> c:\program
-</span></span><span style="display:flex;"><span>redis-server redis.windows-service.conf
-</span></span><span style="display:flex;"><span># 重启Redis服务
-</span></span><span style="display:flex;"><span>redis-cli.exe
-</span></span><span style="display:flex;"><span>#config set requirepass CofH2020
-</span></span><span style="display:flex;"><span>auth CofH2020
-</span></span></code></pre></div><h3 id="linux-env">LINUX ENV</h3>
 <h2 id="operation-manage">OPERATION MANAGE</h2>
 <h3 id="全数据库备份">全数据库备份</h3>
 <ul>

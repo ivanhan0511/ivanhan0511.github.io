@@ -43,10 +43,10 @@
 <meta property="og:locale" content="en-us">
 
   
-    <meta property="article:published_time" content="2022-05-25T11:02:18">
+    <meta property="article:published_time" content="2022-08-10T18:32:18">
   
   
-    <meta property="article:modified_time" content="2022-05-25T11:02:18">
+    <meta property="article:modified_time" content="2022-08-10T18:32:18">
   
   
   
@@ -258,13 +258,13 @@
   
   <div class="postShorten-meta post-meta">
     
-      <time datetime="2022-05-25T11:02:18&#43;08:00">
+      <time datetime="2022-08-10T18:32:18&#43;08:00">
         
   
   
   
   
-    May 25, 2022
+    August 10, 2022
   
 
       </time>
@@ -295,6 +295,11 @@
     <li><a href="#crud-tips">CRUD TIPS</a>
       <ul>
         <li><a href="#multiple-order-by">Multiple Order by</a></li>
+        <li><a href="#improvement">Improvement</a>
+          <ul>
+            <li><a href="#relationship">Relationship</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
     <li><a href="#orm">ORM</a></li>
@@ -344,6 +349,117 @@ SQLAlchemy aims to accommodate both of these principles.</p>
   </table>
 </figure>
 
+<h3 id="improvement">Improvement</h3>
+<h4 id="relationship">Relationship</h4>
+<p>As example:
+
+
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+
+
+  
+    
+  
+  
+
+<figure class="codeblock codeblock--tabbed">
+  <figcaption>
+    
+      <span>lazy relationship</span>
+    
+    <ul class="tabs">
+      
+        <li class="tab active">model</li>
+      
+        <li class="tab ">app</li>
+      
+    </ul>
+  </figcaption>
+  <div class="tabs-content">
+    
+      
+      <figure class="highlight language-model model" style="display: block;">
+        <table>
+          <tbody>
+            <tr>
+              <td class="gutter">
+                <pre><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br></pre>
+              </td>
+              <td class="code">
+                <pre class="code-highlight language-model model"><code class="model">from datetime import datetime
+
+
+class Post(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(80), nullable=False)
+    body = db.Column(db.Text, nullable=False)
+    pub_date = db.Column(db.DateTime, nullable=False,
+        default=datetime.utcnow)
+
+    category_id = db.Column(db.Integer, db.ForeignKey(&#39;category.id&#39;),
+        nullable=False)
+    category = db.relationship(&#39;Category&#39;,
+        backref=db.backref(&#39;posts&#39;, lazy=True))
+
+    def __repr__(self):
+        return &#39;&lt;Post %r&gt;&#39; % self.title
+
+
+class Category(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(50), nullable=False)
+
+    def __repr__(self):
+        return &#39;&lt;Category %r&gt;&#39; % self.name</code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </figure>
+    
+      
+      <figure class="highlight language-app app" style="display: none;">
+        <table>
+          <tbody>
+            <tr>
+              <td class="gutter">
+                <pre><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br></pre>
+              </td>
+              <td class="code">
+                <pre class="code-highlight language-app app"><code class="app">&gt;&gt;&gt; py = Category(name=&#39;Python&#39;)
+&gt;&gt;&gt; Post(title=&#39;Hello Python!&#39;, body=&#39;Python is pretty cool&#39;, category=py)
+&gt;&gt;&gt; p = Post(title=&#39;Snakes&#39;, body=&#39;Ssssssss&#39;)
+&gt;&gt;&gt; py.posts.append(p)
+&gt;&gt;&gt; db.session.add(py)</code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </figure>
+    
+  </div>
+</figure>
+</p>
+<p>Let’s look at the posts. Accessing them will load them from the database since the relationship is lazy-loaded,
+but you will probably not notice the difference - loading a list is quite fast:</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>py.posts
+[&lt;Post &lsquo;Hello Python!&rsquo;&gt;, &lt;Post &lsquo;Snakes&rsquo;&gt;]</p>
+</blockquote>
+</blockquote>
+</blockquote>
 <h2 id="orm">ORM</h2>
               
 
@@ -373,7 +489,7 @@ SQLAlchemy aims to accommodate both of these principles.</p>
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/c-visual-studio/" data-tooltip="BASIC USAGE OF VISUAL STUDIO" aria-label="NEXT: BASIC USAGE OF VISUAL STUDIO">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/welcome/" data-tooltip="Welcome to Ivan&#39;s Blog" aria-label="NEXT: Welcome to Ivan&#39;s Blog">
           
               <i class="fa fa-angle-left"></i>
               <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -381,7 +497,7 @@ SQLAlchemy aims to accommodate both of these principles.</p>
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/sports-badminton/" data-tooltip="Sports Badminton" aria-label="PREVIOUS: Sports Badminton">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/spring-boot/" data-tooltip="SpringBoot" aria-label="PREVIOUS: SpringBoot">
           
               <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
               <i class="fa fa-angle-right"></i>
@@ -474,7 +590,7 @@ SQLAlchemy aims to accommodate both of these principles.</p>
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/c-visual-studio/" data-tooltip="BASIC USAGE OF VISUAL STUDIO" aria-label="NEXT: BASIC USAGE OF VISUAL STUDIO">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/welcome/" data-tooltip="Welcome to Ivan&#39;s Blog" aria-label="NEXT: Welcome to Ivan&#39;s Blog">
           
               <i class="fa fa-angle-left"></i>
               <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -482,7 +598,7 @@ SQLAlchemy aims to accommodate both of these principles.</p>
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/sports-badminton/" data-tooltip="Sports Badminton" aria-label="PREVIOUS: Sports Badminton">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/spring-boot/" data-tooltip="SpringBoot" aria-label="PREVIOUS: SpringBoot">
           
               <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
               <i class="fa fa-angle-right"></i>

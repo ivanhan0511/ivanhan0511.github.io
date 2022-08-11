@@ -33,8 +33,8 @@
 
 <meta property="og:description" content="I need SQLAlchemy, so far&hellip;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Sql Sqlalchemy">
-<meta name="twitter:title" content="Sql Sqlalchemy">
+<meta property="og:title" content="SQLAlchemy">
+<meta name="twitter:title" content="SQLAlchemy">
 <meta property="og:url" content="https://ivanhan0511.github.io/post/sql-sqlalchemy/">
 <meta property="twitter:url" content="https://ivanhan0511.github.io/post/sql-sqlalchemy/">
 <meta property="og:site_name" content="Ivan Blog">
@@ -85,7 +85,7 @@
 
 
 
-    <title>Sql Sqlalchemy</title>
+    <title>SQLAlchemy</title>
 
     <link rel="icon" href="https://ivanhan0511.github.io/favicon.png">
     
@@ -252,7 +252,7 @@
             <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title">
-      Sql Sqlalchemy
+      SQLAlchemy
     </h1>
   
   
@@ -452,14 +452,36 @@ class Category(db.Model):
 </p>
 <p>Let’s look at the posts. Accessing them will load them from the database since the relationship is lazy-loaded,
 but you will probably not notice the difference - loading a list is quite fast:</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>py.posts
-[&lt;Post &lsquo;Hello Python!&rsquo;&gt;, &lt;Post &lsquo;Snakes&rsquo;&gt;]</p>
-</blockquote>
-</blockquote>
-</blockquote>
+
+  
+    
+  
+  
+  
+  
+
+
+<figure class="highlight  language-">
+  <figcaption>
+    
+      <span>shell</span>
+    
+  </figcaption>
+  <table>
+    <tbody>
+      <tr>
+        <td class="gutter">
+          <pre><span class="line">1</span><br><span class="line">2</span><br></pre>
+        </td>
+        <td class="code">
+          <pre class="code-highlight language- "><code class="">&gt;&gt;&gt; py.posts
+[&lt;Post &#39;Hello Python!&#39;&gt;, &lt;Post &#39;Snakes&#39;&gt;]</code></pre>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+
 <h2 id="orm">ORM</h2>
               
 

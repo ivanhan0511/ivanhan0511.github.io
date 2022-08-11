@@ -298,6 +298,11 @@
     <li><a href="#call">CALL</a></li>
     <li><a href="#explain-plan">EXPLAIN PLAN</a></li>
     <li><a href="#lock-table">LOCK TABLE</a></li>
+    <li><a href="#examples">EXAMPLES</a>
+      <ul>
+        <li><a href="#kill">Kill</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 
@@ -435,6 +440,48 @@
 <h2 id="call">CALL</h2>
 <h2 id="explain-plan">EXPLAIN PLAN</h2>
 <h2 id="lock-table">LOCK TABLE</h2>
+<h2 id="examples">EXAMPLES</h2>
+<h3 id="kill">Kill</h3>
+<p>数据库锁死的问题解决
+
+  
+    
+  
+  
+    
+  
+  
+  
+
+
+<figure class="highlight sql language-sql">
+  <figcaption>
+    
+      <span>Kill lock</span>
+    
+  </figcaption>
+  <table>
+    <tbody>
+      <tr>
+        <td class="gutter">
+          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre>
+        </td>
+        <td class="code">
+          <pre class="code-highlight language-sql sql"><code class="sql">select *
+from information_schema.PROCESSLIST;
+
+select *
+from information_schema.INNODB_TRX;
+
+select A.trx_started, B.*
+from information_schema.INNODB_TRX A
+left join (select * from information_schema.PROCESSLIST) B on A.trx_mysql_thread_id = B.ID;</code></pre>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+</p>
               
 
 

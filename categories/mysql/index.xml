@@ -9,11 +9,38 @@
     <lastBuildDate>Thu, 16 Jun 2022 14:42:36 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/categories/mysql/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>MySQL DDL Operations</title>
+      <link>https://ivanhan0511.github.io/post/sql-mysql-dcl/</link>
+      <pubDate>Thu, 16 Jun 2022 14:42:36 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/post/sql-mysql-dcl/</guid>
+      <description>&lt;p&gt;DCL: Data Control Language&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>MySQL DDL Operations</title>
       <link>https://ivanhan0511.github.io/post/sql-mysql-ddl/</link>
       <pubDate>Thu, 16 Jun 2022 14:42:36 +0800</pubDate>
       
       <guid>https://ivanhan0511.github.io/post/sql-mysql-ddl/</guid>
-      <description>&lt;p&gt;Some basic operation of MySQL&lt;/p&gt;</description>
+      <description>&lt;p&gt;DDL: Data Definition Language&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>MySQL DDL Operations</title>
+      <link>https://ivanhan0511.github.io/post/sql-mysql-dml/</link>
+      <pubDate>Thu, 16 Jun 2022 14:42:36 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/post/sql-mysql-dml/</guid>
+      <description>&lt;p&gt;DML: Data Manipulation Language&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>MySQL DDL Operations</title>
+      <link>https://ivanhan0511.github.io/post/sql-mysql-tcl/</link>
+      <pubDate>Thu, 16 Jun 2022 14:42:36 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/post/sql-mysql-tcl/</guid>
+      <description>&lt;p&gt;TCL: Transaction Control Language&lt;/p&gt;</description>
     </item>
     
     <item>

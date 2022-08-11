@@ -16,9 +16,9 @@
     
   },
   "name":"Ivan Blog",
-  "description":"Ivan Blog",
-  "url":"https:\/\/ivanhan0511.github.io\/categories\/sql\/",
-  "keywords":"[, Ivan, Python, C\/C\u002b\u002b, Coffee, Bass, Bicycle, Badminton]"
+  "description":"\u003cp\u003eDCL: Data Control Language\u003c\/p\u003e",
+  "url":"https:\/\/ivanhan0511.github.io\/post\/sql-mysql-dcl\/",
+  "keywords":"[grant, revoke, deny, Ivan, Python, C\/C\u002b\u002b, Coffee, Bass, Bicycle, Badminton]"
 }
 
 </script>
@@ -27,20 +27,42 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="generator" content="Hugo 0.99.1 with theme Tranquilpeak 0.5.3-BETA">
 <meta name="author" content="Ivan Han">
-<meta name="keywords" content=", Ivan, Python, C/C&#43;&#43;, Coffee, Bass, Bicycle, Badminton">
-<meta name="description" content="Ivan Blog">
+<meta name="keywords" content="grant, revoke, deny, Ivan, Python, C/C&#43;&#43;, Coffee, Bass, Bicycle, Badminton">
+<meta name="description" content="DCL: Data Control Language">
 
 
-<meta property="og:description" content="Ivan Blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="SQL">
-<meta name="twitter:title" content="SQL">
-<meta property="og:url" content="https://ivanhan0511.github.io/categories/sql/">
-<meta property="twitter:url" content="https://ivanhan0511.github.io/categories/sql/">
+<meta property="og:description" content="DCL: Data Control Language">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL DDL Operations">
+<meta name="twitter:title" content="MySQL DDL Operations">
+<meta property="og:url" content="https://ivanhan0511.github.io/post/sql-mysql-dcl/">
+<meta property="twitter:url" content="https://ivanhan0511.github.io/post/sql-mysql-dcl/">
 <meta property="og:site_name" content="Ivan Blog">
-<meta property="og:description" content="Ivan Blog">
-<meta name="twitter:description" content="Ivan Blog">
+<meta property="og:description" content="DCL: Data Control Language">
+<meta name="twitter:description" content="DCL: Data Control Language">
 <meta property="og:locale" content="en-us">
+
+  
+    <meta property="article:published_time" content="2022-06-16T14:42:36">
+  
+  
+    <meta property="article:modified_time" content="2022-06-16T14:42:36">
+  
+  
+  
+    
+      <meta property="article:section" content="SQL">
+    
+      <meta property="article:section" content="MySQL">
+    
+  
+  
+    
+      <meta property="article:tag" content="MySQL">
+    
+      <meta property="article:tag" content="DCL">
+    
+  
 
 
 <meta name="twitter:card" content="summary">
@@ -63,16 +85,14 @@
 
 
 
-    <title>SQL</title>
+    <title>MySQL DDL Operations</title>
 
     <link rel="icon" href="https://ivanhan0511.github.io/favicon.png">
     
-      <link rel="alternate" type="application/rss+xml" title="RSS" href="https://ivanhan0511.github.io/categories/sql/index.xml">
-    
 
     
 
-    <link rel="canonical" href="https://ivanhan0511.github.io/categories/sql/">
+    <link rel="canonical" href="https://ivanhan0511.github.io/post/sql-mysql-dcl/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -92,7 +112,7 @@
 
   <body>
     <div id="blog">
-      <header id="header" data-behavior="1">
+      <header id="header" data-behavior="4">
   <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
   <div class="header-title">
     <a class="header-title-link" href="https://ivanhan0511.github.io/" aria-label="Go to homepage">Ivan Blog</a>
@@ -112,7 +132,7 @@
   
 </header>
 
-      <nav id="sidebar" data-behavior="1">
+      <nav id="sidebar" data-behavior="4">
   <div class="sidebar-container">
     
       <div class="sidebar-profile">
@@ -221,108 +241,21 @@
 </nav>
 
       
-        
 
-      
-      <div id="main" data-behavior="1"
+      <div id="main" data-behavior="4"
         class="
                hasCoverMetaIn
                ">
-        
-          <section class="postShorten-group main-content-wrap">
-            
-            
-              
+        <article class="post" id="top">
+          
+          
+            <div class="post-header main-content-wrap text-left">
   
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-left">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title">
-      
-        <a class="link-unstyled" href="https://ivanhan0511.github.io/post/sql-sqlalchemy/" aria-label="Open the post: Sql Sqlalchemy">
-      
-          Sql Sqlalchemy
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time datetime="2022-08-10T18:32:18&#43;08:00">
-        
+    <h1 class="post-title">
+      MySQL DDL Operations
+    </h1>
   
   
-  
-  
-    August 10, 2022
-  
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://ivanhan0511.github.io/categories/sql">SQL</a>, 
-    
-      <a class="category-link" href="https://ivanhan0511.github.io/categories/sqlalchemy">SQLAlchemy</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt">
-      
-        <p>I need SQLAlchemy, so far&hellip;</p>
-      
-      <p>
-        
-          <a href="https://ivanhan0511.github.io/post/sql-sqlalchemy/" class="postShorten-excerpt_link link" aria-label="Open the post: Sql Sqlalchemy">Continue reading</a>
-        
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-            
-              
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-left">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title">
-      
-        <a class="link-unstyled" href="https://ivanhan0511.github.io/post/sql-mysql-dcl/" aria-label="Open the post: MySQL DDL Operations">
-      
-          MySQL DDL Operations
-        </a>
-      </h1>
-      
   <div class="postShorten-meta post-meta">
     
       <time datetime="2022-06-16T14:42:36&#43;08:00">
@@ -349,362 +282,142 @@
 
   </div>
 
-    </div>
-    <div class="postShorten-excerpt">
-      
-        <p>DCL: Data Control Language</p>
-      
-      <p>
-        
-          <a href="https://ivanhan0511.github.io/post/sql-mysql-dcl/" class="postShorten-excerpt_link link" aria-label="Open the post: MySQL DDL Operations">Continue reading</a>
-        
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
+</div>
+          
+          <div class="post-content markdown">
+            <div class="main-content-wrap">
+              <p>DCL: Data Control Language</p>
+<h1 id="table-of-contents">Table of Contents</h1>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#mysql-dcl">MySQL DCL</a>
+      <ul>
+        <li><a href="#grant">GRANT</a></li>
+        <li><a href="#revoke">REVOKE</a></li>
+        <li><a href="#deny">DENY</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
 
+<h2 id="mysql-dcl">MySQL DCL</h2>
+<h3 id="grant">GRANT</h3>
+<h3 id="revoke">REVOKE</h3>
+<h3 id="deny">DENY</h3>
+              
+
+
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
             
               
-  
-    
-      
-        
-      
-    
-  
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">TAGGED IN</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://ivanhan0511.github.io/tags/mysql/">MySQL</a>
 
+  <a class="tag tag--primary tag--small" href="https://ivanhan0511.github.io/tags/dcl/">DCL</a>
 
-  
-
-<article class="postShorten postShorten--thumbnailimg-left">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title">
-      
-        <a class="link-unstyled" href="https://ivanhan0511.github.io/post/sql-mysql-ddl/" aria-label="Open the post: MySQL DDL Operations">
-      
-          MySQL DDL Operations
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time datetime="2022-06-16T14:42:36&#43;08:00">
-        
-  
-  
-  
-  
-    June 16, 2022
-  
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://ivanhan0511.github.io/categories/sql">SQL</a>, 
-    
-      <a class="category-link" href="https://ivanhan0511.github.io/categories/mysql">MySQL</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt">
-      
-        <p>DDL: Data Definition Language</p>
-      
-      <p>
-        
-          <a href="https://ivanhan0511.github.io/post/sql-mysql-ddl/" class="postShorten-excerpt_link link" aria-label="Open the post: MySQL DDL Operations">Continue reading</a>
-        
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-            
+                  </div>
+                
               
+            
+            
+<div class="post-actions-wrap">
+  <nav >
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/ecnomics-double-entry-bookkeeping/" data-tooltip="Double-entry Bookkeeping" aria-label="NEXT: Double-entry Bookkeeping">
+          
+              <i class="fa fa-angle-left"></i>
+              <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+            </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/sql-mysql-ddl/" data-tooltip="MySQL DDL Operations" aria-label="PREVIOUS: MySQL DDL Operations">
+          
+              <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
+        </li>
+      
+    </ul>
+  </nav>
+<ul class="post-actions post-action-share" >
   
+    <li class="post-action hide-lg hide-md hide-sm">
+      <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </a>
+    </li>
     
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-left">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title">
-      
-        <a class="link-unstyled" href="https://ivanhan0511.github.io/post/sql-mysql-dml/" aria-label="Open the post: MySQL DDL Operations">
-      
-          MySQL DDL Operations
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://ivanhan0511.github.io/post/sql-mysql-dcl/" title="Share on Facebook" aria-label="Share on Facebook">
+          <i class="fab fa-facebook-square" aria-hidden="true"></i>
         </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
+      </li>
     
-      <time datetime="2022-06-16T14:42:36&#43;08:00">
-        
-  
-  
-  
-  
-    June 16, 2022
-  
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://ivanhan0511.github.io/categories/sql">SQL</a>, 
-    
-      <a class="category-link" href="https://ivanhan0511.github.io/categories/mysql">MySQL</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt">
-      
-        <p>DML: Data Manipulation Language</p>
-      
-      <p>
-        
-          <a href="https://ivanhan0511.github.io/post/sql-mysql-dml/" class="postShorten-excerpt_link link" aria-label="Open the post: MySQL DDL Operations">Continue reading</a>
-        
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-            
-              
-  
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-left">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title">
-      
-        <a class="link-unstyled" href="https://ivanhan0511.github.io/post/sql-mysql-tcl/" aria-label="Open the post: MySQL DDL Operations">
-      
-          MySQL DDL Operations
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://ivanhan0511.github.io/post/sql-mysql-dcl/" title="Share on Twitter" aria-label="Share on Twitter">
+          <i class="fab fa-twitter" aria-hidden="true"></i>
         </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
+      </li>
     
-      <time datetime="2022-06-16T14:42:36&#43;08:00">
-        
   
   
+    <li class="post-action">
+      <a class="post-action-btn btn btn--default" href="#disqus_thread" aria-label="Leave a comment">
+        <i class="far fa-comment"></i>
+      </a>
+    </li>
   
-  
-    June 16, 2022
-  
+  <li class="post-action">
+    
+      <a class="post-action-btn btn btn--default" href="#top" aria-label="Back to top">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    
+    </a>
+  </li>
+</ul>
+</div>
 
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://ivanhan0511.github.io/categories/sql">SQL</a>, 
-    
-      <a class="category-link" href="https://ivanhan0511.github.io/categories/mysql">MySQL</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt">
-      
-        <p>TCL: Transaction Control Language</p>
-      
-      <p>
-        
-          <a href="https://ivanhan0511.github.io/post/sql-mysql-tcl/" class="postShorten-excerpt_link link" aria-label="Open the post: MySQL DDL Operations">Continue reading</a>
-        
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
 
             
-              
   
-    
-      
-        
-      
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-left">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title">
-      
-        <a class="link-unstyled" href="https://ivanhan0511.github.io/post/sql-mysql-view/" aria-label="Open the post: MySQL View">
-      
-          MySQL View
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time datetime="2022-05-25T15:48:48&#43;08:00">
-        
-  
-  
-  
-  
-    May 25, 2022
-  
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://ivanhan0511.github.io/categories/sql">SQL</a>, 
-    
-      <a class="category-link" href="https://ivanhan0511.github.io/categories/mysql">MySQL</a>
-    
-  
-
-  </div>
-
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
     </div>
-    <div class="postShorten-excerpt">
-      
-        <p>Create a SQLView to make query fast</p>
-      
-      <p>
+    <script type="text/javascript">
+      var disqus_config = function() {
+        this.page.url = 'https:\/\/ivanhan0511.github.io\/post\/sql-mysql-dcl\/';
         
-          <a href="https://ivanhan0511.github.io/post/sql-mysql-view/" class="postShorten-excerpt_link link" aria-label="Open the post: MySQL View">Continue reading</a>
+          this.page.identifier = '\/post\/sql-mysql-dcl\/'
+        
+      };
+      (function() {
         
         
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-            
-              
-  
-    
-      
-        
-      
-    
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+          document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+          return;
+        }
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = 'ivan-blog-disqus';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
   
 
 
-  
-
-<article class="postShorten postShorten--thumbnailimg-left">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title">
-      
-        <a class="link-unstyled" href="https://ivanhan0511.github.io/post/sql-mysql-init/" aria-label="Open the post: MySQL8.0 Init Operations">
-      
-          MySQL8.0 Init Operations
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time datetime="2022-05-24T02:58:26&#43;08:00">
-        
-  
-  
-  
-  
-    May 24, 2022
-  
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://ivanhan0511.github.io/categories/sql">SQL</a>, 
-    
-      <a class="category-link" href="https://ivanhan0511.github.io/categories/mysql">MySQL</a>
-    
-  
-
-  </div>
-
-    </div>
-    <div class="postShorten-excerpt">
-      
-        <p>Init operations of MySQL 8.0</p>
-      
-      <p>
-        
-          <a href="https://ivanhan0511.github.io/post/sql-mysql-init/" class="postShorten-excerpt_link link" aria-label="Open the post: MySQL8.0 Init Operations">Continue reading</a>
-        
-        
-      </p>
-    </div>
-  </div>
-  
-</article>
-
-            
-            
-
-          </section>
-        
+          </div>
+        </article>
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
     &copy; 2022 <a href="https://github.com/ivanhan0511">Ivan Han</a>. All Rights Reserved
@@ -712,6 +425,93 @@
 </footer>
 
       </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+        
+<div class="post-actions-wrap">
+  <nav >
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/ecnomics-double-entry-bookkeeping/" data-tooltip="Double-entry Bookkeeping" aria-label="NEXT: Double-entry Bookkeeping">
+          
+              <i class="fa fa-angle-left"></i>
+              <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+            </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/sql-mysql-ddl/" data-tooltip="MySQL DDL Operations" aria-label="PREVIOUS: MySQL DDL Operations">
+          
+              <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
+        </li>
+      
+    </ul>
+  </nav>
+<ul class="post-actions post-action-share" >
+  
+    <li class="post-action hide-lg hide-md hide-sm">
+      <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </a>
+    </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://ivanhan0511.github.io/post/sql-mysql-dcl/" title="Share on Facebook" aria-label="Share on Facebook">
+          <i class="fab fa-facebook-square" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://ivanhan0511.github.io/post/sql-mysql-dcl/" title="Share on Twitter" aria-label="Share on Twitter">
+          <i class="fab fa-twitter" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+  
+  
+    <li class="post-action">
+      <a class="post-action-btn btn btn--default" href="#disqus_thread" aria-label="Leave a comment">
+        <i class="far fa-comment"></i>
+      </a>
+    </li>
+  
+  <li class="post-action">
+    
+      <a class="post-action-btn btn btn--default" href="#top" aria-label="Back to top">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    
+    </a>
+  </li>
+</ul>
+</div>
+
+
+      </div>
+      
+<div id="share-options-bar" class="share-options-bar" data-behavior="4">
+  <i id="btn-close-shareoptions" class="fa fa-times"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fivanhan0511.github.io%2Fpost%2Fsql-mysql-dcl%2F" aria-label="Share on Facebook">
+          <i class="fab fa-facebook-square" aria-hidden="true"></i><span>Share on Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fivanhan0511.github.io%2Fpost%2Fsql-mysql-dcl%2F" aria-label="Share on Twitter">
+          <i class="fab fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+
+
     </div>
     
     <div id="about">

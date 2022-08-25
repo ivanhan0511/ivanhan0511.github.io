@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <script type="application/ld+json">
+
+{  
+  "@context":"http://schema.org",
+  "@type":"Website",
+  "@id":"https:\/\/ivanhan0511.github.io\/",
+  "author": {
+    "@type": "Person",
+    "name": "Ivan Han",
+    
+    "image": "https://www.gravatar.com/avatar/0cac315e34e792213d5fa694dc39777b"
+    
+  },
+  "name":"Ivan Blog",
+  "description":"\u003cp\u003eDeploy a project which is small or flexible project, with PearAdmin Flask\u003c\/p\u003e",
+  "url":"https:\/\/ivanhan0511.github.io\/post\/python-flask-deploy\/",
+  "keywords":"[flask, pear-admin, deploy, Ivan, Python, C\/C\u002b\u002b, Coffee, Bass, Bicycle, Badminton]"
+}
+
+</script>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.99.1 with theme Tranquilpeak 0.5.3-BETA">
+<meta name="author" content="Ivan Han">
+<meta name="keywords" content="flask, pear-admin, deploy, Ivan, Python, C/C&#43;&#43;, Coffee, Bass, Bicycle, Badminton">
+<meta name="description" content="Deploy a project which is small or flexible project, with PearAdmin Flask">
+
+
+<meta property="og:description" content="Deploy a project which is small or flexible project, with PearAdmin Flask">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Deploy Pear Admin">
+<meta name="twitter:title" content="Deploy Pear Admin">
+<meta property="og:url" content="https://ivanhan0511.github.io/post/python-flask-deploy/">
+<meta property="twitter:url" content="https://ivanhan0511.github.io/post/python-flask-deploy/">
+<meta property="og:site_name" content="Ivan Blog">
+<meta property="og:description" content="Deploy a project which is small or flexible project, with PearAdmin Flask">
+<meta name="twitter:description" content="Deploy a project which is small or flexible project, with PearAdmin Flask">
+<meta property="og:locale" content="en-us">
+
+  
+    <meta property="article:published_time" content="2022-05-25T15:39:32">
+  
+  
+    <meta property="article:modified_time" content="2022-05-25T15:39:32">
+  
+  
+  
+    
+      <meta property="article:section" content="Deploy">
+    
+      <meta property="article:section" content="Flask">
+    
+  
+  
+    
+      <meta property="article:tag" content="Flask">
+    
+      <meta property="article:tag" content="PearAdmin">
+    
+      <meta property="article:tag" content="Deploy">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+  <meta name="twitter:site" content="@ivanhan0511">
+
+
+  <meta name="twitter:creator" content="@ivanhan0511">
+
+
+
+
+
+
+  <meta property="og:image" content="https://www.gravatar.com/avatar/0cac315e34e792213d5fa694dc39777b?s=640">
+  <meta property="twitter:image" content="https://www.gravatar.com/avatar/0cac315e34e792213d5fa694dc39777b?s=640">
+
+
+
+
+  <meta property="og:image" content="https://ivanhan0511.github.io/image-2.png">
+  <meta property="twitter:image" content="https://ivanhan0511.github.io/image-2.png">
+
+
+  <meta property="og:image" content="https://ivanhan0511.github.io/images/E.jpg">
+  <meta property="twitter:image" content="https://ivanhan0511.github.io/images/E.jpg">
+
+
+    <title>Deploy Pear Admin</title>
+
+    <link rel="icon" href="https://ivanhan0511.github.io/favicon.png">
+    
+
+    
+
+    <link rel="canonical" href="https://ivanhan0511.github.io/post/python-flask-deploy/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha512-H9jrZiiopUdsLpg94A333EfumgUBpO9MdbxStdeITo+KEIMaNfHNvwyjjDJb+ERPaRS6DpyRlKbvPUasNItRyw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    
+    
+    <link rel="stylesheet" href="https://ivanhan0511.github.io/css/style-h6ccsoet3mzkbb0wngshlfbaweimexgqcxj0h5hu4h82olsdzz6wmqdkajm.min.css" />
+    
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="4">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://ivanhan0511.github.io/" aria-label="Go to homepage">Ivan Blog</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://ivanhan0511.github.io/#about" aria-label="Open the link: /#about">
+    
+    
+    
+      
+        <img class="header-picture" src="https://www.gravatar.com/avatar/0cac315e34e792213d5fa694dc39777b?s=90" alt="Author&#39;s picture" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="4">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://ivanhan0511.github.io/#about" aria-label="Read more about the author">
+          <img class="sidebar-profile-picture" src="https://www.gravatar.com/avatar/0cac315e34e792213d5fa694dc39777b?s=110" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">Ivan Han</h4>
+        
+          <h5 class="sidebar-profile-bio">I need <strong>slow down</strong></h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://ivanhan0511.github.io/" title="Home">
+    
+      <i class="sidebar-button-icon fas fa-lg fa-home" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://ivanhan0511.github.io/categories" title="Categories">
+    
+      <i class="sidebar-button-icon fas fa-lg fa-bookmark" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">Categories</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://ivanhan0511.github.io/tags" title="Tags">
+    
+      <i class="sidebar-button-icon fas fa-lg fa-tags" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">Tags</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://ivanhan0511.github.io/archives" title="Archives">
+    
+      <i class="sidebar-button-icon fas fa-lg fa-archive" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">Archives</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://ivanhan0511.github.io/#about" title="About">
+    
+      <i class="sidebar-button-icon fas fa-lg fa-question" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">About</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/ivanhan0511" target="_blank" rel="noopener" title="GitHub">
+    
+      <i class="sidebar-button-icon fab fa-lg fa-github" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://stackoverflow.com/users/14423790/ivan-han" target="_blank" rel="noopener" title="Stack Overflow">
+    
+      <i class="sidebar-button-icon fab fa-lg fa-stack-overflow" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">Stack Overflow</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://ivanhan0511.github.io/index.xml" title="RSS">
+    
+      <i class="sidebar-button-icon fas fa-lg fa-rss" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+  <div class="post-header-cover
+              text-center
+              post-header-cover--full"
+       style="background-image:url('/image-2.png')"
+       data-behavior="4">
+    
+  </div>
+
+
+      <div id="main" data-behavior="4"
+        class="hasCover
+               hasCoverMetaOut
+               hasCoverCaption">
+        <article class="post" id="top">
+          
+            <span class="post-header-cover-caption caption">A beautiful image</span>
+          
+          
+            <div class="post-header main-content-wrap text-center">
+  
+    <h1 class="post-title">
+      Deploy Pear Admin
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time datetime="2022-05-25T15:39:32&#43;08:00">
+        
+  
+  
+  
+  
+    May 25, 2022
+  
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://ivanhan0511.github.io/categories/deploy">Deploy</a>, 
+    
+      <a class="category-link" href="https://ivanhan0511.github.io/categories/flask">Flask</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown">
+            <div class="main-content-wrap">
+              <p>Deploy a project which is small or flexible project, with PearAdmin Flask</p>
+<h1 id="table-of-contents">Table of Contents</h1>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#cloud-server">CLOUD SERVER</a>
+      <ul>
+        <li><a href="#system">SYSTEM</a></li>
+        <li><a href="#domain">Domain</a></li>
+      </ul>
+    </li>
+    <li><a href="#weixin">WEIXIN</a></li>
+    <li><a href="#db">DB</a>
+      <ul>
+        <li><a href="#init-mysql">Init MySQL</a></li>
+      </ul>
+    </li>
+    <li><a href="#tools">TOOLS</a>
+      <ul>
+        <li><a href="#宝塔">宝塔</a></li>
+        <li><a href="#tinyproxy">Tinyproxy</a></li>
+        <li><a href="#lanproxy-or-frp">Lanproxy or Frp?</a>
+          <ul>
+            <li><a href="#server">Server</a></li>
+            <li><a href="#client">Client</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#application">APPLICATION</a>
+      <ul>
+        <li><a href="#download-wechat-cert">Download WeChat Cert</a></li>
+        <li><a href="#configuration">Configuration</a></li>
+        <li><a href="#init-db">Init DB</a></li>
+        <li><a href="#run">Run</a></li>
+      </ul>
+    </li>
+    <li><a href="#redies">REDIES</a>
+      <ul>
+        <li><a href="#windows-env">Windows Env</a></li>
+        <li><a href="#linux-env">Linux ENV</a></li>
+      </ul>
+    </li>
+    <li><a href="#operation-manage">OPERATION MANAGE</a>
+      <ul>
+        <li><a href="#全数据库备份">全数据库备份</a></li>
+      </ul>
+    </li>
+    <li><a href="#project-avatar">PROJECT AVATAR</a></li>
+  </ul>
+</nav>
+
+<h2 id="cloud-server">CLOUD SERVER</h2>
+<h3 id="system">SYSTEM</h3>
+<p>With Ubuntu Server 20.04 LTS as example</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>apt update
+</span></span><span style="display:flex;"><span>apt install git python3.8-dev mysql-server-8.0
+</span></span></code></pre></div><h3 id="domain">Domain</h3>
+<p>Create a new domain,</p>
+<h2 id="weixin">WEIXIN</h2>
+<p>Log into <a href="https://mp.weixin.qq.com">微信开发平台</a>, Configure the new domain
+into R&amp;D settings</p>
+<h2 id="db">DB</h2>
+<p>With MySQL as example</p>
+<h3 id="init-mysql">Init MySQL</h3>
+<p>Please refer to <a href="sql-mysql-init.md">this post</a></p>
+<h2 id="tools">TOOLS</h2>
+<h3 id="宝塔"><del>宝塔</del></h3>
+<ul>
+<li>
+<p><del>安装宝塔云</del></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>wget -O install.sh http://download.bt.cn/install/install-ubuntu_6.0.sh <span style="color:#f92672">&amp;&amp;</span> bash install.sh
+</span></span></code></pre></div></li>
+<li>
+<p><del>宝塔云, 软件商店极速安装MySQL服务</del></p>
+</li>
+<li>
+<p><del>宝塔云, 安全组中开放3306端口</del></p>
+</li>
+<li>
+<p><del>宝塔云, 数据库中添加数据库, 并设置外网可以访问</del></p>
+</li>
+<li>
+<p><del>添加私有桥接docker网络</del></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>apt install docker-compose
+</span></span><span style="display:flex;"><span>docker network ls
+</span></span><span style="display:flex;"><span>docker network create --driver bridge --subnet 172.18.0.0/16 --gateway 172.18.0.1 proxy-network
+</span></span><span style="display:flex;"><span>docker network inspect proxy-network
+</span></span><span style="display:flex;"><span>docker run -itd --name fuel_admin -p 25022:22 --network proxy-network ubuntu:20.04
+</span></span></code></pre></div></li>
+<li>
+<p>将服务器公钥添加到Gitee的部署公钥中</p>
+</li>
+<li>
+<p>配置nginx_reverse</p>
+</li>
+<li>
+<p>容器内部部署</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>apt install python3-venv iproute2 -y
+</span></span><span style="display:flex;"><span>git clone &lt;github or gitee projuect&gt;
+</span></span><span style="display:flex;"><span>cd &lt;project&gt;
+</span></span><span style="display:flex;"><span>python3 -m venv venv
+</span></span></code></pre></div></li>
+<li>
+<p>进入screen环境</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>screen -S run  <span style="color:#75715e"># 或screen -dr run</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># screen环境</span>
+</span></span><span style="display:flex;"><span>source venv/bin/activate
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## venv环境</span>
+</span></span><span style="display:flex;"><span>python -m pip install -r requirement/requirement-dev.txt
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#flask init  # 初始化数据库, 如果需要</span>
+</span></span><span style="display:flex;"><span>flask run
+</span></span></code></pre></div></li>
+<li>
+<p>安装Nginx并配置</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cd /www/server/nginx/conf/vhost
+</span></span><span style="display:flex;"><span>cat example.conf
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-txt" data-lang="txt"><span style="display:flex;"><span>server {
+</span></span><span style="display:flex;"><span>    listen 80;
+</span></span><span style="display:flex;"><span>    server_name example.domain.com;
+</span></span><span style="display:flex;"><span>    location / {
+</span></span><span style="display:flex;"><span>    	  return 301 https://$host$request_uri;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>server {
+</span></span><span style="display:flex;"><span>    listen       443 ssl;
+</span></span><span style="display:flex;"><span>    server_name  example.domain.com;# 服务器地址或绑定域名
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    #ssl证书的pem文件路径
+</span></span><span style="display:flex;"><span>    ssl_certificate /www/server/nginx/ssl/domain.com.pem;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    #ssl证书的key文件路径
+</span></span><span style="display:flex;"><span>    ssl_certificate_key /www/server/nginx/ssl/domain.com.key;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    ssl_session_timeout 5m;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+</span></span><span style="display:flex;"><span>    # 按照这个协议配置
+</span></span><span style="display:flex;"><span>    ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    # 按照这个配置
+</span></span><span style="display:flex;"><span>    ssl_prefer_server_ciphers on;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    location / {  # ^~/api 表示匹配前缀为api的请求
+</span></span><span style="display:flex;"><span>        proxy_pass  http://127.0.0.1:5000/;  # 注：proxy_pass的结尾有/， -&gt; 效果：会在请求时将/api/*后面的路径直接拼接到后面
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        # proxy_set_header作用：设置发送到后端服务器(上面proxy_pass)的请求头值  
+</span></span><span style="display:flex;"><span>            # 【当Host设置为 $http_host 时，则不改变请求头的值;
+</span></span><span style="display:flex;"><span>            #   当Host设置为 $proxy_host 时，则会重新设置请求头中的Host信息;
+</span></span><span style="display:flex;"><span>            #   当为$host变量时，它的值在请求包含Host请求头时为Host字段的值，在请求未携带Host请求头时为虚拟主机的主域名;
+</span></span><span style="display:flex;"><span>            #   当为$host:$proxy_port时，即携带端口发送 ex: $host:8080 】
+</span></span><span style="display:flex;"><span>        proxy_set_header Host $host; 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        proxy_set_header X-Real-IP $remote_addr; # 在web服务器端获得用户的真实ip 需配置条件①    【 $remote_addr值 = 用户ip 】
+</span></span><span style="display:flex;"><span>        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;# 在web服务器端获得用户的真实ip 需配置条件②	
+</span></span><span style="display:flex;"><span>	      proxy_set_header X-Forwarded-Proto &#34;https&#34;;
+</span></span><span style="display:flex;"><span>	      proxy_set_header REMOTE-HOST $remote_addr;
+</span></span><span style="display:flex;"><span>        # proxy_set_header X-Forwarded-For $http_x_forwarded_for; # $http_x_forwarded_for变量 = X-Forwarded-For变量
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    access_log  /www/wwwlogs/example_access.log;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+<li>
+<p>将云服务器的证书文件放在指定位置</p>
+</li>
+<li>
+<p>去宝塔页面点击Nginx模块的&quot;服务&quot;-&gt;&ldquo;重载配置&rdquo;</p>
+</li>
+</ul>
+<h3 id="tinyproxy">Tinyproxy</h3>
+<h3 id="lanproxy-or-frp">Lanproxy or Frp?</h3>
+<h4 id="server">Server</h4>
+<ul>
+<li>
+<p>Download lanproxy  server from the <a href="https://github.com/ffay/lanproxy/releases">github website</a>.</p>
+</li>
+<li>
+<p>开放端口</p>
+<ul>
+<li>8090: LanProxy的web配置端口</li>
+<li>4900: LanProxy对LanProxyClient的服务端口</li>
+<li>&lt;对外通信端口&gt;: LanProxy对外的服务端口</li>
+</ul>
+</li>
+<li>
+<p>Start</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>chmod <span style="color:#ae81ff">0755</span> <span style="color:#f92672">[</span>path_to_lanproxy<span style="color:#f92672">]</span>/bin/start.sh
+</span></span><span style="display:flex;"><span>./<span style="color:#f92672">[</span>path_to_lanproxy<span style="color:#f92672">]</span>/bin/start.sh
+</span></span></code></pre></div></li>
+</ul>
+<h4 id="client">Client</h4>
+<p>下载<a href="https://github.com/ffay/lanproxy-go-client/releases">客户端</a>, 并使用screen保持会话</p>
+<ul>
+<li>
+<p>普通端口连接</p>
+<pre tabindex="0"><code># mac 64位
+nohup ./client_darwin_amd64 -s SERVER_IP -p SERVER_PORT -k CLIENT_KEY &amp;
+
+# linux 64位
+nohup ./client_linux_amd64 -s SERVER_IP -p SERVER_PORT -k CLIENT_KEY &amp;
+
+# windows 64 位
+./client_windows_amd64.exe -s SERVER_IP -p SERVER_PORT -k CLIENT_KEY
+</code></pre></li>
+<li>
+<p>SSL端口连接</p>
+<pre tabindex="0"><code># mac 64位
+nohup ./client_darwin_amd64 -s SERVER_IP -p SERVER_SSL_PORT -k CLIENT_KEY -ssl true &amp;
+
+# linux 64位
+nohup ./client_linux_amd64 -s SERVER_IP -p SERVER_SSL_PORT -k CLIENT_KEY -ssl true &amp;
+
+# windows 64 位
+./client_windows_amd64.exe -s SERVER_IP -p SERVER_SSL_PORT -k CLIENT_KEY -ssl true
+</code></pre></li>
+</ul>
+<h2 id="application">APPLICATION</h2>
+<h3 id="download-wechat-cert">Download WeChat Cert</h3>
+<p>Download the certifications into <code>cert</code> folder in the project</p>
+<h3 id="configuration">Configuration</h3>
+<ul>
+<li>
+<p>.flaskenv</p>
+<p>Checkout every line in this file</p>
+</li>
+<li>
+<p>gunicorn.conf.py</p>
+<p>Edit this line: <code>bind = '0.0.0.0:5000'</code></p>
+</li>
+<li>
+<p>start.sh</p>
+<p>Choose a pattern to run: <code>production</code>, <code>development</code>, <code>testing</code><br>
+<code>exec gunicorn -c gunicorn.conf.py &quot;applications:create_app('production')&quot;</code></p>
+</li>
+</ul>
+<h3 id="init-db">Init DB</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>flask init
+</span></span></code></pre></div><h3 id="run">Run</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>chmod <span style="color:#ae81ff">0755</span> start.sh
+</span></span><span style="display:flex;"><span>./start.sh
+</span></span></code></pre></div><h2 id="redies">REDIES</h2>
+<h3 id="windows-env">Windows Env</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span><span style="color:#66d9ef">cd</span> C:\program
+</span></span><span style="display:flex;"><span>redis-server redis.windows-service.conf
+</span></span><span style="display:flex;"><span># 重启Redis服务
+</span></span><span style="display:flex;"><span>redis-cli.exe
+</span></span><span style="display:flex;"><span>#config set requirepass CofH2020
+</span></span><span style="display:flex;"><span>auth CofH2020
+</span></span></code></pre></div><h3 id="linux-env">Linux ENV</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"></code></pre></div><h2 id="operation-manage">OPERATION MANAGE</h2>
+<h3 id="全数据库备份">全数据库备份</h3>
+<ul>
+<li>
+<p>备份整个数据库</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e">#!/usr/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>number<span style="color:#f92672">=</span><span style="color:#ae81ff">365</span>  <span style="color:#75715e"># 保存备份个数，备份365天数据</span>
+</span></span><span style="display:flex;"><span>backup_dir<span style="color:#f92672">=</span>~/mysqlbackup  <span style="color:#75715e"># 备份保存路径</span>
+</span></span><span style="display:flex;"><span>dd<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>date +%Y-%m-%d_%H-%M-%S<span style="color:#e6db74">`</span>  <span style="color:#75715e"># 日期格式</span>
+</span></span><span style="display:flex;"><span>username<span style="color:#f92672">=</span>rd  <span style="color:#75715e"># 用户名</span>
+</span></span><span style="display:flex;"><span>password<span style="color:#f92672">=</span>RandD268  <span style="color:#75715e"># 密码</span>
+</span></span><span style="display:flex;"><span>database_name<span style="color:#f92672">=</span>fueldb  <span style="color:#75715e"># 将要备份的数据库</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 如果文件夹不存在则创建</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> ! -d $backup_dir <span style="color:#f92672">]</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    mkdir -p $backup_dir;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 备份</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Example: mysqldump -u root -p123456 users &gt; /root/mysqlbackup/users-$filename.sql</span>
+</span></span><span style="display:flex;"><span>mysqldump -u$username -p$password $database_name &gt; $backup_dir/$database_name-$dd.sql
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#找出需要删除的备份</span>
+</span></span><span style="display:flex;"><span>delfile<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>ls -l -crt $backup_dir/*.sql | awk <span style="color:#e6db74">&#39;{print $9 }&#39;</span> | head -1<span style="color:#e6db74">`</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#判断现在的备份数量是否大于$number</span>
+</span></span><span style="display:flex;"><span>count<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>ls -l -crt $backup_dir/*.sql | awk <span style="color:#e6db74">&#39;{print $9 }&#39;</span> | wc -l<span style="color:#e6db74">`</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> $count -gt $number <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">#写删除文件日志</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;Delete </span>$delfile<span style="color:#e6db74">&#34;</span> &gt;&gt; $backup_dir/log.txt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">#删除最早生成的备份，只保留number数量的备份</span>
+</span></span><span style="display:flex;"><span>    rm $delfile
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span></code></pre></div></li>
+<li>
+<p>备份导入</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>mysql -urd -pRandD268 fueldb &lt; fueldb-20220118_17:08:02.sql
+</span></span></code></pre></div></li>
+</ul>
+<h2 id="project-avatar">PROJECT AVATAR</h2>
+<ul>
+<li>
+<p>备份fuel_order表</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e">#!/usr/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>number<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>  <span style="color:#75715e"># 保存备份个数，阿凡达中转用, 只备份1天</span>
+</span></span><span style="display:flex;"><span>backup_dir<span style="color:#f92672">=</span>~/avatar_backup  <span style="color:#75715e"># 备份保存路径</span>
+</span></span><span style="display:flex;"><span>dd<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>date +%Y-%m-%d_%H-%M-%S<span style="color:#e6db74">`</span>  <span style="color:#75715e"># 日期格式</span>
+</span></span><span style="display:flex;"><span>username<span style="color:#f92672">=</span>rd  <span style="color:#75715e"># 用户名</span>
+</span></span><span style="display:flex;"><span>password<span style="color:#f92672">=</span>CofH2020  <span style="color:#75715e"># 密码</span>
+</span></span><span style="display:flex;"><span>database_name<span style="color:#f92672">=</span>fueldb  <span style="color:#75715e"># 将要备份的数据库</span>
+</span></span><span style="display:flex;"><span>table_name<span style="color:#f92672">=</span>fuel_order  <span style="color:#75715e"># 将要备份的表</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 如果文件夹不存在则创建</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> ! -d $backup_dir <span style="color:#f92672">]</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    mkdir -p $backup_dir;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 备份</span>
+</span></span><span style="display:flex;"><span>mysqldump -u$username -p$password $database_name $table_name &gt; $backup_dir/$database_name.$table_name-$dd.sql
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#找出需要删除的备份</span>
+</span></span><span style="display:flex;"><span>delfile<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>ls -l -crt $backup_dir/*.sql | awk <span style="color:#e6db74">&#39;{print $9 }&#39;</span> | head -1<span style="color:#e6db74">`</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#判断现在的备份数量是否大于$number</span>
+</span></span><span style="display:flex;"><span>count<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>ls -l -crt $backup_dir/*.sql | awk <span style="color:#e6db74">&#39;{print $9 }&#39;</span> | wc -l<span style="color:#e6db74">`</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> $count -gt $number <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">#写删除文件日志</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;Delete </span>$delfile<span style="color:#e6db74">&#34;</span> &gt;&gt; $backup_dir/log.txt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">#删除最早生成的备份，只保留number数量的备份</span>
+</span></span><span style="display:flex;"><span>    rm $delfile
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span></code></pre></div></li>
+<li>
+<p>Replicate a new DB with the data of table fuel_order</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>mysql -urd -pRandD268 fueldb2 &lt; fueldb.fuel_order-2022-01-18_17-08-02.sql
+</span></span></code></pre></div></li>
+<li>
+<p>每天4点查询前一天的数据并插入到tmp表格</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#f92672">#</span> <span style="color:#960050;background-color:#1e0010">确认使用的数据库</span>
+</span></span><span style="display:flex;"><span>use fadb;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> Replicate fuel_order <span style="color:#66d9ef">table</span> <span style="color:#66d9ef">for</span> the <span style="color:#66d9ef">first</span> time
+</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> fuel_order_tmp <span style="color:#66d9ef">LIKE</span> fuel_order;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> <span style="color:#960050;background-color:#1e0010">清空临时表</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">truncate</span> <span style="color:#66d9ef">table</span> fuel_order_tmp;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> <span style="color:#960050;background-color:#1e0010">获取前一天的数据</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">insert</span> <span style="color:#66d9ef">into</span> fuel_order_tmp <span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> fueldb.fuel_order <span style="color:#66d9ef">where</span> date(create_datetime) <span style="color:#f92672">=</span> date_sub(curdate(), INTERVAL <span style="color:#ae81ff">1</span> <span style="color:#66d9ef">day</span> );
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> <span style="color:#960050;background-color:#1e0010">筛选随机</span>X条数据(<span style="color:#960050;background-color:#1e0010">总金额的</span><span style="color:#ae81ff">10</span><span style="color:#f92672">%</span><span style="color:#960050;background-color:#1e0010">的条数</span>), <span style="color:#960050;background-color:#1e0010">并插入到</span>fuel_fake_order表中
+</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> <span style="color:#960050;background-color:#1e0010">暂且</span>(Feb <span style="color:#ae81ff">16</span>, <span style="color:#ae81ff">2022</span>)<span style="color:#960050;background-color:#1e0010">人工确认随机数</span>x
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">insert</span> <span style="color:#66d9ef">into</span> fuel_fake_order <span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> fuel_order_tmp <span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> rand() <span style="color:#66d9ef">LIMIT</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> <span style="color:#960050;background-color:#1e0010">删除</span>fuel_order中该随机数据
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">delete</span> <span style="color:#66d9ef">from</span> fuel_order_tmp <span style="color:#66d9ef">where</span> <span style="color:#66d9ef">select</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> <span style="color:#960050;background-color:#1e0010">更改临时表中剩余数据的时间</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">update</span> fuel_order_tmp <span style="color:#66d9ef">set</span> create_datetime <span style="color:#f92672">=</span> DATE_ADD(create_datetime, INTERVAL <span style="color:#ae81ff">1</span> <span style="color:#66d9ef">DAY</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">update</span> fuel_order_tmp <span style="color:#66d9ef">set</span> callback_datetime <span style="color:#f92672">=</span> DATE_ADD(callback_datetime, INTERVAL <span style="color:#ae81ff">1</span> <span style="color:#66d9ef">DAY</span>) <span style="color:#66d9ef">where</span> <span style="color:#66d9ef">not</span> <span style="color:#66d9ef">isnull</span>(callback_datetime);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span> <span style="color:#960050;background-color:#1e0010">插入数据</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">insert</span> <span style="color:#66d9ef">into</span> fuel_order <span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> fuel_order_tmp;
+</span></span></code></pre></div></li>
+</ul>
+              
+
+
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">TAGGED IN</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://ivanhan0511.github.io/tags/flask/">Flask</a>
+
+  <a class="tag tag--primary tag--small" href="https://ivanhan0511.github.io/tags/pearadmin/">PearAdmin</a>
+
+  <a class="tag tag--primary tag--small" href="https://ivanhan0511.github.io/tags/deploy/">Deploy</a>
+
+                  </div>
+                
+              
+            
+            
+<div class="post-actions-wrap">
+  <nav >
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/sql-mysql-view/" data-tooltip="MySQL View" aria-label="NEXT: MySQL View">
+          
+              <i class="fa fa-angle-left"></i>
+              <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+            </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/c-visual-studio/" data-tooltip="BASIC USAGE OF VISUAL STUDIO" aria-label="PREVIOUS: BASIC USAGE OF VISUAL STUDIO">
+          
+              <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
+        </li>
+      
+    </ul>
+  </nav>
+<ul class="post-actions post-action-share" >
+  
+    <li class="post-action hide-lg hide-md hide-sm">
+      <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </a>
+    </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://ivanhan0511.github.io/post/python-flask-deploy/" title="Share on Facebook" aria-label="Share on Facebook">
+          <i class="fab fa-facebook-square" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://ivanhan0511.github.io/post/python-flask-deploy/" title="Share on Twitter" aria-label="Share on Twitter">
+          <i class="fab fa-twitter" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+  
+  
+    <li class="post-action">
+      <a class="post-action-btn btn btn--default" href="#disqus_thread" aria-label="Leave a comment">
+        <i class="far fa-comment"></i>
+      </a>
+    </li>
+  
+  <li class="post-action">
+    
+      <a class="post-action-btn btn btn--default" href="#top" aria-label="Back to top">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    
+    </a>
+  </li>
+</ul>
+</div>
+
+
+            
+  
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+    <script type="text/javascript">
+      var disqus_config = function() {
+        this.page.url = 'https:\/\/ivanhan0511.github.io\/post\/python-flask-deploy\/';
+        
+          this.page.identifier = '\/post\/python-flask-deploy\/'
+        
+      };
+      (function() {
+        
+        
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+          document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+          return;
+        }
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = 'ivan-blog-disqus';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+  
+
+
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2022 <a href="https://github.com/ivanhan0511">Ivan Han</a>. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+        
+<div class="post-actions-wrap">
+  <nav >
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/sql-mysql-view/" data-tooltip="MySQL View" aria-label="NEXT: MySQL View">
+          
+              <i class="fa fa-angle-left"></i>
+              <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+            </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/c-visual-studio/" data-tooltip="BASIC USAGE OF VISUAL STUDIO" aria-label="PREVIOUS: BASIC USAGE OF VISUAL STUDIO">
+          
+              <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
+        </li>
+      
+    </ul>
+  </nav>
+<ul class="post-actions post-action-share" >
+  
+    <li class="post-action hide-lg hide-md hide-sm">
+      <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </a>
+    </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://ivanhan0511.github.io/post/python-flask-deploy/" title="Share on Facebook" aria-label="Share on Facebook">
+          <i class="fab fa-facebook-square" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://ivanhan0511.github.io/post/python-flask-deploy/" title="Share on Twitter" aria-label="Share on Twitter">
+          <i class="fab fa-twitter" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+  
+  
+    <li class="post-action">
+      <a class="post-action-btn btn btn--default" href="#disqus_thread" aria-label="Leave a comment">
+        <i class="far fa-comment"></i>
+      </a>
+    </li>
+  
+  <li class="post-action">
+    
+      <a class="post-action-btn btn btn--default" href="#top" aria-label="Back to top">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    
+    </a>
+  </li>
+</ul>
+</div>
+
+
+      </div>
+      
+<div id="share-options-bar" class="share-options-bar" data-behavior="4">
+  <i id="btn-close-shareoptions" class="fa fa-times"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fivanhan0511.github.io%2Fpost%2Fpython-flask-deploy%2F" aria-label="Share on Facebook">
+          <i class="fab fa-facebook-square" aria-hidden="true"></i><span>Share on Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fivanhan0511.github.io%2Fpost%2Fpython-flask-deploy%2F" aria-label="Share on Twitter">
+          <i class="fab fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+
+
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-times"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://www.gravatar.com/avatar/0cac315e34e792213d5fa694dc39777b?s=110" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">Ivan Han</h4>
+    
+      <div id="about-card-bio">I need <strong>slow down</strong></div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        Software Engineer
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker-alt"></i>
+        <br/>
+        China
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    
+      <div id="cover" style="background-image:url('https://ivanhan0511.github.io/images/cover.jpg');"></div>
+    
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/highlight.min.js" integrity="sha512-z+/WWfyD5tccCukM4VvONpEtLmbAm5LDu7eKiyMQJ9m7OfPEDL7gENyDRL3Yfe8XAuGsS2fS4xSMnl6d30kqGQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+<script src="https://ivanhan0511.github.io/js/script-yqzy9wdlzix4lbbwdnzvwx3egsne77earqmn73v9uno8aupuph8wfguccut.min.js"></script>
+
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-gE8KAQyFIzV1C9+GZ8TKJHZS2s+n7EjNtC+IMRn1l5+WYJTHOODUM6JSjZhFhqXmc7bG8Av6XXpckA4tYhflnw==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/apache.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-EWROca+bote+7Oaaar1F6y74iZj1r1F9rm/ly7o+/FwJopbBaWtsFDmaKoZDd3QiGU2pGacBirHJNivmGLYrow==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/go.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-GDVzAn0wpx1yVtQsRWmFc6PhJiLBPdUic+h4GWgljBh904O3JU10fk9EKNpVyIoPqkFn54rgL2QBG4BmUTMpiQ==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/http.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-UgZlma8NzkrDb/NWgmLIcTrH7i/CSnLLDRFqCSNF5NGPpjKmzyM25qcoXGOup8+cDakKyaiTDd7N4dyH4YT+IA==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/less.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-lot9koe73sfXIrUvIPM/UEhuMciN56RPyBdOyZgfO53P2lkWyyXN7J+njcxIIBRV+nVDQeiWtiXg+bLAJZDTfg==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/nginx.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-Zd3e7XxHP00TD0Imr0PIfeM0fl0v95kMWuhyAS3Wn1UTSXTkz0OhtRgBAr4JlmADRgiXr4x7lpeUdqaGN8xIog==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/puppet.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-qtqDO052iXMSP+5d/aE/jMtL9vIIGvONgTJziC2K/ZIB1yEGa55WVxGE9/08rSQ62EoDifS9SWVGZ7ihSLhzMA==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/scss.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-1NmkjnEDnwwwcu28KoQF8vs3oaPFokQHbmbtwGhFfeDsQZtVFI8zW2aE9O8yMYdpdyKV/5blE4pSWw4Z/Sv97w==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/stylus.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-B2wSfruPjr8EJL6IIzQr1eAuDwrsfIfccNf/LCEdxELCgC/S/ZMt/Uvk80aD79m7IqOqW+Sw8nbkvha20yZpzg==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/swift.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-28oDiQZGKUVN6wQ7PSLPNipOcmkCALXKwOi7bnkyFf8QiMZQxG9EQoy/iiNx6Zxj2cG2SbVa4dXKigQhu7GiFw==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/yaml.min.js"></script>
+  
+
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+
+
+    
+  </body>
+</html>
+

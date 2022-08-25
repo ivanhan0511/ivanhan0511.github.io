@@ -9,10 +9,10 @@
     <lastBuildDate>Wed, 25 May 2022 15:39:32 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/tags/deploy/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Deploy Pear Admin</title>
-      <link>https://ivanhan0511.github.io/post/deploy-pear-admin/</link>
+      <link>https://ivanhan0511.github.io/post/python-flask-deploy/</link>
       <pubDate>Wed, 25 May 2022 15:39:32 +0800</pubDate>
       
-      <guid>https://ivanhan0511.github.io/post/deploy-pear-admin/</guid>
+      <guid>https://ivanhan0511.github.io/post/python-flask-deploy/</guid>
       <description>&lt;p&gt;Deploy a project which is small or flexible project, with PearAdmin Flask&lt;/p&gt;</description>
     </item>
     

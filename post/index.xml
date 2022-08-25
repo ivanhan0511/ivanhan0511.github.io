@@ -6,14 +6,50 @@
     <description>Recent content in Posts on Ivan Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 10 Aug 2022 18:33:21 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 25 Aug 2022 15:07:21 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Welcome to Ivan&#39;s Blog</title>
       <link>https://ivanhan0511.github.io/post/welcome/</link>
-      <pubDate>Wed, 10 Aug 2022 18:33:21 +0800</pubDate>
+      <pubDate>Thu, 25 Aug 2022 15:07:21 +0800</pubDate>
       
       <guid>https://ivanhan0511.github.io/post/welcome/</guid>
       <description>&lt;p&gt;Some record for Tec, Coffee, Sports and Photography.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>SpringBoot</title>
+      <link>https://ivanhan0511.github.io/post/java-springboot/</link>
+      <pubDate>Thu, 25 Aug 2022 15:02:14 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/post/java-springboot/</guid>
+      <description>&lt;p&gt;This is a custom summary and does &lt;em&gt;NOT&lt;/em&gt; appear in the post.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>EXAMPLE TITLE</title>
+      <link>https://ivanhan0511.github.io/post/java-tips/</link>
+      <pubDate>Thu, 25 Aug 2022 15:01:45 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/post/java-tips/</guid>
+      <description>&lt;p&gt;This is a custom summary and does &lt;em&gt;NOT&lt;/em&gt; appear in the post.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>EXAMPLE TITLE</title>
+      <link>https://ivanhan0511.github.io/post/sports-swimming/</link>
+      <pubDate>Thu, 25 Aug 2022 14:53:57 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/post/sports-swimming/</guid>
+      <description>&lt;p&gt;This is a custom summary and does &lt;em&gt;NOT&lt;/em&gt; appear in the post.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>EXAMPLE TITLE</title>
+      <link>https://ivanhan0511.github.io/post/sports-yoga/</link>
+      <pubDate>Thu, 25 Aug 2022 14:53:39 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/post/sports-yoga/</guid>
+      <description>&lt;p&gt;This is a custom summary and does &lt;em&gt;NOT&lt;/em&gt; appear in the post.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -59,15 +95,6 @@
       
       <guid>https://ivanhan0511.github.io/post/sql-mysql-tcl/</guid>
       <description>&lt;p&gt;TCL: Transaction Control Language&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>SpringBoot</title>
-      <link>https://ivanhan0511.github.io/post/spring-boot/</link>
-      <pubDate>Fri, 29 Jul 2022 15:34:14 +0800</pubDate>
-      
-      <guid>https://ivanhan0511.github.io/post/spring-boot/</guid>
-      <description>&lt;p&gt;This is a custom summary and does &lt;em&gt;NOT&lt;/em&gt; appear in the post.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -184,10 +211,10 @@ So here are some tips, wish to be helpful.&lt;/p&gt;</description>
     
     <item>
       <title>Deploy Pear Admin</title>
-      <link>https://ivanhan0511.github.io/post/deploy-pear-admin/</link>
+      <link>https://ivanhan0511.github.io/post/python-flask-deploy/</link>
       <pubDate>Wed, 25 May 2022 15:39:32 +0800</pubDate>
       
-      <guid>https://ivanhan0511.github.io/post/deploy-pear-admin/</guid>
+      <guid>https://ivanhan0511.github.io/post/python-flask-deploy/</guid>
       <description>&lt;p&gt;Deploy a project which is small or flexible project, with PearAdmin Flask&lt;/p&gt;</description>
     </item>
     
@@ -197,7 +224,7 @@ So here are some tips, wish to be helpful.&lt;/p&gt;</description>
       <pubDate>Wed, 25 May 2022 13:41:34 +0800</pubDate>
       
       <guid>https://ivanhan0511.github.io/post/c-visual-studio/</guid>
-      <description>&lt;p&gt;Newbee to C/C++. Some records for using Visual Studio to start learning C/C++&lt;/p&gt;</description>
+      <description>&lt;p&gt;Hello Visual Studio!&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -210,56 +237,20 @@ So here are some tips, wish to be helpful.&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Music Theory</title>
-      <link>https://ivanhan0511.github.io/post/music-theory/</link>
-      <pubDate>Tue, 24 May 2022 18:57:01 +0800</pubDate>
-      
-      <guid>https://ivanhan0511.github.io/post/music-theory/</guid>
-      <description>&lt;p&gt;Collect some basic knowledge of music theory&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Music Cabinet</title>
-      <link>https://ivanhan0511.github.io/post/music-cabinet/</link>
-      <pubDate>Tue, 24 May 2022 18:55:50 +0800</pubDate>
-      
-      <guid>https://ivanhan0511.github.io/post/music-cabinet/</guid>
-      <description>&lt;p&gt;Which cabinet for BassGuitar?&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Music Headphones</title>
-      <link>https://ivanhan0511.github.io/post/music-headphones/</link>
-      <pubDate>Tue, 24 May 2022 18:50:54 +0800</pubDate>
-      
-      <guid>https://ivanhan0511.github.io/post/music-headphones/</guid>
-      <description>&lt;p&gt;My music instruments on the desk in office.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Photography Nikon D7100</title>
-      <link>https://ivanhan0511.github.io/post/photography-nikon-d7100/</link>
-      <pubDate>Tue, 24 May 2022 18:42:43 +0800</pubDate>
-      
-      <guid>https://ivanhan0511.github.io/post/photography-nikon-d7100/</guid>
-      <description>&lt;p&gt;Photography&lt;/p&gt;</description>
-    </item>
-    
-    <item>
       <title>Flask Basic</title>
-      <link>https://ivanhan0511.github.io/post/flask-basic/</link>
+      <link>https://ivanhan0511.github.io/post/python-flask-pearadmin/</link>
       <pubDate>Tue, 24 May 2022 16:57:10 +0800</pubDate>
       
-      <guid>https://ivanhan0511.github.io/post/flask-basic/</guid>
+      <guid>https://ivanhan0511.github.io/post/python-flask-pearadmin/</guid>
       <description>&lt;p&gt;Some records of Flask&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Python Normal</title>
-      <link>https://ivanhan0511.github.io/post/python-normal/</link>
+      <link>https://ivanhan0511.github.io/post/python-tips/</link>
       <pubDate>Tue, 24 May 2022 16:50:44 +0800</pubDate>
       
-      <guid>https://ivanhan0511.github.io/post/python-normal/</guid>
+      <guid>https://ivanhan0511.github.io/post/python-tips/</guid>
       <description>&lt;p&gt;This is a custom summary and does &lt;em&gt;not&lt;/em&gt; appear in the post.&lt;/p&gt;</description>
     </item>
     
@@ -270,15 +261,6 @@ So here are some tips, wish to be helpful.&lt;/p&gt;</description>
       
       <guid>https://ivanhan0511.github.io/post/coffee-grinder-mazzer/</guid>
       <description>&lt;p&gt;Which type of Mazzer grinder?&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>BASS GUITAR</title>
-      <link>https://ivanhan0511.github.io/post/music-bass-guitar/</link>
-      <pubDate>Tue, 24 May 2022 05:00:41 +0800</pubDate>
-      
-      <guid>https://ivanhan0511.github.io/post/music-bass-guitar/</guid>
-      <description>&lt;p&gt;What to do as a newbee&lt;/p&gt;</description>
     </item>
     
     <item>

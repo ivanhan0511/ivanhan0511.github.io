@@ -321,6 +321,7 @@
     <li><a href="#tips">TIPs</a>
       <ul>
         <li><a href="#int-or-integer">int or Integer</a></li>
+        <li><a href="#slf4jlogger-and-log4jlogger">slf4j.Logger and log4j.Logger</a></li>
       </ul>
     </li>
   </ul>
@@ -489,6 +490,48 @@ While this fallback is convenient, IMHO it causes a lot of confusion, because pe
 <p>容器里推荐用Integer。 对于PO实体类，如果db里int型字段允许null，则属性应定义为Integer。————默认也应当定义为包装类型，从而兼容数据为null的情况，规避NPE异常。诸如mybatis这些代码生成器生成的属性就是包装类型，我们从阿里开发规范里也可以找到类似声明———— 当然，如果系统限定db里int字段不允许null值，则也可考虑将属性定义为int。</p>
 <p>对于应用程序里定义的枚举类型， 其值如果是整型，则最好定义为int，方便与相关的其他int值或Integer值的比较</p>
 <p>Integer提供了一系列数据的成员和操作，如Integer.MAX_VALUE，Integer.valueOf(),Integer.compare(),compareTo(),不过一般用的比较少。建议，一般用int类型，这样一方面省去了拆装箱，另一方面也会规避数据比较时可能带来的bug。</p>
+<h3 id="slf4jlogger-and-log4jlogger">slf4j.Logger and log4j.Logger</h3>
+<blockquote>
+  <p>
+Comparison SLF4J and Log4j<br/>
+
+Unlike log4j, SLF4J (Simple Logging Facade for Java) is not an implementation of logging framework, 
+it is an abstraction for all those logging frameworks in Java similar to log4J. Therefore, you cannot compare both. 
+However, it is always difficult to prefer one between the two.
+</p>
+  <footer>
+    <strong>LEARN SLF4J</strong>
+    
+      
+        <cite><a href="https://www.tutorialspoint.com/slf4j/slf4j_vs_log4j.htm#:~:text=Comparison%20SLF4J%20and%20Log4j,prefer%20one%20between%20the%20two." target="_blank" rel="external">https://www.tutorialspoint.com/slf4j/slf4j_vs_log4j.htm#:~:text=Comparison%20SLF4J%20and%20Log4j,prefer%20one%20between%20the%20two.</a></cite>
+      
+    
+  </footer>
+</blockquote>
+
+
+ 
+  
+  
+  
+  
+    
+  
+    
+      
+    
+  
+
+<div class="figure fig-100" >
+  
+    <a class="fancybox" href="https://www.tutorialspoint.com/slf4j/images/application.jpg" data-fancybox="">
+  
+    <img class="fig-img" src="https://www.tutorialspoint.com/slf4j/images/application.jpg" >
+  
+    </a>
+  
+  
+</div>
               
 
 

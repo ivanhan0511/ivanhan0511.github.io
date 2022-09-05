@@ -305,9 +305,9 @@
 <nav id="TableOfContents">
   <ul>
     <li><a href="#渊源">渊源</a></li>
-    <li><a href="#architecture">Architecture</a></li>
+    <li><a href="#architecture">ARCHITECTURE</a></li>
     <li><a href="#java名词理解与对应">Java名词理解与对应</a></li>
-    <li><a href="#annotation">Annotation</a>
+    <li><a href="#annotation">ANNOTATION</a>
       <ul>
         <li><a href="#resource-vs-autowired">@Resource vs @Autowired</a></li>
       </ul>
@@ -335,7 +335,7 @@
 自动配置
 双亲委派</li>
 </ul>
-<h2 id="architecture">Architecture</h2>
+<h2 id="architecture">ARCHITECTURE</h2>
 <p>三层架构
 经典的三层架构主要是Dao/Service/Controller层这三层. 相应的, 对应这3层的对象为DO/BO/VO对象.</p>
 <p>POJO: Plain Old Java Object. 是DO/DTO/BO/VO的统称</p>
@@ -378,11 +378,11 @@ POJO中一般不允许有业务逻辑方法, 不能带有connection之类的方�
 Strictly speaking, @Entity is not a JavaBean (the JavaBean convention requires a public no-arg constructor,
 @Entity can have protected etc.) but they are very similar. @Entity is actually a POJO
 (Plain Old Java Object). You can compare conventions and requirements for JavaBeans and Entity classes:</p>
-<h2 id="annotation">Annotation</h2>
+<h2 id="annotation">ANNOTATION</h2>
 <h3 id="resource-vs-autowired">@Resource vs @Autowired</h3>
 <blockquote>
   <p>
-Both @Autowired (or @Inject) and @Resource work equally well. But there is a conceptual difference or a difference in the meaning
+Both @Autowired (or @Inject) and @Resource work equally well. But there is a conceptual difference or a difference in the meaning  
 
 @Resource means get me a known resource by name. The name is extracted from the name of the annotated setter or field, or it is taken from the name-Parameter.
 @Inject or @Autowired try to wire in a suitable other component by type.

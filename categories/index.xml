@@ -6,11 +6,11 @@
     <description>Recent content in Categories on Ivan Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 25 Aug 2022 15:07:21 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 30 Aug 2022 16:07:21 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Welcome</title>
       <link>https://ivanhan0511.github.io/categories/welcome/</link>
-      <pubDate>Thu, 25 Aug 2022 15:07:21 +0800</pubDate>
+      <pubDate>Tue, 30 Aug 2022 16:07:21 +0800</pubDate>
       
       <guid>https://ivanhan0511.github.io/categories/welcome/</guid>
       <description></description>
@@ -19,7 +19,7 @@
     <item>
       <title>Java</title>
       <link>https://ivanhan0511.github.io/categories/java/</link>
-      <pubDate>Thu, 25 Aug 2022 15:02:14 +0800</pubDate>
+      <pubDate>Tue, 30 Aug 2022 16:02:14 +0800</pubDate>
       
       <guid>https://ivanhan0511.github.io/categories/java/</guid>
       <description></description>
@@ -28,27 +28,9 @@
     <item>
       <title>Web Frame</title>
       <link>https://ivanhan0511.github.io/categories/web-frame/</link>
-      <pubDate>Thu, 25 Aug 2022 15:02:14 +0800</pubDate>
+      <pubDate>Tue, 30 Aug 2022 16:02:14 +0800</pubDate>
       
       <guid>https://ivanhan0511.github.io/categories/web-frame/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Coffee</title>
-      <link>https://ivanhan0511.github.io/categories/coffee/</link>
-      <pubDate>Thu, 25 Aug 2022 15:01:45 +0800</pubDate>
-      
-      <guid>https://ivanhan0511.github.io/categories/coffee/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Grinder</title>
-      <link>https://ivanhan0511.github.io/categories/grinder/</link>
-      <pubDate>Thu, 25 Aug 2022 15:01:45 +0800</pubDate>
-      
-      <guid>https://ivanhan0511.github.io/categories/grinder/</guid>
       <description></description>
     </item>
     
@@ -103,6 +85,15 @@
       <pubDate>Mon, 27 Jun 2022 12:48:05 +0800</pubDate>
       
       <guid>https://ivanhan0511.github.io/categories/ecnomics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Coffee</title>
+      <link>https://ivanhan0511.github.io/categories/coffee/</link>
+      <pubDate>Thu, 09 Jun 2022 21:38:22 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/categories/coffee/</guid>
       <description></description>
     </item>
     
@@ -260,11 +251,11 @@
     </item>
     
     <item>
-      <title>Python</title>
-      <link>https://ivanhan0511.github.io/categories/python/</link>
-      <pubDate>Tue, 24 May 2022 16:50:44 +0800</pubDate>
+      <title>Grinder</title>
+      <link>https://ivanhan0511.github.io/categories/grinder/</link>
+      <pubDate>Tue, 24 May 2022 05:49:34 +0800</pubDate>
       
-      <guid>https://ivanhan0511.github.io/categories/python/</guid>
+      <guid>https://ivanhan0511.github.io/categories/grinder/</guid>
       <description></description>
     </item>
     

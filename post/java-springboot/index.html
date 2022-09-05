@@ -307,7 +307,11 @@
     <li><a href="#渊源">渊源</a></li>
     <li><a href="#architecture">Architecture</a></li>
     <li><a href="#java名词理解与对应">Java名词理解与对应</a></li>
-    <li><a href="#annotation">Annotation</a></li>
+    <li><a href="#annotation">Annotation</a>
+      <ul>
+        <li><a href="#resource-vs-autowired">@Resource vs @Autowired</a></li>
+      </ul>
+    </li>
     <li><a href="#集成构建">集成/构建</a>
       <ul>
         <li><a href="#maven-or-gradle">Maven or Gradle</a></li>
@@ -375,6 +379,23 @@ Strictly speaking, @Entity is not a JavaBean (the JavaBean convention requires a
 @Entity can have protected etc.) but they are very similar. @Entity is actually a POJO
 (Plain Old Java Object). You can compare conventions and requirements for JavaBeans and Entity classes:</p>
 <h2 id="annotation">Annotation</h2>
+<h3 id="resource-vs-autowired">@Resource vs @Autowired</h3>
+<blockquote>
+  <p>
+Both @Autowired (or @Inject) and @Resource work equally well. But there is a conceptual difference or a difference in the meaning
+
+@Resource means get me a known resource by name. The name is extracted from the name of the annotated setter or field, or it is taken from the name-Parameter.
+@Inject or @Autowired try to wire in a suitable other component by type.
+So, basically these are two quite distinct concepts. Unfortunately the Spring-Implementation of @Resource has a built-in fallback, which kicks in when resolution by-name fails. In this case, it falls back to the @Autowired-kind resolution by-type. While this fallback is convenient, IMHO it causes a lot of confusion, because people are unaware of the conceptual difference and tend to use @Resource for type-based autowiring.
+
+</p>
+  <footer>
+    <strong>stackoverflow</strong>
+    
+      <cite><a href="https://stackoverflow.com/questions/4093504/resource-vs-autowired" target="_blank" rel="external">@Resource vs @Autowired</a></cite>
+    
+  </footer>
+</blockquote>
 <h2 id="集成构建">集成/构建</h2>
 <h3 id="maven-or-gradle">Maven or Gradle</h3>
 <p>The maven pom.xml defines lifecycle goals and the gradle build.gradle defines tasks.</p>

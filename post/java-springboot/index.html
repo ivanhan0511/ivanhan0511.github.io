@@ -311,7 +311,7 @@
     <li><a href="#集成构建">集成/构建</a>
       <ul>
         <li><a href="#maven-or-gradle">Maven or Gradle</a></li>
-        <li><a href="#maven-381-blocked-http-connection">Maven 3.8.1 blocked http connection</a></li>
+        <li><a href="#maven-381">Maven 3.8.1</a></li>
       </ul>
     </li>
     <li><a href="#tips">TIPs</a>
@@ -344,37 +344,29 @@
 <p>SPI: Service Provider Interface. 常见的 SPI 有 JDBC、JNDI、JAXP 等，这些SPI的接口由核心类库提供，却由第三方实现</p>
 <p>PS: 最后插一句. 其实, 如果你的项目功能足够简单. 项目比较小的话, 其实没有必要分的那么细致. 掌握设计的“度”, 非常重要.</p>
 <p>阿里开发手册的部分约定
-<blockquote>
-  <p>
-[参考]Domain对象各层命名约定:
-
-- Service/DAO层方法命名规约
-  + 获取单个对象的方法用get做前缀
-  + 获取多个对象的方法用list做前缀
-  + 获取统计值的方法用count做前缀
-  + 插入的方法用save/insert做前缀
-  + 删除的方法用remove/delete做前缀
-  + 修改的方法用update做前缀
-- 领域模型命名规约
-  + 数据对象: xxxDO, xxx即表名
-  + 数据传输对象: xxxDTO, xxx即业务领域相关的名称
-  + 展示对象: xxxVO, xxx一般为网页名称
-  + POJO是DO/DTO/BO/VO的统称, 禁止命名成xxxPOJO
-
-[参考]Request和Response对象的约定
-
-即复杂对象的交互必须封装成Request 和 Response与前端进行交互
-
-</p>
-  <footer>
-    <strong></strong>
-    
-      
-        <cite></cite>
-      
-    
-  </footer>
-</blockquote></p>
+[参考]Domain对象各层命名约定:</p>
+<ul>
+<li>Service/DAO层方法命名规约
+<ul>
+<li>获取单个对象的方法用get做前缀</li>
+<li>获取多个对象的方法用list做前缀</li>
+<li>获取统计值的方法用count做前缀</li>
+<li>插入的方法用save/insert做前缀</li>
+<li>删除的方法用remove/delete做前缀</li>
+<li>修改的方法用update做前缀</li>
+</ul>
+</li>
+<li>领域模型命名规约
+<ul>
+<li>数据对象: xxxDO, xxx即表名</li>
+<li>数据传输对象: xxxDTO, xxx即业务领域相关的名称</li>
+<li>展示对象: xxxVO, xxx一般为网页名称</li>
+<li>POJO是DO/DTO/BO/VO的统称, 禁止命名成xxxPOJO</li>
+</ul>
+</li>
+</ul>
+<p>[参考]Request和Response对象的约定</p>
+<p>即复杂对象的交互必须封装成Request 和 Response与前端进行交互</p>
 <p>个人理解:<br>
 POJO中一般不允许有业务逻辑方法, 不能带有connection之类的方法</p>
 <h2 id="java名词理解与对应">Java名词理解与对应</h2>
@@ -383,23 +375,20 @@ Strictly speaking, @Entity is not a JavaBean (the JavaBean convention requires a
 @Entity can have protected etc.) but they are very similar. @Entity is actually a POJO
 (Plain Old Java Object). You can compare conventions and requirements for JavaBeans and Entity classes:</p>
 <h2 id="annotation">Annotation</h2>
-<p>@Value
-<a href="https://www.baeldung.com/spring-value-annotation">https://www.baeldung.com/spring-value-annotation</a>
-In this article, we examined the various possibilities of using the @Value annotation with simple properties defined in the file, with system properties, and with properties calculated with SpEL expressions.</p>
-<p>@Service
-@Transactional
-@Autowired</p>
 <h2 id="集成构建">集成/构建</h2>
 <h3 id="maven-or-gradle">Maven or Gradle</h3>
 <p>The maven pom.xml defines lifecycle goals and the gradle build.gradle defines tasks.</p>
 <p>&ldquo;知识体系&quot;中关联的关于Maven的<a href="https://www.iocoder.cn/Fight/Maven-most-complete-tutorial-read-must-understand/?self">讲解</a></p>
 <p>又看了一篇<a href="https://www.zhihu.com/question/29338218">文章</a>, 对于两者的取舍, 还是暂且倾向于Maven的通用, 稳定, 兼容</p>
-<h3 id="maven-381-blocked-http-connection">Maven 3.8.1 blocked http connection</h3>
+<h3 id="maven-381">Maven 3.8.1</h3>
+<p>Maven 3.8.1 blocked http connection</p>
 <ul>
-<li>Find maven path, which is embedded in IDEA, like
-<code>C:\Program Files\JetBrains\IntelliJ IDEA 2022.2.1\plugins\maven\lib\maven3\conf</code></li>
-<li>Edit <code>settings.xml</code></li>
-</ul>
+<li>
+<p>Find maven path, which is embedded in IDEA, like
+<code>C:\Program Files\JetBrains\IntelliJ IDEA 2022.2.1\plugins\maven\lib\maven3\conf</code></p>
+</li>
+<li>
+<p>Edit <code>settings.xml</code></p>
 
   
     
@@ -419,47 +408,50 @@ In this article, we examined the various possibilities of using the @Value annot
     <tbody>
       <tr>
         <td class="gutter">
-          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre>
+          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre>
         </td>
         <td class="code">
-          <pre class="code-highlight language- "><code class="">...
-&lt;mirrors&gt;
-  &lt;!-- mirror
-   | Specifies a repository mirror site to use instead of a given repository. The repository that
-   | this mirror serves has an ID that matches the mirrorOf element of this mirror. IDs are used
-   | for inheritance and direct lookup purposes, and must be unique across the set of mirrors.
-   |
-  &lt;mirror&gt;
-    &lt;id&gt;mirrorId&lt;/id&gt;
-    &lt;mirrorOf&gt;repositoryId&lt;/mirrorOf&gt;
-    &lt;name&gt;Human Readable Name for this Mirror.&lt;/name&gt;
-    &lt;url&gt;http://my.repository.com/repo/path&lt;/url&gt;
-  &lt;/mirror&gt;
-   --&gt;
-  &lt;mirror&gt;
-    &lt;id&gt;maven-default-http-blocker&lt;/id&gt;
-    &lt;mirrorOf&gt;external:http:*&lt;/mirrorOf&gt;
-    &lt;name&gt;Pseudo repository to mirror external repositories initially using HTTP.&lt;/name&gt;
-    &lt;url&gt;http://0.0.0.0/&lt;/url&gt;
-    &lt;blocked&gt;true&lt;/blocked&gt;
-  &lt;/mirror&gt;
-
-  &lt;mirror&gt;
-    &lt;id&gt;aliyunmaven&lt;/id&gt;
-    &lt;mirrorOf&gt;*&lt;/mirrorOf&gt;
-    &lt;name&gt;阿里云公共仓库&lt;/name&gt;
-    &lt;url&gt;https://maven.aliyun.com/repository/public&lt;/url&gt;
-  &lt;/mirror&gt;
-&lt;/mirrors&gt;
-...</code></pre>
+          <pre class="code-highlight language- "><code class="">  ...
+  &lt;mirrors&gt;
+    &lt;!-- mirror
+     | Specifies a repository mirror site to use instead of a given repository. The repository that
+     | this mirror serves has an ID that matches the mirrorOf element of this mirror. IDs are used
+     | for inheritance and direct lookup purposes, and must be unique across the set of mirrors.
+     |
+    &lt;mirror&gt;
+      &lt;id&gt;mirrorId&lt;/id&gt;
+      &lt;mirrorOf&gt;repositoryId&lt;/mirrorOf&gt;
+      &lt;name&gt;Human Readable Name for this Mirror.&lt;/name&gt;
+      &lt;url&gt;http://my.repository.com/repo/path&lt;/url&gt;
+    &lt;/mirror&gt;
+     --&gt;
+    &lt;mirror&gt;
+      &lt;id&gt;maven-default-http-blocker&lt;/id&gt;
+      &lt;mirrorOf&gt;external:http:*&lt;/mirrorOf&gt;
+      &lt;name&gt;Pseudo repository to mirror external repositories initially using HTTP.&lt;/name&gt;
+      &lt;url&gt;http://0.0.0.0/&lt;/url&gt;
+      &lt;blocked&gt;true&lt;/blocked&gt;
+    &lt;/mirror&gt;
+  
+    &lt;mirror&gt;
+      &lt;id&gt;aliyunmaven&lt;/id&gt;
+      &lt;mirrorOf&gt;*&lt;/mirrorOf&gt;
+      &lt;name&gt;阿里云公共仓库&lt;/name&gt;
+      &lt;url&gt;https://maven.aliyun.com/repository/public&lt;/url&gt;
+    &lt;/mirror&gt;
+  &lt;/mirrors&gt;
+  ...
+  </code></pre>
         </td>
       </tr>
     </tbody>
   </table>
 </figure>
 
-<ul>
-<li>Reload pom.xml file in IDEA and automaticlly download the dependencies</li>
+</li>
+<li>
+<p>Reload pom.xml file in IDEA and automaticlly download the dependencies</p>
+</li>
 </ul>
 <h2 id="tips">TIPs</h2>
 <h3 id="int-or-integer">int or Integer</h3>

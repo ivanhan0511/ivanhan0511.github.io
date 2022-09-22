@@ -47,10 +47,10 @@ It could be a productional framework to make my project stronger.">
 <meta property="og:locale" content="en-us">
 
   
-    <meta property="article:published_time" content="2022-09-06T13:34:17">
+    <meta property="article:published_time" content="2022-09-14T17:05:59">
   
   
-    <meta property="article:modified_time" content="2022-09-06T13:34:17">
+    <meta property="article:modified_time" content="2022-09-14T17:05:59">
   
   
   
@@ -276,13 +276,13 @@ It could be a productional framework to make my project stronger.">
   
   <div class="postShorten-meta post-meta">
     
-      <time datetime="2022-09-06T13:34:17&#43;08:00">
+      <time datetime="2022-09-14T17:05:59&#43;08:00">
         
   
   
   
   
-    September 6, 2022
+    September 14, 2022
   
 
       </time>
@@ -310,12 +310,19 @@ It could be a productional framework to make my project stronger.">
 <nav id="TableOfContents">
   <ul>
     <li><a href="#渊源">渊源</a></li>
+    <li><a href="#core">CORE</a>
+      <ul>
+        <li><a href="#ioc">IoC</a></li>
+        <li><a href="#aop">AOP</a></li>
+      </ul>
+    </li>
     <li><a href="#architecture">ARCHITECTURE</a></li>
     <li><a href="#java名词理解与对应">Java名词理解与对应</a></li>
     <li><a href="#annotation">ANNOTATION</a>
       <ul>
-        <li><a href="#component">@Component</a></li>
-        <li><a href="#resource-vs-autowired">@Resource vs @Autowired</a></li>
+        <li><a href="#component-or-bean">@Component or @Bean</a></li>
+        <li><a href="#resource-vs-autowired">@Resource VS @Autowired</a></li>
+        <li><a href="#repository-or-mapper">@Repository or @Mapper</a></li>
       </ul>
     </li>
     <li><a href="#集成构建">集成/构建</a>
@@ -328,6 +335,7 @@ It could be a productional framework to make my project stronger.">
       <ul>
         <li><a href="#int-or-integer">int or Integer</a></li>
         <li><a href="#slf4jlogger-and-log4jlogger">slf4j.Logger and log4j.Logger</a></li>
+        <li><a href="#applicationyml">application.yml</a></li>
       </ul>
     </li>
   </ul>
@@ -342,6 +350,9 @@ It could be a productional framework to make my project stronger.">
 自动配置
 双亲委派</li>
 </ul>
+<h2 id="core">CORE</h2>
+<h3 id="ioc">IoC</h3>
+<h3 id="aop">AOP</h3>
 <h2 id="architecture">ARCHITECTURE</h2>
 <p>三层架构
 经典的三层架构主要是Dao/Service/Controller层这三层. 相应的, 对应这3层的对象为DO/BO/VO对象.</p>
@@ -386,9 +397,10 @@ Strictly speaking, @Entity is not a JavaBean (the JavaBean convention requires a
 @Entity can have protected etc.) but they are very similar. @Entity is actually a POJO
 (Plain Old Java Object). You can compare conventions and requirements for JavaBeans and Entity classes:</p>
 <h2 id="annotation">ANNOTATION</h2>
-<h3 id="component">@Component</h3>
+<h3 id="component-or-bean">@Component or @Bean</h3>
 <p>With this annotation, a class can be scaned manually or automaticlly</p>
-<h3 id="resource-vs-autowired">@Resource vs @Autowired</h3>
+<p>@Bean一般是调用第三方的</p>
+<h3 id="resource-vs-autowired">@Resource VS @Autowired</h3>
 <blockquote>
   <p>
 Both @Autowired (or @Inject) and @Resource work equally well. But there is a conceptual difference or a difference in the meaning<br/><br/>
@@ -405,6 +417,13 @@ While this fallback is convenient, IMHO it causes a lot of confusion, because pe
     
   </footer>
 </blockquote>
+<h3 id="repository-or-mapper">@Repository or @Mapper</h3>
+<p>DAO层的用@Repository</p>
+<p>和@Mapper的对比还没了解到</p>
+<p>总结
+@Mapper 一定要有，否则 Mybatis 找不到 mapper。
+@Repository 可有可无，可以消去依赖注入的报错信息。
+@MapperScan 可以替代 @Mapper。</p>
 <h2 id="集成构建">集成/构建</h2>
 <h3 id="maven-or-gradle">Maven or Gradle</h3>
 <p>The maven pom.xml defines lifecycle goals and the gradle build.gradle defines tasks.</p>
@@ -538,6 +557,11 @@ However, it is always difficult to prefer one between the two.
   
   
 </div>
+
+<h3 id="applicationyml">application.yml</h3>
+<p>dependency
+springboot自己的依赖: spring-boot-starter-xxx
+第三方的以来: xxx-spring-boot-starter</p>
               
 
 
@@ -564,7 +588,7 @@ However, it is always difficult to prefer one between the two.
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--disabled">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/welcome/" data-tooltip="Welcome to Ivan&#39;s Blog" aria-label="NEXT: Welcome to Ivan&#39;s Blog">
           
               <i class="fa fa-angle-left"></i>
               <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -572,7 +596,7 @@ However, it is always difficult to prefer one between the two.
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/welcome/" data-tooltip="Welcome to Ivan&#39;s Blog" aria-label="PREVIOUS: Welcome to Ivan&#39;s Blog">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/java-basic/" data-tooltip="Java Basic" aria-label="PREVIOUS: Java Basic">
           
               <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
               <i class="fa fa-angle-right"></i>
@@ -665,7 +689,7 @@ However, it is always difficult to prefer one between the two.
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--disabled">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/welcome/" data-tooltip="Welcome to Ivan&#39;s Blog" aria-label="NEXT: Welcome to Ivan&#39;s Blog">
           
               <i class="fa fa-angle-left"></i>
               <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -673,7 +697,7 @@ However, it is always difficult to prefer one between the two.
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/welcome/" data-tooltip="Welcome to Ivan&#39;s Blog" aria-label="PREVIOUS: Welcome to Ivan&#39;s Blog">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/java-basic/" data-tooltip="Java Basic" aria-label="PREVIOUS: Java Basic">
           
               <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
               <i class="fa fa-angle-right"></i>

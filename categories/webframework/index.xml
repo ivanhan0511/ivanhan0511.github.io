@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>WebFramework on Ivan Blog</title>
+    <link>https://ivanhan0511.github.io/categories/webframework/</link>
+    <description>Recent content in WebFramework on Ivan Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 14 Sep 2022 17:05:59 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/categories/webframework/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SpringBoot</title>
+      <link>https://ivanhan0511.github.io/post/java-springboot/</link>
+      <pubDate>Wed, 14 Sep 2022 17:05:59 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/post/java-springboot/</guid>
+      <description>&lt;p&gt;I like this framework more and more.&lt;/p&gt;
+&lt;p&gt;It could be a productional framework to make my project stronger.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Flask Basic</title>
+      <link>https://ivanhan0511.github.io/post/python-flask-pearadmin/</link>
+      <pubDate>Tue, 24 May 2022 16:57:10 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/post/python-flask-pearadmin/</guid>
+      <description>&lt;p&gt;Some records of Flask&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -81,12 +81,6 @@
 
 
 
-  <meta property="og:image" content="https://ivanhan0511.github.io/image-2.png">
-  <meta property="twitter:image" content="https://ivanhan0511.github.io/image-2.png">
-
-
-  <meta property="og:image" content="https://ivanhan0511.github.io/image-1.png">
-  <meta property="twitter:image" content="https://ivanhan0511.github.io/image-1.png">
 
 
     <title>Java Basic</title>
@@ -245,25 +239,15 @@
 </nav>
 
       
-  <div class="post-header-cover
-              text-center
-              post-header-cover--full"
-       style="background-image:url('/image-2.png')"
-       data-behavior="4">
-    
-  </div>
-
 
       <div id="main" data-behavior="4"
-        class="hasCover
-               hasCoverMetaOut
-               hasCoverCaption">
+        class="
+               hasCoverMetaIn
+               ">
         <article class="post" id="top">
           
-            <span class="post-header-cover-caption caption">A beautiful image</span>
           
-          
-            <div class="post-header main-content-wrap text-center">
+            <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title">
       Java Basic
@@ -306,8 +290,7 @@
   <ul>
     <li><a href="#basic">BASIC</a>
       <ul>
-        <li><a href="#string">String[]</a></li>
-        <li><a href="#arraylist">ArrayList</a></li>
+        <li><a href="#类型对比">类型对比</a></li>
       </ul>
     </li>
     <li><a href="#泛型">泛型</a></li>
@@ -315,8 +298,9 @@
 </nav>
 
 <h2 id="basic">BASIC</h2>
-<h3 id="string">String[]</h3>
-<h3 id="arraylist">ArrayList</h3>
+<h3 id="类型对比">类型对比</h3>
+<p>String[]</p>
+<p>ArrayList</p>
 <h2 id="泛型">泛型</h2>
 
   
@@ -326,15 +310,13 @@
     
   
   
-    
-  
   
 
 
-<figure class="highlight t language-t">
+<figure class="highlight https://www.163.com language-https://www.163.com">
   <figcaption>
     
-      <span>A.java</span><a href="https://www.163.com" target="_blank" rel="external">A.java</a>
+      <span>A.java</span>
     
   </figcaption>
   <table>
@@ -344,7 +326,7 @@
           <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre>
         </td>
         <td class="code">
-          <pre class="code-highlight language-t t"><code class="t">public class A {}
+          <pre class="code-highlight language-https://www.163.com https://www.163.com"><code class="https://www.163.com">public class A {}
 
 public static &lt;A&gt; List&lt;A&gt; asList(A... a);
 
@@ -358,7 +340,7 @@ public static List&lt;A&gt; asList(A... a);</code></pre>
 <p><!-- raw HTML omitted -->是申明T为泛型，以区别于类名</p>
 <p>即：<!-- raw HTML omitted --> List<!-- raw HTML omitted --> 中，第一个T是告诉大家，T不是类T.class，而是泛型T
 （如果只写List<!-- raw HTML omitted -->则编译器以为是类T.class，如果不存在T.class类，则报错）。</p>
-<p>案例1中A为“泛型A”，参数可以传入任何类型对象的数组；案例2则不是，其中A为“类A”，参数只能传入“类A”的对象的数组。</p>
+<p>案例1中A为“泛型A”，参数可以传入任何类型对象的数组；案例2则不是，其中A为&quot;类A&quot;，参数只能传入&quot;类A&quot;的对象的数组。</p>
 <div class="alert info ">
   <p>案例1中使用泛型绝不是因为要使参数可以传入任意类型，如果仅仅是这样，直接用Object就可以了。
 用泛型是因为可以使该方法的返回值成为一个指定类型的集合，这样再次使用该集合的时候就有一个明确的类型了，

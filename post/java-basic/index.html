@@ -319,109 +319,51 @@
 <h3 id="arraylist">ArrayList</h3>
 <h2 id="泛型">泛型</h2>
 
-
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
-
-
   
     
   
   
     
   
+  
+    
+  
+  
 
-<figure class="codeblock codeblock--tabbed">
+
+<figure class="highlight t language-t">
   <figcaption>
     
-      <span><a href="%e6%b3%9b%e5%9e%8b">T</a></span>
+      <span>A.java</span><a href="https://www.163.com" target="_blank" rel="external">A.java</a>
     
-    <ul class="tabs">
-      
-        <li class="tab active">java</li>
-      
-        <li class="tab ">java</li>
-      
-        <li class="tab ">java</li>
-      
-    </ul>
   </figcaption>
-  <div class="tabs-content">
-    
-      
-      <figure class="highlight language-java java" style="display: block;">
-        <table>
-          <tbody>
-            <tr>
-              <td class="gutter">
-                <pre><span>1</span><br><span>2</span><br></pre>
-              </td>
-              <td class="code">
-                <pre class="code-highlight language-java java"><code class="java">public class A {
-}</code></pre>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </figure>
-    
-      
-      <figure class="highlight language-java java" style="display: none;">
-        <table>
-          <tbody>
-            <tr>
-              <td class="gutter">
-                <pre><span>1</span><br></pre>
-              </td>
-              <td class="code">
-                <pre class="code-highlight language-java java"><code class="java">public static &lt;A&gt; List&lt;A&gt; asList(A... a);</code></pre>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </figure>
-    
-      
-      <figure class="highlight language-java java" style="display: none;">
-        <table>
-          <tbody>
-            <tr>
-              <td class="gutter">
-                <pre><span>1</span><br></pre>
-              </td>
-              <td class="code">
-                <pre class="code-highlight language-java java"><code class="java">public static List&lt;A&gt; asList(A... a);</code></pre>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </figure>
-    
-  </div>
+  <table>
+    <tbody>
+      <tr>
+        <td class="gutter">
+          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre>
+        </td>
+        <td class="code">
+          <pre class="code-highlight language-t t"><code class="t">public class A {}
+
+public static &lt;A&gt; List&lt;A&gt; asList(A... a);
+
+public static List&lt;A&gt; asList(A... a);</code></pre>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </figure>
 
 <p><!-- raw HTML omitted -->是申明T为泛型，以区别于类名</p>
 <p>即：<!-- raw HTML omitted --> List<!-- raw HTML omitted --> 中，第一个T是告诉大家，T不是类T.class，而是泛型T
 （如果只写List<!-- raw HTML omitted -->则编译器以为是类T.class，如果不存在T.class类，则报错）。</p>
 <p>案例1中A为“泛型A”，参数可以传入任何类型对象的数组；案例2则不是，其中A为“类A”，参数只能传入“类A”的对象的数组。</p>
-<p>案例1中使用泛型绝不是因为要使参数可以传入任意类型，如果仅仅是这样，直接用Object就可以了。
+<div class="alert info ">
+  <p>案例1中使用泛型绝不是因为要使参数可以传入任意类型，如果仅仅是这样，直接用Object就可以了。
 用泛型是因为可以使该方法的返回值成为一个指定类型的集合，这样再次使用该集合的时候就有一个明确的类型了，
 这使的在将来该类型发生改变的时候编译器会报错，提醒你做相应的修改，而不是让问题暴露在运行阶段。</p>
+</div>
               
 
 

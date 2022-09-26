@@ -290,17 +290,38 @@
   <ul>
     <li><a href="#basic">BASIC</a>
       <ul>
-        <li><a href="#类型对比">类型对比</a></li>
+        <li><a href="#类型对比">类型对比</a>
+          <ul>
+            <li><a href="#string">String[]</a></li>
+            <li><a href="#arraylist">ArrayList</a></li>
+            <li><a href="#int-or-integer">int or Integer</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
     <li><a href="#泛型">泛型</a></li>
+    <li><a href="#jdbc">JDBC</a></li>
   </ul>
 </nav>
 
 <h2 id="basic">BASIC</h2>
 <h3 id="类型对比">类型对比</h3>
-<p>String[]</p>
-<p>ArrayList</p>
+<h4 id="string">String[]</h4>
+<h4 id="arraylist">ArrayList</h4>
+<h4 id="int-or-integer">int or Integer</h4>
+<p>用int还是用Integer?<br>
+昨天例行code review时大家有讨论到int和Integer的比较和使用。 这里做个整理，发表一下个人的看法。</p>
+<p>【int和Integer的区别】</p>
+<p>int是java提供的8种原始类型之一，java为每个原始类型提供了封装类，Integer是int的封装类。int默认值是0，而Integer默认值是null；</p>
+<p>int和Integer（无论是否new）比较，都为true， 因为会把Integer自动拆箱为int再去比；</p>
+<p>Integer是引用类型，用==比较两个对象，其实比较的是它们的内存地址，所以不同的Integer对象肯定是不同的；</p>
+<p>但是对于Integer i=<em>，java在编译时会将其解释成Integer i=Integer.valueOf(</em>)；。但是，Integer类缓存了[-128,127]之间的整数， 所以对于Integer i1=127；与Integer i2=127； 来说，i1==i2，因为这二个对象指向同一个内存单元。 而Integer i1=128；与Integer i2=128； 来说，i1==i2为false。</p>
+<p>【各自的应用场景】</p>
+<p>Integer默认值是null，可以区分未赋值和值为0的情况。比如未参加考试的学生和考试成绩为0的学生</p>
+<p>加减乘除和比较运算较多，用int</p>
+<p>容器里推荐用Integer。 对于PO实体类，如果db里int型字段允许null，则属性应定义为Integer。————默认也应当定义为包装类型，从而兼容数据为null的情况，规避NPE异常。诸如mybatis这些代码生成器生成的属性就是包装类型，我们从阿里开发规范里也可以找到类似声明———— 当然，如果系统限定db里int字段不允许null值，则也可考虑将属性定义为int。</p>
+<p>对于应用程序里定义的枚举类型， 其值如果是整型，则最好定义为int，方便与相关的其他int值或Integer值的比较</p>
+<p>Integer提供了一系列数据的成员和操作，如Integer.MAX_VALUE，Integer.valueOf(),Integer.compare(),compareTo(),不过一般用的比较少。建议，一般用int类型，这样一方面省去了拆装箱，另一方面也会规避数据比较时可能带来的bug。</p>
 <h2 id="泛型">泛型</h2>
 
   
@@ -346,6 +367,34 @@ public static List&lt;A&gt; asList(A... a);</code></pre>
 用泛型是因为可以使该方法的返回值成为一个指定类型的集合，这样再次使用该集合的时候就有一个明确的类型了，
 这使的在将来该类型发生改变的时候编译器会报错，提醒你做相应的修改，而不是让问题暴露在运行阶段。</p>
 </div>
+<h2 id="jdbc">JDBC</h2>
+<p>Once a connection is obtained we can interact with the database.
+The JDBC Statement, CallableStatement, and PreparedStatement interfaces define the methods
+and properties that enable you to send SQL or PL/SQL commands and receive data from your database.</p>
+<p>They also define methods that help bridge data type differences between Java and SQL data types used in a database.</p>
+<p>The following table provides a summary of each interface&rsquo;s purpose to decide on the interface to use.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Interfaces</th>
+<th style="text-align:left">Recommended Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Statement</td>
+<td style="text-align:left">Use this for general-purpose access to your database. Useful when you are using static SQL statements at runtime. The Statement interface cannot accept parameters.</td>
+</tr>
+<tr>
+<td style="text-align:left">PreparedStatement</td>
+<td style="text-align:left">Use this when you plan to use the SQL statements many times. The PreparedStatement interface accepts input parameters at runtime.</td>
+</tr>
+<tr>
+<td style="text-align:left">CallableStatement</td>
+<td style="text-align:left">Use this when you want to access the database stored procedures. The CallableStatement interface can also accept runtime input parameters.</td>
+</tr>
+</tbody>
+</table>
               
 
 

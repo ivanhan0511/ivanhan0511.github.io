@@ -16,7 +16,7 @@
     
   },
   "name":"Ivan Blog",
-  "description":"\u003cp\u003eI like this framework more and more.\u003c\/p\u003e\n\u003cp\u003eIt could be a productional framework to make my project stronger.\u003c\/p\u003e",
+  "description":"\u003cp\u003eIt could be a productional framework to make my project stronger.\u003c\/p\u003e",
   "url":"https:\/\/ivanhan0511.github.io\/post\/java-springboot\/",
   "keywords":"[java, springboot, web frame, Ivan, Python, C\/C\u002b\u002b, Coffee, Bass, Bicycle, Badminton]"
 }
@@ -28,22 +28,18 @@
 <meta name="generator" content="Hugo 0.99.1 with theme Tranquilpeak 0.5.3-BETA">
 <meta name="author" content="Ivan Han">
 <meta name="keywords" content="java, springboot, web frame, Ivan, Python, C/C&#43;&#43;, Coffee, Bass, Bicycle, Badminton">
-<meta name="description" content="I like this framework more and more.
-It could be a productional framework to make my project stronger.">
+<meta name="description" content="It could be a productional framework to make my project stronger.">
 
 
-<meta property="og:description" content="I like this framework more and more.
-It could be a productional framework to make my project stronger.">
+<meta property="og:description" content="It could be a productional framework to make my project stronger.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SpringBoot">
 <meta name="twitter:title" content="SpringBoot">
 <meta property="og:url" content="https://ivanhan0511.github.io/post/java-springboot/">
 <meta property="twitter:url" content="https://ivanhan0511.github.io/post/java-springboot/">
 <meta property="og:site_name" content="Ivan Blog">
-<meta property="og:description" content="I like this framework more and more.
-It could be a productional framework to make my project stronger.">
-<meta name="twitter:description" content="I like this framework more and more.
-It could be a productional framework to make my project stronger.">
+<meta property="og:description" content="It could be a productional framework to make my project stronger.">
+<meta name="twitter:description" content="It could be a productional framework to make my project stronger.">
 <meta property="og:locale" content="en-us">
 
   
@@ -304,8 +300,7 @@ It could be a productional framework to make my project stronger.">
           
           <div class="post-content markdown">
             <div class="main-content-wrap">
-              <p>I like this framework more and more.</p>
-<p>It could be a productional framework to make my project stronger.</p>
+              <p>It could be a productional framework to make my project stronger.</p>
 <h1 id="table-of-contents">Table of Contents</h1>
 <nav id="TableOfContents">
   <ul>
@@ -324,6 +319,9 @@ It could be a productional framework to make my project stronger.">
         <li><a href="#pojo的一些参考">POJO的一些参考</a></li>
       </ul>
     </li>
+    <li><a href="#db">DB</a></li>
+    <li><a href="#security">SECURITY</a></li>
+    <li><a href="#log">LOG</a></li>
     <li><a href="#annotation">ANNOTATION</a>
       <ul>
         <li><a href="#component-or-bean">@Component or @Bean</a></li>
@@ -331,7 +329,7 @@ It could be a productional framework to make my project stronger.">
         <li><a href="#repository-or-mapper">@Repository or @Mapper</a></li>
       </ul>
     </li>
-    <li><a href="#集成构建">集成/构建</a>
+    <li><a href="#deployment集成构建">DEPLOYMENT(集成/构建)</a>
       <ul>
         <li><a href="#maven-or-gradle">Maven or Gradle</a></li>
         <li><a href="#maven-381">Maven 3.8.1</a></li>
@@ -439,6 +437,9 @@ domain这个包国外很多项目经常用到，字面意思是域的意思。�
 <p>即复杂对象的交互必须封装成Request 和 Response与前端进行交互</p>
 <p>个人理解:<br>
 POJO中一般不允许有业务逻辑方法, 不能带有connection之类的方法</p>
+<h2 id="db">DB</h2>
+<h2 id="security">SECURITY</h2>
+<h2 id="log">LOG</h2>
 <h2 id="annotation">ANNOTATION</h2>
 <h3 id="component-or-bean">@Component or @Bean</h3>
 <p>With this annotation, a class can be scaned manually or automaticlly</p>
@@ -467,7 +468,7 @@ While this fallback is convenient, IMHO it causes a lot of confusion, because pe
 @Mapper 一定要有，否则 Mybatis 找不到 mapper。
 @Repository 可有可无，可以消去依赖注入的报错信息。
 @MapperScan 可以替代 @Mapper。</p>
-<h2 id="集成构建">集成/构建</h2>
+<h2 id="deployment集成构建">DEPLOYMENT(集成/构建)</h2>
 <h3 id="maven-or-gradle">Maven or Gradle</h3>
 <p>The maven pom.xml defines lifecycle goals and the gradle build.gradle defines tasks.</p>
 <p>&ldquo;知识体系&quot;中关联的关于Maven的<a href="https://www.iocoder.cn/Fight/Maven-most-complete-tutorial-read-must-understand/?self">讲解</a></p>

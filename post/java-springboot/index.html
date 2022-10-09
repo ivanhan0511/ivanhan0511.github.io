@@ -304,29 +304,19 @@
 <h1 id="table-of-contents">Table of Contents</h1>
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#渊源">渊源</a></li>
     <li><a href="#core">CORE</a>
       <ul>
+        <li><a href="#spring">Spring</a></li>
         <li><a href="#ioc">IoC</a></li>
         <li><a href="#aop">AOP</a></li>
-        <li><a href="#architecture">ARCHITECTURE</a></li>
       </ul>
     </li>
-    <li><a href="#java名词理解与对应">Java名词理解与对应</a>
+    <li><a href="#project-architecture">PROJECT ARCHITECTURE</a>
       <ul>
-        <li><a href="#javabean与entity很像">JavaBean与Entity很像</a></li>
-        <li><a href="#entity-model-and-domain">entity, model and domain</a></li>
-        <li><a href="#pojo的一些参考">POJO的一些参考</a></li>
+        <li><a href="#architecture">Architecture</a></li>
+        <li><a href="#名词解释">名词解释</a></li>
       </ul>
     </li>
-    <li><a href="#db">DB</a>
-      <ul>
-        <li><a href="#configuration">Configuration</a></li>
-        <li><a href="#mybatisplus">MyBatisPlus</a></li>
-      </ul>
-    </li>
-    <li><a href="#security">SECURITY</a></li>
-    <li><a href="#log">LOG</a></li>
     <li><a href="#annotation">ANNOTATION</a>
       <ul>
         <li><a href="#常用注解的深入理解">常用注解的深入理解</a></li>
@@ -354,83 +344,55 @@
         </li>
       </ul>
     </li>
+    <li><a href="#security">SECURITY</a></li>
     <li><a href="#tips">TIPs</a>
       <ul>
-        <li><a href="#slf4jlogger-and-log4jlogger">slf4j.Logger and log4j.Logger</a></li>
+        <li><a href="#logger">Logger</a></li>
         <li><a href="#applicationyml">application.yml</a></li>
       </ul>
     </li>
   </ul>
 </nav>
 
-<h2 id="渊源">渊源</h2>
-<p>Spring</p>
-<ul>
-<li>IOC</li>
-<li>AOP
-自动配置
-双亲委派</li>
-</ul>
 <h2 id="core">CORE</h2>
+<p>To be grabbed deeply.</p>
+<h3 id="spring">Spring</h3>
 <h3 id="ioc">IoC</h3>
 <p>It&rsquo;s anywhere!</p>
 <h3 id="aop">AOP</h3>
 <p>So far, we didn&rsquo;t use it so much.</p>
-<h3 id="architecture">ARCHITECTURE</h3>
-<p>POJO: Plain Old Java Object. 是DO/DTO/BO/VO的统称</p>
-<p>PO: Persistant Object. 持久层对象. 类似数据库内的一条记录</p>
-<p>DO: Domain Object. 领域对象. 我们在三层架构中使用的DO其实是PO</p>
-<p>BO: Business Object. 业务对象.</p>
-<p>VO: Value Object. 表现对象. 主要用于与前端直接的交互与信息传递.</p>
+<h2 id="project-architecture">PROJECT ARCHITECTURE</h2>
+<h3 id="architecture">Architecture</h3>
+<p>[TODO]: To be improved&hellip;
+<blockquote>
+  <p>
+
+</p>
+  <footer>
+    <strong></strong>
+    
+      
+        <cite></cite>
+      
+    
+  </footer>
+</blockquote></p>
+<p>其实列举了当前的项目架构, 主要是为了后面的各种Object做铺垫</p>
+<h3 id="名词解释">名词解释</h3>
+<p><a href="https://blog.51cto.com/u_12302929/4811425">项目开发中，真的有必要定义VO，BO，PO，DO，DTO这些吗？</a></p>
+<p>自上而下的顺序:</p>
+<p>VO: Value Object. 表现对象. 主要用于与前端直接的交互与信息传递(小规模项目, 使用DTO即可).</p>
 <p>DTO: Data Transfer Object. 通常是在OpenApi. 即此项目与其他外界项目交互时使用的对象.</p>
-<p>DAO: Data Access Object.</p>
-<p>SPI: Service Provider Interface. 常见的 SPI 有 JDBC、JNDI、JAXP 等，这些SPI的接口由核心类库提供，却由第三方实现</p>
-<p>PS: 最后插一句. 其实, 如果你的项目功能足够简单. 项目比较小的话, 其实没有必要分的那么细致. 掌握设计的“度”, 非常重要.</p>
-<p>阿里开发手册的部分约定</p>
-<h2 id="java名词理解与对应">Java名词理解与对应</h2>
-<h3 id="javabean与entity很像">JavaBean与Entity很像</h3>
-<pre><code>Strictly speaking, @Entity is not a JavaBean (the JavaBean convention requires a public no-arg constructor, 
-        @Entity can have protected etc.) but they are very similar. @Entity is actually a POJO 
-(Plain Old Java Object). You can compare conventions and requirements for JavaBeans and Entity classes:
-</code></pre>
-<h3 id="entity-model-and-domain">entity, model and domain</h3>
-<p>entity(实体)
-entity的意思就是实体的意思，所以也是最常用到的，entity包中的类是必须和数据库相对应的，<br>
-比如说：数据库有个user表，字段有long类型的id，string类型的姓名，那么entity中的user类也必须是含有这两个字段的，<br>
-且类型必须一致。不能数据库存的是long类型，user类里的属性是string类型。这样做的好处是保持实体类和数据库保持一致，<br>
-另外，当用到hibernate或是mybatie框架来操作数据库的时候，操作这个实体类就行，写sql文之前不需要再做数据格式处理。</p>
-<p>model(模型)
-model大家不陌生，都知道是模型的意思，当用model当包名的时候，一般里面存的是实体类的模型，一般是用来给前端用的。<br>
-比如：前端页面需要显示一个user信息，user包含姓名，性别，居住地，这些信息存在数据库的时候，姓名直接存姓名，<br>
-但是性别和居住地一般会用数据字典的编号存到数据库，比如：111代表男，222代表女，数据库存的就是111或222，<br>
-如果用entity的话，把111、222前端都不知道是什么玩意，就算前端知道111代表男，222代表女，写了一个js判断数据处理。<br>
-后来数据库变动了，111代表女，222代表男，前端的js又需要重新写，很显然这样不利于维护。<br>
-所以就需要model来解决，后台从数据库取了数据转化为前端需要的数据直接传给前端，<br>
-前端就不需要对数据来处理，直接显示就行了。还有一种情况，数据库里面的user表字段有十个，<br>
-包含姓名，qq，生辰八字乱七八糟的等，但是前台页面只需要显示姓名，如果把entity全部传给前台，<br>
-无疑传了很多没用的数据。这时候model就很好的解决了这个问题，前台需要什么数据，model就包含什么数据就行了</p>
-<p>domain(域)
-domain这个包国外很多项目经常用到，字面意思是域的意思。范围有点广了，比如一个商城的项目，<br>
-商城主要的模块就是用户，订单，商品三大模块，那么这三块数据就可以叫做三个域，domain包里就是存的就是这些数据，<br>
-表面上这个包和entity和model包里存的数据没什么区别，其实差别还是挺大的，特别是一些大型的项目。比如一个招聘网站的项目，<br>
-最重要的对象就是简历了，那么简历是怎么存到数据库的呢，不可能用一张表就能存的，因为简历包含基本信息和工作经验，<br>
-项目经验，学习经验等。基本信息可以存在简历表，但是涉及到多条的就不行，因为没人知道有多少条工作经验，项目经验，<br>
-所以必须要单独建工作经验表和项目经验表关联到简历基本信息表。但是前台页面是不关心这些的，<br>
-前台需要的数据就是一个简历所有信息，这时就可以用到domain来处理，domain里面的类就是一个简历对象，<br>
-包含了简历基本信息以及list的工作经验，项目经验等。这样前端只需要获取一个对象就行了，不需要同时即要获取基本信息，<br>
-还要从基本信息里面获取工作经验关联的简历编号，然后再去获取对应的工作经验了。<br>
-当然，如果用model的话也是可以达到domain的效果的。这个完全是看个人喜好和项目的整体架构，<br>
-因为创建不同的package的作用本来也就是想把项目分成不同的层，便于管理和维护。如果你乐意，你可以创建entity包，<br>
-然后在里面存图片，创建images文件夹，里面存js。你已经看懂就行，前提是如果是团队开发的话能保证别人不打你。<br>
-这个和语言一个道理，你在200面前和英国人说：private void set(int age),<br>
-人家说：滚犊子；现在你这样说，人家就知道是java语言了。能被人们通用的才叫语言，你说的别人听不懂那只能算是鸟语。<br>
-所以开发的时候，建类建包的命名规则规范性还是很重要的。</p>
-<p>那么三句话总结下entity、model、domain的不同：
-1.entity字段必须和数据库字段一样
-2.前端需要什么我们就给什么
-3.domain很少用，代表一个对象模块</p>
-<p>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
-<h3 id="pojo的一些参考">POJO的一些参考</h3>
+<p>BO: Business Object. 业务对象(个人理解, BO和DO很像, 是一个综合多个PO的复合抽象对象).</p>
+<p>DO: Domain Object. 领域对象(我们在三层架构中使用的DO其实是PO)</p>
+<p>PO: Persistant Object. 持久层对象. 类似数据库内的一条记录</p>
+<p>DAO: Data Access Object.(小规模项, 使用DAO即可)</p>
+<p>PS:</p>
+<ul>
+<li>POJO: Plain Old Java Object. 是PO/DO/DTO/BO/VO的统称</li>
+<li>其实, 如果你的项目功能足够简单. 项目比较小的话, 其实没有必要分的那么细致. 掌握设计的“度”, 非常重要.</li>
+</ul>
+<p>POJO的一些参考(阿里内部)</p>
 <p>[参考]Domain对象各层命名约定:</p>
 <ul>
 <li>Service/DAO层方法命名规约
@@ -456,16 +418,9 @@ domain这个包国外很多项目经常用到，字面意思是域的意思。�
 <p>即复杂对象的交互必须封装成Request 和 Response与前端进行交互</p>
 <p>个人理解:<br>
 POJO中一般不允许有业务逻辑方法, 不能带有connection之类的方法</p>
-<h2 id="db">DB</h2>
-<h3 id="configuration">Configuration</h3>
-<h3 id="mybatisplus">MyBatisPlus</h3>
-<h2 id="security">SECURITY</h2>
-<p>It&rsquo;s a deep track!</p>
-<p>Need do really deep reseach for it.</p>
-<h2 id="log">LOG</h2>
-<p>So far, use the original log systemt of pear-admin-pro</p>
 <h2 id="annotation">ANNOTATION</h2>
 <h3 id="常用注解的深入理解">常用注解的深入理解</h3>
+<p>[TODO]: To be done&hellip;</p>
 <h3 id="易混淆注解的对比">易混淆注解的对比</h3>
 <h4 id="component-or-bean">@Component or @Bean</h4>
 <p>With this annotation, a class can be scaned manually or automaticlly</p>
@@ -591,8 +546,12 @@ While this fallback is convenient, IMHO it causes a lot of confusion, because pe
 <li>Security, comment <code>http.addFilterBefore();</code></li>
 </ul>
 <h4 id="modules">modules</h4>
+<h2 id="security">SECURITY</h2>
+<p>It&rsquo;s a deep track!</p>
+<p>Need do really deep reseach for it.</p>
 <h2 id="tips">TIPs</h2>
-<h3 id="slf4jlogger-and-log4jlogger">slf4j.Logger and log4j.Logger</h3>
+<h3 id="logger">Logger</h3>
+<p><strong>slf4j.Logger and log4j.Logger</strong>
 <blockquote>
   <p>
 Comparison SLF4J and Log4j<br/>
@@ -607,7 +566,7 @@ However, it is always difficult to prefer one between the two.
       <cite><a href="https://www.tutorialspoint.com/slf4j/slf4j_vs_log4j.htm#:~:text=Comparison%20SLF4J%20and%20Log4j,prefer%20one%20between%20the%20two." target="_blank" rel="external">SLF4J Vs Log4j</a></cite>
     
   </footer>
-</blockquote>
+</blockquote></p>
 
 
  

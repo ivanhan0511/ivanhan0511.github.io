@@ -13,7 +13,7 @@
       <pubDate>Wed, 10 Aug 2022 14:42:36 +0800</pubDate>
       
       <guid>https://ivanhan0511.github.io/post/sql-mysql-tcl/</guid>
-      <description>&lt;p&gt;TCL: Transaction Control Language&lt;/p&gt;</description>
+      <description>&lt;p&gt;TCL: Transaction Control Language, like &lt;code&gt;COMMIT&lt;/code&gt;, &lt;code&gt;ROLLBACK&lt;/code&gt;, &lt;code&gt;SAVEPOINT&lt;/code&gt;, &lt;code&gt;START TRANSACTION&lt;/code&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

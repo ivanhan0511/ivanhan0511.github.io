@@ -13,7 +13,7 @@
       <pubDate>Wed, 10 Aug 2022 14:42:36 +0800</pubDate>
       
       <guid>https://ivanhan0511.github.io/post/sql-mysql-ddl/</guid>
-      <description>&lt;p&gt;DDL: Data Definition Language&lt;/p&gt;</description>
+      <description>&lt;p&gt;DDL: Data Definition Language, like &lt;code&gt;CREATE&lt;/code&gt;, &lt;code&gt;ALTER&lt;/code&gt;, &lt;code&gt;DROP&lt;/code&gt;, &lt;code&gt;TRUNCATE&lt;/code&gt;, &lt;code&gt;COMMENT&lt;/code&gt;, &lt;code&gt;RENAME&lt;/code&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

@@ -35,15 +35,6 @@
     </item>
     
     <item>
-      <title>SQLAlchemy</title>
-      <link>https://ivanhan0511.github.io/post/sql-sqlalchemy/</link>
-      <pubDate>Wed, 10 Aug 2022 18:32:18 +0800</pubDate>
-      
-      <guid>https://ivanhan0511.github.io/post/sql-sqlalchemy/</guid>
-      <description>&lt;p&gt;I need SQLAlchemy, so far&amp;hellip;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
       <title>MySQL DCL Operations</title>
       <link>https://ivanhan0511.github.io/post/sql-mysql-dcl/</link>
       <pubDate>Wed, 10 Aug 2022 14:42:36 +0800</pubDate>

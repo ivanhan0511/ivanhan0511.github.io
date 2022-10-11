@@ -44,21 +44,6 @@
     <loc>https://ivanhan0511.github.io/post/java-basic/</loc>
     <lastmod>2022-09-14T17:05:15+08:00</lastmod>
   </url><url>
-    <loc>https://ivanhan0511.github.io/tags/flask/</loc>
-    <lastmod>2022-08-10T18:32:18+08:00</lastmod>
-  </url><url>
-    <loc>https://ivanhan0511.github.io/categories/sql/</loc>
-    <lastmod>2022-08-10T18:32:18+08:00</lastmod>
-  </url><url>
-    <loc>https://ivanhan0511.github.io/tags/sqlalchemy/</loc>
-    <lastmod>2022-08-10T18:32:18+08:00</lastmod>
-  </url><url>
-    <loc>https://ivanhan0511.github.io/categories/sqlalchemy/</loc>
-    <lastmod>2022-08-10T18:32:18+08:00</lastmod>
-  </url><url>
-    <loc>https://ivanhan0511.github.io/post/sql-sqlalchemy/</loc>
-    <lastmod>2022-08-10T18:32:18+08:00</lastmod>
-  </url><url>
     <loc>https://ivanhan0511.github.io/tags/dcl/</loc>
     <lastmod>2022-08-10T14:42:36+08:00</lastmod>
   </url><url>
@@ -84,6 +69,9 @@
     <lastmod>2022-08-10T14:42:36+08:00</lastmod>
   </url><url>
     <loc>https://ivanhan0511.github.io/post/sql-mysql-tcl/</loc>
+    <lastmod>2022-08-10T14:42:36+08:00</lastmod>
+  </url><url>
+    <loc>https://ivanhan0511.github.io/categories/sql/</loc>
     <lastmod>2022-08-10T14:42:36+08:00</lastmod>
   </url><url>
     <loc>https://ivanhan0511.github.io/tags/tcl/</loc>
@@ -228,6 +216,9 @@
     <lastmod>2022-05-25T15:39:32+08:00</lastmod>
   </url><url>
     <loc>https://ivanhan0511.github.io/post/python-flask-deploy/</loc>
+    <lastmod>2022-05-25T15:39:32+08:00</lastmod>
+  </url><url>
+    <loc>https://ivanhan0511.github.io/tags/flask/</loc>
     <lastmod>2022-05-25T15:39:32+08:00</lastmod>
   </url><url>
     <loc>https://ivanhan0511.github.io/tags/pearadmin/</loc>

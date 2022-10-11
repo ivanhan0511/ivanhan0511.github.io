@@ -330,6 +330,16 @@
         </li>
       </ul>
     </li>
+    <li><a href="#db-mapper">DB MAPPER</a>
+      <ul>
+        <li><a href="#returned-values">Returned values</a>
+          <ul>
+            <li><a href="#service-layerdo">Service layer(DO)</a></li>
+            <li><a href="#repositery-layerdao">Repositery layer(DAO)</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
     <li><a href="#deployment集成构建">DEPLOYMENT(集成/构建)</a>
       <ul>
         <li><a href="#maven-or-gradle">Maven or Gradle</a></li>
@@ -444,6 +454,50 @@ While this fallback is convenient, IMHO it causes a lot of confusion, because pe
 @MapperScan 可以替代 @Mapper。</p>
 <h4 id="springboot中的equalsandhashcode注解与data注解">SpringBoot中的@EqualsAndHashCode注解与@Data注解</h4>
 <p><a href="https://blog.csdn.net/gdkyxy2013/article/details/104769897">https://blog.csdn.net/gdkyxy2013/article/details/104769897</a></p>
+<h2 id="db-mapper">DB MAPPER</h2>
+<p>Use MyBatisPLus maven and use default CRUD methods.<br>
+But refuse to use QueryWrapper, use MyBatis&rsquo; XML mapper.</p>
+<p><a href="https://mybatis.org/mybatis-3/zh/sqlmap-xml.html#Parameters">MyBatis Documents</a></p>
+<h3 id="returned-values">Returned values</h3>
+<h4 id="service-layerdo">Service layer(DO)</h4>
+<ul>
+<li>Get
+<ul>
+<li>Get one
+<ul>
+<li>Success -&gt; T entity</li>
+<li>Failure -&gt; null</li>
+</ul>
+</li>
+<li>Get list
+<ul>
+<li>Success -&gt; List<!-- raw HTML omitted --> entityList</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>INSERT</li>
+<li>UPDATE</li>
+<li>DELETE</li>
+</ul>
+<h4 id="repositery-layerdao">Repositery layer(DAO)</h4>
+<ul>
+<li>SELECT
+<ul>
+<li>Select one
+<ul>
+<li>Success -&gt; T entity</li>
+<li>Failure -&gt; null</li>
+</ul>
+</li>
+<li>Select multi
+*</li>
+</ul>
+</li>
+<li>INSERT</li>
+<li>UPDATE</li>
+<li>DELETE</li>
+</ul>
 <h2 id="deployment集成构建">DEPLOYMENT(集成/构建)</h2>
 <h3 id="maven-or-gradle">Maven or Gradle</h3>
 <p>The maven pom.xml defines lifecycle goals and the gradle build.gradle defines tasks.</p>
@@ -545,6 +599,9 @@ While this fallback is convenient, IMHO it causes a lot of confusion, because pe
 </li>
 <li>
 <p>modules</p>
+<ul>
+<li>common.web.domain.Result, <del><!-- raw HTML omitted --></del></li>
+</ul>
 </li>
 </ul>
 <h2 id="security">SECURITY</h2>

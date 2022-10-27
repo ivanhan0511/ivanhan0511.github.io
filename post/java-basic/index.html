@@ -358,9 +358,9 @@ public static List&lt;A&gt; asList(A... a);</code></pre>
   </table>
 </figure>
 
-<p><!-- raw HTML omitted -->是申明T为泛型，以区别于类名</p>
-<p>即：<!-- raw HTML omitted --> List<!-- raw HTML omitted --> 中，第一个T是告诉大家，T不是类T.class，而是泛型T
-（如果只写List<!-- raw HTML omitted -->则编译器以为是类T.class，如果不存在T.class类，则报错）。</p>
+<p><code>&lt;T&gt;</code>是申明T为泛型，以区别于类名</p>
+<p>即：<code>&lt;T&gt;</code> List<code>&lt;T&gt;</code> 中，第一个T是告诉大家，T不是类T.class，而是泛型T
+（如果只写List<code>&lt;T&gt;</code>则编译器以为是类T.class，如果不存在T.class类，则报错）。</p>
 <p>案例1中A为“泛型A”，参数可以传入任何类型对象的数组；案例2则不是，其中A为&quot;类A&quot;，参数只能传入&quot;类A&quot;的对象的数组。</p>
 <div class="alert info ">
   <p>案例1中使用泛型绝不是因为要使参数可以传入任意类型，如果仅仅是这样，直接用Object就可以了。<br>

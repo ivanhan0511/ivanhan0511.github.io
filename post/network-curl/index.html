@@ -303,6 +303,23 @@
               <p>This is a custom summary and does <strong>NOT</strong> appear in the post.</p>
 <h1 id="table-of-contents">Table of Contents</h1>
 <nav id="TableOfContents"></nav>
+
+<p>在curl访问HTTPS站点时，如果没有CA证书，会提示访问缺少CA证书而失败，如下图：</p>
+<p>curl-1.jpg</p>
+<p>以下步骤可以实现curl带CA证书访问对应的HTTPS站点。</p>
+<ol>
+<li>将CA证书转换为pem格式的CA证书</li>
+</ol>
+<p>以chrome浏览器为例说明：</p>
+<p>打开HTTPS站点，点击该站点的证书图标&ndash;&gt;【证书信息】&ndash;&gt;【详细信息】&ndash;&gt;【复制到文件】&ndash;&gt;【下一步】&ndash;&gt;选择【Base64 编码 X.509】&ndash;&gt; 【下一步】&ndash;&gt;点击【浏览】选择保存路径后输入文件名&ndash;&gt;点击【下一步】完成&ndash;&gt;【导出成功】。</p>
+<ol start="2">
+<li>将导出的cert文件上传到linux系统中通过openssl将cert证书转换为.pem格式的：</li>
+</ol>
+<p>openssl  x509  -in  a.cer  -out  a.pem</p>
+<ol start="3">
+<li>curl用法：</li>
+</ol>
+<p>curl  -k  &ndash;cert  a.pem <a href="https://test.com/">https://test.com/</a></p>
               
 
 
@@ -417,7 +434,7 @@
         </article>
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
-    &copy; 2022 <a href="https://github.com/ivanhan0511">Ivan Han</a>. All Rights Reserved
+    &copy; 2023 <a href="https://github.com/ivanhan0511">Ivan Han</a>. All Rights Reserved
   </span>
 </footer>
 

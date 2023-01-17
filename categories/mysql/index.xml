@@ -6,7 +6,16 @@
     <description>Recent content in MySQL on Ivan Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 10 Aug 2022 14:42:36 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/categories/mysql/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 17 Jan 2023 02:58:26 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/categories/mysql/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MySQL8.0 Init Operations</title>
+      <link>https://ivanhan0511.github.io/post/sql-mysql-init/</link>
+      <pubDate>Tue, 17 Jan 2023 02:58:26 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/post/sql-mysql-init/</guid>
+      <description>&lt;p&gt;Init operations of MySQL 8.0&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>MySQL DCL Operations</title>
       <link>https://ivanhan0511.github.io/post/sql-mysql-dcl/</link>
@@ -51,15 +60,6 @@
       
       <guid>https://ivanhan0511.github.io/post/sql-mysql-view/</guid>
       <description>&lt;p&gt;Create a SQLView to make query fast&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>MySQL8.0 Init Operations</title>
-      <link>https://ivanhan0511.github.io/post/sql-mysql-init/</link>
-      <pubDate>Tue, 24 May 2022 02:58:26 +0800</pubDate>
-      
-      <guid>https://ivanhan0511.github.io/post/sql-mysql-init/</guid>
-      <description>&lt;p&gt;Init operations of MySQL 8.0&lt;/p&gt;</description>
     </item>
     
   </channel>

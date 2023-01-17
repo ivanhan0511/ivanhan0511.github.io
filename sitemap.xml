@@ -3,16 +3,28 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://ivanhan0511.github.io/categories/</loc>
-    <lastmod>2022-10-27T17:41:00+08:00</lastmod>
+    <lastmod>2023-01-17T02:58:26+08:00</lastmod>
   </url><url>
     <loc>https://ivanhan0511.github.io/</loc>
-    <lastmod>2022-10-27T17:41:00+08:00</lastmod>
+    <lastmod>2023-01-17T02:58:26+08:00</lastmod>
+  </url><url>
+    <loc>https://ivanhan0511.github.io/categories/mysql/</loc>
+    <lastmod>2023-01-17T02:58:26+08:00</lastmod>
+  </url><url>
+    <loc>https://ivanhan0511.github.io/tags/mysql8.0/</loc>
+    <lastmod>2023-01-17T02:58:26+08:00</lastmod>
+  </url><url>
+    <loc>https://ivanhan0511.github.io/post/sql-mysql-init/</loc>
+    <lastmod>2023-01-17T02:58:26+08:00</lastmod>
   </url><url>
     <loc>https://ivanhan0511.github.io/post/</loc>
-    <lastmod>2022-10-27T17:41:00+08:00</lastmod>
+    <lastmod>2023-01-17T02:58:26+08:00</lastmod>
+  </url><url>
+    <loc>https://ivanhan0511.github.io/categories/sql/</loc>
+    <lastmod>2023-01-17T02:58:26+08:00</lastmod>
   </url><url>
     <loc>https://ivanhan0511.github.io/tags/</loc>
-    <lastmod>2022-10-27T17:41:00+08:00</lastmod>
+    <lastmod>2023-01-17T02:58:26+08:00</lastmod>
   </url><url>
     <loc>https://ivanhan0511.github.io/tags/welcome/</loc>
     <lastmod>2022-10-27T17:41:00+08:00</lastmod>
@@ -68,9 +80,6 @@
     <loc>https://ivanhan0511.github.io/tags/mysql/</loc>
     <lastmod>2022-08-10T14:42:36+08:00</lastmod>
   </url><url>
-    <loc>https://ivanhan0511.github.io/categories/mysql/</loc>
-    <lastmod>2022-08-10T14:42:36+08:00</lastmod>
-  </url><url>
     <loc>https://ivanhan0511.github.io/post/sql-mysql-dcl/</loc>
     <lastmod>2022-08-10T14:42:36+08:00</lastmod>
   </url><url>
@@ -81,9 +90,6 @@
     <lastmod>2022-08-10T14:42:36+08:00</lastmod>
   </url><url>
     <loc>https://ivanhan0511.github.io/post/sql-mysql-tcl/</loc>
-    <lastmod>2022-08-10T14:42:36+08:00</lastmod>
-  </url><url>
-    <loc>https://ivanhan0511.github.io/categories/sql/</loc>
     <lastmod>2022-08-10T14:42:36+08:00</lastmod>
   </url><url>
     <loc>https://ivanhan0511.github.io/tags/tcl/</loc>
@@ -277,12 +283,6 @@
   </url><url>
     <loc>https://ivanhan0511.github.io/post/coffee-grinder-helor/</loc>
     <lastmod>2022-05-24T03:09:48+08:00</lastmod>
-  </url><url>
-    <loc>https://ivanhan0511.github.io/tags/mysql8.0/</loc>
-    <lastmod>2022-05-24T02:58:26+08:00</lastmod>
-  </url><url>
-    <loc>https://ivanhan0511.github.io/post/sql-mysql-init/</loc>
-    <lastmod>2022-05-24T02:58:26+08:00</lastmod>
   </url><url>
     <loc>https://ivanhan0511.github.io/archives/</loc>
   </url><url>

@@ -43,10 +43,10 @@
 <meta property="og:locale" content="en-us">
 
   
-    <meta property="article:published_time" content="2022-05-24T02:58:26">
+    <meta property="article:published_time" content="2023-01-17T02:58:26">
   
   
-    <meta property="article:modified_time" content="2022-05-24T02:58:26">
+    <meta property="article:modified_time" content="2023-01-17T02:58:26">
   
   
   
@@ -256,13 +256,13 @@
   
   <div class="postShorten-meta post-meta">
     
-      <time datetime="2022-05-24T02:58:26&#43;08:00">
+      <time datetime="2023-01-17T02:58:26&#43;08:00">
         
   
   
   
   
-    May 24, 2022
+    January 17, 2023
   
 
       </time>
@@ -295,8 +295,7 @@
 
 <h2 id="in-a-normal-server">In a normal server</h2>
 <p><code>https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-20-04</code></p>
-<p>Ubuntu Server 20.04 LTS as example<br>
-Tencent Cloud Server</p>
+<p>Ubuntu Server 20.04 LTS as example in a Cloud Server</p>
 
 
   
@@ -343,7 +342,7 @@ Tencent Cloud Server</p>
               <td class="code">
                 <pre class="code-highlight language-shell shell"><code class="shell">sudo apt update
 sudo apt install mysql-server-8.0 -y
-#sudo apt install mysql-server
+#sudo apt install mysql-server -y
 sudo systemctl status mysql.service
 
 sudo mysql
@@ -361,14 +360,15 @@ sudo mysql
           <tbody>
             <tr>
               <td class="gutter">
-                <pre><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br></pre>
+                <pre><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br></pre>
               </td>
               <td class="code">
                 <pre class="code-highlight language-sql sql"><code class="sql">SET GLOBAL validate_password.policy=LOW;
 #CREATE DATABASE xxxdb charset=utf8;
-CREATE USER &#39;rd&#39;@&#39;%&#39; IDENTIFIED BY &#39;password&#39;;
-GRANT CREATE, ALTER, DROP, INSERT, UPDATE, DELETE, SELECT, REFERENCES, RELOAD on *.* TO &#39;rd&#39;@&#39;%&#39; WITH GRANT OPTION;
+CREATE USER &#39;rd&#39;@&#39;%&#39; IDENTIFIED BY &#39;your_password&#39;;
+GRANT ALL PRIVILEGES on xxxdb.* TO &#39;rd&#39;@&#39;%&#39;;
 #GRANT ALL PRIVILEGES ON *.* TO &#39;rd&#39;@&#39;%&#39; WITH GRANT OPTION;  # This is deprecated!
+#GRANT CREATE, ALTER, DROP, INSERT, UPDATE, DELETE, SELECT, REFERENCES, RELOAD on *.* TO &#39;rd&#39;@&#39;%&#39; WITH GRANT OPTION;
 FLUSH PRIVILEGES;
 exit</code></pre>
               </td>
@@ -425,7 +425,7 @@ exit</code></pre>
                 <pre><span>1</span><br><span>2</span><br></pre>
               </td>
               <td class="code">
-                <pre class="code-highlight language-shell shell"><code class="shell">docker run -p 3306:3306 --name mysql-rd -e MYSQL_ROOT_PASSWORD=RandD268 -d mysql:8.0
+                <pre class="code-highlight language-shell shell"><code class="shell">docker run -p 3306:3306 --name mysql-rd -e MYSQL_ROOT_PASSWORD=XXXXXX -d mysql:8.0
 mysql -h 127.0.0.1 -u root -p</code></pre>
               </td>
             </tr>
@@ -439,14 +439,15 @@ mysql -h 127.0.0.1 -u root -p</code></pre>
           <tbody>
             <tr>
               <td class="gutter">
-                <pre><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br></pre>
+                <pre><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></pre>
               </td>
               <td class="code">
                 <pre class="code-highlight language-sql sql"><code class="sql">CREATE DATABASE xxxdb charset=utf8;
-CREATE USER &#39;rd&#39;@&#39;%&#39; IDENTIFIED BY &#39;password&#39;;
-GRANT CREATE, ALTER, DROP, INSERT, UPDATE, DELETE, SELECT, REFERENCES, RELOAD on *.* TO &#39;rd&#39;@&#39;%&#39; WITH GRANT OPTION;
-#GRANT ALL PRIVILEGES on xxxdb.* TO &#39;rd&#39;@&#39;%&#39;;
-FLUSH PRIVILEGES;</code></pre>
+CREATE USER &#39;rd&#39;@&#39;%&#39; IDENTIFIED BY &#39;your_password&#39;;
+GRANT ALL PRIVILEGES on xxxdb.* TO &#39;rd&#39;@&#39;%&#39;;
+#GRANT CREATE, ALTER, DROP, INSERT, UPDATE, DELETE, SELECT, REFERENCES, RELOAD on *.* TO &#39;rd&#39;@&#39;%&#39; WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+exit</code></pre>
               </td>
             </tr>
           </tbody>
@@ -481,7 +482,7 @@ FLUSH PRIVILEGES;</code></pre>
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/coffee-grinder-helor/" data-tooltip="HELOR" aria-label="NEXT: HELOR">
+            <a class="post-action-btn btn btn--disabled">
           
               <i class="fa fa-angle-left"></i>
               <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -489,7 +490,7 @@ FLUSH PRIVILEGES;</code></pre>
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--disabled">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/welcome/" data-tooltip="Welcome to Ivan&#39;s Blog" aria-label="PREVIOUS: Welcome to Ivan&#39;s Blog">
           
               <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
               <i class="fa fa-angle-right"></i>
@@ -569,7 +570,7 @@ FLUSH PRIVILEGES;</code></pre>
         </article>
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
-    &copy; 2022 <a href="https://github.com/ivanhan0511">Ivan Han</a>. All Rights Reserved
+    &copy; 2023 <a href="https://github.com/ivanhan0511">Ivan Han</a>. All Rights Reserved
   </span>
 </footer>
 
@@ -582,7 +583,7 @@ FLUSH PRIVILEGES;</code></pre>
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/coffee-grinder-helor/" data-tooltip="HELOR" aria-label="NEXT: HELOR">
+            <a class="post-action-btn btn btn--disabled">
           
               <i class="fa fa-angle-left"></i>
               <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -590,7 +591,7 @@ FLUSH PRIVILEGES;</code></pre>
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--disabled">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/welcome/" data-tooltip="Welcome to Ivan&#39;s Blog" aria-label="PREVIOUS: Welcome to Ivan&#39;s Blog">
           
               <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
               <i class="fa fa-angle-right"></i>

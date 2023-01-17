@@ -6,7 +6,25 @@
     <description>Recent content in Categories on Ivan Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 27 Oct 2022 17:41:00 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 17 Jan 2023 02:58:26 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MySQL</title>
+      <link>https://ivanhan0511.github.io/categories/mysql/</link>
+      <pubDate>Tue, 17 Jan 2023 02:58:26 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/categories/mysql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SQL</title>
+      <link>https://ivanhan0511.github.io/categories/sql/</link>
+      <pubDate>Tue, 17 Jan 2023 02:58:26 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/categories/sql/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Welcome</title>
       <link>https://ivanhan0511.github.io/categories/welcome/</link>
@@ -58,24 +76,6 @@
       <pubDate>Wed, 14 Sep 2022 17:05:15 +0800</pubDate>
       
       <guid>https://ivanhan0511.github.io/categories/basic/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>MySQL</title>
-      <link>https://ivanhan0511.github.io/categories/mysql/</link>
-      <pubDate>Wed, 10 Aug 2022 14:42:36 +0800</pubDate>
-      
-      <guid>https://ivanhan0511.github.io/categories/mysql/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>SQL</title>
-      <link>https://ivanhan0511.github.io/categories/sql/</link>
-      <pubDate>Wed, 10 Aug 2022 14:42:36 +0800</pubDate>
-      
-      <guid>https://ivanhan0511.github.io/categories/sql/</guid>
       <description></description>
     </item>
     

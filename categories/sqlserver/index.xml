@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SQLServer on Ivan Blog</title>
+    <link>https://ivanhan0511.github.io/categories/sqlserver/</link>
+    <description>Recent content in SQLServer on Ivan Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 17 Jan 2023 15:41:38 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/categories/sqlserver/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SQL Server Init Operations</title>
+      <link>https://ivanhan0511.github.io/post/sql-sqlserver-init/</link>
+      <pubDate>Tue, 17 Jan 2023 15:41:38 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/post/sql-sqlserver-init/</guid>
+      <description>&lt;p&gt;Some opearations for SQL Server.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

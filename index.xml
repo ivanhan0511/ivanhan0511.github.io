@@ -6,7 +6,34 @@
     <description>Recent content on Ivan Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 17 Jan 2023 02:58:26 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 30 Jan 2023 15:41:00 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Welcome to Ivan&#39;s Blog</title>
+      <link>https://ivanhan0511.github.io/post/welcome/</link>
+      <pubDate>Mon, 30 Jan 2023 15:41:00 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/post/welcome/</guid>
+      <description>&lt;p&gt;Some records for Software, Coffee and Sports.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>SpringBoot</title>
+      <link>https://ivanhan0511.github.io/post/java-springboot/</link>
+      <pubDate>Mon, 30 Jan 2023 15:40:01 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/post/java-springboot/</guid>
+      <description>&lt;p&gt;It could be a productional framework to make a software project stronger.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>SQL Server Init Operations</title>
+      <link>https://ivanhan0511.github.io/post/sql-sqlserver-init/</link>
+      <pubDate>Tue, 17 Jan 2023 15:41:38 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/post/sql-sqlserver-init/</guid>
+      <description>&lt;p&gt;Some opearations for SQL Server.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>MySQL8.0 Init Operations</title>
       <link>https://ivanhan0511.github.io/post/sql-mysql-init/</link>
@@ -17,30 +44,12 @@
     </item>
     
     <item>
-      <title>Welcome to Ivan&#39;s Blog</title>
-      <link>https://ivanhan0511.github.io/post/welcome/</link>
-      <pubDate>Thu, 27 Oct 2022 17:41:00 +0800</pubDate>
-      
-      <guid>https://ivanhan0511.github.io/post/welcome/</guid>
-      <description>&lt;p&gt;Some records for Software, Coffee and Sports.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
       <title>Thought Fragments about Health</title>
       <link>https://ivanhan0511.github.io/post/health-thought/</link>
       <pubDate>Mon, 17 Oct 2022 17:21:51 +0800</pubDate>
       
       <guid>https://ivanhan0511.github.io/post/health-thought/</guid>
       <description>&lt;p&gt;Some thought fragments about health, like diet, sports and habit .etc&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>SpringBoot</title>
-      <link>https://ivanhan0511.github.io/post/java-springboot/</link>
-      <pubDate>Wed, 28 Sep 2022 22:01:01 +0800</pubDate>
-      
-      <guid>https://ivanhan0511.github.io/post/java-springboot/</guid>
-      <description>&lt;p&gt;It could be a productional framework to make a software project stronger.&lt;/p&gt;</description>
     </item>
     
     <item>

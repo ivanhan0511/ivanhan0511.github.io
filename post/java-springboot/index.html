@@ -466,11 +466,17 @@ But refuse to use QueryWrapper, use MyBatis&rsquo; XML mapper.</p>
 <li>事务管理, 通过@DSTransactional 根据各个服务所指定的数据源进行切换</li>
 </ul>
 <div class="alert info ">
-  <p>注意：@DS 必须加在 @Transactional 对应的类或者方法上<br>
-如在 mapper中加了@DS，但是 @Transactional 加在 service 方法中，此时获取为默认的datasource<br>
+  <p>@DS 必须加在 @Transactional 对应的类或者方法上<br>
+如在 mapper中加了@DS，但是 @Transactional 加在 service 方法中，此时则会获取默认的datasource
 (因为在事务中已经获取了一次datasource的connection，而此时无DS注解)</p>
 </div>
 
+
+  
+  
+  
+  
+  
 
   
   
@@ -515,7 +521,9 @@ But refuse to use QueryWrapper, use MyBatis&rsquo; XML mapper.</p>
     
     <ul class="tabs">
       
-        <li class="tab active">someserviceimpl</li>
+        <li class="tab active">someservice</li>
+      
+        <li class="tab ">someserviceimpl</li>
       
         <li class="tab ">otherservice</li>
       
@@ -530,7 +538,23 @@ But refuse to use QueryWrapper, use MyBatis&rsquo; XML mapper.</p>
   <div class="tabs-content">
     
       
-      <figure class="highlight language-someserviceimpl someserviceimpl" style="display: block;">
+      <figure class="highlight language-someservice someservice" style="display: block;">
+        <table>
+          <tbody>
+            <tr>
+              <td class="gutter">
+                <pre><span>1</span><br></pre>
+              </td>
+              <td class="code">
+                <pre class="code-highlight language-someservice someservice"><code class="someservice">public interface SomeService extends IService&lt;Some&gt; {}</code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </figure>
+    
+      
+      <figure class="highlight language-someserviceimpl someserviceimpl" style="display: none;">
         <table>
           <tbody>
             <tr>

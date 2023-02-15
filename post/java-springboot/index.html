@@ -534,24 +534,24 @@ But refuse to use QueryWrapper, use MyBatis&rsquo; XML mapper.</p>
     
     <ul class="tabs">
       
-        <li class="tab active">sservice</li>
+        <li class="tab active">sinterface</li>
       
         <li class="tab ">simpl</li>
       
-        <li class="tab ">oservice</li>
+        <li class="tab ">ointerface</li>
       
         <li class="tab ">oimpl</li>
       
-        <li class="tab ">comboservice</li>
+        <li class="tab ">combo</li>
       
-        <li class="tab ">csimpl</li>
+        <li class="tab ">comboimpl</li>
       
     </ul>
   </figcaption>
   <div class="tabs-content">
     
       
-      <figure class="highlight language-sservice sservice" style="display: block;">
+      <figure class="highlight language-sinterface sinterface" style="display: block;">
         <table>
           <tbody>
             <tr>
@@ -559,7 +559,7 @@ But refuse to use QueryWrapper, use MyBatis&rsquo; XML mapper.</p>
                 <pre><span>1</span><br></pre>
               </td>
               <td class="code">
-                <pre class="code-highlight language-sservice sservice"><code class="sservice">public interface SomeService extends IService\&lt;Some\&gt; {}</code></pre>
+                <pre class="code-highlight language-sinterface sinterface"><code class="sinterface">public interface SomeService extends IService&lt;Some&gt; {}</code></pre>
               </td>
             </tr>
           </tbody>
@@ -584,7 +584,7 @@ public class SomeServiceImpl extends ServiceImpl&lt;SomeRepository, Some&gt; imp
       </figure>
     
       
-      <figure class="highlight language-oservice oservice" style="display: none;">
+      <figure class="highlight language-ointerface ointerface" style="display: none;">
         <table>
           <tbody>
             <tr>
@@ -592,7 +592,7 @@ public class SomeServiceImpl extends ServiceImpl&lt;SomeRepository, Some&gt; imp
                 <pre><span>1</span><br></pre>
               </td>
               <td class="code">
-                <pre class="code-highlight language-oservice oservice"><code class="oservice">public interface OtherService extends IService&lt;Other&gt; {}</code></pre>
+                <pre class="code-highlight language-ointerface ointerface"><code class="ointerface">public interface OtherService extends IService&lt;Other&gt; {}</code></pre>
               </td>
             </tr>
           </tbody>
@@ -618,7 +618,7 @@ public class OtherServiceImpl extends ServiceImpl&lt;OtherRepository, Other&gt; 
       </figure>
     
       
-      <figure class="highlight language-comboservice comboservice" style="display: none;">
+      <figure class="highlight language-combo combo" style="display: none;">
         <table>
           <tbody>
             <tr>
@@ -626,7 +626,7 @@ public class OtherServiceImpl extends ServiceImpl&lt;OtherRepository, Other&gt; 
                 <pre><span>1</span><br><span>2</span><br><span>3</span><br></pre>
               </td>
               <td class="code">
-                <pre class="code-highlight language-comboservice comboservice"><code class="comboservice">public interface CombineService {
+                <pre class="code-highlight language-combo combo"><code class="combo">public interface CombineService {
     Boolean save(CombineRequest request);
 }</code></pre>
               </td>
@@ -636,7 +636,7 @@ public class OtherServiceImpl extends ServiceImpl&lt;OtherRepository, Other&gt; 
       </figure>
     
       
-      <figure class="highlight language-csimpl csimpl" style="display: none;">
+      <figure class="highlight language-comboimpl comboimpl" style="display: none;">
         <table>
           <tbody>
             <tr>
@@ -644,7 +644,7 @@ public class OtherServiceImpl extends ServiceImpl&lt;OtherRepository, Other&gt; 
                 <pre><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br></pre>
               </td>
               <td class="code">
-                <pre class="code-highlight language-csimpl csimpl"><code class="csimpl">@Service
+                <pre class="code-highlight language-comboimpl comboimpl"><code class="comboimpl">@Service
 public class CombineServiceImpl implements CombineService {
     @Resource
     private SomeService someService;

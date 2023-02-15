@@ -6,7 +6,16 @@
     <description>Recent content on Ivan Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 01 Feb 2023 23:44:00 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 02 Feb 2023 13:39:32 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PID For Coffee</title>
+      <link>https://ivanhan0511.github.io/post/pid-for-coffee/</link>
+      <pubDate>Thu, 02 Feb 2023 13:39:32 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/post/pid-for-coffee/</guid>
+      <description>&lt;p&gt;This is a custom summary and does &lt;em&gt;NOT&lt;/em&gt; appear in the post.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Welcome to Ivan&#39;s Blog</title>
       <link>https://ivanhan0511.github.io/post/welcome/</link>
@@ -119,19 +128,19 @@ So here are some tips, wish to be helpful.&lt;/p&gt;</description>
     
     <item>
       <title>Coffee Taste</title>
-      <link>https://ivanhan0511.github.io/post/coffee-taste/</link>
+      <link>https://ivanhan0511.github.io/post/coffee-qgrader/</link>
       <pubDate>Thu, 09 Jun 2022 21:38:22 +0800</pubDate>
       
-      <guid>https://ivanhan0511.github.io/post/coffee-taste/</guid>
+      <guid>https://ivanhan0511.github.io/post/coffee-qgrader/</guid>
       <description>&lt;p&gt;This is a custom summary and does &lt;em&gt;NOT&lt;/em&gt; appear in the post.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Coffee Beans</title>
-      <link>https://ivanhan0511.github.io/post/coffee-beans/</link>
+      <link>https://ivanhan0511.github.io/post/coffee-barista/</link>
       <pubDate>Thu, 09 Jun 2022 21:33:05 +0800</pubDate>
       
-      <guid>https://ivanhan0511.github.io/post/coffee-beans/</guid>
+      <guid>https://ivanhan0511.github.io/post/coffee-barista/</guid>
       <description>&lt;p&gt;Whick kind of coffee beans do you like?&lt;/p&gt;</description>
     </item>
     
@@ -247,21 +256,12 @@ So here are some tips, wish to be helpful.&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Coffee Grinder Mazzer</title>
-      <link>https://ivanhan0511.github.io/post/coffee-grinder-mazzer/</link>
+      <title>Coffee Equipment</title>
+      <link>https://ivanhan0511.github.io/post/coffee-equipment/</link>
       <pubDate>Tue, 24 May 2022 05:49:34 +0800</pubDate>
       
-      <guid>https://ivanhan0511.github.io/post/coffee-grinder-mazzer/</guid>
+      <guid>https://ivanhan0511.github.io/post/coffee-equipment/</guid>
       <description>&lt;p&gt;Which type of Mazzer grinder?&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>HELOR</title>
-      <link>https://ivanhan0511.github.io/post/coffee-grinder-helor/</link>
-      <pubDate>Tue, 24 May 2022 03:09:48 +0800</pubDate>
-      
-      <guid>https://ivanhan0511.github.io/post/coffee-grinder-helor/</guid>
-      <description>&lt;p&gt;Handy grinder&lt;/p&gt;</description>
     </item>
     
   </channel>

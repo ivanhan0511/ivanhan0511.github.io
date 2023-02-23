@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>API on Ivan Blog</title>
+    <link>https://ivanhan0511.github.io/categories/api/</link>
+    <description>Recent content in API on Ivan Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 23 Feb 2023 12:52:00 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/categories/api/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>API Design</title>
+      <link>https://ivanhan0511.github.io/post/miscellaneous-api/</link>
+      <pubDate>Thu, 23 Feb 2023 12:52:00 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/post/miscellaneous-api/</guid>
+      <description>&lt;p&gt;This is a custom summary and does &lt;em&gt;NOT&lt;/em&gt; appear in the post.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

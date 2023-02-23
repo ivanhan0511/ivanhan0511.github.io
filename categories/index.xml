@@ -6,7 +6,79 @@
     <description>Recent content in Categories on Ivan Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 02 Feb 2023 13:39:32 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 23 Feb 2023 12:52:00 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>API</title>
+      <link>https://ivanhan0511.github.io/categories/api/</link>
+      <pubDate>Thu, 23 Feb 2023 12:52:00 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/categories/api/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Miscellaneous</title>
+      <link>https://ivanhan0511.github.io/categories/miscellaneous/</link>
+      <pubDate>Thu, 23 Feb 2023 12:52:00 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/categories/miscellaneous/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Network</title>
+      <link>https://ivanhan0511.github.io/categories/network/</link>
+      <pubDate>Tue, 21 Feb 2023 15:06:52 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/categories/network/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Nginx</title>
+      <link>https://ivanhan0511.github.io/categories/nginx/</link>
+      <pubDate>Tue, 21 Feb 2023 15:06:52 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/categories/nginx/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Coffee</title>
+      <link>https://ivanhan0511.github.io/categories/coffee/</link>
+      <pubDate>Wed, 15 Feb 2023 15:17:20 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/categories/coffee/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Grinder</title>
+      <link>https://ivanhan0511.github.io/categories/grinder/</link>
+      <pubDate>Wed, 15 Feb 2023 15:17:20 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/categories/grinder/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>OS</title>
+      <link>https://ivanhan0511.github.io/categories/os/</link>
+      <pubDate>Wed, 15 Feb 2023 15:16:59 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/categories/os/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Windows</title>
+      <link>https://ivanhan0511.github.io/categories/windows/</link>
+      <pubDate>Wed, 15 Feb 2023 15:16:59 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/categories/windows/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>PID</title>
       <link>https://ivanhan0511.github.io/categories/pid/</link>
@@ -125,15 +197,6 @@
     </item>
     
     <item>
-      <title>Coffee</title>
-      <link>https://ivanhan0511.github.io/categories/coffee/</link>
-      <pubDate>Thu, 09 Jun 2022 21:38:22 +0800</pubDate>
-      
-      <guid>https://ivanhan0511.github.io/categories/coffee/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Taste</title>
       <link>https://ivanhan0511.github.io/categories/taste/</link>
       <pubDate>Thu, 09 Jun 2022 21:38:22 +0800</pubDate>
@@ -148,15 +211,6 @@
       <pubDate>Thu, 09 Jun 2022 21:33:05 +0800</pubDate>
       
       <guid>https://ivanhan0511.github.io/categories/beans/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Miscellaneous</title>
-      <link>https://ivanhan0511.github.io/categories/miscellaneous/</link>
-      <pubDate>Thu, 09 Jun 2022 21:32:20 +0800</pubDate>
-      
-      <guid>https://ivanhan0511.github.io/categories/miscellaneous/</guid>
       <description></description>
     </item>
     
@@ -202,15 +256,6 @@
       <pubDate>Wed, 01 Jun 2022 17:01:07 +0800</pubDate>
       
       <guid>https://ivanhan0511.github.io/categories/sports/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Network</title>
-      <link>https://ivanhan0511.github.io/categories/network/</link>
-      <pubDate>Wed, 01 Jun 2022 16:56:35 +0800</pubDate>
-      
-      <guid>https://ivanhan0511.github.io/categories/network/</guid>
       <description></description>
     </item>
     

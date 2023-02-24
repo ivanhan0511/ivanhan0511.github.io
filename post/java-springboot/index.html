@@ -308,7 +308,6 @@
     <li><a href="#project-architecture">PROJECT ARCHITECTURE</a>
       <ul>
         <li><a href="#architecture">Architecture</a></li>
-        <li><a href="#名词解释">名词解释</a></li>
       </ul>
     </li>
     <li><a href="#annotation">ANNOTATION</a>
@@ -334,10 +333,10 @@
       </ul>
     </li>
     <li><a href="#security">SECURITY</a></li>
-    <li><a href="#tips">TIPs</a>
+    <li><a href="#logger">Logger</a></li>
+    <li><a href="#appendix">Appendix</a>
       <ul>
-        <li><a href="#logger">Logger</a></li>
-        <li><a href="#applicationyml">application.yml</a></li>
+        <li><a href="#软件开发规范">软件开发规范</a></li>
       </ul>
     </li>
   </ul>
@@ -350,14 +349,17 @@
 <h2 id="project-architecture">PROJECT ARCHITECTURE</h2>
 <h3 id="architecture">Architecture</h3>
 <div class="alert info ">
-  <p><p>Controller</p>
+  <p><p>Controller<br>
+VO: Value Object. 表现对象. 目前主要由前端负责, 给终端用户传递信息.</p>
 <ul>
 <li>简单分流前端业务, 因地制宜地回复错误信息</li>
 </ul>
 </p>
 </div>
 <div class="alert success ">
-  <p><p>Service</p>
+  <p><p>Service<br>
+DTO: Data Transfer Object. 通常是在OpenApi. 即此项目与其他外界项目交互时使用的对象.<br>
+BO: Business Object. 业务对象(个人理解, BO和DO很像, 是一个综合多个PO的复合抽象对象).</p>
 <ul>
 <li>只管业务流的处理, 不负责数据库查询</li>
 <li>可以调用其它Service, 也可以调用其它Repository</li>
@@ -366,7 +368,8 @@
 </p>
 </div>
 <div class="alert warning ">
-  <p><p>DAO / Repository</p>
+  <p><p>DAO / Repository<br>
+DAO: Data Access Object. 小规模项, 使用DAO即可</p>
 <ul>
 <li>MyBatis 接口与XML查询</li>
 <li>能通过数据库查询的尽量通过数据库直接查询</li>
@@ -374,52 +377,21 @@
 </p>
 </div>
 <div class="alert danger ">
-  <p><p>DB / Domain</p>
+  <p><p>DB / Domain<br>
+PO: Persistant Object. 持久层对象. 类似数据库内的一条记录<br>
+DO: Domain Object. 领域对象</p>
 <ul>
-<li>数据库表关联关系设计, 与Domain联动</li>
+<li>数据库表PO关联关系设计, 与DO联动</li>
+<li>一个DO可能是多个PO关联组成的</li>
 </ul>
 </p>
 </div>
-<h3 id="名词解释">名词解释</h3>
-<p><a href="https://blog.51cto.com/u_12302929/4811425">项目开发中，真的有必要定义VO，BO，PO，DO，DTO这些吗？</a></p>
-<p>自上而下的顺序:</p>
-<p>VO: Value Object. 表现对象. 主要用于与前端直接的交互与信息传递(小规模项目, 使用DTO即可).</p>
-<p><strong>DTO: Data Transfer Object. 通常是在OpenApi. 即此项目与其他外界项目交互时使用的对象.</strong></p>
-<p>BO: Business Object. 业务对象(个人理解, BO和DO很像, 是一个综合多个PO的复合抽象对象).</p>
-<p><strong>DO: Domain Object. 领域对象(我们在三层架构中使用的DO其实是PO)</strong></p>
-<p>PO: Persistant Object. 持久层对象. 类似数据库内的一条记录</p>
-<p><strong>DAO: Data Access Object.(小规模项, 使用DAO即可)</strong></p>
 <p>PS:</p>
 <ul>
+<li><a href="https://blog.51cto.com/u_12302929/4811425">项目开发中，真的有必要定义VO，BO，PO，DO，DTO这些吗？</a></li>
 <li>POJO: Plain Old Java Object. 是PO/DO/DTO/BO/VO的统称</li>
 <li>其实, 如果你的项目功能足够简单. 项目比较小的话, 其实没有必要分的那么细致. 掌握设计的“度”, 非常重要.</li>
 </ul>
-<p>POJO的一些参考(阿里内部)</p>
-<p>[参考]Domain对象各层命名约定:</p>
-<ul>
-<li>Service/DAO层方法命名规约
-<ul>
-<li>获取单个对象的方法用get做前缀</li>
-<li>获取多个对象的方法用list做前缀</li>
-<li>获取统计值的方法用count做前缀</li>
-<li>插入的方法用save/insert做前缀</li>
-<li>删除的方法用remove/delete做前缀</li>
-<li>修改的方法用update做前缀</li>
-</ul>
-</li>
-<li>领域模型命名规约
-<ul>
-<li>数据对象: xxxDO, xxx即表名</li>
-<li>数据传输对象: xxxDTO, xxx即业务领域相关的名称</li>
-<li>展示对象: xxxVO, xxx一般为网页名称</li>
-<li>POJO是DO/DTO/BO/VO的统称, 禁止命名成xxxPOJO</li>
-</ul>
-</li>
-</ul>
-<p>[参考]Request和Response对象的约定</p>
-<p>即复杂对象的交互必须封装成Request 和 Response与前端进行交互</p>
-<p>个人理解:<br>
-POJO中一般不允许有业务逻辑方法, 不能带有connection之类的方法</p>
 <h2 id="annotation">ANNOTATION</h2>
 <h3 id="常用注解的深入理解">常用注解的深入理解</h3>
 <p><a href="%E5%B0%86%E8%AF%A5%E7%90%86%E8%AE%BA%E7%9A%84%E6%80%BB%E7%BB%93%E5%BD%92%E7%B1%BB%E5%88%B0SQL%E4%B8%8B">TODO</a>: To be done&hellip;</p>
@@ -792,8 +764,7 @@ public class CombineServiceImpl implements CombineService {
 <h2 id="security">SECURITY</h2>
 <p>It&rsquo;s a deep track!</p>
 <p>Need do really deep reseach for it.</p>
-<h2 id="tips">TIPs</h2>
-<h3 id="logger">Logger</h3>
+<h2 id="logger">Logger</h2>
 <p><strong>slf4j.Logger and log4j.Logger</strong>
 <blockquote>
   <p>
@@ -835,10 +806,36 @@ However, it is always difficult to prefer one between the two.
   
 </div>
 
-<h3 id="applicationyml">application.yml</h3>
-<p>dependency</p>
-<p>springboot自己的依赖: spring-boot-starter-xxx</p>
-<p>第三方的以来: xxx-spring-boot-starter</p>
+<h2 id="appendix">Appendix</h2>
+<h3 id="软件开发规范">软件开发规范</h3>
+<ul>
+<li>
+<p>Service/DAO层方法命名规约</p>
+<ul>
+<li>获取单个对象的方法用get做前缀</li>
+<li>获取多个对象的方法用list做前缀</li>
+<li>获取统计值的方法用count做前缀</li>
+<li>插入的方法用save/insert做前缀</li>
+<li>删除的方法用remove/delete做前缀</li>
+<li>修改的方法用update做前缀</li>
+</ul>
+</li>
+<li>
+<p>领域模型命名规约</p>
+<ul>
+<li>数据对象: xxxDO, xxx即表名</li>
+<li>数据传输对象: xxxDTO, xxx即业务领域相关的名称</li>
+<li>展示对象: xxxVO, xxx一般为网页名称</li>
+<li>POJO是DO/DTO/BO/VO的统称, 禁止命名成xxxPOJO</li>
+</ul>
+</li>
+<li>
+<p>Request和Response对象的约定[参考]</p>
+<ul>
+<li>复杂对象的交互必须封装成Request 和 Response与前端进行交互</li>
+</ul>
+</li>
+</ul>
               
 
 

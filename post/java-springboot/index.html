@@ -350,21 +350,29 @@
 <p>@DS()源于Mybatis-Plus</p>
 <h2 id="project-architecture">PROJECT ARCHITECTURE</h2>
 <h3 id="architecture">Architecture</h3>
-<p><a href="%E5%B0%86%E8%AF%A5%E7%90%86%E8%AE%BA%E7%9A%84%E6%80%BB%E7%BB%93%E5%BD%92%E7%B1%BB%E5%88%B0SQL%E4%B8%8B">TODO</a>: To be improved&hellip;
-<blockquote>
-  <p>
-
+<div class="alert info ">
+  <p><p>Controller</p>
+<p>简单分流前端业务, 因地制宜地回复错误信息</p>
 </p>
-  <footer>
-    <strong></strong>
-    
-      
-        <cite></cite>
-      
-    
-  </footer>
-</blockquote></p>
-<p>其实列举了当前的项目架构, 主要是为了后面的各种Object做铺垫</p>
+</div>
+<div class="alert success ">
+  <p><p>Service</p>
+<p>只管业务流的处理, 不负责数据库查询<br>
+可以调用其它Service, 也可以调用其它Repository<br>
+DTO的数据转换(暂且)也在Service层处理</p>
+</p>
+</div>
+<div class="alert warning ">
+  <p><p>DAO / Repository</p>
+<p>MyBatis 接口与XML查询
+能通过数据库查询的尽量通过数据库直接查询</p>
+</p>
+</div>
+<div class="alert danger ">
+  <p><p>DB / Domain</p>
+<p>数据库表关联关系设计, 与Domain联动</p>
+</p>
+</div>
 <h3 id="名词解释">名词解释</h3>
 <p><a href="https://blog.51cto.com/u_12302929/4811425">项目开发中，真的有必要定义VO，BO，PO，DO，DTO这些吗？</a></p>
 <p>自上而下的顺序:</p>

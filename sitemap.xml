@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://ivanhan0511.github.io/categories/</loc>
+    <lastmod>2023-02-24T14:35:00+08:00</lastmod>
+  </url><url>
+    <loc>https://ivanhan0511.github.io/</loc>
+    <lastmod>2023-02-24T14:35:00+08:00</lastmod>
+  </url><url>
+    <loc>https://ivanhan0511.github.io/post/</loc>
+    <lastmod>2023-02-24T14:35:00+08:00</lastmod>
+  </url><url>
+    <loc>https://ivanhan0511.github.io/tags/</loc>
+    <lastmod>2023-02-24T14:35:00+08:00</lastmod>
+  </url><url>
+    <loc>https://ivanhan0511.github.io/tags/welcome/</loc>
+    <lastmod>2023-02-24T14:35:00+08:00</lastmod>
+  </url><url>
+    <loc>https://ivanhan0511.github.io/categories/welcome/</loc>
+    <lastmod>2023-02-24T14:35:00+08:00</lastmod>
+  </url><url>
+    <loc>https://ivanhan0511.github.io/post/welcome/</loc>
+    <lastmod>2023-02-24T14:35:00+08:00</lastmod>
+  </url><url>
     <loc>https://ivanhan0511.github.io/tags/api/</loc>
     <lastmod>2023-02-23T12:52:00+08:00</lastmod>
   </url><url>
@@ -11,22 +32,10 @@
     <loc>https://ivanhan0511.github.io/post/miscellaneous-api/</loc>
     <lastmod>2023-02-23T12:52:00+08:00</lastmod>
   </url><url>
-    <loc>https://ivanhan0511.github.io/categories/</loc>
-    <lastmod>2023-02-23T12:52:00+08:00</lastmod>
-  </url><url>
     <loc>https://ivanhan0511.github.io/tags/design/</loc>
     <lastmod>2023-02-23T12:52:00+08:00</lastmod>
   </url><url>
-    <loc>https://ivanhan0511.github.io/</loc>
-    <lastmod>2023-02-23T12:52:00+08:00</lastmod>
-  </url><url>
     <loc>https://ivanhan0511.github.io/categories/miscellaneous/</loc>
-    <lastmod>2023-02-23T12:52:00+08:00</lastmod>
-  </url><url>
-    <loc>https://ivanhan0511.github.io/post/</loc>
-    <lastmod>2023-02-23T12:52:00+08:00</lastmod>
-  </url><url>
-    <loc>https://ivanhan0511.github.io/tags/</loc>
     <lastmod>2023-02-23T12:52:00+08:00</lastmod>
   </url><url>
     <loc>https://ivanhan0511.github.io/tags/cors/</loc>

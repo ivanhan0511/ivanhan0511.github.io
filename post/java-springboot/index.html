@@ -331,7 +331,6 @@
       <ul>
         <li><a href="#maven-or-gradle">Maven or Gradle</a></li>
         <li><a href="#maven-381">Maven 3.8.1</a></li>
-        <li><a href="#changed-points">Changed Points</a></li>
       </ul>
     </li>
     <li><a href="#security">SECURITY</a></li>
@@ -351,27 +350,23 @@
 <h2 id="project-architecture">PROJECT ARCHITECTURE</h2>
 <h3 id="architecture">Architecture</h3>
 <div class="alert info ">
-  <p><p>Controller</p>
-<p>简单分流前端业务, 因地制宜地回复错误信息</p>
-</p>
+  <p>Controller
+简单分流前端业务, 因地制宜地回复错误信息</p>
 </div>
 <div class="alert success ">
-  <p><p>Service</p>
-<p>只管业务流的处理, 不负责数据库查询<br>
+  <p>Service
+只管业务流的处理, 不负责数据库查询<br>
 可以调用其它Service, 也可以调用其它Repository<br>
 DTO的数据转换(暂且)也在Service层处理</p>
-</p>
 </div>
 <div class="alert warning ">
-  <p><p>DAO / Repository</p>
-<p>MyBatis 接口与XML查询
+  <p>DAO / Repository
+MyBatis 接口与XML查询
 能通过数据库查询的尽量通过数据库直接查询</p>
-</p>
 </div>
 <div class="alert danger ">
-  <p><p>DB / Domain</p>
-<p>数据库表关联关系设计, 与Domain联动</p>
-</p>
+  <p>DB / Domain
+数据库表关联关系设计, 与Domain联动</p>
 </div>
 <h3 id="名词解释">名词解释</h3>
 <p><a href="https://blog.51cto.com/u_12302929/4811425">项目开发中，真的有必要定义VO，BO，PO，DO，DTO这些吗？</a></p>
@@ -780,37 +775,6 @@ public class CombineServiceImpl implements CombineService {
 </li>
 <li>
 <p>Reload pom.xml file in IDEA and automaticlly download the dependencies</p>
-</li>
-</ul>
-<h3 id="changed-points">Changed Points</h3>
-<p>Here is the changed points list of my project which is based on pear-admin-pro</p>
-<ul>
-<li>
-<p>pom.xml
-<del>Comment <code>dynamic-datasource-spring-boot-starter</code></del></p>
-</li>
-<li>
-<p>resources</p>
-<ul>
-<li>Change server port</li>
-<li>Change DB username and password</li>
-<li>Add password for Redis</li>
-<li><del>Cancel connection pool</del></li>
-<li><del>Cancel redundant DBs</del></li>
-</ul>
-</li>
-<li>
-<p>common</p>
-<ul>
-<li>Security, <code>anyRequest().permitAll()</code></li>
-<li>Security, comment <code>http.addFilterBefore();</code></li>
-</ul>
-</li>
-<li>
-<p>modules</p>
-<ul>
-<li>common.web.domain.Result, <del><!-- raw HTML omitted --></del></li>
-</ul>
 </li>
 </ul>
 <h2 id="security">SECURITY</h2>

@@ -305,11 +305,7 @@
 <nav id="TableOfContents">
   <ul>
     <li><a href="#core">CORE</a></li>
-    <li><a href="#project-architecture">PROJECT ARCHITECTURE</a>
-      <ul>
-        <li><a href="#architecture">Architecture</a></li>
-      </ul>
-    </li>
+    <li><a href="#project-architecture">PROJECT ARCHITECTURE</a></li>
     <li><a href="#annotation">ANNOTATION</a>
       <ul>
         <li><a href="#常用注解的深入理解">常用注解的深入理解</a></li>
@@ -347,9 +343,8 @@
 <p>Transactional传播生效的设置与Bean和代理有关</p>
 <p>@DS()源于Mybatis-Plus</p>
 <h2 id="project-architecture">PROJECT ARCHITECTURE</h2>
-<h3 id="architecture">Architecture</h3>
 <div class="alert info ">
-  <p><p>Controller<br>
+  <p><p>Controller层<br>
 VO: Value Object. 表现对象. 目前主要由前端负责, 给终端用户传递信息.</p>
 <ul>
 <li>简单分流前端业务, 因地制宜地回复错误信息</li>
@@ -357,9 +352,9 @@ VO: Value Object. 表现对象. 目前主要由前端负责, 给终端用户传�
 </p>
 </div>
 <div class="alert success ">
-  <p><p>Service<br>
+  <p><p>Service层<br>
 DTO: Data Transfer Object. 通常是在OpenApi. 即此项目与其他外界项目交互时使用的对象.<br>
-BO: Business Object. 业务对象(个人理解, BO和DO很像, 是一个综合多个PO的复合抽象对象).</p>
+BO: Business Object. 业务对象(BO和DO很像, 是一个综合多个PO的复合抽象对象, 而且小项目无需BO).</p>
 <ul>
 <li>只管业务流的处理, 不负责数据库查询</li>
 <li>可以调用其它Service, 也可以调用其它Repository</li>
@@ -368,8 +363,8 @@ BO: Business Object. 业务对象(个人理解, BO和DO很像, 是一个综合�
 </p>
 </div>
 <div class="alert warning ">
-  <p><p>DAO / Repository<br>
-DAO: Data Access Object. 小规模项, 使用DAO即可</p>
+  <p><p>DAO / Repository层<br>
+DAO: Data Access Object. 数据访问层</p>
 <ul>
 <li>MyBatis 接口与XML查询</li>
 <li>能通过数据库查询的尽量通过数据库直接查询</li>
@@ -377,11 +372,11 @@ DAO: Data Access Object. 小规模项, 使用DAO即可</p>
 </p>
 </div>
 <div class="alert danger ">
-  <p><p>DB / Domain<br>
+  <p><p>DB / Domain层<br>
 PO: Persistant Object. 持久层对象. 类似数据库内的一条记录<br>
 DO: Domain Object. 领域对象</p>
 <ul>
-<li>数据库表PO关联关系设计, 与DO联动</li>
+<li>数据库表关联关系设计, 与DO联动. 小项目也无需PO层</li>
 <li>一个DO可能是多个PO关联组成的</li>
 </ul>
 </p>

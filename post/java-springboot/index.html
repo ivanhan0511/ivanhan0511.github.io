@@ -756,7 +756,7 @@ public class CombineServiceImpl implements CombineService {
 </li>
 <li>
 <p>Find personal maven setting path in IDEA settings and DIY it <code>C:\Users\ivan\.m2\settings.xml</code><br>
-(If not exists, create this file)
+(If not exists, create this file)</p>
 
   
     
@@ -781,37 +781,37 @@ public class CombineServiceImpl implements CombineService {
           <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre>
         </td>
         <td class="code">
-          <pre class="code-highlight language-xml xml"><code class="xml">  &lt;settings xmlns=&#34;http://maven.apache.org/SETTINGS/1.2.0&#34;
-          xmlns:xsi=&#34;http://www.w3.org/2001/XMLSchema-instance&#34;
-          xsi:schemaLocation=&#34;http://maven.apache.org/SETTINGS/1.2.0 http://maven.apache.org/xsd/settings-1.2.0.xsd&#34;&gt;
-    &lt;mirrors&gt;
-      &lt;!-- mirror
-       | Specifies a repository mirror site to use instead of a given repository. The repository that
-       | this mirror serves has an ID that matches the mirrorOf element of this mirror. IDs are used
-       | for inheritance and direct lookup purposes, and must be unique across the set of mirrors.
-       |
-      &lt;mirror&gt;
-        &lt;id&gt;mirrorId&lt;/id&gt;
-        &lt;mirrorOf&gt;repositoryId&lt;/mirrorOf&gt;
-        &lt;name&gt;Human Readable Name for this Mirror.&lt;/name&gt;
-        &lt;url&gt;http://my.repository.com/repo/path&lt;/url&gt;
-      &lt;/mirror&gt;
-      --&gt;
-      &lt;mirror&gt;
-        &lt;id&gt;aliyunmaven&lt;/id&gt;
-        &lt;mirrorOf&gt;*&lt;/mirrorOf&gt;
-        &lt;name&gt;阿里云公共仓库&lt;/name&gt;
-        &lt;url&gt;https://maven.aliyun.com/repository/public&lt;/url&gt;
-      &lt;/mirror&gt;
-    &lt;/mirrors&gt;
-  &lt;/settings&gt;
+          <pre class="code-highlight language-xml xml"><code class="xml">&lt;settings xmlns=&#34;http://maven.apache.org/SETTINGS/1.2.0&#34;
+        xmlns:xsi=&#34;http://www.w3.org/2001/XMLSchema-instance&#34;
+        xsi:schemaLocation=&#34;http://maven.apache.org/SETTINGS/1.2.0 http://maven.apache.org/xsd/settings-1.2.0.xsd&#34;&gt;
+  &lt;mirrors&gt;
+    &lt;!-- mirror
+     | Specifies a repository mirror site to use instead of a given repository. The repository that
+     | this mirror serves has an ID that matches the mirrorOf element of this mirror. IDs are used
+     | for inheritance and direct lookup purposes, and must be unique across the set of mirrors.
+     |
+    &lt;mirror&gt;
+      &lt;id&gt;mirrorId&lt;/id&gt;
+      &lt;mirrorOf&gt;repositoryId&lt;/mirrorOf&gt;
+      &lt;name&gt;Human Readable Name for this Mirror.&lt;/name&gt;
+      &lt;url&gt;http://my.repository.com/repo/path&lt;/url&gt;
+    &lt;/mirror&gt;
+    --&gt;
+    &lt;mirror&gt;
+      &lt;id&gt;aliyunmaven&lt;/id&gt;
+      &lt;mirrorOf&gt;*&lt;/mirrorOf&gt;
+      &lt;name&gt;阿里云公共仓库&lt;/name&gt;
+      &lt;url&gt;https://maven.aliyun.com/repository/public&lt;/url&gt;
+    &lt;/mirror&gt;
+  &lt;/mirrors&gt;
+&lt;/settings&gt;
   </code></pre>
         </td>
       </tr>
     </tbody>
   </table>
 </figure>
-</p>
+
 </li>
 <li>
 <p>Reload pom.xml file in IDEA and automaticlly download the dependencies</p>

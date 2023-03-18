@@ -316,6 +316,7 @@
       <ul>
         <li><a href="#multidatasources">MultiDataSources</a>
           <ul>
+            <li><a href="#settings">Settings</a></li>
             <li><a href="#multidb--transactional">MultiDB &amp; Transactional</a></li>
             <li><a href="#todo">TODO</a></li>
           </ul>
@@ -389,36 +390,40 @@ DO: Domain Object. 领域对象</p>
 </ul>
 <h2 id="annotation">ANNOTATION</h2>
 <h3 id="常用注解的深入理解">常用注解的深入理解</h3>
-<p><a href="%E5%B0%86%E8%AF%A5%E7%90%86%E8%AE%BA%E7%9A%84%E6%80%BB%E7%BB%93%E5%BD%92%E7%B1%BB%E5%88%B0SQL%E4%B8%8B">TODO</a>: To be done&hellip;</p>
 <ul>
-<li>
-<p>Controller控制Headers/Content-Type/Accept</p>
-<p><a href="%E5%B0%86%E8%AF%A5%E7%90%86%E8%AE%BA%E7%9A%84%E6%80%BB%E7%BB%93%E5%BD%92%E7%B1%BB%E5%88%B0SQL%E4%B8%8B">TODO</a>: 各种继承关系的注解, 后续补充</p>
+<li><a href="%E5%90%8E%E7%BB%AD%E4%B8%8D%E5%86%8D%E4%BD%BF%E7%94%A8MyBatis-Plus,%E4%B9%9F%E4%B8%8D%E4%BC%9A%E7%94%A8%E5%88%B0@DS(),%E8%80%8C%E9%87%87%E7%94%A8%E9%85%8D%E7%BD%AE%E7%B1%BB%E7%9A%84%E5%BD%A2%E5%BC%8F;%E5%B0%86%E8%AF%A5%E7%90%86%E8%AE%BA%E7%9A%84%E6%80%BB%E7%BB%93%E5%BD%92%E7%B1%BB%E5%88%B0SQL%E4%B8%8B">TODO</a>: 各种继承关系的注解, 类似RestController, 包含了ResponseBody等, 后续补充</li>
+<li>Controller中设置Headers, 指定Content-Type/Accept
 <ul>
-<li>Springboot中Controller中的comsumes指定的是HTTP客户端的Content-Type, 默认application/x-www-form-urlencoded</li>
-<li>Springboot中Controller中的produces指定的是HTTP客户端的Accept</li>
+<li>Springboot中Controller中的comsumes所指定的是HTTP客户端的Content-Type的内容, 默认application/x-www-form-urlencoded</li>
+<li>Springboot中Controller中的produces所指定的是HTTP客户端的Accept的内容
+<blockquote>
+  <p>
+常见的http头部Content-Type：
+- application/x-www-form-urlencoded
+- multipart/form-data
+- application/json
+- application/xml
+
+前端使用Content-Type:"application/json"编码http请求内容并提交给服务端；服务端使用Content-Type:"application/json"解码http请求内容。
+如果不明确指定http Request头部Content-Type，将使用application/x-www-form-urlencoded; charset=UTF-8作为默认值，后端方法不能解码Content-Type:application/x-www-form-urlencoded的http Request body内容。同时也说明后端方法只能解码请求头部Content-Type为application/json的http Request body内容。
+
+- 服务端使用Content-Type:"application/json"编码http响应body内容返回给前端；前端使用Content-Type:"application/json"解码http响应body内容。
+- 服务端返回Response Content-Type:application/json，前端dataType不指定值。此时，解码http响应body内容，data类型是Object。
+- 服务端不返回Response Content-Type:application/json，前端dataType指定值json。些时，解码http响应body内容，data类型是Object。
+- 服务端不返回Response Content-Type:application/json，前端dataType不指定值"json"。此时，不能解码http响应body的json字符串，data类型是String。
+</p>
+  <footer>
+    <strong>HTTP回顾</strong>
+    
+      
+        <cite></cite>
+      
+    
+  </footer>
+</blockquote></li>
 </ul>
 </li>
 </ul>
-<p>http头部字段Content-Type约定请求和响应的HTTP body内容编码类型，客户端和服务端根据http头部字段Content-Type正确解码HTTP body内容。</p>
-<p>常见的http头部Content-Type：</p>
-<p>application/x-www-form-urlencoded
-multipart/form-data
-application/json
-application/xml
-示例说明</p>
-<p>前端使用Content-Type:&ldquo;application/json&quot;编码http请求内容并提交给服务端；服务端使用Content-Type:&ldquo;application/json&quot;解码http请求内容。
-如果不明确指定http Request头部Content-Type，将使用application/x-www-form-urlencoded; charset=UTF-8作为默认值，后端方法不能解码Content-Type:application/x-www-form-urlencoded的http Request body内容。同时也说明后端方法只能解码请求头部Content-Type为application/json的http Request body内容。</p>
-<p>服务端使用Content-Type:&ldquo;application/json&quot;编码http响应body内容返回给前端；前端使用Content-Type:&ldquo;application/json&quot;解码http响应body内容。
-服务端返回Response Content-Type:application/json，前端dataType不指定值。此时，解码http响应body内容，data类型是Object。
-服务端不返回Response Content-Type:application/json，前端dataType指定值json。些时，解码http响应body内容，data类型是Object。
-服务端不返回Response Content-Type:application/json，前端dataType不指定值&quot;json&rdquo;。此时，不能解码http响应body的json字符串，data类型是String。
-1人点赞
-网络编程</p>
-<p>作者：番薯大佬
-链接：https://www.jianshu.com/p/b7956dd875a5
-来源：简书
-著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
 <h3 id="易混淆注解的对比">易混淆注解的对比</h3>
 <ul>
 <li>@Component or @Bean
@@ -470,11 +475,25 @@ DAO层的用@Repository</li>
 </li>
 </ul>
 <h2 id="db-mapper">DB MAPPER</h2>
-<p>Use MyBatisPLus maven and use default CRUD methods.<br>
-But refuse to use QueryWrapper, use MyBatis&rsquo; XML mapper.</p>
-<p><a href="https://mybatis.org/mybatis-3/zh/sqlmap-xml.html#Parameters">MyBatis Documents</a></p>
+<p>~~Use MyBatisPLus maven and use default CRUD methods.  ~~
+<del>But refuse to use QueryWrapper, use MyBatis&rsquo; XML mapper.</del></p>
+<p>全面拥抱MyBatis
+<a href="https://mybatis.org/mybatis-3/zh/sqlmap-xml.html#Parameters">MyBatis Documents</a></p>
 <h3 id="multidatasources">MultiDataSources</h3>
+<h4 id="settings">Settings</h4>
+<ul>
+<li>
 <p>application.yml中设置PageHelper的 helperDialect, 兼容&quot;mysql&quot;和&quot;sqlserver&quot;两种数据库的语法</p>
+</li>
+<li>
+<p>使用多数据源时, 配置PageHelper时要注意(只有在使用application.yml格式的配置文件时会有问题):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span><span style="color:#f92672">pagehelper</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">autoRuntimeDialect: true  # 此处的配置项是驼峰, 不是IDEA自动提示的`auto-runtime-dialect</span>: <span style="color:#66d9ef">true</span><span style="color:#ae81ff">`</span>
+</span></span><span style="display:flex;"><span>...
+</span></span></code></pre></div><p>因为如果驼峰被自动转译为横线分隔符, 会导致PageHelper切换多数据源时失效</p>
+</li>
+</ul>
 <h4 id="multidb--transactional">MultiDB &amp; Transactional</h4>
 <ul>
 <li>跨多数据源, 调用各个资源服务, 各个Service的实现类有@DS(&ldquo;customer&rdquo;)注解指定数据源</li>

@@ -398,19 +398,17 @@ DO: Domain Object. 领域对象</p>
 <li>Springboot中Controller中的produces所指定的是HTTP客户端的Accept的内容
 <blockquote>
   <p>
-常见的http头部Content-Type：
-- application/x-www-form-urlencoded
-- multipart/form-data
-- application/json
-- application/xml
-
-前端使用Content-Type:"application/json"编码http请求内容并提交给服务端；服务端使用Content-Type:"application/json"解码http请求内容。
-如果不明确指定http Request头部Content-Type，将使用application/x-www-form-urlencoded; charset=UTF-8作为默认值，后端方法不能解码Content-Type:application/x-www-form-urlencoded的http Request body内容。同时也说明后端方法只能解码请求头部Content-Type为application/json的http Request body内容。
-
-- 服务端使用Content-Type:"application/json"编码http响应body内容返回给前端；前端使用Content-Type:"application/json"解码http响应body内容。
-- 服务端返回Response Content-Type:application/json，前端dataType不指定值。此时，解码http响应body内容，data类型是Object。
-- 服务端不返回Response Content-Type:application/json，前端dataType指定值json。些时，解码http响应body内容，data类型是Object。
-- 服务端不返回Response Content-Type:application/json，前端dataType不指定值"json"。此时，不能解码http响应body的json字符串，data类型是String。
+常见的http头部Content-Type:<br>
+- application/x-www-form-urlencoded<br>
+- multipart/form-data<br>
+- application/json<br>
+- application/xml<br>
+<br>
+前后组合如下:<br>
+- 服务端使用Content-Type:"application/json"编码http响应body内容返回给前端；前端使用Content-Type:"application/json"解码http响应body内容。<br>
+- 服务端返回Response Content-Type:application/json，前端dataType不指定值。此时，解码http响应body内容，data类型是Object。<br>
+- 服务端不返回Response Content-Type:application/json，前端dataType指定值json。些时，解码http响应body内容，data类型是Object。<br>
+- 服务端不返回Response Content-Type:application/json，前端dataType不指定值"json"。此时，不能解码http响应body的json字符串，data类型是String。<br>
 </p>
   <footer>
     <strong>HTTP回顾</strong>

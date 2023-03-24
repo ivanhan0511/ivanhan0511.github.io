@@ -16,7 +16,7 @@
     
   },
   "name":"Ivan Blog",
-  "description":"\u003cp\u003eThis is a custom summary and does \u003cem\u003eNOT\u003c\/em\u003e appear in the post.\u003c\/p\u003e",
+  "description":"\u003cp\u003eNginx config\u003c\/p\u003e",
   "url":"https:\/\/ivanhan0511.github.io\/post\/network-nginx\/",
   "keywords":"[nginx, config, cors, Ivan, Python, C\/C\u002b\u002b, Coffee, Bass, Bicycle, Badminton]"
 }
@@ -28,18 +28,18 @@
 <meta name="generator" content="Hugo 0.99.1 with theme Tranquilpeak 0.5.3-BETA">
 <meta name="author" content="Ivan Han">
 <meta name="keywords" content="nginx, config, cors, Ivan, Python, C/C&#43;&#43;, Coffee, Bass, Bicycle, Badminton">
-<meta name="description" content="This is a custom summary and does NOT appear in the post.">
+<meta name="description" content="Nginx config">
 
 
-<meta property="og:description" content="This is a custom summary and does NOT appear in the post.">
+<meta property="og:description" content="Nginx config">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Nginx Configurations">
-<meta name="twitter:title" content="Nginx Configurations">
+<meta property="og:title" content="Nginx Configuration">
+<meta name="twitter:title" content="Nginx Configuration">
 <meta property="og:url" content="https://ivanhan0511.github.io/post/network-nginx/">
 <meta property="twitter:url" content="https://ivanhan0511.github.io/post/network-nginx/">
 <meta property="og:site_name" content="Ivan Blog">
-<meta property="og:description" content="This is a custom summary and does NOT appear in the post.">
-<meta name="twitter:description" content="This is a custom summary and does NOT appear in the post.">
+<meta property="og:description" content="Nginx config">
+<meta name="twitter:description" content="Nginx config">
 <meta property="og:locale" content="en-us">
 
   
@@ -59,6 +59,8 @@
   
     
       <meta property="article:tag" content="Nginx">
+    
+      <meta property="article:tag" content="Config">
     
       <meta property="article:tag" content="CORS">
     
@@ -91,7 +93,7 @@
   <meta property="twitter:image" content="https://ivanhan0511.github.io/image-1.png">
 
 
-    <title>Nginx Configurations</title>
+    <title>Nginx Configuration</title>
 
     <link rel="icon" href="https://ivanhan0511.github.io/favicon.png">
     
@@ -268,7 +270,7 @@
             <div class="post-header main-content-wrap text-center">
   
     <h1 class="post-title">
-      Nginx Configurations
+      Nginx Configuration
     </h1>
   
   
@@ -302,31 +304,207 @@
           
           <div class="post-content markdown">
             <div class="main-content-wrap">
-              <p>This is a custom summary and does <em>NOT</em> appear in the post.</p>
+              <p>Nginx config</p>
 <h1 id="table-of-contents">Table of Contents</h1>
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#nginx-location-proxy_pass-后面的url-加于不加--的区别">nginx location proxy_pass 后面的url 加于不加 / 的区别</a></li>
+  </ul>
+</nav>
 
-<p>server {
-listen       80;
-server_name  <a href="https://www.a.com">www.a.com</a>;
-access_log  logs/test.access.log;
-# 匹配以/apis/开头的请求
-location ^~ /apis/ {
-proxy_pass <a href="http://www.b.com/;">http://www.b.com/;</a>  #注意域名后有一个/
+<h2 id="nginx-location-proxy_pass-后面的url-加于不加--的区别">nginx location proxy_pass 后面的url 加于不加 / 的区别</h2>
+<p>即proxy_pass后的 / 会截掉location后跟的地址.</p>
+
+  
+    
+  
+  
+  
+  
+
+
+<figure class="highlight  language-">
+  <figcaption>
+    
+      <span>dev.conf</span>
+    
+  </figcaption>
+  <table>
+    <tbody>
+      <tr>
+        <td class="gutter">
+          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre>
+        </td>
+        <td class="code">
+          <pre class="code-highlight language- "><code class="">server {
+    listen 80;
+    server_name dev.xxx.com;
+    location / {
+        return 301 https://$host$request_uri;
+    }
 }
-location / {
-root html/a;
-index index.html index.htm;
+
+server {
+    listen       80;
+    server_name  dev.xxx.com;
+
+    location ^~ /apis {
+        proxy_pass http://192.168.1.66:9292;
+    }
+
+    location / {
+        root /var/wwww/dev;
+        try_files $uri $uri/ /index.html;
+        index index.html index.htm;
+    }
+    
+    error_page   500 502 503 504  /50x.html;
+    location = /50x.html {
+        root   html;
+    }
+}</code></pre>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+
+<p>Some examples</p>
+
+
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+
+
+  
+    
+  
+  
+
+<figure class="codeblock codeblock--tabbed">
+  <figcaption>
+    
+      <span>Examples</span>
+    
+    <ul class="tabs">
+      
+        <li class="tab active">one</li>
+      
+        <li class="tab ">two</li>
+      
+        <li class="tab ">three</li>
+      
+        <li class="tab ">four</li>
+      
+    </ul>
+  </figcaption>
+  <div class="tabs-content">
+    
+      
+      <figure class="highlight language-one one" style="display: block;">
+        <table>
+          <tbody>
+            <tr>
+              <td class="gutter">
+                <pre><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br></pre>
+              </td>
+              <td class="code">
+                <pre class="code-highlight language-one one"><code class="one">#`location ^~/api`后没有`/`, 转发网站没有`/`
+location ^~/api {
+    proxy_pass http://192.168.1.66:9222;
 }
-#
-error_page   500 502 503 504  /50x.html;
-location = /50x.html {
-root   html;
+#经过nginx转向之后最终的网址是: 192.168.1.66:9292/api/index.html</code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </figure>
+    
+      
+      <figure class="highlight language-two two" style="display: none;">
+        <table>
+          <tbody>
+            <tr>
+              <td class="gutter">
+                <pre><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br></pre>
+              </td>
+              <td class="code">
+                <pre class="code-highlight language-two two"><code class="two">#`location ^~/api`后没有`/`, 转发网站有`/`
+location ^~/api {
+    proxy_pass http://192.168.1.66:9292/;
 }
-}</p>
-<p>没错就是proxy_pass后面的地址加一个/</p>
-<p>加/的情况，访问www.a.com/apis/login.json会得到www.b.com/login.json,使用b文件夹作为/目录来访问</p>
-<p>不加/的情况,访问www.b.com/apis/login.json会得到www.b.com/apis/login.json,使用b文件下的apis作为根目录进行访问</p>
+#经过nginx转向之后最终的网址是: 192.168.1.66:9292/index.html</code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </figure>
+    
+      
+      <figure class="highlight language-three three" style="display: none;">
+        <table>
+          <tbody>
+            <tr>
+              <td class="gutter">
+                <pre><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></pre>
+              </td>
+              <td class="code">
+                <pre class="code-highlight language-three three"><code class="three">#`location ^~/api/`后有`/`, 转发网站没有`/`
+location ^~/api/ {
+    proxy_pass http://192.168.1.66:9292;
+}
+
+#经过nginx转向之后最终的网址是: 192.168.1.66:9292/api/index.html</code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </figure>
+    
+      
+      <figure class="highlight language-four four" style="display: none;">
+        <table>
+          <tbody>
+            <tr>
+              <td class="gutter">
+                <pre><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></pre>
+              </td>
+              <td class="code">
+                <pre class="code-highlight language-four four"><code class="four">#`location ^~/api/`后有`/`, 转发网站有`/`
+location ^~/api/ {
+    proxy_pass 192.168.1.66:9292/;
+}
+
+#经过nginx转向之后最终的网址是: 192.168.1.66:9292/index.html</code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </figure>
+    
+  </div>
+</figure>
               
 
 
@@ -341,6 +519,8 @@ root   html;
                     <span class="text-color-light text-small">TAGGED IN</span><br/>
                     
   <a class="tag tag--primary tag--small" href="https://ivanhan0511.github.io/tags/nginx/">Nginx</a>
+
+  <a class="tag tag--primary tag--small" href="https://ivanhan0511.github.io/tags/config/">Config</a>
 
   <a class="tag tag--primary tag--small" href="https://ivanhan0511.github.io/tags/cors/">CORS</a>
 

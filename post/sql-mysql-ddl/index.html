@@ -292,6 +292,7 @@
   <ul>
     <li><a href="#create">CREATE</a>
       <ul>
+        <li><a href="#create-database">CREATE DATABASE</a></li>
         <li><a href="#create-table">CREATE TABLE</a></li>
         <li><a href="#create-index">CREATE INDEX</a></li>
         <li><a href="#copy-with-data">COPY with data</a></li>
@@ -312,6 +313,36 @@
 </nav>
 
 <h2 id="create">CREATE</h2>
+<h3 id="create-database">CREATE DATABASE</h3>
+
+  
+    
+  
+  
+  
+  
+
+
+<figure class="highlight  language-">
+  <figcaption>
+    
+      <span>CREATE DATABASE</span>
+    
+  </figcaption>
+  <table>
+    <tbody>
+      <tr>
+        <td class="gutter">
+          <pre><span class="line">1</span><br></pre>
+        </td>
+        <td class="code">
+          <pre class="code-highlight language- "><code class="">CREATE DATABASE pear-admin-pro CHARACTER SET UTF8;</code></pre>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+
 <h3 id="create-table">CREATE TABLE</h3>
 
   
@@ -332,11 +363,13 @@
     <tbody>
       <tr>
         <td class="gutter">
-          <pre><span class="line">1</span><br><span class="line">2</span><br></pre>
+          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre>
         </td>
         <td class="code">
-          <pre class="code-highlight language- "><code class="">CREATE TABLE ...
-[TODO]: To be continued...</code></pre>
+          <pre class="code-highlight language- "><code class="">CREATE TABLE student (
+        id INT,
+        name VARCHAR(32)
+        );</code></pre>
         </td>
       </tr>
     </tbody>

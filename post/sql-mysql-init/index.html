@@ -379,19 +379,20 @@ mysql -h 127.0.0.1 -u root -p</code></pre>
           <tbody>
             <tr>
               <td class="gutter">
-                <pre><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br></pre>
+                <pre><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br></pre>
               </td>
               <td class="code">
                 <pre class="code-highlight language-sql sql"><code class="sql"># Collect infomation
 show databases;
 
-SELECT user FROM mysql.user;
+SELECT host, user FROM mysql.user;
 
 SET GLOBAL validate_password.policy=LOW;
 
-#CREATE DATABASE xxxdb charset=utf8;
+CREATE DATABASE `some-db` CHARACTER SET UTF8;
 CREATE USER &#39;rd&#39;@&#39;%&#39; IDENTIFIED BY &#39;your_password&#39;;
-GRANT ALL PRIVILEGES on xxxdb.* TO &#39;rd&#39;@&#39;%&#39;;
+#CREATE USER &#39;rd&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;your_password&#39;;
+GRANT ALL PRIVILEGES on `some-db`.* TO &#39;rd&#39;@&#39;%&#39;;
 #GRANT ALL PRIVILEGES ON *.* TO &#39;rd&#39;@&#39;%&#39; WITH GRANT OPTION;  # This is deprecated!
 #GRANT CREATE, ALTER, DROP, INSERT, UPDATE, DELETE, SELECT, REFERENCES, RELOAD on *.* TO &#39;rd&#39;@&#39;%&#39; WITH GRANT OPTION;
 FLUSH PRIVILEGES;</code></pre>

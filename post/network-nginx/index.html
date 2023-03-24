@@ -333,7 +333,7 @@
     <tbody>
       <tr>
         <td class="gutter">
-          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre>
+          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre>
         </td>
         <td class="code">
           <pre class="code-highlight language- "><code class="">server {
@@ -348,8 +348,20 @@ server {
     listen       80;
     server_name  dev.xxx.com;
 
-    location ^~ /apis {
+    location ^~ /api {
         proxy_pass http://192.168.1.66:9292;
+
+        # proxy_set_header作用：设置发送到后端服务器(上面proxy_pass)的请求头值
+        # 当Host设置为 $http_host 时，则不改变请求头的值;
+        # 当Host设置为 $proxy_host 时，则会重新设置请求头中的Host信息;
+        # 当为$host变量时，它的值在请求包含Host请求头时为Host字段的值，在请求未携带Host请求头时为虚拟主机的主域名;
+        # 当为$host:$proxy_port时，即携带端口发送 ex: $host:8080 
+
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;  # 在web服务器端获得用户的真实ip 需配置条件① $remote_addr值 = 用户ip
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;  # 在web服务器端获得用户的真实ip 需配置条件②
+        proxy_set_header REMOTE-HOST $remote_addr;
+        # proxy_set_header X-Forwarded-For $http_x_forwarded_for;  # $http_x_forwarded_for变量 = X-Forwarded-For变量
     }
 
     location / {
@@ -430,7 +442,7 @@ server {
                 <pre><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br></pre>
               </td>
               <td class="code">
-                <pre class="code-highlight language-one one"><code class="one">#`location ^~/api`后没有`/`, 转发网站没有`/`
+                <pre class="code-highlight language-one one"><code class="one">#location ^~/api后没有`/`, 转发网站没有`/`
 location ^~/api {
     proxy_pass http://192.168.1.66:9222;
 }
@@ -450,7 +462,7 @@ location ^~/api {
                 <pre><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br></pre>
               </td>
               <td class="code">
-                <pre class="code-highlight language-two two"><code class="two">#`location ^~/api`后没有`/`, 转发网站有`/`
+                <pre class="code-highlight language-two two"><code class="two">#location ^~/api后没有`/`, 转发网站有`/`
 location ^~/api {
     proxy_pass http://192.168.1.66:9292/;
 }
@@ -467,14 +479,13 @@ location ^~/api {
           <tbody>
             <tr>
               <td class="gutter">
-                <pre><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></pre>
+                <pre><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br></pre>
               </td>
               <td class="code">
-                <pre class="code-highlight language-three three"><code class="three">#`location ^~/api/`后有`/`, 转发网站没有`/`
+                <pre class="code-highlight language-three three"><code class="three">#location ^~/api/后有`/`, 转发网站没有`/`
 location ^~/api/ {
     proxy_pass http://192.168.1.66:9292;
 }
-
 #经过nginx转向之后最终的网址是: 192.168.1.66:9292/api/index.html</code></pre>
               </td>
             </tr>
@@ -488,14 +499,13 @@ location ^~/api/ {
           <tbody>
             <tr>
               <td class="gutter">
-                <pre><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></pre>
+                <pre><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br></pre>
               </td>
               <td class="code">
-                <pre class="code-highlight language-four four"><code class="four">#`location ^~/api/`后有`/`, 转发网站有`/`
+                <pre class="code-highlight language-four four"><code class="four">#location ^~/api/后有`/`, 转发网站有`/`
 location ^~/api/ {
     proxy_pass 192.168.1.66:9292/;
 }
-
 #经过nginx转向之后最终的网址是: 192.168.1.66:9292/index.html</code></pre>
               </td>
             </tr>

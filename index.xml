@@ -6,23 +6,14 @@
     <description>Recent content on Ivan Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 24 Feb 2023 14:35:00 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 06 Apr 2023 10:31:00 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Welcome to Ivan&#39;s Blog</title>
       <link>https://ivanhan0511.github.io/post/welcome/</link>
-      <pubDate>Fri, 24 Feb 2023 14:35:00 +0800</pubDate>
+      <pubDate>Thu, 06 Apr 2023 10:31:00 +0800</pubDate>
       
       <guid>https://ivanhan0511.github.io/post/welcome/</guid>
       <description>&lt;p&gt;Some records for Software, Coffee and Sports.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>SpringBoot</title>
-      <link>https://ivanhan0511.github.io/post/java-springboot/</link>
-      <pubDate>Fri, 24 Feb 2023 14:10:01 +0800</pubDate>
-      
-      <guid>https://ivanhan0511.github.io/post/java-springboot/</guid>
-      <description>&lt;p&gt;It could be a productional framework to make a software project stronger.&lt;/p&gt;</description>
     </item>
     
     <item>

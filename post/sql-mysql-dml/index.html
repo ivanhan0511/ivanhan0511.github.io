@@ -296,7 +296,11 @@ MERGE, CALL, EXPLAIN PLAN, LOCK TABLE">
 <nav id="TableOfContents">
   <ul>
     <li><a href="#insert">INSERT</a></li>
-    <li><a href="#select">SELECT</a></li>
+    <li><a href="#select">SELECT</a>
+      <ul>
+        <li><a href="#the-time-filter">The Time Filter</a></li>
+      </ul>
+    </li>
     <li><a href="#update">UPDATE</a></li>
     <li><a href="#delete">DELETE</a></li>
     <li><a href="#merge">MERGE</a></li>
@@ -371,6 +375,79 @@ MERGE, CALL, EXPLAIN PLAN, LOCK TABLE">
         </td>
         <td class="code">
           <pre class="code-highlight language-sql sql"><code class="sql">SELECT * FROM &lt;table_name&gt;;</code></pre>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+
+<h3 id="the-time-filter">The Time Filter</h3>
+
+  
+    
+  
+  
+    
+  
+  
+  
+
+
+<figure class="highlight sql language-sql">
+  <figcaption>
+    
+      <span>Periods</span>
+    
+  </figcaption>
+  <table>
+    <tbody>
+      <tr>
+        <td class="gutter">
+          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre>
+        </td>
+        <td class="code">
+          <pre class="code-highlight language-sql sql"><code class="sql">-- 今天
+SELECT * FROM 表名 WHERE TO_DAYS(时间字段名) = TO_DAYS(NOW());
+
+-- 昨天
+SELECT * FROM 表名 WHERE TO_DAYS(NOW()) - TO_DAYS(时间字段名) &lt;= 1;
+
+-- 本周
+SELECT * FROM 表名 WHERE YEARWEEK(DATE_FORMAT(时间字段名,&#39;%Y-%m-%d&#39;)) = YEARWEEK(NOW());
+
+-- 上周
+SELECT * FROM 表名 WHERE YEARWEEK(DATE_FORMAT(时间字段名,&#39;%Y-%m-%d&#39;)) = YEARWEEK(NOW())-1;
+
+-- 近7天
+SELECT * FROM 表名 WHERE DATE_SUB(CURDATE(), INTERVAL 7 DAY) &lt;= DATE(时间字段名);
+
+-- 近30天
+SELECT * FROM 表名 WHERE DATE_SUB(CURDATE(), INTERVAL 30 DAY) &lt;= DATE(时间字段名);
+
+-- 本月
+SELECT * FROM 表名 WHERE DATE_FORMAT(时间字段名,&#39;%Y%m&#39;) = DATE_FORMAT(CURDATE(),&#39;%Y%m&#39;);
+
+-- 上月
+SELECT * FROM 表名 WHERE PERIOD_DIFF(DATE_FORMAT(NOW(),&#39;%Y%m&#39;),DATE_FORMAT(时间字段名,&#39;%Y%m&#39;)) = 1;
+SELECT * FROM 表名 WHERE DATE_FORMAT(时间字段名,&#39;%Y%m&#39;) = DATE_FORMAT(CURDATE(),&#39;%Y%m&#39;) ;
+SELECT * FROM 表名 WHERE WEEKOFYEAR(FROM_UNIXTIME(时间字段名,&#39;%y-%m-%d&#39;)) = WEEKOFYEAR(NOW());
+SELECT * FROM 表名 WHERE MONTH(FROM_UNIXTIME(时间字段名,&#39;%y-%m-%d&#39;)) = MONTH(NOW());
+SELECT * FROM 表名 WHERE YEAR(FROM_UNIXTIME(时间字段名,&#39;%y-%m-%d&#39;)) = YEAR(NOW()) AND MONTH(FROM_UNIXTIME(时间字段名,&#39;%y-%m-%d&#39;)) = MONTH(NOW())；
+
+-- 近6个月
+SELECT * FROM 表名 WHERE 时间字段名 BETWEEN DATE_SUB(NOW(),INTERVAL 6 MONTH) AND NOW();
+
+-- 本季度
+SELECT * FROM 表名 WHERE QUARTER(时间字段名) = QUARTER(NOW());
+
+--- 上季度
+SELECT * FROM 表名 WHERE QUARTER(时间字段名) = QUARTER(DATE_SUB(NOW(),INTERVAL 1 QUARTER));
+
+-- 本年
+SELECT * FROM 表名 WHERE YEAR(时间字段名)=YEAR(NOW());
+
+-- 去年
+SELECT * FROM 表名 WHERE YEAR(时间字段名) = YEAR(DATE_SUB(NOW(),INTERVAL 1 YEAR));</code></pre>
         </td>
       </tr>
     </tbody>

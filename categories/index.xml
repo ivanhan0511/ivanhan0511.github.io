@@ -6,7 +6,25 @@
     <description>Recent content in Categories on Ivan Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 06 Apr 2023 14:10:22 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 11 Apr 2023 17:53:32 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JavaScript</title>
+      <link>https://ivanhan0511.github.io/categories/javascript/</link>
+      <pubDate>Tue, 11 Apr 2023 17:53:32 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/categories/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vue</title>
+      <link>https://ivanhan0511.github.io/categories/vue/</link>
+      <pubDate>Tue, 11 Apr 2023 17:53:32 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/categories/vue/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Java</title>
       <link>https://ivanhan0511.github.io/categories/java/</link>

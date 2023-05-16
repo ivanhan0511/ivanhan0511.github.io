@@ -299,7 +299,11 @@
         </li>
       </ul>
     </li>
-    <li><a href="#泛型">泛型</a></li>
+    <li><a href="#泛型">泛型</a>
+      <ul>
+        <li><a href="#判断类实例中的各个属性是否有null">判断类实例中的各个属性是否有null</a></li>
+      </ul>
+    </li>
     <li><a href="#jdbc">JDBC</a></li>
   </ul>
 </nav>
@@ -367,6 +371,54 @@ public static List&lt;A&gt; asList(A... a);</code></pre>
 用泛型是因为可以使该方法的返回值成为一个指定类型的集合，这样再次使用该集合的时候就有一个明确的类型了，
 这使的在将来该类型发生改变的时候编译器会报错，提醒你做相应的修改，而不是让问题暴露在运行阶段。</p>
 </div>
+<h3 id="判断类实例中的各个属性是否有null">判断类实例中的各个属性是否有null</h3>
+
+  
+    
+  
+  
+  
+  
+
+
+<figure class="highlight  language-">
+  <figcaption>
+    
+      <span>a.java</span>
+    
+  </figcaption>
+  <table>
+    <tbody>
+      <tr>
+        <td class="gutter">
+          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre>
+        </td>
+        <td class="code">
+          <pre class="code-highlight language- "><code class="">private boolean hasNull(Object obj) {
+    if (obj == null) {
+        return true;
+    }
+    final Field[] fields = ClassUtil.getDeclaredFields(obj.getClass());
+    Object fieldValue = null;
+    for (Field field : fields) {
+        field.setAccessible(true);
+        try {
+            fieldValue = field.get(obj);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        if (null == fieldValue) {
+            return true;
+        }
+    }
+    return false;
+}</code></pre>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+
 <h2 id="jdbc">JDBC</h2>
 <p>Once a connection is obtained we can interact with the database.
 The JDBC Statement, CallableStatement, and PreparedStatement interfaces define the methods

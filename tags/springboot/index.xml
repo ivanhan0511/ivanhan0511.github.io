@@ -13,7 +13,9 @@
       <pubDate>Thu, 06 Apr 2023 14:10:22 +0800</pubDate>
       
       <guid>https://ivanhan0511.github.io/post/java-springboot/</guid>
-      <description>&lt;p&gt;It could be a productional framework to make a software project stronger.&lt;/p&gt;</description>
+      <description>&lt;p&gt;The tec core are architecture, IoC and AoP.&lt;/p&gt;
+&lt;p&gt;But just let&amp;rsquo;s focus on the architecture design for business workflow in the SpringBoot framework.&lt;/p&gt;
+&lt;p&gt;No best, only better.&lt;/p&gt;</description>
     </item>
     
   </channel>

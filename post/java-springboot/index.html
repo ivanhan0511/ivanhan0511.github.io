@@ -325,45 +325,28 @@ No best, only better.">
     </li>
     <li><a href="#db-mapper">DB MAPPER</a>
       <ul>
-        <li><a href="#multidatasources">MultiDataSources</a>
+        <li>
           <ul>
             <li><a href="#settings">Settings</a></li>
             <li><a href="#multidb--transactional">MultiDB &amp; Transactional</a></li>
-            <li><a href="#todo">TODO</a></li>
           </ul>
         </li>
       </ul>
     </li>
+    <li><a href="#security">SECURITY</a></li>
+    <li><a href="#logger">LOGGER</a></li>
+    <li><a href="#连接池选型">连接池选型</a></li>
+    <li><a href="#cache">CACHE</a></li>
+    <li><a href="#intercepter">INTERCEPTER</a></li>
     <li><a href="#deployment集成构建">DEPLOYMENT(集成/构建)</a>
       <ul>
         <li><a href="#maven-or-gradle">Maven or Gradle</a></li>
         <li><a href="#maven-381">Maven 3.8.1</a></li>
       </ul>
     </li>
-    <li><a href="#security">SECURITY</a></li>
-    <li><a href="#logger">Logger</a></li>
     <li><a href="#appendix">Appendix</a>
       <ul>
-        <li><a href="#软件开发规范">软件开发规范</a>
-          <ul>
-            <li><a href="#命名规范">命名规范</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li><a href="#杂">杂</a>
-      <ul>
-        <li><a href="#数据库及多数据源">数据库及多数据源</a>
-          <ul>
-            <li><a href="#多数据源切换-且实现事务原子性">多数据源切换, 且实现事务原子性</a></li>
-            <li><a href="#数据库映射">数据库映射</a></li>
-          </ul>
-        </li>
-        <li><a href="#连接池选型">连接池选型</a></li>
-        <li><a href="#缓存">缓存</a></li>
-        <li><a href="#domain设计原则">Domain设计原则</a></li>
-        <li><a href="#数据转换dto位置">数据转换(DTO)位置</a></li>
-        <li><a href="#拦截器">拦截器</a></li>
+        <li><a href="#命名规范">命名规范</a></li>
       </ul>
     </li>
   </ul>
@@ -377,8 +360,8 @@ DO: Domain Object. 领域对象</p>
 <ul>
 <li>核心要考虑和设计的内容, 优先考虑架构, 模型和业务流, 其余的展现和逻辑组合, 在其它层考虑</li>
 <li>淡化PO的概念, 因为每一个Domain类都能对应一个数据库表</li>
-<li>一对多的关联关系, 通过List/Set类型的字段关联, 通过增加以该Domain为主语的行为方法来表达输入输出的行为</li>
-<li>一对一的关联关系, 还是仿照数据库, 设计一个xxxID的字段</li>
+<li>一对多的关联关系, 通过List/Set类型的字段关联, <strong>通过增加以该Domain为主语的行为方法来表达输入输出的行为</strong></li>
+<li>一对一的关联关系, 还是仿照数据库, 设计一个xxxID的字段, 在XML中的ResultMap进行association的关联</li>
 </ul>
 </p>
 </div>
@@ -388,18 +371,18 @@ DO: Domain Object. 领域对象</p>
 <ul>
 <li>MyBatis 接口与XML查询</li>
 <li>能通过数据库查询的尽量通过数据库直接查询, 一对一和一对多的关联关系也通过MyBatis的resultMap来展示</li>
-<li>这一层比较薄, 只做数据库的访问, 做好通用抽象即可</li>
+<li>这一层比较薄, 只做数据库的访问, <strong>关键要做好通用抽象</strong></li>
 <li>善用MyBatis的数据校验来最好查询/更新/插入的冗余, 解放service层</li>
 </ul>
 </p>
 </div>
 <div class="alert success ">
   <p><p>Service层</p>
-<p>DTO: Data Transfer Object. 通常是在OpenApi. 即此项目与其他外界项目交互时使用的对象. 小型项目用DTO交付给前端即可<br>
+<p>DTO: Data Transfer Object. 通常在OpenApi返回的对象中使用DTO, 即此项目与其他外界项目交互时使用的对象. 小型项目用DTO交付给前端即可<br>
 BO: Business Object. 业务对象(BO和DO很像, 是一个综合多个PO的复合抽象对象, 而且小项目无需BO)</p>
 <ul>
 <li>Domain Design Drive下的Service层也比较薄, 一般是复杂业务对多个Domain的封装</li>
-<li>可以调用其它Service(推荐), 也可以调用其它Repository</li>
+<li>可以调用其它Service(推荐, 如果涉及到多个数据源切换时尤其重要), 也可以调用其它Repository</li>
 <li>如果Repository输出的Domain数据不符合前端要求, 则DTO的数据转换也在这一层处理</li>
 <li>尽量少的数据规范性校验, 更多的业务数据校验</li>
 </ul>
@@ -409,8 +392,8 @@ BO: Business Object. 业务对象(BO和DO很像, 是一个综合多个PO的复�
   <p><p>Controller层</p>
 <p>VO: Value Object. 表现对象. 小型项目可以没有VO, 或由前端负责展示, 给终端用户传递信息</p>
 <ul>
-<li>校验前端数据, 注意校验分组</li>
-<li>简单分流前端业务, 因地制宜地回复错误信息</li>
+<li>校验前端数据, 使用校验分组</li>
+<li>简单判断分流前端业务, 因地制宜地回复错误信息</li>
 </ul>
 </p>
 </div>
@@ -423,7 +406,7 @@ BO: Business Object. 业务对象(BO和DO很像, 是一个综合多个PO的复�
 <h2 id="annotation">ANNOTATION</h2>
 <h3 id="常用注解的深入理解">常用注解的深入理解</h3>
 <ul>
-<li><a href="%E5%90%8E%E7%BB%AD%E4%B8%8D%E5%86%8D%E4%BD%BF%E7%94%A8MyBatis-Plus,%E4%B9%9F%E4%B8%8D%E4%BC%9A%E7%94%A8%E5%88%B0@DS(),%E8%80%8C%E9%87%87%E7%94%A8%E9%85%8D%E7%BD%AE%E7%B1%BB%E7%9A%84%E5%BD%A2%E5%BC%8F;%E5%B0%86%E8%AF%A5%E7%90%86%E8%AE%BA%E7%9A%84%E6%80%BB%E7%BB%93%E5%BD%92%E7%B1%BB%E5%88%B0SQL%E4%B8%8B">TODO</a>: 各种继承关系的注解, 类似RestController, 包含了ResponseBody等, 后续补充</li>
+<li>[TODO]: 各种继承关系的注解, 类似RestController, 包含了ResponseBody等, 后续补充</li>
 <li>Controller中设置Headers, 指定Content-Type/Accept
 <ul>
 <li>Springboot中Controller中的comsumes所指定的是HTTP客户端的Content-Type的内容, 默认application/x-www-form-urlencoded</li>
@@ -480,15 +463,14 @@ While this fallback is convenient, IMHO it causes a lot of confusion, because pe
   </footer>
 </blockquote>
 <ul>
-<li>@Repository or @Mapper
-DAO层的用@Repository</li>
-</ul>
-<p>和@Mapper的对比还没了解到</p>
-<p>总结
-@Mapper 一定要有，否则 Mybatis 找不到 mapper。
-@Repository 可有可无，可以消去依赖注入的报错信息。
-@MapperScan 可以替代 @Mapper。</p>
+<li>
+<p>@Repository or @Mapper</p>
 <ul>
+<li>@Mapper 一定要有，否则 Mybatis 找不到 mapper。</li>
+<li>@Repository 可有可无，可以消去依赖注入的报错信息。</li>
+<li>@MapperScan 可以替代 @Mapper。</li>
+</ul>
+</li>
 <li>
 <p>SpringBoot中的@EqualsAndHashCode注解与@Data注解
 <a href="https://blog.csdn.net/gdkyxy2013/article/details/104769897">https://blog.csdn.net/gdkyxy2013/article/details/104769897</a></p>
@@ -496,7 +478,9 @@ DAO层的用@Repository</li>
 <li>
 <p>@Validate @Valid</p>
 <p>@Validate是org.springframework.validation.annotation.Validated 导入的</p>
+<p>@Validate 可以分组</p>
 <p>@Valid是javax.validation.Valid 导入的</p>
+<p>@Valid 可以递归</p>
 <p>controller类上写: @Validated</p>
 <ul>
 <li>如果是Bean的对象xxxRequest类限制参数, 则参数类中各自校验; 在controller类中的方法参数括号内写: @Valid</li>
@@ -505,11 +489,16 @@ DAO层的用@Repository</li>
 </li>
 </ul>
 <h2 id="db-mapper">DB MAPPER</h2>
-<p>~~Use MyBatisPLus maven and use default CRUD methods.  ~~
-<del>But refuse to use QueryWrapper, use MyBatis&rsquo; XML mapper.</del></p>
-<p>全面拥抱MyBatis
-<a href="https://mybatis.org/mybatis-3/zh/sqlmap-xml.html#Parameters">MyBatis Documents</a></p>
-<h3 id="multidatasources">MultiDataSources</h3>
+<p><strong>JUST</strong> use MyBatisPLus maven and use default CRUD methods.<br>
+But refuse to use QueryWrapper, use MyBatis&rsquo; XML mapper.</p>
+<p>Reason as below:</p>
+<ul>
+<li>(Dissent)IService和BaseMapper中&quot;充分利用&quot;了Java新规定中Interface可以有default的用法, 很不符合Java精神</li>
+<li>(Dissent)MybatisPlus的QueryWrapper越看越像SQLAlchemy的ORM, 学习成本高, 且忽略了SQL的实质</li>
+<li>(Dissent)性能和稳定性等不稳定因素越来越多, 比如一旦手动干预, 很多所谓的&quot;便利&quot;瞬间全无, 还是得依靠MyBatis</li>
+<li>(Consent)按照MyBatis写SQL更像原生SQL</li>
+</ul>
+<p><strong>非</strong>分布式数据库, 不使用雪花算法, 使用数据库自增ID int</p>
 <h4 id="settings">Settings</h4>
 <ul>
 <li>
@@ -550,7 +539,8 @@ DAO层的用@Repository</li>
 <li>SERIALIZABLE, 最高级别的隔离</li>
 </ul>
 </li>
-<li>注意事务传播, 需要时则加入传播的扩散要求</li>
+<li>事务传播, 需要时则加入传播的扩散要求<br>
+@Transactional(isolation = Isolation.SERIALIZABLE, propagation = Propagation.REQUIRES_NEW)</li>
 </ul>
 <div class="alert info ">
   <p>@DS 必须加在 @Transactional 对应的类或者方法上<br>
@@ -729,8 +719,68 @@ public class CombineServiceImpl implements CombineService {
   </div>
 </figure>
 
-<h4 id="todo">TODO</h4>
-<p>And how to <code>DynamicDataSourceContextHolder.push()</code> and <code>DynamicDataSourceContextHolder.poll()</code>?</p>
+<p>[TODO]:
+MyBatis的手动切换, 后续再深入学习<br>
+And how to <code>DynamicDataSourceContextHolder.push()</code> and <code>DynamicDataSourceContextHolder.poll()</code>?</p>
+<!-- raw HTML omitted -->
+<h2 id="security">SECURITY</h2>
+<p>It&rsquo;s a deep track!</p>
+<p>Need do really deep reseach for it.</p>
+<h2 id="logger">LOGGER</h2>
+<p><strong>slf4j.Logger and log4j.Logger</strong>
+<blockquote>
+  <p>
+Comparison SLF4J and Log4j<br/>
+
+Unlike log4j, SLF4J (Simple Logging Facade for Java) is not an implementation of logging framework, 
+it is an abstraction for all those logging frameworks in Java similar to log4J. Therefore, you cannot compare both. 
+However, it is always difficult to prefer one between the two.
+</p>
+  <footer>
+    <strong>LEARN SLF4J</strong>
+    
+      <cite><a href="https://www.tutorialspoint.com/slf4j/slf4j_vs_log4j.htm#:~:text=Comparison%20SLF4J%20and%20Log4j,prefer%20one%20between%20the%20two." target="_blank" rel="external">SLF4J Vs Log4j</a></cite>
+    
+  </footer>
+</blockquote></p>
+
+
+ 
+  
+  
+  
+  
+    
+  
+    
+      
+    
+  
+
+<div class="figure fig-100" >
+  
+    <a class="fancybox" href="https://www.tutorialspoint.com/slf4j/images/application.jpg" data-fancybox="">
+  
+    <img class="fig-img" src="https://www.tutorialspoint.com/slf4j/images/application.jpg" >
+  
+    </a>
+  
+  
+</div>
+
+<!-- raw HTML omitted -->
+<h2 id="连接池选型">连接池选型</h2>
+<p>Druid or Hikari -&gt; PearAdminPro用的是Hikari, 也是Springboot官方选用的</p>
+<p>Druid是淘宝选用的, 高并发的情况会适用一些</p>
+<!-- raw HTML omitted -->
+<h2 id="cache">CACHE</h2>
+<ul>
+<li>MyBatis缓存</li>
+<li>Redis缓存</li>
+</ul>
+<!-- raw HTML omitted -->
+<h2 id="intercepter">INTERCEPTER</h2>
+<!-- raw HTML omitted -->
 <h2 id="deployment集成构建">DEPLOYMENT(集成/构建)</h2>
 <h3 id="maven-or-gradle">Maven or Gradle</h3>
 <p>The maven pom.xml defines lifecycle goals and the gradle build.gradle defines tasks.</p>
@@ -867,54 +917,9 @@ public class CombineServiceImpl implements CombineService {
 <p>Reload pom.xml file in IDEA and automaticlly download the dependencies</p>
 </li>
 </ul>
-<h2 id="security">SECURITY</h2>
-<p>It&rsquo;s a deep track!</p>
-<p>Need do really deep reseach for it.</p>
-<h2 id="logger">Logger</h2>
-<p><strong>slf4j.Logger and log4j.Logger</strong>
-<blockquote>
-  <p>
-Comparison SLF4J and Log4j<br/>
-
-Unlike log4j, SLF4J (Simple Logging Facade for Java) is not an implementation of logging framework, 
-it is an abstraction for all those logging frameworks in Java similar to log4J. Therefore, you cannot compare both. 
-However, it is always difficult to prefer one between the two.
-</p>
-  <footer>
-    <strong>LEARN SLF4J</strong>
-    
-      <cite><a href="https://www.tutorialspoint.com/slf4j/slf4j_vs_log4j.htm#:~:text=Comparison%20SLF4J%20and%20Log4j,prefer%20one%20between%20the%20two." target="_blank" rel="external">SLF4J Vs Log4j</a></cite>
-    
-  </footer>
-</blockquote></p>
-
-
- 
-  
-  
-  
-  
-    
-  
-    
-      
-    
-  
-
-<div class="figure fig-100" >
-  
-    <a class="fancybox" href="https://www.tutorialspoint.com/slf4j/images/application.jpg" data-fancybox="">
-  
-    <img class="fig-img" src="https://www.tutorialspoint.com/slf4j/images/application.jpg" >
-  
-    </a>
-  
-  
-</div>
-
+<!-- raw HTML omitted -->
 <h2 id="appendix">Appendix</h2>
-<h3 id="软件开发规范">软件开发规范</h3>
-<h4 id="命名规范">命名规范</h4>
+<h3 id="命名规范">命名规范</h3>
 <ul>
 <li>
 <p>Service/DAO层方法命名规约</p>
@@ -943,59 +948,6 @@ However, it is always difficult to prefer one between the two.
 </ul>
 </li>
 </ul>
-<h2 id="杂">杂</h2>
-<h3 id="数据库及多数据源">数据库及多数据源</h3>
-<p><strong>非</strong>分布式数据库, 不使用雪花算法, 使用数据库自增ID</p>
-<h4 id="多数据源切换-且实现事务原子性">多数据源切换, 且实现事务原子性</h4>
-<ul>
-<li>使用多数据源时, <del>application.yml中设置PageHelper的 helperDialect, 兼容&quot;mysql&quot;和&quot;sqlserver&quot;两种数据库的语法,</del> 配置PageHelper时要注意(只有在使用application.yml格式的配置文件时会有问题):
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span>...
-</span></span><span style="display:flex;"><span><span style="color:#f92672">pagehelper</span>:
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">autoRuntimeDialect: true  # 此处的配置项是驼峰, 不是IDEA自动提示的`auto-runtime-dialect</span>: <span style="color:#66d9ef">true</span><span style="color:#ae81ff">`</span>
-</span></span><span style="display:flex;"><span>...
-</span></span></code></pre></div>因为如果驼峰被自动转译为横线分隔符, 会导致PageHelper切换多数据源时失效</li>
-<li><del>跨多数据源, 调用各个资源服务, 各个Service的实现类有@DS(&ldquo;customer&rdquo;)注解指定数据源</del></li>
-<li><del>事务管理, 通过@DSTransactional 根据各个服务所指定的数据源进行切换</del><br>
-<em>注意：@DS 必须加在 @Transactional 对应的类或者方法上。 如在 mapper中加了@DS，但是 @Transactional 加在 service 方法中，此时获取为默认的datasource。（因为在事务中已经获取了一次datasource的connection，而此时无DS注解）</em></li>
-<li>后续不使用MyBatis-Plus, 使用MyBatis并手动配置数据源的类以及SqlSessionFactory</li>
-</ul>
-<h4 id="数据库映射">数据库映射</h4>
-<ul>
-<li>取消MyBatis-Plus
-<ul>
-<li>IService和BaseMapper中&quot;充分利用&quot;了Java新规定中Interface可以有default的用法, 很不符合Java精神</li>
-<li>MybatisPlus的QueryWrapper越看越像SQLAlchemy的ORM, 学习成本高, 且忽略了SQL的实质</li>
-<li>性能和稳定性等不稳定因素越来越多, 比如一旦手动干预, 很多所谓的&quot;便利&quot;瞬间全无, 还是得依靠MyBatis</li>
-<li>按照MyBatis写SQL更像原生SQL</li>
-</ul>
-</li>
-<li>全面投入MyBatis怀抱</li>
-</ul>
-<h3 id="连接池选型">连接池选型</h3>
-<p>Druid or Hikari -&gt; PearAdminPro用的是Hikari, 也是Springboot官方选用的</p>
-<p>Druid是淘宝选用的, 高并发的情况会适用一些</p>
-<h3 id="缓存">缓存</h3>
-<ul>
-<li>MyBatis缓存</li>
-<li>Redis缓存</li>
-</ul>
-<h3 id="domain设计原则">Domain设计原则</h3>
-<p>Domain Design Drive 的理解:</p>
-<ul>
-<li>淡化PO的概念, 没有关联关系的每一个domain类都能对应一个数据库表</li>
-<li>domain类中无论是一对一还是一对多的关联关系, 都能找到另外一个domain类与之对应</li>
-</ul>
-<h3 id="数据转换dto位置">数据转换(DTO)位置</h3>
-<ul>
-<li>DTO or VO在哪里转换比较合适? service层?
-<ul>
-<li>以PearAdminPro的理解, 该项目是DDD模型, domain即DTO层, 已经是从数据库获取数据后经过转换后需要输出的内容</li>
-<li>但domain只是单表, 多表组合数据需要在XML中通过ResultMap来组装数据</li>
-<li>一对多关联中, &ldquo;一&quot;的domain表中写入一个不存在的字段, 用以关联&quot;多&quot;的表数据列表</li>
-</ul>
-</li>
-</ul>
-<h3 id="拦截器">拦截器</h3>
               
 
 

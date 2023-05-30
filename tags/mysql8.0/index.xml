@@ -6,14 +6,14 @@
     <description>Recent content in MySQL8.0 on Ivan Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 17 Jan 2023 02:58:26 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/tags/mysql8.0/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 30 May 2023 15:00:00 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/tags/mysql8.0/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>MySQL8.0 Init Operations</title>
-      <link>https://ivanhan0511.github.io/post/sql-mysql-init/</link>
-      <pubDate>Tue, 17 Jan 2023 02:58:26 +0800</pubDate>
+      <title>MySQL8.0 perations</title>
+      <link>https://ivanhan0511.github.io/post/sql-mysql/</link>
+      <pubDate>Tue, 30 May 2023 15:00:00 +0800</pubDate>
       
-      <guid>https://ivanhan0511.github.io/post/sql-mysql-init/</guid>
-      <description>&lt;p&gt;Init operations of MySQL 8.0&lt;/p&gt;</description>
+      <guid>https://ivanhan0511.github.io/post/sql-mysql/</guid>
+      <description>&lt;p&gt;Some usual operations examples in MySQL 8.0&lt;/p&gt;</description>
     </item>
     
   </channel>

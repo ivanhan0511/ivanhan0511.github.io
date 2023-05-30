@@ -325,10 +325,11 @@ No best, only better.">
     </li>
     <li><a href="#db-mapper">DB MAPPER</a>
       <ul>
-        <li>
+        <li><a href="#mapper-design">Mapper Design</a></li>
+        <li><a href="#multidb--transactional">MultiDB &amp; Transactional</a>
           <ul>
             <li><a href="#settings">Settings</a></li>
-            <li><a href="#multidb--transactional">MultiDB &amp; Transactional</a></li>
+            <li><a href="#数据隔离事务传播">数据隔离&amp;事务传播</a></li>
           </ul>
         </li>
       </ul>
@@ -383,7 +384,13 @@ BO: Business Object. 业务对象(BO和DO很像, 是一个综合多个PO的复�
 <ul>
 <li>Domain Design Drive下的Service层也比较薄, 一般是复杂业务对多个Domain的封装</li>
 <li>可以调用其它Service(推荐, 如果涉及到多个数据源切换时尤其重要), 也可以调用其它Repository</li>
-<li>如果Repository输出的Domain数据不符合前端要求, 则DTO的数据转换也在这一层处理</li>
+<li>DTO转换:
+<ul>
+<li>如果单一的数据CRUD, 纯对应的Service + Repository + Domain就能满足前端数据呈现需要</li>
+<li>如果是有数据库事务的综合业务, 返回的数据也相对修改的比较多, 才考虑增加DTO来转换Domain</li>
+<li>另外类似一些敏感信息需要屏蔽的Domain, 才考虑增加DTO来转换Domain</li>
+</ul>
+</li>
 <li>尽量少的数据规范性校验, 更多的业务数据校验</li>
 </ul>
 </p>
@@ -488,6 +495,7 @@ While this fallback is convenient, IMHO it causes a lot of confusion, because pe
 </ul>
 </li>
 </ul>
+<!-- raw HTML omitted -->
 <h2 id="db-mapper">DB MAPPER</h2>
 <p><strong>JUST</strong> use MyBatisPLus maven and use default CRUD methods.<br>
 But refuse to use QueryWrapper, use MyBatis&rsquo; XML mapper.</p>
@@ -499,6 +507,32 @@ But refuse to use QueryWrapper, use MyBatis&rsquo; XML mapper.</p>
 <li>(Consent)按照MyBatis写SQL更像原生SQL</li>
 </ul>
 <p><strong>非</strong>分布式数据库, 不使用雪花算法, 使用数据库自增ID int</p>
+<h3 id="mapper-design">Mapper Design</h3>
+<ul>
+<li>因功能不同而查询同一个表, 很可能过滤条件维度和结果维度都不相同, 因此按照功能划分查询列表数据或查询单条数据比较合理(暂时, May 30, 2023)
+<ul>
+<li>selectOneForXxxFunction(Integer param)</li>
+<li>selectListForYyyFunction(YyyRequest request)
+<ul>
+<li>request中通过分组校验参数来整合不同的请求参数, 以便Mapper层可以一条语句应对多个controller层不同条件的查询</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>复用<!-- raw HTML omitted -->仅涉及columns字段
+<ul>
+<li>为了在<!-- raw HTML omitted -->中看得更清晰</li>
+<li>为了MyBatisCodeHelperPro这个插件能关联<!-- raw HTML omitted -->和<!-- raw HTML omitted -->对应的字段</li>
+</ul>
+</li>
+<li>不使用联合查询, 会导致PageHelper无法正确分页</li>
+<li>因为<!-- raw HTML omitted -->的功能, SQL语句中可以/也不能 用<code>LEFT JOIN</code>, 也不用增加太多where条件
+<ul>
+<li>MyBatis会做子查询继续调用<!-- raw HTML omitted -->中的查询语句</li>
+</ul>
+</li>
+</ul>
+<h3 id="multidb--transactional">MultiDB &amp; Transactional</h3>
 <h4 id="settings">Settings</h4>
 <ul>
 <li>
@@ -513,7 +547,7 @@ But refuse to use QueryWrapper, use MyBatis&rsquo; XML mapper.</p>
 </span></span></code></pre></div><p>因为如果驼峰被自动转译为横线分隔符, 会导致PageHelper切换多数据源时失效</p>
 </li>
 </ul>
-<h4 id="multidb--transactional">MultiDB &amp; Transactional</h4>
+<h4 id="数据隔离事务传播">数据隔离&amp;事务传播</h4>
 <ul>
 <li>跨多数据源, 调用各个资源服务, 各个Service的实现类有@DS(&ldquo;customer&rdquo;)注解指定数据源</li>
 <li>事务管理, 通过@DSTransactional 根据各个服务所指定的数据源进行切换</li>

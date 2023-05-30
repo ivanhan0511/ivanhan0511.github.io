@@ -3,16 +3,46 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://ivanhan0511.github.io/categories/</loc>
-    <lastmod>2023-05-16T14:53:00+08:00</lastmod>
+    <lastmod>2023-05-30T15:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://ivanhan0511.github.io/tags/dcl/</loc>
+    <lastmod>2023-05-30T15:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://ivanhan0511.github.io/tags/ddl/</loc>
+    <lastmod>2023-05-30T15:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://ivanhan0511.github.io/tags/dml/</loc>
+    <lastmod>2023-05-30T15:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://ivanhan0511.github.io/tags/init/</loc>
+    <lastmod>2023-05-30T15:00:00+08:00</lastmod>
   </url><url>
     <loc>https://ivanhan0511.github.io/</loc>
-    <lastmod>2023-05-16T14:53:00+08:00</lastmod>
+    <lastmod>2023-05-30T15:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://ivanhan0511.github.io/categories/mysql/</loc>
+    <lastmod>2023-05-30T15:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://ivanhan0511.github.io/tags/mysql8.0/</loc>
+    <lastmod>2023-05-30T15:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://ivanhan0511.github.io/post/sql-mysql/</loc>
+    <lastmod>2023-05-30T15:00:00+08:00</lastmod>
   </url><url>
     <loc>https://ivanhan0511.github.io/post/</loc>
-    <lastmod>2023-05-16T14:53:00+08:00</lastmod>
+    <lastmod>2023-05-30T15:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://ivanhan0511.github.io/categories/sql/</loc>
+    <lastmod>2023-05-30T15:00:00+08:00</lastmod>
   </url><url>
     <loc>https://ivanhan0511.github.io/tags/</loc>
-    <lastmod>2023-05-16T14:53:00+08:00</lastmod>
+    <lastmod>2023-05-30T15:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://ivanhan0511.github.io/tags/tcl/</loc>
+    <lastmod>2023-05-30T15:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://ivanhan0511.github.io/tags/view/</loc>
+    <lastmod>2023-05-30T15:00:00+08:00</lastmod>
   </url><url>
     <loc>https://ivanhan0511.github.io/tags/welcome/</loc>
     <lastmod>2023-05-16T14:53:00+08:00</lastmod>
@@ -95,9 +125,6 @@
     <loc>https://ivanhan0511.github.io/categories/os/</loc>
     <lastmod>2023-02-15T15:17:20+08:00</lastmod>
   </url><url>
-    <loc>https://ivanhan0511.github.io/tags/init/</loc>
-    <lastmod>2023-02-15T15:16:59+08:00</lastmod>
-  </url><url>
     <loc>https://ivanhan0511.github.io/post/os-windows10/</loc>
     <lastmod>2023-02-15T15:16:59+08:00</lastmod>
   </url><url>
@@ -116,10 +143,7 @@
     <loc>https://ivanhan0511.github.io/tags/principle/</loc>
     <lastmod>2023-02-02T13:39:32+08:00</lastmod>
   </url><url>
-    <loc>https://ivanhan0511.github.io/categories/sql/</loc>
-    <lastmod>2023-01-17T15:41:38+08:00</lastmod>
-  </url><url>
-    <loc>https://ivanhan0511.github.io/post/sql-sqlserver-init/</loc>
+    <loc>https://ivanhan0511.github.io/post/sql-sqlserver/</loc>
     <lastmod>2023-01-17T15:41:38+08:00</lastmod>
   </url><url>
     <loc>https://ivanhan0511.github.io/tags/sqlserver/</loc>
@@ -127,15 +151,6 @@
   </url><url>
     <loc>https://ivanhan0511.github.io/categories/sqlserver/</loc>
     <lastmod>2023-01-17T15:41:38+08:00</lastmod>
-  </url><url>
-    <loc>https://ivanhan0511.github.io/categories/mysql/</loc>
-    <lastmod>2023-01-17T02:58:26+08:00</lastmod>
-  </url><url>
-    <loc>https://ivanhan0511.github.io/tags/mysql8.0/</loc>
-    <lastmod>2023-01-17T02:58:26+08:00</lastmod>
-  </url><url>
-    <loc>https://ivanhan0511.github.io/post/sql-mysql-init/</loc>
-    <lastmod>2023-01-17T02:58:26+08:00</lastmod>
   </url><url>
     <loc>https://ivanhan0511.github.io/tags/health/</loc>
     <lastmod>2022-10-17T17:21:51+08:00</lastmod>
@@ -157,33 +172,6 @@
   </url><url>
     <loc>https://ivanhan0511.github.io/post/java-basic/</loc>
     <lastmod>2022-09-14T17:05:15+08:00</lastmod>
-  </url><url>
-    <loc>https://ivanhan0511.github.io/tags/dcl/</loc>
-    <lastmod>2022-08-10T14:42:36+08:00</lastmod>
-  </url><url>
-    <loc>https://ivanhan0511.github.io/tags/ddl/</loc>
-    <lastmod>2022-08-10T14:42:36+08:00</lastmod>
-  </url><url>
-    <loc>https://ivanhan0511.github.io/tags/dml/</loc>
-    <lastmod>2022-08-10T14:42:36+08:00</lastmod>
-  </url><url>
-    <loc>https://ivanhan0511.github.io/tags/mysql/</loc>
-    <lastmod>2022-08-10T14:42:36+08:00</lastmod>
-  </url><url>
-    <loc>https://ivanhan0511.github.io/post/sql-mysql-dcl/</loc>
-    <lastmod>2022-08-10T14:42:36+08:00</lastmod>
-  </url><url>
-    <loc>https://ivanhan0511.github.io/post/sql-mysql-ddl/</loc>
-    <lastmod>2022-08-10T14:42:36+08:00</lastmod>
-  </url><url>
-    <loc>https://ivanhan0511.github.io/post/sql-mysql-dml/</loc>
-    <lastmod>2022-08-10T14:42:36+08:00</lastmod>
-  </url><url>
-    <loc>https://ivanhan0511.github.io/post/sql-mysql-tcl/</loc>
-    <lastmod>2022-08-10T14:42:36+08:00</lastmod>
-  </url><url>
-    <loc>https://ivanhan0511.github.io/tags/tcl/</loc>
-    <lastmod>2022-08-10T14:42:36+08:00</lastmod>
   </url><url>
     <loc>https://ivanhan0511.github.io/categories/mq/</loc>
     <lastmod>2022-06-29T16:52:42+08:00</lastmod>
@@ -301,12 +289,6 @@
   </url><url>
     <loc>https://ivanhan0511.github.io/categories/security/</loc>
     <lastmod>2022-05-25T20:10:41+08:00</lastmod>
-  </url><url>
-    <loc>https://ivanhan0511.github.io/post/sql-mysql-view/</loc>
-    <lastmod>2022-05-25T15:48:48+08:00</lastmod>
-  </url><url>
-    <loc>https://ivanhan0511.github.io/tags/sqlview/</loc>
-    <lastmod>2022-05-25T15:48:48+08:00</lastmod>
   </url><url>
     <loc>https://ivanhan0511.github.io/tags/deploy/</loc>
     <lastmod>2022-05-25T15:39:32+08:00</lastmod>

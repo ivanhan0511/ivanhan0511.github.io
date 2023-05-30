@@ -1,0 +1,1302 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <script type="application/ld+json">
+
+{  
+  "@context":"http://schema.org",
+  "@type":"Website",
+  "@id":"https:\/\/ivanhan0511.github.io\/",
+  "author": {
+    "@type": "Person",
+    "name": "Ivan Han",
+    
+    "image": "https://www.gravatar.com/avatar/0cac315e34e792213d5fa694dc39777b"
+    
+  },
+  "name":"Ivan Blog",
+  "description":"\u003cp\u003eSome usual operations examples in MySQL 8.0\u003c\/p\u003e",
+  "url":"https:\/\/ivanhan0511.github.io\/post\/sql-mysql\/",
+  "keywords":"[mysql, init, dcl, ddl, dml, tcl, view, Ivan, Python, C\/C\u002b\u002b, Coffee, Bass, Bicycle, Badminton]"
+}
+
+</script>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.99.1 with theme Tranquilpeak 0.5.3-BETA">
+<meta name="author" content="Ivan Han">
+<meta name="keywords" content="mysql, init, dcl, ddl, dml, tcl, view, Ivan, Python, C/C&#43;&#43;, Coffee, Bass, Bicycle, Badminton">
+<meta name="description" content="Some usual operations examples in MySQL 8.0">
+
+
+<meta property="og:description" content="Some usual operations examples in MySQL 8.0">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL8.0 perations">
+<meta name="twitter:title" content="MySQL8.0 perations">
+<meta property="og:url" content="https://ivanhan0511.github.io/post/sql-mysql/">
+<meta property="twitter:url" content="https://ivanhan0511.github.io/post/sql-mysql/">
+<meta property="og:site_name" content="Ivan Blog">
+<meta property="og:description" content="Some usual operations examples in MySQL 8.0">
+<meta name="twitter:description" content="Some usual operations examples in MySQL 8.0">
+<meta property="og:locale" content="en-us">
+
+  
+    <meta property="article:published_time" content="2023-05-30T15:00:00">
+  
+  
+    <meta property="article:modified_time" content="2023-05-30T15:00:00">
+  
+  
+  
+    
+      <meta property="article:section" content="SQL">
+    
+      <meta property="article:section" content="MySQL">
+    
+  
+  
+    
+      <meta property="article:tag" content="MySQL8.0">
+    
+      <meta property="article:tag" content="init">
+    
+      <meta property="article:tag" content="DCL">
+    
+      <meta property="article:tag" content="DDL">
+    
+      <meta property="article:tag" content="DML">
+    
+      <meta property="article:tag" content="TCL">
+    
+      <meta property="article:tag" content="VIEW">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+  <meta name="twitter:site" content="@ivanhan0511">
+
+
+  <meta name="twitter:creator" content="@ivanhan0511">
+
+
+
+
+
+
+  <meta property="og:image" content="https://www.gravatar.com/avatar/0cac315e34e792213d5fa694dc39777b?s=640">
+  <meta property="twitter:image" content="https://www.gravatar.com/avatar/0cac315e34e792213d5fa694dc39777b?s=640">
+
+
+
+
+
+
+    <title>MySQL8.0 perations</title>
+
+    <link rel="icon" href="https://ivanhan0511.github.io/favicon.png">
+    
+
+    
+
+    <link rel="canonical" href="https://ivanhan0511.github.io/post/sql-mysql/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha512-H9jrZiiopUdsLpg94A333EfumgUBpO9MdbxStdeITo+KEIMaNfHNvwyjjDJb+ERPaRS6DpyRlKbvPUasNItRyw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    
+    
+    <link rel="stylesheet" href="https://ivanhan0511.github.io/css/style-h6ccsoet3mzkbb0wngshlfbaweimexgqcxj0h5hu4h82olsdzz6wmqdkajm.min.css" />
+    
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="4">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://ivanhan0511.github.io/" aria-label="Go to homepage">Ivan Blog</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://ivanhan0511.github.io/#about" aria-label="Open the link: /#about">
+    
+    
+    
+      
+        <img class="header-picture" src="https://www.gravatar.com/avatar/0cac315e34e792213d5fa694dc39777b?s=90" alt="Author&#39;s picture" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="4">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://ivanhan0511.github.io/#about" aria-label="Read more about the author">
+          <img class="sidebar-profile-picture" src="https://www.gravatar.com/avatar/0cac315e34e792213d5fa694dc39777b?s=110" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">Ivan Han</h4>
+        
+          <h5 class="sidebar-profile-bio">I need <strong>slow down</strong></h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://ivanhan0511.github.io/" title="Home">
+    
+      <i class="sidebar-button-icon fas fa-lg fa-home" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://ivanhan0511.github.io/categories" title="Categories">
+    
+      <i class="sidebar-button-icon fas fa-lg fa-bookmark" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">Categories</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://ivanhan0511.github.io/tags" title="Tags">
+    
+      <i class="sidebar-button-icon fas fa-lg fa-tags" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">Tags</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://ivanhan0511.github.io/archives" title="Archives">
+    
+      <i class="sidebar-button-icon fas fa-lg fa-archive" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">Archives</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://ivanhan0511.github.io/#about" title="About">
+    
+      <i class="sidebar-button-icon fas fa-lg fa-question" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">About</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/ivanhan0511" target="_blank" rel="noopener" title="GitHub">
+    
+      <i class="sidebar-button-icon fab fa-lg fa-github" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://stackoverflow.com/users/14423790/ivan-han" target="_blank" rel="noopener" title="Stack Overflow">
+    
+      <i class="sidebar-button-icon fab fa-lg fa-stack-overflow" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">Stack Overflow</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://ivanhan0511.github.io/index.xml" title="RSS">
+    
+      <i class="sidebar-button-icon fas fa-lg fa-rss" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="4"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" id="top">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title">
+      MySQL8.0 perations
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time datetime="2023-05-30T15:00:00&#43;08:00">
+        
+  
+  
+  
+  
+    May 30, 2023
+  
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://ivanhan0511.github.io/categories/sql">SQL</a>, 
+    
+      <a class="category-link" href="https://ivanhan0511.github.io/categories/mysql">MySQL</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown">
+            <div class="main-content-wrap">
+              <p>Some usual operations examples in MySQL 8.0</p>
+<h1 id="table-of-contents">Table of Contents</h1>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#init">INIT</a></li>
+    <li><a href="#dcl">DCL</a>
+      <ul>
+        <li><a href="#grant">GRANT</a></li>
+        <li><a href="#revoke">REVOKE</a></li>
+        <li><a href="#deny">DENY</a></li>
+      </ul>
+    </li>
+    <li><a href="#ddl">DDL</a>
+      <ul>
+        <li><a href="#create">CREATE</a>
+          <ul>
+            <li><a href="#create-database">CREATE DATABASE</a></li>
+            <li><a href="#create-table">CREATE TABLE</a></li>
+            <li><a href="#create-index">CREATE INDEX</a></li>
+            <li><a href="#copy-with-data">COPY with data</a></li>
+            <li><a href="#copy-without-data">COPY without data</a></li>
+          </ul>
+        </li>
+        <li><a href="#alter">ALTER</a></li>
+        <li><a href="#drop">DROP</a>
+          <ul>
+            <li><a href="#drop-table">DROP TABLE</a></li>
+            <li><a href="#drop-index">DROP INDEX</a></li>
+          </ul>
+        </li>
+        <li><a href="#truncate">TRUNCATE</a></li>
+        <li><a href="#comment">COMMENT</a></li>
+        <li><a href="#rename">RENAME</a></li>
+      </ul>
+    </li>
+    <li><a href="#dml">DML</a>
+      <ul>
+        <li><a href="#insert">INSERT</a></li>
+        <li><a href="#select">SELECT</a>
+          <ul>
+            <li><a href="#the-time-filter">The Time Filter</a></li>
+          </ul>
+        </li>
+        <li><a href="#update">UPDATE</a></li>
+        <li><a href="#delete">DELETE</a></li>
+        <li><a href="#merge">MERGE</a></li>
+        <li><a href="#call">CALL</a></li>
+        <li><a href="#explain-plan">EXPLAIN PLAN</a></li>
+        <li><a href="#lock-table">LOCK TABLE</a></li>
+        <li><a href="#examples">EXAMPLES</a>
+          <ul>
+            <li><a href="#kill">Kill</a></li>
+          </ul>
+        </li>
+        <li><a href="#join">JOIN</a></li>
+      </ul>
+    </li>
+    <li><a href="#tcl">TCL</a>
+      <ul>
+        <li><a href="#commit">COMMIT</a></li>
+        <li><a href="#rollback">ROLLBACK</a></li>
+        <li><a href="#savepoint">SAVEPOINT</a></li>
+        <li><a href="#start-transaction">START TRANSACTION</a></li>
+      </ul>
+    </li>
+    <li><a href="#view">VIEW</a></li>
+  </ul>
+</nav>
+
+<h2 id="init">INIT</h2>
+<p>Refer to <code>https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-20-04</code></p>
+<p>Ubuntu Server 20.04 LTS as example which is in a Cloud Server</p>
+
+
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+
+
+  
+    
+  
+  
+
+<figure class="codeblock codeblock--tabbed">
+  <figcaption>
+    
+      <span>examples</span>
+    
+    <ul class="tabs">
+      
+        <li class="tab active">servershell</li>
+      
+        <li class="tab ">dockershell</li>
+      
+        <li class="tab ">sql</li>
+      
+    </ul>
+  </figcaption>
+  <div class="tabs-content">
+    
+      
+      <figure class="highlight language-servershell servershell" style="display: block;">
+        <table>
+          <tbody>
+            <tr>
+              <td class="gutter">
+                <pre><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br></pre>
+              </td>
+              <td class="code">
+                <pre class="code-highlight language-servershell servershell"><code class="servershell">sudo apt update
+sudo apt install mysql-server-8.0 -y
+#sudo apt install mysql-server -y
+sudo systemctl status mysql.service
+
+sudo mysql
+# or
+#mysql -u root -p  # Use the system user-password</code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </figure>
+    
+      
+      <figure class="highlight language-dockershell dockershell" style="display: none;">
+        <table>
+          <tbody>
+            <tr>
+              <td class="gutter">
+                <pre><span>1</span><br><span>2</span><br></pre>
+              </td>
+              <td class="code">
+                <pre class="code-highlight language-dockershell dockershell"><code class="dockershell">docker run -p 3306:3306 --name mysql-rd -e MYSQL_ROOT_PASSWORD=XXXXXX -d mysql:8.0
+mysql -h 127.0.0.1 -u root -p</code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </figure>
+    
+      
+      <figure class="highlight language-sql sql" style="display: none;">
+        <table>
+          <tbody>
+            <tr>
+              <td class="gutter">
+                <pre><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br></pre>
+              </td>
+              <td class="code">
+                <pre class="code-highlight language-sql sql"><code class="sql"># Collect infomation
+show databases;
+
+SELECT host, user FROM mysql.user;
+
+SET GLOBAL validate_password.policy=LOW;
+
+CREATE DATABASE `some-db` CHARACTER SET UTF8;
+CREATE USER &#39;rd&#39;@&#39;%&#39; IDENTIFIED BY &#39;your_password&#39;;
+#CREATE USER &#39;rd&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;your_password&#39;;
+GRANT ALL PRIVILEGES on `some-db`.* TO &#39;rd&#39;@&#39;%&#39;;
+#GRANT ALL PRIVILEGES ON *.* TO &#39;rd&#39;@&#39;%&#39; WITH GRANT OPTION;  # This is deprecated!
+#GRANT CREATE, ALTER, DROP, INSERT, UPDATE, DELETE, SELECT, REFERENCES, RELOAD on *.* TO &#39;rd&#39;@&#39;%&#39; WITH GRANT OPTION;
+FLUSH PRIVILEGES;</code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </figure>
+    
+  </div>
+</figure>
+
+<p>区别
+| caching_sha2_password |
+|  mysql_native_password |</p>
+<!-- raw HTML omitted -->
+<h2 id="dcl">DCL</h2>
+<p>DCL: Data Control Language, like <code>GRANT</code>, <code>REVOKE</code>, <code>DENY</code></p>
+<h3 id="grant">GRANT</h3>
+<h3 id="revoke">REVOKE</h3>
+<h3 id="deny">DENY</h3>
+<!-- raw HTML omitted -->
+<h2 id="ddl">DDL</h2>
+<p>DDL: Data Definition Language, like <code>CREATE</code>, <code>ALTER</code>, <code>DROP</code>, <code>TRUNCATE</code>, <code>COMMENT</code>, <code>RENAME</code></p>
+<h3 id="create">CREATE</h3>
+<h4 id="create-database">CREATE DATABASE</h4>
+
+  
+    
+  
+  
+  
+  
+
+
+<figure class="highlight  language-">
+  <figcaption>
+    
+      <span>CREATE DATABASE</span>
+    
+  </figcaption>
+  <table>
+    <tbody>
+      <tr>
+        <td class="gutter">
+          <pre><span class="line">1</span><br></pre>
+        </td>
+        <td class="code">
+          <pre class="code-highlight language- "><code class="">CREATE DATABASE pear-admin-pro CHARACTER SET UTF8;</code></pre>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+
+<h4 id="create-table">CREATE TABLE</h4>
+
+  
+    
+  
+  
+  
+  
+
+
+<figure class="highlight  language-">
+  <figcaption>
+    
+      <span>CREATE TABLE</span>
+    
+  </figcaption>
+  <table>
+    <tbody>
+      <tr>
+        <td class="gutter">
+          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre>
+        </td>
+        <td class="code">
+          <pre class="code-highlight language- "><code class="">CREATE TABLE student (
+        id INT,
+        name VARCHAR(32)
+        );</code></pre>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+
+<h4 id="create-index">CREATE INDEX</h4>
+<h4 id="copy-with-data">COPY with data</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">create</span> <span style="color:#66d9ef">table</span>  <span style="color:#66d9ef">table_name</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">as</span>   
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span>  Source_table
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">where</span>   <span style="color:#ae81ff">1</span><span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>;
+</span></span></code></pre></div><h4 id="copy-without-data">COPY without data</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">create</span> <span style="color:#66d9ef">table</span>  <span style="color:#66d9ef">table_name</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">as</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">select</span>  <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span>
+</span></span><span style="display:flex;"><span>Source_table <span style="color:#66d9ef">where</span>   <span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;&gt;</span> <span style="color:#ae81ff">1</span>;
+</span></span></code></pre></div><h3 id="alter">ALTER</h3>
+
+  
+    
+  
+  
+  
+  
+
+
+<figure class="highlight  language-">
+  <figcaption>
+    
+      <span>ALTER TABLE</span>
+    
+  </figcaption>
+  <table>
+    <tbody>
+      <tr>
+        <td class="gutter">
+          <pre><span class="line">1</span><br><span class="line">2</span><br></pre>
+        </td>
+        <td class="code">
+          <pre class="code-highlight language- "><code class="">ALTER TABLE ...
+[TODO]: To be continued...</code></pre>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+
+<h3 id="drop">DROP</h3>
+<h4 id="drop-table">DROP TABLE</h4>
+
+  
+    
+  
+  
+  
+  
+
+
+<figure class="highlight  language-">
+  <figcaption>
+    
+      <span>DROP TABLE</span>
+    
+  </figcaption>
+  <table>
+    <tbody>
+      <tr>
+        <td class="gutter">
+          <pre><span class="line">1</span><br></pre>
+        </td>
+        <td class="code">
+          <pre class="code-highlight language- "><code class="">DROP TABLE &lt;table_name&gt;;</code></pre>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+
+<h4 id="drop-index">DROP INDEX</h4>
+<h3 id="truncate">TRUNCATE</h3>
+<h3 id="comment">COMMENT</h3>
+<h3 id="rename">RENAME</h3>
+<!-- raw HTML omitted -->
+<h2 id="dml">DML</h2>
+<p>DML: Data Manipulation Language, like <code>INSERT</code>, <code>SELECT</code>, <code>UPDATE</code>, <code>DELETE</code>, <code>MERGE</code>, <code>CALL</code>, <code>EXPLAIN PLAN</code>, <code>LOCK TABLE</code></p>
+<h3 id="insert">INSERT</h3>
+
+  
+    
+  
+  
+    
+  
+  
+  
+
+
+<figure class="highlight sql language-sql">
+  <figcaption>
+    
+      <span>INSERT</span>
+    
+  </figcaption>
+  <table>
+    <tbody>
+      <tr>
+        <td class="gutter">
+          <pre><span class="line">1</span><br><span class="line">2</span><br></pre>
+        </td>
+        <td class="code">
+          <pre class="code-highlight language-sql sql"><code class="sql">INSERT INTO &lt;table_name&gt;...
+[TODO]: To be continued...</code></pre>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+
+<h3 id="select">SELECT</h3>
+
+  
+    
+  
+  
+    
+  
+  
+  
+
+
+<figure class="highlight sql language-sql">
+  <figcaption>
+    
+      <span>SELECT</span>
+    
+  </figcaption>
+  <table>
+    <tbody>
+      <tr>
+        <td class="gutter">
+          <pre><span class="line">1</span><br></pre>
+        </td>
+        <td class="code">
+          <pre class="code-highlight language-sql sql"><code class="sql">SELECT * FROM &lt;table_name&gt;;</code></pre>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+
+<h4 id="the-time-filter">The Time Filter</h4>
+
+  
+    
+  
+  
+    
+  
+  
+  
+
+
+<figure class="highlight sql language-sql">
+  <figcaption>
+    
+      <span>Periods</span>
+    
+  </figcaption>
+  <table>
+    <tbody>
+      <tr>
+        <td class="gutter">
+          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre>
+        </td>
+        <td class="code">
+          <pre class="code-highlight language-sql sql"><code class="sql">-- 今天
+SELECT * FROM 表名 WHERE TO_DAYS(时间字段名) = TO_DAYS(NOW());
+
+-- 昨天
+SELECT * FROM 表名 WHERE TO_DAYS(NOW()) - TO_DAYS(时间字段名) &lt;= 1;
+
+-- 本周
+SELECT * FROM 表名 WHERE YEARWEEK(DATE_FORMAT(时间字段名,&#39;%Y-%m-%d&#39;)) = YEARWEEK(NOW());
+
+-- 上周
+SELECT * FROM 表名 WHERE YEARWEEK(DATE_FORMAT(时间字段名,&#39;%Y-%m-%d&#39;)) = YEARWEEK(NOW())-1;
+
+-- 近7天
+SELECT * FROM 表名 WHERE DATE_SUB(CURDATE(), INTERVAL 7 DAY) &lt;= DATE(时间字段名);
+
+-- 近30天
+SELECT * FROM 表名 WHERE DATE_SUB(CURDATE(), INTERVAL 30 DAY) &lt;= DATE(时间字段名);
+
+-- 本月
+SELECT * FROM 表名 WHERE DATE_FORMAT(时间字段名,&#39;%Y%m&#39;) = DATE_FORMAT(CURDATE(),&#39;%Y%m&#39;);
+
+-- 上月
+SELECT * FROM 表名 WHERE PERIOD_DIFF(DATE_FORMAT(NOW(),&#39;%Y%m&#39;),DATE_FORMAT(时间字段名,&#39;%Y%m&#39;)) = 1;
+SELECT * FROM 表名 WHERE DATE_FORMAT(时间字段名,&#39;%Y%m&#39;) = DATE_FORMAT(CURDATE(),&#39;%Y%m&#39;) ;
+SELECT * FROM 表名 WHERE WEEKOFYEAR(FROM_UNIXTIME(时间字段名,&#39;%y-%m-%d&#39;)) = WEEKOFYEAR(NOW());
+SELECT * FROM 表名 WHERE MONTH(FROM_UNIXTIME(时间字段名,&#39;%y-%m-%d&#39;)) = MONTH(NOW());
+SELECT * FROM 表名 WHERE YEAR(FROM_UNIXTIME(时间字段名,&#39;%y-%m-%d&#39;)) = YEAR(NOW()) AND MONTH(FROM_UNIXTIME(时间字段名,&#39;%y-%m-%d&#39;)) = MONTH(NOW())；
+
+-- 近6个月
+SELECT * FROM 表名 WHERE 时间字段名 BETWEEN DATE_SUB(NOW(),INTERVAL 6 MONTH) AND NOW();
+
+-- 本季度
+SELECT * FROM 表名 WHERE QUARTER(时间字段名) = QUARTER(NOW());
+
+--- 上季度
+SELECT * FROM 表名 WHERE QUARTER(时间字段名) = QUARTER(DATE_SUB(NOW(),INTERVAL 1 QUARTER));
+
+-- 本年
+SELECT * FROM 表名 WHERE YEAR(时间字段名)=YEAR(NOW());
+
+-- 去年
+SELECT * FROM 表名 WHERE YEAR(时间字段名) = YEAR(DATE_SUB(NOW(),INTERVAL 1 YEAR));</code></pre>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+
+<h3 id="update">UPDATE</h3>
+
+  
+    
+  
+  
+    
+  
+  
+  
+
+
+<figure class="highlight sql language-sql">
+  <figcaption>
+    
+      <span>UPDATE</span>
+    
+  </figcaption>
+  <table>
+    <tbody>
+      <tr>
+        <td class="gutter">
+          <pre><span class="line">1</span><br><span class="line">2</span><br></pre>
+        </td>
+        <td class="code">
+          <pre class="code-highlight language-sql sql"><code class="sql">UPDATE &lt;table_name&gt; SET ...;
+[TODO]: To be continued...</code></pre>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+
+<h3 id="delete">DELETE</h3>
+
+  
+    
+  
+  
+    
+  
+  
+  
+
+
+<figure class="highlight sql language-sql">
+  <figcaption>
+    
+      <span>DELETE</span>
+    
+  </figcaption>
+  <table>
+    <tbody>
+      <tr>
+        <td class="gutter">
+          <pre><span class="line">1</span><br></pre>
+        </td>
+        <td class="code">
+          <pre class="code-highlight language-sql sql"><code class="sql">DELETE FROM &lt;table_name&gt; WHERE ...;</code></pre>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+
+<h3 id="merge">MERGE</h3>
+<h3 id="call">CALL</h3>
+<h3 id="explain-plan">EXPLAIN PLAN</h3>
+<h3 id="lock-table">LOCK TABLE</h3>
+<h3 id="examples">EXAMPLES</h3>
+<h4 id="kill">Kill</h4>
+<p>数据库锁死的问题解决
+
+  
+    
+  
+  
+    
+  
+  
+  
+
+
+<figure class="highlight sql language-sql">
+  <figcaption>
+    
+      <span>Kill lock</span>
+    
+  </figcaption>
+  <table>
+    <tbody>
+      <tr>
+        <td class="gutter">
+          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre>
+        </td>
+        <td class="code">
+          <pre class="code-highlight language-sql sql"><code class="sql">select *
+from information_schema.PROCESSLIST;
+
+select *
+from information_schema.INNODB_TRX;
+
+select A.trx_started, B.*
+from information_schema.INNODB_TRX A
+left join (select * from information_schema.PROCESSLIST) B on A.trx_mysql_thread_id = B.ID;
+
+kill 12345;</code></pre>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+</p>
+<h3 id="join">JOIN</h3>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/9/9d/SQL_Joins.svg" alt="Joins"></p>
+<!-- raw HTML omitted -->
+<h2 id="tcl">TCL</h2>
+<p>TCL: Transaction Control Language, like <code>COMMIT</code>, <code>ROLLBACK</code>, <code>SAVEPOINT</code>, <code>START TRANSACTION</code></p>
+<h1 id="table-of-contents">Table of Contents</h1>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#init">INIT</a></li>
+    <li><a href="#dcl">DCL</a>
+      <ul>
+        <li><a href="#grant">GRANT</a></li>
+        <li><a href="#revoke">REVOKE</a></li>
+        <li><a href="#deny">DENY</a></li>
+      </ul>
+    </li>
+    <li><a href="#ddl">DDL</a>
+      <ul>
+        <li><a href="#create">CREATE</a>
+          <ul>
+            <li><a href="#create-database">CREATE DATABASE</a></li>
+            <li><a href="#create-table">CREATE TABLE</a></li>
+            <li><a href="#create-index">CREATE INDEX</a></li>
+            <li><a href="#copy-with-data">COPY with data</a></li>
+            <li><a href="#copy-without-data">COPY without data</a></li>
+          </ul>
+        </li>
+        <li><a href="#alter">ALTER</a></li>
+        <li><a href="#drop">DROP</a>
+          <ul>
+            <li><a href="#drop-table">DROP TABLE</a></li>
+            <li><a href="#drop-index">DROP INDEX</a></li>
+          </ul>
+        </li>
+        <li><a href="#truncate">TRUNCATE</a></li>
+        <li><a href="#comment">COMMENT</a></li>
+        <li><a href="#rename">RENAME</a></li>
+      </ul>
+    </li>
+    <li><a href="#dml">DML</a>
+      <ul>
+        <li><a href="#insert">INSERT</a></li>
+        <li><a href="#select">SELECT</a>
+          <ul>
+            <li><a href="#the-time-filter">The Time Filter</a></li>
+          </ul>
+        </li>
+        <li><a href="#update">UPDATE</a></li>
+        <li><a href="#delete">DELETE</a></li>
+        <li><a href="#merge">MERGE</a></li>
+        <li><a href="#call">CALL</a></li>
+        <li><a href="#explain-plan">EXPLAIN PLAN</a></li>
+        <li><a href="#lock-table">LOCK TABLE</a></li>
+        <li><a href="#examples">EXAMPLES</a>
+          <ul>
+            <li><a href="#kill">Kill</a></li>
+          </ul>
+        </li>
+        <li><a href="#join">JOIN</a></li>
+      </ul>
+    </li>
+    <li><a href="#tcl">TCL</a>
+      <ul>
+        <li><a href="#commit">COMMIT</a></li>
+        <li><a href="#rollback">ROLLBACK</a></li>
+        <li><a href="#savepoint">SAVEPOINT</a></li>
+        <li><a href="#start-transaction">START TRANSACTION</a></li>
+      </ul>
+    </li>
+    <li><a href="#view">VIEW</a></li>
+  </ul>
+</nav>
+
+<h3 id="commit">COMMIT</h3>
+<h3 id="rollback">ROLLBACK</h3>
+<h3 id="savepoint">SAVEPOINT</h3>
+<h3 id="start-transaction">START TRANSACTION</h3>
+<!-- raw HTML omitted -->
+<h2 id="view">VIEW</h2>
+<p>Create a SQLView to make query fast</p>
+              
+
+
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">TAGGED IN</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://ivanhan0511.github.io/tags/mysql8.0/">MySQL8.0</a>
+
+  <a class="tag tag--primary tag--small" href="https://ivanhan0511.github.io/tags/init/">init</a>
+
+  <a class="tag tag--primary tag--small" href="https://ivanhan0511.github.io/tags/dcl/">DCL</a>
+
+  <a class="tag tag--primary tag--small" href="https://ivanhan0511.github.io/tags/ddl/">DDL</a>
+
+  <a class="tag tag--primary tag--small" href="https://ivanhan0511.github.io/tags/dml/">DML</a>
+
+  <a class="tag tag--primary tag--small" href="https://ivanhan0511.github.io/tags/tcl/">TCL</a>
+
+  <a class="tag tag--primary tag--small" href="https://ivanhan0511.github.io/tags/view/">VIEW</a>
+
+                  </div>
+                
+              
+            
+            
+<div class="post-actions-wrap">
+  <nav >
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--disabled">
+          
+              <i class="fa fa-angle-left"></i>
+              <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+            </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/welcome/" data-tooltip="Welcome to Ivan&#39;s Blog" aria-label="PREVIOUS: Welcome to Ivan&#39;s Blog">
+          
+              <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
+        </li>
+      
+    </ul>
+  </nav>
+<ul class="post-actions post-action-share" >
+  
+    <li class="post-action hide-lg hide-md hide-sm">
+      <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </a>
+    </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://ivanhan0511.github.io/post/sql-mysql/" title="Share on Facebook" aria-label="Share on Facebook">
+          <i class="fab fa-facebook-square" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://ivanhan0511.github.io/post/sql-mysql/" title="Share on Twitter" aria-label="Share on Twitter">
+          <i class="fab fa-twitter" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+  
+  
+    <li class="post-action">
+      <a class="post-action-btn btn btn--default" href="#disqus_thread" aria-label="Leave a comment">
+        <i class="far fa-comment"></i>
+      </a>
+    </li>
+  
+  <li class="post-action">
+    
+      <a class="post-action-btn btn btn--default" href="#top" aria-label="Back to top">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    
+    </a>
+  </li>
+</ul>
+</div>
+
+
+            
+  
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+    <script type="text/javascript">
+      var disqus_config = function() {
+        this.page.url = 'https:\/\/ivanhan0511.github.io\/post\/sql-mysql\/';
+        
+          this.page.identifier = '\/post\/sql-mysql\/'
+        
+      };
+      (function() {
+        
+        
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+          document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+          return;
+        }
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = 'ivan-blog-disqus';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+  
+
+
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2023 <a href="https://github.com/ivanhan0511">Ivan Han</a>. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+        
+<div class="post-actions-wrap">
+  <nav >
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--disabled">
+          
+              <i class="fa fa-angle-left"></i>
+              <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+            </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/welcome/" data-tooltip="Welcome to Ivan&#39;s Blog" aria-label="PREVIOUS: Welcome to Ivan&#39;s Blog">
+          
+              <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
+        </li>
+      
+    </ul>
+  </nav>
+<ul class="post-actions post-action-share" >
+  
+    <li class="post-action hide-lg hide-md hide-sm">
+      <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </a>
+    </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://ivanhan0511.github.io/post/sql-mysql/" title="Share on Facebook" aria-label="Share on Facebook">
+          <i class="fab fa-facebook-square" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://ivanhan0511.github.io/post/sql-mysql/" title="Share on Twitter" aria-label="Share on Twitter">
+          <i class="fab fa-twitter" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+  
+  
+    <li class="post-action">
+      <a class="post-action-btn btn btn--default" href="#disqus_thread" aria-label="Leave a comment">
+        <i class="far fa-comment"></i>
+      </a>
+    </li>
+  
+  <li class="post-action">
+    
+      <a class="post-action-btn btn btn--default" href="#top" aria-label="Back to top">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    
+    </a>
+  </li>
+</ul>
+</div>
+
+
+      </div>
+      
+<div id="share-options-bar" class="share-options-bar" data-behavior="4">
+  <i id="btn-close-shareoptions" class="fa fa-times"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fivanhan0511.github.io%2Fpost%2Fsql-mysql%2F" aria-label="Share on Facebook">
+          <i class="fab fa-facebook-square" aria-hidden="true"></i><span>Share on Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fivanhan0511.github.io%2Fpost%2Fsql-mysql%2F" aria-label="Share on Twitter">
+          <i class="fab fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+
+
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-times"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://www.gravatar.com/avatar/0cac315e34e792213d5fa694dc39777b?s=110" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">Ivan Han</h4>
+    
+      <div id="about-card-bio">I need <strong>slow down</strong></div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        Software Engineer
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker-alt"></i>
+        <br/>
+        China
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    
+      <div id="cover" style="background-image:url('https://ivanhan0511.github.io/images/cover.jpg');"></div>
+    
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/highlight.min.js" integrity="sha512-z+/WWfyD5tccCukM4VvONpEtLmbAm5LDu7eKiyMQJ9m7OfPEDL7gENyDRL3Yfe8XAuGsS2fS4xSMnl6d30kqGQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+<script src="https://ivanhan0511.github.io/js/script-yqzy9wdlzix4lbbwdnzvwx3egsne77earqmn73v9uno8aupuph8wfguccut.min.js"></script>
+
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-gE8KAQyFIzV1C9+GZ8TKJHZS2s+n7EjNtC+IMRn1l5+WYJTHOODUM6JSjZhFhqXmc7bG8Av6XXpckA4tYhflnw==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/apache.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-EWROca+bote+7Oaaar1F6y74iZj1r1F9rm/ly7o+/FwJopbBaWtsFDmaKoZDd3QiGU2pGacBirHJNivmGLYrow==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/go.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-GDVzAn0wpx1yVtQsRWmFc6PhJiLBPdUic+h4GWgljBh904O3JU10fk9EKNpVyIoPqkFn54rgL2QBG4BmUTMpiQ==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/http.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-UgZlma8NzkrDb/NWgmLIcTrH7i/CSnLLDRFqCSNF5NGPpjKmzyM25qcoXGOup8+cDakKyaiTDd7N4dyH4YT+IA==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/less.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-lot9koe73sfXIrUvIPM/UEhuMciN56RPyBdOyZgfO53P2lkWyyXN7J+njcxIIBRV+nVDQeiWtiXg+bLAJZDTfg==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/nginx.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-Zd3e7XxHP00TD0Imr0PIfeM0fl0v95kMWuhyAS3Wn1UTSXTkz0OhtRgBAr4JlmADRgiXr4x7lpeUdqaGN8xIog==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/puppet.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-qtqDO052iXMSP+5d/aE/jMtL9vIIGvONgTJziC2K/ZIB1yEGa55WVxGE9/08rSQ62EoDifS9SWVGZ7ihSLhzMA==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/scss.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-1NmkjnEDnwwwcu28KoQF8vs3oaPFokQHbmbtwGhFfeDsQZtVFI8zW2aE9O8yMYdpdyKV/5blE4pSWw4Z/Sv97w==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/stylus.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-B2wSfruPjr8EJL6IIzQr1eAuDwrsfIfccNf/LCEdxELCgC/S/ZMt/Uvk80aD79m7IqOqW+Sw8nbkvha20yZpzg==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/swift.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-28oDiQZGKUVN6wQ7PSLPNipOcmkCALXKwOi7bnkyFf8QiMZQxG9EQoy/iiNx6Zxj2cG2SbVa4dXKigQhu7GiFw==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/yaml.min.js"></script>
+  
+
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+
+
+    
+  </body>
+</html>
+

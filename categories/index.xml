@@ -6,7 +6,34 @@
     <description>Recent content in Categories on Ivan Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 30 May 2023 15:00:00 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 31 May 2023 17:10:07 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Network</title>
+      <link>https://ivanhan0511.github.io/categories/network/</link>
+      <pubDate>Wed, 31 May 2023 17:10:07 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/categories/network/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ping</title>
+      <link>https://ivanhan0511.github.io/categories/ping/</link>
+      <pubDate>Wed, 31 May 2023 17:10:07 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/categories/ping/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Welcome</title>
+      <link>https://ivanhan0511.github.io/categories/welcome/</link>
+      <pubDate>Wed, 31 May 2023 09:02:00 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/categories/welcome/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>MySQL</title>
       <link>https://ivanhan0511.github.io/categories/mysql/</link>
@@ -22,15 +49,6 @@
       <pubDate>Tue, 30 May 2023 15:00:00 +0800</pubDate>
       
       <guid>https://ivanhan0511.github.io/categories/sql/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Welcome</title>
-      <link>https://ivanhan0511.github.io/categories/welcome/</link>
-      <pubDate>Tue, 16 May 2023 14:53:00 +0800</pubDate>
-      
-      <guid>https://ivanhan0511.github.io/categories/welcome/</guid>
       <description></description>
     </item>
     
@@ -85,15 +103,6 @@
       <pubDate>Thu, 23 Feb 2023 12:52:00 +0800</pubDate>
       
       <guid>https://ivanhan0511.github.io/categories/miscellaneous/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Network</title>
-      <link>https://ivanhan0511.github.io/categories/network/</link>
-      <pubDate>Tue, 21 Feb 2023 15:06:52 +0800</pubDate>
-      
-      <guid>https://ivanhan0511.github.io/categories/network/</guid>
       <description></description>
     </item>
     

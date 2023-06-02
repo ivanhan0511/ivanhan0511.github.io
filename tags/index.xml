@@ -6,20 +6,11 @@
     <description>Recent content in Tags on Ivan Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 31 May 2023 17:10:07 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>ping</title>
-      <link>https://ivanhan0511.github.io/tags/ping/</link>
-      <pubDate>Wed, 31 May 2023 17:10:07 +0800</pubDate>
-      
-      <guid>https://ivanhan0511.github.io/tags/ping/</guid>
-      <description></description>
-    </item>
-    
+    <lastBuildDate>Fri, 02 Jun 2023 16:50:00 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Welcome</title>
       <link>https://ivanhan0511.github.io/tags/welcome/</link>
-      <pubDate>Wed, 31 May 2023 09:02:00 +0800</pubDate>
+      <pubDate>Fri, 02 Jun 2023 16:50:00 +0800</pubDate>
       
       <guid>https://ivanhan0511.github.io/tags/welcome/</guid>
       <description></description>
@@ -28,7 +19,7 @@
     <item>
       <title>DCL</title>
       <link>https://ivanhan0511.github.io/tags/dcl/</link>
-      <pubDate>Tue, 30 May 2023 15:00:00 +0800</pubDate>
+      <pubDate>Fri, 02 Jun 2023 16:49:00 +0800</pubDate>
       
       <guid>https://ivanhan0511.github.io/tags/dcl/</guid>
       <description></description>
@@ -37,7 +28,7 @@
     <item>
       <title>DDL</title>
       <link>https://ivanhan0511.github.io/tags/ddl/</link>
-      <pubDate>Tue, 30 May 2023 15:00:00 +0800</pubDate>
+      <pubDate>Fri, 02 Jun 2023 16:49:00 +0800</pubDate>
       
       <guid>https://ivanhan0511.github.io/tags/ddl/</guid>
       <description></description>
@@ -46,7 +37,7 @@
     <item>
       <title>DML</title>
       <link>https://ivanhan0511.github.io/tags/dml/</link>
-      <pubDate>Tue, 30 May 2023 15:00:00 +0800</pubDate>
+      <pubDate>Fri, 02 Jun 2023 16:49:00 +0800</pubDate>
       
       <guid>https://ivanhan0511.github.io/tags/dml/</guid>
       <description></description>
@@ -55,7 +46,7 @@
     <item>
       <title>Init</title>
       <link>https://ivanhan0511.github.io/tags/init/</link>
-      <pubDate>Tue, 30 May 2023 15:00:00 +0800</pubDate>
+      <pubDate>Fri, 02 Jun 2023 16:49:00 +0800</pubDate>
       
       <guid>https://ivanhan0511.github.io/tags/init/</guid>
       <description></description>
@@ -64,7 +55,7 @@
     <item>
       <title>MySQL8.0</title>
       <link>https://ivanhan0511.github.io/tags/mysql8.0/</link>
-      <pubDate>Tue, 30 May 2023 15:00:00 +0800</pubDate>
+      <pubDate>Fri, 02 Jun 2023 16:49:00 +0800</pubDate>
       
       <guid>https://ivanhan0511.github.io/tags/mysql8.0/</guid>
       <description></description>
@@ -73,7 +64,7 @@
     <item>
       <title>TCL</title>
       <link>https://ivanhan0511.github.io/tags/tcl/</link>
-      <pubDate>Tue, 30 May 2023 15:00:00 +0800</pubDate>
+      <pubDate>Fri, 02 Jun 2023 16:49:00 +0800</pubDate>
       
       <guid>https://ivanhan0511.github.io/tags/tcl/</guid>
       <description></description>
@@ -82,9 +73,18 @@
     <item>
       <title>VIEW</title>
       <link>https://ivanhan0511.github.io/tags/view/</link>
-      <pubDate>Tue, 30 May 2023 15:00:00 +0800</pubDate>
+      <pubDate>Fri, 02 Jun 2023 16:49:00 +0800</pubDate>
       
       <guid>https://ivanhan0511.github.io/tags/view/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ping</title>
+      <link>https://ivanhan0511.github.io/tags/ping/</link>
+      <pubDate>Wed, 31 May 2023 17:10:07 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/tags/ping/</guid>
       <description></description>
     </item>
     

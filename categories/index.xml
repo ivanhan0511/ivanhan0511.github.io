@@ -6,13 +6,49 @@
     <description>Recent content in Categories on Ivan Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 02 Jun 2023 16:50:00 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 13 Jun 2023 16:11:28 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Welcome</title>
       <link>https://ivanhan0511.github.io/categories/welcome/</link>
-      <pubDate>Fri, 02 Jun 2023 16:50:00 +0800</pubDate>
+      <pubDate>Tue, 13 Jun 2023 16:11:28 +0800</pubDate>
       
       <guid>https://ivanhan0511.github.io/categories/welcome/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Bass</title>
+      <link>https://ivanhan0511.github.io/categories/bass/</link>
+      <pubDate>Tue, 13 Jun 2023 16:11:00 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/categories/bass/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Music</title>
+      <link>https://ivanhan0511.github.io/categories/music/</link>
+      <pubDate>Tue, 13 Jun 2023 16:11:00 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/categories/music/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Java</title>
+      <link>https://ivanhan0511.github.io/categories/java/</link>
+      <pubDate>Thu, 08 Jun 2023 16:44:52 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/categories/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>WebFramework</title>
+      <link>https://ivanhan0511.github.io/categories/webframework/</link>
+      <pubDate>Thu, 08 Jun 2023 16:44:52 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/categories/webframework/</guid>
       <description></description>
     </item>
     
@@ -49,24 +85,6 @@
       <pubDate>Wed, 31 May 2023 17:10:07 +0800</pubDate>
       
       <guid>https://ivanhan0511.github.io/categories/ping/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Java</title>
-      <link>https://ivanhan0511.github.io/categories/java/</link>
-      <pubDate>Tue, 16 May 2023 14:10:22 +0800</pubDate>
-      
-      <guid>https://ivanhan0511.github.io/categories/java/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>WebFramework</title>
-      <link>https://ivanhan0511.github.io/categories/webframework/</link>
-      <pubDate>Tue, 16 May 2023 14:10:22 +0800</pubDate>
-      
-      <guid>https://ivanhan0511.github.io/categories/webframework/</guid>
       <description></description>
     </item>
     

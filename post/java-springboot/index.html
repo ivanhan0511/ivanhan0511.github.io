@@ -345,11 +345,12 @@ No best, only better.">
         <li><a href="#maven-381">Maven 3.8.1</a></li>
       </ul>
     </li>
-    <li><a href="#appendix">Appendix</a>
+    <li><a href="#appendix">APPENDIX</a>
       <ul>
         <li><a href="#命名规范">命名规范</a></li>
       </ul>
     </li>
+    <li><a href="#todo">TODO</a></li>
   </ul>
 </nav>
 
@@ -373,6 +374,7 @@ DO: Domain Object. 领域对象</p>
 <li>MyBatis 接口与XML查询</li>
 <li>能通过数据库查询的尽量通过数据库直接查询, 一对一和一对多的关联关系也通过MyBatis的resultMap来展示</li>
 <li>这一层比较薄, 只做数据库的访问, <strong>关键要做好通用抽象</strong></li>
+<li>(仅关联DO对象, DTO的转换放在serivce层, 用BeanUtil.copyProperties来快速转换, 以便从repository层拿到的数据都是全数据)</li>
 <li>善用MyBatis的数据校验来最好查询/更新/插入的冗余, 解放service层</li>
 </ul>
 </p>
@@ -399,6 +401,7 @@ BO: Business Object. 业务对象(BO和DO很像, 是一个综合多个PO的复�
   <p><p>Controller层</p>
 <p>VO: Value Object. 表现对象. 小型项目可以没有VO, 或由前端负责展示, 给终端用户传递信息</p>
 <ul>
+<li>从综合业务场景考虑接口设计, 调用综合业务服务</li>
 <li>校验前端数据, 使用校验分组</li>
 <li>简单判断分流前端业务, 因地制宜地回复错误信息</li>
 </ul>
@@ -953,7 +956,7 @@ However, it is always difficult to prefer one between the two.
 </li>
 </ul>
 <!-- raw HTML omitted -->
-<h2 id="appendix">Appendix</h2>
+<h2 id="appendix">APPENDIX</h2>
 <h3 id="命名规范">命名规范</h3>
 <ul>
 <li>
@@ -983,6 +986,8 @@ However, it is always difficult to prefer one between the two.
 </ul>
 </li>
 </ul>
+<h2 id="todo">TODO</h2>
+<p>全局日期转换格式兼容</p>
               
 
 
@@ -1011,7 +1016,7 @@ However, it is always difficult to prefer one between the two.
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/network-basic/" data-tooltip="Ping" aria-label="NEXT: Ping">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/network-basic/" data-tooltip="Basic Network Knowledge" aria-label="NEXT: Basic Network Knowledge">
           
               <i class="fa fa-angle-left"></i>
               <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -1112,7 +1117,7 @@ However, it is always difficult to prefer one between the two.
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/network-basic/" data-tooltip="Ping" aria-label="NEXT: Ping">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/network-basic/" data-tooltip="Basic Network Knowledge" aria-label="NEXT: Basic Network Knowledge">
           
               <i class="fa fa-angle-left"></i>
               <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>

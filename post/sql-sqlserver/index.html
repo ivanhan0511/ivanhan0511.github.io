@@ -375,26 +375,26 @@ select * from sysdatabases;</code></pre>
   </div>
 </figure>
 
-<p>SQLSERVER ²éÑ¯½ñÌì¡¢×òÌì¡¢±¾ÖÜ¡¢ÉÏÖÜ¡¢±¾ÔÂ¡¢ÉÏÔÂÊı¾İ</p>
-<p>DATEDIFF (datepart, startdate, enddate) ¼ÆËãÊ±¼ä²î</p>
-<p>datepareÖµ year | quarter | month | week | day | hour | minute | second | millisecond
-startdate ¿ªÊ¼ÈÕÆÚ
-enddate ½áÊøÈÕÆÚ
-GetDate() »ñÈ¡µ±Ç°µÄÏµÍ³ÈÕÆÚ</p>
-<p>ÏÂÃæÀı×ÓÖĞ±íÃûÎªtablename,Ìõ¼ş×Ö¶ÎÃûÎªinputdate
-²éÑ¯½ñÌì
+<p>SQLSERVER æŸ¥è¯¢ä»Šå¤©ã€æ˜¨å¤©ã€æœ¬å‘¨ã€ä¸Šå‘¨ã€æœ¬æœˆã€ä¸Šæœˆæ•°æ®</p>
+<p>DATEDIFF (datepart, startdate, enddate) è®¡ç®—æ—¶é—´å·®</p>
+<p>datepareå€¼ year | quarter | month | week | day | hour | minute | second | millisecond
+startdate å¼€å§‹æ—¥æœŸ
+enddate ç»“æŸæ—¥æœŸ
+GetDate() è·å–å½“å‰çš„ç³»ç»Ÿæ—¥æœŸ</p>
+<p>ä¸‹é¢ä¾‹å­ä¸­è¡¨åä¸ºtablename,æ¡ä»¶å­—æ®µåä¸ºinputdate
+æŸ¥è¯¢ä»Šå¤©
 SELECT * FROM tablename where DATEDIFF(day,inputdate,GETDATE())=0</p>
-<p>²éÑ¯×òÌì
+<p>æŸ¥è¯¢æ˜¨å¤©
 SELECT * FROM tablename where DATEDIFF(day,inputdate,GETDATE())=1</p>
-<p>²éÑ¯±¾ÖÜ
+<p>æŸ¥è¯¢æœ¬å‘¨
 SELECT * FROM tablename where datediff(week,inputdate,getdate())=0</p>
-<p>²éÑ¯ÉÏÖÜ
+<p>æŸ¥è¯¢ä¸Šå‘¨
 SELECT * FROM tablename where datediff(week,inputdate,getdate())=1</p>
-<p>²éÑ¯±¾ÔÂ
+<p>æŸ¥è¯¢æœ¬æœˆ
 SELECT * FROM tablename where DATEDIFF(month,inputdate,GETDATE())=0</p>
-<p>²éÑ¯ÉÏÔÂ
+<p>æŸ¥è¯¢ä¸Šæœˆ
 SELECT * FROM tablename where DATEDIFF(month,inputdate,GETDATE())=1</p>
-<p>²éÑ¯±¾Äê
+<p>æŸ¥è¯¢æœ¬å¹´
 select * from Keywords  where datediff(year, Addtime,getdate())=0</p>
               
 

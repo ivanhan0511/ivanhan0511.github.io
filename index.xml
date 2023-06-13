@@ -6,14 +6,33 @@
     <description>Recent content on Ivan Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 02 Jun 2023 16:50:00 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 13 Jun 2023 16:11:28 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Welcome to Ivan&#39;s Blog</title>
       <link>https://ivanhan0511.github.io/post/welcome/</link>
-      <pubDate>Fri, 02 Jun 2023 16:50:00 +0800</pubDate>
+      <pubDate>Tue, 13 Jun 2023 16:11:28 +0800</pubDate>
       
       <guid>https://ivanhan0511.github.io/post/welcome/</guid>
       <description>&lt;p&gt;Some records for software, coffee, music and sports.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Electric Bass</title>
+      <link>https://ivanhan0511.github.io/post/music-electric-bass/</link>
+      <pubDate>Tue, 13 Jun 2023 16:11:00 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/post/music-electric-bass/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;m super excited when getting my first music equipment at 39 years old. It&amp;rsquo;s a Squier CV 70s Jazz Bass.&lt;/p&gt;
+&lt;p&gt;And I think I have enough courage to keep playing with it.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Spring</title>
+      <link>https://ivanhan0511.github.io/post/java-spring/</link>
+      <pubDate>Thu, 08 Jun 2023 16:44:52 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/post/java-spring/</guid>
+      <description>&lt;p&gt;This is a custom summary and does &lt;em&gt;NOT&lt;/em&gt; appear in the post.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -26,7 +45,7 @@
     </item>
     
     <item>
-      <title>Ping</title>
+      <title>Basic Network Knowledge</title>
       <link>https://ivanhan0511.github.io/post/network-basic/</link>
       <pubDate>Wed, 31 May 2023 17:10:07 +0800</pubDate>
       
@@ -87,7 +106,7 @@
       <pubDate>Wed, 15 Feb 2023 15:16:59 +0800</pubDate>
       
       <guid>https://ivanhan0511.github.io/post/os-windows10/</guid>
-      <description>&lt;p&gt;This is a custom summary and does &lt;em&gt;NOT&lt;/em&gt; appear in the post.&lt;/p&gt;</description>
+      <description>&lt;p&gt;After initialization of Windows, here is the TODO list.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -271,7 +290,8 @@ So here are some tips, wish to be helpful.&lt;/p&gt;</description>
       <pubDate>Tue, 24 May 2022 05:49:34 +0800</pubDate>
       
       <guid>https://ivanhan0511.github.io/post/coffee-equipment/</guid>
-      <description>&lt;p&gt;Which type of Mazzer grinder?&lt;/p&gt;</description>
+      <description>&lt;p&gt;Which type of Mazzer grinder?
+List my coffee equipments.&lt;/p&gt;</description>
     </item>
     
   </channel>

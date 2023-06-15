@@ -320,7 +320,14 @@ No best, only better.">
     <li><a href="#annotation">ANNOTATION</a>
       <ul>
         <li><a href="#常用注解的深入理解">常用注解的深入理解</a></li>
-        <li><a href="#易混淆注解的对比">易混淆注解的对比</a></li>
+        <li><a href="#易混淆注解的对比">易混淆注解的对比</a>
+          <ul>
+            <li><a href="#component-bean">@Component @Bean</a></li>
+            <li><a href="#resource-autowired">@Resource @Autowired</a></li>
+            <li><a href="#repository-mapper">@Repository @Mapper</a></li>
+            <li><a href="#validate-valid">@Validate @Valid</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
     <li><a href="#db-mapper">DB MAPPER</a>
@@ -415,7 +422,7 @@ Ivan PS:
     <strong>Ivan</strong>
     
       
-        <cite>Ivan&#39;s PS</cite>
+        <cite>My PS</cite>
       
     
   </footer>
@@ -455,14 +462,10 @@ Ivan PS:
 </li>
 </ul>
 <h3 id="易混淆注解的对比">易混淆注解的对比</h3>
-<ul>
-<li>@Component or @Bean
-With this annotation, a class can be scaned manually or automaticlly</li>
-</ul>
+<h4 id="component-bean">@Component @Bean</h4>
+<p>With this annotation, a class can be scaned manually or automaticlly</p>
 <p>@Bean一般是调用第三方的</p>
-<ul>
-<li>@Resource VS @Autowired</li>
-</ul>
+<h4 id="resource-autowired">@Resource @Autowired</h4>
 <blockquote>
   <p>
 Both @Autowired (or @Inject) and @Resource work equally well. But there is a conceptual difference or a difference in the meaning<br/><br/>
@@ -479,42 +482,37 @@ While this fallback is convenient, IMHO it causes a lot of confusion, because pe
     
   </footer>
 </blockquote>
-<ul>
-<li>
-<p>@Repository or @Mapper</p>
+<h4 id="repository-mapper">@Repository @Mapper</h4>
 <ul>
 <li>@Mapper 一定要有，否则 Mybatis 找不到 mapper。</li>
 <li>@Repository 可有可无，可以消去依赖注入的报错信息。</li>
 <li>@MapperScan 可以替代 @Mapper。</li>
 </ul>
-</li>
-<li>
-<p>SpringBoot中的@EqualsAndHashCode注解与@Data注解
-<a href="https://blog.csdn.net/gdkyxy2013/article/details/104769897">https://blog.csdn.net/gdkyxy2013/article/details/104769897</a></p>
-</li>
-<li>
-<p>@Validate @Valid</p>
-<p>@Validate是org.springframework.validation.annotation.Validated 导入的</p>
-<p>@Validate 可以分组</p>
-<p>@Valid是javax.validation.Valid 导入的</p>
-<p>@Valid 可以递归</p>
-<p>controller类上写: @Validated</p>
+<h4 id="validate-valid">@Validate @Valid</h4>
+<ul>
+<li>@Validate是org.springframework.validation.annotation.Validated 导入的</li>
+<li>@Validate 可以分组</li>
+<li>@Valid是javax.validation.Valid 导入的</li>
+<li>@Valid 可以递归</li>
+<li>controller类上写: @Validated
 <ul>
 <li>如果是Bean的对象xxxRequest类限制参数, 则参数类中各自校验; 在controller类中的方法参数括号内写: @Valid</li>
 <li>如果是属性String number限制, 在controller类中的方法入参前写: @NotBlank(message = &ldquo;xxx不能为空&rdquo;)</li>
 </ul>
 </li>
 </ul>
+<p>PS:</p>
+<p>@RequestParam()不那么好用, 返回信息不友好</p>
 <!-- raw HTML omitted -->
 <h2 id="db-mapper">DB MAPPER</h2>
 <p><strong>JUST</strong> use MyBatisPLus maven and use default CRUD methods.<br>
 But refuse to use QueryWrapper, use MyBatis&rsquo; XML mapper.</p>
 <p>Reason as below:</p>
 <ul>
-<li>(Dissent)IService和BaseMapper中&quot;充分利用&quot;了Java新规定中Interface可以有default的用法, 很不符合Java精神</li>
-<li>(Dissent)MybatisPlus的QueryWrapper越看越像SQLAlchemy的ORM, 学习成本高, 且忽略了SQL的实质</li>
+<li>(Consent)IService和BaseMapper中&quot;充分利用&quot;了Java新规定中Interface可以有default的用法, 基本的CRUD确实不用重复写了</li>
+<li>(Dissent)MybatisPlus的QueryWrapper越看越像Python SQLAlchemy这类ORM, 学习成本高, 且一旦语句优化不得当, 会造成性能损失</li>
 <li>(Dissent)性能和稳定性等不稳定因素越来越多, 比如一旦手动干预, 很多所谓的&quot;便利&quot;瞬间全无, 还是得依靠MyBatis</li>
-<li>(Consent)按照MyBatis写SQL更像原生SQL</li>
+<li>(Consent)按照MyBatis写XML更像原生SQL, 熟练运用SQL是一件愉快的事情</li>
 </ul>
 <p><strong>非</strong>分布式数据库, 不使用雪花算法, 使用数据库自增ID int</p>
 <h3 id="mapper-design">Mapper Design</h3>
@@ -550,12 +548,24 @@ But refuse to use QueryWrapper, use MyBatis&rsquo; XML mapper.</p>
 <p>application.yml中设置PageHelper的 helperDialect, 兼容&quot;mysql&quot;和&quot;sqlserver&quot;两种数据库的语法</p>
 </li>
 <li>
-<p>使用多数据源时, 配置PageHelper时要注意(只有在使用application.yml格式的配置文件时会有问题):</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span>...
-</span></span><span style="display:flex;"><span><span style="color:#f92672">pagehelper</span>:
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">autoRuntimeDialect: true  # 此处的配置项是驼峰, 不是IDEA自动提示的`auto-runtime-dialect</span>: <span style="color:#66d9ef">true</span><span style="color:#ae81ff">`</span>
-</span></span><span style="display:flex;"><span>...
-</span></span></code></pre></div><p>因为如果驼峰被自动转译为横线分隔符, 会导致PageHelper切换多数据源时失效</p>
+<p>使用多数据源时, 配置PageHelper时要注意(只有在使用application.yml格式的配置文件时会有问题):<br>
+<blockquote>
+  <p>
+  ...
+  pagehelper:
+    autoRuntimeDialect: true  # 此处的配置项是驼峰, 不是IDEA自动提示的`auto-runtime-dialect: true`
+  ...
+  </p>
+  <footer>
+    <strong>application.yml</strong>
+    
+      
+        <cite></cite>
+      
+    
+  </footer>
+</blockquote>
+因为如果驼峰被自动转译为横线分隔符, 会导致PageHelper切换多数据源时失效</p>
 </li>
 </ul>
 <h4 id="数据隔离事务传播">数据隔离&amp;事务传播</h4>

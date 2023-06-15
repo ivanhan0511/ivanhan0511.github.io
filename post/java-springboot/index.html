@@ -354,6 +354,7 @@ No best, only better.">
     </li>
     <li><a href="#appendix">APPENDIX</a>
       <ul>
+        <li><a href="#缩写信息">缩写信息</a></li>
         <li><a href="#命名规范">命名规范</a></li>
       </ul>
     </li>
@@ -401,34 +402,24 @@ No best, only better.">
 </ul>
 </p>
 </div>
-<p>Ivan PS:
 <blockquote>
   <p>
-DAO: Data Access Object, 数据访问层  
-PO: Persistant Object, 持久层对象. 类似数据库内的一条记录<br>
-DO: Domain Object, 领域对象<br>
-DTO: Data Transfer Object, 通常在OpenApi返回的对象中使用DTO<br>
-BO: Business Object, 业务对象<br>
-VO: Value Object, 表现对象<br>
-POJO: Plain Old Java Object, 是PO/DO/DTO/BO/VO的统称
+其实, 如果项目功能足够简单. 项目比较小的话, 其实没有必要分的那么细致. 掌握设计的“度”, 非常重要, 相关文章有很多<br>
+1. Controller入参校验, (特别简单的除外)总要有个类封装, 叫XxxDTO也行, 叫XxxRequest也行<br>
+2. Controller层输出到前端, 也总要有个封装类, 叫XxxDTO, XxxVO, XxxResponse都行<br>
+3. Service层, 无论是否推崇DDD驱动, 厚与薄, 都可以充分利用Domain来传递数据, 但要在返回Controller或前端之前, 做数据转换, (尽量)不要将DO暴露给Controller<br>
+4. Domain层, 无论是否推崇DDD驱动, 贫血与充血, 只要设计得当, 都可以兼容PO<br>
+5. DAO层, 也利用Domain来封装SQL查询结果即可
 </p>
   <footer>
-    <strong>简称</strong>
+    <strong>分层奥义</strong>
     
       
-        <cite></cite>
+        <cite>Ivan Han</cite>
       
     
   </footer>
-</blockquote></p>
-<ul>
-<li>其实, 如果你的项目功能足够简单. 项目比较小的话, 其实没有必要分的那么细致. 掌握设计的“度”, 非常重要, 相关文章有很多</li>
-<li>Controller入参校验, (特别简单的除外)总要有个类封装, 叫XxxDTO也行, 叫XxxRequest也行</li>
-<li>Controller层输出到前端, 也总要有个封装类, 叫XxxDTO, XxxVO, XxxResponse都行</li>
-<li>Service层, 无论是否推崇DDD驱动, 厚与薄, 都可以充分利用Domain来传递数据, 但要在返回Controller或前端之前, 做数据转换, (尽量)不要将DO暴露给Controller</li>
-<li>Domain层, 无论是否推崇DDD驱动, 贫血与充血, 只要设计得当, 都可以兼容PO</li>
-<li>DAO层, 也利用Domain来封装SQL查询结果即可</li>
-</ul>
+</blockquote>
 <h2 id="annotation">ANNOTATION</h2>
 <h3 id="常用注解的深入理解">常用注解的深入理解</h3>
 <ul>
@@ -976,6 +967,14 @@ However, it is always difficult to prefer one between the two.
 </ul>
 <!-- raw HTML omitted -->
 <h2 id="appendix">APPENDIX</h2>
+<h3 id="缩写信息">缩写信息</h3>
+<p>DAO: Data Access Object, 数据访问层<!-- raw HTML omitted -->
+PO: Persistant Object, 持久层对象. 类似数据库内的一条记录<!-- raw HTML omitted -->
+DO: Domain Object, 领域对象<!-- raw HTML omitted -->
+DTO: Data Transfer Object, 通常在OpenApi返回的对象中使用DTO<!-- raw HTML omitted -->
+BO: Business Object, 业务对象<!-- raw HTML omitted -->
+VO: Value Object, 表现对象<!-- raw HTML omitted -->
+POJO: Plain Old Java Object, 是PO/DO/DTO/BO/VO的统称</p>
 <h3 id="命名规范">命名规范</h3>
 <ul>
 <li>

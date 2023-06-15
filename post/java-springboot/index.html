@@ -364,7 +364,6 @@ No best, only better.">
 <h2 id="project-architecture">PROJECT ARCHITECTURE</h2>
 <div class="alert danger ">
   <p><p>DAO / Repository层</p>
-<p>DAO: Data Access Object. 数据访问层</p>
 <ul>
 <li>MyBatis 接口与XML查询</li>
 <li>能通过数据库查询的尽量通过数据库直接查询, 一对一和一对多的关联关系也通过MyBatis的resultMap来展示</li>
@@ -376,8 +375,6 @@ No best, only better.">
 </div>
 <div class="alert warning ">
   <p><p>Domain层</p>
-<p>PO: Persistant Object. 持久层对象. 类似数据库内的一条记录<br>
-DO: Domain Object. 领域对象</p>
 <ul>
 <li>核心要考虑和设计的内容, 优先考虑架构, 模型和业务流, 其余的展现和逻辑组合, 在其它层考虑</li>
 <li>淡化PO的概念, 因为每一个Domain类都能对应一个数据库表</li>
@@ -388,8 +385,6 @@ DO: Domain Object. 领域对象</p>
 </div>
 <div class="alert success ">
   <p><p>Service层</p>
-<p>DTO: Data Transfer Object. 通常在OpenApi返回的对象中使用DTO
-BO: Business Object. 业务对象</p>
 <ul>
 <li>Domain Design Drive下的Service层也比较薄, 一般是复杂业务对多个Domain的联合封装</li>
 <li>可以调用其它Service(推荐, 如果涉及到多个数据源切换时尤其重要), 也可以调用其它Repository</li>
@@ -399,7 +394,6 @@ BO: Business Object. 业务对象</p>
 </div>
 <div class="alert info ">
   <p><p>Controller层</p>
-<p>VO: Value Object. 表现对象.</p>
 <ul>
 <li>从综合业务场景考虑接口设计, 调用综合业务服务</li>
 <li>校验前端数据, 使用校验分组</li>
@@ -407,26 +401,34 @@ BO: Business Object. 业务对象</p>
 </ul>
 </p>
 </div>
+<p>Ivan PS:
 <blockquote>
   <p>
-Ivan PS: 
-- POJO: Plain Old Java Object. 是PO/DO/DTO/BO/VO的统称
-- 其实, 如果你的项目功能足够简单. 项目比较小的话, 其实没有必要分的那么细致. 掌握设计的“度”, 非常重要, 相关文章有很多
-- Controller层入参校验, 总要有一层, 叫XxxDTO也行, 叫XxxRequest也行
-- Controller层输出到前端, 也总要有一层, 叫XxxDTO, XxxVO, XxxResponse都行
-- Service层, 无论是否推崇DDD驱动, 厚与薄, 都可以充分利用Domain来传递数据, 但要在返回Controller或前端之前, 做一次数据转换, 尽量不要将DO暴露给Controller
-- Domain层, 无论是否推崇DDD驱动, 贫血与充血, 只要设计得当, 都可以兼容PO
-- DAO层, 也利用Domain来封装SQL查询结果即可
+DAO: Data Access Object, 数据访问层  
+PO: Persistant Object, 持久层对象. 类似数据库内的一条记录<br>
+DO: Domain Object, 领域对象<br>
+DTO: Data Transfer Object, 通常在OpenApi返回的对象中使用DTO<br>
+BO: Business Object, 业务对象<br>
+VO: Value Object, 表现对象<br>
+POJO: Plain Old Java Object, 是PO/DO/DTO/BO/VO的统称
 </p>
   <footer>
-    <strong>Ivan</strong>
+    <strong>简称</strong>
     
       
-        <cite>My PS</cite>
+        <cite></cite>
       
     
   </footer>
-</blockquote>
+</blockquote></p>
+<ul>
+<li>其实, 如果你的项目功能足够简单. 项目比较小的话, 其实没有必要分的那么细致. 掌握设计的“度”, 非常重要, 相关文章有很多</li>
+<li>Controller入参校验, (特别简单的除外)总要有个类封装, 叫XxxDTO也行, 叫XxxRequest也行</li>
+<li>Controller层输出到前端, 也总要有个封装类, 叫XxxDTO, XxxVO, XxxResponse都行</li>
+<li>Service层, 无论是否推崇DDD驱动, 厚与薄, 都可以充分利用Domain来传递数据, 但要在返回Controller或前端之前, 做数据转换, (尽量)不要将DO暴露给Controller</li>
+<li>Domain层, 无论是否推崇DDD驱动, 贫血与充血, 只要设计得当, 都可以兼容PO</li>
+<li>DAO层, 也利用Domain来封装SQL查询结果即可</li>
+</ul>
 <h2 id="annotation">ANNOTATION</h2>
 <h3 id="常用注解的深入理解">常用注解的深入理解</h3>
 <ul>

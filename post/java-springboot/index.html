@@ -356,7 +356,19 @@ No best, only better.">
 
 <h2 id="project-architecture">PROJECT ARCHITECTURE</h2>
 <div class="alert danger ">
-  <p><p>DB / Domain层</p>
+  <p><p>DAO / Repository层</p>
+<p>DAO: Data Access Object. 数据访问层</p>
+<ul>
+<li>MyBatis 接口与XML查询</li>
+<li>能通过数据库查询的尽量通过数据库直接查询, 一对一和一对多的关联关系也通过MyBatis的resultMap来展示</li>
+<li>这一层比较薄, 只做数据库的访问, <strong>关键要做好通用抽象</strong></li>
+<li>(仅关联DO对象, DTO的转换放在serivce层, 用BeanUtil.copyProperties来快速转换, 以便从repository层拿到的数据都是全数据)</li>
+<li>善用MyBatis的数据校验来做好查询/更新/插入的冗余, 解放service层</li>
+</ul>
+</p>
+</div>
+<div class="alert warning ">
+  <p><p>Domain层</p>
 <p>PO: Persistant Object. 持久层对象. 类似数据库内的一条记录<br>
 DO: Domain Object. 领域对象</p>
 <ul>
@@ -367,39 +379,20 @@ DO: Domain Object. 领域对象</p>
 </ul>
 </p>
 </div>
-<div class="alert warning ">
-  <p><p>DAO / Repository层</p>
-<p>DAO: Data Access Object. 数据访问层</p>
-<ul>
-<li>MyBatis 接口与XML查询</li>
-<li>能通过数据库查询的尽量通过数据库直接查询, 一对一和一对多的关联关系也通过MyBatis的resultMap来展示</li>
-<li>这一层比较薄, 只做数据库的访问, <strong>关键要做好通用抽象</strong></li>
-<li>(仅关联DO对象, DTO的转换放在serivce层, 用BeanUtil.copyProperties来快速转换, 以便从repository层拿到的数据都是全数据)</li>
-<li>善用MyBatis的数据校验来最好查询/更新/插入的冗余, 解放service层</li>
-</ul>
-</p>
-</div>
 <div class="alert success ">
   <p><p>Service层</p>
-<p>DTO: Data Transfer Object. 通常在OpenApi返回的对象中使用DTO, 即此项目与其他外界项目交互时使用的对象. 小型项目用DTO交付给前端即可<br>
-BO: Business Object. 业务对象(BO和DO很像, 是一个综合多个PO的复合抽象对象, 而且小项目无需BO)</p>
+<p>DTO: Data Transfer Object. 通常在OpenApi返回的对象中使用DTO
+BO: Business Object. 业务对象</p>
 <ul>
-<li>Domain Design Drive下的Service层也比较薄, 一般是复杂业务对多个Domain的封装</li>
+<li>Domain Design Drive下的Service层也比较薄, 一般是复杂业务对多个Domain的联合封装</li>
 <li>可以调用其它Service(推荐, 如果涉及到多个数据源切换时尤其重要), 也可以调用其它Repository</li>
-<li>DTO转换:
-<ul>
-<li>如果单一的数据CRUD, 纯对应的Service + Repository + Domain就能满足前端数据呈现需要</li>
-<li>如果是有数据库事务的综合业务, 返回的数据也相对修改的比较多, 才考虑增加DTO来转换Domain</li>
-<li>另外类似一些敏感信息需要屏蔽的Domain, 才考虑增加DTO来转换Domain</li>
-</ul>
-</li>
 <li>尽量少的数据规范性校验, 更多的业务数据校验</li>
 </ul>
 </p>
 </div>
 <div class="alert info ">
   <p><p>Controller层</p>
-<p>VO: Value Object. 表现对象. 小型项目可以没有VO, 或由前端负责展示, 给终端用户传递信息</p>
+<p>VO: Value Object. 表现对象.</p>
 <ul>
 <li>从综合业务场景考虑接口设计, 调用综合业务服务</li>
 <li>校验前端数据, 使用校验分组</li>
@@ -407,12 +400,26 @@ BO: Business Object. 业务对象(BO和DO很像, 是一个综合多个PO的复�
 </ul>
 </p>
 </div>
-<p>PS:</p>
-<ul>
-<li><a href="https://blog.51cto.com/u_12302929/4811425">项目开发中，真的有必要定义VO，BO，PO，DO，DTO这些吗？</a></li>
-<li>POJO: Plain Old Java Object. 是PO/DO/DTO/BO/VO的统称</li>
-<li>其实, 如果你的项目功能足够简单. 项目比较小的话, 其实没有必要分的那么细致. 掌握设计的“度”, 非常重要.</li>
-</ul>
+<blockquote>
+  <p>
+Ivan PS: 
+- POJO: Plain Old Java Object. 是PO/DO/DTO/BO/VO的统称
+- 其实, 如果你的项目功能足够简单. 项目比较小的话, 其实没有必要分的那么细致. 掌握设计的“度”, 非常重要, 相关文章有很多
+- Controller层入参校验, 总要有一层, 叫XxxDTO也行, 叫XxxRequest也行
+- Controller层输出到前端, 也总要有一层, 叫XxxDTO, XxxVO, XxxResponse都行
+- Service层, 无论是否推崇DDD驱动, 厚与薄, 都可以充分利用Domain来传递数据, 但要在返回Controller或前端之前, 做一次数据转换, 尽量不要将DO暴露给Controller
+- Domain层, 无论是否推崇DDD驱动, 贫血与充血, 只要设计得当, 都可以兼容PO
+- DAO层, 也利用Domain来封装SQL查询结果即可
+</p>
+  <footer>
+    <strong>Ivan</strong>
+    
+      
+        <cite>My PS</cite>
+      
+    
+  </footer>
+</blockquote>
 <h2 id="annotation">ANNOTATION</h2>
 <h3 id="常用注解的深入理解">常用注解的深入理解</h3>
 <ul>

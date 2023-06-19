@@ -18,7 +18,7 @@
   "name":"Ivan Blog",
   "description":"\u003cp\u003eAfter initialization of Windows, here is the TODO list.\u003c\/p\u003e",
   "url":"https:\/\/ivanhan0511.github.io\/post\/os-windows10\/",
-  "keywords":"[windows, init, Ivan, Python, C\/C\u002b\u002b, Coffee, Bass, Bicycle, Badminton]"
+  "keywords":"[windows, init, config, Ivan, Python, C\/C\u002b\u002b, Coffee, Bass, Bicycle, Badminton]"
 }
 
 </script>
@@ -27,7 +27,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="generator" content="Hugo 0.99.1 with theme Tranquilpeak 0.5.3-BETA">
 <meta name="author" content="Ivan Han">
-<meta name="keywords" content="windows, init, Ivan, Python, C/C&#43;&#43;, Coffee, Bass, Bicycle, Badminton">
+<meta name="keywords" content="windows, init, config, Ivan, Python, C/C&#43;&#43;, Coffee, Bass, Bicycle, Badminton">
 <meta name="description" content="After initialization of Windows, here is the TODO list.">
 
 
@@ -61,6 +61,8 @@
       <meta property="article:tag" content="Windows">
     
       <meta property="article:tag" content="Init">
+    
+      <meta property="article:tag" content="myOS">
     
   
 
@@ -306,55 +308,32 @@
 <h1 id="table-of-contents">Table of Contents</h1>
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#basic">BASIC</a></li>
     <li><a href="#rd">R&amp;D</a></li>
+    <li><a href="#basic-app">BASIC APP</a></li>
     <li><a href="#game">GAME</a></li>
   </ul>
 </nav>
 
-<h2 id="basic">BASIC</h2>
-<p>常用的跨平台工具, 兼容手机 / macOS / Windows</p>
-<ul>
-<li>Input method, ctrl+space to switch</li>
-<li>Chrome as default browser</li>
-<li>HHKB</li>
-<li>Logitech Anywhere3 and OptionPlus</li>
-<li>v2ray</li>
-<li>坚果云</li>
-<li>Office365</li>
-<li>WeChat</li>
-<li>腾讯会议</li>
-<li>亿图</li>
-<li>Fiio driver</li>
-<li>EMail客户端</li>
-</ul>
-<!-- raw HTML omitted -->
 <h2 id="rd">R&amp;D</h2>
 <p>按先后顺序排序</p>
-<p>VMWare<br>
-规划好哪些工具安装在裸机, 哪些安装在VMWare</p>
-<ul>
-<li>切换安装路径到D:\盘</li>
-<li>纯净Win10最新版, 快照</li>
-<li>银行软件</li>
-<li>各种Linux
-<ul>
-<li>PHP</li>
-<li>Redis</li>
-<li>&hellip;</li>
-</ul>
-</li>
-<li>折腾环境/演示环境</li>
-</ul>
 <p>VisualStudioPro<br>
 最大化使用, C, Python, JavaScript, Vim</p>
 <ul>
-<li>Install VsVim extension</li>
+<li>设置字体? 默认DejaVu Sans Mono? 避免像CMD.exe一样无法分辨小写L与数字1</li>
+<li><a href="https://blog.csdn.net/qq_41868108/article/details/105750175">Visual Studio 2019 修改字符集编码</a></li>
+<li>自动补全: Enter or Tab?
+<ul>
+<li>Visual Studio 2019是使用Tab进行代码补全的, 但一般习惯回车补全的时候就需要重新设置</li>
+<li>个人选择用Tab，原因是Linux默认的补全键是Tab, Notpad++ / Nacicat 也都是Tab补全</li>
+<li>具体路径: 工具 –&gt; 选项 –&gt; 文本编辑器 –&gt; C/C++ -&gt; 高级 –&gt; 主动提交成员列表</li>
+</ul>
+</li>
+<li>Install VsVim extension -&gt; 超级好用, 可以随插入模式和普通模式的切换而自动切换输入法</li>
 <li>Both English and Chinese, prefer English</li>
 <li>可能会提供git环境</li>
-<li>负责ivan-blog的编辑</li>
 <li>使用其Python环境, 不安装Python在裸机</li>
-<li>使用其npm环境? 不安装npm在裸机可以吗?</li>
+<li>使用其npm环境? 不安装npm在裸机可以吗?  -&gt; 貌似不行</li>
+<li>是否能兼容调用MSYS2的一些命令而不用安装MSYS2?</li>
 </ul>
 <p><del>CLion or VisualStudioPro ?</del><br>
 目前有点倾向VisualStudioPro, 可以写C/C++, 还可以写Python, JavaScript, 何乐而不为呢?
@@ -376,10 +355,25 @@ Java就交给JetBrains IDEA就可以了</p>
 <ul>
 <li>可以使用VisualStudioPro代替</li>
 </ul>
+<p>VMWare<br>
+规划好哪些工具安装在裸机, 哪些安装在VMWare</p>
+<ul>
+<li>切换安装路径到D:\盘</li>
+<li>纯净Win10最新版, 快照</li>
+<li>银行软件</li>
+<li>各种Linux
+<ul>
+<li>PHP</li>
+<li>Redis</li>
+<li>&hellip;</li>
+</ul>
+</li>
+<li>折腾环境/演示环境</li>
+</ul>
 <p>Typora</p>
 <ul>
 <li>需要看目录时, 例如接口文档中上来来回滚动, 还是需要Typora的目录</li>
-<li>所见即所得的格式校验, PDF输出, 还是需要Typora</li>
+<li>所见即所得的格式校验, PDF输出, 字体兼容, 还是需要Typora</li>
 </ul>
 <p>XShell/XFtp</p>
 <p>Navicat 还是最终DB的解决方案?<br>
@@ -387,20 +381,29 @@ MySQL Workbench和SSMS这俩工具太难用了, 还是Navicat吧</p>
 <p>MySQL Server~~ + (MySQL Workbench)~~<br>
 <code>MySQL Workbench -&gt; Preferences -&gt; SQL Editor -&gt; QueryEditor -&gt; use UPPERCASE keywords on completion</code></p>
 <p>SQL Server~~ + (SSMS)~~</p>
-<p>Sunlogin</p>
+<p>向日葵Sunlogin</p>
 <p>WireShark</p>
 <p>微信开发者工具</p>
 <p>hugo创建静态博客</p>
 <p>Postman</p>
 <p>Inno Setup Compiler(可选)</p>
-<p><em>Tips</em>
-自动补全: Enter or Tab?</p>
-<p>个人选择用Tab，原因是Linux默认的补全键是Tab, Notpad++ / Nacicat 也都是Tab补全</p>
-<p><em>Visual Studio 2019是使用Tab进行代码补全的, 但一般习惯回车补全的时候就需要重新设置.</em><br>
-具体路径如下:<br>
-工具 –&gt; 选项 –&gt; 文本编辑器 –&gt; C/C++ -&gt; 高级 –&gt; 主动提交成员列表</p>
-<p>Visual Studio 2019 修改字符集编码<br>
-<a href="https://blog.csdn.net/qq_41868108/article/details/105750175">https://blog.csdn.net/qq_41868108/article/details/105750175</a></p>
+<!-- raw HTML omitted -->
+<h2 id="basic-app">BASIC APP</h2>
+<p>常用的跨平台工具, 兼容手机 / macOS / Windows</p>
+<ul>
+<li>Input method, ctrl+space to switch</li>
+<li>Chrome as default browser</li>
+<li>HHKB</li>
+<li>Logitech Anywhere3 and OptionPlus</li>
+<li>v2ray</li>
+<li>坚果云</li>
+<li>Office365</li>
+<li>WeChat</li>
+<li>腾讯会议</li>
+<li>亿图</li>
+<li>Fiio driver</li>
+<li>EMail客户端</li>
+</ul>
 <!-- raw HTML omitted -->
 <h2 id="game">GAME</h2>
 <p>Steam</p>
@@ -421,6 +424,8 @@ MySQL Workbench和SSMS这俩工具太难用了, 还是Navicat吧</p>
   <a class="tag tag--primary tag--small" href="https://ivanhan0511.github.io/tags/windows/">Windows</a>
 
   <a class="tag tag--primary tag--small" href="https://ivanhan0511.github.io/tags/init/">Init</a>
+
+  <a class="tag tag--primary tag--small" href="https://ivanhan0511.github.io/tags/myos/">myOS</a>
 
                   </div>
                 

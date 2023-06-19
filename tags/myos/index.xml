@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>myOS on Ivan Blog</title>
+    <link>https://ivanhan0511.github.io/tags/myos/</link>
+    <description>Recent content in myOS on Ivan Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 15 Feb 2023 15:16:59 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/tags/myos/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>What to Do after Init Windows</title>
+      <link>https://ivanhan0511.github.io/post/os-windows10/</link>
+      <pubDate>Wed, 15 Feb 2023 15:16:59 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/post/os-windows10/</guid>
+      <description>&lt;p&gt;After initialization of Windows, here is the TODO list.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

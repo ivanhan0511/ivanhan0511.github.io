@@ -6,11 +6,11 @@
     <description>Recent content in WebFramework on Ivan Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 08 Jun 2023 16:44:52 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/categories/webframework/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 19 Jun 2023 10:14:00 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/categories/webframework/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Spring</title>
       <link>https://ivanhan0511.github.io/post/java-spring/</link>
-      <pubDate>Thu, 08 Jun 2023 16:44:52 +0800</pubDate>
+      <pubDate>Mon, 19 Jun 2023 10:14:00 +0800</pubDate>
       
       <guid>https://ivanhan0511.github.io/post/java-spring/</guid>
       <description>&lt;p&gt;This is a custom summary and does &lt;em&gt;NOT&lt;/em&gt; appear in the post.&lt;/p&gt;</description>
@@ -19,7 +19,7 @@
     <item>
       <title>SpringBoot</title>
       <link>https://ivanhan0511.github.io/post/java-springboot/</link>
-      <pubDate>Tue, 16 May 2023 14:10:22 +0800</pubDate>
+      <pubDate>Mon, 19 Jun 2023 10:10:22 +0800</pubDate>
       
       <guid>https://ivanhan0511.github.io/post/java-springboot/</guid>
       <description>&lt;p&gt;The tec core are architecture, IoC and AoP.&lt;/p&gt;

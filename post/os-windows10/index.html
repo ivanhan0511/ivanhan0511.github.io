@@ -308,17 +308,31 @@
 <h1 id="table-of-contents">Table of Contents</h1>
 <nav id="TableOfContents">
   <ul>
+    <li><a href="#backup">BACKUP</a></li>
     <li><a href="#rd">R&amp;D</a></li>
     <li><a href="#basic-app">BASIC APP</a></li>
     <li><a href="#game">GAME</a></li>
   </ul>
 </nav>
 
+<h2 id="backup">BACKUP</h2>
+<p>主力开发操作系统是Windows, 如果要重装系统, 需要提前备份好本地文件</p>
+<ul>
+<li>代码: 基本通过git有同步, 其余少量的通过copy完成</li>
+<li><input disabled="" type="checkbox"> 数据库: 需要全部备份, MySQL所有库, SQL Server所有库</li>
+<li><input disabled="" type="checkbox"> IDE: IDE本身的配置通过云同步; IDE存储的SQL脚本copy到项目文件夹sql中; 记录IDE的插件</li>
+<li>坚果云文档: 公司文档, 仅限文档, 其余通过本地文件存储</li>
+<li><input disabled="" type="checkbox"> 本地文档: 密钥, 证书, 安装包, 公司大文件, 私人文件等</li>
+<li><input disabled="" type="checkbox"> 图片</li>
+<li><input disabled="" type="checkbox"> 视频</li>
+<li><input disabled="" type="checkbox"> 虚拟机</li>
+</ul>
 <h2 id="rd">R&amp;D</h2>
 <p>按先后顺序排序</p>
 <p>VisualStudioPro<br>
 最大化使用, C, Python, JavaScript, Vim</p>
 <ul>
+<li>设置项目存储路径</li>
 <li>设置字体? 默认DejaVu Sans Mono? 避免像CMD.exe一样无法分辨小写L与数字1</li>
 <li><a href="https://blog.csdn.net/qq_41868108/article/details/105750175">Visual Studio 2019 修改字符集编码</a></li>
 <li>自动补全: Enter or Tab?
@@ -336,7 +350,7 @@
 <li>是否能兼容调用MSYS2的一些命令而不用安装MSYS2?</li>
 </ul>
 <p><del>CLion or VisualStudioPro ?</del><br>
-目前有点倾向VisualStudioPro, 可以写C/C++, 还可以写Python, JavaScript, 何乐而不为呢?
+目前有点倾向VisualStudioPro, 可以写C/C++, 还可以写Python, JavaScript, 何乐而不为呢? 而且Visual Studio的debug无敌
 Java就交给JetBrains IDEA就可以了</p>
 <p><del>PyCharm or VisualStudioPro ?</del></p>
 <p>IDEA</p>
@@ -376,15 +390,23 @@ Java就交给JetBrains IDEA就可以了</p>
 <li>所见即所得的格式校验, PDF输出, 字体兼容, 还是需要Typora</li>
 </ul>
 <p>XShell/XFtp</p>
-<p>Navicat 还是最终DB的解决方案?<br>
-MySQL Workbench和SSMS这俩工具太难用了, 还是Navicat吧</p>
-<p>MySQL Server~~ + (MySQL Workbench)~~<br>
+<p>~~Navicat 还是最终DB的解决方案?  ~~
+<del>MySQL Workbench和SSMS这俩工具太难用了, 还是Navicat吧</del></p>
+<p>MySQL~~ + (MySQL Workbench)~~<br>
 <code>MySQL Workbench -&gt; Preferences -&gt; SQL Editor -&gt; QueryEditor -&gt; use UPPERCASE keywords on completion</code></p>
+<ul>
+<li>设置Data存储路径</li>
+</ul>
 <p>SQL Server~~ + (SSMS)~~</p>
+<ul>
+<li>设置Data存储路径</li>
+</ul>
+<p>Redis</p>
 <p>向日葵Sunlogin</p>
 <p>WireShark</p>
 <p>微信开发者工具</p>
-<p>hugo创建静态博客</p>
+<p>hugo创建静态博客<br>
+安装hugo步骤需要补充文档</p>
 <p>Postman</p>
 <p>Inno Setup Compiler(可选)</p>
 <!-- raw HTML omitted -->
@@ -406,8 +428,10 @@ MySQL Workbench和SSMS这俩工具太难用了, 还是Navicat吧</p>
 </ul>
 <!-- raw HTML omitted -->
 <h2 id="game">GAME</h2>
-<p>Steam</p>
-<p>EPIC</p>
+<p>Steam
+可以通过内部工具迁移游戏存储目录</p>
+<p>EPIC
+不能迁移, 重新下载</p>
               
 
 

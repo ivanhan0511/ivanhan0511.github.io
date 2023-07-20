@@ -341,7 +341,16 @@ No best, only better.">
         </li>
       </ul>
     </li>
-    <li><a href="#security">SECURITY</a></li>
+    <li><a href="#security">SECURITY</a>
+      <ul>
+        <li><a href="#configure">Configure</a></li>
+        <li><a href="#filter">Filter</a></li>
+        <li><a href="#provider">Provider</a></li>
+        <li><a href="#handler">Handler</a></li>
+        <li><a href="#miscellaneous">Miscellaneous</a></li>
+        <li><a href="#userdetails还是个坑-不适合目前这个项目">UserDetails还是个坑, 不适合目前这个项目</a></li>
+      </ul>
+    </li>
     <li><a href="#logger">LOGGER</a></li>
     <li><a href="#连接池选型">连接池选型</a></li>
     <li><a href="#cache">CACHE</a></li>
@@ -367,9 +376,10 @@ No best, only better.">
   <p><p>DAO / Repository层</p>
 <ul>
 <li>MyBatis 接口与XML查询</li>
-<li>能通过数据库查询的尽量通过数据库直接查询, 一对一和一对多的关联关系也通过MyBatis的resultMap来展示</li>
+<li>能通过数据库查询的尽量通过数据库直接查询, 一对一/一对多通过MyBatis的resultMap子表查询, 合理使用子表查询, eager/lazy, 或者接口上分开查询数据详情等</li>
+<li>resultMap直接用Domain类做组装, 依靠@JsonView @JsonIgnore等屏蔽数据, 免去多个过多的responseDTO</li>
+<li><del>(仅关联DO对象, DTO的转换放在serivce层, 用BeanUtil.copyProperties来快速转换, 以便从repository层拿到的数据都是全数据)</del></li>
 <li>这一层比较薄, 只做数据库的访问, <strong>关键要做好通用抽象</strong></li>
-<li>(仅关联DO对象, DTO的转换放在serivce层, 用BeanUtil.copyProperties来快速转换, 以便从repository层拿到的数据都是全数据)</li>
 <li>善用MyBatis的数据校验来做好查询/更新/插入的冗余, 解放service层</li>
 </ul>
 </p>
@@ -379,7 +389,7 @@ No best, only better.">
 <ul>
 <li>核心要考虑和设计的内容, 优先考虑架构, 模型和业务流, 其余的展现和逻辑组合, 在其它层考虑</li>
 <li>淡化PO的概念, 因为每一个Domain类都能对应一个数据库表</li>
-<li>一对多的关联关系, 通过List/Set类型的字段关联, <strong>通过增加以该Domain为主语的行为方法来表达输入输出的行为</strong></li>
+<li>一对多的关联关系, 通过List/Set类型的字段关联, <del>通过增加以该Domain为主语的行为方法来表达输入输出的行为</del></li>
 <li>一对一的关联关系, 还是仿照数据库, 设计一个xxxID的字段, 在XML中的ResultMap进行association的关联</li>
 </ul>
 </p>
@@ -387,17 +397,19 @@ No best, only better.">
 <div class="alert success ">
   <p><p>Service层</p>
 <ul>
-<li>Domain Design Drive下的Service层也比较薄, 一般是复杂业务对多个Domain的联合封装</li>
-<li>可以调用其它Service(推荐, 如果涉及到多个数据源切换时尤其重要), 也可以调用其它Repository</li>
+<li>有些框架未必适合DDD模式, 受限于框架以及是否使用MyBatisPlus</li>
+<li><del>Domain Design Drive下的Service层也比较薄, 一般是复杂业务对多个Domain的联合封装</del></li>
+<li>区分综合逻辑业务service, 和MyBatisPlus关联Domain的独立service, 综合service调用独立service(方便有时还会跨多个不同的数据库)</li>
 <li>尽量少的数据规范性校验, 更多的业务数据校验</li>
+<li>服务端要兼容多种客户端的数据交互行为, 涉及userContext的区分等</li>
 </ul>
 </p>
 </div>
 <div class="alert info ">
   <p><p>Controller层</p>
 <ul>
-<li>从综合业务场景考虑接口设计, 调用综合业务服务</li>
-<li>校验前端数据, 使用校验分组</li>
+<li>从综合业务场景考虑接口设计, 分离多种客户端的context, 再调用综合业务服务</li>
+<li>校验前端数据, 使用DTO配合@Validate校验分组</li>
 <li>简单判断分流前端业务, 因地制宜地回复错误信息</li>
 </ul>
 </p>
@@ -775,8 +787,20 @@ And how to <code>DynamicDataSourceContextHolder.push()</code> and <code>DynamicD
 <!-- raw HTML omitted -->
 <h2 id="security">SECURITY</h2>
 <hr>
-<p>It&rsquo;s a deep track!</p>
-<p>Need do really deep reseach for it.</p>
+<h3 id="configure">Configure</h3>
+<p>这里包含初始化, 注册哪些filter</p>
+<h3 id="filter">Filter</h3>
+<p>具体拦截, 并把相对应的且support()的provider传进去</p>
+<h3 id="provider">Provider</h3>
+<p>提供自己的认证比对实现方法, 并且实现<code>support()</code>满足filter查找</p>
+<h3 id="handler">Handler</h3>
+<p>增加成功与失败的handler</p>
+<h3 id="miscellaneous">Miscellaneous</h3>
+<ul>
+<li>还涉及到与微信服务器交换opencode, 交换session, 再让用户授权手机号并最终拿到OpenId 等一系列动作</li>
+<li>还要设置缓存, 清空与微信服务器交换时中间状态的cache</li>
+</ul>
+<h3 id="userdetails还是个坑-不适合目前这个项目">UserDetails还是个坑, 不适合目前这个项目</h3>
 <h2 id="logger">LOGGER</h2>
 <hr>
 <p><strong>slf4j.Logger and log4j.Logger</strong>

@@ -18,7 +18,7 @@
   "name":"Ivan Blog",
   "description":"\u003cp\u003eAfter initialization of Windows, here is the TODO list.\u003c\/p\u003e",
   "url":"https:\/\/ivanhan0511.github.io\/post\/os-windows10\/",
-  "keywords":"[windows, init, config, Ivan, Python, C\/C\u002b\u002b, Coffee, Bass, Bicycle, Badminton]"
+  "keywords":"[windows, init, config, Ivan, SoftwareEngineer, C\/C\u002b\u002b, Java, Coffee, Bass, Bicycle, Badminton]"
 }
 
 </script>
@@ -27,7 +27,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="generator" content="Hugo 0.99.1 with theme Tranquilpeak 0.5.3-BETA">
 <meta name="author" content="Ivan Han">
-<meta name="keywords" content="windows, init, config, Ivan, Python, C/C&#43;&#43;, Coffee, Bass, Bicycle, Badminton">
+<meta name="keywords" content="windows, init, config, Ivan, SoftwareEngineer, C/C&#43;&#43;, Java, Coffee, Bass, Bicycle, Badminton">
 <meta name="description" content="After initialization of Windows, here is the TODO list.">
 
 
@@ -319,18 +319,18 @@
 <p>主力开发操作系统是Windows, 如果要重装系统, 需要提前备份好本地文件</p>
 <ul>
 <li>代码: 基本通过git有同步, 其余少量的通过copy完成</li>
-<li><input disabled="" type="checkbox"> 数据库: 需要全部备份, MySQL所有库, SQL Server所有库</li>
-<li><input disabled="" type="checkbox"> IDE: IDE本身的配置通过云同步; IDE存储的SQL脚本copy到项目文件夹sql中; 记录IDE的插件</li>
+<li><input checked="" disabled="" type="checkbox"> 数据库: 需要全部备份, MySQL所有库, SQL Server所有库</li>
+<li><input checked="" disabled="" type="checkbox"> IDE: IDE本身的配置通过云同步; IDE存储的SQL脚本copy到项目文件夹sql中; 记录IDE的插件</li>
 <li>坚果云文档: 公司文档, 仅限文档, 其余通过本地文件存储</li>
-<li><input disabled="" type="checkbox"> 本地文档: 密钥, 证书, 安装包, 公司大文件, 私人文件等</li>
-<li><input disabled="" type="checkbox"> 图片</li>
-<li><input disabled="" type="checkbox"> 视频</li>
-<li><input disabled="" type="checkbox"> 虚拟机</li>
+<li><input checked="" disabled="" type="checkbox"> 本地文档: 各个项目/服务器等的所有密钥, 证书, 安装包, 公司大文件, 私人文件等</li>
+<li><input checked="" disabled="" type="checkbox"> 图片</li>
+<li><input checked="" disabled="" type="checkbox"> 视频</li>
+<li><input checked="" disabled="" type="checkbox"> 虚拟机</li>
 </ul>
 <h2 id="rd">R&amp;D</h2>
 <p>按先后顺序排序</p>
-<p>VisualStudioPro<br>
-最大化使用, C, Python, JavaScript, Vim</p>
+<p>VisualStudioPro2022<br>
+最大化使用, C/C++, Python, <del>JavaScript</del>, Vim, git, cmd</p>
 <ul>
 <li>设置项目存储路径</li>
 <li>设置字体? 默认DejaVu Sans Mono? 避免像CMD.exe一样无法分辨小写L与数字1</li>
@@ -349,9 +349,6 @@
 <li>使用其npm环境? 不安装npm在裸机可以吗?  -&gt; 貌似不行</li>
 <li>是否能兼容调用MSYS2的一些命令而不用安装MSYS2?</li>
 </ul>
-<p><del>CLion or VisualStudioPro ?</del><br>
-目前有点倾向VisualStudioPro, 可以写C/C++, 还可以写Python, JavaScript, 何乐而不为呢? 而且Visual Studio的debug无敌
-Java就交给JetBrains IDEA就可以了</p>
 <p><del>PyCharm or VisualStudioPro ?</del></p>
 <p>IDEA</p>
 <ul>
@@ -363,8 +360,9 @@ Java就交给JetBrains IDEA就可以了</p>
 先安装VisualStudioPro, 看看是否会提供git环境<br>
 不行再试试MSYS2, 而不用安装Git For Bash<br>
 <del>MinGW32, MinGW64, WSL</del></p>
-<p><del>HBuilder or WebStorm or VS Code ?</del><br>
-<del>npm?</del></p>
+<p>HBuilder <del>or WebStorm or VS Code ?</del><br>
+看团队用什么吧, 也不打算深究Vue, 能调试个本地前端页面就行了
+npm</p>
 <p><del>Notepad++</del></p>
 <ul>
 <li>可以使用VisualStudioPro代替</li>
@@ -401,7 +399,9 @@ Java就交给JetBrains IDEA就可以了</p>
 <ul>
 <li>设置Data存储路径</li>
 </ul>
-<p>Redis</p>
+<p>Redis
+在Windows中开启WSL并安装Redis
+<a href="https://redis.io/docs/getting-started/installation/install-redis-on-windows/">https://redis.io/docs/getting-started/installation/install-redis-on-windows/</a></p>
 <p>向日葵Sunlogin</p>
 <p>WireShark</p>
 <p>微信开发者工具</p>
@@ -409,7 +409,6 @@ Java就交给JetBrains IDEA就可以了</p>
 安装hugo步骤需要补充文档</p>
 <p>Postman</p>
 <p>Inno Setup Compiler(可选)</p>
-<!-- raw HTML omitted -->
 <h2 id="basic-app">BASIC APP</h2>
 <p>常用的跨平台工具, 兼容手机 / macOS / Windows</p>
 <ul>
@@ -426,7 +425,6 @@ Java就交给JetBrains IDEA就可以了</p>
 <li>Fiio driver</li>
 <li>EMail客户端</li>
 </ul>
-<!-- raw HTML omitted -->
 <h2 id="game">GAME</h2>
 <p>Steam
 可以通过内部工具迁移游戏存储目录</p>

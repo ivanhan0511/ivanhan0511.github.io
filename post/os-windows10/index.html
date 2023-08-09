@@ -683,6 +683,69 @@ npm</p>
 </ul>
 </li>
 </ul>
+<p>按照<a href="https://blog.csdn.net/weixin_43862116/article/details/107731631">文章提示</a>挂载host主机的文件夹到Ubuntu挂在点, 用于共享
+
+  
+    
+  
+  
+    
+  
+  
+  
+
+
+<figure class="highlight sh language-sh">
+  <figcaption>
+    
+      <span>sharedfolder</span>
+    
+  </figcaption>
+  <table>
+    <tbody>
+      <tr>
+        <td class="gutter">
+          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre>
+        </td>
+        <td class="code">
+          <pre class="code-highlight language-sh sh"><code class="sh">vmware-hgfsclient
+&lt;blockquote&gt;
+  &lt;p&gt;
+WinDownloads
+&lt;/p&gt;
+  &lt;footer&gt;
+    &lt;strong&gt;Add bottom&lt;/strong&gt;
+    
+      
+        &lt;cite&gt;&lt;/cite&gt;
+      
+    
+  &lt;/footer&gt;
+&lt;/blockquote&gt;
+
+sudo mkdir /mnt/hgfs/downloads
+sudo mount -t fuse.vmhgfs-fuse .host:WinDownloads /mnt/hgfs/downloads/ -o allow_other
+#sudo umount -a fuse.vmhgfs-fuse .host:WinDownloads /mnt/hgfs/downloads/
+sudo vi /etc/fstab</code></pre>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+
+<blockquote>
+  <p>
+.host:WinDownloads /mnt/hgfs/downloads/ fuse.vmhgfs-fuse allow_other 0 0
+</p>
+  <footer>
+    <strong>Add bottom</strong>
+    
+      
+        <cite></cite>
+      
+    
+  </footer>
+</blockquote></p>
 <h2 id="others">Others</h2>
 <hr>
 <p>常用的跨平台工具, 兼容iOS / macOS / Windows / Android</p>

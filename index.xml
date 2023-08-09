@@ -17,6 +17,15 @@
     </item>
     
     <item>
+      <title>MySQL8.0 Operations</title>
+      <link>https://ivanhan0511.github.io/post/sql-mysql/</link>
+      <pubDate>Wed, 09 Aug 2023 09:49:00 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/post/sql-mysql/</guid>
+      <description>&lt;p&gt;Some usual operations examples in MySQL 8.1&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Spring</title>
       <link>https://ivanhan0511.github.io/post/java-spring/</link>
       <pubDate>Mon, 19 Jun 2023 10:14:00 +0800</pubDate>
@@ -44,15 +53,6 @@
       <description>&lt;p&gt;The tec core are architecture, IoC and AoP.&lt;/p&gt;
 &lt;p&gt;But just let&amp;rsquo;s focus on the architecture design for business workflow in the SpringBoot framework.&lt;/p&gt;
 &lt;p&gt;No best, only better.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>MySQL8.0 Operations</title>
-      <link>https://ivanhan0511.github.io/post/sql-mysql/</link>
-      <pubDate>Fri, 02 Jun 2023 16:49:00 +0800</pubDate>
-      
-      <guid>https://ivanhan0511.github.io/post/sql-mysql/</guid>
-      <description>&lt;p&gt;Some usual operations examples in MySQL 8.0&lt;/p&gt;</description>
     </item>
     
     <item>

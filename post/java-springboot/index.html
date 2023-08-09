@@ -25,7 +25,7 @@
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Hugo 0.99.1 with theme Tranquilpeak 0.5.3-BETA">
+<meta name="generator" content="Hugo 0.117.0 with theme Tranquilpeak 0.5.3-BETA">
 <meta name="author" content="Ivan Han">
 <meta name="keywords" content="java, springboot, framework, domain, Ivan, SoftwareEngineer, C/C&#43;&#43;, Java, Coffee, Bass, Bicycle, Badminton">
 <meta name="description" content="The tec core are architecture, IoC and AoP.
@@ -355,12 +355,6 @@ No best, only better.">
     <li><a href="#连接池选型">连接池选型</a></li>
     <li><a href="#cache">CACHE</a></li>
     <li><a href="#intercepter">INTERCEPTER</a></li>
-    <li><a href="#deployment集成构建">DEPLOYMENT(集成/构建)</a>
-      <ul>
-        <li><a href="#maven-or-gradle">Maven or Gradle</a></li>
-        <li><a href="#maven-381">Maven 3.8.1</a></li>
-      </ul>
-    </li>
     <li><a href="#appendix">APPENDIX</a>
       <ul>
         <li><a href="#缩写信息">缩写信息</a></li>
@@ -440,7 +434,10 @@ No best, only better.">
 <li>Controller中设置Headers, 指定Content-Type/Accept
 <ul>
 <li>Springboot中Controller中的comsumes所指定的是HTTP客户端的Content-Type的内容, 默认application/x-www-form-urlencoded</li>
-<li>Springboot中Controller中的produces所指定的是HTTP客户端的Accept的内容
+<li>Springboot中Controller中的produces所指定的是HTTP客户端的Accept的内容</li>
+</ul>
+</li>
+</ul>
 <blockquote>
   <p>
 常见的http头部Content-Type:<br>
@@ -463,10 +460,7 @@ No best, only better.">
       
     
   </footer>
-</blockquote></li>
-</ul>
-</li>
-</ul>
+</blockquote>
 <h3 id="易混淆注解的对比">易混淆注解的对比</h3>
 <h4 id="component-bean">@Component @Bean</h4>
 <p>With this annotation, a class can be scaned manually or automaticlly</p>
@@ -784,9 +778,7 @@ public class CombineServiceImpl implements CombineService {
 <p>[TODO]:
 MyBatis的手动切换, 后续再深入学习<br>
 And how to <code>DynamicDataSourceContextHolder.push()</code> and <code>DynamicDataSourceContextHolder.poll()</code>?</p>
-<!-- raw HTML omitted -->
 <h2 id="security">SECURITY</h2>
-<hr>
 <h3 id="configure">Configure</h3>
 <p>这里包含初始化, 注册哪些filter</p>
 <h3 id="filter">Filter</h3>
@@ -802,7 +794,6 @@ And how to <code>DynamicDataSourceContextHolder.push()</code> and <code>DynamicD
 </ul>
 <h3 id="userdetails还是个坑-不适合目前这个项目">UserDetails还是个坑, 不适合目前这个项目</h3>
 <h2 id="logger">LOGGER</h2>
-<hr>
 <p><strong>slf4j.Logger and log4j.Logger</strong>
 <blockquote>
   <p>
@@ -844,162 +835,16 @@ However, it is always difficult to prefer one between the two.
   
 </div>
 
-<!-- raw HTML omitted -->
 <h2 id="连接池选型">连接池选型</h2>
-<hr>
 <p>Druid or Hikari -&gt; PearAdminPro用的是Hikari, 也是Springboot官方选用的</p>
 <p>Druid是淘宝选用的, 高并发的情况会适用一些</p>
-<!-- raw HTML omitted -->
 <h2 id="cache">CACHE</h2>
-<hr>
 <ul>
 <li>MyBatis缓存</li>
 <li>Redis缓存</li>
 </ul>
-<!-- raw HTML omitted -->
 <h2 id="intercepter">INTERCEPTER</h2>
-<hr>
-<!-- raw HTML omitted -->
-<h2 id="deployment集成构建">DEPLOYMENT(集成/构建)</h2>
-<hr>
-<h3 id="maven-or-gradle">Maven or Gradle</h3>
-<p>The maven pom.xml defines lifecycle goals and the gradle build.gradle defines tasks.</p>
-<p>&ldquo;知识体系&quot;中关联的关于Maven的<a href="https://www.iocoder.cn/Fight/Maven-most-complete-tutorial-read-must-understand/?self">讲解</a></p>
-<p>又看了一篇<a href="https://www.zhihu.com/question/29338218">文章</a>, 对于两者的取舍, 还是暂且倾向于Maven的通用, 稳定, 兼容</p>
-<h3 id="maven-381">Maven 3.8.1</h3>
-<p>Maven 3.8.1 blocked http connection</p>
-<ul>
-<li>
-<p>Do NOT edit this original IDEA maven settings file
-<code>C:\Program Files\JetBrains\IntelliJ IDEA 2022.2.1\plugins\maven\lib\maven3\conf\settings.xml</code>
-
-  
-    
-  
-  
-    
-  
-  
-  
-
-
-<figure class="highlight xml language-xml">
-  <figcaption>
-    
-      <span>settings.xml</span>
-    
-  </figcaption>
-  <table>
-    <tbody>
-      <tr>
-        <td class="gutter">
-          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre>
-        </td>
-        <td class="code">
-          <pre class="code-highlight language-xml xml"><code class="xml">  ...
-  &lt;mirrors&gt;
-    &lt;!-- mirror
-     | Specifies a repository mirror site to use instead of a given repository. The repository that
-     | this mirror serves has an ID that matches the mirrorOf element of this mirror. IDs are used
-     | for inheritance and direct lookup purposes, and must be unique across the set of mirrors.
-     |
-    &lt;mirror&gt;
-      &lt;id&gt;mirrorId&lt;/id&gt;
-      &lt;mirrorOf&gt;repositoryId&lt;/mirrorOf&gt;
-      &lt;name&gt;Human Readable Name for this Mirror.&lt;/name&gt;
-      &lt;url&gt;http://my.repository.com/repo/path&lt;/url&gt;
-    &lt;/mirror&gt;
-     --&gt;
-    &lt;mirror&gt;
-      &lt;id&gt;maven-default-http-blocker&lt;/id&gt;
-      &lt;mirrorOf&gt;external:http:*&lt;/mirrorOf&gt;
-      &lt;name&gt;Pseudo repository to mirror external repositories initially using HTTP.&lt;/name&gt;
-      &lt;url&gt;http://0.0.0.0/&lt;/url&gt;
-      &lt;blocked&gt;true&lt;/blocked&gt;
-    &lt;/mirror&gt;
-  
-    &lt;mirror&gt;
-      &lt;id&gt;aliyunmaven&lt;/id&gt;
-      &lt;mirrorOf&gt;*&lt;/mirrorOf&gt;
-      &lt;name&gt;阿里云公共仓库&lt;/name&gt;
-      &lt;url&gt;https://maven.aliyun.com/repository/public&lt;/url&gt;
-    &lt;/mirror&gt;
-  &lt;/mirrors&gt;
-  ...
-  </code></pre>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</figure>
-</p>
-</li>
-<li>
-<p>Find personal maven setting path in IDEA settings and DIY it <code>C:\Users\ivan\.m2\settings.xml</code><br>
-(If not exists, create this file)</p>
-
-  
-    
-  
-  
-    
-  
-  
-  
-
-
-<figure class="highlight xml language-xml">
-  <figcaption>
-    
-      <span>settings.xml</span>
-    
-  </figcaption>
-  <table>
-    <tbody>
-      <tr>
-        <td class="gutter">
-          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre>
-        </td>
-        <td class="code">
-          <pre class="code-highlight language-xml xml"><code class="xml">&lt;settings xmlns=&#34;http://maven.apache.org/SETTINGS/1.2.0&#34;
-        xmlns:xsi=&#34;http://www.w3.org/2001/XMLSchema-instance&#34;
-        xsi:schemaLocation=&#34;http://maven.apache.org/SETTINGS/1.2.0 http://maven.apache.org/xsd/settings-1.2.0.xsd&#34;&gt;
-  &lt;mirrors&gt;
-    &lt;!-- mirror
-     | Specifies a repository mirror site to use instead of a given repository. The repository that
-     | this mirror serves has an ID that matches the mirrorOf element of this mirror. IDs are used
-     | for inheritance and direct lookup purposes, and must be unique across the set of mirrors.
-     |
-    &lt;mirror&gt;
-      &lt;id&gt;mirrorId&lt;/id&gt;
-      &lt;mirrorOf&gt;repositoryId&lt;/mirrorOf&gt;
-      &lt;name&gt;Human Readable Name for this Mirror.&lt;/name&gt;
-      &lt;url&gt;http://my.repository.com/repo/path&lt;/url&gt;
-    &lt;/mirror&gt;
-    --&gt;
-    &lt;mirror&gt;
-      &lt;id&gt;aliyunmaven&lt;/id&gt;
-      &lt;mirrorOf&gt;*&lt;/mirrorOf&gt;
-      &lt;name&gt;阿里云公共仓库&lt;/name&gt;
-      &lt;url&gt;https://maven.aliyun.com/repository/public&lt;/url&gt;
-    &lt;/mirror&gt;
-  &lt;/mirrors&gt;
-&lt;/settings&gt;
-  </code></pre>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</figure>
-
-</li>
-<li>
-<p>Reload pom.xml file in IDEA and automaticlly download the dependencies</p>
-</li>
-</ul>
-<!-- raw HTML omitted -->
 <h2 id="appendix">APPENDIX</h2>
-<hr>
 <h3 id="缩写信息">缩写信息</h3>
 <ul>
 <li>DAO: Data Access Object, 数据访问层</li>
@@ -1040,7 +885,6 @@ However, it is always difficult to prefer one between the two.
 </li>
 </ul>
 <h2 id="todo">TODO</h2>
-<hr>
 <p>全局日期转换格式兼容</p>
               
 

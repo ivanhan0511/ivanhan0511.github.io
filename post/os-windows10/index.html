@@ -25,7 +25,7 @@
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Hugo 0.99.1 with theme Tranquilpeak 0.5.3-BETA">
+<meta name="generator" content="Hugo 0.117.0 with theme Tranquilpeak 0.5.3-BETA">
 <meta name="author" content="Ivan Han">
 <meta name="keywords" content="windows, init, config, Ivan, SoftwareEngineer, C/C&#43;&#43;, Java, Coffee, Bass, Bicycle, Badminton">
 <meta name="description" content="After initialization of Windows, here is the TODO list.">
@@ -309,8 +309,26 @@
 <nav id="TableOfContents">
   <ul>
     <li><a href="#backup">BACKUP</a></li>
-    <li><a href="#rd">R&amp;D</a></li>
-    <li><a href="#basic-app">BASIC APP</a></li>
+    <li><a href="#boot-device">BOOT DEVICE</a></li>
+    <li><a href="#base">BASE</a></li>
+    <li><a href="#proxy">Proxy</a></li>
+    <li><a href="#visualstudiopro2022">VisualStudioPro2022</a></li>
+    <li><a href="#idea">IDEA</a>
+      <ul>
+        <li><a href="#java">Java</a></li>
+        <li><a href="#plugin">Plugin</a></li>
+        <li><a href="#maven-381">Maven 3.8.1</a></li>
+      </ul>
+    </li>
+    <li><a href="#git--ssh">Git &amp; SSH</a>
+      <ul>
+        <li><a href="#hugo">HUGO</a></li>
+        <li><a href="#tools">Tools</a></li>
+      </ul>
+    </li>
+    <li><a href="#hbuilderx">HBuilderX</a></li>
+    <li><a href="#vmware">VMWare</a></li>
+    <li><a href="#others">Others</a></li>
     <li><a href="#game">GAME</a></li>
   </ul>
 </nav>
@@ -319,117 +337,361 @@
 <p>主力开发操作系统是Windows, 如果要重装系统, 需要提前备份好本地文件</p>
 <ul>
 <li>代码: 基本通过git有同步, 其余少量的通过copy完成</li>
-<li><input checked="" disabled="" type="checkbox"> 数据库: 需要全部备份, MySQL所有库, SQL Server所有库</li>
-<li><input checked="" disabled="" type="checkbox"> IDE: IDE本身的配置通过云同步; IDE存储的SQL脚本copy到项目文件夹sql中; 记录IDE的插件</li>
 <li>坚果云文档: 公司文档, 仅限文档, 其余通过本地文件存储</li>
-<li><input checked="" disabled="" type="checkbox"> 本地文档: 各个项目/服务器等的所有密钥, 证书, 安装包, 公司大文件, 私人文件等</li>
-<li><input checked="" disabled="" type="checkbox"> 图片</li>
-<li><input checked="" disabled="" type="checkbox"> 视频</li>
-<li><input checked="" disabled="" type="checkbox"> 虚拟机</li>
-</ul>
-<h2 id="rd">R&amp;D</h2>
-<p>按先后顺序排序</p>
-<p>VisualStudioPro2022<br>
-最大化使用, C/C++, Python, <del>JavaScript</del>, Vim, git, cmd</p>
+<li>本地文档
 <ul>
-<li>设置项目存储路径</li>
-<li>设置字体? 默认DejaVu Sans Mono? 避免像CMD.exe一样无法分辨小写L与数字1</li>
-<li><a href="https://blog.csdn.net/qq_41868108/article/details/105750175">Visual Studio 2019 修改字符集编码</a></li>
+<li>公司大文件</li>
+<li>各个项目的密钥 / 证书</li>
+<li>服务器所涉及的登录方式 / 用户名 / 密码 的文档</li>
+<li>SSH密钥, 私人文件等</li>
+</ul>
+</li>
+<li>虚拟机
+<ul>
+<li>
+<p>数据库: 转储数据和数据结构, MySQL和SQLServer的所有库</p>
+<p>以修改MySQL/SqlServer存储路径的方式并不稳妥, 重装操作系统后, 版本/路径/库等可能会发生变化, 定时备份数据再导入才靠谱</p>
+</li>
+<li>
+<p>SSH密钥</p>
+</li>
+<li>
+<p>证书</p>
+</li>
+</ul>
+</li>
+<li>IDE: IDE本身的配置通过云同步; IDE存储的SQL脚本copy到项目文件夹sql中</li>
+<li>图片</li>
+<li>视频</li>
+</ul>
+<h2 id="boot-device">BOOT DEVICE</h2>
+<ul>
+<li>Create Windows official MediaCreationTool</li>
+<li>Choose boot device in BIOS</li>
+</ul>
+<h2 id="base">BASE</h2>
+<p>只要连接互联网, 现有的Windows10会自动联网安装驱动, 只需要等待更新/重启</p>
+<p>趁着没有使用网络代理, 先安装基本工具</p>
+<ul>
+<li>VisualStudioPro2022
+<ul>
+<li>Prefer English language</li>
+<li>Libs</li>
+<li>Git(Will install MINGW64 env into Widnows system)</li>
+</ul>
+</li>
+<li>Input method, config only <code>ctrl + space</code> to switch</li>
+<li>Chrome as default browser</li>
+<li>HHKB</li>
+<li>Logitech Anywhere3 and OptionPlus</li>
+</ul>
+<h2 id="proxy">Proxy</h2>
+<p>v2rayN(Need DotNet6.0)</p>
+<p>注意新安装的Windows, 要确保对时准确, 精准到1分钟以内, 否则代理建立连接失败</p>
+<h2 id="visualstudiopro2022">VisualStudioPro2022</h2>
+<p>最大化使用, C/C++, Python, Vim, Git, PowerShell</p>
+<ul>
+<li>设置项目存储路径, Tools -&gt; Options -&gt; Projects and Solutions -&gt; Locations</li>
+<li>Install VsVim extension -&gt; 超级好用, 可以随插入模式和普通模式的切换而自动切换输入法
+<ul>
+<li>在Vim中, <code>:set nu</code> 且 <code>:set rnu</code>, 就可以同时开绝对行号和相对行号</li>
+</ul>
+</li>
+<li><del>设置字体? 默认DejaVu Sans Mono? 避免像CMD.exe一样无法分辨小写L与数字1</del></li>
+<li><a href="https://blog.csdn.net/qq_41868108/article/details/105750175">Visual Studio 增加菜单来修改字符集编码</a></li>
 <li>自动补全: Enter or Tab?
 <ul>
-<li>Visual Studio 2019是使用Tab进行代码补全的, 但一般习惯回车补全的时候就需要重新设置</li>
+<li>Visual Studio 2022是使用Tab进行代码补全的, 但一般习惯回车补全的时候就需要重新设置</li>
 <li>个人选择用Tab，原因是Linux默认的补全键是Tab, Notpad++ / Nacicat 也都是Tab补全</li>
 <li>具体路径: 工具 –&gt; 选项 –&gt; 文本编辑器 –&gt; C/C++ -&gt; 高级 –&gt; 主动提交成员列表</li>
 </ul>
 </li>
-<li>Install VsVim extension -&gt; 超级好用, 可以随插入模式和普通模式的切换而自动切换输入法</li>
-<li>Both English and Chinese, prefer English</li>
-<li>可能会提供git环境</li>
-<li>使用其Python环境, 不安装Python在裸机</li>
-<li>使用其npm环境? 不安装npm在裸机可以吗?  -&gt; 貌似不行</li>
-<li>是否能兼容调用MSYS2的一些命令而不用安装MSYS2?</li>
 </ul>
-<p><del>PyCharm or VisualStudioPro ?</del></p>
-<p>IDEA</p>
+<h2 id="idea">IDEA</h2>
+<h3 id="java">Java</h3>
 <ul>
-<li>git? 验证VisualStudioPro是否会安装git</li>
-<li>git? 验证MSYS2是否会安装git</li>
-<li>使用其Java环境, 不安装Java在裸机</li>
+<li>在各个项目中分别选择Java JDK环境, 不安装Java在裸机</li>
 </ul>
-<p>MSYS2 or Cygwin?<br>
-先安装VisualStudioPro, 看看是否会提供git环境<br>
-不行再试试MSYS2, 而不用安装Git For Bash<br>
-<del>MinGW32, MinGW64, WSL</del></p>
-<p>HBuilder <del>or WebStorm or VS Code ?</del><br>
-看团队用什么吧, 也不打算深究Vue, 能调试个本地前端页面就行了
-npm</p>
-<p><del>Notepad++</del></p>
+<h3 id="plugin">Plugin</h3>
 <ul>
-<li>可以使用VisualStudioPro代替</li>
-</ul>
-<p>VMWare<br>
-规划好哪些工具安装在裸机, 哪些安装在VMWare</p>
+<li>IdeaVim
 <ul>
-<li>切换安装路径到D:\盘</li>
-<li>纯净Win10最新版, 快照</li>
-<li>银行软件</li>
-<li>各种Linux
-<ul>
-<li>PHP</li>
-<li>Redis</li>
-<li>&hellip;</li>
+<li>
+<p>在IDEA中创建<code>~/.ideavimrc</code>文件(实际创建在<code>C:\Users\Ivan\.ideavimrc</code>)</p>
+</li>
+<li>
+<p>增加如下配置</p>
+
+  
+    
+  
+  
+    
+  
+  
+  
+
+
+<figure class="highlight config language-config">
+  <figcaption>
+    
+      <span>.ideavimrc</span>
+    
+  </figcaption>
+  <table>
+    <tbody>
+      <tr>
+        <td class="gutter">
+          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre>
+        </td>
+        <td class="code">
+          <pre class="code-highlight language-config config"><code class="config">    set hlsearch
+    set incsearch
+
+    syntax on
+
+    &#34; 修改leader键为逗号
+    let mapleader=&#34;,&#34;
+    set ignorecase  &#34; 设置大小写敏感
+
+    &#34; Line number
+    &#34;set ruler
+    set number
+    set relativenumber
+
+    &#34; 修改vim的正则表达
+    nmap / /\v
+    vmap / /\v
+
+    &#34; 取消搜索高亮
+    nmap &lt;leader&gt;nh :noh&lt;cr&gt;
+    </code></pre>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+
+</li>
 </ul>
 </li>
-<li>折腾环境/演示环境</li>
+<li>MyBatisCodeHelperPro</li>
+<li>Redis</li>
 </ul>
-<p>Typora</p>
+<h3 id="maven-381">Maven 3.8.1</h3>
+<p>Maven 3.8.1 blocked http connection</p>
 <ul>
-<li>需要看目录时, 例如接口文档中上来来回滚动, 还是需要Typora的目录</li>
-<li>所见即所得的格式校验, PDF输出, 字体兼容, 还是需要Typora</li>
+<li>
+<p>Do <span class="highlight-text red">NOT</span> edit this original IDEA maven settings file
+<code>C:\Program Files\JetBrains\IntelliJ IDEA 2022.2.1\plugins\maven\lib\maven3\conf\settings.xml</code>
+
+  
+    
+  
+  
+    
+  
+  
+  
+
+
+<figure class="highlight xml language-xml">
+  <figcaption>
+    
+      <span>settings.xml</span>
+    
+  </figcaption>
+  <table>
+    <tbody>
+      <tr>
+        <td class="gutter">
+          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre>
+        </td>
+        <td class="code">
+          <pre class="code-highlight language-xml xml"><code class="xml">  ...
+  &lt;mirrors&gt;
+    &lt;!-- mirror
+     | Specifies a repository mirror site to use instead of a given repository. The repository that
+     | this mirror serves has an ID that matches the mirrorOf element of this mirror. IDs are used
+     | for inheritance and direct lookup purposes, and must be unique across the set of mirrors.
+     |
+    &lt;mirror&gt;
+      &lt;id&gt;mirrorId&lt;/id&gt;
+      &lt;mirrorOf&gt;repositoryId&lt;/mirrorOf&gt;
+      &lt;name&gt;Human Readable Name for this Mirror.&lt;/name&gt;
+      &lt;url&gt;http://my.repository.com/repo/path&lt;/url&gt;
+    &lt;/mirror&gt;
+     --&gt;
+    &lt;mirror&gt;
+      &lt;id&gt;maven-default-http-blocker&lt;/id&gt;
+      &lt;mirrorOf&gt;external:http:*&lt;/mirrorOf&gt;
+      &lt;name&gt;Pseudo repository to mirror external repositories initially using HTTP.&lt;/name&gt;
+      &lt;url&gt;http://0.0.0.0/&lt;/url&gt;
+      &lt;blocked&gt;true&lt;/blocked&gt;
+    &lt;/mirror&gt;
+  
+    &lt;mirror&gt;
+      &lt;id&gt;aliyunmaven&lt;/id&gt;
+      &lt;mirrorOf&gt;*&lt;/mirrorOf&gt;
+      &lt;name&gt;阿里云公共仓库&lt;/name&gt;
+      &lt;url&gt;https://maven.aliyun.com/repository/public&lt;/url&gt;
+    &lt;/mirror&gt;
+  &lt;/mirrors&gt;
+  ...
+  </code></pre>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+</p>
+</li>
+<li>
+<p>Find personal maven setting path in IDEA settings and DIY it <code>C:\Users\ivan\.m2\settings.xml</code> (If not exists, create this file)</p>
+
+  
+    
+  
+  
+    
+  
+  
+  
+
+
+<figure class="highlight xml language-xml">
+  <figcaption>
+    
+      <span>settings.xml</span>
+    
+  </figcaption>
+  <table>
+    <tbody>
+      <tr>
+        <td class="gutter">
+          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre>
+        </td>
+        <td class="code">
+          <pre class="code-highlight language-xml xml"><code class="xml">  &lt;settings xmlns=&#34;http://maven.apache.org/SETTINGS/1.2.0&#34;
+        xmlns:xsi=&#34;http://www.w3.org/2001/XMLSchema-instance&#34;
+        xsi:schemaLocation=&#34;http://maven.apache.org/SETTINGS/1.2.0 http://maven.apache.org/xsd/settings-1.2.0.xsd&#34;&gt;
+  &lt;mirrors&gt;
+    &lt;!-- mirror
+     | Specifies a repository mirror site to use instead of a given repository. The repository that
+     | this mirror serves has an ID that matches the mirrorOf element of this mirror. IDs are used
+     | for inheritance and direct lookup purposes, and must be unique across the set of mirrors.
+     |
+    &lt;mirror&gt;
+      &lt;id&gt;mirrorId&lt;/id&gt;
+      &lt;mirrorOf&gt;repositoryId&lt;/mirrorOf&gt;
+      &lt;name&gt;Human Readable Name for this Mirror.&lt;/name&gt;
+      &lt;url&gt;http://my.repository.com/repo/path&lt;/url&gt;
+    &lt;/mirror&gt;
+    --&gt;
+    &lt;mirror&gt;
+      &lt;id&gt;aliyunmaven&lt;/id&gt;
+      &lt;mirrorOf&gt;*&lt;/mirrorOf&gt;
+      &lt;name&gt;阿里云公共仓库&lt;/name&gt;
+      &lt;url&gt;https://maven.aliyun.com/repository/public&lt;/url&gt;
+    &lt;/mirror&gt;
+  &lt;/mirrors&gt;
+  &lt;/settings&gt;
+  </code></pre>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+
+</li>
+<li>
+<p>Reload pom.xml file in IDEA and automaticlly download the dependencies</p>
+</li>
 </ul>
-<p>XShell/XFtp</p>
-<p>~~Navicat 还是最终DB的解决方案?  ~~
-<del>MySQL Workbench和SSMS这俩工具太难用了, 还是Navicat吧</del></p>
-<p>MySQL~~ + (MySQL Workbench)~~<br>
-<code>MySQL Workbench -&gt; Preferences -&gt; SQL Editor -&gt; QueryEditor -&gt; use UPPERCASE keywords on completion</code></p>
+<h2 id="git--ssh">Git &amp; SSH</h2>
+<p>MINGW64 Git套件</p>
+<p>自己添加插件, 来增加额外的的Linux命令</p>
+<h3 id="hugo">HUGO</h3>
 <ul>
-<li>设置Data存储路径</li>
+<li>在<a href="https://github.com/gohugoio/hugo/releases">HUGO的GitHub</a>的releases中下载适用于Windows的文件压缩包</li>
+<li>解压到<code>C:\Program Files\Git\usr\bin\</code>目录中</li>
+<li>再打开GitBash即可使用hugo命令创建静态Blog了</li>
 </ul>
-<p>SQL Server~~ + (SSMS)~~</p>
+<h3 id="tools">Tools</h3>
+<p>[TODO]: To be continued&hellip;</p>
 <ul>
-<li>设置Data存储路径</li>
+<li>nc</li>
+<li>ss</li>
 </ul>
-<p>Redis
-在Windows中开启WSL并安装Redis
-<a href="https://redis.io/docs/getting-started/installation/install-redis-on-windows/">https://redis.io/docs/getting-started/installation/install-redis-on-windows/</a></p>
-<p>向日葵Sunlogin</p>
-<p>WireShark</p>
+<h2 id="hbuilderx">HBuilderX</h2>
+<p>看团队用什么吧, 也不打算深究Vue, 能调试个本地前端页面就行了
+npm</p>
+<ul>
+<li>使用其npm环境? 不安装npm在裸机可以吗?  -&gt; 貌似不行</li>
+</ul>
+<h2 id="vmware">VMWare</h2>
+<p>VMWare WorkStation Pro, 规划好哪些工具安装在裸机, 哪些安装在VMWare</p>
+<ul>
+<li>切换安装路径到<code>D:\VirtualMachines\</code>盘</li>
+<li>纯净Win10, 快照
+<ul>
+<li>银行软件</li>
+<li>Windows开发环境
+<ul>
+<li>
 <p>微信开发者工具</p>
-<p>hugo创建静态博客<br>
-安装hugo步骤需要补充文档</p>
-<p>Postman</p>
-<p>Inno Setup Compiler(可选)</p>
-<h2 id="basic-app">BASIC APP</h2>
-<p>常用的跨平台工具, 兼容手机 / macOS / Windows</p>
+</li>
+<li>
+<p>抖音开发者工具</p>
+</li>
+<li>
+<p>MS SQL Server + SSMS</p>
+<p>导出导入数据的命令参见<a href="https://ivanhan0511.github.io/post/sql-sqlserver/">MS SQL Server Opertaions</a></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Ubuntu Desktop, 快照
 <ul>
-<li>Input method, ctrl+space to switch</li>
-<li>Chrome as default browser</li>
-<li>HHKB</li>
-<li>Logitech Anywhere3 and OptionPlus</li>
-<li>v2ray</li>
+<li>Linux演示环境</li>
+<li>Linux开发环境
+<ul>
+<li>
+<p>Redis</p>
+</li>
+<li>
+<p>MySQL</p>
+<p>导出导入数据的命令参见<a href="https://ivanhan0511.github.io/post/sql-mysql/">MySQL Opertaions</a></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="others">Others</h2>
+<p>常用的跨平台工具, 兼容iOS / macOS / Windows / Android</p>
+<ul>
+<li>XShell/XFtp</li>
+<li>Postman</li>
+<li>向日葵Sunlogin</li>
+<li>WireShark</li>
+<li>Typora</li>
 <li>坚果云</li>
-<li>Office365</li>
+<li>Office365(Outlook, Excel, Word, PowerPoint)</li>
 <li>WeChat</li>
 <li>腾讯会议</li>
 <li>亿图</li>
 <li>Fiio driver</li>
-<li>EMail客户端</li>
+<li>Notepad++</li>
+<li>Axure</li>
 </ul>
 <h2 id="game">GAME</h2>
-<p>Steam
-可以通过内部工具迁移游戏存储目录</p>
-<p>EPIC
-不能迁移, 重新下载</p>
+<ul>
+<li>Steam 可以通过内部工具迁移游戏存储目录</li>
+<li>EPIC 不能迁移, 重新下载</li>
+<li>Minecraft</li>
+</ul>
               
 
 

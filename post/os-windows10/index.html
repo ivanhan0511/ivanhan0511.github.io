@@ -334,6 +334,7 @@
 </nav>
 
 <h2 id="backup">BACKUP</h2>
+<hr>
 <p>主力开发操作系统是Windows, 如果要重装系统, 需要提前备份好本地文件</p>
 <ul>
 <li>代码: 基本通过git有同步, 其余少量的通过copy完成</li>
@@ -365,11 +366,13 @@
 <li>视频</li>
 </ul>
 <h2 id="boot-device">BOOT DEVICE</h2>
+<hr>
 <ul>
 <li>Create Windows official MediaCreationTool</li>
 <li>Choose boot device in BIOS</li>
 </ul>
 <h2 id="base">BASE</h2>
+<hr>
 <p>只要连接互联网, 现有的Windows10会自动联网安装驱动, 只需要等待更新/重启</p>
 <p>趁着没有使用网络代理, 先安装基本工具</p>
 <ul>
@@ -386,15 +389,20 @@
 <li>Logitech Anywhere3 and OptionPlus</li>
 </ul>
 <h2 id="proxy">Proxy</h2>
+<hr>
 <p>v2rayN(Need DotNet6.0)</p>
 <p>注意新安装的Windows, 要确保对时准确, 精准到1分钟以内, 否则代理建立连接失败</p>
 <h2 id="visualstudiopro2022">VisualStudioPro2022</h2>
+<hr>
 <p>最大化使用, C/C++, Python, Vim, Git, PowerShell</p>
 <ul>
 <li>设置项目存储路径, Tools -&gt; Options -&gt; Projects and Solutions -&gt; Locations</li>
-<li>Install VsVim extension -&gt; 超级好用, 可以随插入模式和普通模式的切换而自动切换输入法
+<li>Install VsVim extension
 <ul>
-<li>在Vim中, <code>:set nu</code> 且 <code>:set rnu</code>, 就可以同时开绝对行号和相对行号</li>
+<li>Check which directories that VsVim looks for this file in by using the command <code>:set vimrcpaths?</code></li>
+<li>This is typically the <code>HOME</code>, <code>VIM</code> or <code>USERPROFILE</code> directories</li>
+<li>Place your <code>.vimrc</code> file in one of these directories, restart Visual Studio and VsVim will load those settings</li>
+<li>You can verify which vimrc file is currently loaded in VsVim by using the command <code>:set vimrc?</code></li>
 </ul>
 </li>
 <li><del>设置字体? 默认DejaVu Sans Mono? 避免像CMD.exe一样无法分辨小写L与数字1</del></li>
@@ -408,6 +416,7 @@
 </li>
 </ul>
 <h2 id="idea">IDEA</h2>
+<hr>
 <h3 id="java">Java</h3>
 <ul>
 <li>在各个项目中分别选择Java JDK环境, 不安装Java在裸机</li>
@@ -420,7 +429,7 @@
 <p>在IDEA中创建<code>~/.ideavimrc</code>文件(实际创建在<code>C:\Users\Ivan\.ideavimrc</code>)</p>
 </li>
 <li>
-<p>增加如下配置</p>
+<p>增加如下配置(暂时不像Visual Studio需要完整的.vimrc, 只需要添加一少部分配置即可)</p>
 
   
     
@@ -442,29 +451,31 @@
     <tbody>
       <tr>
         <td class="gutter">
-          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre>
+          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre>
         </td>
         <td class="code">
-          <pre class="code-highlight language-config config"><code class="config">    set hlsearch
-    set incsearch
+          <pre class="code-highlight language-config config"><code class="config">set hlsearch
+set incsearch
 
-    syntax on
+syntax on
+&#34; 不设定在插入状态无法用退格键和 Delete 键删除回车符
+set backspace=indent,eol,start
 
-    &#34; 修改leader键为逗号
-    let mapleader=&#34;,&#34;
-    set ignorecase  &#34; 设置大小写敏感
+&#34; 修改leader键为逗号
+let mapleader=&#34;,&#34;
+set ignorecase  &#34; 设置大小写敏感
 
-    &#34; Line number
-    &#34;set ruler
-    set number
-    set relativenumber
+&#34; Line number
+&#34;set ruler
+set number
+set relativenumber
 
-    &#34; 修改vim的正则表达
-    nmap / /\v
-    vmap / /\v
+&#34; 修改vim的正则表达
+nmap / /\v
+vmap / /\v
 
-    &#34; 取消搜索高亮
-    nmap &lt;leader&gt;nh :noh&lt;cr&gt;
+&#34; 取消搜索高亮
+nmap &lt;leader&gt;nh :noh&lt;cr&gt;
     </code></pre>
         </td>
       </tr>
@@ -572,30 +583,30 @@
           <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre>
         </td>
         <td class="code">
-          <pre class="code-highlight language-xml xml"><code class="xml">  &lt;settings xmlns=&#34;http://maven.apache.org/SETTINGS/1.2.0&#34;
-        xmlns:xsi=&#34;http://www.w3.org/2001/XMLSchema-instance&#34;
-        xsi:schemaLocation=&#34;http://maven.apache.org/SETTINGS/1.2.0 http://maven.apache.org/xsd/settings-1.2.0.xsd&#34;&gt;
-  &lt;mirrors&gt;
-    &lt;!-- mirror
-     | Specifies a repository mirror site to use instead of a given repository. The repository that
-     | this mirror serves has an ID that matches the mirrorOf element of this mirror. IDs are used
-     | for inheritance and direct lookup purposes, and must be unique across the set of mirrors.
-     |
-    &lt;mirror&gt;
-      &lt;id&gt;mirrorId&lt;/id&gt;
-      &lt;mirrorOf&gt;repositoryId&lt;/mirrorOf&gt;
-      &lt;name&gt;Human Readable Name for this Mirror.&lt;/name&gt;
-      &lt;url&gt;http://my.repository.com/repo/path&lt;/url&gt;
-    &lt;/mirror&gt;
-    --&gt;
-    &lt;mirror&gt;
-      &lt;id&gt;aliyunmaven&lt;/id&gt;
-      &lt;mirrorOf&gt;*&lt;/mirrorOf&gt;
-      &lt;name&gt;阿里云公共仓库&lt;/name&gt;
-      &lt;url&gt;https://maven.aliyun.com/repository/public&lt;/url&gt;
-    &lt;/mirror&gt;
-  &lt;/mirrors&gt;
-  &lt;/settings&gt;
+          <pre class="code-highlight language-xml xml"><code class="xml">&lt;settings xmlns=&#34;http://maven.apache.org/SETTINGS/1.2.0&#34;
+      xmlns:xsi=&#34;http://www.w3.org/2001/XMLSchema-instance&#34;
+      xsi:schemaLocation=&#34;http://maven.apache.org/SETTINGS/1.2.0 http://maven.apache.org/xsd/settings-1.2.0.xsd&#34;&gt;
+&lt;mirrors&gt;
+  &lt;!-- mirror
+   | Specifies a repository mirror site to use instead of a given repository. The repository that
+   | this mirror serves has an ID that matches the mirrorOf element of this mirror. IDs are used
+   | for inheritance and direct lookup purposes, and must be unique across the set of mirrors.
+   |
+  &lt;mirror&gt;
+    &lt;id&gt;mirrorId&lt;/id&gt;
+    &lt;mirrorOf&gt;repositoryId&lt;/mirrorOf&gt;
+    &lt;name&gt;Human Readable Name for this Mirror.&lt;/name&gt;
+    &lt;url&gt;http://my.repository.com/repo/path&lt;/url&gt;
+  &lt;/mirror&gt;
+  --&gt;
+  &lt;mirror&gt;
+    &lt;id&gt;aliyunmaven&lt;/id&gt;
+    &lt;mirrorOf&gt;*&lt;/mirrorOf&gt;
+    &lt;name&gt;阿里云公共仓库&lt;/name&gt;
+    &lt;url&gt;https://maven.aliyun.com/repository/public&lt;/url&gt;
+  &lt;/mirror&gt;
+&lt;/mirrors&gt;
+&lt;/settings&gt;
   </code></pre>
         </td>
       </tr>
@@ -609,6 +620,7 @@
 </li>
 </ul>
 <h2 id="git--ssh">Git &amp; SSH</h2>
+<hr>
 <p>MINGW64 Git套件</p>
 <p>自己添加插件, 来增加额外的的Linux命令</p>
 <h3 id="hugo">HUGO</h3>
@@ -624,12 +636,14 @@
 <li>ss</li>
 </ul>
 <h2 id="hbuilderx">HBuilderX</h2>
+<hr>
 <p>看团队用什么吧, 也不打算深究Vue, 能调试个本地前端页面就行了
 npm</p>
 <ul>
 <li>使用其npm环境? 不安装npm在裸机可以吗?  -&gt; 貌似不行</li>
 </ul>
 <h2 id="vmware">VMWare</h2>
+<hr>
 <p>VMWare WorkStation Pro, 规划好哪些工具安装在裸机, 哪些安装在VMWare</p>
 <ul>
 <li>切换安装路径到<code>D:\VirtualMachines\</code>盘</li>
@@ -670,6 +684,7 @@ npm</p>
 </li>
 </ul>
 <h2 id="others">Others</h2>
+<hr>
 <p>常用的跨平台工具, 兼容iOS / macOS / Windows / Android</p>
 <ul>
 <li>XShell/XFtp</li>
@@ -687,6 +702,7 @@ npm</p>
 <li>Axure</li>
 </ul>
 <h2 id="game">GAME</h2>
+<hr>
 <ul>
 <li>Steam 可以通过内部工具迁移游戏存储目录</li>
 <li>EPIC 不能迁移, 重新下载</li>

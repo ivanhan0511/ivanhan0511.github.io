@@ -327,7 +327,13 @@
       </ul>
     </li>
     <li><a href="#hbuilderx">HBuilderX</a></li>
-    <li><a href="#vmware">VMWare</a></li>
+    <li><a href="#vmware">VMWare</a>
+      <ul>
+        <li><a href="#windows">Windows</a></li>
+        <li><a href="#ubuntu-server">Ubuntu Server</a></li>
+        <li><a href="#ubuntu-desktop暂时弃用">Ubuntu Desktop(暂时弃用)</a></li>
+      </ul>
+    </li>
     <li><a href="#others">Others</a></li>
     <li><a href="#game">GAME</a></li>
   </ul>
@@ -349,19 +355,17 @@
 </li>
 <li>虚拟机
 <ul>
-<li>
-<p>数据库: 转储数据和数据结构, MySQL和SQLServer的所有库</p>
-<p>以修改MySQL/SqlServer存储路径的方式并不稳妥, 重装操作系统后, 版本/路径/库等可能会发生变化, 定时备份数据再导入才靠谱</p>
-</li>
-<li>
-<p>SSH密钥</p>
-</li>
-<li>
-<p>证书</p>
-</li>
+<li>数据库: 转储数据和数据结构, MySQL和SQLServer的所有库</li>
+<li>SSH密钥</li>
+<li>证书</li>
 </ul>
 </li>
-<li>IDE: IDE本身的配置通过云同步; IDE存储的SQL脚本copy到项目文件夹sql中</li>
+<li>IDEA
+<ul>
+<li>IDEA本身的配置通过云同步</li>
+<li>IDEA开发用的每一条SQL console, 右键Refactor -&gt; Copy file, 随Git上传</li>
+</ul>
+</li>
 <li>图片</li>
 <li>视频</li>
 </ul>
@@ -586,26 +590,26 @@ nmap &lt;leader&gt;nh :noh&lt;cr&gt;
           <pre class="code-highlight language-xml xml"><code class="xml">&lt;settings xmlns=&#34;http://maven.apache.org/SETTINGS/1.2.0&#34;
       xmlns:xsi=&#34;http://www.w3.org/2001/XMLSchema-instance&#34;
       xsi:schemaLocation=&#34;http://maven.apache.org/SETTINGS/1.2.0 http://maven.apache.org/xsd/settings-1.2.0.xsd&#34;&gt;
-&lt;mirrors&gt;
-  &lt;!-- mirror
-   | Specifies a repository mirror site to use instead of a given repository. The repository that
-   | this mirror serves has an ID that matches the mirrorOf element of this mirror. IDs are used
-   | for inheritance and direct lookup purposes, and must be unique across the set of mirrors.
-   |
-  &lt;mirror&gt;
-    &lt;id&gt;mirrorId&lt;/id&gt;
-    &lt;mirrorOf&gt;repositoryId&lt;/mirrorOf&gt;
-    &lt;name&gt;Human Readable Name for this Mirror.&lt;/name&gt;
-    &lt;url&gt;http://my.repository.com/repo/path&lt;/url&gt;
-  &lt;/mirror&gt;
-  --&gt;
-  &lt;mirror&gt;
-    &lt;id&gt;aliyunmaven&lt;/id&gt;
-    &lt;mirrorOf&gt;*&lt;/mirrorOf&gt;
-    &lt;name&gt;阿里云公共仓库&lt;/name&gt;
-    &lt;url&gt;https://maven.aliyun.com/repository/public&lt;/url&gt;
-  &lt;/mirror&gt;
-&lt;/mirrors&gt;
+  &lt;mirrors&gt;
+    &lt;!-- mirror
+     | Specifies a repository mirror site to use instead of a given repository. The repository that
+     | this mirror serves has an ID that matches the mirrorOf element of this mirror. IDs are used
+     | for inheritance and direct lookup purposes, and must be unique across the set of mirrors.
+     |
+    &lt;mirror&gt;
+      &lt;id&gt;mirrorId&lt;/id&gt;
+      &lt;mirrorOf&gt;repositoryId&lt;/mirrorOf&gt;
+      &lt;name&gt;Human Readable Name for this Mirror.&lt;/name&gt;
+      &lt;url&gt;http://my.repository.com/repo/path&lt;/url&gt;
+    &lt;/mirror&gt;
+    --&gt;
+    &lt;mirror&gt;
+      &lt;id&gt;aliyunmaven&lt;/id&gt;
+      &lt;mirrorOf&gt;*&lt;/mirrorOf&gt;
+      &lt;name&gt;阿里云公共仓库&lt;/name&gt;
+      &lt;url&gt;https://maven.aliyun.com/repository/public&lt;/url&gt;
+    &lt;/mirror&gt;
+  &lt;/mirrors&gt;
 &lt;/settings&gt;
   </code></pre>
         </td>
@@ -647,10 +651,9 @@ npm</p>
 <p>VMWare WorkStation Pro, 规划好哪些工具安装在裸机, 哪些安装在VMWare</p>
 <ul>
 <li>切换安装路径到<code>D:\VirtualMachines\</code>盘</li>
-<li>纯净Win10, 快照
-<ul>
-<li>银行软件</li>
-<li>Windows开发环境
+<li>编辑 -&gt; 首选项 -&gt; 内存 -&gt; 额外内存 &ldquo;调整所有虚拟机内存使其适应预留的主机RAM&rdquo;</li>
+</ul>
+<h3 id="windows">Windows</h3>
 <ul>
 <li>
 <p>微信开发者工具</p>
@@ -660,30 +663,21 @@ npm</p>
 </li>
 <li>
 <p>MS SQL Server + SSMS</p>
-<p>导出导入数据的命令参见<a href="https://ivanhan0511.github.io/post/sql-sqlserver/">MS SQL Server Opertaions</a></p>
+<p>初始化, 导出, 导入的命令参见<a href="https://ivanhan0511.github.io/post/sql-sqlserver/">MS SQL Server Opertaions</a></p>
 </li>
 </ul>
-</li>
-</ul>
-</li>
-<li>Ubuntu Desktop, 快照
-<ul>
-<li>Linux演示环境</li>
-<li>Linux开发环境
+<h3 id="ubuntu-server">Ubuntu Server</h3>
 <ul>
 <li>
 <p>Redis</p>
 </li>
 <li>
 <p>MySQL</p>
-<p>导出导入数据的命令参见<a href="https://ivanhan0511.github.io/post/sql-mysql/">MySQL Opertaions</a></p>
+<p>初始化, 导出, 导入的命令参见<a href="https://ivanhan0511.github.io/post/sql-mysql/">MySQL Opertaions</a></p>
 </li>
 </ul>
-</li>
-</ul>
-</li>
-</ul>
-<p>按照<a href="https://blog.csdn.net/weixin_43862116/article/details/107731631">文章提示</a>挂载host主机的文件夹到Ubuntu挂在点, 用于共享
+<h3 id="ubuntu-desktop暂时弃用">Ubuntu Desktop(暂时弃用)</h3>
+<p>按照<a href="https://blog.csdn.net/weixin_43862116/article/details/107731631">文章提示</a>挂载host主机的文件夹到Ubuntu挂在点, 用于共享</p>
 
   
     
@@ -721,7 +715,7 @@ sudo vi /etc/fstab</code></pre>
   </table>
 </figure>
 
-<code>.host:WinDownloads /mnt/hgfs/downloads/ fuse.vmhgfs-fuse allow_other 0 0</code></p>
+<p><code>.host:WinDownloads /mnt/hgfs/downloads/ fuse.vmhgfs-fuse allow_other 0 0</code></p>
 <h2 id="others">Others</h2>
 <hr>
 <p>常用的跨平台工具, 兼容iOS / macOS / Windows / Android</p>

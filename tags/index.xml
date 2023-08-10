@@ -6,83 +6,11 @@
     <description>Recent content in Tags on Ivan Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 10 Aug 2023 13:36:00 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>backup</title>
-      <link>https://ivanhan0511.github.io/tags/backup/</link>
-      <pubDate>Thu, 10 Aug 2023 13:36:00 +0800</pubDate>
-      
-      <guid>https://ivanhan0511.github.io/tags/backup/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>DCL</title>
-      <link>https://ivanhan0511.github.io/tags/dcl/</link>
-      <pubDate>Thu, 10 Aug 2023 13:36:00 +0800</pubDate>
-      
-      <guid>https://ivanhan0511.github.io/tags/dcl/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>DDL</title>
-      <link>https://ivanhan0511.github.io/tags/ddl/</link>
-      <pubDate>Thu, 10 Aug 2023 13:36:00 +0800</pubDate>
-      
-      <guid>https://ivanhan0511.github.io/tags/ddl/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>DML</title>
-      <link>https://ivanhan0511.github.io/tags/dml/</link>
-      <pubDate>Thu, 10 Aug 2023 13:36:00 +0800</pubDate>
-      
-      <guid>https://ivanhan0511.github.io/tags/dml/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Init</title>
-      <link>https://ivanhan0511.github.io/tags/init/</link>
-      <pubDate>Thu, 10 Aug 2023 13:36:00 +0800</pubDate>
-      
-      <guid>https://ivanhan0511.github.io/tags/init/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>MySQL8.0</title>
-      <link>https://ivanhan0511.github.io/tags/mysql8.0/</link>
-      <pubDate>Thu, 10 Aug 2023 13:36:00 +0800</pubDate>
-      
-      <guid>https://ivanhan0511.github.io/tags/mysql8.0/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>TCL</title>
-      <link>https://ivanhan0511.github.io/tags/tcl/</link>
-      <pubDate>Thu, 10 Aug 2023 13:36:00 +0800</pubDate>
-      
-      <guid>https://ivanhan0511.github.io/tags/tcl/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>VIEW</title>
-      <link>https://ivanhan0511.github.io/tags/view/</link>
-      <pubDate>Thu, 10 Aug 2023 13:36:00 +0800</pubDate>
-      
-      <guid>https://ivanhan0511.github.io/tags/view/</guid>
-      <description></description>
-    </item>
-    
+    <lastBuildDate>Thu, 10 Aug 2023 18:00:00 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ivan Han</title>
       <link>https://ivanhan0511.github.io/tags/ivan-han/</link>
-      <pubDate>Wed, 09 Aug 2023 17:32:00 +0800</pubDate>
+      <pubDate>Thu, 10 Aug 2023 18:00:00 +0800</pubDate>
       
       <guid>https://ivanhan0511.github.io/tags/ivan-han/</guid>
       <description></description>
@@ -91,9 +19,108 @@
     <item>
       <title>Welcome</title>
       <link>https://ivanhan0511.github.io/tags/welcome/</link>
-      <pubDate>Wed, 09 Aug 2023 17:32:00 +0800</pubDate>
+      <pubDate>Thu, 10 Aug 2023 18:00:00 +0800</pubDate>
       
       <guid>https://ivanhan0511.github.io/tags/welcome/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>backup</title>
+      <link>https://ivanhan0511.github.io/tags/backup/</link>
+      <pubDate>Thu, 10 Aug 2023 17:52:00 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/tags/backup/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DCL</title>
+      <link>https://ivanhan0511.github.io/tags/dcl/</link>
+      <pubDate>Thu, 10 Aug 2023 17:52:00 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/tags/dcl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DDL</title>
+      <link>https://ivanhan0511.github.io/tags/ddl/</link>
+      <pubDate>Thu, 10 Aug 2023 17:52:00 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/tags/ddl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DML</title>
+      <link>https://ivanhan0511.github.io/tags/dml/</link>
+      <pubDate>Thu, 10 Aug 2023 17:52:00 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/tags/dml/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Init</title>
+      <link>https://ivanhan0511.github.io/tags/init/</link>
+      <pubDate>Thu, 10 Aug 2023 17:52:00 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/tags/init/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MySQL8.0</title>
+      <link>https://ivanhan0511.github.io/tags/mysql8.0/</link>
+      <pubDate>Thu, 10 Aug 2023 17:52:00 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/tags/mysql8.0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>TCL</title>
+      <link>https://ivanhan0511.github.io/tags/tcl/</link>
+      <pubDate>Thu, 10 Aug 2023 17:52:00 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/tags/tcl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VIEW</title>
+      <link>https://ivanhan0511.github.io/tags/view/</link>
+      <pubDate>Thu, 10 Aug 2023 17:52:00 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/tags/view/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>myOS</title>
+      <link>https://ivanhan0511.github.io/tags/myos/</link>
+      <pubDate>Thu, 10 Aug 2023 17:33:59 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/tags/myos/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Windows</title>
+      <link>https://ivanhan0511.github.io/tags/windows/</link>
+      <pubDate>Thu, 10 Aug 2023 17:33:59 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/tags/windows/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SQLServer</title>
+      <link>https://ivanhan0511.github.io/tags/sqlserver/</link>
+      <pubDate>Thu, 10 Aug 2023 17:32:00 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/tags/sqlserver/</guid>
       <description></description>
     </item>
     
@@ -233,38 +260,11 @@
     </item>
     
     <item>
-      <title>myOS</title>
-      <link>https://ivanhan0511.github.io/tags/myos/</link>
-      <pubDate>Wed, 15 Feb 2023 15:16:59 +0800</pubDate>
-      
-      <guid>https://ivanhan0511.github.io/tags/myos/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Windows</title>
-      <link>https://ivanhan0511.github.io/tags/windows/</link>
-      <pubDate>Wed, 15 Feb 2023 15:16:59 +0800</pubDate>
-      
-      <guid>https://ivanhan0511.github.io/tags/windows/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Principle</title>
       <link>https://ivanhan0511.github.io/tags/principle/</link>
       <pubDate>Thu, 02 Feb 2023 13:39:32 +0800</pubDate>
       
       <guid>https://ivanhan0511.github.io/tags/principle/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>SQLServer</title>
-      <link>https://ivanhan0511.github.io/tags/sqlserver/</link>
-      <pubDate>Tue, 17 Jan 2023 15:41:38 +0800</pubDate>
-      
-      <guid>https://ivanhan0511.github.io/tags/sqlserver/</guid>
       <description></description>
     </item>
     

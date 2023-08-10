@@ -43,10 +43,10 @@
 <meta property="og:locale" content="en-us">
 
   
-    <meta property="article:published_time" content="2023-01-17T15:41:38">
+    <meta property="article:published_time" content="2023-08-10T17:32:00">
   
   
-    <meta property="article:modified_time" content="2023-01-17T15:41:38">
+    <meta property="article:modified_time" content="2023-08-10T17:32:00">
   
   
   
@@ -272,13 +272,13 @@
   
   <div class="postShorten-meta post-meta">
     
-      <time datetime="2023-01-17T15:41:38&#43;08:00">
+      <time datetime="2023-08-10T17:32:00&#43;08:00">
         
   
   
   
   
-    January 17, 2023
+    August 10, 2023
   
 
       </time>
@@ -302,8 +302,23 @@
             <div class="main-content-wrap">
               <p>Some usual opearations for MS SQL Server.</p>
 <h1 id="table-of-contents">Table of Contents</h1>
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#init">INIT</a></li>
+    <li><a href="#tips">Tips</a></li>
+    <li><a href="#export--import">EXPORT &amp; IMPORT</a></li>
+  </ul>
+</nav>
 
+<h2 id="init">INIT</h2>
+<p>I have no project that starting with MS SQL Server<br>
+But got a external DB in a project, so when developing, I just import the DB</p>
+<ul>
+<li>安装完MS SQL Server + SSMS 之后, 在SSMS中通过&quot;Windows身份验证&quot;连接</li>
+<li>在顶级目录(比如服务器或电脑名称)右键属性 -&gt; 安全性 -&gt; 选择&quot;SQL Server和Windows身份验证模式&quot;</li>
+<li>在次顶级目录 -&gt; 安全性 -&gt; 登录名 -&gt; 添加登录用户名, 等balabala设置</li>
+<li>SQL Server 配置管理器中, 允许TCP/IP连接</li>
+</ul>
 
 
   
@@ -327,7 +342,7 @@
 <figure class="codeblock codeblock--tabbed">
   <figcaption>
     
-      <span>examples</span>
+      <span>init</span>
     
     <ul class="tabs">
       
@@ -375,33 +390,106 @@ select * from sysdatabases;</code></pre>
   </div>
 </figure>
 
-<p>SQLSERVER 查询今天、昨天、本周、上周、本月、上月数据</p>
-<p>DATEDIFF (datepart, startdate, enddate) 计算时间差</p>
-<p>datepare值 year | quarter | month | week | day | hour | minute | second | millisecond
-startdate 开始日期
-enddate 结束日期
-GetDate() 获取当前的系统日期</p>
-<p>下面例子中表名为tablename,条件字段名为inputdate
-查询今天
-SELECT * FROM tablename where DATEDIFF(day,inputdate,GETDATE())=0</p>
-<p>查询昨天
-SELECT * FROM tablename where DATEDIFF(day,inputdate,GETDATE())=1</p>
-<p>查询本周
-SELECT * FROM tablename where datediff(week,inputdate,getdate())=0</p>
-<p>查询上周
-SELECT * FROM tablename where datediff(week,inputdate,getdate())=1</p>
-<p>查询本月
-SELECT * FROM tablename where DATEDIFF(month,inputdate,GETDATE())=0</p>
-<p>查询上月
-SELECT * FROM tablename where DATEDIFF(month,inputdate,GETDATE())=1</p>
-<p>查询本年
-select * from Keywords  where datediff(year, Addtime,getdate())=0</p>
-<p>&ndash;返回0-则为纯数字(支持正负数，小数点)
-SELECT PATINDEX(&rsquo;%[^0-9|.|-|+]%&rsquo;,&lsquo;2.2&rsquo;)&ndash;返回0</p>
-<p>&ndash;返回0-则为纯整数
-select PATINDEX(&rsquo;%[^0-9]%&rsquo;, &lsquo;2.2&rsquo;)&ndash;返回非0</p>
-<p>SELECT TOP 50 PATINDEX(&rsquo;%[^0-9|.|-|+]%&rsquo;, ,FModel)
-FROM t_ICItem;</p>
+<h2 id="tips">Tips</h2>
+<hr>
+
+  
+    
+  
+  
+    
+  
+  
+  
+
+
+<figure class="highlight sql language-sql">
+  <figcaption>
+    
+      <span>Periods Filter</span>
+    
+  </figcaption>
+  <table>
+    <tbody>
+      <tr>
+        <td class="gutter">
+          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre>
+        </td>
+        <td class="code">
+          <pre class="code-highlight language-sql sql"><code class="sql">-- SQLSERVER 查询今天、昨天、本周、上周、本月、上月数据
+
+-- DATEDIFF (datepart, startdate, enddate) 计算时间差
+-- datepare值 year | quarter | month | week | day | hour | minute | second | millisecond
+-- startdate 开始日期
+-- enddate 结束日期
+-- GetDate() 获取当前的系统日期
+
+-- 下面例子中表名为tablename,条件字段名为inputdate
+-- 查询今天
+SELECT * FROM tablename where DATEDIFF(day,inputdate,GETDATE())=0
+
+-- 查询昨天
+SELECT * FROM tablename where DATEDIFF(day,inputdate,GETDATE())=1
+
+-- 查询本周
+SELECT * FROM tablename where datediff(week,inputdate,getdate())=0
+
+-- 查询上周
+SELECT * FROM tablename where datediff(week,inputdate,getdate())=1
+
+-- 查询本月
+SELECT * FROM tablename where DATEDIFF(month,inputdate,GETDATE())=0
+
+-- 查询上月
+SELECT * FROM tablename where DATEDIFF(month,inputdate,GETDATE())=1
+
+-- 查询本年
+select * from Keywords  where datediff(year, Addtime,getdate())=0</code></pre>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+
+
+  
+    
+  
+  
+    
+  
+  
+  
+
+
+<figure class="highlight sql language-sql">
+  <figcaption>
+    
+      <span>Regex</span>
+    
+  </figcaption>
+  <table>
+    <tbody>
+      <tr>
+        <td class="gutter">
+          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre>
+        </td>
+        <td class="code">
+          <pre class="code-highlight language-sql sql"><code class="sql">--返回0-则为纯数字(支持正负数，小数点)
+ SELECT PATINDEX(&#39;%[^0-9|.|-|&#43;]%&#39;,&#39;2.2&#39;)--返回0
+
+ --返回0-则为纯整数
+select PATINDEX(&#39;%[^0-9]%&#39;, &#39;2.2&#39;)--返回非0
+
+SELECT TOP 50 PATINDEX(&#39;%[^0-9|.|-|&#43;]%&#39;, ,FModel)
+FROM t_ICItem;</code></pre>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+
+<h2 id="export--import">EXPORT &amp; IMPORT</h2>
               
 
 
@@ -428,7 +516,7 @@ FROM t_ICItem;</p>
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/pid-for-coffee/" data-tooltip="PID For Coffee" aria-label="NEXT: PID For Coffee">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/os-windows10/" data-tooltip="What to Do after Init Windows" aria-label="NEXT: What to Do after Init Windows">
           
               <i class="fa fa-angle-left"></i>
               <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -436,7 +524,7 @@ FROM t_ICItem;</p>
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/health-thought/" data-tooltip="Thought Fragments about Health" aria-label="PREVIOUS: Thought Fragments about Health">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/java-spring/" data-tooltip="Spring" aria-label="PREVIOUS: Spring">
           
               <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
               <i class="fa fa-angle-right"></i>
@@ -529,7 +617,7 @@ FROM t_ICItem;</p>
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/pid-for-coffee/" data-tooltip="PID For Coffee" aria-label="NEXT: PID For Coffee">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/os-windows10/" data-tooltip="What to Do after Init Windows" aria-label="NEXT: What to Do after Init Windows">
           
               <i class="fa fa-angle-left"></i>
               <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -537,7 +625,7 @@ FROM t_ICItem;</p>
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/health-thought/" data-tooltip="Thought Fragments about Health" aria-label="PREVIOUS: Thought Fragments about Health">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/java-spring/" data-tooltip="Spring" aria-label="PREVIOUS: Spring">
           
               <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
               <i class="fa fa-angle-right"></i>

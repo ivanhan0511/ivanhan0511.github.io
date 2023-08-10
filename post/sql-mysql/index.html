@@ -43,10 +43,10 @@
 <meta property="og:locale" content="en-us">
 
   
-    <meta property="article:published_time" content="2023-08-10T13:36:00">
+    <meta property="article:published_time" content="2023-08-10T17:52:00">
   
   
-    <meta property="article:modified_time" content="2023-08-10T13:36:00">
+    <meta property="article:modified_time" content="2023-08-10T17:52:00">
   
   
   
@@ -270,7 +270,7 @@
   
   <div class="postShorten-meta post-meta">
     
-      <time datetime="2023-08-10T13:36:00&#43;08:00">
+      <time datetime="2023-08-10T17:52:00&#43;08:00">
         
   
   
@@ -336,11 +336,7 @@
     <li><a href="#dml">DML</a>
       <ul>
         <li><a href="#insert">INSERT</a></li>
-        <li><a href="#select">SELECT</a>
-          <ul>
-            <li><a href="#the-time-filter">The Time Filter</a></li>
-          </ul>
-        </li>
+        <li><a href="#select">SELECT</a></li>
         <li><a href="#update">UPDATE</a></li>
         <li><a href="#delete">DELETE</a></li>
         <li><a href="#merge">MERGE</a></li>
@@ -785,7 +781,6 @@ Source_table where   1 &lt;&gt; 1;</code></pre>
   </table>
 </figure>
 
-<h4 id="the-time-filter">The Time Filter</h4>
 
   
     
@@ -800,7 +795,7 @@ Source_table where   1 &lt;&gt; 1;</code></pre>
 <figure class="highlight sql language-sql">
   <figcaption>
     
-      <span>Periods</span>
+      <span>Periods Filter</span>
     
   </figcaption>
   <table>
@@ -844,7 +839,7 @@ SELECT * FROM 表名 WHERE 时间字段名 BETWEEN DATE_SUB(NOW(),INTERVAL 6 MON
 -- 本季度
 SELECT * FROM 表名 WHERE QUARTER(时间字段名) = QUARTER(NOW());
 
---- 上季度
+-- 上季度
 SELECT * FROM 表名 WHERE QUARTER(时间字段名) = QUARTER(DATE_SUB(NOW(),INTERVAL 1 QUARTER));
 
 -- 本年
@@ -1003,7 +998,7 @@ kill 12345;</code></pre>
   
 
 
-<figure class="highlight sh language-sh">
+<figure class="highlight shell language-shell">
   <figcaption>
     
       <span>export</span>
@@ -1013,23 +1008,21 @@ kill 12345;</code></pre>
     <tbody>
       <tr>
         <td class="gutter">
-          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre>
+          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre>
         </td>
         <td class="code">
-          <pre class="code-highlight language-sh sh"><code class="sh"># 导出整个数据库结构和数据
-mysqldump -h localhost -P 3306 -uroot -p123456 database &gt; test.sql
-
+          <pre class="code-highlight language-shell shell"><code class="shell"># 导出整个数据库结构和数据
+mysqldump -h localhost -P 3306 -urd -p123456 database &gt; test.sql
 # 导出整个数据库结构(不包含数据)
-mysqldump -h localhost -P 3306 -uroot -p123456 -d database &gt; test.sql
+mysqldump -h localhost -P 3306 -urd -p123456 -d database &gt; test.sql
 
 # 导出单个数据表结构和数据
-mysqldump -h localhost -P 3306 -uroot -p123456 database table &gt; test.sql
-
+mysqldump -h localhost -P 3306 -urd -p123456 database table &gt; test.sql
 # 导出单个数据表结构(不包含数据)
-mysqldump -h localhost -P 3306 -uroot -p123456 -d database table &gt; test.sql
+mysqldump -h localhost -P 3306 -urd -p123456 -d database table &gt; test.sql
 
 # 说明:
-# 如果是本机操作，其中 -h localhost -P 3306 可以不需要## -P 参数，是大P，且有空格，不同于后面密码的小P，没有空格</code></pre>
+# -P参数, 是大P, 且有空格, 不同于后面密码的小P，没有空格</code></pre>
         </td>
       </tr>
     </tbody>
@@ -1151,7 +1144,7 @@ source /data/test.sql;</code></pre>
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--disabled">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/welcome/" data-tooltip="Welcome to Ivan&#39;s Blog" aria-label="NEXT: Welcome to Ivan&#39;s Blog">
           
               <i class="fa fa-angle-left"></i>
               <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -1159,7 +1152,7 @@ source /data/test.sql;</code></pre>
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/welcome/" data-tooltip="Welcome to Ivan&#39;s Blog" aria-label="PREVIOUS: Welcome to Ivan&#39;s Blog">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/os-windows10/" data-tooltip="What to Do after Init Windows" aria-label="PREVIOUS: What to Do after Init Windows">
           
               <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
               <i class="fa fa-angle-right"></i>
@@ -1252,7 +1245,7 @@ source /data/test.sql;</code></pre>
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--disabled">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/welcome/" data-tooltip="Welcome to Ivan&#39;s Blog" aria-label="NEXT: Welcome to Ivan&#39;s Blog">
           
               <i class="fa fa-angle-left"></i>
               <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -1260,7 +1253,7 @@ source /data/test.sql;</code></pre>
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/welcome/" data-tooltip="Welcome to Ivan&#39;s Blog" aria-label="PREVIOUS: Welcome to Ivan&#39;s Blog">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/os-windows10/" data-tooltip="What to Do after Init Windows" aria-label="PREVIOUS: What to Do after Init Windows">
           
               <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
               <i class="fa fa-angle-right"></i>

@@ -327,6 +327,7 @@
       </ul>
     </li>
     <li><a href="#hbuilderx">HBuilderX</a></li>
+    <li><a href="#db">DB</a></li>
     <li><a href="#vmware">VMWare</a>
       <ul>
         <li><a href="#windows">Windows</a></li>
@@ -425,6 +426,8 @@
 <ul>
 <li>在各个项目中分别选择Java JDK环境, 不安装Java在裸机</li>
 <li>settsings(Ctrl+Alt+S) -&gt; Editor -&gt; Code Style -&gt; SQL -&gt; 将keywords设置为大写(To upper), and then<code>ctrl + alt + L</code></li>
+<li>数据库导入时, 右键某个数据库 -&gt; Import/Export -&gt; Restore with &lsquo;mysql&rsquo; -&gt; Path to mysql -&gt; <code>C:/Program Files/MySQL/MySQL Server 8.1/bin/mysql.exe</code></li>
+<li>数据库导出时, 右键某个数据库 -&gt; Import/Export -&gt; Export with &lsquo;mysqldump&rsquo; -&gt; Path to mysqldump -&gt; <code>C:/Program Files/MySQL/MySQL Server 8.1/bin/mysqldump.exe</code></li>
 </ul>
 <h3 id="plugin">Plugin</h3>
 <ul>
@@ -647,6 +650,12 @@ npm</p>
 <ul>
 <li>使用其npm环境? 不安装npm在裸机可以吗?  -&gt; 貌似不行</li>
 </ul>
+<h2 id="db">DB</h2>
+<hr>
+<p>MySQL安装在Windows中也行, 安装在VMWare中也行</p>
+<p>毕竟MySQL常年在用, 每次都开VMWare虚拟机很麻烦</p>
+<p>如果安装在真机, 现有的安装包+配置工具已经很傻瓜式了, 安装好之后只用<code>MySQL 8.1 Command Line Clien</code>登录用于管理<br>
+然后用IDEA(Ultimate)的Import/Export 工具进行数据到导入/导出, ER图也可以导出</p>
 <h2 id="vmware">VMWare</h2>
 <hr>
 <p>VMWare WorkStation Pro, 规划好哪些工具安装在裸机, 哪些安装在VMWare</p>
@@ -733,7 +742,7 @@ sudo vi /etc/fstab</code></pre>
 <li>Office365(Outlook, Excel, Word, PowerPoint)</li>
 <li>WeChat</li>
 <li>腾讯会议</li>
-<li>亿图</li>
+<li>亿图Edraw</li>
 <li>Fiio driver</li>
 <li>Notepad++</li>
 <li>Axure</li>

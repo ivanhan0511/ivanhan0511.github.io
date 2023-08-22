@@ -353,6 +353,18 @@ url 的其他部分就各家有各家的玩法, 那请求参数还是用下划�
 <code>- (NSString*) foo : (NSString*) param;</code></p>
 <p><code>NSString* name = (NSSting*) anyType;</code></p>
 <p>所以, 个人喜欢这种风格</p>
+<h2 id="杂记">杂记</h2>
+<hr>
+<h3 id="handler">Handler</h3>
+<p>Windows中叫&quot;句柄&quot;, Linux中叫&quot;Socket&quot;</p>
+<ul>
+<li>Windows中要打开一个USB设备, 会有一个句柄值, 调用系统底层API时要传这个句柄值</li>
+<li>Windows中要修改一个窗口, 会有一个句柄值, 调用系统底层API时要传这个句柄值</li>
+<li>Windows中要写一个文件, 会有一个句柄值, 调用系统底层API时要传这个句柄值</li>
+<li>Linux中类似, 只不过叫Socket</li>
+</ul>
+<h3 id="context">Context</h3>
+<p>比如, C++中, 开线程执行某个类, 要调用线程的一个静态类, 同时要传入类的上下文, 就把类的this传进去</p>
               
 
 

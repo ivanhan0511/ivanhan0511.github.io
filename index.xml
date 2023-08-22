@@ -6,14 +6,23 @@
     <description>Recent content on Ivan Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 17 Aug 2023 17:23:00 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 22 Aug 2023 15:15:00 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Welcome to Ivan&#39;s Blog</title>
       <link>https://ivanhan0511.github.io/post/welcome/</link>
-      <pubDate>Thu, 17 Aug 2023 17:23:00 +0800</pubDate>
+      <pubDate>Tue, 22 Aug 2023 15:15:00 +0800</pubDate>
       
       <guid>https://ivanhan0511.github.io/post/welcome/</guid>
       <description>&lt;p&gt;Some records for software, coffee, music and sports.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>What to Do after Init Windows</title>
+      <link>https://ivanhan0511.github.io/post/os-windows10/</link>
+      <pubDate>Fri, 18 Aug 2023 14:24:00 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/post/os-windows10/</guid>
+      <description>&lt;p&gt;After initialization of Windows, here is the TODO list.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -32,15 +41,6 @@
       
       <guid>https://ivanhan0511.github.io/post/sql-mysql/</guid>
       <description>&lt;p&gt;Some usual operations examples in MySQL 8.0&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>What to Do after Init Windows</title>
-      <link>https://ivanhan0511.github.io/post/os-windows10/</link>
-      <pubDate>Thu, 10 Aug 2023 17:33:59 +0800</pubDate>
-      
-      <guid>https://ivanhan0511.github.io/post/os-windows10/</guid>
-      <description>&lt;p&gt;After initialization of Windows, here is the TODO list.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -89,15 +89,6 @@
       
       <guid>https://ivanhan0511.github.io/post/network-basic/</guid>
       <description>&lt;p&gt;This is a custom summary and does &lt;em&gt;NOT&lt;/em&gt; appear in the post.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Vue Development Environment</title>
-      <link>https://ivanhan0511.github.io/post/js-vue/</link>
-      <pubDate>Tue, 11 Apr 2023 17:53:32 +0800</pubDate>
-      
-      <guid>https://ivanhan0511.github.io/post/js-vue/</guid>
-      <description>&lt;p&gt;A record about installing vue env.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -255,15 +246,6 @@ So here are some tips, wish to be helpful.&lt;/p&gt;</description>
       
       <guid>https://ivanhan0511.github.io/post/python-flask-deploy/</guid>
       <description>&lt;p&gt;Deploy a project which is small or flexible project, with PearAdmin Flask&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>BASIC USAGE OF VISUAL STUDIO</title>
-      <link>https://ivanhan0511.github.io/post/c-visual-studio/</link>
-      <pubDate>Wed, 25 May 2022 13:41:34 +0800</pubDate>
-      
-      <guid>https://ivanhan0511.github.io/post/c-visual-studio/</guid>
-      <description>&lt;p&gt;Hello Visual Studio!&lt;/p&gt;</description>
     </item>
     
     <item>

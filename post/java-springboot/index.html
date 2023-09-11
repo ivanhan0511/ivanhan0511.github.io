@@ -317,7 +317,7 @@ No best, only better.">
         <li><a href="#常用注解的深入理解">常用注解的深入理解</a></li>
         <li><a href="#易混淆注解的对比">易混淆注解的对比</a>
           <ul>
-            <li><a href="#component-bean">@Component @Bean</a></li>
+            <li><a href="#component-bean-service-configurable">@Component @Bean @Service @Configurable</a></li>
             <li><a href="#resource-autowired">@Resource @Autowired</a></li>
             <li><a href="#repository-mapper">@Repository @Mapper</a></li>
             <li><a href="#validate-valid">@Validate @Valid</a></li>
@@ -457,9 +457,11 @@ No best, only better.">
   </footer>
 </blockquote>
 <h3 id="易混淆注解的对比">易混淆注解的对比</h3>
-<h4 id="component-bean">@Component @Bean</h4>
+<h4 id="component-bean-service-configurable">@Component @Bean @Service @Configurable</h4>
 <p>With this annotation, a class can be scaned manually or automaticlly</p>
-<p>@Bean一般是调用第三方的</p>
+<p><code>@Bean</code>一般是调用第三方的</p>
+<p><code>@Component</code>与<code>@Service</code>没有区别, <code>@Service</code>还没想好, 是一个预留的注解定义</p>
+<p><code>@Configurable</code>是单例模式, 在启动时加载</p>
 <h4 id="resource-autowired">@Resource @Autowired</h4>
 <blockquote>
   <p>

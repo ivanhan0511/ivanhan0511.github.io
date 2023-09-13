@@ -499,6 +499,38 @@ sudo systemctl restart mysql.service</code></pre>
 <hr>
 <p>DCL: Data Control Language, like <code>GRANT</code>, <code>REVOKE</code>, <code>DENY</code></p>
 <h3 id="grant">GRANT</h3>
+
+  
+    
+  
+  
+    
+  
+  
+  
+
+
+<figure class="highlight sql language-sql">
+  <figcaption>
+    
+      <span>GRANT</span>
+    
+  </figcaption>
+  <table>
+    <tbody>
+      <tr>
+        <td class="gutter">
+          <pre><span class="line">1</span><br><span class="line">2</span><br></pre>
+        </td>
+        <td class="code">
+          <pre class="code-highlight language-sql sql"><code class="sql">GRANT ALL PRIVILEGES ON `some-db`.* TO &#39;rd&#39;@&#39;%&#39;;
+FLUSH PRIVILEGES;</code></pre>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+
 <h3 id="revoke">REVOKE</h3>
 <h3 id="deny">DENY</h3>
 <h2 id="ddl">DDL</h2>
@@ -750,37 +782,6 @@ Source_table where   1 &lt;&gt; 1;</code></pre>
 </figure>
 
 <h3 id="select">SELECT</h3>
-
-  
-    
-  
-  
-    
-  
-  
-  
-
-
-<figure class="highlight sql language-sql">
-  <figcaption>
-    
-      <span>SELECT</span>
-    
-  </figcaption>
-  <table>
-    <tbody>
-      <tr>
-        <td class="gutter">
-          <pre><span class="line">1</span><br></pre>
-        </td>
-        <td class="code">
-          <pre class="code-highlight language-sql sql"><code class="sql">SELECT * FROM &lt;table_name&gt;;</code></pre>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</figure>
-
 
   
     

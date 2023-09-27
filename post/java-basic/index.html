@@ -288,8 +288,6 @@
 <h1 id="table-of-contents">Table of Contents</h1>
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#threadlocal">THreadLocal</a></li>
-    <li><a href="#jvm">JVM</a></li>
     <li><a href="#类型对比">类型对比</a>
       <ul>
         <li><a href="#string">String[]</a></li>
@@ -302,13 +300,19 @@
         <li><a href="#判断类实例中的各个属性是否有null">判断类实例中的各个属性是否有null</a></li>
       </ul>
     </li>
+    <li><a href="#no-hutool">NO <code>Hutool</code></a>
+      <ul>
+        <li><a href="#sort">Sort</a></li>
+      </ul>
+    </li>
     <li><a href="#jdbc">JDBC</a></li>
+    <li><a href="#threadlocal">THreadLocal</a></li>
+    <li><a href="#jvm">JVM</a></li>
   </ul>
 </nav>
 
-<h2 id="threadlocal">THreadLocal</h2>
-<h2 id="jvm">JVM</h2>
 <h2 id="类型对比">类型对比</h2>
+<hr>
 <h3 id="string">String[]</h3>
 <h3 id="arraylist">ArrayList</h3>
 <h3 id="int-or-integer">int or Integer</h3>
@@ -326,6 +330,7 @@
 <p>对于应用程序里定义的枚举类型， 其值如果是整型，则最好定义为int，方便与相关的其他int值或Integer值的比较</p>
 <p>Integer提供了一系列数据的成员和操作，如Integer.MAX_VALUE，Integer.valueOf(),Integer.compare(),compareTo(),不过一般用的比较少。建议，一般用int类型，这样一方面省去了拆装箱，另一方面也会规避数据比较时可能带来的bug。</p>
 <h2 id="泛型">泛型</h2>
+<hr>
 
   
     
@@ -418,7 +423,45 @@ public static List&lt;A&gt; asList(A... a);</code></pre>
   </table>
 </figure>
 
+<h2 id="no-hutool">NO <code>Hutool</code></h2>
+<hr>
+<h3 id="sort">Sort</h3>
+
+  
+    
+  
+  
+    
+  
+  
+  
+
+
+<figure class="highlight java language-java">
+  <figcaption>
+    
+      <span>sort list</span>
+    
+  </figcaption>
+  <table>
+    <tbody>
+      <tr>
+        <td class="gutter">
+          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre>
+        </td>
+        <td class="code">
+          <pre class="code-highlight language-java java"><code class="java"># import cn.hutool.core.collection.ListUtil;
+ListUtil.sortByProperty(testBeanList, &#34;date&#34;);
+
+testBeanList.sort(Comparator.comparing(LocalDriver::getName));</code></pre>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+
 <h2 id="jdbc">JDBC</h2>
+<hr>
 <p>Once a connection is obtained we can interact with the database.
 The JDBC Statement, CallableStatement, and PreparedStatement interfaces define the methods
 and properties that enable you to send SQL or PL/SQL commands and receive data from your database.</p>
@@ -446,6 +489,10 @@ and properties that enable you to send SQL or PL/SQL commands and receive data f
 </tr>
 </tbody>
 </table>
+<h2 id="threadlocal">THreadLocal</h2>
+<hr>
+<h2 id="jvm">JVM</h2>
+<hr>
               
 
 

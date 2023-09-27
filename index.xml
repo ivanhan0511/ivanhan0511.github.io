@@ -6,11 +6,21 @@
     <description>Recent content on Ivan Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 12 Sep 2023 23:17:00 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 21 Sep 2023 11:20:00 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SpringBoot</title>
+      <link>https://ivanhan0511.github.io/post/java-springboot/</link>
+      <pubDate>Thu, 21 Sep 2023 11:20:00 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/post/java-springboot/</guid>
+      <description>&lt;p&gt;The most important tec core are design and architecture, and the second are IoC and AoP.&lt;/p&gt;
+&lt;p&gt;No best, only better.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Welcome to Ivan&#39;s Blog</title>
       <link>https://ivanhan0511.github.io/post/welcome/</link>
-      <pubDate>Tue, 12 Sep 2023 23:17:00 +0800</pubDate>
+      <pubDate>Thu, 21 Sep 2023 11:20:00 +0800</pubDate>
       
       <guid>https://ivanhan0511.github.io/post/welcome/</guid>
       <description>&lt;p&gt;Some records for software, coffee, music and sports.&lt;/p&gt;</description>
@@ -23,16 +33,6 @@
       
       <guid>https://ivanhan0511.github.io/post/os-windows10/</guid>
       <description>&lt;p&gt;After initialization of Windows, here is the TODO list.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>SpringBoot</title>
-      <link>https://ivanhan0511.github.io/post/java-springboot/</link>
-      <pubDate>Tue, 12 Sep 2023 11:28:00 +0800</pubDate>
-      
-      <guid>https://ivanhan0511.github.io/post/java-springboot/</guid>
-      <description>&lt;p&gt;The most important tec core are design and architecture, and the second are IoC and AoP.&lt;/p&gt;
-&lt;p&gt;No best, only better.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -152,15 +152,6 @@
       <guid>https://ivanhan0511.github.io/post/ecnomics-double-entry-bookkeeping/</guid>
       <description>&lt;p&gt;It is difficult to understand double-entry bookkeeping.
 So here are some tips, wish to be helpful.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Coffee Taste</title>
-      <link>https://ivanhan0511.github.io/post/coffee-qgrader/</link>
-      <pubDate>Thu, 09 Jun 2022 21:38:22 +0800</pubDate>
-      
-      <guid>https://ivanhan0511.github.io/post/coffee-qgrader/</guid>
-      <description>&lt;p&gt;This is a custom summary and does &lt;em&gt;NOT&lt;/em&gt; appear in the post.&lt;/p&gt;</description>
     </item>
     
     <item>

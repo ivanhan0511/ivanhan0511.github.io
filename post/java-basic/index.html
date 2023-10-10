@@ -43,10 +43,10 @@
 <meta property="og:locale" content="en-us">
 
   
-    <meta property="article:published_time" content="2022-09-14T17:05:15">
+    <meta property="article:published_time" content="2022-09-27T15:05:15">
   
   
-    <meta property="article:modified_time" content="2022-09-14T17:05:15">
+    <meta property="article:modified_time" content="2022-09-27T15:05:15">
   
   
   
@@ -256,13 +256,13 @@
   
   <div class="postShorten-meta post-meta">
     
-      <time datetime="2022-09-14T17:05:15&#43;08:00">
+      <time datetime="2022-09-27T15:05:15&#43;08:00">
         
   
   
   
   
-    September 14, 2022
+    September 27, 2022
   
 
       </time>
@@ -300,14 +300,18 @@
         <li><a href="#判断类实例中的各个属性是否有null">判断类实例中的各个属性是否有null</a></li>
       </ul>
     </li>
-    <li><a href="#no-hutool">NO <code>Hutool</code></a>
+    <li><a href="#try-to-be-without-hutool">TRY TO BE WITHOUT <code>Hutool</code></a>
       <ul>
         <li><a href="#sort">Sort</a></li>
+        <li><a href="#date-and-time">Date and Time</a></li>
       </ul>
     </li>
     <li><a href="#jdbc">JDBC</a></li>
     <li><a href="#threadlocal">THreadLocal</a></li>
     <li><a href="#jvm">JVM</a></li>
+    <li><a href="#jdbc-1">JDBC</a></li>
+    <li><a href="#threadlocal-1">THreadLocal</a></li>
+    <li><a href="#jvm-1">JVM</a></li>
   </ul>
 </nav>
 
@@ -423,7 +427,7 @@ public static List&lt;A&gt; asList(A... a);</code></pre>
   </table>
 </figure>
 
-<h2 id="no-hutool">NO <code>Hutool</code></h2>
+<h2 id="try-to-be-without-hutool">TRY TO BE WITHOUT <code>Hutool</code></h2>
 <hr>
 <h3 id="sort">Sort</h3>
 
@@ -454,6 +458,38 @@ public static List&lt;A&gt; asList(A... a);</code></pre>
 ListUtil.sortByProperty(testBeanList, &#34;date&#34;);
 
 testBeanList.sort(Comparator.comparing(LocalDriver::getName));</code></pre>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+
+<h3 id="date-and-time">Date and Time</h3>
+
+  
+    
+  
+  
+    
+  
+  
+  
+
+
+<figure class="highlight java language-java">
+  <figcaption>
+    
+      <span>LocalDateTime</span>
+    
+  </figcaption>
+  <table>
+    <tbody>
+      <tr>
+        <td class="gutter">
+          <pre><span class="line">1</span><br></pre>
+        </td>
+        <td class="code">
+          <pre class="code-highlight language-java java"><code class="java"></code></pre>
         </td>
       </tr>
     </tbody>
@@ -492,6 +528,39 @@ and properties that enable you to send SQL or PL/SQL commands and receive data f
 <h2 id="threadlocal">THreadLocal</h2>
 <hr>
 <h2 id="jvm">JVM</h2>
+<hr>
+<h2 id="jdbc-1">JDBC</h2>
+<hr>
+<p>Once a connection is obtained we can interact with the database.
+The JDBC Statement, CallableStatement, and PreparedStatement interfaces define the methods
+and properties that enable you to send SQL or PL/SQL commands and receive data from your database.</p>
+<p>They also define methods that help bridge data type differences between Java and SQL data types used in a database.</p>
+<p>The following table provides a summary of each interface&rsquo;s purpose to decide on the interface to use.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Interfaces</th>
+<th style="text-align:left">Recommended Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Statement</td>
+<td style="text-align:left">Use this for general-purpose access to your database. Useful when you are using static SQL statements at runtime. The Statement interface cannot accept parameters.</td>
+</tr>
+<tr>
+<td style="text-align:left">PreparedStatement</td>
+<td style="text-align:left">Use this when you plan to use the SQL statements many times. The PreparedStatement interface accepts input parameters at runtime.</td>
+</tr>
+<tr>
+<td style="text-align:left">CallableStatement</td>
+<td style="text-align:left">Use this when you want to access the database stored procedures. The CallableStatement interface can also accept runtime input parameters.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="threadlocal-1">THreadLocal</h2>
+<hr>
+<h2 id="jvm-1">JVM</h2>
 <hr>
               
 

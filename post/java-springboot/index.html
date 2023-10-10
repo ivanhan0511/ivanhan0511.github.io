@@ -47,10 +47,10 @@ No best, only better.">
 <meta property="og:locale" content="en-us">
 
   
-    <meta property="article:published_time" content="2023-09-21T11:20:00">
+    <meta property="article:published_time" content="2023-10-10T15:25:00">
   
   
-    <meta property="article:modified_time" content="2023-09-21T11:20:00">
+    <meta property="article:modified_time" content="2023-10-10T15:25:00">
   
   
   
@@ -278,13 +278,13 @@ No best, only better.">
   
   <div class="postShorten-meta post-meta">
     
-      <time datetime="2023-09-21T11:20:00&#43;08:00">
+      <time datetime="2023-10-10T15:25:00&#43;08:00">
         
   
   
   
   
-    September 21, 2023
+    October 10, 2023
   
 
       </time>
@@ -311,6 +311,7 @@ No best, only better.">
 <h1 id="table-of-contents">Table of Contents</h1>
 <nav id="TableOfContents">
   <ul>
+    <li><a href="#history">HISTORY</a></li>
     <li><a href="#project-architecture-deprecated">PROJECT ARCHITECTURE (Deprecated)</a></li>
     <li><a href="#db-mapper">DB MAPPER</a>
       <ul>
@@ -343,10 +344,29 @@ No best, only better.">
         <li><a href="#命名规范">命名规范</a></li>
       </ul>
     </li>
-    <li><a href="#todo">TODO</a></li>
+    <li><a href="#todo">TODO</a>
+      <ul>
+        <li><a href="#input-validation">Input Validation</a></li>
+        <li><a href="#spring-security">Spring Security</a></li>
+        <li><a href="#controller">Controller</a></li>
+        <li><a href="#service">Service</a></li>
+        <li><a href="#dao-mapper">DAO Mapper</a></li>
+        <li><a href="#output-convert-no-beanutilcopy">Output Convert (No BeanUtil.copy)</a></li>
+        <li><a href="#global-exception-catch">Global exception catch</a></li>
+        <li><a href="#cache-1">Cache</a></li>
+        <li><a href="#background-job">Background Job</a></li>
+        <li><a href="#api-document">API Document</a></li>
+        <li><a href="#deployment">Deployment</a></li>
+        <li><a href="#others">Others</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 
+<h2 id="history">HISTORY</h2>
+<ol>
+<li>Finished a production project which is forked from &ldquo;pear-admin-pro&rdquo;</li>
+</ol>
 <h2 id="project-architecture-deprecated">PROJECT ARCHITECTURE (Deprecated)</h2>
 <p>其实, 如果项目功能足够简单, 项目比较小的话, 其实没有必要分的那么细致. 掌握设计的&quot;度&quot;, 非常重要!</p>
 <div class="alert danger ">
@@ -781,7 +801,88 @@ However, it is always difficult to prefer one between the two.
 </li>
 </ul>
 <h2 id="todo">TODO</h2>
-<p>全局日期转换格式兼容</p>
+<p>DOMAIN AND PROJECTS</p>
+<p>MySQL + Redis + Springboot + Java Security + Vue3 + UniApp + WeChat Authentication一套框架</p>
+<ul>
+<li>个人小程序, 以mall上线一个Demo</li>
+<li>个人小程序, 再以mall模拟一个简化的德海项目/帐篷预定项目</li>
+</ul>
+<h3 id="input-validation">Input Validation</h3>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> Normal <code>@Valid</code> and <code>@Validated</code></li>
+<li><input checked="" disabled="" type="checkbox"> DIY <code>@FlagValidator</code></li>
+</ul>
+<h3 id="spring-security">Spring Security</h3>
+<ul>
+<li><input disabled="" type="checkbox"> admin与security解耦, 不同客户端的认证拦截过滤
+<ul>
+<li><input disabled="" type="checkbox"> 用户名密码新登录, 与token登录 都用一个<code>jwtAuthenticationTokenFilter</code>, 通过<code>UserDetailsService</code>获取用户数据
+<ul>
+<li><input disabled="" type="checkbox"> 通过获取username最终实现定位user</li>
+<li><input disabled="" type="checkbox"> 该token体系与微信认证是否能兼容, 如何兼容?</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> 动态权限过滤, 使用<code>dynamicSecurityFilter</code>, 通过<code>DynamicSecurityMetadataService</code>获取用户权限</li>
+</ul>
+</li>
+</ul>
+<h3 id="controller">Controller</h3>
+<ul>
+<li><input disabled="" type="checkbox"> Web admin</li>
+<li><input disabled="" type="checkbox"> App portal</li>
+</ul>
+<h3 id="service">Service</h3>
+<ul>
+<li><input disabled="" type="checkbox"> Simple service, call mapper function directly?</li>
+<li><input disabled="" type="checkbox"> Complicate service, call multiple mapper functions?</li>
+</ul>
+<h3 id="dao-mapper">DAO Mapper</h3>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> Pure MyBatis</li>
+<li><input disabled="" type="checkbox"> MyBatis PageHelper</li>
+<li><input disabled="" type="checkbox"> org.springframework.data.domain.PageRequest? Or PearAdmin? Or mall?</li>
+</ul>
+<h3 id="output-convert-no-beanutilcopy">Output Convert (No BeanUtil.copy)</h3>
+<ul>
+<li><input disabled="" type="checkbox"> Response structure</li>
+</ul>
+<h3 id="global-exception-catch">Global exception catch</h3>
+<ul>
+<li><input disabled="" type="checkbox"> Exception</li>
+<li><input disabled="" type="checkbox"> Log</li>
+</ul>
+<h3 id="cache-1">Cache</h3>
+<ul>
+<li><input disabled="" type="checkbox"> Redis</li>
+<li><input disabled="" type="checkbox"> <code>@CacheException</code></li>
+</ul>
+<h3 id="background-job">Background Job</h3>
+<h3 id="api-document">API Document</h3>
+<ul>
+<li><input disabled="" type="checkbox"> SwaggerUI</li>
+</ul>
+<h3 id="deployment">Deployment</h3>
+<ul>
+<li><input disabled="" type="checkbox"> DockerCompose deployment?</li>
+</ul>
+<h3 id="others">Others</h3>
+<ul>
+<li>
+<p><input disabled="" type="checkbox"> ElasticSearch NativeSearchQueryBuilder</p>
+</li>
+<li>
+<p>完成以上考察, 大范围API测试</p>
+</li>
+<li>
+<p>最后把mall研究透彻, 并制定商城需求, 改造为可用的BtoB平台, 以及BtoC商城</p>
+</li>
+<li>
+<p>个人订阅号, 熟悉内容的编辑/发布, 练习写作, 提高排版/拍照等后期技能</p>
+</li>
+<li>
+<p>运营, 尝试推送文章</p>
+</li>
+</ul>
               
 
 
@@ -810,7 +911,7 @@ However, it is always difficult to prefer one between the two.
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--disabled">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/welcome/" data-tooltip="Welcome to Ivan&#39;s Blog" aria-label="NEXT: Welcome to Ivan&#39;s Blog">
           
               <i class="fa fa-angle-left"></i>
               <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -818,7 +919,7 @@ However, it is always difficult to prefer one between the two.
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/welcome/" data-tooltip="Welcome to Ivan&#39;s Blog" aria-label="PREVIOUS: Welcome to Ivan&#39;s Blog">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/os-windows10/" data-tooltip="What to do after init Windows" aria-label="PREVIOUS: What to do after init Windows">
           
               <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
               <i class="fa fa-angle-right"></i>
@@ -911,7 +1012,7 @@ However, it is always difficult to prefer one between the two.
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--disabled">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/welcome/" data-tooltip="Welcome to Ivan&#39;s Blog" aria-label="NEXT: Welcome to Ivan&#39;s Blog">
           
               <i class="fa fa-angle-left"></i>
               <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -919,7 +1020,7 @@ However, it is always difficult to prefer one between the two.
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/welcome/" data-tooltip="Welcome to Ivan&#39;s Blog" aria-label="PREVIOUS: Welcome to Ivan&#39;s Blog">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/os-windows10/" data-tooltip="What to do after init Windows" aria-label="PREVIOUS: What to do after init Windows">
           
               <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
               <i class="fa fa-angle-right"></i>

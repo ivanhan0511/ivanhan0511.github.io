@@ -43,10 +43,10 @@
 <meta property="og:locale" content="en-us">
 
   
-    <meta property="article:published_time" content="2022-09-27T15:05:15">
+    <meta property="article:published_time" content="2022-10-26T14:05:15">
   
   
-    <meta property="article:modified_time" content="2022-09-27T15:05:15">
+    <meta property="article:modified_time" content="2022-10-26T14:05:15">
   
   
   
@@ -256,13 +256,13 @@
   
   <div class="postShorten-meta post-meta">
     
-      <time datetime="2022-09-27T15:05:15&#43;08:00">
+      <time datetime="2022-10-26T14:05:15&#43;08:00">
         
   
   
   
   
-    September 27, 2022
+    October 26, 2022
   
 
       </time>
@@ -288,34 +288,32 @@
 <h1 id="table-of-contents">Table of Contents</h1>
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#类型对比">类型对比</a>
+    <li><a href="#type">TYPE</a>
       <ul>
         <li><a href="#string">String[]</a></li>
         <li><a href="#arraylist">ArrayList</a></li>
         <li><a href="#int-or-integer">int or Integer</a></li>
       </ul>
     </li>
-    <li><a href="#泛型">泛型</a>
+    <li><a href="#泛型">泛型</a></li>
+    <li><a href="#thread">THREAD</a>
       <ul>
-        <li><a href="#判断类实例中的各个属性是否有null">判断类实例中的各个属性是否有null</a></li>
-      </ul>
-    </li>
-    <li><a href="#try-to-be-without-hutool">TRY TO BE WITHOUT <code>Hutool</code></a>
-      <ul>
-        <li><a href="#sort">Sort</a></li>
-        <li><a href="#date-and-time">Date and Time</a></li>
+        <li><a href="#threadlocal">ThreadLocal</a></li>
+        <li><a href="#thread-lock">Thread Lock</a></li>
       </ul>
     </li>
     <li><a href="#jdbc">JDBC</a></li>
-    <li><a href="#threadlocal">THreadLocal</a></li>
     <li><a href="#jvm">JVM</a></li>
-    <li><a href="#jdbc-1">JDBC</a></li>
-    <li><a href="#threadlocal-1">THreadLocal</a></li>
-    <li><a href="#jvm-1">JVM</a></li>
+    <li><a href="#tools">TOOLS</a>
+      <ul>
+        <li><a href="#判断类实例中的各个属性是否有null">判断类实例中的各个属性是否有null</a></li>
+        <li><a href="#兼容多种时间格式的输入">兼容多种时间格式的输入</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 
-<h2 id="类型对比">类型对比</h2>
+<h2 id="type">TYPE</h2>
 <hr>
 <h3 id="string">String[]</h3>
 <h3 id="arraylist">ArrayList</h3>
@@ -379,6 +377,69 @@ public static List&lt;A&gt; asList(A... a);</code></pre>
 用泛型是因为可以使该方法的返回值成为一个指定类型的集合，这样再次使用该集合的时候就有一个明确的类型了，
 这使的在将来该类型发生改变的时候编译器会报错，提醒你做相应的修改，而不是让问题暴露在运行阶段。</p>
 </div>
+<h2 id="thread">THREAD</h2>
+<hr>
+<h3 id="threadlocal">ThreadLocal</h3>
+<h3 id="thread-lock">Thread Lock</h3>
+<p>一、ReentrantLock是用来做什么的？
+二、ReentrantLock的实现原理是什么？
+三、ReentrantLock对比于Synchronized有哪些优缺点？
+四、ReentrantLock的简单使用</p>
+<p>一、ReentrantLock是用来做什么的？
+这个类是JUC工具包中对线程安全问题提供的一种解决方案，它主要是用来给对象上锁，保证同一时间这能有一个线程在访问当前对象。这样处理是为了防止如果一个线程对某个公共变量进行了改变，而其它线程读取时读出来的是原有数据导致脏读的问题。</p>
+<p>二、ReentrantLock的实现原理是什么？
+ReentrantLock主要是通过同步队列和CAS机制来实现的，它实现的过程中主要包含下面几个属性：</p>
+<p>status：锁状态，0表示没有线程获取锁，1表示已有线程获取锁
+exclusiveOwnerThread：当前持有锁的线程
+Node：节点，是ReentrantLock内部维持的一个双向链表（同步阻塞队列）的基本构成
+具体流程</p>
+<p>1、上锁更新锁状态：当A线程持有锁时，会通过CAS将status状态置为1，并将A线程自身存入exclusiveOwnerThread属性当中；
+2、线程入队：而后线程B通过CAS获取锁时发现无法获取锁，此时就会获取node信息，但是由于node双向链表是null所以会通过CAS来创建一个双向链表的head对象，之后再把线程B封装成的Node节点通过尾插法接入双向链表的尾部；
+3、线程阻塞：入队完成后再调用park方法进行阻塞；
+4、释放锁并更新锁状态：当A线程释放锁时会将status属性重置为0，且把exclusiveOwnerThread置为null；
+5、唤醒线程：A线程释放锁完毕后会调用unpark方法来唤醒双向链表中下一节点的线程B;</p>
+<p>三、ReentrantLock对比于Synchronized有哪些优缺点？
+1、ReentrantLock的锁状态是可见的，而Synchronized的锁状态是不可见的；
+2、ReentrantLock是JDK层面的实现，而Synchronized是JVM层面的实现；
+3、ReentrantLock需要手动释放锁，而Synchronized不需要手动释放锁；
+4、ReentrantLock可以是非公平锁也可以是公平锁，而Synchronized只能是非公平锁；
+5、ReentrantLock是可被中断的，而Synchronized是不可悲中断的；
+6、Synchronized在特定条件下是后来的线程先获取锁，而ReentrantLock是先来的线程先获取锁；
+四、ReentrantLock的简单使用</p>
+<p><a href="https://blog.csdn.net/sqL520lT/article/details/122096431">另一篇</a></p>
+<h2 id="jdbc">JDBC</h2>
+<hr>
+<p>Once a connection is obtained we can interact with the database.
+The JDBC Statement, CallableStatement, and PreparedStatement interfaces define the methods
+and properties that enable you to send SQL or PL/SQL commands and receive data from your database.</p>
+<p>They also define methods that help bridge data type differences between Java and SQL data types used in a database.</p>
+<p>The following table provides a summary of each interface&rsquo;s purpose to decide on the interface to use.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Interfaces</th>
+<th style="text-align:left">Recommended Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Statement</td>
+<td style="text-align:left">Use this for general-purpose access to your database. Useful when you are using static SQL statements at runtime. The Statement interface cannot accept parameters.</td>
+</tr>
+<tr>
+<td style="text-align:left">PreparedStatement</td>
+<td style="text-align:left">Use this when you plan to use the SQL statements many times. The PreparedStatement interface accepts input parameters at runtime.</td>
+</tr>
+<tr>
+<td style="text-align:left">CallableStatement</td>
+<td style="text-align:left">Use this when you want to access the database stored procedures. The CallableStatement interface can also accept runtime input parameters.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="jvm">JVM</h2>
+<hr>
+<h2 id="tools">TOOLS</h2>
+<hr>
 <h3 id="判断类实例中的各个属性是否有null">判断类实例中的各个属性是否有null</h3>
 
   
@@ -427,9 +488,21 @@ public static List&lt;A&gt; asList(A... a);</code></pre>
   </table>
 </figure>
 
-<h2 id="try-to-be-without-hutool">TRY TO BE WITHOUT <code>Hutool</code></h2>
-<hr>
-<h3 id="sort">Sort</h3>
+<h3 id="兼容多种时间格式的输入">兼容多种时间格式的输入</h3>
+
+
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+
 
   
     
@@ -437,131 +510,126 @@ public static List&lt;A&gt; asList(A... a);</code></pre>
   
     
   
-  
-  
 
-
-<figure class="highlight java language-java">
+<figure class="codeblock codeblock--tabbed">
   <figcaption>
     
-      <span>sort list</span>
+      <span><a href="java">DateForamtUtil</a></span>
     
+    <ul class="tabs">
+      
+        <li class="tab active">util</li>
+      
+        <li class="tab ">call</li>
+      
+    </ul>
   </figcaption>
-  <table>
-    <tbody>
-      <tr>
-        <td class="gutter">
-          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre>
-        </td>
-        <td class="code">
-          <pre class="code-highlight language-java java"><code class="java"># import cn.hutool.core.collection.ListUtil;
-ListUtil.sortByProperty(testBeanList, &#34;date&#34;);
+  <div class="tabs-content">
+    
+      
+      <figure class="highlight language-util util" style="display: block;">
+        <table>
+          <tbody>
+            <tr>
+              <td class="gutter">
+                <pre><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br><span>36</span><br><span>37</span><br><span>38</span><br><span>39</span><br><span>40</span><br><span>41</span><br><span>42</span><br><span>43</span><br><span>44</span><br><span>45</span><br><span>46</span><br><span>47</span><br><span>48</span><br><span>49</span><br><span>50</span><br><span>51</span><br></pre>
+              </td>
+              <td class="code">
+                <pre class="code-highlight language-util util"><code class="util">import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.HashMap;
+import java.util.regex.Pattern;
 
-testBeanList.sort(Comparator.comparing(LocalDriver::getName));</code></pre>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+/**
+ * author : toby
+ * e-mail : 13128826083@163.com
+ * time : 2018/2/2
+ * desc :
+ */
+public class DateFormatUtil {
+
+    /**
+     * 格式化时间
+     *
+     * @param dateStr
+     * @return
+     */
+    public static String dateRegFormat(String dateStr) {
+        HashMap&lt;String, String&gt; dateRegFormat = new HashMap&lt;&gt;();
+        // 2014年3月12日 13时5分34秒，2014-03-12 12:05:34，2014/3/12 12:5:34
+        dateRegFormat.put(&#34;^\\d{4}\\D&#43;\\d{1,2}\\D&#43;\\d{1,2}\\D&#43;\\d{1,2}\\D&#43;\\d{1,2}\\D&#43;\\d{1,2}\\D*$&#34;, &#34;yyyy-MM-dd-HH-mm-ss&#34;);
+
+        // 2014-03-12 12:05，2014-3-12 12:5
+        dateRegFormat.put(&#34;^\\d{4}\\D&#43;\\d{1,2}\\D&#43;\\d{1,2}\\D&#43;\\d{1,2}\\D&#43;\\d{1,2}\\D*$&#34;, &#34;yyyy-MM-dd-HH-mm&#34;);
+
+        // 2014-03-12
+        dateRegFormat.put(&#34;^\\d{4}\\D&#43;\\d{1,2}\\D&#43;\\d{1,2}$&#34;, &#34;yyyy-MM-dd&#34;);
+
+        DateFormat formatter1 = new SimpleDateFormat(&#34;yyyy-MM-dd HH:mm:ss&#34;);
+        DateFormat formatter2;
+        String dateReplace;
+        String strSuccess = &#34;&#34;;
+        try {
+            for (String key : dateRegFormat.keySet()) {
+                if (Pattern.compile(key).matcher(dateStr).matches()) {
+                    formatter2 = new SimpleDateFormat(dateRegFormat.get(key));
+                    dateReplace = dateStr.replaceAll(&#34;\\D&#43;&#34;, &#34;-&#34;);
+                    strSuccess = formatter1.format(formatter2.parse(dateReplace));
+                    break;
+                }
+            }
+        } catch (Exception e) {
+            System.err.println(&#34;---------日期格式无效-----------&#34; &#43; dateStr);
+            throw new Exception(&#34;日期格式无效&#34;);
+        } finally {
+            return strSuccess;
+        }
+    }
+}</code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </figure>
+    
+      
+      <figure class="highlight language-call call" style="display: none;">
+        <table>
+          <tbody>
+            <tr>
+              <td class="gutter">
+                <pre><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br></pre>
+              </td>
+              <td class="code">
+                <pre class="code-highlight language-call call"><code class="call">private void testDateFormat() {
+    String[] dateStrArray = new String[]{
+        &#34;2018-03-12 12:05:34&#34;,
+        &#34;2018-03-12 12:05&#34;,
+        &#34;2018-3-12 12:5:34&#34;,
+        &#34;2018-3-12 12:5&#34;,
+        &#34;2018-3-12&#34;,
+        &#34;2018-03-12&#34;,
+        &#34;2018/03/12 12:05:34&#34;,
+        &#34;2018/3/12 12:5:34&#34;,
+        &#34;2018/03/12 12:05&#34;,
+        &#34;2018/3/12 12:5&#34;,
+        &#34;2018/03/12&#34;,
+        &#34;2018年3月12日 13时5分34秒&#34;,
+        &#34;2018年3月12日 13时5分&#34;,
+        &#34;2018年03月12日 13时05分34秒&#34;
+    };
+    for (int i = 0; i &lt; dateStrArray.length; i&#43;&#43;) {
+        Log.d(&#34;----index----&gt;&#34; &#43; i, DateFormatUtil.dateRegFormat(dateStrArray[i]));
+    }
+}</code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </figure>
+    
+  </div>
 </figure>
-
-<h3 id="date-and-time">Date and Time</h3>
-
-  
-    
-  
-  
-    
-  
-  
-  
-
-
-<figure class="highlight java language-java">
-  <figcaption>
-    
-      <span>LocalDateTime</span>
-    
-  </figcaption>
-  <table>
-    <tbody>
-      <tr>
-        <td class="gutter">
-          <pre><span class="line">1</span><br></pre>
-        </td>
-        <td class="code">
-          <pre class="code-highlight language-java java"><code class="java"></code></pre>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</figure>
-
-<h2 id="jdbc">JDBC</h2>
-<hr>
-<p>Once a connection is obtained we can interact with the database.
-The JDBC Statement, CallableStatement, and PreparedStatement interfaces define the methods
-and properties that enable you to send SQL or PL/SQL commands and receive data from your database.</p>
-<p>They also define methods that help bridge data type differences between Java and SQL data types used in a database.</p>
-<p>The following table provides a summary of each interface&rsquo;s purpose to decide on the interface to use.</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Interfaces</th>
-<th style="text-align:left">Recommended Use</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Statement</td>
-<td style="text-align:left">Use this for general-purpose access to your database. Useful when you are using static SQL statements at runtime. The Statement interface cannot accept parameters.</td>
-</tr>
-<tr>
-<td style="text-align:left">PreparedStatement</td>
-<td style="text-align:left">Use this when you plan to use the SQL statements many times. The PreparedStatement interface accepts input parameters at runtime.</td>
-</tr>
-<tr>
-<td style="text-align:left">CallableStatement</td>
-<td style="text-align:left">Use this when you want to access the database stored procedures. The CallableStatement interface can also accept runtime input parameters.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="threadlocal">THreadLocal</h2>
-<hr>
-<h2 id="jvm">JVM</h2>
-<hr>
-<h2 id="jdbc-1">JDBC</h2>
-<hr>
-<p>Once a connection is obtained we can interact with the database.
-The JDBC Statement, CallableStatement, and PreparedStatement interfaces define the methods
-and properties that enable you to send SQL or PL/SQL commands and receive data from your database.</p>
-<p>They also define methods that help bridge data type differences between Java and SQL data types used in a database.</p>
-<p>The following table provides a summary of each interface&rsquo;s purpose to decide on the interface to use.</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Interfaces</th>
-<th style="text-align:left">Recommended Use</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Statement</td>
-<td style="text-align:left">Use this for general-purpose access to your database. Useful when you are using static SQL statements at runtime. The Statement interface cannot accept parameters.</td>
-</tr>
-<tr>
-<td style="text-align:left">PreparedStatement</td>
-<td style="text-align:left">Use this when you plan to use the SQL statements many times. The PreparedStatement interface accepts input parameters at runtime.</td>
-</tr>
-<tr>
-<td style="text-align:left">CallableStatement</td>
-<td style="text-align:left">Use this when you want to access the database stored procedures. The CallableStatement interface can also accept runtime input parameters.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="threadlocal-1">THreadLocal</h2>
-<hr>
-<h2 id="jvm-1">JVM</h2>
-<hr>
               
 
 
@@ -588,7 +656,7 @@ and properties that enable you to send SQL or PL/SQL commands and receive data f
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/health-thought/" data-tooltip="Thought Fragments about Health" aria-label="NEXT: Thought Fragments about Health">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/pid-for-coffee/" data-tooltip="PID For Coffee" aria-label="NEXT: PID For Coffee">
           
               <i class="fa fa-angle-left"></i>
               <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -596,7 +664,7 @@ and properties that enable you to send SQL or PL/SQL commands and receive data f
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/mq-mqtt-basic/" data-tooltip="MQTT And Kafka" aria-label="PREVIOUS: MQTT And Kafka">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/health-thought/" data-tooltip="Thought Fragments about Health" aria-label="PREVIOUS: Thought Fragments about Health">
           
               <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
               <i class="fa fa-angle-right"></i>
@@ -689,7 +757,7 @@ and properties that enable you to send SQL or PL/SQL commands and receive data f
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/health-thought/" data-tooltip="Thought Fragments about Health" aria-label="NEXT: Thought Fragments about Health">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/pid-for-coffee/" data-tooltip="PID For Coffee" aria-label="NEXT: PID For Coffee">
           
               <i class="fa fa-angle-left"></i>
               <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -697,7 +765,7 @@ and properties that enable you to send SQL or PL/SQL commands and receive data f
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/mq-mqtt-basic/" data-tooltip="MQTT And Kafka" aria-label="PREVIOUS: MQTT And Kafka">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/health-thought/" data-tooltip="Thought Fragments about Health" aria-label="PREVIOUS: Thought Fragments about Health">
           
               <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
               <i class="fa fa-angle-right"></i>

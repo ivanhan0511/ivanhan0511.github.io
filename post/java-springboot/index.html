@@ -16,7 +16,7 @@
     
   },
   "name":"Ivan Blog",
-  "description":"\u003cp\u003eThe most important TECH cores are design and architecture which service for business, and then the second are IoC and AoP.\u003c\/p\u003e\n\u003cp\u003eNO BEST, ONLY BETTER.\u003c\/p\u003e",
+  "description":"\u003cp\u003eThe most important TECH cores are design and architecture which service for business, and then the second are IoC and AoP.\u003c\/p\u003e\n\u003cp\u003eNO BEST, ONLY BETTER.\u003c\/p\u003e\n\u003cp\u003eTODO:\u003c\/p\u003e\n\u003cul\u003e\n\u003cli\u003e个人小程序, 以mall上线一个测试版\u003c\/li\u003e\n\u003cli\u003e个人小程序, 再自己创建一个项目, 模拟一个真是项目\u003c\/li\u003e\n\u003c\/ul\u003e",
   "url":"https:\/\/ivanhan0511.github.io\/post\/java-springboot\/",
   "keywords":"[java, springboot, framework, Ivan, SoftwareEngineer, C\/C\u002b\u002b, Java, Coffee, Bass, Bicycle, Badminton]"
 }
@@ -29,11 +29,21 @@
 <meta name="author" content="Ivan Han">
 <meta name="keywords" content="java, springboot, framework, Ivan, SoftwareEngineer, C/C&#43;&#43;, Java, Coffee, Bass, Bicycle, Badminton">
 <meta name="description" content="The most important TECH cores are design and architecture which service for business, and then the second are IoC and AoP.
-NO BEST, ONLY BETTER.">
+NO BEST, ONLY BETTER.
+TODO:
+
+个人小程序, 以mall上线一个测试版
+个人小程序, 再自己创建一个项目, 模拟一个真是项目
+">
 
 
 <meta property="og:description" content="The most important TECH cores are design and architecture which service for business, and then the second are IoC and AoP.
-NO BEST, ONLY BETTER.">
+NO BEST, ONLY BETTER.
+TODO:
+
+个人小程序, 以mall上线一个测试版
+个人小程序, 再自己创建一个项目, 模拟一个真是项目
+">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SpringBoot">
 <meta name="twitter:title" content="SpringBoot">
@@ -41,16 +51,26 @@ NO BEST, ONLY BETTER.">
 <meta property="twitter:url" content="https://ivanhan0511.github.io/post/java-springboot/">
 <meta property="og:site_name" content="Ivan Blog">
 <meta property="og:description" content="The most important TECH cores are design and architecture which service for business, and then the second are IoC and AoP.
-NO BEST, ONLY BETTER.">
+NO BEST, ONLY BETTER.
+TODO:
+
+个人小程序, 以mall上线一个测试版
+个人小程序, 再自己创建一个项目, 模拟一个真是项目
+">
 <meta name="twitter:description" content="The most important TECH cores are design and architecture which service for business, and then the second are IoC and AoP.
-NO BEST, ONLY BETTER.">
+NO BEST, ONLY BETTER.
+TODO:
+
+个人小程序, 以mall上线一个测试版
+个人小程序, 再自己创建一个项目, 模拟一个真是项目
+">
 <meta property="og:locale" content="en-us">
 
   
-    <meta property="article:published_time" content="2023-10-26T10:15:00">
+    <meta property="article:published_time" content="2023-10-26T14:14:00">
   
   
-    <meta property="article:modified_time" content="2023-10-26T10:15:00">
+    <meta property="article:modified_time" content="2023-10-26T14:14:00">
   
   
   
@@ -278,7 +298,7 @@ NO BEST, ONLY BETTER.">
   
   <div class="postShorten-meta post-meta">
     
-      <time datetime="2023-10-26T10:15:00&#43;08:00">
+      <time datetime="2023-10-26T14:14:00&#43;08:00">
         
   
   
@@ -308,6 +328,11 @@ NO BEST, ONLY BETTER.">
             <div class="main-content-wrap">
               <p>The most important TECH cores are design and architecture which service for business, and then the second are IoC and AoP.</p>
 <p>NO BEST, ONLY BETTER.</p>
+<p>TODO:</p>
+<ul>
+<li>个人小程序, 以mall上线一个测试版</li>
+<li>个人小程序, 再自己创建一个项目, 模拟一个真是项目</li>
+</ul>
 <h1 id="table-of-contents">Table of Contents</h1>
 <nav id="TableOfContents">
   <ul>
@@ -320,7 +345,6 @@ NO BEST, ONLY BETTER.">
         <li><a href="#provider">Provider</a></li>
         <li><a href="#handler">Handler</a></li>
         <li><a href="#miscellaneous">Miscellaneous</a></li>
-        <li><a href="#userdetails还是个坑-不适合目前这个项目">UserDetails还是个坑, 不适合目前这个项目</a></li>
       </ul>
     </li>
     <li><a href="#controller-and-input-validation">CONTROLLER AND INPUT VALIDATION</a></li>
@@ -336,19 +360,26 @@ NO BEST, ONLY BETTER.">
         </li>
       </ul>
     </li>
-    <li><a href="#output-convert-no-beanutilcopy">Output Convert (No BeanUtil.copy)</a></li>
+    <li><a href="#output-convert">OUTPUT CONVERT</a></li>
     <li><a href="#global-common-module">GLOBAL COMMON MODULE</a>
       <ul>
-        <li><a href="#logger">LOGGER</a></li>
+        <li><a href="#commonresult">CommonResult</a></li>
+        <li><a href="#exception">Exception</a></li>
+        <li><a href="#logger">Logger</a></li>
       </ul>
     </li>
     <li><a href="#connection-pool">CONNECTION POOL</a></li>
     <li><a href="#cache">CACHE</a></li>
     <li><a href="#background-job">BACKGROUND JOB</a></li>
-    <li><a href="#api-document">API DOCUMENT</a></li>
-    <li><a href="#deployment">DEPLOYMENT</a></li>
-    <li><a href="#others">OTHERS</a></li>
     <li><a href="#testing">TESTING</a></li>
+    <li><a href="#api-document">API DOCUMENT</a></li>
+    <li><a href="#deployment">DEPLOYMENT</a>
+      <ul>
+        <li><a href="#docker">Docker</a></li>
+        <li><a href="#jar">JAR</a></li>
+      </ul>
+    </li>
+    <li><a href="#others">OTHERS</a></li>
     <li><a href="#operation">OPERATION</a></li>
     <li><a href="#appendix">APPENDIX</a>
       <ul>
@@ -359,10 +390,6 @@ NO BEST, ONLY BETTER.">
   </ul>
 </nav>
 
-<ul>
-<li>个人小程序, 以mall上线一个测试版</li>
-<li>个人小程序, 再自己创建一个项目, 模拟一个真是项目</li>
-</ul>
 <h2 id="project-architecture">PROJECT ARCHITECTURE</h2>
 <hr>
 <ol>
@@ -454,7 +481,7 @@ NO BEST, ONLY BETTER.">
 <li>还涉及到与微信服务器交换opencode, 交换session, 再让用户授权手机号并最终拿到OpenId 等一系列动作</li>
 <li>还要设置缓存, 清空与微信服务器交换时中间状态的cache</li>
 </ul>
-<h3 id="userdetails还是个坑-不适合目前这个项目">UserDetails还是个坑, 不适合目前这个项目</h3>
+<p>UserDetails还是个坑, 不适合目前这个项目</p>
 <h2 id="controller-and-input-validation">CONTROLLER AND INPUT VALIDATION</h2>
 <hr>
 <ul>
@@ -745,7 +772,7 @@ public class CombineServiceImpl implements CombineService {
 <p>[TODO]:
 MyBatis的手动切换, 后续再深入学习<br>
 And how to <code>DynamicDataSourceContextHolder.push()</code> and <code>DynamicDataSourceContextHolder.poll()</code>?</p>
-<h2 id="output-convert-no-beanutilcopy">Output Convert (No BeanUtil.copy)</h2>
+<h2 id="output-convert">OUTPUT CONVERT</h2>
 <hr>
 <ul>
 <li><input disabled="" type="checkbox"> If simple, use DTO to response directly</li>
@@ -759,7 +786,9 @@ And how to <code>DynamicDataSourceContextHolder.push()</code> and <code>DynamicD
 <li><input disabled="" type="checkbox"> Log</li>
 <li><input disabled="" type="checkbox"> Intercepter</li>
 </ul>
-<h3 id="logger">LOGGER</h3>
+<h3 id="commonresult">CommonResult</h3>
+<h3 id="exception">Exception</h3>
+<h3 id="logger">Logger</h3>
 <p><strong>slf4j.Logger and log4j.Logger</strong>
 <blockquote>
   <p>
@@ -814,6 +843,11 @@ However, it is always difficult to prefer one between the two.
 </ul>
 <h2 id="background-job">BACKGROUND JOB</h2>
 <hr>
+<h2 id="testing">TESTING</h2>
+<hr>
+<ul>
+<li>完成以上考察, 大范围API测试</li>
+</ul>
 <h2 id="api-document">API DOCUMENT</h2>
 <hr>
 <ul>
@@ -822,18 +856,15 @@ However, it is always difficult to prefer one between the two.
 </ul>
 <h2 id="deployment">DEPLOYMENT</h2>
 <hr>
+<h3 id="docker">Docker</h3>
 <ul>
 <li><input disabled="" type="checkbox"> DockerCompose deployment in single server?</li>
 </ul>
+<h3 id="jar">JAR</h3>
 <h2 id="others">OTHERS</h2>
 <hr>
 <ul>
 <li><input disabled="" type="checkbox"> ElasticSearch NativeSearchQueryBuilder</li>
-</ul>
-<h2 id="testing">TESTING</h2>
-<hr>
-<ul>
-<li>完成以上考察, 大范围API测试</li>
 </ul>
 <h2 id="operation">OPERATION</h2>
 <hr>
@@ -919,7 +950,7 @@ However, it is always difficult to prefer one between the two.
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/os-windows10/" data-tooltip="What to do after init Windows" aria-label="PREVIOUS: What to do after init Windows">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/js-vue3/" data-tooltip="VUE3" aria-label="PREVIOUS: VUE3">
           
               <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
               <i class="fa fa-angle-right"></i>
@@ -1020,7 +1051,7 @@ However, it is always difficult to prefer one between the two.
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/os-windows10/" data-tooltip="What to do after init Windows" aria-label="PREVIOUS: What to do after init Windows">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/js-vue3/" data-tooltip="VUE3" aria-label="PREVIOUS: VUE3">
           
               <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
               <i class="fa fa-angle-right"></i>

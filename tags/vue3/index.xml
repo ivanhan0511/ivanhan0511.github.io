@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>VUE on Ivan Blog</title>
-    <link>https://ivanhan0511.github.io/categories/vue/</link>
-    <description>Recent content in VUE on Ivan Blog</description>
+    <title>vue3 on Ivan Blog</title>
+    <link>https://ivanhan0511.github.io/tags/vue3/</link>
+    <description>Recent content in vue3 on Ivan Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 26 Oct 2023 14:13:00 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/categories/vue/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 26 Oct 2023 14:13:00 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/tags/vue3/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>VUE3</title>
       <link>https://ivanhan0511.github.io/post/js-vue3/</link>

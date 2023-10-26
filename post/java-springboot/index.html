@@ -16,9 +16,9 @@
     
   },
   "name":"Ivan Blog",
-  "description":"\u003cp\u003eThe most important tec core are design and architecture, and the second are IoC and AoP.\u003c\/p\u003e\n\u003cp\u003eNo best, only better.\u003c\/p\u003e",
+  "description":"\u003cp\u003eThe most important TECH cores are design and architecture which service for business, and then the second are IoC and AoP.\u003c\/p\u003e\n\u003cp\u003eNO BEST, ONLY BETTER.\u003c\/p\u003e",
   "url":"https:\/\/ivanhan0511.github.io\/post\/java-springboot\/",
-  "keywords":"[java, springboot, framework, domain, Ivan, SoftwareEngineer, C\/C\u002b\u002b, Java, Coffee, Bass, Bicycle, Badminton]"
+  "keywords":"[java, springboot, framework, Ivan, SoftwareEngineer, C\/C\u002b\u002b, Java, Coffee, Bass, Bicycle, Badminton]"
 }
 
 </script>
@@ -27,30 +27,30 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="generator" content="Hugo 0.117.0 with theme Tranquilpeak 0.5.3-BETA">
 <meta name="author" content="Ivan Han">
-<meta name="keywords" content="java, springboot, framework, domain, Ivan, SoftwareEngineer, C/C&#43;&#43;, Java, Coffee, Bass, Bicycle, Badminton">
-<meta name="description" content="The most important tec core are design and architecture, and the second are IoC and AoP.
-No best, only better.">
+<meta name="keywords" content="java, springboot, framework, Ivan, SoftwareEngineer, C/C&#43;&#43;, Java, Coffee, Bass, Bicycle, Badminton">
+<meta name="description" content="The most important TECH cores are design and architecture which service for business, and then the second are IoC and AoP.
+NO BEST, ONLY BETTER.">
 
 
-<meta property="og:description" content="The most important tec core are design and architecture, and the second are IoC and AoP.
-No best, only better.">
+<meta property="og:description" content="The most important TECH cores are design and architecture which service for business, and then the second are IoC and AoP.
+NO BEST, ONLY BETTER.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SpringBoot">
 <meta name="twitter:title" content="SpringBoot">
 <meta property="og:url" content="https://ivanhan0511.github.io/post/java-springboot/">
 <meta property="twitter:url" content="https://ivanhan0511.github.io/post/java-springboot/">
 <meta property="og:site_name" content="Ivan Blog">
-<meta property="og:description" content="The most important tec core are design and architecture, and the second are IoC and AoP.
-No best, only better.">
-<meta name="twitter:description" content="The most important tec core are design and architecture, and the second are IoC and AoP.
-No best, only better.">
+<meta property="og:description" content="The most important TECH cores are design and architecture which service for business, and then the second are IoC and AoP.
+NO BEST, ONLY BETTER.">
+<meta name="twitter:description" content="The most important TECH cores are design and architecture which service for business, and then the second are IoC and AoP.
+NO BEST, ONLY BETTER.">
 <meta property="og:locale" content="en-us">
 
   
-    <meta property="article:published_time" content="2023-10-24T15:15:00">
+    <meta property="article:published_time" content="2023-10-26T10:15:00">
   
   
-    <meta property="article:modified_time" content="2023-10-24T15:15:00">
+    <meta property="article:modified_time" content="2023-10-26T10:15:00">
   
   
   
@@ -64,7 +64,7 @@ No best, only better.">
     
       <meta property="article:tag" content="SpringBoot">
     
-      <meta property="article:tag" content="DomainDesignDrive">
+      <meta property="article:tag" content="TraditionalDesign">
     
   
 
@@ -278,13 +278,13 @@ No best, only better.">
   
   <div class="postShorten-meta post-meta">
     
-      <time datetime="2023-10-24T15:15:00&#43;08:00">
+      <time datetime="2023-10-26T10:15:00&#43;08:00">
         
   
   
   
   
-    October 24, 2023
+    October 26, 2023
   
 
       </time>
@@ -306,14 +306,26 @@ No best, only better.">
           
           <div class="post-content markdown">
             <div class="main-content-wrap">
-              <p>The most important tec core are design and architecture, and the second are IoC and AoP.</p>
-<p>No best, only better.</p>
+              <p>The most important TECH cores are design and architecture which service for business, and then the second are IoC and AoP.</p>
+<p>NO BEST, ONLY BETTER.</p>
 <h1 id="table-of-contents">Table of Contents</h1>
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#history">HISTORY</a></li>
-    <li><a href="#project-architecture-deprecated">PROJECT ARCHITECTURE (Deprecated)</a></li>
-    <li><a href="#db-mapper">DB MAPPER</a>
+    <li><a href="#project-architecture">PROJECT ARCHITECTURE</a></li>
+    <li><a href="#security">SECURITY</a>
+      <ul>
+        <li><a href="#mall">mall</a></li>
+        <li><a href="#configure">Configure</a></li>
+        <li><a href="#filter">Filter</a></li>
+        <li><a href="#provider">Provider</a></li>
+        <li><a href="#handler">Handler</a></li>
+        <li><a href="#miscellaneous">Miscellaneous</a></li>
+        <li><a href="#userdetails还是个坑-不适合目前这个项目">UserDetails还是个坑, 不适合目前这个项目</a></li>
+      </ul>
+    </li>
+    <li><a href="#controller-and-input-validation">CONTROLLER AND INPUT VALIDATION</a></li>
+    <li><a href="#service">SERVICE</a></li>
+    <li><a href="#dao-mapper">DAO MAPPER</a>
       <ul>
         <li><a href="#mapper-design">Mapper Design</a></li>
         <li><a href="#multidb--transactional">MultiDB &amp; Transactional</a>
@@ -324,55 +336,39 @@ No best, only better.">
         </li>
       </ul>
     </li>
-    <li><a href="#security">SECURITY</a>
+    <li><a href="#output-convert-no-beanutilcopy">Output Convert (No BeanUtil.copy)</a></li>
+    <li><a href="#global-common-module">GLOBAL COMMON MODULE</a>
       <ul>
-        <li><a href="#configure">Configure</a></li>
-        <li><a href="#filter">Filter</a></li>
-        <li><a href="#provider">Provider</a></li>
-        <li><a href="#handler">Handler</a></li>
-        <li><a href="#miscellaneous">Miscellaneous</a></li>
-        <li><a href="#userdetails还是个坑-不适合目前这个项目">UserDetails还是个坑, 不适合目前这个项目</a></li>
+        <li><a href="#logger">LOGGER</a></li>
       </ul>
     </li>
-    <li><a href="#logger">LOGGER</a></li>
-    <li><a href="#连接池选型">连接池选型</a></li>
+    <li><a href="#connection-pool">CONNECTION POOL</a></li>
     <li><a href="#cache">CACHE</a></li>
-    <li><a href="#intercepter">INTERCEPTER</a></li>
+    <li><a href="#background-job">BACKGROUND JOB</a></li>
+    <li><a href="#api-document">API DOCUMENT</a></li>
+    <li><a href="#deployment">DEPLOYMENT</a></li>
+    <li><a href="#others">OTHERS</a></li>
+    <li><a href="#testing">TESTING</a></li>
+    <li><a href="#operation">OPERATION</a></li>
     <li><a href="#appendix">APPENDIX</a>
       <ul>
         <li><a href="#缩写信息">缩写信息</a></li>
         <li><a href="#命名规范">命名规范</a></li>
       </ul>
     </li>
-    <li><a href="#todo">TODO</a>
-      <ul>
-        <li><a href="#input-validation">Input Validation</a></li>
-        <li><a href="#spring-security">Spring Security</a></li>
-        <li><a href="#controller">Controller</a></li>
-        <li><a href="#service">Service</a></li>
-        <li><a href="#dao-mapper">DAO Mapper</a></li>
-        <li><a href="#output-convert-no-beanutilcopy">Output Convert (No BeanUtil.copy)</a></li>
-        <li><a href="#global-exception-catch">Global exception catch</a></li>
-        <li><a href="#cache-1">Cache</a></li>
-        <li><a href="#background-job">Background Job</a></li>
-        <li><a href="#api-document">API Document</a></li>
-        <li><a href="#deployment">Deployment</a></li>
-        <li><a href="#others">Others</a></li>
-      </ul>
-    </li>
   </ul>
 </nav>
 
-<h2 id="history">HISTORY</h2>
-<ol>
-<li>Finished a production project which is forked from &ldquo;pear-admin-pro&rdquo;</li>
-</ol>
-<h2 id="project-architecture-deprecated">PROJECT ARCHITECTURE (Deprecated)</h2>
+<ul>
+<li>个人小程序, 以mall上线一个测试版</li>
+<li>个人小程序, 再自己创建一个项目, 模拟一个真是项目</li>
+</ul>
+<h2 id="project-architecture">PROJECT ARCHITECTURE</h2>
+<hr>
 <ol>
 <li>如果项目功能足够简单, 项目比较小的话, 其实没有必要分的那么细致. 掌握设计的&quot;度&quot;, 非常重要!!!</li>
 <li>不参与DDD(领域驱动设计)!!!</li>
 </ol>
-<p>TODO: 明确DTO作为服务内部传输完整数据的用处, 出处, 全部还是部分?</p>
 <div class="alert danger ">
   <p><p>DAO层</p>
 <ul>
@@ -429,8 +425,59 @@ No best, only better.">
 </ul>
 </p>
 </div>
-<h2 id="db-mapper">DB MAPPER</h2>
+<h2 id="security">SECURITY</h2>
 <hr>
+<h3 id="mall">mall</h3>
+<ul>
+<li><input disabled="" type="checkbox"> admin与security解耦, 不同客户端的认证拦截过滤
+<ul>
+<li><input disabled="" type="checkbox"> 用户名密码新登录, 与token登录 都用一个<code>jwtAuthenticationTokenFilter</code>, 通过<code>UserDetailsService</code>获取用户数据
+<ul>
+<li><input disabled="" type="checkbox"> 通过获取username最终实现定位user</li>
+<li><input disabled="" type="checkbox"> 该token体系与微信认证是否能兼容, 如何兼容?</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> 动态权限过滤, 使用<code>dynamicSecurityFilter</code>, 通过<code>DynamicSecurityMetadataService</code>获取用户权限</li>
+</ul>
+</li>
+</ul>
+<h3 id="configure">Configure</h3>
+<p>这里包含初始化, 注册哪些filter</p>
+<h3 id="filter">Filter</h3>
+<p>具体拦截, 并把相对应的且support()的provider传进去</p>
+<h3 id="provider">Provider</h3>
+<p>提供自己的认证比对实现方法, 并且实现<code>support()</code>满足filter查找</p>
+<h3 id="handler">Handler</h3>
+<p>增加成功与失败的handler</p>
+<h3 id="miscellaneous">Miscellaneous</h3>
+<ul>
+<li>还涉及到与微信服务器交换opencode, 交换session, 再让用户授权手机号并最终拿到OpenId 等一系列动作</li>
+<li>还要设置缓存, 清空与微信服务器交换时中间状态的cache</li>
+</ul>
+<h3 id="userdetails还是个坑-不适合目前这个项目">UserDetails还是个坑, 不适合目前这个项目</h3>
+<h2 id="controller-and-input-validation">CONTROLLER AND INPUT VALIDATION</h2>
+<hr>
+<ul>
+<li><input disabled="" type="checkbox"> Web admin</li>
+<li><input disabled="" type="checkbox"> App portal</li>
+<li><input checked="" disabled="" type="checkbox"> Normal <code>@Valid</code> and <code>@Validated</code></li>
+<li><input checked="" disabled="" type="checkbox"> DIY <code>@FlagValidator</code></li>
+</ul>
+<h2 id="service">SERVICE</h2>
+<hr>
+<ul>
+<li><input disabled="" type="checkbox"> Use MaBatisPlus? How does <code>mall</code> use pure MaBatis easily to implement?</li>
+<li><input disabled="" type="checkbox"> Simple service, call mapper function directly?</li>
+<li><input disabled="" type="checkbox"> Complicate service, call multiple mapper functions?</li>
+<li><input disabled="" type="checkbox"> What is the data structure(DTO?) in nternal service?</li>
+</ul>
+<h2 id="dao-mapper">DAO MAPPER</h2>
+<hr>
+<ul>
+<li><input disabled="" type="checkbox"> Pure MyBatis or MyBatisPlus?</li>
+<li><input disabled="" type="checkbox"> MyBatis PageHelper detail</li>
+<li><input disabled="" type="checkbox"> org.springframework.data.domain.PageRequest? Or PearAdmin? Or mall?</li>
+</ul>
 <p><strong>JUST</strong> use MyBatisPLus maven and use default CRUD methods.<br>
 But <strong>REFUSE</strong> to use <code>QueryWrapper</code>, use MyBatis&rsquo; XML mapper.</p>
 <p>Reason as below:</p>
@@ -698,24 +745,21 @@ public class CombineServiceImpl implements CombineService {
 <p>[TODO]:
 MyBatis的手动切换, 后续再深入学习<br>
 And how to <code>DynamicDataSourceContextHolder.push()</code> and <code>DynamicDataSourceContextHolder.poll()</code>?</p>
-<h2 id="security">SECURITY</h2>
+<h2 id="output-convert-no-beanutilcopy">Output Convert (No BeanUtil.copy)</h2>
 <hr>
-<h3 id="configure">Configure</h3>
-<p>这里包含初始化, 注册哪些filter</p>
-<h3 id="filter">Filter</h3>
-<p>具体拦截, 并把相对应的且support()的provider传进去</p>
-<h3 id="provider">Provider</h3>
-<p>提供自己的认证比对实现方法, 并且实现<code>support()</code>满足filter查找</p>
-<h3 id="handler">Handler</h3>
-<p>增加成功与失败的handler</p>
-<h3 id="miscellaneous">Miscellaneous</h3>
 <ul>
-<li>还涉及到与微信服务器交换opencode, 交换session, 再让用户授权手机号并最终拿到OpenId 等一系列动作</li>
-<li>还要设置缓存, 清空与微信服务器交换时中间状态的cache</li>
+<li><input disabled="" type="checkbox"> If simple, use DTO to response directly</li>
+<li><input disabled="" type="checkbox"> If complicated, transfer DTO to VO</li>
 </ul>
-<h3 id="userdetails还是个坑-不适合目前这个项目">UserDetails还是个坑, 不适合目前这个项目</h3>
-<h2 id="logger">LOGGER</h2>
+<h2 id="global-common-module">GLOBAL COMMON MODULE</h2>
 <hr>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> CommonResult</li>
+<li><input disabled="" type="checkbox"> Exception</li>
+<li><input disabled="" type="checkbox"> Log</li>
+<li><input disabled="" type="checkbox"> Intercepter</li>
+</ul>
+<h3 id="logger">LOGGER</h3>
 <p><strong>slf4j.Logger and log4j.Logger</strong>
 <blockquote>
   <p>
@@ -757,18 +801,46 @@ However, it is always difficult to prefer one between the two.
   
 </div>
 
-<h2 id="连接池选型">连接池选型</h2>
+<h2 id="connection-pool">CONNECTION POOL</h2>
 <hr>
 <p>Druid or Hikari -&gt; PearAdminPro用的是Hikari, 也是Springboot官方选用的</p>
 <p>Druid是淘宝选用的, 高并发的情况会适用一些</p>
 <h2 id="cache">CACHE</h2>
 <hr>
 <ul>
+<li><input disabled="" type="checkbox"> Redis</li>
+<li><input disabled="" type="checkbox"> <code>@CacheException</code></li>
 <li>MyBatis缓存</li>
-<li>Redis缓存</li>
 </ul>
-<h2 id="intercepter">INTERCEPTER</h2>
+<h2 id="background-job">BACKGROUND JOB</h2>
 <hr>
+<h2 id="api-document">API DOCUMENT</h2>
+<hr>
+<ul>
+<li><input disabled="" type="checkbox"> Swagger UI category, description and list</li>
+<li><input disabled="" type="checkbox"> With session token</li>
+</ul>
+<h2 id="deployment">DEPLOYMENT</h2>
+<hr>
+<ul>
+<li><input disabled="" type="checkbox"> DockerCompose deployment in single server?</li>
+</ul>
+<h2 id="others">OTHERS</h2>
+<hr>
+<ul>
+<li><input disabled="" type="checkbox"> ElasticSearch NativeSearchQueryBuilder</li>
+</ul>
+<h2 id="testing">TESTING</h2>
+<hr>
+<ul>
+<li>完成以上考察, 大范围API测试</li>
+</ul>
+<h2 id="operation">OPERATION</h2>
+<hr>
+<ul>
+<li>个人订阅号, 熟悉内容的编辑/发布, 练习写作, 提高排版/拍照等后期技能</li>
+<li>运营, 尝试推送文章</li>
+</ul>
 <h2 id="appendix">APPENDIX</h2>
 <hr>
 <p>摘抄自网络, 不一定合理, 仅保存一些文字, 以便以后少写一些文字</p>
@@ -811,89 +883,6 @@ However, it is always difficult to prefer one between the two.
 </ul>
 </li>
 </ul>
-<h2 id="todo">TODO</h2>
-<p>DOMAIN AND PROJECTS</p>
-<p>MySQL + Redis + Springboot + Java Security + Vue3 + UniApp + WeChat Authentication一套框架</p>
-<ul>
-<li>个人小程序, 以mall上线一个Demo</li>
-<li>个人小程序, 再以mall模拟一个简化的德海项目/帐篷预定项目</li>
-</ul>
-<h3 id="input-validation">Input Validation</h3>
-<ul>
-<li><input checked="" disabled="" type="checkbox"> Normal <code>@Valid</code> and <code>@Validated</code></li>
-<li><input checked="" disabled="" type="checkbox"> DIY <code>@FlagValidator</code></li>
-</ul>
-<h3 id="spring-security">Spring Security</h3>
-<ul>
-<li><input disabled="" type="checkbox"> admin与security解耦, 不同客户端的认证拦截过滤
-<ul>
-<li><input disabled="" type="checkbox"> 用户名密码新登录, 与token登录 都用一个<code>jwtAuthenticationTokenFilter</code>, 通过<code>UserDetailsService</code>获取用户数据
-<ul>
-<li><input disabled="" type="checkbox"> 通过获取username最终实现定位user</li>
-<li><input disabled="" type="checkbox"> 该token体系与微信认证是否能兼容, 如何兼容?</li>
-</ul>
-</li>
-<li><input disabled="" type="checkbox"> 动态权限过滤, 使用<code>dynamicSecurityFilter</code>, 通过<code>DynamicSecurityMetadataService</code>获取用户权限</li>
-</ul>
-</li>
-</ul>
-<h3 id="controller">Controller</h3>
-<ul>
-<li><input disabled="" type="checkbox"> Web admin</li>
-<li><input disabled="" type="checkbox"> App portal</li>
-</ul>
-<h3 id="service">Service</h3>
-<ul>
-<li><input disabled="" type="checkbox"> Simple service, call mapper function directly?</li>
-<li><input disabled="" type="checkbox"> Complicate service, call multiple mapper functions?</li>
-</ul>
-<h3 id="dao-mapper">DAO Mapper</h3>
-<ul>
-<li><input checked="" disabled="" type="checkbox"> Pure MyBatis / MyBatisPlus</li>
-<li><input disabled="" type="checkbox"> MyBatis PageHelper</li>
-<li><input disabled="" type="checkbox"> org.springframework.data.domain.PageRequest? Or PearAdmin? Or mall?</li>
-</ul>
-<h3 id="output-convert-no-beanutilcopy">Output Convert (No BeanUtil.copy)</h3>
-<ul>
-<li><input disabled="" type="checkbox"> Response structure</li>
-</ul>
-<h3 id="global-exception-catch">Global exception catch</h3>
-<ul>
-<li><input disabled="" type="checkbox"> Exception</li>
-<li><input disabled="" type="checkbox"> Log</li>
-</ul>
-<h3 id="cache-1">Cache</h3>
-<ul>
-<li><input disabled="" type="checkbox"> Redis</li>
-<li><input disabled="" type="checkbox"> <code>@CacheException</code></li>
-</ul>
-<h3 id="background-job">Background Job</h3>
-<h3 id="api-document">API Document</h3>
-<ul>
-<li><input disabled="" type="checkbox"> SwaggerUI</li>
-</ul>
-<h3 id="deployment">Deployment</h3>
-<ul>
-<li><input disabled="" type="checkbox"> DockerCompose deployment?</li>
-</ul>
-<h3 id="others">Others</h3>
-<ul>
-<li>
-<p><input disabled="" type="checkbox"> ElasticSearch NativeSearchQueryBuilder</p>
-</li>
-<li>
-<p>完成以上考察, 大范围API测试</p>
-</li>
-<li>
-<p>最后把mall研究透彻, 并制定商城需求, 改造为可用的BtoB平台, 以及BtoC商城</p>
-</li>
-<li>
-<p>个人订阅号, 熟悉内容的编辑/发布, 练习写作, 提高排版/拍照等后期技能</p>
-</li>
-<li>
-<p>运营, 尝试推送文章</p>
-</li>
-</ul>
               
 
 
@@ -909,7 +898,7 @@ However, it is always difficult to prefer one between the two.
                     
   <a class="tag tag--primary tag--small" href="https://ivanhan0511.github.io/tags/springboot/">SpringBoot</a>
 
-  <a class="tag tag--primary tag--small" href="https://ivanhan0511.github.io/tags/domaindesigndrive/">DomainDesignDrive</a>
+  <a class="tag tag--primary tag--small" href="https://ivanhan0511.github.io/tags/traditionaldesign/">TraditionalDesign</a>
 
                   </div>
                 

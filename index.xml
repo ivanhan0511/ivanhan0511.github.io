@@ -41,6 +41,15 @@
     </item>
     
     <item>
+      <title>Spring</title>
+      <link>https://ivanhan0511.github.io/post/java-spring/</link>
+      <pubDate>Thu, 26 Oct 2023 10:14:00 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/post/java-spring/</guid>
+      <description>&lt;p&gt;This is a custom summary and does &lt;em&gt;NOT&lt;/em&gt; appear in the post.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>What to do after init Windows</title>
       <link>https://ivanhan0511.github.io/post/os-windows10/</link>
       <pubDate>Tue, 12 Sep 2023 14:24:00 +0800</pubDate>
@@ -74,15 +83,6 @@
       
       <guid>https://ivanhan0511.github.io/post/sql-sqlserver/</guid>
       <description>&lt;p&gt;Some usual opearations for MS SQL Server.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Spring</title>
-      <link>https://ivanhan0511.github.io/post/java-spring/</link>
-      <pubDate>Mon, 19 Jun 2023 10:14:00 +0800</pubDate>
-      
-      <guid>https://ivanhan0511.github.io/post/java-spring/</guid>
-      <description>&lt;p&gt;This is a custom summary and does &lt;em&gt;NOT&lt;/em&gt; appear in the post.&lt;/p&gt;</description>
     </item>
     
     <item>

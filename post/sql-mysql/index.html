@@ -312,22 +312,9 @@
     </li>
     <li><a href="#ddl">DDL</a>
       <ul>
-        <li><a href="#create">CREATE</a>
-          <ul>
-            <li><a href="#create-database">CREATE DATABASE</a></li>
-            <li><a href="#create-table">CREATE TABLE</a></li>
-            <li><a href="#create-index">CREATE INDEX</a></li>
-            <li><a href="#copy-with-data">COPY with data</a></li>
-            <li><a href="#copy-without-data">COPY without data</a></li>
-          </ul>
-        </li>
+        <li><a href="#create">CREATE</a></li>
         <li><a href="#alter">ALTER</a></li>
-        <li><a href="#drop">DROP</a>
-          <ul>
-            <li><a href="#drop-table">DROP TABLE</a></li>
-            <li><a href="#drop-index">DROP INDEX</a></li>
-          </ul>
-        </li>
+        <li><a href="#drop">DROP</a></li>
         <li><a href="#truncate">TRUNCATE</a></li>
         <li><a href="#comment">COMMENT</a></li>
         <li><a href="#rename">RENAME</a></li>
@@ -537,144 +524,105 @@ FLUSH PRIVILEGES;</code></pre>
 <hr>
 <p>DDL: Data Definition Language, like <code>CREATE</code>, <code>ALTER</code>, <code>DROP</code>, <code>TRUNCATE</code>, <code>COMMENT</code>, <code>RENAME</code></p>
 <h3 id="create">CREATE</h3>
-<h4 id="create-database">CREATE DATABASE</h4>
+
+
 
   
     
   
   
-    
-  
-  
-  
 
-
-<figure class="highlight sql language-sql">
+<figure class="codeblock codeblock--tabbed">
   <figcaption>
     
-      <span>CREATE DATABASE</span>
+      <span>CREATE</span>
     
+    <ul class="tabs">
+      
+    </ul>
   </figcaption>
-  <table>
-    <tbody>
-      <tr>
-        <td class="gutter">
-          <pre><span class="line">1</span><br></pre>
-        </td>
-        <td class="code">
-          <pre class="code-highlight language-sql sql"><code class="sql">CREATE DATABASE pear-admin-pro CHARACTER SET UTF8;</code></pre>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="tabs-content">
+    
+  </div>
 </figure>
 
-<h4 id="create-table">CREATE TABLE</h4>
+<p><em>COPY with data</em>
+
+
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+
 
   
     
   
   
-    
-  
-  
-  
 
-
-<figure class="highlight sql language-sql">
+<figure class="codeblock codeblock--tabbed">
   <figcaption>
     
-      <span>CREATE TABLE</span>
+      <span>copy with CREATE</span>
     
+    <ul class="tabs">
+      
+        <li class="tab active">with_data</li>
+      
+        <li class="tab ">without_data</li>
+      
+    </ul>
   </figcaption>
-  <table>
-    <tbody>
-      <tr>
-        <td class="gutter">
-          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre>
-        </td>
-        <td class="code">
-          <pre class="code-highlight language-sql sql"><code class="sql">CREATE TABLE student (
-        id INT,
-        name VARCHAR(32)
-        );</code></pre>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</figure>
-
-<h4 id="create-index">CREATE INDEX</h4>
-<h4 id="copy-with-data">COPY with data</h4>
-
-  
+  <div class="tabs-content">
     
-  
-  
-    
-  
-  
-  
-
-
-<figure class="highlight sql language-sql">
-  <figcaption>
-    
-      <span>copy with data</span>
-    
-  </figcaption>
-  <table>
-    <tbody>
-      <tr>
-        <td class="gutter">
-          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre>
-        </td>
-        <td class="code">
-          <pre class="code-highlight language-sql sql"><code class="sql">create table  table_name
+      
+      <figure class="highlight language-with_data with_data" style="display: block;">
+        <table>
+          <tbody>
+            <tr>
+              <td class="gutter">
+                <pre><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></pre>
+              </td>
+              <td class="code">
+                <pre class="code-highlight language-with_data with_data"><code class="with_data">create table table_name
 as   
-select * from  Source_table
-where   1=1;</code></pre>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</figure>
-
-<h4 id="copy-without-data">COPY without data</h4>
-
-  
+select * from Source_table
+where 1=1;</code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </figure>
     
-  
-  
-    
-  
-  
-  
-
-
-<figure class="highlight sql language-sql">
-  <figcaption>
-    
-      <span>copy without data</span>
-    
-  </figcaption>
-  <table>
-    <tbody>
-      <tr>
-        <td class="gutter">
-          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre>
-        </td>
-        <td class="code">
-          <pre class="code-highlight language-sql sql"><code class="sql">create table  table_name
+      
+      <figure class="highlight language-without_data without_data" style="display: none;">
+        <table>
+          <tbody>
+            <tr>
+              <td class="gutter">
+                <pre><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></pre>
+              </td>
+              <td class="code">
+                <pre class="code-highlight language-without_data without_data"><code class="without_data">create table table_name
 as
-select  * from
-Source_table where   1 &lt;&gt; 1;</code></pre>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+select * from
+Source_table where 1 &lt;&gt; 1;</code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </figure>
+    
+  </div>
 </figure>
-
+</p>
 <h3 id="alter">ALTER</h3>
 
   
@@ -709,39 +657,100 @@ Source_table where   1 &lt;&gt; 1;</code></pre>
 </figure>
 
 <h3 id="drop">DROP</h3>
-<h4 id="drop-table">DROP TABLE</h4>
+
+
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+
 
   
     
   
   
-    
-  
-  
-  
 
-
-<figure class="highlight sql language-sql">
+<figure class="codeblock codeblock--tabbed">
   <figcaption>
     
-      <span>DROP TABLE</span>
+      <span>DROP</span>
     
+    <ul class="tabs">
+      
+        <li class="tab active">database</li>
+      
+        <li class="tab ">table</li>
+      
+        <li class="tab ">index</li>
+      
+    </ul>
   </figcaption>
-  <table>
-    <tbody>
-      <tr>
-        <td class="gutter">
-          <pre><span class="line">1</span><br></pre>
-        </td>
-        <td class="code">
-          <pre class="code-highlight language-sql sql"><code class="sql">DROP TABLE &lt;table_name&gt;;</code></pre>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="tabs-content">
+    
+      
+      <figure class="highlight language-database database" style="display: block;">
+        <table>
+          <tbody>
+            <tr>
+              <td class="gutter">
+                <pre><span>1</span><br></pre>
+              </td>
+              <td class="code">
+                <pre class="code-highlight language-database database"><code class="database">DROP DATABASE &lt;db_name&gt;;</code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </figure>
+    
+      
+      <figure class="highlight language-table table" style="display: none;">
+        <table>
+          <tbody>
+            <tr>
+              <td class="gutter">
+                <pre><span>1</span><br></pre>
+              </td>
+              <td class="code">
+                <pre class="code-highlight language-table table"><code class="table">DROP TABLE &lt;table_name&gt;;</code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </figure>
+    
+      
+      <figure class="highlight language-index index" style="display: none;">
+        <table>
+          <tbody>
+            <tr>
+              <td class="gutter">
+                <pre><span>1</span><br></pre>
+              </td>
+              <td class="code">
+                <pre class="code-highlight language-index index"><code class="index">DROP ;</code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </figure>
+    
+  </div>
 </figure>
 
-<h4 id="drop-index">DROP INDEX</h4>
 <h3 id="truncate">TRUNCATE</h3>
 <h3 id="comment">COMMENT</h3>
 <h3 id="rename">RENAME</h3>
@@ -750,35 +759,75 @@ Source_table where   1 &lt;&gt; 1;</code></pre>
 <p>DML: Data Manipulation Language, like <code>INSERT</code>, <code>SELECT</code>, <code>UPDATE</code>, <code>DELETE</code>, <code>MERGE</code>, <code>CALL</code>, <code>EXPLAIN PLAN</code>, <code>LOCK TABLE</code></p>
 <h3 id="insert">INSERT</h3>
 
+
   
-    
   
   
-    
+  
+  
+
+  
+  
   
   
   
 
 
-<figure class="highlight sql language-sql">
+  
+    
+  
+  
+
+<figure class="codeblock codeblock--tabbed">
   <figcaption>
     
       <span>INSERT</span>
     
+    <ul class="tabs">
+      
+        <li class="tab active">single</li>
+      
+        <li class="tab ">single</li>
+      
+    </ul>
   </figcaption>
-  <table>
-    <tbody>
-      <tr>
-        <td class="gutter">
-          <pre><span class="line">1</span><br><span class="line">2</span><br></pre>
-        </td>
-        <td class="code">
-          <pre class="code-highlight language-sql sql"><code class="sql">INSERT INTO &lt;table_name&gt;...
-[TODO]: To be continued...</code></pre>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="tabs-content">
+    
+      
+      <figure class="highlight language-single single" style="display: block;">
+        <table>
+          <tbody>
+            <tr>
+              <td class="gutter">
+                <pre><span>1</span><br></pre>
+              </td>
+              <td class="code">
+                <pre class="code-highlight language-single single"><code class="single">INSERT INTO &lt;table_name&gt;...</code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </figure>
+    
+      
+      <figure class="highlight language-single single" style="display: none;">
+        <table>
+          <tbody>
+            <tr>
+              <td class="gutter">
+                <pre><span>1</span><br><span>2</span><br><span>3</span><br></pre>
+              </td>
+              <td class="code">
+                <pre class="code-highlight language-single single"><code class="single">INSERT INTO &lt;table_name&gt; (
+    &#39;c1&#39;, &#39;c2&#39;)
+VALUES (1, 2), (3, 4)</code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </figure>
+    
+  </div>
 </figure>
 
 <h3 id="select">SELECT</h3>

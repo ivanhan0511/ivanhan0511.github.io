@@ -311,6 +311,14 @@
       <ul>
         <li><a href="#configuration">Configuration</a></li>
         <li><a href="#plugin">Plugin</a></li>
+        <li><a href="#maven">Maven</a></li>
+        <li><a href="#remotehost">RemoteHost</a></li>
+      </ul>
+    </li>
+    <li><a href="#git--ssh">Git &amp; SSH</a>
+      <ul>
+        <li><a href="#hugo">HUGO</a></li>
+        <li><a href="#vimbundle">VimBundle</a></li>
       </ul>
     </li>
     <li><a href="#hbuilderx">HBuilderX</a></li>
@@ -359,10 +367,13 @@
 <ul>
 <li>在各个项目中分别选择Java JDK环境, 不安装Java在裸机</li>
 <li>settsings(Ctrl+Alt+S) -&gt; Editor -&gt; Code Style -&gt; SQL -&gt; 将keywords设置为大写(To upper), and then<code>ctrl + alt + L</code></li>
+<li>数据库导入时, 右键某个数据库 -&gt; Import/Export -&gt; Restore with &lsquo;mysql&rsquo; -&gt; Path to mysql -&gt; <code>/usr/local/Cellar/mysql@8.0/bin/mysql</code></li>
+<li>数据库导出时, 右键某个数据库 -&gt; Import/Export -&gt; Export with &lsquo;mysqldump&rsquo; -&gt; Path to mysqldump -&gt; <code>/usr/local/Cellar/mysql-client8.0/bin/mysqldump</code></li>
 </ul>
 <h3 id="plugin">Plugin</h3>
 <ul>
-<li>IdeaVim
+<li>
+<p>IdeaVim</p>
 <ul>
 <li>
 <p>在IDEA中创建<code>~/.ideavimrc</code>文件(实际创建在<code>~/.ideavimrc</code>)</p>
@@ -425,19 +436,156 @@ nmap &lt;leader&gt;nh :noh&lt;cr&gt;
 </li>
 </ul>
 </li>
-<li>MyBatisCodeHelperPro</li>
-<li>Redis</li>
+<li>
+<p>MyBatisCodeHelperPro</p>
+</li>
+<li>
+<p>Redis</p>
+</li>
 </ul>
+<h3 id="maven">Maven</h3>
+<p>todo?</p>
+<h3 id="remotehost">RemoteHost</h3>
+<p>Remote deploy and remote debug
+
+  
+    
+  
+  
+  
+  
+
+
+<figure class="highlight  language-">
+  <figcaption>
+    
+      <span>cli</span>
+    
+  </figcaption>
+  <table>
+    <tbody>
+      <tr>
+        <td class="gutter">
+          <pre><span class="line">1</span><br></pre>
+        </td>
+        <td class="code">
+          <pre class="code-highlight language- "><code class="">java -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005 -jar pear-admin-pro-1.11.9-SNAPSHOT.jar</code></pre>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+</p>
+<h2 id="git--ssh">Git &amp; SSH</h2>
+<hr>
+<p>MINGW64 Git套件</p>
+<p>自己添加插件, 来增加额外的的Linux命令</p>
+<h3 id="hugo">HUGO</h3>
+<ul>
+<li>在<a href="https://github.com/gohugoio/hugo/releases">HUGO的GitHub</a>的releases中下载适用于Windows的文件压缩包</li>
+<li>解压到<code>C:\Program Files\Git\usr\bin\</code>目录中</li>
+<li>再打开GitBash即可使用hugo命令创建静态Blog了</li>
+</ul>
+<h3 id="vimbundle">VimBundle</h3>
+
+  
+    
+  
+  
+    
+  
+  
+  
+
+
+<figure class="highlight shell language-shell">
+  <figcaption>
+    
+      <span>Install VimBundle</span>
+    
+  </figcaption>
+  <table>
+    <tbody>
+      <tr>
+        <td class="gutter">
+          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre>
+        </td>
+        <td class="code">
+          <pre class="code-highlight language-shell shell"><code class="shell"># It&#39;s alse suitable for both Linux and Windows
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+vim
+#:PluginInstall</code></pre>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+
 <h2 id="hbuilderx">HBuilderX</h2>
 <hr>
-<p>看团队用什么吧, 也不打算深究Vue, 能调试个本地前端页面就行了
-npm</p>
 <ul>
 <li>使用其npm环境? 不安装npm在裸机可以吗?  -&gt; HBuilderX自带node.js环境, 待研究</li>
 </ul>
+<p>看团队用什么吧, 也不打算深究Vue, 能调试个本地前端页面就行了</p>
 <h2 id="db">DB</h2>
 <hr>
 <h3 id="mysql">MySQL</h3>
+
+  
+    
+  
+  
+    
+  
+  
+  
+
+
+<figure class="highlight shell language-shell">
+  <figcaption>
+    
+      <span>Install</span>
+    
+  </figcaption>
+  <table>
+    <tbody>
+      <tr>
+        <td class="gutter">
+          <pre><span class="line">1</span><br></pre>
+        </td>
+        <td class="code">
+          <pre class="code-highlight language-shell shell"><code class="shell">brew install mysql@8.0</code></pre>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+
+<p>If forget root password:</p>
+
+
+
+  
+    
+  
+  
+    
+  
+
+<figure class="codeblock codeblock--tabbed">
+  <figcaption>
+    
+      <span><a href="shell1">Install</a></span>
+    
+    <ul class="tabs">
+      
+    </ul>
+  </figcaption>
+  <div class="tabs-content">
+    
+  </div>
+</figure>
+
 <h3 id="redis">Redis</h3>
 <h2 id="others">Others</h2>
 <hr>
@@ -454,6 +602,8 @@ npm</p>
 <li>腾讯会议</li>
 <li>亿图</li>
 <li>Axure</li>
+<li>OmniPlan</li>
+<li>SwiftPlan</li>
 </ul>
 <h2 id="game">GAME</h2>
 <hr>

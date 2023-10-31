@@ -526,6 +526,24 @@ FLUSH PRIVILEGES;</code></pre>
 <h3 id="create">CREATE</h3>
 
 
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+
 
   
     
@@ -539,9 +557,66 @@ FLUSH PRIVILEGES;</code></pre>
     
     <ul class="tabs">
       
+        <li class="tab active">database</li>
+      
+        <li class="tab ">table</li>
+      
+        <li class="tab ">index</li>
+      
     </ul>
   </figcaption>
   <div class="tabs-content">
+    
+      
+      <figure class="highlight language-database database" style="display: block;">
+        <table>
+          <tbody>
+            <tr>
+              <td class="gutter">
+                <pre><span>1</span><br></pre>
+              </td>
+              <td class="code">
+                <pre class="code-highlight language-database database"><code class="database">CREATE DATABASE pear-admin-pro CHARACTER SET UTF8;</code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </figure>
+    
+      
+      <figure class="highlight language-table table" style="display: none;">
+        <table>
+          <tbody>
+            <tr>
+              <td class="gutter">
+                <pre><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></pre>
+              </td>
+              <td class="code">
+                <pre class="code-highlight language-table table"><code class="table">CREATE TABLE student (
+        id INT,
+        name VARCHAR(32)
+        );</code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </figure>
+    
+      
+      <figure class="highlight language-index index" style="display: none;">
+        <table>
+          <tbody>
+            <tr>
+              <td class="gutter">
+                <pre><span>1</span><br></pre>
+              </td>
+              <td class="code">
+                <pre class="code-highlight language-index index"><code class="index"></code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </figure>
     
   </div>
 </figure>
@@ -741,7 +816,7 @@ Source_table where 1 &lt;&gt; 1;</code></pre>
                 <pre><span>1</span><br></pre>
               </td>
               <td class="code">
-                <pre class="code-highlight language-index index"><code class="index">DROP ;</code></pre>
+                <pre class="code-highlight language-index index"><code class="index">DROP ...;</code></pre>
               </td>
             </tr>
           </tbody>

@@ -17,8 +17,12 @@
 &lt;p&gt;NO BEST, ONLY BETTER.&lt;/p&gt;
 &lt;p&gt;TODO:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;个人小程序, 以mall上线一个测试版&lt;/li&gt;
-&lt;li&gt;个人小程序, 再自己创建一个项目, 模拟一个真是项目&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; mall后台运行&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 士大夫&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; mall-app-web在macOS运行yarn&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; mall-admin-web在macOS运行yarn&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 将redis缓存命中融入到框架中&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 算法? 要学, 但往后拖一拖&lt;/li&gt;
 &lt;/ul&gt;</description>
     </item>
     

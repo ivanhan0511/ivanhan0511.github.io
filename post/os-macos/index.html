@@ -365,6 +365,12 @@
   
   
 
+  
+  
+  
+  
+  
+
 
   
     
@@ -378,42 +384,74 @@
     
     <ul class="tabs">
       
-        <li class="tab active">smartim</li>
+        <li class="tab active">vimrc</li>
+      
+        <li class="tab ">smartim</li>
       
     </ul>
   </figcaption>
   <div class="tabs-content">
     
       
-      <figure class="highlight language-smartim smartim" style="display: block;">
+      <figure class="highlight language-vimrc vimrc" style="display: block;">
         <table>
           <tbody>
             <tr>
               <td class="gutter">
-                <pre><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br></pre>
+                <pre><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br></pre>
               </td>
               <td class="code">
-                <pre class="code-highlight language-smartim smartim"><code class="smartim">vim ~/.vim/bundle/smartim/plugin/smartim.vim
-&gt; 修改 smartim 的延迟
-&gt; 当你使用的过程中会发现，按下 ESC 之后，短暂的时间内输入法还没有切换为英文，这种卡顿让输入比较快的键盘手无法忍受。
+                <pre class="code-highlight language-vimrc vimrc"><code class="vimrc"># 查看macOS默认的输入法是什么, 以决定如下的配置文件中`let g:smartim_default = &#39;&#39;`中的内容
+vim ~/.vim/bundle/smartim/plugin/im-select
+
+&gt; com.apple.keylayout.ABC
+
+vim ~/.vimrc
+
+&gt; ...
+&gt; &#34;call vundle#begin(&#39;~/some/path/here&#39;)
 &gt; 
-&gt; 解决方法是在 smartim.vim 文件中添加 set timeoutlen=0
+&gt; &#34; smart switch input method automaticlly
+&gt; Plugin &#39;ybian/smartim&#39;
+&gt; let g:smartim_default = &#39;com.apple.keylayout.ABC&#39;
 &gt; 
-&gt; 在 smartim.vim 文件的最后，添加 set timeoutlen=0
-&gt; 
+&gt; &#34; All of your Plugins must be added before the following line
+&gt; call vundle#end() 
+&gt; ...</code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </figure>
+    
+      
+      <figure class="highlight language-smartim smartim" style="display: none;">
+        <table>
+          <tbody>
+            <tr>
+              <td class="gutter">
+                <pre><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br></pre>
+              </td>
+              <td class="code">
+                <pre class="code-highlight language-smartim smartim"><code class="smartim"># 修改 smartim 的延迟
+# 当你使用的过程中会发现，按下 ESC 之后，短暂的时间内输入法还没有切换为英文，这种卡顿让输入比较快的键盘手无法忍受
+# 解决方法是在 smartim.vim 文件中添加 set timeoutlen=0
+vim ~/.vim/bundle/smartim/plugin/smartim.vim
+ 
 &gt; augroup smartim
 &gt;   autocmd!
-&gt;   set timeoutlen=0
+&gt;   ~~set timeoutlen=0~~
 &gt;   autocmd VimLeavePre * call Smartim_SelectDefault()
 &gt;   autocmd InsertLeave * call Smartim_SelectDefault()
 &gt;   autocmd InsertEnter * call Smartim_SelectSaved()
 &gt; augroup end
-&gt;
-&gt; 这样问题解决。不过这会产生一个小问题，就是自定义的快捷键会失效，比如你定义了 jj 表示 ESC
-&gt; 
-&gt; 因为没有了延迟，当你输入第二个 j 的时候，Vim 不会把它当做组合。不过不用 jj 也罢。
-&gt; 
-&gt; 如果很纠结这个，可以在函数  Smartim_SelectDefault() 的第一行添加 set timeoutlen=0在函数 Smartim_SelectSaved() 的第一行添加 set timeoutlen=500，不过即使如此，仍会有 500ms 的延迟。</code></pre>
+
+# 这样问题解决。不过这会产生一个小问题，就是自定义的快捷键会失效，比如你定义了 jj 表示 ESC
+# 因为没有了延迟，当你输入第二个 j 的时候，Vim 不会把它当做组合。不过不用 jj 也罢。
+# 如果很纠结这个，
+#   可以在函数  Smartim_SelectDefault() 的第一行添加 set timeoutlen=0
+#   在函数 Smartim_SelectSaved() 的第一行添加 set timeoutlen=500
+# 不过即使如此，仍会有 500ms 的延迟</code></pre>
               </td>
             </tr>
           </tbody>

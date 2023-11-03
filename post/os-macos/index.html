@@ -399,7 +399,7 @@
 &gt; 
 &gt; 解决方法是在 smartim.vim 文件中添加 set timeoutlen=0
 &gt; 
-&gt; 在 smartim.vim 文件的最后，添加 set timeoutlen=0：
+&gt; 在 smartim.vim 文件的最后，添加 set timeoutlen=0
 &gt; 
 &gt; augroup smartim
 &gt;   autocmd!
@@ -439,76 +439,15 @@
 </ul>
 <h3 id="plugin">Plugin</h3>
 <ul>
-<li>
-<p>IdeaVim</p>
+<li>IdeaVim
 <ul>
-<li>
-<p>在IDEA中创建<code>~/.ideavimrc</code>文件(实际创建在<code>~/.ideavimrc</code>)</p>
-</li>
-<li>
-<p>增加如下配置(暂时不像Visual Studio需要完整的.vimrc, 只需要添加一少部分配置即可)</p>
-
-  
-    
-  
-  
-    
-  
-  
-  
-
-
-<figure class="highlight config language-config">
-  <figcaption>
-    
-      <span>.ideavimrc</span>
-    
-  </figcaption>
-  <table>
-    <tbody>
-      <tr>
-        <td class="gutter">
-          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre>
-        </td>
-        <td class="code">
-          <pre class="code-highlight language-config config"><code class="config">set hlsearch
-set incsearch
-
-syntax on
-&#34; 不设定在插入状态无法用退格键和 Delete 键删除回车符
-set backspace=indent,eol,start
-
-&#34; 修改leader键为逗号
-let mapleader=&#34;,&#34;
-set ignorecase  &#34; 设置大小写敏感
-
-&#34; Line number
-&#34;set ruler
-set number
-set relativenumber
-
-&#34; 修改vim的正则表达
-nmap / /\v
-vmap / /\v
-
-&#34; 取消搜索高亮
-nmap &lt;leader&gt;nh :noh&lt;cr&gt;
-    </code></pre>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</figure>
-
-</li>
+<li>在IDEA中创建<code>~/.ideavimrc</code>文件(实际创建在<code>???.ideavimrc</code>)</li>
+<li>只需在最后一行增加配置引用即可<code>source ~/.vimrc</code></li>
+<li></li>
 </ul>
 </li>
-<li>
-<p>MyBatisCodeHelperPro</p>
-</li>
-<li>
-<p>Redis</p>
-</li>
+<li>MyBatisCodeHelperPro</li>
+<li>Redis</li>
 </ul>
 <h3 id="maven">Maven</h3>
 <p>todo?</p>

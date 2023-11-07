@@ -6,23 +6,23 @@
     <description>Recent content in Init on Ivan Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 12 Sep 2023 14:24:00 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/tags/init/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 07 Nov 2023 15:40:00 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/tags/init/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>What To Do After Init Windows</title>
+      <title>MySQL8.0 Operations</title>
+      <link>https://ivanhan0511.github.io/post/sql-mysql/</link>
+      <pubDate>Tue, 07 Nov 2023 15:40:00 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/post/sql-mysql/</guid>
+      <description>&lt;p&gt;Some usual operations examples in MySQL 8.0&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>DIY My Windows</title>
       <link>https://ivanhan0511.github.io/post/os-windows10/</link>
       <pubDate>Tue, 12 Sep 2023 14:24:00 +0800</pubDate>
       
       <guid>https://ivanhan0511.github.io/post/os-windows10/</guid>
       <description>&lt;p&gt;After initialization of Windows 10, here is the TODO list.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>MySQL8.0 Operations</title>
-      <link>https://ivanhan0511.github.io/post/sql-mysql/</link>
-      <pubDate>Thu, 10 Aug 2023 17:52:00 +0800</pubDate>
-      
-      <guid>https://ivanhan0511.github.io/post/sql-mysql/</guid>
-      <description>&lt;p&gt;Some usual operations examples in MySQL 8.0&lt;/p&gt;</description>
     </item>
     
   </channel>

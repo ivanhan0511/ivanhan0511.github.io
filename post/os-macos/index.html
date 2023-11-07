@@ -33,8 +33,8 @@
 
 <meta property="og:description" content="Some record for configuring macOS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CONFIGURATION IN macOS">
-<meta name="twitter:title" content="CONFIGURATION IN macOS">
+<meta property="og:title" content="DIY My macOS">
+<meta name="twitter:title" content="DIY My macOS">
 <meta property="og:url" content="https://ivanhan0511.github.io/post/os-macos/">
 <meta property="twitter:url" content="https://ivanhan0511.github.io/post/os-macos/">
 <meta property="og:site_name" content="Ivan Blog">
@@ -89,7 +89,7 @@
   <meta property="twitter:image" content="https://ivanhan0511.github.io/image-1.png">
 
 
-    <title>CONFIGURATION IN macOS</title>
+    <title>DIY My macOS</title>
 
     <link rel="icon" href="https://ivanhan0511.github.io/favicon.png">
     
@@ -266,7 +266,7 @@
             <div class="post-header main-content-wrap text-center">
   
     <h1 class="post-title">
-      CONFIGURATION IN macOS
+      DIY My macOS
     </h1>
   
   
@@ -392,12 +392,11 @@
           <tbody>
             <tr>
               <td class="gutter">
-                <pre><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br></pre>
+                <pre><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br></pre>
               </td>
               <td class="code">
                 <pre class="code-highlight language-vimrc vimrc"><code class="vimrc"># 查看macOS默认的输入法是什么, 以决定如下的配置文件中`let g:smartim_default = &#39;&#39;`中的内容
-vim ~/.vim/bundle/smartim/plugin/im-select
-
+~/.vim/bundle/smartim/plugin/im-select
 &gt; com.apple.keylayout.ABC
 
 vim ~/.vimrc
@@ -428,7 +427,8 @@ vim ~/.vimrc
               </td>
               <td class="code">
                 <pre class="code-highlight language-smartim smartim"><code class="smartim"># 修改 smartim 的延迟
-# 当你使用的过程中会发现，按下 ESC 之后，短暂的时间内输入法还没有切换为英文，这种卡顿让输入比较快的键盘手无法忍受
+# 当你使用的过程中会发现，按下 ESC 之后，短暂的时间内输入法还没有切换为英文，
+# 这种卡顿让输入比较快的键盘手无法忍受
 # 解决方法是在 smartim.vim 文件中添加 set timeoutlen=0
 vim ~/.vim/bundle/smartim/plugin/smartim.vim
  
@@ -441,11 +441,10 @@ vim ~/.vim/bundle/smartim/plugin/smartim.vim
 &gt; augroup end
 
 # 这样问题解决。不过这会产生一个小问题，就是自定义的快捷键会失效，比如你定义了 jj 表示 ESC
-# 因为没有了延迟，当你输入第二个 j 的时候，Vim 不会把它当做组合。不过不用 jj 也罢。
-# 如果很纠结这个，
-#   可以在函数  Smartim_SelectDefault() 的第一行添加 set timeoutlen=0
-#   在函数 Smartim_SelectSaved() 的第一行添加 set timeoutlen=500
-# 不过即使如此，仍会有 500ms 的延迟</code></pre>
+# 因为没有了延迟，当你输入第二个 j 的时候，Vim 不会把它当做组合。解决如下:
+#   在函数 Smartim_SelectDefault() 的第一行添加 set timeoutlen=300
+#   在函数 Smartim_SelectSaved() 的第一行添加 set timeoutlen=300
+# 此时 300ms 的延迟, 对于从INSERT模式退出到NORMAL模式时, 对于人脑下一步思考, 算是来得及的</code></pre>
               </td>
             </tr>
           </tbody>
@@ -475,7 +474,7 @@ vim ~/.vim/bundle/smartim/plugin/smartim.vim
 <ul>
 <li>在IDEA中创建<code>~/.ideavimrc</code>文件(实际创建在<code>???.ideavimrc</code>)</li>
 <li>只需在最后一行增加配置引用即可<code>source ~/.vimrc</code></li>
-<li>&ldquo;IDEA中自动切换输入法暂时没搞定&rdquo; &ldquo;macOS iTerm2倒是通过smartim搞定了, 有的用&rdquo;</li>
+<li>IDEA中自动切换输入法暂时没搞定, macOS iTerm2倒是通过smartim搞定了, 有的用</li>
 </ul>
 </li>
 <li>MyBatisCodeHelperPro</li>
@@ -594,7 +593,7 @@ vim ~/.vim/bundle/smartim/plugin/smartim.vim
 <li>亿图</li>
 <li>Axure</li>
 <li>OmniPlan</li>
-<li>SwiftPlan</li>
+<li>SwiftPlaygrounds</li>
 </ul>
 <h2 id="game">GAME</h2>
 <hr>
@@ -627,7 +626,7 @@ vim ~/.vim/bundle/smartim/plugin/smartim.vim
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/welcome/" data-tooltip="Welcome to Ivan&#39;s Blog" aria-label="NEXT: Welcome to Ivan&#39;s Blog">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/sql-mysql/" data-tooltip="MySQL8.0 Operations" aria-label="NEXT: MySQL8.0 Operations">
           
               <i class="fa fa-angle-left"></i>
               <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -728,7 +727,7 @@ vim ~/.vim/bundle/smartim/plugin/smartim.vim
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/welcome/" data-tooltip="Welcome to Ivan&#39;s Blog" aria-label="NEXT: Welcome to Ivan&#39;s Blog">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/sql-mysql/" data-tooltip="MySQL8.0 Operations" aria-label="NEXT: MySQL8.0 Operations">
           
               <i class="fa fa-angle-left"></i>
               <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>

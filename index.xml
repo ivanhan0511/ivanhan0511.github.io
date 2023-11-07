@@ -6,18 +6,27 @@
     <description>Recent content on Ivan Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 03 Nov 2023 15:52:20 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 07 Nov 2023 15:40:20 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Welcome to Ivan&#39;s Blog</title>
       <link>https://ivanhan0511.github.io/post/welcome/</link>
-      <pubDate>Fri, 03 Nov 2023 15:52:20 +0800</pubDate>
+      <pubDate>Tue, 07 Nov 2023 15:40:20 +0800</pubDate>
       
       <guid>https://ivanhan0511.github.io/post/welcome/</guid>
       <description>&lt;p&gt;Some records for software, coffee, music and sports.&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>CONFIGURATION IN macOS</title>
+      <title>MySQL8.0 Operations</title>
+      <link>https://ivanhan0511.github.io/post/sql-mysql/</link>
+      <pubDate>Tue, 07 Nov 2023 15:40:00 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/post/sql-mysql/</guid>
+      <description>&lt;p&gt;Some usual operations examples in MySQL 8.0&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>DIY My macOS</title>
       <link>https://ivanhan0511.github.io/post/os-macos/</link>
       <pubDate>Fri, 03 Nov 2023 15:52:00 +0800</pubDate>
       
@@ -63,21 +72,12 @@
     </item>
     
     <item>
-      <title>What To Do After Init Windows</title>
+      <title>DIY My Windows</title>
       <link>https://ivanhan0511.github.io/post/os-windows10/</link>
       <pubDate>Tue, 12 Sep 2023 14:24:00 +0800</pubDate>
       
       <guid>https://ivanhan0511.github.io/post/os-windows10/</guid>
       <description>&lt;p&gt;After initialization of Windows 10, here is the TODO list.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>MySQL8.0 Operations</title>
-      <link>https://ivanhan0511.github.io/post/sql-mysql/</link>
-      <pubDate>Thu, 10 Aug 2023 17:52:00 +0800</pubDate>
-      
-      <guid>https://ivanhan0511.github.io/post/sql-mysql/</guid>
-      <description>&lt;p&gt;Some usual operations examples in MySQL 8.0&lt;/p&gt;</description>
     </item>
     
     <item>

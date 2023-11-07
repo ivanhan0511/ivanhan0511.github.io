@@ -6,13 +6,31 @@
     <description>Recent content in Categories on Ivan Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 03 Nov 2023 15:52:20 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 07 Nov 2023 15:40:20 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Welcome</title>
       <link>https://ivanhan0511.github.io/categories/welcome/</link>
-      <pubDate>Fri, 03 Nov 2023 15:52:20 +0800</pubDate>
+      <pubDate>Tue, 07 Nov 2023 15:40:20 +0800</pubDate>
       
       <guid>https://ivanhan0511.github.io/categories/welcome/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MySQL</title>
+      <link>https://ivanhan0511.github.io/categories/mysql/</link>
+      <pubDate>Tue, 07 Nov 2023 15:40:00 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/categories/mysql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SQL</title>
+      <link>https://ivanhan0511.github.io/categories/sql/</link>
+      <pubDate>Tue, 07 Nov 2023 15:40:00 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/categories/sql/</guid>
       <description></description>
     </item>
     
@@ -76,24 +94,6 @@
       <pubDate>Tue, 12 Sep 2023 14:24:00 +0800</pubDate>
       
       <guid>https://ivanhan0511.github.io/categories/windows/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>MySQL</title>
-      <link>https://ivanhan0511.github.io/categories/mysql/</link>
-      <pubDate>Thu, 10 Aug 2023 17:52:00 +0800</pubDate>
-      
-      <guid>https://ivanhan0511.github.io/categories/mysql/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>SQL</title>
-      <link>https://ivanhan0511.github.io/categories/sql/</link>
-      <pubDate>Thu, 10 Aug 2023 17:52:00 +0800</pubDate>
-      
-      <guid>https://ivanhan0511.github.io/categories/sql/</guid>
       <description></description>
     </item>
     

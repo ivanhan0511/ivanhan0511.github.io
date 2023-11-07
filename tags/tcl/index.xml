@@ -6,11 +6,11 @@
     <description>Recent content in TCL on Ivan Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 10 Aug 2023 17:52:00 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/tags/tcl/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 07 Nov 2023 15:40:00 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/tags/tcl/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>MySQL8.0 Operations</title>
       <link>https://ivanhan0511.github.io/post/sql-mysql/</link>
-      <pubDate>Thu, 10 Aug 2023 17:52:00 +0800</pubDate>
+      <pubDate>Tue, 07 Nov 2023 15:40:00 +0800</pubDate>
       
       <guid>https://ivanhan0511.github.io/post/sql-mysql/</guid>
       <description>&lt;p&gt;Some usual operations examples in MySQL 8.0&lt;/p&gt;</description>

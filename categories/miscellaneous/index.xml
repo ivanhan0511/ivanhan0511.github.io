@@ -6,16 +6,7 @@
     <description>Recent content in Miscellaneous on Ivan Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 23 Feb 2023 12:52:00 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/categories/miscellaneous/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>API Design</title>
-      <link>https://ivanhan0511.github.io/post/miscellaneous-api/</link>
-      <pubDate>Thu, 23 Feb 2023 12:52:00 +0800</pubDate>
-      
-      <guid>https://ivanhan0511.github.io/post/miscellaneous-api/</guid>
-      <description>&lt;p&gt;This is a custom summary and does &lt;em&gt;NOT&lt;/em&gt; appear in the post.&lt;/p&gt;</description>
-    </item>
-    
+    <lastBuildDate>Thu, 09 Jun 2022 21:32:20 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/categories/miscellaneous/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>C Miscellaneous</title>
       <link>https://ivanhan0511.github.io/post/c-miscellaneous/</link>
@@ -24,15 +15,6 @@
       <guid>https://ivanhan0511.github.io/post/c-miscellaneous/</guid>
       <description>&lt;p&gt;Hello, world!\n&lt;/p&gt;
 &lt;p&gt;Some basic knowledge or principles of C/C++&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>气候变暖的神话</title>
-      <link>https://ivanhan0511.github.io/post/miscellaneous-co2/</link>
-      <pubDate>Wed, 25 May 2022 20:54:13 +0800</pubDate>
-      
-      <guid>https://ivanhan0511.github.io/post/miscellaneous-co2/</guid>
-      <description>&lt;p&gt;[转载]从新认识气候变暖和温室效应&lt;/p&gt;</description>
     </item>
     
   </channel>

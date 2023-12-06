@@ -6,7 +6,26 @@
     <description>Recent content in Posts on Ivan Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 05 Dec 2023 11:23:00 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 05 Dec 2023 15:38:00 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Welcome to Ivan&#39;s Blog</title>
+      <link>https://ivanhan0511.github.io/post/welcome/</link>
+      <pubDate>Tue, 05 Dec 2023 15:38:00 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/post/welcome/</guid>
+      <description>&lt;p&gt;Some records for software, coffee, music and sports.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Gaggiuino For Coffee</title>
+      <link>https://ivanhan0511.github.io/post/coffee-gaggiuino/</link>
+      <pubDate>Tue, 05 Dec 2023 13:39:32 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/post/coffee-gaggiuino/</guid>
+      <description>&lt;p&gt;Uino如果从拉丁语翻译过来, 是&amp;quot;葡萄酒&amp;quot;的意思&lt;/p&gt;
+&lt;p&gt;PID temprature controllation can be replaced by Gaggiuino, which is a system based on MCU(STM32)&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Software Architecture</title>
       <link>https://ivanhan0511.github.io/post/software-architecture/</link>
@@ -14,15 +33,6 @@
       
       <guid>https://ivanhan0511.github.io/post/software-architecture/</guid>
       <description>&lt;p&gt;This is a custom summary and does &lt;em&gt;NOT&lt;/em&gt; appear in the post.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Welcome to Ivan&#39;s Blog</title>
-      <link>https://ivanhan0511.github.io/post/welcome/</link>
-      <pubDate>Tue, 07 Nov 2023 15:40:20 +0800</pubDate>
-      
-      <guid>https://ivanhan0511.github.io/post/welcome/</guid>
-      <description>&lt;p&gt;Some records for software, coffee, music and sports.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -127,12 +137,12 @@
     </item>
     
     <item>
-      <title>PID For Coffee</title>
-      <link>https://ivanhan0511.github.io/post/coffee-gaggiuino/</link>
-      <pubDate>Thu, 02 Feb 2023 13:39:32 +0800</pubDate>
+      <title>Coffee Beans</title>
+      <link>https://ivanhan0511.github.io/post/coffee-barista/</link>
+      <pubDate>Mon, 05 Dec 2022 14:33:05 +0800</pubDate>
       
-      <guid>https://ivanhan0511.github.io/post/coffee-gaggiuino/</guid>
-      <description>&lt;p&gt;This is a custom summary and does &lt;em&gt;NOT&lt;/em&gt; appear in the post.&lt;/p&gt;</description>
+      <guid>https://ivanhan0511.github.io/post/coffee-barista/</guid>
+      <description>&lt;p&gt;Whick kind of coffee beans do you like?&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -170,15 +180,6 @@
       <guid>https://ivanhan0511.github.io/post/ecnomics-double-entry-bookkeeping/</guid>
       <description>&lt;p&gt;It is difficult to understand double-entry bookkeeping.
 So here are some tips, wish to be helpful.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Coffee Beans</title>
-      <link>https://ivanhan0511.github.io/post/coffee-barista/</link>
-      <pubDate>Thu, 09 Jun 2022 21:33:05 +0800</pubDate>
-      
-      <guid>https://ivanhan0511.github.io/post/coffee-barista/</guid>
-      <description>&lt;p&gt;Whick kind of coffee beans do you like?&lt;/p&gt;</description>
     </item>
     
     <item>

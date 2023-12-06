@@ -6,14 +6,24 @@
     <description>Recent content in coffee on Ivan Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 24 May 2022 03:09:48 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/tags/coffee/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 05 Dec 2023 13:39:32 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/tags/coffee/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>HELOR</title>
-      <link>https://ivanhan0511.github.io/post/coffee-grinder-helor/</link>
-      <pubDate>Tue, 24 May 2022 03:09:48 +0800</pubDate>
+      <title>Gaggiuino For Coffee</title>
+      <link>https://ivanhan0511.github.io/post/coffee-gaggiuino/</link>
+      <pubDate>Tue, 05 Dec 2023 13:39:32 +0800</pubDate>
       
-      <guid>https://ivanhan0511.github.io/post/coffee-grinder-helor/</guid>
-      <description>&lt;p&gt;Handy grinder&lt;/p&gt;</description>
+      <guid>https://ivanhan0511.github.io/post/coffee-gaggiuino/</guid>
+      <description>&lt;p&gt;Uino如果从拉丁语翻译过来, 是&amp;quot;葡萄酒&amp;quot;的意思&lt;/p&gt;
+&lt;p&gt;PID temprature controllation can be replaced by Gaggiuino, which is a system based on MCU(STM32)&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Coffee Beans</title>
+      <link>https://ivanhan0511.github.io/post/coffee-barista/</link>
+      <pubDate>Mon, 05 Dec 2022 14:33:05 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/post/coffee-barista/</guid>
+      <description>&lt;p&gt;Whick kind of coffee beans do you like?&lt;/p&gt;</description>
     </item>
     
   </channel>

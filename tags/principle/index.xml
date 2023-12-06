@@ -6,14 +6,15 @@
     <description>Recent content in Principle on Ivan Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 02 Feb 2023 13:39:32 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/tags/principle/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 05 Dec 2023 13:39:32 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/tags/principle/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>PID For Coffee</title>
+      <title>Gaggiuino For Coffee</title>
       <link>https://ivanhan0511.github.io/post/coffee-gaggiuino/</link>
-      <pubDate>Thu, 02 Feb 2023 13:39:32 +0800</pubDate>
+      <pubDate>Tue, 05 Dec 2023 13:39:32 +0800</pubDate>
       
       <guid>https://ivanhan0511.github.io/post/coffee-gaggiuino/</guid>
-      <description>&lt;p&gt;This is a custom summary and does &lt;em&gt;NOT&lt;/em&gt; appear in the post.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Uino如果从拉丁语翻译过来, 是&amp;quot;葡萄酒&amp;quot;的意思&lt;/p&gt;
+&lt;p&gt;PID temprature controllation can be replaced by Gaggiuino, which is a system based on MCU(STM32)&lt;/p&gt;</description>
     </item>
     
   </channel>

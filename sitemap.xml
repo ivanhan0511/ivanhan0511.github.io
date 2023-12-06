@@ -2,6 +2,48 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://ivanhan0511.github.io/categories/</loc>
+    <lastmod>2023-12-05T15:38:00+08:00</lastmod>
+  </url><url>
+    <loc>https://ivanhan0511.github.io/</loc>
+    <lastmod>2023-12-05T15:38:00+08:00</lastmod>
+  </url><url>
+    <loc>https://ivanhan0511.github.io/tags/ivan-han/</loc>
+    <lastmod>2023-12-05T15:38:00+08:00</lastmod>
+  </url><url>
+    <loc>https://ivanhan0511.github.io/post/</loc>
+    <lastmod>2023-12-05T15:38:00+08:00</lastmod>
+  </url><url>
+    <loc>https://ivanhan0511.github.io/tags/</loc>
+    <lastmod>2023-12-05T15:38:00+08:00</lastmod>
+  </url><url>
+    <loc>https://ivanhan0511.github.io/tags/welcome/</loc>
+    <lastmod>2023-12-05T15:38:00+08:00</lastmod>
+  </url><url>
+    <loc>https://ivanhan0511.github.io/categories/welcome/</loc>
+    <lastmod>2023-12-05T15:38:00+08:00</lastmod>
+  </url><url>
+    <loc>https://ivanhan0511.github.io/post/welcome/</loc>
+    <lastmod>2023-12-05T15:38:00+08:00</lastmod>
+  </url><url>
+    <loc>https://ivanhan0511.github.io/tags/coffee/</loc>
+    <lastmod>2023-12-05T13:39:32+08:00</lastmod>
+  </url><url>
+    <loc>https://ivanhan0511.github.io/categories/coffee/</loc>
+    <lastmod>2023-12-05T13:39:32+08:00</lastmod>
+  </url><url>
+    <loc>https://ivanhan0511.github.io/tags/gaggiuino/</loc>
+    <lastmod>2023-12-05T13:39:32+08:00</lastmod>
+  </url><url>
+    <loc>https://ivanhan0511.github.io/categories/gaggiuino/</loc>
+    <lastmod>2023-12-05T13:39:32+08:00</lastmod>
+  </url><url>
+    <loc>https://ivanhan0511.github.io/post/coffee-gaggiuino/</loc>
+    <lastmod>2023-12-05T13:39:32+08:00</lastmod>
+  </url><url>
+    <loc>https://ivanhan0511.github.io/tags/principle/</loc>
+    <lastmod>2023-12-05T13:39:32+08:00</lastmod>
+  </url><url>
     <loc>https://ivanhan0511.github.io/tags/api/</loc>
     <lastmod>2023-12-05T11:23:00+08:00</lastmod>
   </url><url>
@@ -14,35 +56,11 @@
     <loc>https://ivanhan0511.github.io/categories/architecture/</loc>
     <lastmod>2023-12-05T11:23:00+08:00</lastmod>
   </url><url>
-    <loc>https://ivanhan0511.github.io/categories/</loc>
-    <lastmod>2023-12-05T11:23:00+08:00</lastmod>
-  </url><url>
     <loc>https://ivanhan0511.github.io/tags/design/</loc>
-    <lastmod>2023-12-05T11:23:00+08:00</lastmod>
-  </url><url>
-    <loc>https://ivanhan0511.github.io/</loc>
-    <lastmod>2023-12-05T11:23:00+08:00</lastmod>
-  </url><url>
-    <loc>https://ivanhan0511.github.io/post/</loc>
     <lastmod>2023-12-05T11:23:00+08:00</lastmod>
   </url><url>
     <loc>https://ivanhan0511.github.io/post/software-architecture/</loc>
     <lastmod>2023-12-05T11:23:00+08:00</lastmod>
-  </url><url>
-    <loc>https://ivanhan0511.github.io/tags/</loc>
-    <lastmod>2023-12-05T11:23:00+08:00</lastmod>
-  </url><url>
-    <loc>https://ivanhan0511.github.io/tags/ivan-han/</loc>
-    <lastmod>2023-11-07T15:40:20+08:00</lastmod>
-  </url><url>
-    <loc>https://ivanhan0511.github.io/tags/welcome/</loc>
-    <lastmod>2023-11-07T15:40:20+08:00</lastmod>
-  </url><url>
-    <loc>https://ivanhan0511.github.io/categories/welcome/</loc>
-    <lastmod>2023-11-07T15:40:20+08:00</lastmod>
-  </url><url>
-    <loc>https://ivanhan0511.github.io/post/welcome/</loc>
-    <lastmod>2023-11-07T15:40:20+08:00</lastmod>
   </url><url>
     <loc>https://ivanhan0511.github.io/tags/backup/</loc>
     <lastmod>2023-11-07T15:40:00+08:00</lastmod>
@@ -209,14 +227,17 @@
     <loc>https://ivanhan0511.github.io/post/network-nginx/</loc>
     <lastmod>2023-02-21T15:06:52+08:00</lastmod>
   </url><url>
-    <loc>https://ivanhan0511.github.io/categories/pid/</loc>
-    <lastmod>2023-02-02T13:39:32+08:00</lastmod>
+    <loc>https://ivanhan0511.github.io/categories/barista/</loc>
+    <lastmod>2022-12-05T14:33:05+08:00</lastmod>
   </url><url>
-    <loc>https://ivanhan0511.github.io/post/coffee-gaggiuino/</loc>
-    <lastmod>2023-02-02T13:39:32+08:00</lastmod>
+    <loc>https://ivanhan0511.github.io/tags/beans/</loc>
+    <lastmod>2022-12-05T14:33:05+08:00</lastmod>
   </url><url>
-    <loc>https://ivanhan0511.github.io/tags/principle/</loc>
-    <lastmod>2023-02-02T13:39:32+08:00</lastmod>
+    <loc>https://ivanhan0511.github.io/post/coffee-barista/</loc>
+    <lastmod>2022-12-05T14:33:05+08:00</lastmod>
+  </url><url>
+    <loc>https://ivanhan0511.github.io/tags/ethiopia/</loc>
+    <lastmod>2022-12-05T14:33:05+08:00</lastmod>
   </url><url>
     <loc>https://ivanhan0511.github.io/categories/basic/</loc>
     <lastmod>2022-10-26T14:05:15+08:00</lastmod>
@@ -256,18 +277,6 @@
   </url><url>
     <loc>https://ivanhan0511.github.io/categories/ecnomics/</loc>
     <lastmod>2022-06-27T12:48:05+08:00</lastmod>
-  </url><url>
-    <loc>https://ivanhan0511.github.io/categories/beans/</loc>
-    <lastmod>2022-06-09T21:33:05+08:00</lastmod>
-  </url><url>
-    <loc>https://ivanhan0511.github.io/categories/coffee/</loc>
-    <lastmod>2022-06-09T21:33:05+08:00</lastmod>
-  </url><url>
-    <loc>https://ivanhan0511.github.io/post/coffee-barista/</loc>
-    <lastmod>2022-06-09T21:33:05+08:00</lastmod>
-  </url><url>
-    <loc>https://ivanhan0511.github.io/tags/ethiopia/</loc>
-    <lastmod>2022-06-09T21:33:05+08:00</lastmod>
   </url><url>
     <loc>https://ivanhan0511.github.io/tags/c/</loc>
     <lastmod>2022-06-09T21:32:20+08:00</lastmod>
@@ -362,13 +371,13 @@
     <loc>https://ivanhan0511.github.io/post/coffee-equipment/</loc>
     <lastmod>2022-05-24T05:49:34+08:00</lastmod>
   </url><url>
+    <loc>https://ivanhan0511.github.io/tags/coffee-machine/</loc>
+    <lastmod>2022-05-24T05:49:34+08:00</lastmod>
+  </url><url>
     <loc>https://ivanhan0511.github.io/categories/equipment/</loc>
     <lastmod>2022-05-24T05:49:34+08:00</lastmod>
   </url><url>
     <loc>https://ivanhan0511.github.io/tags/grinder/</loc>
-    <lastmod>2022-05-24T05:49:34+08:00</lastmod>
-  </url><url>
-    <loc>https://ivanhan0511.github.io/tags/mazzer/</loc>
     <lastmod>2022-05-24T05:49:34+08:00</lastmod>
   </url><url>
     <loc>https://ivanhan0511.github.io/archives/</loc>

@@ -16,7 +16,7 @@
     
   },
   "name":"Ivan Blog",
-  "description":"\u003cp\u003eUino如果从拉丁语翻译过来, 是\u0026quot;葡萄酒\u0026quot;的意思\u003c\/p\u003e\n\u003cp\u003ePID temprature controllation can be replaced by Gaggiuino, which is a system based on MCU(STM32)\u003c\/p\u003e",
+  "description":"\u003cp\u003eIf \u0026ldquo;Uino\u0026rdquo; is from Ladin, it means wine.\u003c\/p\u003e\n\u003cp\u003ePID temprature controllation can be replaced by Gaggiuino, which is a system based on MCU(STM32)\u003c\/p\u003e",
   "url":"https:\/\/ivanhan0511.github.io\/post\/coffee-gaggiuino\/",
   "keywords":"[coffee, pid, coffee, gaggiuino, Ivan, SoftwareEngineer, C\/C\u002b\u002b, Java, Coffee, Bass, Bicycle, Badminton]"
 }
@@ -28,21 +28,21 @@
 <meta name="generator" content="Hugo 0.117.0 with theme Tranquilpeak 0.5.3-BETA">
 <meta name="author" content="Ivan Han">
 <meta name="keywords" content="coffee, pid, coffee, gaggiuino, Ivan, SoftwareEngineer, C/C&#43;&#43;, Java, Coffee, Bass, Bicycle, Badminton">
-<meta name="description" content="Uino如果从拉丁语翻译过来, 是&quot;葡萄酒&quot;的意思
+<meta name="description" content="If &ldquo;Uino&rdquo; is from Ladin, it means wine.
 PID temprature controllation can be replaced by Gaggiuino, which is a system based on MCU(STM32)">
 
 
-<meta property="og:description" content="Uino如果从拉丁语翻译过来, 是&quot;葡萄酒&quot;的意思
+<meta property="og:description" content="If &ldquo;Uino&rdquo; is from Ladin, it means wine.
 PID temprature controllation can be replaced by Gaggiuino, which is a system based on MCU(STM32)">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Gaggiuino For Coffee">
-<meta name="twitter:title" content="Gaggiuino For Coffee">
+<meta property="og:title" content="Gaggiuino For Coffee(Stranded)">
+<meta name="twitter:title" content="Gaggiuino For Coffee(Stranded)">
 <meta property="og:url" content="https://ivanhan0511.github.io/post/coffee-gaggiuino/">
 <meta property="twitter:url" content="https://ivanhan0511.github.io/post/coffee-gaggiuino/">
 <meta property="og:site_name" content="Ivan Blog">
-<meta property="og:description" content="Uino如果从拉丁语翻译过来, 是&quot;葡萄酒&quot;的意思
+<meta property="og:description" content="If &ldquo;Uino&rdquo; is from Ladin, it means wine.
 PID temprature controllation can be replaced by Gaggiuino, which is a system based on MCU(STM32)">
-<meta name="twitter:description" content="Uino如果从拉丁语翻译过来, 是&quot;葡萄酒&quot;的意思
+<meta name="twitter:description" content="If &ldquo;Uino&rdquo; is from Ladin, it means wine.
 PID temprature controllation can be replaced by Gaggiuino, which is a system based on MCU(STM32)">
 <meta property="og:locale" content="en-us">
 
@@ -97,7 +97,7 @@ PID temprature controllation can be replaced by Gaggiuino, which is a system bas
   <meta property="twitter:image" content="https://ivanhan0511.github.io/image-1.png">
 
 
-    <title>Gaggiuino For Coffee</title>
+    <title>Gaggiuino For Coffee(Stranded)</title>
 
     <link rel="icon" href="https://ivanhan0511.github.io/favicon.png">
     
@@ -274,7 +274,7 @@ PID temprature controllation can be replaced by Gaggiuino, which is a system bas
             <div class="post-header main-content-wrap text-center">
   
     <h1 class="post-title">
-      Gaggiuino For Coffee
+      Gaggiuino For Coffee(Stranded)
     </h1>
   
   
@@ -308,7 +308,7 @@ PID temprature controllation can be replaced by Gaggiuino, which is a system bas
           
           <div class="post-content markdown">
             <div class="main-content-wrap">
-              <p>Uino如果从拉丁语翻译过来, 是&quot;葡萄酒&quot;的意思</p>
+              <p>If &ldquo;Uino&rdquo; is from Ladin, it means wine.</p>
 <p>PID temprature controllation can be replaced by Gaggiuino, which is a system based on MCU(STM32)</p>
 <h1 id="table-of-contents">Table of Contents</h1>
 <nav id="TableOfContents">
@@ -318,7 +318,12 @@ PID temprature controllation can be replaced by Gaggiuino, which is a system bas
     <li><a href="#prepare">PREPARE</a>
       <ul>
         <li><a href="#hardware">Hardware</a></li>
-        <li><a href="#software">Software</a></li>
+        <li><a href="#software">Software</a>
+          <ul>
+            <li><a href="#github-gaggiuino">Github Gaggiuino</a></li>
+            <li><a href="#cc">C/C++</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
     <li><a href="#operations">OPERATIONS</a>
@@ -359,6 +364,7 @@ PID temprature controllation can be replaced by Gaggiuino, which is a system bas
 </ul>
 <h2 id="prepare">PREPARE</h2>
 <hr>
+<p>Read the <a href="https://gaggiuino.github.io/#/?id=home">doc</a> first</p>
 <h3 id="hardware">Hardware</h3>
 <ul>
 <li>Milesto EM-18
@@ -368,9 +374,20 @@ PID temprature controllation can be replaced by Gaggiuino, which is a system bas
 </li>
 <li>PCB modules from Gaggiuino</li>
 <li>Connection lines</li>
+<li>Buy all of them, STM32, PCB, lines, LCD, temperature detector</li>
+<li>Tools like &hellip;</li>
 </ul>
 <h3 id="software">Software</h3>
-<p><a href="https://github.com/Zer0-bit/gaggiuino">Gaggiuino Project</a> from github</p>
+<p><a href="https://github.com/Zer0-bit/gaggiuino">Gaggiuino Project</a> in github</p>
+<h4 id="github-gaggiuino">Github Gaggiuino</h4>
+<ul>
+<li>Read the <a href="https://gaggiuino.github.io/#/?id=home">doc</a></li>
+<li>Run the project</li>
+</ul>
+<h4 id="cc">C/C++</h4>
+<ul>
+<li>Known the gramma of C/C++ in Gaggiuino project</li>
+</ul>
 <h2 id="operations">OPERATIONS</h2>
 <hr>
 <h3 id="disassemble">Disassemble</h3>
@@ -409,7 +426,7 @@ PID temprature controllation can be replaced by Gaggiuino, which is a system bas
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/welcome/" data-tooltip="Welcome to Ivan&#39;s Blog" aria-label="NEXT: Welcome to Ivan&#39;s Blog">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/music-piano/" data-tooltip="Piano" aria-label="NEXT: Piano">
           
               <i class="fa fa-angle-left"></i>
               <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -510,7 +527,7 @@ PID temprature controllation can be replaced by Gaggiuino, which is a system bas
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/welcome/" data-tooltip="Welcome to Ivan&#39;s Blog" aria-label="NEXT: Welcome to Ivan&#39;s Blog">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/music-piano/" data-tooltip="Piano" aria-label="NEXT: Piano">
           
               <i class="fa fa-angle-left"></i>
               <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>

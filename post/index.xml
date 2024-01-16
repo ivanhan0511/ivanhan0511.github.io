@@ -6,23 +6,23 @@
     <description>Recent content in Posts on Ivan Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 31 Dec 2023 14:49:50 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 16 Jan 2024 16:41:50 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Welcome to Ivan&#39;s Blog</title>
       <link>https://ivanhan0511.github.io/post/welcome/</link>
-      <pubDate>Sun, 31 Dec 2023 14:49:50 +0800</pubDate>
+      <pubDate>Tue, 16 Jan 2024 16:41:50 +0800</pubDate>
       
       <guid>https://ivanhan0511.github.io/post/welcome/</guid>
       <description>&lt;p&gt;Some records for software, coffee, music and sports.&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>OpenCV with Python</title>
-      <link>https://ivanhan0511.github.io/post/python-opencv/</link>
-      <pubDate>Sun, 31 Dec 2023 14:49:00 +0800</pubDate>
+      <title>OpenCV</title>
+      <link>https://ivanhan0511.github.io/post/opencv-basic/</link>
+      <pubDate>Tue, 16 Jan 2024 16:40:26 +0800</pubDate>
       
-      <guid>https://ivanhan0511.github.io/post/python-opencv/</guid>
-      <description>&lt;p&gt;使用OpenCV技术测量图片关键点之间的距离&lt;/p&gt;</description>
+      <guid>https://ivanhan0511.github.io/post/opencv-basic/</guid>
+      <description>&lt;p&gt;Hope new chapter opened on OpenCV!&lt;/p&gt;</description>
     </item>
     
     <item>

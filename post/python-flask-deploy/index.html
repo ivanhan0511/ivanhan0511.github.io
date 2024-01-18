@@ -407,15 +407,106 @@ into R&amp;D settings</p>
 </span></span><span style="display:flex;"><span>python3 -m venv venv
 </span></span></code></pre></div></li>
 <li>
-<p>进入screen环境</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>screen -S run  <span style="color:#75715e"># 或screen -dr run</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># screen环境</span>
-</span></span><span style="display:flex;"><span>source venv/bin/activate
-</span></span><span style="display:flex;"><span><span style="color:#75715e">## venv环境</span>
-</span></span><span style="display:flex;"><span>python -m pip install -r requirement/requirement-dev.txt
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#flask init  # 初始化数据库, 如果需要</span>
-</span></span><span style="display:flex;"><span>flask run
-</span></span></code></pre></div></li>
+<p>进入screen环境
+
+
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+
+
+  
+    
+  
+  
+
+<figure class="codeblock codeblock--tabbed">
+  <figcaption>
+    
+      <span>activate</span>
+    
+    <ul class="tabs">
+      
+        <li class="tab active">ubuntu</li>
+      
+        <li class="tab ">windows</li>
+      
+        <li class="tab ">venv</li>
+      
+    </ul>
+  </figcaption>
+  <div class="tabs-content">
+    
+      
+      <figure class="highlight language-ubuntu ubuntu" style="display: block;">
+        <table>
+          <tbody>
+            <tr>
+              <td class="gutter">
+                <pre><span>1</span><br></pre>
+              </td>
+              <td class="code">
+                <pre class="code-highlight language-ubuntu ubuntu"><code class="ubuntu">source venv/bin/activate</code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </figure>
+    
+      
+      <figure class="highlight language-windows windows" style="display: none;">
+        <table>
+          <tbody>
+            <tr>
+              <td class="gutter">
+                <pre><span>1</span><br><span>2</span><br></pre>
+              </td>
+              <td class="code">
+                <pre class="code-highlight language-windows windows"><code class="windows">cd venv/Scripts
+activate</code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </figure>
+    
+      
+      <figure class="highlight language-venv venv" style="display: none;">
+        <table>
+          <tbody>
+            <tr>
+              <td class="gutter">
+                <pre><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></pre>
+              </td>
+              <td class="code">
+                <pre class="code-highlight language-venv venv"><code class="venv"># venv环境
+python -m pip install -r requirements.txt
+#flask init  # 初始化数据库, 如果需要
+flask run</code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </figure>
+    
+  </div>
+</figure>
+</p>
+</li>
 <li>
 <p>安装Nginx并配置</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cd /www/server/nginx/conf/vhost

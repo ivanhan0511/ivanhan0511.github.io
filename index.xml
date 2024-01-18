@@ -6,14 +6,32 @@
     <description>Recent content on Ivan Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 16 Jan 2024 16:41:50 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 18 Jan 2024 15:28:50 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Welcome to Ivan&#39;s Blog</title>
       <link>https://ivanhan0511.github.io/post/welcome/</link>
-      <pubDate>Tue, 16 Jan 2024 16:41:50 +0800</pubDate>
+      <pubDate>Thu, 18 Jan 2024 15:28:50 +0800</pubDate>
       
       <guid>https://ivanhan0511.github.io/post/welcome/</guid>
       <description>&lt;p&gt;Some records for software, coffee, music and sports.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Python Basic</title>
+      <link>https://ivanhan0511.github.io/post/python-basic/</link>
+      <pubDate>Thu, 18 Jan 2024 15:26:10 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/post/python-basic/</guid>
+      <description>&lt;p&gt;Some basic records of Python&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>DIY My Windows</title>
+      <link>https://ivanhan0511.github.io/post/os-windows10/</link>
+      <pubDate>Wed, 17 Jan 2024 10:19:00 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/post/os-windows10/</guid>
+      <description>&lt;p&gt;After initialization of Windows 10, here is the TODO list.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -97,15 +115,6 @@
       
       <guid>https://ivanhan0511.github.io/post/java-spring/</guid>
       <description>&lt;p&gt;This is a custom summary and does &lt;em&gt;NOT&lt;/em&gt; appear in the post.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>DIY My Windows</title>
-      <link>https://ivanhan0511.github.io/post/os-windows10/</link>
-      <pubDate>Tue, 12 Sep 2023 14:24:00 +0800</pubDate>
-      
-      <guid>https://ivanhan0511.github.io/post/os-windows10/</guid>
-      <description>&lt;p&gt;After initialization of Windows 10, here is the TODO list.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -255,15 +264,6 @@ So here are some tips, wish to be helpful.&lt;/p&gt;</description>
       
       <guid>https://ivanhan0511.github.io/post/python-flask-deploy/</guid>
       <description>&lt;p&gt;Deploy a project which is small or flexible project, with PearAdmin Flask&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Flask Basic</title>
-      <link>https://ivanhan0511.github.io/post/python-flask-pearadmin/</link>
-      <pubDate>Tue, 24 May 2022 16:57:10 +0800</pubDate>
-      
-      <guid>https://ivanhan0511.github.io/post/python-flask-pearadmin/</guid>
-      <description>&lt;p&gt;Some records of Flask&lt;/p&gt;</description>
     </item>
     
     <item>

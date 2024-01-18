@@ -43,10 +43,10 @@
 <meta property="og:locale" content="en-us">
 
   
-    <meta property="article:published_time" content="2023-09-12T14:24:00">
+    <meta property="article:published_time" content="2024-01-17T10:19:00">
   
   
-    <meta property="article:modified_time" content="2023-09-12T14:24:00">
+    <meta property="article:modified_time" content="2024-01-17T10:19:00">
   
   
   
@@ -62,13 +62,13 @@
     
       <meta property="article:tag" content="Init">
     
+      <meta property="article:tag" content="VisualStudio">
+    
       <meta property="article:tag" content="IDEA">
     
-      <meta property="article:tag" content="Configure">
+      <meta property="article:tag" content="Configuration">
     
       <meta property="article:tag" content="Proxy">
-    
-      <meta property="article:tag" content="VisualStudio">
     
       <meta property="article:tag" content="HBuildX">
     
@@ -284,13 +284,13 @@
   
   <div class="postShorten-meta post-meta">
     
-      <time datetime="2023-09-12T14:24:00&#43;08:00">
+      <time datetime="2024-01-17T10:19:00&#43;08:00">
         
   
   
   
   
-    September 12, 2023
+    January 17, 2024
   
 
       </time>
@@ -319,6 +319,7 @@
     <li><a href="#backup">BACKUP</a></li>
     <li><a href="#boot-device">BOOT DEVICE</a></li>
     <li><a href="#base">BASE</a></li>
+    <li><a href="#wsl">WSL?</a></li>
     <li><a href="#proxy">Proxy</a></li>
     <li><a href="#visualstudiopro2022">VisualStudioPro2022</a></li>
     <li><a href="#idea">IDEA</a>
@@ -352,14 +353,30 @@
 <hr>
 <p>主力开发操作系统是Windows, 如果要重装系统, 需要提前备份好本地文件</p>
 <ul>
-<li>代码: 基本通过git有同步, 其余少量的通过copy完成</li>
+<li>IDEA
+<ul>
+<li>git commit and push</li>
+<li>IDEA开发用的每一条SQL console, 右键Refactor -&gt; Copy file, 存储到项目sql文件夹中随Git上传</li>
+<li>Scratch代码</li>
+</ul>
+</li>
+<li>VisualStudio
+<ul>
+<li>TODO</li>
+</ul>
+</li>
+<li>HBuildX
+<ul>
+<li>TODO</li>
+</ul>
+</li>
 <li>坚果云文档: 公司文档, 仅限文档, 其余通过本地文件存储</li>
 <li>本地文档
 <ul>
 <li>公司超大文件</li>
 <li>各个项目的密钥 / 证书</li>
 <li>服务器所涉及的登录方式 / 用户名 / 密码 的文档</li>
-<li>SSH密钥</li>
+<li>SSH密钥对</li>
 </ul>
 </li>
 <li>虚拟机
@@ -367,13 +384,6 @@
 <li>数据库: 转储数据和数据结构, MySQL和SQLServer的所有库</li>
 <li>SSH密钥</li>
 <li>证书</li>
-</ul>
-</li>
-<li>IDEA
-<ul>
-<li>IDEA本身的配置通过云同步</li>
-<li>IDEA开发用的每一条SQL console, 右键Refactor -&gt; Copy file, 存储到项目中随Git上传</li>
-<li>Scratch代码</li>
 </ul>
 </li>
 <li>图片</li>
@@ -403,13 +413,17 @@
 <li>Logitech Anywhere3 and OptionPlus</li>
 <li>系统一般使用浅色系, 所以修改鼠标指针为黑色(系统方案)</li>
 </ul>
+<h2 id="wsl">WSL?</h2>
+<hr>
+<p>TODO</p>
 <h2 id="proxy">Proxy</h2>
 <hr>
 <p>v2rayN(Need DotNet6.0)</p>
 <p>注意新安装的Windows, 要确保对时准确, 精准到1分钟以内, 否则代理建立连接失败</p>
 <h2 id="visualstudiopro2022">VisualStudioPro2022</h2>
 <hr>
-<p>最大化使用, C/C++, Python, Vim, Git, PowerShell</p>
+<p>最大化使用, C/C++, <del>Python</del>, Vim, Git, PowerShell</p>
+<p>使用Visual Studio开发Python, 还是感觉怪怪的, 还得回归PyCharm</p>
 <ul>
 <li>设置项目存储路径, Tools -&gt; Options -&gt; Projects and Solutions -&gt; Locations</li>
 <li>Install VsVim extension
@@ -434,6 +448,7 @@
 <hr>
 <h3 id="configuration">Configuration</h3>
 <ul>
+<li>Enable <code>Settings Sync</code></li>
 <li>在各个项目中分别选择Java JDK环境, 不安装Java在裸机</li>
 <li>settsings(Ctrl+Alt+S) -&gt; Editor -&gt; Code Style -&gt; SQL -&gt; 将keywords设置为大写(To upper), and then<code>ctrl + alt + L</code></li>
 <li>数据库导入时, 右键某个数据库 -&gt; Import/Export -&gt; Restore with &lsquo;mysql&rsquo; -&gt; Path to mysql -&gt; <code>C:/Program Files/MySQL/MySQL Server 8.1/bin/mysql.exe</code></li>
@@ -845,13 +860,13 @@ sudo vi /etc/fstab</code></pre>
 
   <a class="tag tag--primary tag--small" href="https://ivanhan0511.github.io/tags/init/">Init</a>
 
+  <a class="tag tag--primary tag--small" href="https://ivanhan0511.github.io/tags/visualstudio/">VisualStudio</a>
+
   <a class="tag tag--primary tag--small" href="https://ivanhan0511.github.io/tags/idea/">IDEA</a>
 
-  <a class="tag tag--primary tag--small" href="https://ivanhan0511.github.io/tags/configure/">Configure</a>
+  <a class="tag tag--primary tag--small" href="https://ivanhan0511.github.io/tags/configuration/">Configuration</a>
 
   <a class="tag tag--primary tag--small" href="https://ivanhan0511.github.io/tags/proxy/">Proxy</a>
-
-  <a class="tag tag--primary tag--small" href="https://ivanhan0511.github.io/tags/visualstudio/">VisualStudio</a>
 
   <a class="tag tag--primary tag--small" href="https://ivanhan0511.github.io/tags/hbuildx/">HBuildX</a>
 
@@ -866,7 +881,7 @@ sudo vi /etc/fstab</code></pre>
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/java-spring/" data-tooltip="Spring" aria-label="NEXT: Spring">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/python-basic/" data-tooltip="Python Basic" aria-label="NEXT: Python Basic">
           
               <i class="fa fa-angle-left"></i>
               <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -874,7 +889,7 @@ sudo vi /etc/fstab</code></pre>
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/sql-sqlserver/" data-tooltip="SQL Server Init Operations" aria-label="PREVIOUS: SQL Server Init Operations">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/opencv-basic/" data-tooltip="OpenCV" aria-label="PREVIOUS: OpenCV">
           
               <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
               <i class="fa fa-angle-right"></i>
@@ -967,7 +982,7 @@ sudo vi /etc/fstab</code></pre>
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/java-spring/" data-tooltip="Spring" aria-label="NEXT: Spring">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/python-basic/" data-tooltip="Python Basic" aria-label="NEXT: Python Basic">
           
               <i class="fa fa-angle-left"></i>
               <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -975,7 +990,7 @@ sudo vi /etc/fstab</code></pre>
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/sql-sqlserver/" data-tooltip="SQL Server Init Operations" aria-label="PREVIOUS: SQL Server Init Operations">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/opencv-basic/" data-tooltip="OpenCV" aria-label="PREVIOUS: OpenCV">
           
               <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
               <i class="fa fa-angle-right"></i>

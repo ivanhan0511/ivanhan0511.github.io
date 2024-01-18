@@ -26,14 +26,5 @@
       <description>&lt;p&gt;This is a custom summary and does &lt;em&gt;NOT&lt;/em&gt; appear in the post.&lt;/p&gt;</description>
     </item>
     
-    <item>
-      <title>Flask Basic</title>
-      <link>https://ivanhan0511.github.io/post/python-flask-pearadmin/</link>
-      <pubDate>Tue, 24 May 2022 16:57:10 +0800</pubDate>
-      
-      <guid>https://ivanhan0511.github.io/post/python-flask-pearadmin/</guid>
-      <description>&lt;p&gt;Some records of Flask&lt;/p&gt;</description>
-    </item>
-    
   </channel>
 </rss>

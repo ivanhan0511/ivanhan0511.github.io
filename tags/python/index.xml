@@ -6,14 +6,14 @@
     <description>Recent content in Python on Ivan Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 31 Dec 2023 14:49:00 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 18 Jan 2024 15:26:10 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>OpenCV with Python</title>
-      <link>https://ivanhan0511.github.io/post/python-opencv/</link>
-      <pubDate>Sun, 31 Dec 2023 14:49:00 +0800</pubDate>
+      <title>Python Basic</title>
+      <link>https://ivanhan0511.github.io/post/python-basic/</link>
+      <pubDate>Thu, 18 Jan 2024 15:26:10 +0800</pubDate>
       
-      <guid>https://ivanhan0511.github.io/post/python-opencv/</guid>
-      <description>&lt;p&gt;使用OpenCV技术测量图片关键点之间的距离&lt;/p&gt;</description>
+      <guid>https://ivanhan0511.github.io/post/python-basic/</guid>
+      <description>&lt;p&gt;Some basic records of Python&lt;/p&gt;</description>
     </item>
     
   </channel>

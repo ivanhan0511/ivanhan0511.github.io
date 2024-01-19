@@ -6,13 +6,31 @@
     <description>Recent content in Categories on Ivan Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 19 Jan 2024 11:25:00 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 19 Jan 2024 11:53:00 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Welcome</title>
       <link>https://ivanhan0511.github.io/categories/welcome/</link>
-      <pubDate>Fri, 19 Jan 2024 11:25:00 +0800</pubDate>
+      <pubDate>Fri, 19 Jan 2024 11:53:00 +0800</pubDate>
       
       <guid>https://ivanhan0511.github.io/categories/welcome/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Deploy</title>
+      <link>https://ivanhan0511.github.io/categories/deploy/</link>
+      <pubDate>Fri, 19 Jan 2024 11:52:32 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/categories/deploy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://ivanhan0511.github.io/categories/python/</link>
+      <pubDate>Fri, 19 Jan 2024 11:52:32 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/categories/python/</guid>
       <description></description>
     </item>
     
@@ -22,15 +40,6 @@
       <pubDate>Thu, 18 Jan 2024 15:26:10 +0800</pubDate>
       
       <guid>https://ivanhan0511.github.io/categories/basic/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Python</title>
-      <link>https://ivanhan0511.github.io/categories/python/</link>
-      <pubDate>Thu, 18 Jan 2024 15:26:10 +0800</pubDate>
-      
-      <guid>https://ivanhan0511.github.io/categories/python/</guid>
       <description></description>
     </item>
     
@@ -355,15 +364,6 @@
       <pubDate>Wed, 25 May 2022 20:10:41 +0800</pubDate>
       
       <guid>https://ivanhan0511.github.io/categories/security/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Deploy</title>
-      <link>https://ivanhan0511.github.io/categories/deploy/</link>
-      <pubDate>Wed, 25 May 2022 15:39:32 +0800</pubDate>
-      
-      <guid>https://ivanhan0511.github.io/categories/deploy/</guid>
       <description></description>
     </item>
     

@@ -6,14 +6,24 @@
     <description>Recent content on Ivan Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 19 Jan 2024 11:53:00 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 01 Feb 2024 10:25:00 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Welcome to Ivan&#39;s Blog</title>
       <link>https://ivanhan0511.github.io/post/welcome/</link>
-      <pubDate>Fri, 19 Jan 2024 11:53:00 +0800</pubDate>
+      <pubDate>Thu, 01 Feb 2024 10:25:00 +0800</pubDate>
       
       <guid>https://ivanhan0511.github.io/post/welcome/</guid>
       <description>&lt;p&gt;Some records for software, coffee, music and sports.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>SpringBoot</title>
+      <link>https://ivanhan0511.github.io/post/java-springboot/</link>
+      <pubDate>Tue, 23 Jan 2024 10:18:00 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/post/java-springboot/</guid>
+      <description>&lt;p&gt;The most important TECH cores are design and architecture which service for business, and then the second are IoC and AoP.&lt;/p&gt;
+&lt;p&gt;NO BEST, ONLY BETTER.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -96,16 +106,6 @@
       
       <guid>https://ivanhan0511.github.io/post/os-macos/</guid>
       <description>&lt;p&gt;Some record for configuring macOS&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>SpringBoot</title>
-      <link>https://ivanhan0511.github.io/post/java-springboot/</link>
-      <pubDate>Tue, 31 Oct 2023 09:37:00 +0800</pubDate>
-      
-      <guid>https://ivanhan0511.github.io/post/java-springboot/</guid>
-      <description>&lt;p&gt;The most important TECH cores are design and architecture which service for business, and then the second are IoC and AoP.&lt;/p&gt;
-&lt;p&gt;NO BEST, ONLY BETTER.&lt;/p&gt;</description>
     </item>
     
     <item>

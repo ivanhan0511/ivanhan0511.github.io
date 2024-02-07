@@ -6,13 +6,31 @@
     <description>Recent content in Categories on Ivan Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 19 Jan 2024 11:53:00 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 01 Feb 2024 10:25:00 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Welcome</title>
       <link>https://ivanhan0511.github.io/categories/welcome/</link>
-      <pubDate>Fri, 19 Jan 2024 11:53:00 +0800</pubDate>
+      <pubDate>Thu, 01 Feb 2024 10:25:00 +0800</pubDate>
       
       <guid>https://ivanhan0511.github.io/categories/welcome/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Java</title>
+      <link>https://ivanhan0511.github.io/categories/java/</link>
+      <pubDate>Tue, 23 Jan 2024 10:18:00 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/categories/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>WebFramework</title>
+      <link>https://ivanhan0511.github.io/categories/webframework/</link>
+      <pubDate>Tue, 23 Jan 2024 10:18:00 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/categories/webframework/</guid>
       <description></description>
     </item>
     
@@ -148,24 +166,6 @@
       <pubDate>Fri, 03 Nov 2023 15:52:00 +0800</pubDate>
       
       <guid>https://ivanhan0511.github.io/categories/macos/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Java</title>
-      <link>https://ivanhan0511.github.io/categories/java/</link>
-      <pubDate>Tue, 31 Oct 2023 09:37:00 +0800</pubDate>
-      
-      <guid>https://ivanhan0511.github.io/categories/java/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>WebFramework</title>
-      <link>https://ivanhan0511.github.io/categories/webframework/</link>
-      <pubDate>Tue, 31 Oct 2023 09:37:00 +0800</pubDate>
-      
-      <guid>https://ivanhan0511.github.io/categories/webframework/</guid>
       <description></description>
     </item>
     

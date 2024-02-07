@@ -6,11 +6,11 @@
     <description>Recent content in WebFramework on Ivan Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 31 Oct 2023 09:37:00 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/categories/webframework/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 23 Jan 2024 10:18:00 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/categories/webframework/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>SpringBoot</title>
       <link>https://ivanhan0511.github.io/post/java-springboot/</link>
-      <pubDate>Tue, 31 Oct 2023 09:37:00 +0800</pubDate>
+      <pubDate>Tue, 23 Jan 2024 10:18:00 +0800</pubDate>
       
       <guid>https://ivanhan0511.github.io/post/java-springboot/</guid>
       <description>&lt;p&gt;The most important TECH cores are design and architecture which service for business, and then the second are IoC and AoP.&lt;/p&gt;

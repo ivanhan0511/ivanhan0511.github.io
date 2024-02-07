@@ -47,10 +47,10 @@ NO BEST, ONLY BETTER.">
 <meta property="og:locale" content="en-us">
 
   
-    <meta property="article:published_time" content="2023-10-31T09:37:00">
+    <meta property="article:published_time" content="2024-01-23T10:18:00">
   
   
-    <meta property="article:modified_time" content="2023-10-31T09:37:00">
+    <meta property="article:modified_time" content="2024-01-23T10:18:00">
   
   
   
@@ -278,13 +278,13 @@ NO BEST, ONLY BETTER.">
   
   <div class="postShorten-meta post-meta">
     
-      <time datetime="2023-10-31T09:37:00&#43;08:00">
+      <time datetime="2024-01-23T10:18:00&#43;08:00">
         
   
   
   
   
-    October 31, 2023
+    January 23, 2024
   
 
       </time>
@@ -313,9 +313,21 @@ NO BEST, ONLY BETTER.">
   <ul>
     <li><a href="#目录">目录</a></li>
     <li><a href="#chapter-1">I. PROJECT ARCHITECTURE</a></li>
-    <li><a href="#multi-modules">MULTI MODULES</a></li>
-    <li><a href="#security">SECURITY</a>
+    <li><a href="#chapter-2">II. BOOT LOADER</a>
       <ul>
+        <li><a href="#connection-pool">Connection Pool</a></li>
+        <li><a href="#cache">Cache</a></li>
+        <li><a href="#redis">Redis</a></li>
+        <li><a href="#annotation">Annotation</a></li>
+        <li><a href="#mybatis-cache">MyBatis Cache</a></li>
+        <li><a href="#logger">Logger</a></li>
+        <li><a href="#multiple-modules">Multiple modules</a></li>
+        <li><a href="#beans注册-启动顺序等">Beans注册, 启动顺序等</a></li>
+      </ul>
+    </li>
+    <li><a href="#chapter-3">III. IMPORTANT SUPPORT</a>
+      <ul>
+        <li><a href="#security">Security</a></li>
         <li><a href="#mall">mall</a></li>
         <li><a href="#configure">Configure</a></li>
         <li><a href="#filter">Filter</a></li>
@@ -324,69 +336,69 @@ NO BEST, ONLY BETTER.">
         <li><a href="#miscellaneous">Miscellaneous</a></li>
       </ul>
     </li>
-    <li><a href="#controller-and-input-validation">CONTROLLER AND INPUT VALIDATION</a></li>
-    <li><a href="#service">SERVICE</a></li>
-    <li><a href="#dao-mapper">DAO MAPPER</a>
+    <li><a href="#chapter-4">IV. YOUR DESIGN</a>
       <ul>
-        <li><a href="#mapper-design">Mapper Design</a></li>
-        <li><a href="#multidb--transactional">MultiDB &amp; Transactional</a>
+        <li><a href="#controller-and-input-validation">Controller and input validation</a></li>
+        <li><a href="#service">Service</a></li>
+        <li><a href="#dao-mapper">DAO Mapper</a>
+          <ul>
+            <li><a href="#mapper-design">Mapper Design</a></li>
+          </ul>
+        </li>
+        <li><a href="#multiple-db">Multiple DB</a>
           <ul>
             <li><a href="#settings">Settings</a></li>
-            <li><a href="#数据隔离事务传播">数据隔离&amp;事务传播</a></li>
+          </ul>
+        </li>
+        <li><a href="#transactional">Transactional</a>
+          <ul>
+            <li><a href="#propagation">Propagation</a></li>
+            <li><a href="#isolation">Isolation</a></li>
+          </ul>
+        </li>
+        <li><a href="#background-job">Background Job</a>
+          <ul>
+            <li><a href="#quartz">Quartz</a></li>
           </ul>
         </li>
       </ul>
     </li>
-    <li><a href="#output-convert">OUTPUT CONVERT</a></li>
-    <li><a href="#global-common-module">GLOBAL COMMON MODULE</a>
-      <ul>
-        <li><a href="#commonresult">CommonResult</a></li>
-        <li><a href="#exception">Exception</a></li>
-        <li><a href="#logger">Logger</a></li>
-      </ul>
-    </li>
-    <li><a href="#connection-pool">CONNECTION POOL</a></li>
-    <li><a href="#cache">CACHE</a>
-      <ul>
-        <li><a href="#redis">Redis</a></li>
-        <li><a href="#annotation">Annotation</a></li>
-        <li><a href="#mybatis-cache">MyBatis Cache</a></li>
-      </ul>
-    </li>
-    <li><a href="#background-job">BACKGROUND JOB</a></li>
-    <li><a href="#dev--ops">DEV &amp; OPS</a>
+    <li><a href="#chapter-5">V. OPERATION</a>
       <ul>
         <li><a href="#java-unit-test">Java Unit Test</a></li>
         <li><a href="#postman">PostMan</a></li>
         <li><a href="#ci">CI</a></li>
+        <li><a href="#api-document">API DOCUMENT</a></li>
+        <li><a href="#deployment">DEPLOYMENT</a>
+          <ul>
+            <li><a href="#docker">Docker</a></li>
+            <li><a href="#jar">JAR</a></li>
+          </ul>
+        </li>
+        <li><a href="#others">Others</a></li>
       </ul>
     </li>
-    <li><a href="#api-document">API DOCUMENT</a></li>
-    <li><a href="#deployment">DEPLOYMENT</a>
-      <ul>
-        <li><a href="#docker">Docker</a></li>
-        <li><a href="#jar">JAR</a></li>
-      </ul>
-    </li>
-    <li><a href="#others">OTHERS</a></li>
-    <li><a href="#operation">OPERATION</a></li>
-    <li><a href="#appendix">APPENDIX</a>
+    <li><a href="#chapter-6">VI. APPENDIX</a>
       <ul>
         <li><a href="#缩写信息">缩写信息</a></li>
         <li><a href="#命名规范">命名规范</a></li>
       </ul>
     </li>
-    <li><a href="#miscellaneous-1">MiSCELLANEOUS</a></li>
   </ul>
 </nav>
 
 <h2 id="目录">目录</h2>
 <ul>
-<li><a href="#chapter-1">PROJECT ARCHITECTURE</a></li>
-<li><a href="#chapter-2">MULTI MODULES</a></li>
+<li><a href="#chapter-1">I. PROJECT ARCHITECTURE</a></li>
+<li><a href="#chapter-2">II. BOOT LOADER</a></li>
+<li><a href="#chapter-3">III. IMPORTANT SUPPORT</a></li>
+<li><a href="#chapter-4">IV. YOUR DESIGN</a></li>
+<li><a href="#chapter-5">V. OPERATION</a></li>
+<li><a href="#chapter-6">VI. APPENDIX</a></li>
 </ul>
 <h2 id="chapter-1">I. PROJECT ARCHITECTURE</h2>
 <hr>
+<p>借鉴yudao-boot-mini</p>
 <p>So far, I think it&rsquo;s funny, Dec 22, 2023.</p>
 <ol>
 <li>如果项目功能足够简单, 项目比较小的话, 其实没有必要分的那么细致. 掌握设计的&quot;度&quot;, 非常重要!!!</li>
@@ -449,11 +461,78 @@ NO BEST, ONLY BETTER.">
 </ul>
 </p>
 </div>
-<h2 id="multi-modules">MULTI MODULES</h2>
+<h2 id="chapter-2">II. BOOT LOADER</h2>
 <hr>
+<p>弄懂maven加载,
+IoC
+AoP
+Exception</p>
+<h3 id="connection-pool">Connection Pool</h3>
+<p>Druid or Hikari -&gt; PearAdminPro用的是Hikari, 也是Springboot官方选用的
+Druid是淘宝选用的, 高并发的情况会适用一些</p>
+<h3 id="cache">Cache</h3>
+<h3 id="redis">Redis</h3>
+<p><a href="https://javaguide.cn/database/redis/redis-data-structures-01.html#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF-1">参考该文章</a></p>
+<h3 id="annotation">Annotation</h3>
+<ul>
+<li><input disabled="" type="checkbox"> <code>@CacheException</code></li>
+</ul>
+<h3 id="mybatis-cache">MyBatis Cache</h3>
+<p>MyBatis的一级缓存和二级缓存, 都存在可能脏读的情况, 所以一般惯用Redis做缓存
+引入Redis后只需要将MyBatis配置文件中Cache 的类型定义为RedisCache
+Log</p>
+<h3 id="logger">Logger</h3>
+<p><strong>slf4j.Logger and log4j.Logger</strong>
+<blockquote>
+  <p>
+Comparison SLF4J and Log4j<br/>
+
+Unlike log4j, SLF4J (Simple Logging Facade for Java) is not an implementation of logging framework, 
+it is an abstraction for all those logging frameworks in Java similar to log4J. Therefore, you cannot compare both. 
+However, it is always difficult to prefer one between the two.
+</p>
+  <footer>
+    <strong>LEARN SLF4J</strong>
+    
+      <cite><a href="https://www.tutorialspoint.com/slf4j/slf4j_vs_log4j.htm#:~:text=Comparison%20SLF4J%20and%20Log4j,prefer%20one%20between%20the%20two." target="_blank" rel="external">SLF4J Vs Log4j</a></cite>
+    
+  </footer>
+</blockquote></p>
+<p>
+
+ 
+  
+  
+  
+  
+    
+  
+    
+      
+    
+  
+
+<div class="figure fig-100" >
+  
+    <a class="fancybox" href="https://www.tutorialspoint.com/slf4j/images/application.jpg" data-fancybox="">
+  
+    <img class="fig-img" src="https://www.tutorialspoint.com/slf4j/images/application.jpg" >
+  
+    </a>
+  
+  
+</div>
+
+CommonResult
+Redis
+cache</p>
+<h3 id="multiple-modules">Multiple modules</h3>
 <p>参考<a href="https://www.cnblogs.com/yangyongjie/p/16895043.html">这篇文章</a>来组织多模块</p>
-<h2 id="security">SECURITY</h2>
+<h3 id="beans注册-启动顺序等">Beans注册, 启动顺序等</h3>
+<h2 id="chapter-3">III. IMPORTANT SUPPORT</h2>
 <hr>
+<h3 id="security">Security</h3>
+<p>TODO</p>
 <h3 id="mall">mall</h3>
 <ul>
 <li><input disabled="" type="checkbox"> admin与security解耦, 不同客户端的认证拦截过滤
@@ -482,24 +561,28 @@ NO BEST, ONLY BETTER.">
 <li>还要设置缓存, 清空与微信服务器交换时中间状态的cache</li>
 </ul>
 <p>UserDetails还是个坑, 不适合目前这个项目</p>
-<h2 id="controller-and-input-validation">CONTROLLER AND INPUT VALIDATION</h2>
+<h2 id="chapter-4">IV. YOUR DESIGN</h2>
 <hr>
+<p>@RequestBody MultipartFile[] submissions
+should be</p>
+<p>@RequestParam(&ldquo;file&rdquo;) MultipartFile[] submissions
+The files are not the request body, they are part of it and there is no built-in HttpMessageConverter that can convert the request to an array of MultiPartFile.</p>
+<p>You can also replace HttpServletRequest with MultipartHttpServletRequest, which gives you access to the headers of the individual parts.</p>
+<h3 id="controller-and-input-validation">Controller and input validation</h3>
 <ul>
 <li><input disabled="" type="checkbox"> Web admin</li>
 <li><input disabled="" type="checkbox"> App portal</li>
 <li><input checked="" disabled="" type="checkbox"> Normal <code>@Valid</code> and <code>@Validated</code></li>
 <li><input checked="" disabled="" type="checkbox"> DIY <code>@FlagValidator</code></li>
 </ul>
-<h2 id="service">SERVICE</h2>
-<hr>
+<h3 id="service">Service</h3>
 <ul>
 <li><input disabled="" type="checkbox"> Use MaBatisPlus? How does <code>mall</code> use pure MaBatis easily to implement?</li>
 <li><input disabled="" type="checkbox"> Simple service, call mapper function directly?</li>
 <li><input disabled="" type="checkbox"> Complicate service, call multiple mapper functions?</li>
 <li><input disabled="" type="checkbox"> What is the data structure(DTO?) in nternal service?</li>
 </ul>
-<h2 id="dao-mapper">DAO MAPPER</h2>
-<hr>
+<h3 id="dao-mapper">DAO Mapper</h3>
 <ul>
 <li><input disabled="" type="checkbox"> Pure MyBatis or MyBatisPlus?</li>
 <li><input disabled="" type="checkbox"> MyBatis PageHelper detail</li>
@@ -515,7 +598,7 @@ But <strong>REFUSE</strong> to use <code>QueryWrapper</code>, use MyBatis&rsquo;
 <li>按照MyBatis写XML更像原生SQL, 熟练运用SQL是一件愉快的事情</li>
 </ul>
 <p><strong>非</strong>分布式数据库, 不推荐使用雪花算法, 使用数据库自增ID即可</p>
-<h3 id="mapper-design">Mapper Design</h3>
+<h4 id="mapper-design">Mapper Design</h4>
 <ul>
 <li>因功能不同而查询同一个表, 很可能过滤条件维度和结果维度都不相同, 因此按照功能划分查询列表数据或查询单条数据比较合理(暂时, May 30, 2023)
 <ul>
@@ -535,7 +618,7 @@ But <strong>REFUSE</strong> to use <code>QueryWrapper</code>, use MyBatis&rsquo;
 </li>
 <li>不使用联合查询, 会导致PageHelper无法正确分页, 而使用子查询</li>
 </ul>
-<h3 id="multidb--transactional">MultiDB &amp; Transactional</h3>
+<h3 id="multiple-db">Multiple DB</h3>
 <p>dehai-admin项目是使用MS SQL Server 与 MySQL 两种数据库的典型例子</p>
 <h4 id="settings">Settings</h4>
 <ul>
@@ -563,40 +646,63 @@ But <strong>REFUSE</strong> to use <code>QueryWrapper</code>, use MyBatis&rsquo;
 因为如果驼峰被自动转译为横线分隔符, 会导致PageHelper切换多数据源时失效</p>
 </li>
 </ul>
-<h4 id="数据隔离事务传播">数据隔离&amp;事务传播</h4>
+<h3 id="transactional">Transactional</h3>
 <ul>
 <li>跨多数据源, 调用各个资源服务, 各个Service的实现类有@DS(&ldquo;customer&rdquo;)注解指定数据源</li>
 <li>事务管理, 通过@DSTransactional 根据各个服务所指定的数据源进行切换</li>
-<li>事务隔离(更新丢失, 脏读, 不可重复读, 幻读)
-<ul>
-<li>READ_UNCOMMITTED,它受到所有三个提到的并发副作用的影响
-<ul>
-<li>Postgres 不支持 READ_UNCOMMITTED 隔离，而是会退到 READ_COMMITED</li>
-<li>Oracle 不 支持或允许 READ_UNCOMMITTED</li>
 </ul>
-</li>
-<li>READ_COMMITTED, 可防止脏读
+<h4 id="propagation">Propagation</h4>
+<p>TODO</p>
 <ul>
-<li>Postgres、SQL Server 和 Oracle 的默认级别</li>
-</ul>
-</li>
-<li>REPEATABLE_READ, 可防止脏读和不可重复读
-<ul>
-<li>Mysql 中的默认级别</li>
-<li>Oracle 不支持 REPEATABLE_READ</li>
-</ul>
-</li>
-<li>SERIALIZABLE, 最高级别的隔离</li>
-</ul>
-</li>
 <li>事务传播, 需要时则加入传播的扩散要求<br>
 @Transactional(isolation = Isolation.SERIALIZABLE, propagation = Propagation.REQUIRES_NEW)</li>
 </ul>
+<h4 id="isolation">Isolation</h4>
+<p>不同于&quot;传播规则&quot;是Spring提到的概念, 隔离级别这个概念是数据库事务自带的</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Isolation Level</th>
+<th style="text-align:left">脏读(Dirty Read)</th>
+<th style="text-align:left">不可重复读(Non Repeatable Read)</th>
+<th style="text-align:left">幻读(Phantom Read)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Read Uncommitted</td>
+<td style="text-align:left">Yes</td>
+<td style="text-align:left">Yes</td>
+<td style="text-align:left">Yes</td>
+</tr>
+<tr>
+<td style="text-align:left">Read Committed</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">Yes</td>
+<td style="text-align:left">Yes</td>
+</tr>
+<tr>
+<td style="text-align:left">Repeatable Read</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">Yes</td>
+</tr>
+<tr>
+<td style="text-align:left">Serializable</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">-</td>
+</tr>
+</tbody>
+</table>
+<p>很多人容易搞混不可重复读和幻读，确实这两者有些相似. 但不可重复读重点在于update和delete, 而幻读的重点在于insert.</p>
+<p>总的来说幻读就是事务A对数据进行操作，事务B还是可以用insert插入数据的，因为使用的是行锁，这样导致的各种奇葩问题就是幻读，表现形式很多，就不列举了。</p>
+<p><strong>TIPs</strong>
 <div class="alert info ">
   <p>@DS 必须加在 @Transactional 对应的类或者方法上<br>
 如在 mapper中加了@DS，但是 @Transactional 加在 service 方法中，此时则会获取默认的datasource
 (因为在事务中已经获取了一次datasource的connection，而此时无DS注解)</p>
-</div>
+</div></p>
 
 
   
@@ -772,112 +878,31 @@ public class CombineServiceImpl implements CombineService {
 <p>[TODO]:
 MyBatis的手动切换, 后续再深入学习<br>
 And how to <code>DynamicDataSourceContextHolder.push()</code> and <code>DynamicDataSourceContextHolder.poll()</code>?</p>
-<h2 id="output-convert">OUTPUT CONVERT</h2>
+<h3 id="background-job">Background Job</h3>
+<h4 id="quartz">Quartz</h4>
+<h2 id="chapter-5">V. OPERATION</h2>
 <hr>
-<ul>
-<li><input disabled="" type="checkbox"> If simple, use DTO to response directly</li>
-<li><input disabled="" type="checkbox"> If complicated, transfer DTO to VO</li>
-</ul>
-<h2 id="global-common-module">GLOBAL COMMON MODULE</h2>
-<hr>
-<ul>
-<li><input checked="" disabled="" type="checkbox"> CommonResult</li>
-<li><input disabled="" type="checkbox"> Exception</li>
-<li><input disabled="" type="checkbox"> Log</li>
-<li><input disabled="" type="checkbox"> Intercepter</li>
-</ul>
-<h3 id="commonresult">CommonResult</h3>
-<h3 id="exception">Exception</h3>
-<h3 id="logger">Logger</h3>
-<p><strong>slf4j.Logger and log4j.Logger</strong>
-<blockquote>
-  <p>
-Comparison SLF4J and Log4j<br/>
-
-Unlike log4j, SLF4J (Simple Logging Facade for Java) is not an implementation of logging framework, 
-it is an abstraction for all those logging frameworks in Java similar to log4J. Therefore, you cannot compare both. 
-However, it is always difficult to prefer one between the two.
-</p>
-  <footer>
-    <strong>LEARN SLF4J</strong>
-    
-      <cite><a href="https://www.tutorialspoint.com/slf4j/slf4j_vs_log4j.htm#:~:text=Comparison%20SLF4J%20and%20Log4j,prefer%20one%20between%20the%20two." target="_blank" rel="external">SLF4J Vs Log4j</a></cite>
-    
-  </footer>
-</blockquote></p>
-
-
- 
-  
-  
-  
-  
-    
-  
-    
-      
-    
-  
-
-<div class="figure fig-100" >
-  
-    <a class="fancybox" href="https://www.tutorialspoint.com/slf4j/images/application.jpg" data-fancybox="">
-  
-    <img class="fig-img" src="https://www.tutorialspoint.com/slf4j/images/application.jpg" >
-  
-    </a>
-  
-  
-</div>
-
-<h2 id="connection-pool">CONNECTION POOL</h2>
-<hr>
-<p>Druid or Hikari -&gt; PearAdminPro用的是Hikari, 也是Springboot官方选用的</p>
-<p>Druid是淘宝选用的, 高并发的情况会适用一些</p>
-<h2 id="cache">CACHE</h2>
-<hr>
-<h3 id="redis">Redis</h3>
-<p><a href="https://javaguide.cn/database/redis/redis-data-structures-01.html#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF-1">参考该文章</a></p>
-<h3 id="annotation">Annotation</h3>
-<ul>
-<li><input disabled="" type="checkbox"> <code>@CacheException</code></li>
-</ul>
-<h3 id="mybatis-cache">MyBatis Cache</h3>
-<p>MyBatis的一级缓存和二级缓存, 都存在可能脏读的情况, 所以一般惯用Redis做缓存</p>
-<p>引入Redis后只需要将MyBatis配置文件中Cache 的类型定义为RedisCache</p>
-<h2 id="background-job">BACKGROUND JOB</h2>
-<hr>
-<p>Quartz</p>
-<h2 id="dev--ops">DEV &amp; OPS</h2>
-<hr>
+<p>运营, 软文推广, 运维, 部署, 自动化测试, 自动化接口文档等</p>
 <h3 id="java-unit-test">Java Unit Test</h3>
 <h3 id="postman">PostMan</h3>
 <h3 id="ci">CI</h3>
-<h2 id="api-document">API DOCUMENT</h2>
-<hr>
+<h3 id="api-document">API DOCUMENT</h3>
 <ul>
 <li><input disabled="" type="checkbox"> Swagger UI category, description and list</li>
 <li><input disabled="" type="checkbox"> With session token</li>
 </ul>
-<h2 id="deployment">DEPLOYMENT</h2>
-<hr>
-<h3 id="docker">Docker</h3>
+<h3 id="deployment">DEPLOYMENT</h3>
+<h4 id="docker">Docker</h4>
 <ul>
 <li><input disabled="" type="checkbox"> DockerCompose deployment in single server?</li>
 </ul>
-<h3 id="jar">JAR</h3>
-<h2 id="others">OTHERS</h2>
-<hr>
-<ul>
-<li><input disabled="" type="checkbox"> ElasticSearch NativeSearchQueryBuilder</li>
-</ul>
-<h2 id="operation">OPERATION</h2>
-<hr>
+<h4 id="jar">JAR</h4>
+<h3 id="others">Others</h3>
 <ul>
 <li>个人订阅号, 熟悉内容的编辑/发布, 练习写作, 提高排版/拍照等后期技能</li>
 <li>运营, 尝试推送文章</li>
 </ul>
-<h2 id="appendix">APPENDIX</h2>
+<h2 id="chapter-6">VI. APPENDIX</h2>
 <hr>
 <p>摘抄自网络, 不一定合理, 仅保存一些文字, 以便以后少写一些文字</p>
 <h3 id="缩写信息">缩写信息</h3>
@@ -892,8 +917,7 @@ However, it is always difficult to prefer one between the two.
 </ul>
 <h3 id="命名规范">命名规范</h3>
 <ul>
-<li>
-<p>Service/DAO层方法命名规约</p>
+<li>Service/DAO层方法命名规约
 <ul>
 <li>获取单个对象的方法用get做前缀</li>
 <li>获取多个对象的方法用list做前缀</li>
@@ -903,8 +927,7 @@ However, it is always difficult to prefer one between the two.
 <li>修改的方法用edit/update做前缀</li>
 </ul>
 </li>
-<li>
-<p><del>领域模型命名规约</del></p>
+<li><del>领域模型命名规约</del>
 <ul>
 <li>数据对象: xxxDO, xxx即表名</li>
 <li>数据传输对象: xxxDTO, xxx即业务领域相关的名称</li>
@@ -912,21 +935,7 @@ However, it is always difficult to prefer one between the two.
 <li>POJO是DO/DTO/BO/VO的统称, 禁止命名成xxxPOJO</li>
 </ul>
 </li>
-<li>
-<p>Request和Response对象的约定[参考]</p>
-<ul>
-<li>复杂对象的交互必须封装成Request 和 Response与前端进行交互</li>
 </ul>
-</li>
-</ul>
-<h2 id="miscellaneous-1">MiSCELLANEOUS</h2>
-<hr>
-<p><strong>1</strong>
-/admin-api/demo/test/get</p>
-<p>/app-api/demo/test/get</p>
-<p>这两个接口, 最前面的路径<code>/admin-api/</code>和<code>/app-api/</code>是如何插入的?</p>
-<p><strong>2</strong>
-比如自动根据数据生成DO, DTO, VO等, service的调用, 是没有返回的void, 如果有问题直接抛exception, 在哪里自定义拦截?</p>
               
 
 
@@ -955,7 +964,7 @@ However, it is always difficult to prefer one between the two.
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/os-macos/" data-tooltip="DIY My macOS" aria-label="NEXT: DIY My macOS">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/welcome/" data-tooltip="Welcome to Ivan&#39;s Blog" aria-label="NEXT: Welcome to Ivan&#39;s Blog">
           
               <i class="fa fa-angle-left"></i>
               <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -963,7 +972,7 @@ However, it is always difficult to prefer one between the two.
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/js-vue3/" data-tooltip="VUE3" aria-label="PREVIOUS: VUE3">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/python-flask-deploy/" data-tooltip="Deploy Pear Admin Flask" aria-label="PREVIOUS: Deploy Pear Admin Flask">
           
               <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
               <i class="fa fa-angle-right"></i>
@@ -1056,7 +1065,7 @@ However, it is always difficult to prefer one between the two.
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/os-macos/" data-tooltip="DIY My macOS" aria-label="NEXT: DIY My macOS">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/welcome/" data-tooltip="Welcome to Ivan&#39;s Blog" aria-label="NEXT: Welcome to Ivan&#39;s Blog">
           
               <i class="fa fa-angle-left"></i>
               <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -1064,7 +1073,7 @@ However, it is always difficult to prefer one between the two.
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/js-vue3/" data-tooltip="VUE3" aria-label="PREVIOUS: VUE3">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/python-flask-deploy/" data-tooltip="Deploy Pear Admin Flask" aria-label="PREVIOUS: Deploy Pear Admin Flask">
           
               <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
               <i class="fa fa-angle-right"></i>

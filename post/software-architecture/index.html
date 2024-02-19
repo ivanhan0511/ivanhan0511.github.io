@@ -405,6 +405,12 @@ void newService(A,B,C);</code></pre>
   
   
 
+  
+  
+  
+  
+  
+
 
   
     
@@ -419,6 +425,8 @@ void newService(A,B,C);</code></pre>
     <ul class="tabs">
       
         <li class="tab active">try_with_resource</li>
+      
+        <li class="tab ">try_catch</li>
       
     </ul>
   </figcaption>
@@ -440,6 +448,37 @@ try (FileInputStream inputStream = new FileInputStream(new File(&#34;jay.txt&#34
     log.error(e);
 } catch (IOException e) {
     log.error(e);
+}</code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </figure>
+    
+      
+      <figure class="highlight language-try_catch try_catch" style="display: none;">
+        <table>
+          <tbody>
+            <tr>
+              <td class="gutter">
+                <pre><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br></pre>
+              </td>
+              <td class="code">
+                <pre class="code-highlight language-try_catch try_catch"><code class="try_catch">FileInputStream fdIn = null;
+try {
+    fdIn = new FileInputStream(new File(&#34;/jay.txt&#34;));
+} catch (FileNotFoundException e) {
+    log.error(e);
+} catch (IOException e) {
+    log.error(e);
+} finally {
+    try {
+        if (fdIn != null) {
+            fdIn.close();
+        }
+    } catch (IOException e) {
+        log.error(e);
+    }
 }</code></pre>
               </td>
             </tr>

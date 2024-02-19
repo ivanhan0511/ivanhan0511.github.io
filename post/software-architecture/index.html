@@ -369,7 +369,7 @@
     <tbody>
       <tr>
         <td class="gutter">
-          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre>
+          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre>
         </td>
         <td class="code">
           <pre class="code-highlight language-java java"><code class="java">// 老接口
@@ -377,6 +377,7 @@ void oldService(A,B);{
   //兼容新接口，传个null代替C
   newService(A,B,null);
 }
+
 //新接口，暂时不能删掉老接口，需要做兼容。
 void newService(A,B,C);</code></pre>
         </td>

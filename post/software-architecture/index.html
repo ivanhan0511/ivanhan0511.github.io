@@ -399,6 +399,12 @@ void newService(A,B,C);</code></pre>
 <p>所以使用完IO流，可以使用finally关闭哈</p>
 
 
+  
+  
+  
+  
+  
+
 
   
     
@@ -412,9 +418,34 @@ void newService(A,B,C);</code></pre>
     
     <ul class="tabs">
       
+        <li class="tab active">try_with_resource</li>
+      
     </ul>
   </figcaption>
   <div class="tabs-content">
+    
+      
+      <figure class="highlight language-try_with_resource try_with_resource" style="display: block;">
+        <table>
+          <tbody>
+            <tr>
+              <td class="gutter">
+                <pre><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br></pre>
+              </td>
+              <td class="code">
+                <pre class="code-highlight language-try_with_resource try_with_resource"><code class="try_with_resource">// JDK 7 之后还有更帅的关闭流写法，「try-with-resource」。
+try (FileInputStream inputStream = new FileInputStream(new File(&#34;jay.txt&#34;)) {
+    // use resources   
+} catch (FileNotFoundException e) {
+    log.error(e);
+} catch (IOException e) {
+    log.error(e);
+}</code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </figure>
     
   </div>
 </figure>

@@ -308,21 +308,129 @@
 <h1 id="table-of-contents">Table of Contents</h1>
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#env">ENV</a></li>
-    <li><a href="#demo">DEMO</a></li>
+    <li><a href="#env">ENV</a>
+      <ul>
+        <li><a href="#nvm">nvm</a></li>
+        <li><a href="#npm-and-yarn">npm and yarn</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 
 <h2 id="env">ENV</h2>
-<p>C:\Users\Ivan\AppData\Roaming\JetBrains\IntelliJIdea2023.2\node\node-v18.15.0-win-x64\npx.cmd &ndash;yes create-vue vue3project &ndash;default</p>
-<p>Vue.js - The Progressive JavaScript Framework</p>
-<p>正在构建项目 C:\Users\Ivan\AppData\Local\Temp\1698940057223-0\vue3project&hellip;</p>
-<p>项目构建完成，可执行以下命令：</p>
-<p>cd vue3project
-npm install<br>
-npm run dev</p>
-<p>Done</p>
-<h2 id="demo">DEMO</h2>
+<h3 id="nvm">nvm</h3>
+<p>真机系统中不再安装node.js环境, 采用HBuilderX中的node环境<code>&amp; 'C:\Program Files\HBuilderX\plugins\npm\npm.cmd' ...</code>, Updated at Oct 30, 2023</p>
+<p>Download <a href="https://github.com/coreybutler/nvm-windows/releases">nvm-setup.exe</a> and install.</p>
+<p>And use it in CMD:
+
+  
+    
+  
+  
+  
+  
+
+
+<figure class="highlight  language-">
+  <figcaption>
+    
+      <span>cmd</span>
+    
+  </figcaption>
+  <table>
+    <tbody>
+      <tr>
+        <td class="gutter">
+          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre>
+        </td>
+        <td class="code">
+          <pre class="code-highlight language- "><code class="">nvm install 16.14.0 -g
+nvm list
+nvm use 16.17.1
+#nvm uninstall 16.17.1</code></pre>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+</p>
+<h3 id="npm-and-yarn">npm and yarn</h3>
+
+
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+
+
+  
+    
+  
+  
+
+<figure class="codeblock codeblock--tabbed">
+  <figcaption>
+    
+      <span>cli</span>
+    
+    <ul class="tabs">
+      
+        <li class="tab active">npm</li>
+      
+        <li class="tab ">yarn</li>
+      
+    </ul>
+  </figcaption>
+  <div class="tabs-content">
+    
+      
+      <figure class="highlight language-npm npm" style="display: block;">
+        <table>
+          <tbody>
+            <tr>
+              <td class="gutter">
+                <pre><span>1</span><br></pre>
+              </td>
+              <td class="code">
+                <pre class="code-highlight language-npm npm"><code class="npm">npm run dev</code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </figure>
+    
+      
+      <figure class="highlight language-yarn yarn" style="display: none;">
+        <table>
+          <tbody>
+            <tr>
+              <td class="gutter">
+                <pre><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br></pre>
+              </td>
+              <td class="code">
+                <pre class="code-highlight language-yarn yarn"><code class="yarn"># 遇到npm无法调用的问题, 网上有记录, 但重启解决问题
+npm install yarn -g
+
+yarn install
+yarn run serve-dev
+
+#yarn install
+#yarn run build-pro</code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </figure>
+    
+  </div>
+</figure>
               
 
 

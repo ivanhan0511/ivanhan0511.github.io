@@ -329,13 +329,7 @@
         <li><a href="#maven">Maven</a></li>
       </ul>
     </li>
-    <li><a href="#hbuilderx">HBuilderX</a>
-      <ul>
-        <li><a href="#nvm">nvm</a></li>
-        <li><a href="#npm">npm</a></li>
-        <li><a href="#yarn">yarn</a></li>
-      </ul>
-    </li>
+    <li><a href="#hbuilderx">HBuilderX</a></li>
     <li><a href="#db">DB</a></li>
     <li><a href="#vmware">VMWare</a>
       <ul>
@@ -411,7 +405,13 @@
 <li>Chrome as default browser</li>
 <li>HHKB</li>
 <li>Logitech Anywhere3 and OptionPlus</li>
-<li>系统一般使用浅色系, 所以修改鼠标指针为黑色(系统方案)</li>
+<li>文件夹选项 -&gt; 隐私
+<ul>
+<li>取消勾选&quot;显示最近使用的文件&quot;</li>
+<li>取消勾选&quot;显示常用文件夹&quot;</li>
+</ul>
+</li>
+<li>Change the color of Mouse from white to black</li>
 </ul>
 <h2 id="wsl">WSL?</h2>
 <hr>
@@ -597,147 +597,8 @@
 </ul>
 <h2 id="hbuilderx">HBuilderX</h2>
 <hr>
-<p><strong>暂定(Nov 08, 2023), 轻度使用HBuildX, 以免被坑</strong></p>
-<h3 id="nvm">nvm</h3>
-<p>真机系统中不再安装node.js环境, 采用HBuilderX中的node环境<code>&amp; 'C:\Program Files\HBuilderX\plugins\npm\npm.cmd' ...</code>, Updated at Oct 30, 2023</p>
-<p>Download <a href="https://github.com/coreybutler/nvm-windows/releases">nvm-setup.exe</a> and install.</p>
-<p>And use it in CMD:
-
-  
-    
-  
-  
-  
-  
-
-
-<figure class="highlight  language-">
-  <figcaption>
-    
-      <span>cmd</span>
-    
-  </figcaption>
-  <table>
-    <tbody>
-      <tr>
-        <td class="gutter">
-          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre>
-        </td>
-        <td class="code">
-          <pre class="code-highlight language- "><code class="">nvm install 16.14.0 -g
-nvm list
-nvm use 16.17.1
-#nvm uninstall 16.17.1</code></pre>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</figure>
-</p>
-<h3 id="npm">npm</h3>
-
-  
-    
-  
-  
-  
-  
-
-
-<figure class="highlight  language-">
-  <figcaption>
-    
-      <span>cmd</span>
-    
-  </figcaption>
-  <table>
-    <tbody>
-      <tr>
-        <td class="gutter">
-          <pre><span class="line">1</span><br><span class="line">2</span><br></pre>
-        </td>
-        <td class="code">
-          <pre class="code-highlight language- "><code class=""># 遇到npm无法调用的问题, 网上有记录, 但重启解决问题
-npm install yarn -g</code></pre>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</figure>
-
-<h3 id="yarn">yarn</h3>
-
-
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
-
-
-  
-    
-  
-  
-
-<figure class="codeblock codeblock--tabbed">
-  <figcaption>
-    
-      <span>cmd</span>
-    
-    <ul class="tabs">
-      
-        <li class="tab active">serve</li>
-      
-        <li class="tab ">build</li>
-      
-    </ul>
-  </figcaption>
-  <div class="tabs-content">
-    
-      
-      <figure class="highlight language-serve serve" style="display: block;">
-        <table>
-          <tbody>
-            <tr>
-              <td class="gutter">
-                <pre><span>1</span><br><span>2</span><br></pre>
-              </td>
-              <td class="code">
-                <pre class="code-highlight language-serve serve"><code class="serve">yarn install
-yarn run serve-dev</code></pre>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </figure>
-    
-      
-      <figure class="highlight language-build build" style="display: none;">
-        <table>
-          <tbody>
-            <tr>
-              <td class="gutter">
-                <pre><span>1</span><br><span>2</span><br></pre>
-              </td>
-              <td class="code">
-                <pre class="code-highlight language-build build"><code class="build">yarn install
-yarn run build-pro</code></pre>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </figure>
-    
-  </div>
-</figure>
-
+<p>暂定(Nov 08, 2023), 轻度使用HBuildX, 以免被坑</p>
+<p>开发环境部署, 参照js-vue3.md</p>
 <h2 id="db">DB</h2>
 <hr>
 <p>MySQL安装在Windows中也行, 安装在VMWare中也行(每次都开VMWare虚拟机很麻烦)</p>

@@ -319,7 +319,8 @@
 
 <h2 id="env">ENV</h2>
 <h3 id="nvm">nvm</h3>
-<p>真机系统中不再安装node.js环境, 采用HBuilderX中的node环境<code>&amp; 'C:\Program Files\HBuilderX\plugins\npm\npm.cmd' ...</code>, Updated at Oct 30, 2023</p>
+<p>Node Version Manager</p>
+<p>nvm管理的是node, 但会同时把npm也安装好, node的版本和npm的版本是不一样的</p>
 <p>Download <a href="https://github.com/coreybutler/nvm-windows/releases">nvm-setup.exe</a> and install.</p>
 <p>And use it in CMD:
 
@@ -341,12 +342,11 @@
     <tbody>
       <tr>
         <td class="gutter">
-          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre>
+          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre>
         </td>
         <td class="code">
-          <pre class="code-highlight language- "><code class="">nvm install 16.14.0 -g
-nvm list
-nvm use 16.17.1
+          <pre class="code-highlight language- "><code class="">#nvm install 16.14.0 -g
+nvm install 20.11.1 -g
 #nvm uninstall 16.17.1</code></pre>
         </td>
       </tr>
@@ -354,6 +354,27 @@ nvm use 16.17.1
   </table>
 </figure>
 </p>
+<blockquote>
+  <p>
+Downloading node.js version 20.11.1 (64-bit)...
+Extracting node and npm...
+Complete
+npm v10.2.4 installed successfully.
+
+
+Installation complete. If you want to use this version, type
+
+nvm use 20.11.1
+</p>
+  <footer>
+    <strong></strong>
+    
+      
+        <cite></cite>
+      
+    
+  </footer>
+</blockquote>
 <h3 id="npm-and-yarn">npm and yarn</h3>
 
 

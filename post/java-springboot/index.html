@@ -312,7 +312,7 @@ NO BEST, ONLY BETTER.">
 <nav id="TableOfContents">
   <ul>
     <li><a href="#目录">目录</a></li>
-    <li><a href="#chapter-1">I. PROJECT ARCHITECTURE</a></li>
+    <li><a href="#chapter-1">I. ARCHITECTURE PRINCIPLE</a></li>
     <li><a href="#chapter-2">II. BOOT LOADER</a>
       <ul>
         <li><a href="#connection-pool">Connection Pool</a></li>
@@ -336,7 +336,7 @@ NO BEST, ONLY BETTER.">
         <li><a href="#miscellaneous">Miscellaneous</a></li>
       </ul>
     </li>
-    <li><a href="#chapter-4">IV. YOUR DESIGN</a>
+    <li><a href="#chapter-4">IV. BUSINESS DESIGN</a>
       <ul>
         <li><a href="#controller-and-input-validation">Controller and input validation</a></li>
         <li><a href="#service">Service</a></li>
@@ -365,9 +365,8 @@ NO BEST, ONLY BETTER.">
     </li>
     <li><a href="#chapter-5">V. OPERATION</a>
       <ul>
-        <li><a href="#java-unit-test">Java Unit Test</a></li>
-        <li><a href="#postman">PostMan</a></li>
         <li><a href="#ci">CI</a></li>
+        <li><a href="#monitor">Monitor</a></li>
         <li><a href="#api-document">API DOCUMENT</a></li>
         <li><a href="#deployment">DEPLOYMENT</a>
           <ul>
@@ -389,26 +388,27 @@ NO BEST, ONLY BETTER.">
 
 <h2 id="目录">目录</h2>
 <ul>
-<li><a href="#chapter-1">I. PROJECT ARCHITECTURE</a></li>
+<li><a href="#chapter-1">I. ARCHITECTURE PRINCIPLE</a></li>
 <li><a href="#chapter-2">II. BOOT LOADER</a></li>
 <li><a href="#chapter-3">III. IMPORTANT SUPPORT</a></li>
-<li><a href="#chapter-4">IV. YOUR DESIGN</a></li>
+<li><a href="#chapter-4">IV. BUSINESS DESIGN</a></li>
 <li><a href="#chapter-5">V. OPERATION</a></li>
 <li><a href="#chapter-6">VI. APPENDIX</a></li>
 </ul>
-<h2 id="chapter-1">I. PROJECT ARCHITECTURE</h2>
+<h2 id="chapter-1">I. ARCHITECTURE PRINCIPLE</h2>
 <hr>
+<p>So far, Feb 23, 2024</p>
 <ol>
 <li>
 <p>借鉴<a href="https://github.com/YunaiV/ruoyi-vue-pro">ruoyi-vue-pro</a></p>
 </li>
 <li>
 <p>如果团队比较小, 达不到上百人, 那么就不拆服务直接单体运行, 掌握设计的&quot;度&quot;, 非常重要!!!</p>
-<p>除非有动态扩缩，不同的模块由不同的团队单独维护，模块单独卖之类的需求，否则拆服务弊大于利</p>
+<p>除非有动态扩缩，不同的模块由不同的团队单独维护，或者模块单独卖之类的需求，否则拆服务弊大于利</p>
 </li>
 <li>
-<p>单仓多项目，大厂很多项目也在用这种方式. 有些人说会发展为分布式单体的，是对maven打包不大熟吧。运维角度来看，方案一二打包产物都一样的，只是管理方式不一样</p>
-<p>有些&quot;伪微服务&quot;项目，想跑起来就得clone一堆仓库，动不动出问题就是某个仓库更新了，关联模块的仓库没更新……</p>
+<p>单仓多项目，大厂很多项目也在用这种方式. 有些人说会发展为分布式单体的，是对maven打包不大熟吧。运维角度来看，单仓和多仓git管理的打包产物都一样的，只是管理方式不一样</p>
+<p>有些&quot;伪微服务&quot;项目，想跑起来就得clone一堆仓库，动不动出问题就是某个仓库更新了而关联模块的仓库没更新……</p>
 </li>
 <li>
 <p>另外, git自带子模块, 建一个总的仓库, 各个服务作为子模块版本各自管理, 也是一种兼容方案</p>
@@ -517,7 +517,7 @@ cache</p>
 <li>还要设置缓存, 清空与微信服务器交换时中间状态的cache</li>
 </ul>
 <p>UserDetails还是个坑, 不适合目前这个项目</p>
-<h2 id="chapter-4">IV. YOUR DESIGN</h2>
+<h2 id="chapter-4">IV. BUSINESS DESIGN</h2>
 <hr>
 <p>@RequestBody MultipartFile[] submissions
 should be</p>
@@ -839,9 +839,8 @@ And how to <code>DynamicDataSourceContextHolder.push()</code> and <code>DynamicD
 <h2 id="chapter-5">V. OPERATION</h2>
 <hr>
 <p>运营, 软文推广, 运维, 部署, 自动化测试, 自动化接口文档等</p>
-<h3 id="java-unit-test">Java Unit Test</h3>
-<h3 id="postman">PostMan</h3>
 <h3 id="ci">CI</h3>
+<h3 id="monitor">Monitor</h3>
 <h3 id="api-document">API DOCUMENT</h3>
 <ul>
 <li><input disabled="" type="checkbox"> Swagger UI category, description and list</li>

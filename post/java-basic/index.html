@@ -296,6 +296,11 @@
       </ul>
     </li>
     <li><a href="#泛型">泛型</a></li>
+    <li><a href="#exception">EXCEPTION</a>
+      <ul>
+        <li><a href="#trycatchfinally">TryCatchFinally</a></li>
+      </ul>
+    </li>
     <li><a href="#thread">THREAD</a>
       <ul>
         <li><a href="#threadlocal">ThreadLocal</a></li>
@@ -378,6 +383,128 @@ public static List&lt;A&gt; asList(A... a);</code></pre>
 用泛型是因为可以使该方法的返回值成为一个指定类型的集合，这样再次使用该集合的时候就有一个明确的类型了，
 这使的在将来该类型发生改变的时候编译器会报错，提醒你做相应的修改，而不是让问题暴露在运行阶段。</p>
 </div>
+<h2 id="exception">EXCEPTION</h2>
+<hr>
+<h3 id="trycatchfinally">TryCatchFinally</h3>
+<p>首先看个例子：</p>
+
+
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+
+
+  
+    
+  
+  
+
+<figure class="codeblock codeblock--tabbed">
+  <figcaption>
+    
+      <span>tryCatch</span>
+    
+    <ul class="tabs">
+      
+        <li class="tab active">return2</li>
+      
+        <li class="tab ">return3</li>
+      
+    </ul>
+  </figcaption>
+  <div class="tabs-content">
+    
+      
+      <figure class="highlight language-return2 return2" style="display: block;">
+        <table>
+          <tbody>
+            <tr>
+              <td class="gutter">
+                <pre><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br></pre>
+              </td>
+              <td class="code">
+                <pre class="code-highlight language-return2 return2"><code class="return2">public class TestReturn {
+    public int test(){
+        int x  = 1;
+        try{
+            return &#43;&#43;x;
+        }
+        catch(Exception e){
+
+        }finally{
+            &#43;&#43;x;
+        }
+        return x;
+    }
+    public static void main(String[] args){
+        TestReturn t = new TestReturn();
+        int result = t.test();
+        System.out.println(result);
+    }
+}
+//输出结果是2</code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </figure>
+    
+      
+      <figure class="highlight language-return3 return3" style="display: none;">
+        <table>
+          <tbody>
+            <tr>
+              <td class="gutter">
+                <pre><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br></pre>
+              </td>
+              <td class="code">
+                <pre class="code-highlight language-return3 return3"><code class="return3">public class TestReturn {
+    public int test(){
+        int x  = 1;
+        try{
+            return &#43;&#43;x;
+        }
+        catch(Exception e){
+
+        }finally{
+            return &#43;&#43;x;
+        }
+
+        //return x;
+    }
+    public static void main(String[] args){
+        TestReturn t = new TestReturn();
+        int result = t.test();
+        System.out.println(result);
+    }
+}
+//输出结果是3</code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </figure>
+    
+  </div>
+</figure>
+
+<p>查阅资料得到下面的说法：</p>
+<p>当try语句退出时肯定会执行finally语句。这确保了即使发了一个意想不到的异常也会执行finally语句块。但是finally的用处不仅是用来处理异常——它可以让程序员不会因为return、continue、或者break语句而忽略了清理代码。把清理代码放在finally语句块里是一个很好的做法，即便可能不会有异常发生也要这样做。</p>
+<p>注意，当try或者catch的代码在运行的时候，JVM退出了。那么finally语句块就不会执行。同样，如果线程在运行try或者catch的代码时被中断了或者被杀死了(killed)，那么finally语句可能也不会执行了，即使整个运用还会继续执行。</p>
+<p>说明：如果在try语句里有return语句，finally语句还是会执行。它会在把控制权转移到该方法的调用者或者构造器前执行finally语句。也就是说，使用return语句把控制权转移给其他的方法前会执行finally语句。</p>
+<p>那么结果为什么是3不是2呢？
+当执行到return ++x;时，jvm在执行完++x后会在局部变量表里另外分配一个空间来保存当前x的值。
+注意，现在还没把值返回给y，而是继续执行finally语句里的语句。等执行完后再把之前保存的值（是2不是x）返回给y。所以就有了y是2不是3的情况。</p>
+<p>其实这里还有一点要注意的是，如果你在finally里也用了return语句，比如return +xx。那么y会是3。因为规范规定了，当try和finally里都有return时，会忽略try的return，而使用finally的return。</p>
+<p>原文链接：https://blog.csdn.net/wujingjing_crystal/article/details/52495189</p>
 <h2 id="thread">THREAD</h2>
 <hr>
 <h3 id="threadlocal">ThreadLocal</h3>
@@ -404,10 +531,11 @@ Node：节点，是ReentrantLock内部维持的一个双向链表（同步阻塞
 2、ReentrantLock是JDK层面的实现，而Synchronized是JVM层面的实现；
 3、ReentrantLock需要手动释放锁，而Synchronized不需要手动释放锁；
 4、ReentrantLock可以是非公平锁也可以是公平锁，而Synchronized只能是非公平锁；
-5、ReentrantLock是可被中断的，而Synchronized是不可悲中断的；
+5、ReentrantLock是可被中断的，而Synchronized是不可被中断的；
 6、Synchronized在特定条件下是后来的线程先获取锁，而ReentrantLock是先来的线程先获取锁；
 四、ReentrantLock的简单使用</p>
-<p><a href="https://blog.csdn.net/sqL520lT/article/details/122096431">另一篇</a></p>
+<p><a href="https://blog.csdn.net/sqL520lT/article/details/122096431">示例</a>
+<a href="https://www.cnblogs.com/huanshilang/p/16872660.html">ReentrantLock原理</a></p>
 <h2 id="jdbc">JDBC</h2>
 <hr>
 <p>Once a connection is obtained we can interact with the database.

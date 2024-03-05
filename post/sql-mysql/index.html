@@ -305,7 +305,7 @@
     <li><a href="#init">INIT</a></li>
     <li><a href="#dcl">DCL</a>
       <ul>
-        <li><a href="#grant">GRANT</a></li>
+        <li><a href="#grant"><code>GRANT</code></a></li>
         <li><a href="#revoke">REVOKE</a></li>
         <li><a href="#deny">DENY</a></li>
       </ul>
@@ -485,7 +485,7 @@ sudo systemctl restart mysql.service</code></pre>
 <h2 id="dcl">DCL</h2>
 <hr>
 <p>DCL: Data Control Language, like <code>GRANT</code>, <code>REVOKE</code>, <code>DENY</code></p>
-<h3 id="grant">GRANT</h3>
+<h3 id="grant"><code>GRANT</code></h3>
 
   
     
@@ -862,7 +862,7 @@ Source_table where 1 &lt;&gt; 1;</code></pre>
       
         <li class="tab active">single</li>
       
-        <li class="tab ">single</li>
+        <li class="tab ">multiple</li>
       
     </ul>
   </figcaption>
@@ -885,7 +885,7 @@ Source_table where 1 &lt;&gt; 1;</code></pre>
       </figure>
     
       
-      <figure class="highlight language-single single" style="display: none;">
+      <figure class="highlight language-multiple multiple" style="display: none;">
         <table>
           <tbody>
             <tr>
@@ -893,7 +893,7 @@ Source_table where 1 &lt;&gt; 1;</code></pre>
                 <pre><span>1</span><br><span>2</span><br><span>3</span><br></pre>
               </td>
               <td class="code">
-                <pre class="code-highlight language-single single"><code class="single">INSERT INTO &lt;table_name&gt; (
+                <pre class="code-highlight language-multiple multiple"><code class="multiple">INSERT INTO &lt;table_name&gt; (
     &#39;c1&#39;, &#39;c2&#39;)
 VALUES (1, 2), (3, 4)</code></pre>
               </td>

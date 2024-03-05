@@ -305,7 +305,13 @@
 <nav id="TableOfContents">
   <ul>
     <li><a href="#init">INIT</a></li>
-    <li><a href="#tips">Tips</a></li>
+    <li><a href="#tips">TIPs</a>
+      <ul>
+        <li><a href="#datetime">Datetime</a></li>
+        <li><a href="#查询哪些表包含某个字段">查询哪些表包含某个字段</a></li>
+        <li><a href="#others">Others</a></li>
+      </ul>
+    </li>
     <li><a href="#export--import">EXPORT &amp; IMPORT</a></li>
   </ul>
 </nav>
@@ -390,8 +396,9 @@ select * from sysdatabases;</code></pre>
   </div>
 </figure>
 
-<h2 id="tips">Tips</h2>
+<h2 id="tips">TIPs</h2>
 <hr>
+<h3 id="datetime">Datetime</h3>
 
   
     
@@ -451,6 +458,45 @@ select * from Keywords  where datediff(year, Addtime,getdate())=0</code></pre>
   </table>
 </figure>
 
+<h3 id="查询哪些表包含某个字段">查询哪些表包含某个字段</h3>
+
+  
+    
+  
+  
+    
+  
+  
+  
+
+
+<figure class="highlight sql language-sql">
+  <figcaption>
+    
+      <span>TableCollum</span>
+    
+  </figcaption>
+  <table>
+    <tbody>
+      <tr>
+        <td class="gutter">
+          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre>
+        </td>
+        <td class="code">
+          <pre class="code-highlight language-sql sql"><code class="sql">SELECT
+    a.name AS 表名,
+    b.name AS 列名
+FROM sys.objects a, sys.columns b
+WHERE object_name(b.object_id)=a.name
+    AND b.name = &#39;fpre&#39;  -- 自定义搜索列名
+    AND type=&#39;u&#39;</code></pre>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+
+<h3 id="others">Others</h3>
 
   
     
@@ -490,6 +536,7 @@ FROM t_ICItem;</code></pre>
 </figure>
 
 <h2 id="export--import">EXPORT &amp; IMPORT</h2>
+<hr>
               
 
 

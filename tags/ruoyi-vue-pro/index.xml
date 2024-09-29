@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Springboot on Ivan Blog</title>
-    <link>https://ivanhan0511.github.io/tags/springboot/</link>
-    <description>Recent content in Springboot on Ivan Blog</description>
+    <title>ruoyi-vue-pro on Ivan Blog</title>
+    <link>https://ivanhan0511.github.io/tags/ruoyi-vue-pro/</link>
+    <description>Recent content in ruoyi-vue-pro on Ivan Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 29 Sep 2024 14:43:47 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/tags/springboot/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 29 Sep 2024 14:43:47 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/tags/ruoyi-vue-pro/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How to fork ruoyi-vue-pro</title>
       <link>https://ivanhan0511.github.io/post/java-fork-ruoyi-vue-pro/</link>
@@ -16,16 +16,6 @@
       <description>&lt;p&gt;To deploy a Springboot web framework, whatever development or production, and whatever single or distributed entity,
 &lt;a href=&#34;https://github.com/YunaiV/ruoyi-vue-pro&#34;&gt;ruoyi-vue-pro&lt;/a&gt; is a good project&lt;/p&gt;
 &lt;p&gt;But the stronger, the more complex. This post is the annotation for this project, by my personer opinion&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>SpringBoot</title>
-      <link>https://ivanhan0511.github.io/post/java-springboot/</link>
-      <pubDate>Tue, 23 Jan 2024 10:18:00 +0800</pubDate>
-      
-      <guid>https://ivanhan0511.github.io/post/java-springboot/</guid>
-      <description>&lt;p&gt;The most important TECH cores are design and architecture which service for business, and then the second are IoC and AoP.&lt;/p&gt;
-&lt;p&gt;NO BEST, ONLY BETTER.&lt;/p&gt;</description>
     </item>
     
   </channel>

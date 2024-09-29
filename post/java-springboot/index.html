@@ -313,27 +313,22 @@ NO BEST, ONLY BETTER.">
   <ul>
     <li><a href="#目录">目录</a></li>
     <li><a href="#chapter-1">I. ARCHITECTURE PRINCIPLE</a></li>
-    <li><a href="#chapter-2">II. BOOT LOADER</a>
-      <ul>
-        <li><a href="#connection-pool">Connection Pool</a></li>
-        <li><a href="#cache">Cache</a></li>
-        <li><a href="#redis">Redis</a></li>
-        <li><a href="#annotation">Annotation</a></li>
-        <li><a href="#mybatis-cache">MyBatis Cache</a></li>
-        <li><a href="#logger">Logger</a></li>
-        <li><a href="#multiple-modules">Multiple modules</a></li>
-        <li><a href="#beans注册-启动顺序等">Beans注册, 启动顺序等</a></li>
-      </ul>
-    </li>
+    <li><a href="#chapter-2">II. LIFE CYCLE</a></li>
     <li><a href="#chapter-3">III. IMPORTANT SUPPORT</a>
       <ul>
-        <li><a href="#security">Security</a></li>
-        <li><a href="#mall">mall</a></li>
-        <li><a href="#configure">Configure</a></li>
-        <li><a href="#filter">Filter</a></li>
-        <li><a href="#provider">Provider</a></li>
-        <li><a href="#handler">Handler</a></li>
-        <li><a href="#miscellaneous">Miscellaneous</a></li>
+        <li><a href="#a-security">A. Security</a>
+          <ul>
+            <li><a href="#permission">Permission</a></li>
+            <li><a href="#protection">Protection</a></li>
+          </ul>
+        </li>
+        <li><a href="#b-input">B. Input</a></li>
+        <li><a href="#c-output">C. Output</a></li>
+        <li><a href="#d-exception">D. Exception</a></li>
+        <li><a href="#e-api">E. API</a></li>
+        <li><a href="#f-log">F. Log</a></li>
+        <li><a href="#g-background-job">G. Background Job</a></li>
+        <li><a href="#h-cache">H. Cache</a></li>
       </ul>
     </li>
     <li><a href="#chapter-4">IV. BUSINESS DESIGN</a>
@@ -389,7 +384,7 @@ NO BEST, ONLY BETTER.">
 <h2 id="目录">目录</h2>
 <ul>
 <li><a href="#chapter-1">I. ARCHITECTURE PRINCIPLE</a></li>
-<li><a href="#chapter-2">II. BOOT LOADER</a></li>
+<li><a href="#chapter-2">II. LIFE CYCLE</a></li>
 <li><a href="#chapter-3">III. IMPORTANT SUPPORT</a></li>
 <li><a href="#chapter-4">IV. BUSINESS DESIGN</a></li>
 <li><a href="#chapter-5">V. OPERATION</a></li>
@@ -414,109 +409,33 @@ NO BEST, ONLY BETTER.">
 <p>另外, git自带子模块, 建一个总的仓库, 各个服务作为子模块版本各自管理, 也是一种兼容方案</p>
 </li>
 <li>
-<p>不参与DDD(领域驱动设计)!!!</p>
+<p>尽管代码中有DO, 但并不采用DDD(领域驱动设计)!!!</p>
 </li>
 </ol>
-<h2 id="chapter-2">II. BOOT LOADER</h2>
+<h2 id="chapter-2">II. LIFE CYCLE</h2>
 <hr>
-<p>弄懂maven加载,
-IoC
-AoP
-Exception</p>
-<h3 id="connection-pool">Connection Pool</h3>
-<p>Druid or Hikari -&gt; PearAdminPro用的是Hikari, 也是Springboot官方选用的
-Druid是淘宝选用的, 高并发的情况会适用一些</p>
-<h3 id="cache">Cache</h3>
-<h3 id="redis">Redis</h3>
-<p><a href="https://javaguide.cn/database/redis/redis-data-structures-01.html#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF-1">参考该文章</a></p>
-<h3 id="annotation">Annotation</h3>
-<ul>
-<li><input disabled="" type="checkbox"> <code>@CacheException</code></li>
-</ul>
-<h3 id="mybatis-cache">MyBatis Cache</h3>
-<p>MyBatis的一级缓存和二级缓存, 都存在可能脏读的情况, 所以一般惯用Redis做缓存
-引入Redis后只需要将MyBatis配置文件中Cache 的类型定义为RedisCache
-Log</p>
-<h3 id="logger">Logger</h3>
-<p><strong>slf4j.Logger and log4j.Logger</strong>
-<blockquote>
-  <p>
-Comparison SLF4J and Log4j<br/>
-
-Unlike log4j, SLF4J (Simple Logging Facade for Java) is not an implementation of logging framework, 
-it is an abstraction for all those logging frameworks in Java similar to log4J. Therefore, you cannot compare both. 
-However, it is always difficult to prefer one between the two.
-</p>
-  <footer>
-    <strong>LEARN SLF4J</strong>
-    
-      <cite><a href="https://www.tutorialspoint.com/slf4j/slf4j_vs_log4j.htm#:~:text=Comparison%20SLF4J%20and%20Log4j,prefer%20one%20between%20the%20two." target="_blank" rel="external">SLF4J Vs Log4j</a></cite>
-    
-  </footer>
-</blockquote></p>
-<p>
-
- 
-  
-  
-  
-  
-    
-  
-    
-      
-    
-  
-
-<div class="figure fig-100" >
-  
-    <a class="fancybox" href="https://www.tutorialspoint.com/slf4j/images/application.jpg" data-fancybox="">
-  
-    <img class="fig-img" src="https://www.tutorialspoint.com/slf4j/images/application.jpg" >
-  
-    </a>
-  
-  
-</div>
-
-CommonResult
-Redis
-cache</p>
-<h3 id="multiple-modules">Multiple modules</h3>
-<p>参考<a href="https://www.cnblogs.com/yangyongjie/p/16895043.html">这篇文章</a>来组织多模块</p>
-<h3 id="beans注册-启动顺序等">Beans注册, 启动顺序等</h3>
+<p>无论基于SpringBoot的框架再怎么变化, 了解Spring的生命周期, 以及核心IoC是如何启动的,才是重点</p>
+<p>此处引用<a href="https://ivanhan0511.github.io/post/java-spring/">Java Spring</a></p>
 <h2 id="chapter-3">III. IMPORTANT SUPPORT</h2>
 <hr>
-<h3 id="security">Security</h3>
-<p>TODO</p>
-<h3 id="mall">mall</h3>
-<ul>
-<li><input disabled="" type="checkbox"> admin与security解耦, 不同客户端的认证拦截过滤
-<ul>
-<li><input disabled="" type="checkbox"> 用户名密码新登录, 与token登录 都用一个<code>jwtAuthenticationTokenFilter</code>, 通过<code>UserDetailsService</code>获取用户数据
-<ul>
-<li><input disabled="" type="checkbox"> 通过获取username最终实现定位user</li>
-<li><input disabled="" type="checkbox"> 该token体系与微信认证是否能兼容, 如何兼容?</li>
-</ul>
-</li>
-<li><input disabled="" type="checkbox"> 动态权限过滤, 使用<code>dynamicSecurityFilter</code>, 通过<code>DynamicSecurityMetadataService</code>获取用户权限</li>
-</ul>
-</li>
-</ul>
-<h3 id="configure">Configure</h3>
-<p>这里包含初始化, 注册哪些filter</p>
-<h3 id="filter">Filter</h3>
-<p>具体拦截, 并把相对应的且support()的provider传进去</p>
-<h3 id="provider">Provider</h3>
-<p>提供自己的认证比对实现方法, 并且实现<code>support()</code>满足filter查找</p>
-<h3 id="handler">Handler</h3>
-<p>增加成功与失败的handler</p>
-<h3 id="miscellaneous">Miscellaneous</h3>
-<ul>
-<li>还涉及到与微信服务器交换opencode, 交换session, 再让用户授权手机号并最终拿到OpenId 等一系列动作</li>
-<li>还要设置缓存, 清空与微信服务器交换时中间状态的cache</li>
-</ul>
-<p>UserDetails还是个坑, 不适合目前这个项目</p>
+<h3 id="a-security">A. Security</h3>
+<p><strong>Configure</strong>
+这里包含初始化, 注册哪些filter</p>
+<p><strong>Filter</strong>
+具体拦截, 并把相对应的且support()的provider传进去</p>
+<p><strong>Provider</strong>
+提供自己的认证比对实现方法, 并且实现<code>support()</code>满足filter查找</p>
+<p><strong>Handler</strong>
+增加成功与失败的handler</p>
+<h4 id="permission">Permission</h4>
+<h4 id="protection">Protection</h4>
+<h3 id="b-input">B. Input</h3>
+<h3 id="c-output">C. Output</h3>
+<h3 id="d-exception">D. Exception</h3>
+<h3 id="e-api">E. API</h3>
+<h3 id="f-log">F. Log</h3>
+<h3 id="g-background-job">G. Background Job</h3>
+<h3 id="h-cache">H. Cache</h3>
 <h2 id="chapter-4">IV. BUSINESS DESIGN</h2>
 <hr>
 <p>@RequestBody MultipartFile[] submissions
@@ -864,9 +783,9 @@ And how to <code>DynamicDataSourceContextHolder.push()</code> and <code>DynamicD
 <ul>
 <li>DAO: Data Access Object, 数据访问层</li>
 <li>PO: Persistant Object, 持久层对象. 类似数据库内的一条记录</li>
-<li>DO: Domain Object, 领域对象 (不参与)</li>
+<li>DO: Domain Object, 领域对象</li>
 <li>DTO: Data Transfer Object, 通常在OpenApi返回的对象中使用DTO, 忠于表结构原始数值{&ldquo;age&rdquo;:40}</li>
-<li>BO: Business Object, 业务对象(暂且不用)</li>
+<li>BO: Business Object, 业务对象</li>
 <li>VO: Value Object, 表现对象 (如果需要, 则转换为具体表现的内容, 例如{&ldquo;age&rdquo;:40, &ldquo;desc&rdquo;:&ldquo;不惑之年&rdquo;})</li>
 <li>POJO: Plain Old Java Object, 是PO/DO/DTO/BO/VO的统称</li>
 </ul>

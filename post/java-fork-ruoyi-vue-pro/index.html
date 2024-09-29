@@ -318,16 +318,507 @@ But the stronger, the more complex. This post is the annotation for this project
 <h1 id="table-of-contents">Table of Contents</h1>
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#architecture">ARCHITECTURE</a></li>
-    <li><a href="#details">DETAILS</a></li>
+    <li><a href="#Å€">Ä¿Â¼</a></li>
+    <li><a href="#chapter-1">I. ARCHITECTURE PRINCIPLE</a></li>
+    <li><a href="#chapter-2">II. LIFE CYCLE</a></li>
+    <li><a href="#chapter-3">III. IMPORTANT SUPPORT</a>
+      <ul>
+        <li><a href="#a-security">A. Security</a>
+          <ul>
+            <li><a href="#permission">Permission</a></li>
+            <li><a href="#protection">Protection</a></li>
+          </ul>
+        </li>
+        <li><a href="#b-input">B. Input</a></li>
+        <li><a href="#c-output">C. Output</a></li>
+        <li><a href="#d-exception">D. Exception</a></li>
+        <li><a href="#e-api">E. API</a></li>
+        <li><a href="#f-log">F. Log</a></li>
+        <li><a href="#g-background-job">G. Background Job</a></li>
+        <li><a href="#h-cache">H. Cache</a></li>
+      </ul>
+    </li>
+    <li><a href="#chapter-4">IV. BUSINESS DESIGN</a>
+      <ul>
+        <li><a href="#controller-and-input-validation">Controller and input validation</a></li>
+        <li><a href="#service">Service</a></li>
+        <li><a href="#dao-mapper">DAO Mapper</a>
+          <ul>
+            <li><a href="#mapper-design">Mapper Design</a></li>
+          </ul>
+        </li>
+        <li><a href="#multiple-db">Multiple DB</a>
+          <ul>
+            <li><a href="#settings">Settings</a></li>
+          </ul>
+        </li>
+        <li><a href="#transactional">Transactional</a>
+          <ul>
+            <li><a href="#propagation">Propagation</a></li>
+            <li><a href="#isolation">Isolation</a></li>
+          </ul>
+        </li>
+        <li><a href="#background-job">Background Job</a>
+          <ul>
+            <li><a href="#quartz">Quartz</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#chapter-5">V. OPERATION</a>
+      <ul>
+        <li><a href="#ci">CI</a></li>
+        <li><a href="#monitor">Monitor</a></li>
+        <li><a href="#api-document">API DOCUMENT</a></li>
+        <li><a href="#deployment">DEPLOYMENT</a>
+          <ul>
+            <li><a href="#docker">Docker</a></li>
+            <li><a href="#jar">JAR</a></li>
+          </ul>
+        </li>
+        <li><a href="#others">Others</a></li>
+      </ul>
+    </li>
+    <li><a href="#chapter-6">VI. APPENDIX</a>
+      <ul>
+        <li><a href="#Ğ´Ï£">ËõĞ´ĞÅÏ¢</a></li>
+        <li><a href="#æ·¶">ÃüÃû¹æ·¶</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 
-<h2 id="architecture">ARCHITECTURE</h2>
+<p>The most important TECH cores are design and architecture which service for business, and then the second are IoC and AoP.</p>
+<p>NO BEST, ONLY BETTER.</p>
+<h2 id="Å€">Ä¿Â¼</h2>
+<ul>
+<li><a href="#chapter-1">I. ARCHITECTURE PRINCIPLE</a></li>
+<li><a href="#chapter-2">II. LIFE CYCLE</a></li>
+<li><a href="#chapter-3">III. IMPORTANT SUPPORT</a></li>
+<li><a href="#chapter-4">IV. BUSINESS DESIGN</a></li>
+<li><a href="#chapter-5">V. OPERATION</a></li>
+<li><a href="#chapter-6">VI. APPENDIX</a></li>
+</ul>
+<h2 id="chapter-1">I. ARCHITECTURE PRINCIPLE</h2>
 <hr>
-<p>Reading the docs of ruoyi-vue-pro is the best way.</p>
-<h2 id="details">DETAILS</h2>
+<p>So far, Sep 24, 2024</p>
+<ol>
+<li>
+<p>Reading the <a href="https://github.com/YunaiV/ruoyi-vue-pro">docs</a> of ruoyi-vue-pro is the best way</p>
+</li>
+<li>
+<p>Èç¹ûÍÅ¶Ó±È½ÏĞ¡, ´ï²»µ½ÉÏ°ÙÈË, ÄÇÃ´¾Í²»²ğ·şÎñÖ±½Óµ¥ÌåÔËĞĞ, ÕÆÎÕÉè¼ÆµÄ&quot;¶È&quot;, ·Ç³£ÖØÒª!!!<br>
+³ı·ÇÓĞ¶¯Ì¬À©Ëõ£¬²»Í¬µÄÄ£¿éÓÉ²»Í¬µÄÍÅ¶Óµ¥¶ÀÎ¬»¤£¬»òÕßÄ£¿éµ¥¶ÀÂôÖ®ÀàµÄĞèÇó£¬·ñÔò²ğ·şÎñ±×´óÓÚÀû</p>
+</li>
+<li>
+<p>µ¥²Ö¶àÏîÄ¿£¬´ó³§ºÜ¶àÏîÄ¿Ò²ÔÚÓÃÕâÖÖ·½Ê½. ÓĞĞ©ÈËËµ»á·¢Õ¹Îª·Ö²¼Ê½µ¥ÌåµÄ£¬ÊÇ¶Ômaven´ò°ü²»´óÊì°É¡£ÔËÎ¬½Ç¶ÈÀ´¿´£¬µ¥²ÖºÍ¶à²Ögit¹ÜÀíµÄ´ò°ü²úÎï¶¼Ò»ÑùµÄ£¬Ö»ÊÇ¹ÜÀí·½Ê½²»Ò»Ñù</p>
+<p>ÓĞĞ©&quot;Î±Î¢·şÎñ&quot;ÏîÄ¿£¬ÏëÅÜÆğÀ´¾ÍµÃcloneÒ»¶Ñ²Ö¿â£¬¶¯²»¶¯³öÎÊÌâ¾ÍÊÇÄ³¸ö²Ö¿â¸üĞÂÁË¶ø¹ØÁªÄ£¿éµÄ²Ö¿âÃ»¸üĞÂ¡­¡­</p>
+</li>
+<li>
+<p>ÁíÍâ, git×Ô´ø×ÓÄ£¿é, ½¨Ò»¸ö×ÜµÄ²Ö¿â, ¸÷¸ö·şÎñ×÷Îª×ÓÄ£¿é°æ±¾¸÷×Ô¹ÜÀí, Ò²ÊÇÒ»ÖÖ¼æÈİ·½°¸</p>
+</li>
+<li>
+<p>¾¡¹Ü´úÂëÖĞÓĞDO, µ«²¢²»²ÉÓÃDDD(ÁìÓòÇı¶¯Éè¼Æ)!!!</p>
+</li>
+</ol>
+<h2 id="chapter-2">II. LIFE CYCLE</h2>
 <hr>
+<p>ÎŞÂÛ»ùÓÚSpringBootµÄ¿ò¼ÜÔÙÔõÃ´±ä»¯, ÁË½âSpringµÄÉúÃüÖÜÆÚ, ÒÔ¼°ºËĞÄIoCÊÇÈçºÎÆô¶¯µÄ,²ÅÊÇÖØµã</p>
+<p>´Ë´¦ÒıÓÃ<a href="https://ivanhan0511.github.io/post/java-spring/">Java Spring</a></p>
+<h2 id="chapter-3">III. IMPORTANT SUPPORT</h2>
+<hr>
+<h3 id="a-security">A. Security</h3>
+<p><strong>Configure</strong>
+ÕâÀï°üº¬³õÊ¼»¯, ×¢²áÄÄĞ©filter</p>
+<p><strong>Filter</strong>
+¾ßÌåÀ¹½Ø, ²¢°ÑÏà¶ÔÓ¦µÄÇÒsupport()µÄprovider´«½øÈ¥</p>
+<p><strong>Provider</strong>
+Ìá¹©×Ô¼ºµÄÈÏÖ¤±È¶ÔÊµÏÖ·½·¨, ²¢ÇÒÊµÏÖ<code>support()</code>Âú×ãfilter²éÕÒ</p>
+<p><strong>Handler</strong>
+Ôö¼Ó³É¹¦ÓëÊ§°ÜµÄhandler</p>
+<h4 id="permission">Permission</h4>
+<h4 id="protection">Protection</h4>
+<h3 id="b-input">B. Input</h3>
+<h3 id="c-output">C. Output</h3>
+<h3 id="d-exception">D. Exception</h3>
+<h3 id="e-api">E. API</h3>
+<h3 id="f-log">F. Log</h3>
+<h3 id="g-background-job">G. Background Job</h3>
+<h3 id="h-cache">H. Cache</h3>
+<h2 id="chapter-4">IV. BUSINESS DESIGN</h2>
+<hr>
+<p>@RequestBody MultipartFile[] submissions
+should be</p>
+<p>@RequestParam(&ldquo;file&rdquo;) MultipartFile[] submissions
+The files are not the request body, they are part of it and there is no built-in HttpMessageConverter that can convert the request to an array of MultiPartFile.</p>
+<p>You can also replace HttpServletRequest with MultipartHttpServletRequest, which gives you access to the headers of the individual parts.</p>
+<h3 id="controller-and-input-validation">Controller and input validation</h3>
+<ul>
+<li><input disabled="" type="checkbox"> Web admin</li>
+<li><input disabled="" type="checkbox"> App portal</li>
+<li><input checked="" disabled="" type="checkbox"> Normal <code>@Valid</code> and <code>@Validated</code></li>
+<li><input checked="" disabled="" type="checkbox"> DIY <code>@FlagValidator</code></li>
+</ul>
+<h3 id="service">Service</h3>
+<ul>
+<li><input disabled="" type="checkbox"> Use MaBatisPlus? How does <code>mall</code> use pure MaBatis easily to implement?</li>
+<li><input disabled="" type="checkbox"> Simple service, call mapper function directly?</li>
+<li><input disabled="" type="checkbox"> Complicate service, call multiple mapper functions?</li>
+<li><input disabled="" type="checkbox"> What is the data structure(DTO?) in nternal service?</li>
+</ul>
+<h3 id="dao-mapper">DAO Mapper</h3>
+<ul>
+<li><input disabled="" type="checkbox"> Pure MyBatis or MyBatisPlus?</li>
+<li><input disabled="" type="checkbox"> MyBatis PageHelper detail</li>
+<li><input disabled="" type="checkbox"> org.springframework.data.domain.PageRequest? Or PearAdmin? Or mall?</li>
+</ul>
+<p><strong>JUST</strong> use MyBatisPLus maven and use default CRUD methods.<br>
+But <strong>REFUSE</strong> to use <code>QueryWrapper</code>, use MyBatis&rsquo; XML mapper.</p>
+<p>Reason as below:</p>
+<ul>
+<li>IServiceºÍBaseMapperÖĞ&quot;³ä·ÖÀûÓÃ&quot;ÁËJavaĞÂ¹æ¶¨ÖĞInterface¿ÉÒÔÓĞdefaultµÄÓÃ·¨, »ù±¾µÄCRUDÈ·Êµ²»ÓÃÖØ¸´Ğ´ÁË</li>
+<li>MybatisPlusµÄQueryWrapperÔ½¿´Ô½ÏñPython SQLAlchemyÕâÀàORM, Ñ§Ï°³É±¾¸ß, ÇÒÒ»µ©Óï¾äÓÅ»¯²»µÃµ±, »áÔì³ÉĞÔÄÜËğÊ§</li>
+<li>ĞÔÄÜºÍÎÈ¶¨ĞÔµÈ²»ÎÈ¶¨ÒòËØÔ½À´Ô½¶à, ±ÈÈçÒ»µ©ÊÖ¶¯¸ÉÔ¤, ºÜ¶àËùÎ½µÄ&quot;±ãÀû&quot;Ë²¼äÈ«ÎŞ, »¹ÊÇµÃÒÀ¿¿MyBatis</li>
+<li>°´ÕÕMyBatisĞ´XML¸üÏñÔ­ÉúSQL, ÊìÁ·ÔËÓÃSQLÊÇÒ»¼şÓä¿ìµÄÊÂÇé</li>
+</ul>
+<p><strong>·Ç</strong>·Ö²¼Ê½Êı¾İ¿â, ²»ÍÆ¼öÊ¹ÓÃÑ©»¨Ëã·¨, Ê¹ÓÃÊı¾İ¿â×ÔÔöID¼´¿É</p>
+<h4 id="mapper-design">Mapper Design</h4>
+<ul>
+<li>Òò¹¦ÄÜ²»Í¬¶ø²éÑ¯Í¬Ò»¸ö±í, ºÜ¿ÉÄÜ¹ıÂËÌõ¼şÎ¬¶ÈºÍ½á¹ûÎ¬¶È¶¼²»ÏàÍ¬, Òò´Ë°´ÕÕ¹¦ÄÜ»®·Ö²éÑ¯ÁĞ±íÊı¾İ»ò²éÑ¯µ¥ÌõÊı¾İ±È½ÏºÏÀí(ÔİÊ±, May 30, 2023)
+<ul>
+<li>selectOneForXxxFunction(Integer param)</li>
+<li>selectListForYyyFunction(YyyRequest request)
+<ul>
+<li>requestÖĞÍ¨¹ı·Ö×éĞ£Ñé²ÎÊıÀ´ÕûºÏ²»Í¬µÄÇëÇó²ÎÊı, ÒÔ±ãMapper²ã¿ÉÒÔÒ»ÌõÓï¾äÓ¦¶Ô¶à¸öcontroller²ã²»Í¬Ìõ¼şµÄ²éÑ¯</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>¸´ÓÃ<code>&lt;sql/&gt;</code>½öÏŞÓÚÊı¾İ¿â±íµÄcolumns×Ö¶Î
+<ul>
+<li>ÎªÁËÔÚ<code>&lt;select/&gt;</code>ÖĞ¿´µÃ¸üÇåÎú</li>
+<li>ÎªÁËMyBatisCodeHelperProÕâ¸ö²å¼şÄÜ¹ØÁª<code>&lt;sql/&gt;</code>ºÍ<code>&lt;resultMap/&gt;</code>¶ÔÓ¦µÄ×Ö¶Î</li>
+</ul>
+</li>
+<li>²»Ê¹ÓÃÁªºÏ²éÑ¯, »áµ¼ÖÂPageHelperÎŞ·¨ÕıÈ··ÖÒ³, ¶øÊ¹ÓÃ×Ó²éÑ¯</li>
+</ul>
+<h3 id="multiple-db">Multiple DB</h3>
+<p>dehai-adminÏîÄ¿ÊÇÊ¹ÓÃMS SQL Server Óë MySQL Á½ÖÖÊı¾İ¿âµÄµäĞÍÀı×Ó</p>
+<h4 id="settings">Settings</h4>
+<ul>
+<li>
+<p>application.ymlÖĞÉèÖÃPageHelperµÄ helperDialect, ¼æÈİ&quot;mysql&quot;ºÍ&quot;sqlserver&quot;Á½ÖÖÊı¾İ¿âµÄÓï·¨</p>
+</li>
+<li>
+<p>Ê¹ÓÃ¶àÊı¾İÔ´Ê±, ÅäÖÃPageHelperÊ±Òª×¢Òâ(Ö»ÓĞÔÚÊ¹ÓÃapplication.yml¸ñÊ½µÄÅäÖÃÎÄ¼şÊ±»áÓĞÎÊÌâ):<br>
+<blockquote>
+  <p>
+  ...
+  pagehelper:
+    autoRuntimeDialect: true  # ´Ë´¦µÄÅäÖÃÏîÊÇÍÕ·å, ²»ÊÇIDEA×Ô¶¯ÌáÊ¾µÄ`auto-runtime-dialect: true`
+  ...
+  </p>
+  <footer>
+    <strong>application.yml</strong>
+    
+      
+        <cite></cite>
+      
+    
+  </footer>
+</blockquote>
+ÒòÎªÈç¹ûÍÕ·å±»×Ô¶¯×ªÒëÎªºáÏß·Ö¸ô·û, »áµ¼ÖÂPageHelperÇĞ»»¶àÊı¾İÔ´Ê±Ê§Ğ§</p>
+</li>
+</ul>
+<h3 id="transactional">Transactional</h3>
+<ul>
+<li>¿ç¶àÊı¾İÔ´, µ÷ÓÃ¸÷¸ö×ÊÔ´·şÎñ, ¸÷¸öServiceµÄÊµÏÖÀàÓĞ@DS(&ldquo;customer&rdquo;)×¢½âÖ¸¶¨Êı¾İÔ´</li>
+<li>ÊÂÎñ¹ÜÀí, Í¨¹ı@DSTransactional ¸ù¾İ¸÷¸ö·şÎñËùÖ¸¶¨µÄÊı¾İÔ´½øĞĞÇĞ»»</li>
+</ul>
+<h4 id="propagation">Propagation</h4>
+<p>TODO</p>
+<ul>
+<li>ÊÂÎñ´«²¥, ĞèÒªÊ±Ôò¼ÓÈë´«²¥µÄÀ©É¢ÒªÇó<br>
+@Transactional(isolation = Isolation.SERIALIZABLE, propagation = Propagation.REQUIRES_NEW)</li>
+</ul>
+<h4 id="isolation">Isolation</h4>
+<p>²»Í¬ÓÚ&quot;´«²¥¹æÔò&quot;ÊÇSpringÌáµ½µÄ¸ÅÄî, ¸ôÀë¼¶±ğÕâ¸ö¸ÅÄîÊÇÊı¾İ¿âÊÂÎñ×Ô´øµÄ</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Isolation Level</th>
+<th style="text-align:left">Ôà¶Á(Dirty Read)</th>
+<th style="text-align:left">²»¿ÉÖØ¸´¶Á(Non Repeatable Read)</th>
+<th style="text-align:left">»Ã¶Á(Phantom Read)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Read Uncommitted</td>
+<td style="text-align:left">Yes</td>
+<td style="text-align:left">Yes</td>
+<td style="text-align:left">Yes</td>
+</tr>
+<tr>
+<td style="text-align:left">Read Committed</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">Yes</td>
+<td style="text-align:left">Yes</td>
+</tr>
+<tr>
+<td style="text-align:left">Repeatable Read</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">Yes</td>
+</tr>
+<tr>
+<td style="text-align:left">Serializable</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">-</td>
+</tr>
+</tbody>
+</table>
+<p>ºÜ¶àÈËÈİÒ×¸ã»ì²»¿ÉÖØ¸´¶ÁºÍ»Ã¶Á£¬È·ÊµÕâÁ½ÕßÓĞĞ©ÏàËÆ. µ«²»¿ÉÖØ¸´¶ÁÖØµãÔÚÓÚupdateºÍdelete, ¶ø»Ã¶ÁµÄÖØµãÔÚÓÚinsert.</p>
+<p>×ÜµÄÀ´Ëµ»Ã¶Á¾ÍÊÇÊÂÎñA¶ÔÊı¾İ½øĞĞ²Ù×÷£¬ÊÂÎñB»¹ÊÇ¿ÉÒÔÓÃinsert²åÈëÊı¾İµÄ£¬ÒòÎªÊ¹ÓÃµÄÊÇĞĞËø£¬ÕâÑùµ¼ÖÂµÄ¸÷ÖÖÆæİâÎÊÌâ¾ÍÊÇ»Ã¶Á£¬±íÏÖĞÎÊ½ºÜ¶à£¬¾Í²»ÁĞ¾ÙÁË¡£</p>
+<p><strong>TIPs</strong>
+<div class="alert info ">
+  <p>@DS ±ØĞë¼ÓÔÚ @Transactional ¶ÔÓ¦µÄÀà»òÕß·½·¨ÉÏ<br>
+ÈçÔÚ mapperÖĞ¼ÓÁË@DS£¬µ«ÊÇ @Transactional ¼ÓÔÚ service ·½·¨ÖĞ£¬´ËÊ±Ôò»á»ñÈ¡Ä¬ÈÏµÄdatasource
+(ÒòÎªÔÚÊÂÎñÖĞÒÑ¾­»ñÈ¡ÁËÒ»´ÎdatasourceµÄconnection£¬¶ø´ËÊ±ÎŞDS×¢½â)</p>
+</div></p>
+
+
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+
+
+  
+    
+  
+  
+
+<figure class="codeblock codeblock--tabbed">
+  <figcaption>
+    
+      <span>MultiDSTransactional</span>
+    
+    <ul class="tabs">
+      
+        <li class="tab active">sinterface</li>
+      
+        <li class="tab ">ointerface</li>
+      
+        <li class="tab ">oimpl</li>
+      
+        <li class="tab ">combo</li>
+      
+        <li class="tab ">comboimpl</li>
+      
+    </ul>
+  </figcaption>
+  <div class="tabs-content">
+    
+      
+      <figure class="highlight language-sinterface sinterface" style="display: block;">
+        <table>
+          <tbody>
+            <tr>
+              <td class="gutter">
+                <pre><span>1</span><br></pre>
+              </td>
+              <td class="code">
+                <pre class="code-highlight language-sinterface sinterface"><code class="sinterface">public interface SomeService extends IService&lt;Some&gt; {}</code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </figure>
+    
+      
+      <figure class="highlight language-ointerface ointerface" style="display: none;">
+        <table>
+          <tbody>
+            <tr>
+              <td class="gutter">
+                <pre><span>1</span><br></pre>
+              </td>
+              <td class="code">
+                <pre class="code-highlight language-ointerface ointerface"><code class="ointerface">public interface OtherService extends IService&lt;Other&gt; {}</code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </figure>
+    
+      
+      <figure class="highlight language-oimpl oimpl" style="display: none;">
+        <table>
+          <tbody>
+            <tr>
+              <td class="gutter">
+                <pre><span>1</span><br><span>2</span><br><span>3</span><br></pre>
+              </td>
+              <td class="code">
+                <pre class="code-highlight language-oimpl oimpl"><code class="oimpl">@Service
+@DS(&#34;db2&#34;)
+public class OtherServiceImpl extends ServiceImpl&lt;OtherRepository, Other&gt; implements OtherService {}</code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </figure>
+    
+      
+      <figure class="highlight language-combo combo" style="display: none;">
+        <table>
+          <tbody>
+            <tr>
+              <td class="gutter">
+                <pre><span>1</span><br><span>2</span><br><span>3</span><br></pre>
+              </td>
+              <td class="code">
+                <pre class="code-highlight language-combo combo"><code class="combo">public interface CombineService {
+    Boolean save(CombineRequest request);
+}</code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </figure>
+    
+      
+      <figure class="highlight language-comboimpl comboimpl" style="display: none;">
+        <table>
+          <tbody>
+            <tr>
+              <td class="gutter">
+                <pre><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br></pre>
+              </td>
+              <td class="code">
+                <pre class="code-highlight language-comboimpl comboimpl"><code class="comboimpl">@Service
+public class CombineServiceImpl implements CombineService {
+    @Resource
+    private SomeService someService;
+
+    @Resource
+    private OtherService otherService;
+
+    @Override
+    @DSTransactional
+    public Boolean save(CombineRequest request) {
+        Boolean r1 = saveSome(request);
+        Boolean r2 = saveOthers(request);
+        return r1 &amp;&amp; r2;
+    }
+
+    @Transactional(isolation = Isolation.SERIALIZABLE, propagation = Propagation.REQUIRES_NEW)
+    protected Boolean saveOthers(CombineRequest request) {
+        List&lt;Other&gt; others = methodToGetOthers(request);
+        return otherService.saveBatch(others);
+    }
+
+    private Boolean saveSome(CombineRequest request) {
+        Some some = methodToGetSome(request);
+        return someService.save(some);
+    }
+}</code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </figure>
+    
+  </div>
+</figure>
+
+<p>[TODO]:
+MyBatisµÄÊÖ¶¯ÇĞ»», ºóĞøÔÙÉîÈëÑ§Ï°<br>
+And how to <code>DynamicDataSourceContextHolder.push()</code> and <code>DynamicDataSourceContextHolder.poll()</code>?</p>
+<h3 id="background-job">Background Job</h3>
+<h4 id="quartz">Quartz</h4>
+<h2 id="chapter-5">V. OPERATION</h2>
+<hr>
+<p>ÔËÓª, ÈíÎÄÍÆ¹ã, ÔËÎ¬, ²¿Êğ, ×Ô¶¯»¯²âÊÔ, ×Ô¶¯»¯½Ó¿ÚÎÄµµµÈ</p>
+<h3 id="ci">CI</h3>
+<h3 id="monitor">Monitor</h3>
+<h3 id="api-document">API DOCUMENT</h3>
+<ul>
+<li><input disabled="" type="checkbox"> Swagger UI category, description and list</li>
+<li><input disabled="" type="checkbox"> With session token</li>
+</ul>
+<h3 id="deployment">DEPLOYMENT</h3>
+<h4 id="docker">Docker</h4>
+<ul>
+<li><input disabled="" type="checkbox"> DockerCompose deployment in single server?</li>
+</ul>
+<h4 id="jar">JAR</h4>
+<h3 id="others">Others</h3>
+<ul>
+<li>¸öÈË¶©ÔÄºÅ, ÊìÏ¤ÄÚÈİµÄ±à¼­/·¢²¼, Á·Ï°Ğ´×÷, Ìá¸ßÅÅ°æ/ÅÄÕÕµÈºóÆÚ¼¼ÄÜ</li>
+<li>ÔËÓª, ³¢ÊÔÍÆËÍÎÄÕÂ</li>
+</ul>
+<h2 id="chapter-6">VI. APPENDIX</h2>
+<hr>
+<p>Õª³­×ÔÍøÂç, ²»Ò»¶¨ºÏÀí, ½ö±£´æÒ»Ğ©ÎÄ×Ö, ÒÔ±ãÒÔºóÉÙĞ´Ò»Ğ©ÎÄ×Ö</p>
+<h3 id="Ğ´Ï£">ËõĞ´ĞÅÏ¢</h3>
+<ul>
+<li>DAO: Data Access Object, Êı¾İ·ÃÎÊ²ã</li>
+<li>PO: Persistant Object, ³Ö¾Ã²ã¶ÔÏó. ÀàËÆÊı¾İ¿âÄÚµÄÒ»Ìõ¼ÇÂ¼</li>
+<li>DO: Domain Object, ÁìÓò¶ÔÏó</li>
+<li>DTO: Data Transfer Object, Í¨³£ÔÚOpenApi·µ»ØµÄ¶ÔÏóÖĞÊ¹ÓÃDTO, ÖÒÓÚ±í½á¹¹Ô­Ê¼ÊıÖµ{&ldquo;age&rdquo;:40}</li>
+<li>BO: Business Object, ÒµÎñ¶ÔÏó</li>
+<li>VO: Value Object, ±íÏÖ¶ÔÏó (Èç¹ûĞèÒª, Ôò×ª»»Îª¾ßÌå±íÏÖµÄÄÚÈİ, ÀıÈç{&ldquo;age&rdquo;:40, &ldquo;desc&rdquo;:&quot;²»»óÖ®Äê&quot;})</li>
+<li>POJO: Plain Old Java Object, ÊÇPO/DO/DTO/BO/VOµÄÍ³³Æ</li>
+</ul>
+<h3 id="æ·¶">ÃüÃû¹æ·¶</h3>
+<ul>
+<li>Service/DAO²ã·½·¨ÃüÃû¹æÔ¼
+<ul>
+<li>»ñÈ¡µ¥¸ö¶ÔÏóµÄ·½·¨ÓÃget×öÇ°×º</li>
+<li>»ñÈ¡¶à¸ö¶ÔÏóµÄ·½·¨ÓÃlist×öÇ°×º</li>
+<li>»ñÈ¡Í³¼ÆÖµµÄ·½·¨ÓÃcount×öÇ°×º</li>
+<li>²åÈëµÄ·½·¨ÓÃsave/insert×öÇ°×º</li>
+<li>É¾³ıµÄ·½·¨ÓÃremove/delete×öÇ°×º</li>
+<li>ĞŞ¸ÄµÄ·½·¨ÓÃedit/update×öÇ°×º</li>
+</ul>
+</li>
+<li><del>ÁìÓòÄ£ĞÍÃüÃû¹æÔ¼</del>
+<ul>
+<li>Êı¾İ¶ÔÏó: xxxDO, xxx¼´±íÃû</li>
+<li>Êı¾İ´«Êä¶ÔÏó: xxxDTO, xxx¼´ÒµÎñÁìÓòÏà¹ØµÄÃû³Æ</li>
+<li>Õ¹Ê¾¶ÔÏó: xxxVO, xxxÒ»°ãÎªÍøÒ³Ãû³Æ</li>
+<li>POJOÊÇDO/DTO/BO/VOµÄÍ³³Æ, ½ûÖ¹ÃüÃû³ÉxxxPOJO</li>
+</ul>
+</li>
+</ul>
               
 
 

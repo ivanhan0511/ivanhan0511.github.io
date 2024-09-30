@@ -320,25 +320,7 @@ But the stronger, the more complex. This post is the annotation for this project
   <ul>
     <li><a href="#Å€">Ä¿Â¼</a></li>
     <li><a href="#chapter-1">I. ARCHITECTURE PRINCIPLE</a></li>
-    <li><a href="#chapter-2">II. LIFE CYCLE</a></li>
-    <li><a href="#chapter-3">III. IMPORTANT SUPPORT</a>
-      <ul>
-        <li><a href="#a-security">A. Security</a>
-          <ul>
-            <li><a href="#permission">Permission</a></li>
-            <li><a href="#protection">Protection</a></li>
-          </ul>
-        </li>
-        <li><a href="#b-input">B. Input</a></li>
-        <li><a href="#c-output">C. Output</a></li>
-        <li><a href="#d-exception">D. Exception</a></li>
-        <li><a href="#e-api">E. API</a></li>
-        <li><a href="#f-log">F. Log</a></li>
-        <li><a href="#g-background-job">G. Background Job</a></li>
-        <li><a href="#h-cache">H. Cache</a></li>
-      </ul>
-    </li>
-    <li><a href="#chapter-4">IV. BUSINESS DESIGN</a>
+    <li><a href="#chapter-2">II. BUSINESS DESIGN</a>
       <ul>
         <li><a href="#controller-and-input-validation">Controller and input validation</a></li>
         <li><a href="#service">Service</a></li>
@@ -379,12 +361,30 @@ But the stronger, the more complex. This post is the annotation for this project
         <li><a href="#others">Others</a></li>
       </ul>
     </li>
+    <li><a href="#chapter-3">III. IMPORTANT SUPPORT</a>
+      <ul>
+        <li><a href="#a-security">A. Security</a>
+          <ul>
+            <li><a href="#permission">Permission</a></li>
+            <li><a href="#protection">Protection</a></li>
+          </ul>
+        </li>
+        <li><a href="#b-input">B. Input</a></li>
+        <li><a href="#c-output">C. Output</a></li>
+        <li><a href="#d-exception">D. Exception</a></li>
+        <li><a href="#e-api">E. API</a></li>
+        <li><a href="#f-log">F. Log</a></li>
+        <li><a href="#g-background-job">G. Background Job</a></li>
+        <li><a href="#h-cache">H. Cache</a></li>
+      </ul>
+    </li>
     <li><a href="#chapter-6">VI. APPENDIX</a>
       <ul>
         <li><a href="#Ğ´Ï£">ËõĞ´ĞÅÏ¢</a></li>
         <li><a href="#æ·¶">ÃüÃû¹æ·¶</a></li>
       </ul>
     </li>
+    <li><a href="#Ê¼">±Ê¼Ç</a></li>
   </ul>
 </nav>
 
@@ -393,9 +393,9 @@ But the stronger, the more complex. This post is the annotation for this project
 <h2 id="Å€">Ä¿Â¼</h2>
 <ul>
 <li><a href="#chapter-1">I. ARCHITECTURE PRINCIPLE</a></li>
+<li><a href="#chapter-2">II. BUSINESS DESIGN</a></li>
 <li><a href="#chapter-2">II. LIFE CYCLE</a></li>
 <li><a href="#chapter-3">III. IMPORTANT SUPPORT</a></li>
-<li><a href="#chapter-4">IV. BUSINESS DESIGN</a></li>
 <li><a href="#chapter-5">V. OPERATION</a></li>
 <li><a href="#chapter-6">VI. APPENDIX</a></li>
 </ul>
@@ -421,44 +421,13 @@ But the stronger, the more complex. This post is the annotation for this project
 <p>¾¡¹Ü´úÂëÖĞÓĞDO, µ«²¢²»²ÉÓÃDDD(ÁìÓòÇı¶¯Éè¼Æ)!!!</p>
 </li>
 </ol>
-<h2 id="chapter-2">II. LIFE CYCLE</h2>
+<h2 id="chapter-2">II. BUSINESS DESIGN</h2>
 <hr>
-<p>ÎŞÂÛ»ùÓÚSpringBootµÄ¿ò¼ÜÔÙÔõÃ´±ä»¯, ÁË½âSpringµÄÉúÃüÖÜÆÚ, ÒÔ¼°ºËĞÄIoCÊÇÈçºÎÆô¶¯µÄ,²ÅÊÇÖØµã</p>
-<p>´Ë´¦ÒıÓÃ<a href="https://ivanhan0511.github.io/post/java-spring/">Java Spring</a></p>
-<h2 id="chapter-3">III. IMPORTANT SUPPORT</h2>
-<hr>
-<h3 id="a-security">A. Security</h3>
-<p><strong>Configure</strong>
-ÕâÀï°üº¬³õÊ¼»¯, ×¢²áÄÄĞ©filter</p>
-<p><strong>Filter</strong>
-¾ßÌåÀ¹½Ø, ²¢°ÑÏà¶ÔÓ¦µÄÇÒsupport()µÄprovider´«½øÈ¥</p>
-<p><strong>Provider</strong>
-Ìá¹©×Ô¼ºµÄÈÏÖ¤±È¶ÔÊµÏÖ·½·¨, ²¢ÇÒÊµÏÖ<code>support()</code>Âú×ãfilter²éÕÒ</p>
-<p><strong>Handler</strong>
-Ôö¼Ó³É¹¦ÓëÊ§°ÜµÄhandler</p>
-<h4 id="permission">Permission</h4>
-<h4 id="protection">Protection</h4>
-<h3 id="b-input">B. Input</h3>
-<h3 id="c-output">C. Output</h3>
-<h3 id="d-exception">D. Exception</h3>
-<h3 id="e-api">E. API</h3>
-<h3 id="f-log">F. Log</h3>
-<h3 id="g-background-job">G. Background Job</h3>
-<h3 id="h-cache">H. Cache</h3>
-<h2 id="chapter-4">IV. BUSINESS DESIGN</h2>
-<hr>
-<p>@RequestBody MultipartFile[] submissions
-should be</p>
-<p>@RequestParam(&ldquo;file&rdquo;) MultipartFile[] submissions
-The files are not the request body, they are part of it and there is no built-in HttpMessageConverter that can convert the request to an array of MultiPartFile.</p>
-<p>You can also replace HttpServletRequest with MultipartHttpServletRequest, which gives you access to the headers of the individual parts.</p>
+<p>Designing the data structure is the most important thing! Record the SQL into the <code>./sql/mysql/</code>, of course, my choice</p>
+<p>With the infra code-auto-generation, most backend and frontend codes can be generated. Very helpful and so handy.</p>
 <h3 id="controller-and-input-validation">Controller and input validation</h3>
-<ul>
-<li><input disabled="" type="checkbox"> Web admin</li>
-<li><input disabled="" type="checkbox"> App portal</li>
-<li><input checked="" disabled="" type="checkbox"> Normal <code>@Valid</code> and <code>@Validated</code></li>
-<li><input checked="" disabled="" type="checkbox"> DIY <code>@FlagValidator</code></li>
-</ul>
+<p><strong>NOT</strong> the REST style</p>
+<p>Good place to convert DO/DTO to VO. Especially with java.stream</p>
 <h3 id="service">Service</h3>
 <ul>
 <li><input disabled="" type="checkbox"> Use MaBatisPlus? How does <code>mall</code> use pure MaBatis easily to implement?</li>
@@ -785,6 +754,29 @@ And how to <code>DynamicDataSourceContextHolder.push()</code> and <code>DynamicD
 <li>¸öÈË¶©ÔÄºÅ, ÊìÏ¤ÄÚÈİµÄ±à¼­/·¢²¼, Á·Ï°Ğ´×÷, Ìá¸ßÅÅ°æ/ÅÄÕÕµÈºóÆÚ¼¼ÄÜ</li>
 <li>ÔËÓª, ³¢ÊÔÍÆËÍÎÄÕÂ</li>
 </ul>
+<h2 id="chapter-3">III. IMPORTANT SUPPORT</h2>
+<hr>
+<h3 id="a-security">A. Security</h3>
+<p><strong>Configure</strong>
+ÕâÀï°üº¬³õÊ¼»¯, ×¢²áÄÄĞ©filter</p>
+<p><strong>Filter</strong>
+¾ßÌåÀ¹½Ø, ²¢°ÑÏà¶ÔÓ¦µÄÇÒsupport()µÄprovider´«½øÈ¥</p>
+<p><strong>Provider</strong>
+Ìá¹©×Ô¼ºµÄÈÏÖ¤±È¶ÔÊµÏÖ·½·¨, ²¢ÇÒÊµÏÖ<code>support()</code>Âú×ãfilter²éÕÒ</p>
+<p><strong>Handler</strong>
+Ôö¼Ó³É¹¦ÓëÊ§°ÜµÄhandler</p>
+<h4 id="permission">Permission</h4>
+<h4 id="protection">Protection</h4>
+<h3 id="b-input">B. Input</h3>
+<p>@RequestParam(&ldquo;file&rdquo;) MultipartFile[] submissions
+The files are not the request body, they are part of it and there is no built-in HttpMessageConverter that can convert the request to an array of MultiPartFile.</p>
+<p>You can also replace HttpServletRequest with MultipartHttpServletRequest, which gives you access to the headers of the individual parts.</p>
+<h3 id="c-output">C. Output</h3>
+<h3 id="d-exception">D. Exception</h3>
+<h3 id="e-api">E. API</h3>
+<h3 id="f-log">F. Log</h3>
+<h3 id="g-background-job">G. Background Job</h3>
+<h3 id="h-cache">H. Cache</h3>
 <h2 id="chapter-6">VI. APPENDIX</h2>
 <hr>
 <p>Õª³­×ÔÍøÂç, ²»Ò»¶¨ºÏÀí, ½ö±£´æÒ»Ğ©ÎÄ×Ö, ÒÔ±ãÒÔºóÉÙĞ´Ò»Ğ©ÎÄ×Ö</p>
@@ -819,6 +811,9 @@ And how to <code>DynamicDataSourceContextHolder.push()</code> and <code>DynamicD
 </ul>
 </li>
 </ul>
+<h2 id="Ê¼">±Ê¼Ç</h2>
+<p>Sep 29, 2024</p>
+<p>ÓĞµãÀí½â, ÎªÉ¶´úÂëÖĞEnumÖĞÓĞ¸÷ÖÖ×´Ì¬, ¶øDictÖĞÓÖÓĞ. ÆäÊµÓĞÒ»²¿·Ö×ÖµäÊı¾İ, ÊÇÎªÁËÇ°¶Ë¶øÌá¹©µÄ, ÕâÑùÇ°¶Ëºó¶Ë¾Í²»ÓÃ¸÷×Ô´æ´¢¸÷¸ö×Ö¶ÎÊıÖµ´ú±íÊ²Ã´ÒâË¼ÁË</p>
               
 
 

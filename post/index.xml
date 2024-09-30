@@ -6,7 +6,25 @@
     <description>Recent content in Posts on Ivan Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 29 Sep 2024 14:43:47 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 30 Sep 2024 10:49:05 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Welcome to Ivan&#39;s Blog</title>
+      <link>https://ivanhan0511.github.io/post/welcome/</link>
+      <pubDate>Mon, 30 Sep 2024 10:49:05 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/post/welcome/</guid>
+      <description>&lt;p&gt;Some records for software, coffee, music and sports.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>DIY My Windows</title>
+      <link>https://ivanhan0511.github.io/post/os-windows10/</link>
+      <pubDate>Mon, 30 Sep 2024 10:39:00 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/post/os-windows10/</guid>
+      <description>&lt;p&gt;After initialization of Windows 11, here is the TODO list.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>How to fork ruoyi-vue-pro</title>
       <link>https://ivanhan0511.github.io/post/java-fork-ruoyi-vue-pro/</link>
@@ -53,15 +71,6 @@
       
       <guid>https://ivanhan0511.github.io/post/python-basic/</guid>
       <description>&lt;p&gt;Some basic records of Python&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>DIY My Windows</title>
-      <link>https://ivanhan0511.github.io/post/os-windows10/</link>
-      <pubDate>Wed, 17 Jan 2024 10:19:00 +0800</pubDate>
-      
-      <guid>https://ivanhan0511.github.io/post/os-windows10/</guid>
-      <description>&lt;p&gt;After initialization of Windows 10, here is the TODO list.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -276,15 +285,6 @@ So here are some tips, wish to be helpful.&lt;/p&gt;</description>
       <guid>https://ivanhan0511.github.io/post/coffee-equipment/</guid>
       <description>&lt;p&gt;Which type of Mazzer grinder?
 List my coffee equipments.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Welcome to Ivan&#39;s Blog</title>
-      <link>https://ivanhan0511.github.io/post/welcome/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://ivanhan0511.github.io/post/welcome/</guid>
-      <description>&lt;p&gt;Some records for software, coffee, music and sports.&lt;/p&gt;</description>
     </item>
     
   </channel>

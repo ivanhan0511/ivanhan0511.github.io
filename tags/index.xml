@@ -6,7 +6,88 @@
     <description>Recent content in Tags on Ivan Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 29 Sep 2024 14:43:47 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 30 Sep 2024 10:49:05 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ivan Han</title>
+      <link>https://ivanhan0511.github.io/tags/ivan-han/</link>
+      <pubDate>Mon, 30 Sep 2024 10:49:05 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/tags/ivan-han/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Welcome</title>
+      <link>https://ivanhan0511.github.io/tags/welcome/</link>
+      <pubDate>Mon, 30 Sep 2024 10:49:05 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/tags/welcome/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Configuration</title>
+      <link>https://ivanhan0511.github.io/tags/configuration/</link>
+      <pubDate>Mon, 30 Sep 2024 10:39:00 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/tags/configuration/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>HBuildX</title>
+      <link>https://ivanhan0511.github.io/tags/hbuildx/</link>
+      <pubDate>Mon, 30 Sep 2024 10:39:00 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/tags/hbuildx/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>IDEA</title>
+      <link>https://ivanhan0511.github.io/tags/idea/</link>
+      <pubDate>Mon, 30 Sep 2024 10:39:00 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/tags/idea/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Init</title>
+      <link>https://ivanhan0511.github.io/tags/init/</link>
+      <pubDate>Mon, 30 Sep 2024 10:39:00 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/tags/init/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Proxy</title>
+      <link>https://ivanhan0511.github.io/tags/proxy/</link>
+      <pubDate>Mon, 30 Sep 2024 10:39:00 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/tags/proxy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VisualStudio</title>
+      <link>https://ivanhan0511.github.io/tags/visualstudio/</link>
+      <pubDate>Mon, 30 Sep 2024 10:39:00 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/tags/visualstudio/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Windows</title>
+      <link>https://ivanhan0511.github.io/tags/windows/</link>
+      <pubDate>Mon, 30 Sep 2024 10:39:00 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/tags/windows/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Java</title>
       <link>https://ivanhan0511.github.io/tags/java/</link>
@@ -94,69 +175,6 @@
       <pubDate>Thu, 18 Jan 2024 15:26:10 +0800</pubDate>
       
       <guid>https://ivanhan0511.github.io/tags/python/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Configuration</title>
-      <link>https://ivanhan0511.github.io/tags/configuration/</link>
-      <pubDate>Wed, 17 Jan 2024 10:19:00 +0800</pubDate>
-      
-      <guid>https://ivanhan0511.github.io/tags/configuration/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>HBuildX</title>
-      <link>https://ivanhan0511.github.io/tags/hbuildx/</link>
-      <pubDate>Wed, 17 Jan 2024 10:19:00 +0800</pubDate>
-      
-      <guid>https://ivanhan0511.github.io/tags/hbuildx/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>IDEA</title>
-      <link>https://ivanhan0511.github.io/tags/idea/</link>
-      <pubDate>Wed, 17 Jan 2024 10:19:00 +0800</pubDate>
-      
-      <guid>https://ivanhan0511.github.io/tags/idea/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Init</title>
-      <link>https://ivanhan0511.github.io/tags/init/</link>
-      <pubDate>Wed, 17 Jan 2024 10:19:00 +0800</pubDate>
-      
-      <guid>https://ivanhan0511.github.io/tags/init/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Proxy</title>
-      <link>https://ivanhan0511.github.io/tags/proxy/</link>
-      <pubDate>Wed, 17 Jan 2024 10:19:00 +0800</pubDate>
-      
-      <guid>https://ivanhan0511.github.io/tags/proxy/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>VisualStudio</title>
-      <link>https://ivanhan0511.github.io/tags/visualstudio/</link>
-      <pubDate>Wed, 17 Jan 2024 10:19:00 +0800</pubDate>
-      
-      <guid>https://ivanhan0511.github.io/tags/visualstudio/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Windows</title>
-      <link>https://ivanhan0511.github.io/tags/windows/</link>
-      <pubDate>Wed, 17 Jan 2024 10:19:00 +0800</pubDate>
-      
-      <guid>https://ivanhan0511.github.io/tags/windows/</guid>
       <description></description>
     </item>
     
@@ -517,24 +535,6 @@
       <pubDate>Tue, 24 May 2022 05:49:34 +0800</pubDate>
       
       <guid>https://ivanhan0511.github.io/tags/grinder/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ivan Han</title>
-      <link>https://ivanhan0511.github.io/tags/ivan-han/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://ivanhan0511.github.io/tags/ivan-han/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Welcome</title>
-      <link>https://ivanhan0511.github.io/tags/welcome/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://ivanhan0511.github.io/tags/welcome/</guid>
       <description></description>
     </item>
     

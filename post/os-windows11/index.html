@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <script type="application/ld+json">
+
+{  
+  "@context":"http://schema.org",
+  "@type":"Website",
+  "@id":"https:\/\/ivanhan0511.github.io\/",
+  "author": {
+    "@type": "Person",
+    "name": "Ivan Han",
+    
+    "image": "https://www.gravatar.com/avatar/0cac315e34e792213d5fa694dc39777b"
+    
+  },
+  "name":"Ivan Blog",
+  "description":"\u003cp\u003eAfter initialization of Windows 11, here is the TODO list.\u003c\/p\u003e",
+  "url":"https:\/\/ivanhan0511.github.io\/post\/os-windows11\/",
+  "keywords":"[windows, init, config, Ivan, SoftwareEngineer, C\/C\u002b\u002b, Java, Coffee, Bass, Bicycle, Badminton]"
+}
+
+</script>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.92.2 with theme Tranquilpeak 0.5.3-BETA">
+<meta name="author" content="Ivan Han">
+<meta name="keywords" content="windows, init, config, Ivan, SoftwareEngineer, C/C&#43;&#43;, Java, Coffee, Bass, Bicycle, Badminton">
+<meta name="description" content="After initialization of Windows 11, here is the TODO list.">
+
+
+<meta property="og:description" content="After initialization of Windows 11, here is the TODO list.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DIY My Windows">
+<meta name="twitter:title" content="DIY My Windows">
+<meta property="og:url" content="https://ivanhan0511.github.io/post/os-windows11/">
+<meta property="twitter:url" content="https://ivanhan0511.github.io/post/os-windows11/">
+<meta property="og:site_name" content="Ivan Blog">
+<meta property="og:description" content="After initialization of Windows 11, here is the TODO list.">
+<meta name="twitter:description" content="After initialization of Windows 11, here is the TODO list.">
+<meta property="og:locale" content="en-us">
+
+  
+    <meta property="article:published_time" content="2024-09-30T10:39:00">
+  
+  
+    <meta property="article:modified_time" content="2024-09-30T10:39:00">
+  
+  
+  
+    
+      <meta property="article:section" content="OS">
+    
+      <meta property="article:section" content="Windows">
+    
+  
+  
+    
+      <meta property="article:tag" content="Windows">
+    
+      <meta property="article:tag" content="Init">
+    
+      <meta property="article:tag" content="VisualStudio">
+    
+      <meta property="article:tag" content="IDEA">
+    
+      <meta property="article:tag" content="Configuration">
+    
+      <meta property="article:tag" content="Proxy">
+    
+      <meta property="article:tag" content="HBuildX">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+  <meta name="twitter:site" content="@ivanhan0511">
+
+
+  <meta name="twitter:creator" content="@ivanhan0511">
+
+
+
+
+
+
+  <meta property="og:image" content="https://www.gravatar.com/avatar/0cac315e34e792213d5fa694dc39777b?s=640">
+  <meta property="twitter:image" content="https://www.gravatar.com/avatar/0cac315e34e792213d5fa694dc39777b?s=640">
+
+
+
+
+  <meta property="og:image" content="https://ivanhan0511.github.io/image-2.png">
+  <meta property="twitter:image" content="https://ivanhan0511.github.io/image-2.png">
+
+
+  <meta property="og:image" content="https://ivanhan0511.github.io/image-1.png">
+  <meta property="twitter:image" content="https://ivanhan0511.github.io/image-1.png">
+
+
+    <title>DIY My Windows</title>
+
+    <link rel="icon" href="https://ivanhan0511.github.io/favicon.png">
+    
+
+    
+
+    <link rel="canonical" href="https://ivanhan0511.github.io/post/os-windows11/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha512-H9jrZiiopUdsLpg94A333EfumgUBpO9MdbxStdeITo+KEIMaNfHNvwyjjDJb+ERPaRS6DpyRlKbvPUasNItRyw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    
+    
+    <link rel="stylesheet" href="https://ivanhan0511.github.io/css/style-h6ccsoet3mzkbb0wngshlfbaweimexgqcxj0h5hu4h82olsdzz6wmqdkajm.min.css" />
+    
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="4">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://ivanhan0511.github.io/" aria-label="Go to homepage">Ivan Blog</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://ivanhan0511.github.io/#about" aria-label="Open the link: /#about">
+    
+    
+    
+      
+        <img class="header-picture" src="https://www.gravatar.com/avatar/0cac315e34e792213d5fa694dc39777b?s=90" alt="Author&#39;s picture" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="4">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://ivanhan0511.github.io/#about" aria-label="Read more about the author">
+          <img class="sidebar-profile-picture" src="https://www.gravatar.com/avatar/0cac315e34e792213d5fa694dc39777b?s=110" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">Ivan Han</h4>
+        
+          <h5 class="sidebar-profile-bio">I need <strong>slow down</strong></h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://ivanhan0511.github.io/" title="Home">
+    
+      <i class="sidebar-button-icon fas fa-lg fa-home" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://ivanhan0511.github.io/categories" title="Categories">
+    
+      <i class="sidebar-button-icon fas fa-lg fa-bookmark" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">Categories</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://ivanhan0511.github.io/tags" title="Tags">
+    
+      <i class="sidebar-button-icon fas fa-lg fa-tags" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">Tags</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://ivanhan0511.github.io/archives" title="Archives">
+    
+      <i class="sidebar-button-icon fas fa-lg fa-archive" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">Archives</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://ivanhan0511.github.io/#about" title="About">
+    
+      <i class="sidebar-button-icon fas fa-lg fa-question" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">About</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/ivanhan0511" target="_blank" rel="noopener" title="GitHub">
+    
+      <i class="sidebar-button-icon fab fa-lg fa-github" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://stackoverflow.com/users/14423790/ivan-han" target="_blank" rel="noopener" title="Stack Overflow">
+    
+      <i class="sidebar-button-icon fab fa-lg fa-stack-overflow" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">Stack Overflow</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://ivanhan0511.github.io/index.xml" title="RSS">
+    
+      <i class="sidebar-button-icon fas fa-lg fa-rss" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+  <div class="post-header-cover
+              text-center
+              post-header-cover--full"
+       style="background-image:url('/image-2.png')"
+       data-behavior="4">
+    
+  </div>
+
+
+      <div id="main" data-behavior="4"
+        class="hasCover
+               hasCoverMetaOut
+               hasCoverCaption">
+        <article class="post" id="top">
+          
+            <span class="post-header-cover-caption caption">A beautiful image</span>
+          
+          
+            <div class="post-header main-content-wrap text-center">
+  
+    <h1 class="post-title">
+      DIY My Windows
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time datetime="2024-09-30T10:39:00&#43;08:00">
+        
+  
+  
+  
+  
+    September 30, 2024
+  
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://ivanhan0511.github.io/categories/os">OS</a>, 
+    
+      <a class="category-link" href="https://ivanhan0511.github.io/categories/windows">Windows</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown">
+            <div class="main-content-wrap">
+              <p>After initialization of Windows 11, here is the TODO list.</p>
+<h1 id="table-of-contents">Table of Contents</h1>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#backup">BACKUP</a></li>
+    <li><a href="#boot-device">BOOT DEVICE</a></li>
+    <li><a href="#base">BASE</a></li>
+    <li><a href="#proxy">Proxy</a></li>
+    <li><a href="#db">DB</a></li>
+    <li><a href="#visualstudiopro2022">VisualStudioPro2022</a></li>
+    <li><a href="#pycharm">PyCharm</a></li>
+    <li><a href="#idea">IDEA</a>
+      <ul>
+        <li><a href="#configuration">Configuration</a></li>
+        <li><a href="#plugins">Plugins</a></li>
+        <li><a href="#maven">Maven</a></li>
+      </ul>
+    </li>
+    <li><a href="#hbuilderx">HBuilderX</a></li>
+    <li><a href="#vmware">VMWare</a>
+      <ul>
+        <li><a href="#windows">Windows</a></li>
+        <li><a href="#ubuntu-desktopdeprecated">Ubuntu Desktop(Deprecated)</a></li>
+      </ul>
+    </li>
+    <li><a href="#others">Others</a></li>
+    <li><a href="#bitcoin">BITCOIN</a></li>
+  </ul>
+</nav>
+
+<h2 id="backup">BACKUP</h2>
+<hr>
+<p>主力开发操作系统是Windows, 如果要重装系统, 需要提前备份好本地文件</p>
+<ul>
+<li>VisualStudio
+<ul>
+<li>TODO</li>
+</ul>
+</li>
+<li>PyCharm
+<ul>
+<li>TODO</li>
+</ul>
+</li>
+<li>IDEA
+<ul>
+<li>git commit and push</li>
+<li>IDEA开发用的每一条SQL console, 右键Refactor -&gt; Copy file, 存储到项目sql文件夹中随Git上传</li>
+<li>Scratch代码</li>
+</ul>
+</li>
+<li>HBuildX
+<ul>
+<li>No local file, all in git</li>
+</ul>
+</li>
+<li>坚果云文档: 公司文档, 仅限文档, 其余通过本地文件存储</li>
+<li>本地文档
+<ul>
+<li>公司超大文件</li>
+<li>各个项目的 密钥/证书</li>
+<li>服务器所涉及的 登录方式/用户名/密码 的文档</li>
+<li>SSH密钥对</li>
+</ul>
+</li>
+<li>虚拟机
+<ul>
+<li>数据库: 转储数据和数据结构, MySQL和SQLServer的所有库</li>
+<li>SSH密钥</li>
+<li>证书</li>
+</ul>
+</li>
+<li>Image</li>
+<li>Video</li>
+<li>Music</li>
+</ul>
+<h2 id="boot-device">BOOT DEVICE</h2>
+<hr>
+<ul>
+<li>Create Windows official MediaCreationTool</li>
+<li>Choose boot device in BIOS</li>
+</ul>
+<h2 id="base">BASE</h2>
+<hr>
+<p>只要连接互联网, 现有的Windows11会自动联网安装驱动, 只需要等待更新/重启</p>
+<p>趁着没有使用网络代理, 先安装基本工具</p>
+<ul>
+<li>VisualStudioPro2022
+<ul>
+<li>Prefer English language</li>
+<li>Libs</li>
+<li>Git?</li>
+</ul>
+</li>
+<li>Input method, config only <code>ctrl + space</code> to switch</li>
+<li>Chrome as default browser</li>
+<li>HHKB</li>
+<li>Logitech
+<ul>
+<li>Anywhere3 and OptionPlus</li>
+<li>G309 and G Hub</li>
+</ul>
+</li>
+<li>文件夹选项 -&gt; 隐私
+<ul>
+<li>取消勾选&quot;显示最近使用的文件&quot;</li>
+<li>取消勾选&quot;显示常用文件夹&quot;</li>
+</ul>
+</li>
+<li>Active WSL2</li>
+</ul>
+<h2 id="proxy">Proxy</h2>
+<hr>
+<p>v2rayN(Need DotNet6.0)</p>
+<p>注意新安装的Windows, 要确保对时准确, 精准到1分钟以内, 否则代理建立连接失败</p>
+<h2 id="db">DB</h2>
+<hr>
+<p>真机傻瓜式安装, 之后只用<code>MySQL 8.1 Command Line Clien</code>登录用于DCL(Data Control Language)管理<br>
+然后用IDEA(Ultimate)的Import/Export 工具进行数据到导入/导出, ER图也可以导出, <a href="https://ivanhan0511.github.io/post/sql-mysql/">各种DDL(Data Definition Language), DML(Data Manipulation Language)</a>都可以在IDEA中完成</p>
+<h2 id="visualstudiopro2022">VisualStudioPro2022</h2>
+<hr>
+<ul>
+<li>设置项目存储路径, Tools -&gt; Options -&gt; Projects and Solutions -&gt; Locations</li>
+<li>Install VsVim extension
+<ul>
+<li>Check which directories the VsVim searchs for config files by using the command <code>:set vimrcpaths?</code></li>
+<li>This is typically the <code>HOME</code>, <code>VIM</code> or <code>USERPROFILE</code> directories</li>
+<li>Place your <code>.vimrc</code> file in one of these directories, restart Visual Studio and VsVim will load those settings</li>
+<li>You can verify which vimrc file is currently loaded in VsVim by using the command <code>:set vimrc?</code></li>
+</ul>
+</li>
+<li>设置字体? 默认DejaVu Sans Mono? 避免像CMD.exe一样无法分辨小写L与数字1</li>
+<li><a href="https://blog.csdn.net/qq_41868108/article/details/105750175">Visual Studio 增加菜单来修改字符集编码</a></li>
+<li>自动补全: Enter or Tab?
+<ul>
+<li>Visual Studio 2022是使用Tab进行代码补全的, 但一般习惯回车补全的时候就需要重新设置</li>
+<li>个人选择用Tab，原因是Linux默认的补全键是Tab, Notpad++ / Nacicat 也都是Tab补全</li>
+<li>具体路径: 工具 –&gt; 选项 –&gt; 文本编辑器 –&gt; C/C++ -&gt; 高级 –&gt; 主动提交成员列表</li>
+</ul>
+</li>
+</ul>
+<h2 id="pycharm">PyCharm</h2>
+<hr>
+<p>TODO</p>
+<h2 id="idea">IDEA</h2>
+<hr>
+<h3 id="configuration">Configuration</h3>
+<ul>
+<li>Enable <code>Settings Sync</code></li>
+<li>在各个项目中分别选择Java JDK环境, 不安装Java在裸机</li>
+<li>settsings(Ctrl+Alt+S) -&gt; Editor -&gt; Code Style -&gt; SQL -&gt; 将keywords设置为大写(To upper), and then<code>ctrl + alt + L</code></li>
+<li>数据库导入时, 右键某个数据库 -&gt; Import/Export -&gt; Restore with &lsquo;mysql&rsquo; -&gt; Path to mysql -&gt; <code>C:/Program Files/MySQL/MySQL Server 8.1/bin/mysql.exe</code></li>
+<li>数据库导出时, 右键某个数据库 -&gt; Import/Export -&gt; Export with &lsquo;mysqldump&rsquo; -&gt; Path to mysqldump -&gt; <code>C:/Program Files/MySQL/MySQL Server 8.1/bin/mysqldump.exe</code></li>
+</ul>
+<h3 id="plugins">Plugins</h3>
+<ul>
+<li>IdeaVim
+<ul>
+<li>在IDEA中创建<code>~/.ideavimrc</code>文件(实际创建在<code>C:\Users\Ivan\.ideavimrc</code>)</li>
+<li>只需在最后一行增加配置引用即可<code>source ~/.vimrc</code></li>
+<li>&ldquo;IDEA中自动切换输入法暂时没搞定&rdquo; &ldquo;Windows VisualStudio的VsVim插件倒是自动有这个配置, 没琢磨明白, 有的用&rdquo;</li>
+</ul>
+</li>
+<li>MyBatisCodeHelperPro(貌似有官方版, 下次试试)</li>
+<li>Redis</li>
+<li>RemoteHost <code>java -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005 -jar pear-admin-pro-1.11.9-SNAPSHOT.jar</code></li>
+</ul>
+<h3 id="maven">Maven</h3>
+<p>Maven 3.8.1 blocked http connection</p>
+<ul>
+<li>
+<p>Do <span class="highlight-text red">NOT</span> edit this original IDEA maven settings file
+<code>C:\Program Files\JetBrains\IntelliJ IDEA 2022.2.1\plugins\maven\lib\maven3\conf\settings.xml</code>
+
+  
+    
+  
+  
+    
+  
+  
+  
+
+
+<figure class="highlight xml language-xml">
+  <figcaption>
+    
+      <span>settings.xml</span>
+    
+  </figcaption>
+  <table>
+    <tbody>
+      <tr>
+        <td class="gutter">
+          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre>
+        </td>
+        <td class="code">
+          <pre class="code-highlight language-xml xml"><code class="xml">  ...
+  &lt;mirrors&gt;
+    &lt;!-- mirror
+     | Specifies a repository mirror site to use instead of a given repository. The repository that
+     | this mirror serves has an ID that matches the mirrorOf element of this mirror. IDs are used
+     | for inheritance and direct lookup purposes, and must be unique across the set of mirrors.
+     |
+    &lt;mirror&gt;
+      &lt;id&gt;mirrorId&lt;/id&gt;
+      &lt;mirrorOf&gt;repositoryId&lt;/mirrorOf&gt;
+      &lt;name&gt;Human Readable Name for this Mirror.&lt;/name&gt;
+      &lt;url&gt;http://my.repository.com/repo/path&lt;/url&gt;
+    &lt;/mirror&gt;
+     --&gt;
+    &lt;mirror&gt;
+      &lt;id&gt;maven-default-http-blocker&lt;/id&gt;
+      &lt;mirrorOf&gt;external:http:*&lt;/mirrorOf&gt;
+      &lt;name&gt;Pseudo repository to mirror external repositories initially using HTTP.&lt;/name&gt;
+      &lt;url&gt;http://0.0.0.0/&lt;/url&gt;
+      &lt;blocked&gt;true&lt;/blocked&gt;
+    &lt;/mirror&gt;
+  &lt;/mirrors&gt;
+  ...
+  </code></pre>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+</p>
+</li>
+<li>
+<p>Find personal maven setting path in IDEA settings and DIY it <code>C:\Users\ivan\.m2\settings.xml</code> (If not exists, create this file)</p>
+
+  
+    
+  
+  
+    
+  
+  
+  
+
+
+<figure class="highlight xml language-xml">
+  <figcaption>
+    
+      <span>settings.xml</span>
+    
+  </figcaption>
+  <table>
+    <tbody>
+      <tr>
+        <td class="gutter">
+          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre>
+        </td>
+        <td class="code">
+          <pre class="code-highlight language-xml xml"><code class="xml">&lt;settings xmlns=&#34;http://maven.apache.org/SETTINGS/1.2.0&#34;
+      xmlns:xsi=&#34;http://www.w3.org/2001/XMLSchema-instance&#34;
+      xsi:schemaLocation=&#34;http://maven.apache.org/SETTINGS/1.2.0 http://maven.apache.org/xsd/settings-1.2.0.xsd&#34;&gt;
+  &lt;mirrors&gt;
+    &lt;!-- mirror
+     | Specifies a repository mirror site to use instead of a given repository. The repository that
+     | this mirror serves has an ID that matches the mirrorOf element of this mirror. IDs are used
+     | for inheritance and direct lookup purposes, and must be unique across the set of mirrors.
+     |
+    &lt;mirror&gt;
+      &lt;id&gt;mirrorId&lt;/id&gt;
+      &lt;mirrorOf&gt;repositoryId&lt;/mirrorOf&gt;
+      &lt;name&gt;Human Readable Name for this Mirror.&lt;/name&gt;
+      &lt;url&gt;http://my.repository.com/repo/path&lt;/url&gt;
+    &lt;/mirror&gt;
+    --&gt;
+    &lt;mirror&gt;
+      &lt;id&gt;aliyunmaven&lt;/id&gt;
+      &lt;mirrorOf&gt;*&lt;/mirrorOf&gt;
+      &lt;name&gt;阿里云公共仓库&lt;/name&gt;
+      &lt;url&gt;https://maven.aliyun.com/repository/public&lt;/url&gt;
+    &lt;/mirror&gt;
+  &lt;/mirrors&gt;
+&lt;/settings&gt;
+  </code></pre>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+
+</li>
+<li>
+<p>Reload pom.xml file in IDEA and automaticlly download the dependencies</p>
+</li>
+</ul>
+<h2 id="hbuilderx">HBuilderX</h2>
+<hr>
+<p>开发环境部署, 参照<a href="https://ivanhan0511.github.io/post/js-vue3/">js-vue3.md</a></p>
+<h2 id="vmware">VMWare</h2>
+<hr>
+<p>VMWare WorkStation Pro, 规划好哪些工具安装在裸机, 哪些安装在VMWare</p>
+<ul>
+<li>切换安装路径到<code>D:\VirtualMachines\</code>盘</li>
+<li>编辑 -&gt; 首选项 -&gt; 内存 -&gt; 额外内存 &ldquo;调整所有虚拟机内存使其适应预留的主机RAM&rdquo;</li>
+</ul>
+<h3 id="windows">Windows</h3>
+<ul>
+<li>
+<p>电源管理, 从不休眠</p>
+</li>
+<li>
+<p>MS SQL Server + SSMS</p>
+<p>Init, export, import refer to<a href="https://ivanhan0511.github.io/post/sql-sqlserver/">MS SQL Server Opertaions</a></p>
+</li>
+</ul>
+<h3 id="ubuntu-desktopdeprecated">Ubuntu Desktop(Deprecated)</h3>
+<p>Refer to <a href="https://blog.csdn.net/weixin_43862116/article/details/107731631">this post</a>挂载host主机的文件夹到Ubuntu挂在点, 用于共享</p>
+
+  
+    
+  
+  
+    
+  
+  
+  
+
+
+<figure class="highlight sh language-sh">
+  <figcaption>
+    
+      <span>sharedfolder</span>
+    
+  </figcaption>
+  <table>
+    <tbody>
+      <tr>
+        <td class="gutter">
+          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre>
+        </td>
+        <td class="code">
+          <pre class="code-highlight language-sh sh"><code class="sh">vmware-hgfsclient
+# WinDownloads
+
+sudo mkdir /mnt/hgfs/downloads
+sudo mount -t fuse.vmhgfs-fuse .host:WinDownloads /mnt/hgfs/downloads/ -o allow_other
+#sudo umount -a fuse.vmhgfs-fuse .host:WinDownloads /mnt/hgfs/downloads/
+sudo vi /etc/fstab</code></pre>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+
+<p><code>.host:WinDownloads /mnt/hgfs/downloads/ fuse.vmhgfs-fuse allow_other 0 0</code></p>
+<h2 id="others">Others</h2>
+<hr>
+<p>常用的跨平台工具, 兼容iOS / macOS / Windows / Android</p>
+<ul>
+<li>Chrome</li>
+<li>Postman(Deprecated)</li>
+<li>XShell/XFtp(转用WSL2)
+<ul>
+<li><code>telnet &lt;IP&gt; &lt;Port&gt;</code></li>
+</ul>
+</li>
+<li>hugo(转用WSL2)
+<ul>
+<li>在<a href="https://github.com/gohugoio/hugo/releases">HUGO的GitHub</a>的releases中下载适用于Windows的文件压缩包</li>
+<li>比如放在<code>C:\Program Files\Git\usr\bin</code>中, 并添加到环境变量中</li>
+</ul>
+</li>
+<li>向日葵Sunlogin</li>
+<li>WireShark</li>
+<li>Typora</li>
+<li>坚果云</li>
+<li>Office365(Outlook, Excel, Word, PowerPoint)</li>
+<li>WeChat</li>
+<li>腾讯会议</li>
+<li>亿图Edraw</li>
+<li>Fiio driver</li>
+<li>Notepad++</li>
+<li>Axure RP 9 (Axure Rapid Prototyping)(Deprecated, use Mock in iPad)</li>
+</ul>
+<h2 id="bitcoin">BITCOIN</h2>
+<hr>
+<p>Download Bitcoin wallet from <a href="https://bitcoin.org/en/choose-your-wallet">here</a> and choose <code>Bitcoin Core</code></p>
+<p>Login <a href="https://www.huobi.com/en-us/login/">this website</a> to trans BTC</p>
+              
+
+
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">TAGGED IN</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://ivanhan0511.github.io/tags/windows/">Windows</a>
+
+  <a class="tag tag--primary tag--small" href="https://ivanhan0511.github.io/tags/init/">Init</a>
+
+  <a class="tag tag--primary tag--small" href="https://ivanhan0511.github.io/tags/visualstudio/">VisualStudio</a>
+
+  <a class="tag tag--primary tag--small" href="https://ivanhan0511.github.io/tags/idea/">IDEA</a>
+
+  <a class="tag tag--primary tag--small" href="https://ivanhan0511.github.io/tags/configuration/">Configuration</a>
+
+  <a class="tag tag--primary tag--small" href="https://ivanhan0511.github.io/tags/proxy/">Proxy</a>
+
+  <a class="tag tag--primary tag--small" href="https://ivanhan0511.github.io/tags/hbuildx/">HBuildX</a>
+
+                  </div>
+                
+              
+            
+            
+<div class="post-actions-wrap">
+  <nav >
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/welcome/" data-tooltip="Welcome to Ivan&#39;s Blog" aria-label="NEXT: Welcome to Ivan&#39;s Blog">
+          
+              <i class="fa fa-angle-left"></i>
+              <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+            </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/java-fork-ruoyi-vue-pro/" data-tooltip="How to fork ruoyi-vue-pro" aria-label="PREVIOUS: How to fork ruoyi-vue-pro">
+          
+              <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
+        </li>
+      
+    </ul>
+  </nav>
+<ul class="post-actions post-action-share" >
+  
+    <li class="post-action hide-lg hide-md hide-sm">
+      <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </a>
+    </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://ivanhan0511.github.io/post/os-windows11/" title="Share on Facebook" aria-label="Share on Facebook">
+          <i class="fab fa-facebook-square" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://ivanhan0511.github.io/post/os-windows11/" title="Share on Twitter" aria-label="Share on Twitter">
+          <i class="fab fa-twitter" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+  
+  
+    <li class="post-action">
+      <a class="post-action-btn btn btn--default" href="#disqus_thread" aria-label="Leave a comment">
+        <i class="far fa-comment"></i>
+      </a>
+    </li>
+  
+  <li class="post-action">
+    
+      <a class="post-action-btn btn btn--default" href="#top" aria-label="Back to top">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    
+    </a>
+  </li>
+</ul>
+</div>
+
+
+            
+  
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+    <script type="text/javascript">
+      var disqus_config = function() {
+        this.page.url = 'https:\/\/ivanhan0511.github.io\/post\/os-windows11\/';
+        
+          this.page.identifier = '\/post\/os-windows11\/'
+        
+      };
+      (function() {
+        
+        
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+          document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+          return;
+        }
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = 'ivan-blog-disqus';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+  
+
+
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2024 <a href="https://github.com/ivanhan0511">Ivan Han</a>. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+        
+<div class="post-actions-wrap">
+  <nav >
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/welcome/" data-tooltip="Welcome to Ivan&#39;s Blog" aria-label="NEXT: Welcome to Ivan&#39;s Blog">
+          
+              <i class="fa fa-angle-left"></i>
+              <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+            </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/java-fork-ruoyi-vue-pro/" data-tooltip="How to fork ruoyi-vue-pro" aria-label="PREVIOUS: How to fork ruoyi-vue-pro">
+          
+              <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
+        </li>
+      
+    </ul>
+  </nav>
+<ul class="post-actions post-action-share" >
+  
+    <li class="post-action hide-lg hide-md hide-sm">
+      <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </a>
+    </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://ivanhan0511.github.io/post/os-windows11/" title="Share on Facebook" aria-label="Share on Facebook">
+          <i class="fab fa-facebook-square" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://ivanhan0511.github.io/post/os-windows11/" title="Share on Twitter" aria-label="Share on Twitter">
+          <i class="fab fa-twitter" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+  
+  
+    <li class="post-action">
+      <a class="post-action-btn btn btn--default" href="#disqus_thread" aria-label="Leave a comment">
+        <i class="far fa-comment"></i>
+      </a>
+    </li>
+  
+  <li class="post-action">
+    
+      <a class="post-action-btn btn btn--default" href="#top" aria-label="Back to top">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    
+    </a>
+  </li>
+</ul>
+</div>
+
+
+      </div>
+      
+<div id="share-options-bar" class="share-options-bar" data-behavior="4">
+  <i id="btn-close-shareoptions" class="fa fa-times"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fivanhan0511.github.io%2Fpost%2Fos-windows11%2F" aria-label="Share on Facebook">
+          <i class="fab fa-facebook-square" aria-hidden="true"></i><span>Share on Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fivanhan0511.github.io%2Fpost%2Fos-windows11%2F" aria-label="Share on Twitter">
+          <i class="fab fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+
+
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-times"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://www.gravatar.com/avatar/0cac315e34e792213d5fa694dc39777b?s=110" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">Ivan Han</h4>
+    
+      <div id="about-card-bio">I need <strong>slow down</strong></div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        Software Engineer
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker-alt"></i>
+        <br/>
+        China
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    
+      <div id="cover" style="background-image:url('https://ivanhan0511.github.io/images/cover.jpg');"></div>
+    
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/highlight.min.js" integrity="sha512-z+/WWfyD5tccCukM4VvONpEtLmbAm5LDu7eKiyMQJ9m7OfPEDL7gENyDRL3Yfe8XAuGsS2fS4xSMnl6d30kqGQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+<script src="https://ivanhan0511.github.io/js/script-yqzy9wdlzix4lbbwdnzvwx3egsne77earqmn73v9uno8aupuph8wfguccut.min.js"></script>
+
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-gE8KAQyFIzV1C9+GZ8TKJHZS2s+n7EjNtC+IMRn1l5+WYJTHOODUM6JSjZhFhqXmc7bG8Av6XXpckA4tYhflnw==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/apache.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-EWROca+bote+7Oaaar1F6y74iZj1r1F9rm/ly7o+/FwJopbBaWtsFDmaKoZDd3QiGU2pGacBirHJNivmGLYrow==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/go.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-GDVzAn0wpx1yVtQsRWmFc6PhJiLBPdUic+h4GWgljBh904O3JU10fk9EKNpVyIoPqkFn54rgL2QBG4BmUTMpiQ==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/http.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-UgZlma8NzkrDb/NWgmLIcTrH7i/CSnLLDRFqCSNF5NGPpjKmzyM25qcoXGOup8+cDakKyaiTDd7N4dyH4YT+IA==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/less.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-lot9koe73sfXIrUvIPM/UEhuMciN56RPyBdOyZgfO53P2lkWyyXN7J+njcxIIBRV+nVDQeiWtiXg+bLAJZDTfg==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/nginx.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-Zd3e7XxHP00TD0Imr0PIfeM0fl0v95kMWuhyAS3Wn1UTSXTkz0OhtRgBAr4JlmADRgiXr4x7lpeUdqaGN8xIog==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/puppet.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-qtqDO052iXMSP+5d/aE/jMtL9vIIGvONgTJziC2K/ZIB1yEGa55WVxGE9/08rSQ62EoDifS9SWVGZ7ihSLhzMA==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/scss.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-1NmkjnEDnwwwcu28KoQF8vs3oaPFokQHbmbtwGhFfeDsQZtVFI8zW2aE9O8yMYdpdyKV/5blE4pSWw4Z/Sv97w==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/stylus.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-B2wSfruPjr8EJL6IIzQr1eAuDwrsfIfccNf/LCEdxELCgC/S/ZMt/Uvk80aD79m7IqOqW+Sw8nbkvha20yZpzg==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/swift.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-28oDiQZGKUVN6wQ7PSLPNipOcmkCALXKwOi7bnkyFf8QiMZQxG9EQoy/iiNx6Zxj2cG2SbVa4dXKigQhu7GiFw==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/yaml.min.js"></script>
+  
+
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+
+
+    
+  </body>
+</html>
+

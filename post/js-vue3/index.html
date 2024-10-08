@@ -308,19 +308,25 @@
 <h1 id="table-of-contents">Table of Contents</h1>
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#env">ENV</a>
+    <li><a href="#i-env">I. ENV</a>
       <ul>
-        <li><a href="#nvm">nvm</a></li>
-        <li><a href="#npm-and-yarn">npm and yarn</a></li>
+        <li><a href="#a-nvm">A. nvm</a></li>
+        <li><a href="#b-npm-and-yarn">B. npm and yarn</a></li>
+      </ul>
+    </li>
+    <li><a href="#ii-grammar">II. GRAMMAR</a>
+      <ul>
+        <li><a href="#a-杂记">A. 杂记</a></li>
       </ul>
     </li>
   </ul>
 </nav>
 
-<h2 id="env">ENV</h2>
-<h3 id="nvm">nvm</h3>
+<h2 id="i-env">I. ENV</h2>
+<hr>
+<h3 id="a-nvm">A. nvm</h3>
 <p>Node Version Manager</p>
-<p>nvm��������node, ����ͬʱ��npmҲ��װ��, node�İ汾��npm�İ汾�ǲ�һ����</p>
+<p>nvm管理的是node, 但会同时把npm也安装好, node的版本和npm的版本是不一样的</p>
 <p>Download <a href="https://github.com/coreybutler/nvm-windows/releases">nvm-setup.exe</a> and install.</p>
 <p>And use it in CMD:
 
@@ -375,7 +381,7 @@ nvm use 20.11.1
     
   </footer>
 </blockquote>
-<h3 id="npm-and-yarn">npm and yarn</h3>
+<h3 id="b-npm-and-yarn">B. npm and yarn</h3>
 
 
   
@@ -436,7 +442,7 @@ nvm use 20.11.1
                 <pre><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br></pre>
               </td>
               <td class="code">
-                <pre class="code-highlight language-yarn yarn"><code class="yarn"># ����npm�޷����õ�����, �����м�¼, �������������
+                <pre class="code-highlight language-yarn yarn"><code class="yarn"># 遇到npm无法调用的问题, 网上有记录, 但重启解决问题
 npm install yarn -g
 
 yarn install
@@ -451,6 +457,72 @@ yarn run serve-dev
       </figure>
     
   </div>
+</figure>
+
+<h2 id="ii-grammar">II. GRAMMAR</h2>
+<hr>
+<h3 id="a-杂记">A. 杂记</h3>
+<p>var、let、const 区别
+var定义的变量，没有块的概念，可以跨块访问, 不能跨函数访问。</p>
+<p>let定义的变量，只能在块作用域里访问，不能跨块访问，也不能跨函数访问。</p>
+<p>const用来定义常量，使用时必须初始化(即必须赋值)，只能在块作用域里访问，而且不能修改。</p>
+
+  
+    
+  
+  
+  
+  
+
+
+<figure class="highlight  language-">
+  <figcaption>
+    
+      <span>vue</span>
+    
+  </figcaption>
+  <table>
+    <tbody>
+      <tr>
+        <td class="gutter">
+          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre>
+        </td>
+        <td class="code">
+          <pre class="code-highlight language- "><code class="">// 块作用域
+{
+    var a = 1;
+    let b = 2;
+    const c = 3;
+    // c = 4; // 报错
+    var aa;
+    let bb;
+    // const cc; // 报错
+    console.log(a); // 1
+    console.log(b); // 2
+    console.log(c); // 3
+    console.log(aa); // undefined
+    console.log(bb); // undefined
+}
+console.log(a); // 1
+// console.log(b); // 报错
+// console.log(c); // 报错
+
+// 函数作用域
+(function A() {
+    var d = 5;
+    let e = 6;
+    const f = 7;
+    console.log(d); // 5
+    console.log(e); // 6  
+    console.log(f); // 7 
+})();
+// console.log(d); // 报错
+// console.log(e); // 报错
+// console.log(f); // 报错</code></pre>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </figure>
               
 

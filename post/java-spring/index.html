@@ -25,7 +25,7 @@
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Hugo 0.92.2 with theme Tranquilpeak 0.5.3-BETA">
+<meta name="generator" content="Hugo 0.117.0 with theme Tranquilpeak 0.5.3-BETA">
 <meta name="author" content="Ivan Han">
 <meta name="keywords" content="java, spring, bean, ioc, aop, Ivan, SoftwareEngineer, C/C&#43;&#43;, Java, Coffee, Bass, Bicycle, Badminton">
 <meta name="description" content="This is a custom summary and does NOT appear in the post.">
@@ -342,7 +342,11 @@
 
 <p>站在巨人的肩膀上, 多看看<a href="https://www.liaoxuefeng.com/wiki/1539348902182944">廖雪峰手写Sping</a>以便了解Spring的核心逻辑思想</p>
 <p>自己只记录一些自己觉得有用的小Tip</p>
-<p>JetBrains IDEA 中如果想了解某个注解的实现, <code>Ctrl + Shift + F</code>(记得关闭输入法简体/繁体热键), 输入注解名称.java</p>
+<p>JetBrains IDEA 中如果想了解某个注解的实现, 没有太好的办法, 就像想查找一个类在哪里被反射并调用了, 试行的办法:</p>
+<ul>
+<li>阅读大厂的源码, 文档, 了解该注解的内部实现逻辑</li>
+<li>小厂的代码, 只能是全文查找类似这样的<code>getAnnotation(DictFormat.class)</code>代码</li>
+</ul>
 <h3 id="connection-pool">Connection Pool</h3>
 <p>Druid or Hikari -&gt; PearAdminPro用的是Hikari, 也是Springboot官方选用的
 Druid是淘宝选用的, 高并发的情况会适用一些</p>

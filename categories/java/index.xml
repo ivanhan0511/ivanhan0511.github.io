@@ -19,16 +19,6 @@
     </item>
     
     <item>
-      <title>SpringBoot</title>
-      <link>https://ivanhan0511.github.io/post/java-springboot/</link>
-      <pubDate>Tue, 23 Jan 2024 10:18:00 +0800</pubDate>
-      
-      <guid>https://ivanhan0511.github.io/post/java-springboot/</guid>
-      <description>&lt;p&gt;The most important TECH cores are design and architecture which service for business, and then the second are IoC and AoP.&lt;/p&gt;
-&lt;p&gt;NO BEST, ONLY BETTER.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
       <title>Spring</title>
       <link>https://ivanhan0511.github.io/post/java-spring/</link>
       <pubDate>Thu, 26 Oct 2023 10:14:00 +0800</pubDate>
@@ -43,7 +33,7 @@
       <pubDate>Wed, 26 Oct 2022 14:05:15 +0800</pubDate>
       
       <guid>https://ivanhan0511.github.io/post/java-basic/</guid>
-      <description>&lt;p&gt;Java basic knowledge.&lt;/p&gt;</description>
+      <description>&lt;p&gt;This post is not aboud Java knowledge, it just a handy TIP&lt;/p&gt;</description>
     </item>
     
   </channel>

@@ -18,15 +18,5 @@
 &lt;p&gt;But the stronger, the more complex. This post is the annotation for this project, by my personer opinion&lt;/p&gt;</description>
     </item>
     
-    <item>
-      <title>SpringBoot</title>
-      <link>https://ivanhan0511.github.io/post/java-springboot/</link>
-      <pubDate>Tue, 23 Jan 2024 10:18:00 +0800</pubDate>
-      
-      <guid>https://ivanhan0511.github.io/post/java-springboot/</guid>
-      <description>&lt;p&gt;The most important TECH cores are design and architecture which service for business, and then the second are IoC and AoP.&lt;/p&gt;
-&lt;p&gt;NO BEST, ONLY BETTER.&lt;/p&gt;</description>
-    </item>
-    
   </channel>
 </rss>

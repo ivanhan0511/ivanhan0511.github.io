@@ -25,7 +25,7 @@
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Hugo 0.92.2 with theme Tranquilpeak 0.5.3-BETA">
+<meta name="generator" content="Hugo 0.117.0 with theme Tranquilpeak 0.5.3-BETA">
 <meta name="author" content="Ivan Han">
 <meta name="keywords" content="Java, spingboot, ruoyi-vue-pro, Ivan, SoftwareEngineer, C/C&#43;&#43;, Java, Coffee, Bass, Bicycle, Badminton">
 <meta name="description" content="To deploy a Springboot web framework, whatever development or production, and whatever single or distributed entity,
@@ -320,10 +320,15 @@ But the stronger, the more complex. This post is the annotation for this project
   <ul>
     <li><a href="#目录">目录</a></li>
     <li><a href="#chapter-1">I. ARCHITECTURE PRINCIPLE</a></li>
-    <li><a href="#chapter-2">II. BUSINESS DESIGN</a>
+    <li><a href="#chapter-2">II. BUSINESS DESIGN</a></li>
+    <li><a href="#iii-controller">III. Controller</a>
       <ul>
-        <li><a href="#controller-and-input-validation">Controller and input validation</a></li>
-        <li><a href="#service">Service</a></li>
+        <li><a href="#a-input-validation">A. Input validation</a></li>
+        <li><a href="#b-outnput-convertor">B. Outnput convertor</a></li>
+      </ul>
+    </li>
+    <li><a href="#iii-service">III. SERVICE</a>
+      <ul>
         <li><a href="#dao-mapper">DAO Mapper</a>
           <ul>
             <li><a href="#mapper-design">Mapper Design</a></li>
@@ -340,11 +345,7 @@ But the stronger, the more complex. This post is the annotation for this project
             <li><a href="#isolation">Isolation</a></li>
           </ul>
         </li>
-        <li><a href="#background-job">Background Job</a>
-          <ul>
-            <li><a href="#quartz">Quartz</a></li>
-          </ul>
-        </li>
+        <li><a href="#job">Job</a></li>
       </ul>
     </li>
     <li><a href="#chapter-5">V. OPERATION</a>
@@ -423,18 +424,72 @@ But the stronger, the more complex. This post is the annotation for this project
 </ol>
 <h2 id="chapter-2">II. BUSINESS DESIGN</h2>
 <hr>
-<p>Designing the data structure is the most important thing! Record the SQL into the <code>./sql/mysql/</code>, of course, my choice</p>
-<p>With the infra code-auto-generation, most backend and frontend codes can be generated. Very helpful and so handy.</p>
-<h3 id="controller-and-input-validation">Controller and input validation</h3>
-<p><strong>NOT</strong> the REST style</p>
-<p>Good place to convert DO/DTO to VO. Especially with java.stream</p>
-<h3 id="service">Service</h3>
-<ul>
-<li><input disabled="" type="checkbox"> Use MaBatisPlus? How does <code>mall</code> use pure MaBatis easily to implement?</li>
-<li><input disabled="" type="checkbox"> Simple service, call mapper function directly?</li>
-<li><input disabled="" type="checkbox"> Complicate service, call multiple mapper functions?</li>
-<li><input disabled="" type="checkbox"> What is the data structure(DTO?) in nternal service?</li>
-</ul>
+<ol>
+<li>
+<p>Write down all the details of requirement seriously</p>
+</li>
+<li>
+<p>Draw UML(work flow)</p>
+</li>
+<li>
+<p>Designing the data structure and its relationship on the paper / iPad is the most important thing!</p>
+</li>
+<li>
+<p>Record the SQL into the <code>./sql/mysql/</code>, of course, my personal choice</p>
+</li>
+</ol>
+<p>With the infra code-auto-generation, most backend and frontend codes can be generated. Very helpful and so handy</p>
+<h2 id="iii-controller">III. Controller</h2>
+<hr>
+<h3 id="a-input-validation">A. Input validation</h3>
+<p><strong>NOT</strong> the RESTful style</p>
+<p>Btw, considering for the conveniece of frontend, some
+Good place to convert DO/DTO to VO. Especially with java.stream</p>
+<h3 id="b-outnput-convertor">B. Outnput convertor</h3>
+<p>Like xxxPageRespVO, output the userId and userName at the same time, because it&rsquo;s bad to fetch each userName in the frontend table</p>
+<p>Like xxxRespVO, whether to output either the userId or userName at the same time, depends on the business. For this single object line data, frontend could fetch
+its detail by id easily</p>
+<p>
+  
+    
+  
+  
+  
+  
+
+
+<figure class="highlight  language-">
+  <figcaption>
+    
+      <span>java</span>
+    
+  </figcaption>
+  <table>
+    <tbody>
+      <tr>
+        <td class="gutter">
+          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre>
+        </td>
+        <td class="code">
+          <pre class="code-highlight language- "><code class="">@Schema(description = &#34;管理后台 - 商品 SPU Response VO&#34;)
+@Data
+@ExcelIgnoreUnannotated
+public class ProductSpuRespVO {
+    @Schema(description = &#34;商品状态&#34;, requiredMode = Schema.RequiredMode.REQUIRED, example = &#34;1&#34;)
+    @ExcelProperty(value = &#34;商品状态&#34;, converter = DictConvert.class)
+    @DictFormat(DictTypeConstants.PRODUCT_SPU_STATUS)
+    private Integer status;
+}</code></pre>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+
+TODO: 这段注解的机制, 参考java-spring.md文章</p>
+<h2 id="iii-service">III. SERVICE</h2>
+<hr>
+<p>Just work for <strong>BUSINESS</strong> only</p>
 <h3 id="dao-mapper">DAO Mapper</h3>
 <ul>
 <li><input disabled="" type="checkbox"> Pure MyBatis or MyBatisPlus?</li>
@@ -442,7 +497,7 @@ But the stronger, the more complex. This post is the annotation for this project
 <li><input disabled="" type="checkbox"> org.springframework.data.domain.PageRequest? Or PearAdmin? Or mall?</li>
 </ul>
 <p><strong>JUST</strong> use MyBatisPLus maven and use default CRUD methods.<br>
-But <strong>REFUSE</strong> to use <code>QueryWrapper</code>, use MyBatis' XML mapper.</p>
+But <strong>REFUSE</strong> to use <code>QueryWrapper</code>, use MyBatis&rsquo; XML mapper.</p>
 <p>Reason as below:</p>
 <ul>
 <li>IService和BaseMapper中&quot;充分利用&quot;了Java新规定中Interface可以有default的用法, 基本的CRUD确实不用重复写了</li>
@@ -472,7 +527,6 @@ But <strong>REFUSE</strong> to use <code>QueryWrapper</code>, use MyBatis' XML m
 <li>不使用联合查询, 会导致PageHelper无法正确分页, 而使用子查询</li>
 </ul>
 <h3 id="multiple-db">Multiple DB</h3>
-<p>dehai-admin项目是使用MS SQL Server 与 MySQL 两种数据库的典型例子</p>
 <h4 id="settings">Settings</h4>
 <ul>
 <li>
@@ -731,8 +785,8 @@ public class CombineServiceImpl implements CombineService {
 <p>[TODO]:
 MyBatis的手动切换, 后续再深入学习<br>
 And how to <code>DynamicDataSourceContextHolder.push()</code> and <code>DynamicDataSourceContextHolder.poll()</code>?</p>
-<h3 id="background-job">Background Job</h3>
-<h4 id="quartz">Quartz</h4>
+<h3 id="job">Job</h3>
+<p>Quartz</p>
 <h2 id="chapter-5">V. OPERATION</h2>
 <hr>
 <p>运营, 软文推广, 运维, 部署, 自动化测试, 自动化接口文档等</p>

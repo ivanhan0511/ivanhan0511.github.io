@@ -318,34 +318,38 @@ But the stronger, the more complex. This post is the annotation for this project
 <h1 id="table-of-contents">Table of Contents</h1>
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#目录">目录</a></li>
-    <li><a href="#chapter-1">I. ARCHITECTURE PRINCIPLE</a></li>
-    <li><a href="#chapter-2">II. BUSINESS DESIGN</a></li>
-    <li><a href="#iii-controller">III. Controller</a>
+    <li><a href="#目录">目录</a>
       <ul>
-        <li><a href="#a-input-validation">A. Input validation</a></li>
-        <li><a href="#b-outnput-convertor">B. Outnput convertor</a></li>
+        <li><a href="#connection-pool">Connection Pool</a></li>
+        <li><a href="#cache">Cache</a></li>
+        <li><a href="#redis">Redis</a></li>
+        <li><a href="#annotation">Annotation</a></li>
+        <li><a href="#mybatis-cache">MyBatis Cache</a></li>
+        <li><a href="#logger">Logger</a></li>
+        <li><a href="#beans注册-启动顺序等">Beans注册, 启动顺序等</a></li>
       </ul>
     </li>
-    <li><a href="#iii-service">III. SERVICE</a>
+    <li><a href="#chapter-1">I. ARCHITECTURE PRINCIPLE</a></li>
+    <li><a href="#chapter-2">II. BUSINESS DESIGN</a>
       <ul>
-        <li><a href="#dao-mapper">DAO Mapper</a>
+        <li><a href="#a-controller">A. Controller</a>
           <ul>
-            <li><a href="#mapper-design">Mapper Design</a></li>
+            <li><a href="#1-input-validation">1. Input validation</a></li>
+            <li><a href="#2-outnput-convertor">2. Outnput convertor</a></li>
           </ul>
         </li>
-        <li><a href="#multiple-db">Multiple DB</a>
+        <li><a href="#b-service">B. Service</a>
           <ul>
-            <li><a href="#settings">Settings</a></li>
+            <li><a href="#1-transactional">1. Transactional</a></li>
+            <li><a href="#2-job">2. Job</a></li>
+            <li><a href="#3-third-part-api">3. Third-part API</a></li>
           </ul>
         </li>
-        <li><a href="#transactional">Transactional</a>
+        <li><a href="#c-dao-mapper">C. DAO Mapper</a>
           <ul>
-            <li><a href="#propagation">Propagation</a></li>
-            <li><a href="#isolation">Isolation</a></li>
+            <li><a href="#multiple-db">Multiple DB</a></li>
           </ul>
         </li>
-        <li><a href="#job">Job</a></li>
       </ul>
     </li>
     <li><a href="#chapter-5">V. OPERATION</a>
@@ -395,11 +399,70 @@ But the stronger, the more complex. This post is the annotation for this project
 <ul>
 <li><a href="#chapter-1">I. ARCHITECTURE PRINCIPLE</a></li>
 <li><a href="#chapter-2">II. BUSINESS DESIGN</a></li>
-<li><a href="#chapter-2">II. LIFE CYCLE</a></li>
 <li><a href="#chapter-3">III. IMPORTANT SUPPORT</a></li>
 <li><a href="#chapter-5">V. OPERATION</a></li>
 <li><a href="#chapter-6">VI. APPENDIX</a></li>
 </ul>
+<h3 id="connection-pool">Connection Pool</h3>
+<p>Druid or Hikari -&gt; PearAdminPro用的是Hikari, 也是Springboot官方选用的
+Druid是淘宝选用的, 高并发的情况会适用一些</p>
+<h3 id="cache">Cache</h3>
+<h3 id="redis">Redis</h3>
+<p><a href="https://javaguide.cn/database/redis/redis-data-structures-01.html#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF-1">参考该文章</a></p>
+<h3 id="annotation">Annotation</h3>
+<ul>
+<li><input disabled="" type="checkbox"> <code>@CacheException</code></li>
+</ul>
+<h3 id="mybatis-cache">MyBatis Cache</h3>
+<p>MyBatis的一级缓存和二级缓存, 都存在可能脏读的情况, 所以一般惯用Redis做缓存
+引入Redis后只需要将MyBatis配置文件中Cache 的类型定义为RedisCache
+Log</p>
+<h3 id="logger">Logger</h3>
+<p><strong>slf4j.Logger and log4j.Logger</strong>
+<blockquote>
+  <p>
+Comparison SLF4J and Log4j<br/>
+
+Unlike log4j, SLF4J (Simple Logging Facade for Java) is not an implementation of logging framework, 
+it is an abstraction for all those logging frameworks in Java similar to log4J. Therefore, you cannot compare both. 
+However, it is always difficult to prefer one between the two.
+</p>
+  <footer>
+    <strong>LEARN SLF4J</strong>
+    
+      <cite><a href="https://www.tutorialspoint.com/slf4j/slf4j_vs_log4j.htm#:~:text=Comparison%20SLF4J%20and%20Log4j,prefer%20one%20between%20the%20two." target="_blank" rel="external">SLF4J Vs Log4j</a></cite>
+    
+  </footer>
+</blockquote></p>
+<p>
+
+ 
+  
+  
+  
+  
+    
+  
+    
+      
+    
+  
+
+<div class="figure fig-100" >
+  
+    <a class="fancybox" href="https://www.tutorialspoint.com/slf4j/images/application.jpg" data-fancybox="">
+  
+    <img class="fig-img" src="https://www.tutorialspoint.com/slf4j/images/application.jpg" >
+  
+    </a>
+  
+  
+</div>
+
+CommonResult
+Redis
+cache</p>
+<h3 id="beans注册-启动顺序等">Beans注册, 启动顺序等</h3>
 <h2 id="chapter-1">I. ARCHITECTURE PRINCIPLE</h2>
 <hr>
 <p>So far, Sep 24, 2024</p>
@@ -439,13 +502,13 @@ But the stronger, the more complex. This post is the annotation for this project
 </li>
 </ol>
 <p>With the infra code-auto-generation, most backend and frontend codes can be generated. Very helpful and so handy</p>
-<h2 id="iii-controller">III. Controller</h2>
-<hr>
-<h3 id="a-input-validation">A. Input validation</h3>
+<p>放在第2章节, 这主要是关于日常开发的中一些业务结构该如何设计才最优雅, 没有底层知识</p>
+<h3 id="a-controller">A. Controller</h3>
+<h4 id="1-input-validation">1. Input validation</h4>
 <p><strong>NOT</strong> the RESTful style</p>
 <p>Btw, considering for the conveniece of frontend, some
 Good place to convert DO/DTO to VO. Especially with java.stream</p>
-<h3 id="b-outnput-convertor">B. Outnput convertor</h3>
+<h4 id="2-outnput-convertor">2. Outnput convertor</h4>
 <p>Like xxxPageRespVO, output the userId and userName at the same time, because it&rsquo;s bad to fetch each userName in the frontend table</p>
 <p>Like xxxRespVO, whether to output either the userId or userName at the same time, depends on the business. For this single object line data, frontend could fetch
 its detail by id easily</p>
@@ -487,85 +550,22 @@ public class ProductSpuRespVO {
 </figure>
 
 TODO: 这段注解的机制, 参考java-spring.md文章</p>
-<h2 id="iii-service">III. SERVICE</h2>
-<hr>
+<h3 id="b-service">B. Service</h3>
 <p>Just work for <strong>BUSINESS</strong> only</p>
-<h3 id="dao-mapper">DAO Mapper</h3>
-<ul>
-<li><input disabled="" type="checkbox"> Pure MyBatis or MyBatisPlus?</li>
-<li><input disabled="" type="checkbox"> MyBatis PageHelper detail</li>
-<li><input disabled="" type="checkbox"> org.springframework.data.domain.PageRequest? Or PearAdmin? Or mall?</li>
-</ul>
-<p><strong>JUST</strong> use MyBatisPLus maven and use default CRUD methods.<br>
-But <strong>REFUSE</strong> to use <code>QueryWrapper</code>, use MyBatis&rsquo; XML mapper.</p>
-<p>Reason as below:</p>
-<ul>
-<li>IService和BaseMapper中&quot;充分利用&quot;了Java新规定中Interface可以有default的用法, 基本的CRUD确实不用重复写了</li>
-<li>MybatisPlus的QueryWrapper越看越像Python SQLAlchemy这类ORM, 学习成本高, 且一旦语句优化不得当, 会造成性能损失</li>
-<li>性能和稳定性等不稳定因素越来越多, 比如一旦手动干预, 很多所谓的&quot;便利&quot;瞬间全无, 还是得依靠MyBatis</li>
-<li>按照MyBatis写XML更像原生SQL, 熟练运用SQL是一件愉快的事情</li>
-</ul>
-<p><strong>非</strong>分布式数据库, 不推荐使用雪花算法, 使用数据库自增ID即可</p>
-<h4 id="mapper-design">Mapper Design</h4>
-<ul>
-<li>因功能不同而查询同一个表, 很可能过滤条件维度和结果维度都不相同, 因此按照功能划分查询列表数据或查询单条数据比较合理(暂时, May 30, 2023)
-<ul>
-<li>selectOneForXxxFunction(Integer param)</li>
-<li>selectListForYyyFunction(YyyRequest request)
-<ul>
-<li>request中通过分组校验参数来整合不同的请求参数, 以便Mapper层可以一条语句应对多个controller层不同条件的查询</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>复用<code>&lt;sql/&gt;</code>仅限于数据库表的columns字段
-<ul>
-<li>为了在<code>&lt;select/&gt;</code>中看得更清晰</li>
-<li>为了MyBatisCodeHelperPro这个插件能关联<code>&lt;sql/&gt;</code>和<code>&lt;resultMap/&gt;</code>对应的字段</li>
-</ul>
-</li>
-<li>不使用联合查询, 会导致PageHelper无法正确分页, 而使用子查询</li>
-</ul>
-<h3 id="multiple-db">Multiple DB</h3>
-<h4 id="settings">Settings</h4>
-<ul>
-<li>
-<p>application.yml中设置PageHelper的 helperDialect, 兼容&quot;mysql&quot;和&quot;sqlserver&quot;两种数据库的语法</p>
-</li>
-<li>
-<p>使用多数据源时, 配置PageHelper时要注意(只有在使用application.yml格式的配置文件时会有问题):<br>
-<blockquote>
-  <p>
-  ...
-  pagehelper:
-    autoRuntimeDialect: true  # 此处的配置项是驼峰, 不是IDEA自动提示的`auto-runtime-dialect: true`
-  ...
-  </p>
-  <footer>
-    <strong>application.yml</strong>
-    
-      
-        <cite></cite>
-      
-    
-  </footer>
-</blockquote>
-因为如果驼峰被自动转译为横线分隔符, 会导致PageHelper切换多数据源时失效</p>
-</li>
-</ul>
-<h3 id="transactional">Transactional</h3>
+<p>基本遵循源码自动生成的代码, 在良好的数据结构设计的基础上, 很多问题都能迎刃而解. 需要额外定制的几个参考用例, 如后文</p>
+<h4 id="1-transactional">1. Transactional</h4>
 <ul>
 <li>跨多数据源, 调用各个资源服务, 各个Service的实现类有@DS(&ldquo;customer&rdquo;)注解指定数据源</li>
 <li>事务管理, 通过@DSTransactional 根据各个服务所指定的数据源进行切换</li>
 </ul>
-<h4 id="propagation">Propagation</h4>
-<p>TODO</p>
+<p><strong>Propagation</strong>
+TODO</p>
 <ul>
 <li>事务传播, 需要时则加入传播的扩散要求<br>
 @Transactional(isolation = Isolation.SERIALIZABLE, propagation = Propagation.REQUIRES_NEW)</li>
 </ul>
-<h4 id="isolation">Isolation</h4>
-<p>不同于&quot;传播规则&quot;是Spring提到的概念, 隔离级别这个概念是数据库事务自带的</p>
+<p><strong>Isolation</strong>
+不同于&quot;传播规则&quot;是Spring提到的概念, 隔离级别这个概念是数据库事务自带的</p>
 <table>
 <thead>
 <tr>
@@ -782,11 +782,65 @@ public class CombineServiceImpl implements CombineService {
   </div>
 </figure>
 
-<p>[TODO]:
+<p><a href="%E6%95%B4%E7%90%86">TODO</a>:
 MyBatis的手动切换, 后续再深入学习<br>
 And how to <code>DynamicDataSourceContextHolder.push()</code> and <code>DynamicDataSourceContextHolder.poll()</code>?</p>
-<h3 id="job">Job</h3>
+<h4 id="2-job">2. Job</h4>
 <p>Quartz</p>
+<h4 id="3-third-part-api">3. Third-part API</h4>
+<ul>
+<li>RestTemplate: Sync</li>
+<li>WebClient: Async, since Sping 5.0</li>
+</ul>
+<h3 id="c-dao-mapper">C. DAO Mapper</h3>
+<blockquote>
+  <p>
+**JUST** use MyBatisPLus maven and use default CRUD methods.  
+But **REFUSE** to use `QueryWrapper`, use MyBatis' XML mapper.
+
+Reason as below:
+- IService和BaseMapper中"充分利用"了Java新规定中Interface可以有default的用法, 基本的CRUD确实不用重复写了
+- MybatisPlus的QueryWrapper越看越像Python SQLAlchemy这类ORM, 学习成本高, 且一旦语句优化不得当, 会造成性能损失
+- 性能和稳定性等不稳定因素越来越多, 比如一旦手动干预, 很多所谓的"便利"瞬间全无, 还是得依靠MyBatis
+- 按照MyBatis写XML更像原生SQL, 熟练运用SQL是一件愉快的事情
+</p>
+  <footer>
+    <strong></strong>
+    
+      
+        <cite></cite>
+      
+    
+  </footer>
+</blockquote>
+<p><strong>非</strong>分布式数据库, 不推荐使用雪花算法, 使用数据库自增ID即可, 涉及到分布式了再说</p>
+<h4 id="multiple-db">Multiple DB</h4>
+<p><strong>Settings</strong></p>
+<ul>
+<li>
+<p>application.yml中设置PageHelper的 helperDialect, 兼容&quot;mysql&quot;和&quot;sqlserver&quot;两种数据库的语法</p>
+</li>
+<li>
+<p>使用多数据源时, 配置PageHelper时要注意(只有在使用application.yml格式的配置文件时会有问题):<br>
+<blockquote>
+  <p>
+  ...
+  pagehelper:
+    autoRuntimeDialect: true  # 此处的配置项是驼峰, 不是IDEA自动提示的`auto-runtime-dialect: true`
+  ...
+  </p>
+  <footer>
+    <strong>application.yml</strong>
+    
+      
+        <cite></cite>
+      
+    
+  </footer>
+</blockquote>
+因为如果驼峰被自动转译为横线分隔符, 会导致PageHelper切换多数据源时失效</p>
+</li>
+</ul>
 <h2 id="chapter-5">V. OPERATION</h2>
 <hr>
 <p>运营, 软文推广, 运维, 部署, 自动化测试, 自动化接口文档等</p>

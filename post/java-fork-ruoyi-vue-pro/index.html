@@ -343,44 +343,39 @@ But the stronger, the more complex. This post is the annotation for this project
             <li><a href="#1-transactional">1. Transactional</a></li>
             <li><a href="#2-job">2. Job</a></li>
             <li><a href="#3-third-part-api">3. Third-part API</a></li>
+            <li><a href="#4-applicationevent-monitor">4. ApplicationEvent Monitor</a></li>
           </ul>
         </li>
         <li><a href="#c-dao-mapper">C. DAO Mapper</a>
           <ul>
-            <li><a href="#multiple-db">Multiple DB</a></li>
+            <li><a href="#1-multiple-db">1. Multiple DB</a></li>
           </ul>
         </li>
       </ul>
     </li>
-    <li><a href="#chapter-5">V. OPERATION</a>
+    <li><a href="#chapter-3">III. TESTING</a></li>
+    <li><a href="#chapter-4">IV. OPERATION</a>
       <ul>
         <li><a href="#ci">CI</a></li>
-        <li><a href="#monitor">Monitor</a></li>
-        <li><a href="#api-document">API DOCUMENT</a></li>
-        <li><a href="#deployment">DEPLOYMENT</a>
+        <li><a href="#api-document">API Document</a></li>
+        <li><a href="#deployment">Deployment</a>
           <ul>
             <li><a href="#docker">Docker</a></li>
             <li><a href="#jar">JAR</a></li>
           </ul>
         </li>
-        <li><a href="#others">Others</a></li>
-      </ul>
-    </li>
-    <li><a href="#chapter-3">III. IMPORTANT SUPPORT</a>
-      <ul>
-        <li><a href="#a-security">A. Security</a>
-          <ul>
-            <li><a href="#permission">Permission</a></li>
-            <li><a href="#protection">Protection</a></li>
-          </ul>
-        </li>
         <li><a href="#b-input">B. Input</a></li>
         <li><a href="#c-output">C. Output</a></li>
-        <li><a href="#d-exception">D. Exception</a></li>
-        <li><a href="#e-api">E. API</a></li>
-        <li><a href="#f-log">F. Log</a></li>
-        <li><a href="#g-background-job">G. Background Job</a></li>
-        <li><a href="#h-cache">H. Cache</a></li>
+      </ul>
+    </li>
+    <li><a href="#chapter-5">V. COMMON</a>
+      <ul>
+        <li><a href="#a-exception">A. Exception</a></li>
+        <li><a href="#b-log">B. Log</a></li>
+        <li><a href="#c-cache">C. Cache</a></li>
+        <li><a href="#d-streamutils">D. StreamUtils</a></li>
+        <li><a href="#epaylock">E.PayLock</a></li>
+        <li><a href="#ftenant">F.Tenant</a></li>
       </ul>
     </li>
     <li><a href="#chapter-6">VI. APPENDIX</a>
@@ -389,7 +384,6 @@ But the stronger, the more complex. This post is the annotation for this project
         <li><a href="#命名规范">命名规范</a></li>
       </ul>
     </li>
-    <li><a href="#笔记">笔记</a></li>
   </ul>
 </nav>
 
@@ -399,9 +393,9 @@ But the stronger, the more complex. This post is the annotation for this project
 <ul>
 <li><a href="#chapter-1">I. ARCHITECTURE PRINCIPLE</a></li>
 <li><a href="#chapter-2">II. BUSINESS DESIGN</a></li>
-<li><a href="#chapter-3">III. IMPORTANT SUPPORT</a></li>
-<li><a href="#chapter-5">V. OPERATION</a></li>
-<li><a href="#chapter-6">VI. APPENDIX</a></li>
+<li><a href="#chapter-3">III. TESTING</a></li>
+<li><a href="#chapter-4">IV. OPERATION</a></li>
+<li><a href="#chapter-5">V. COMMON</a></li>
 </ul>
 <h3 id="connection-pool">Connection Pool</h3>
 <p>Druid or Hikari -&gt; PearAdminPro用的是Hikari, 也是Springboot官方选用的
@@ -502,17 +496,31 @@ cache</p>
 </li>
 </ol>
 <p>With the infra code-auto-generation, most backend and frontend codes can be generated. Very helpful and so handy</p>
-<p>放在第2章节, 这主要是关于日常开发的中一些业务结构该如何设计才最优雅, 没有底层知识</p>
 <h3 id="a-controller">A. Controller</h3>
+<p><a href="%E6%95%B4%E7%90%86">TODO</a>: 继续描述源码在前后端结合时, 互相传递的参数以及显示字段的设计思路</p>
 <h4 id="1-input-validation">1. Input validation</h4>
 <p><strong>NOT</strong> the RESTful style</p>
 <p>Btw, considering for the conveniece of frontend, some
 Good place to convert DO/DTO to VO. Especially with java.stream</p>
+<p>前后端传递的都是字典值, 方便服务和数据库直接存储使用</p>
+<p>删除?
+@RequestParam(&ldquo;file&rdquo;) MultipartFile[] submissions
+The files are not the request body, they are part of it and there is no built-in HttpMessageConverter that can convert the request to an array of MultiPartFile.</p>
+<p>You can also replace HttpServletRequest with MultipartHttpServletRequest, which gives you access to the headers of the individual parts.</p>
 <h4 id="2-outnput-convertor">2. Outnput convertor</h4>
+<p>前后端传递的都是字典值, 方便服务和数据库直接存储使用</p>
+<p>前端如何显示? 如下:</p>
+<ul>
+<li>
 <p>Like xxxPageRespVO, output the userId and userName at the same time, because it&rsquo;s bad to fetch each userName in the frontend table</p>
+</li>
+<li>
 <p>Like xxxRespVO, whether to output either the userId or userName at the same time, depends on the business. For this single object line data, frontend could fetch
 its detail by id easily</p>
-<p>
+</li>
+</ul>
+<p>TODO: 以下这段注解主要是为了Excel导出服务的, 参考java-spring.md文章
+
   
     
   
@@ -548,251 +556,25 @@ public class ProductSpuRespVO {
     </tbody>
   </table>
 </figure>
-
-TODO: 这段注解的机制, 参考java-spring.md文章</p>
+</p>
 <h3 id="b-service">B. Service</h3>
 <p>Just work for <strong>BUSINESS</strong> only</p>
 <p>基本遵循源码自动生成的代码, 在良好的数据结构设计的基础上, 很多问题都能迎刃而解. 需要额外定制的几个参考用例, 如后文</p>
 <h4 id="1-transactional">1. Transactional</h4>
-<ul>
-<li>跨多数据源, 调用各个资源服务, 各个Service的实现类有@DS(&ldquo;customer&rdquo;)注解指定数据源</li>
-<li>事务管理, 通过@DSTransactional 根据各个服务所指定的数据源进行切换</li>
-</ul>
-<p><strong>Propagation</strong>
-TODO</p>
-<ul>
-<li>事务传播, 需要时则加入传播的扩散要求<br>
-@Transactional(isolation = Isolation.SERIALIZABLE, propagation = Propagation.REQUIRES_NEW)</li>
-</ul>
-<p><strong>Isolation</strong>
-不同于&quot;传播规则&quot;是Spring提到的概念, 隔离级别这个概念是数据库事务自带的</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Isolation Level</th>
-<th style="text-align:left">脏读(Dirty Read)</th>
-<th style="text-align:left">不可重复读(Non Repeatable Read)</th>
-<th style="text-align:left">幻读(Phantom Read)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Read Uncommitted</td>
-<td style="text-align:left">Yes</td>
-<td style="text-align:left">Yes</td>
-<td style="text-align:left">Yes</td>
-</tr>
-<tr>
-<td style="text-align:left">Read Committed</td>
-<td style="text-align:left">-</td>
-<td style="text-align:left">Yes</td>
-<td style="text-align:left">Yes</td>
-</tr>
-<tr>
-<td style="text-align:left">Repeatable Read</td>
-<td style="text-align:left">-</td>
-<td style="text-align:left">-</td>
-<td style="text-align:left">Yes</td>
-</tr>
-<tr>
-<td style="text-align:left">Serializable</td>
-<td style="text-align:left">-</td>
-<td style="text-align:left">-</td>
-<td style="text-align:left">-</td>
-</tr>
-</tbody>
-</table>
-<p>很多人容易搞混不可重复读和幻读，确实这两者有些相似. 但不可重复读重点在于update和delete, 而幻读的重点在于insert.</p>
-<p>总的来说幻读就是事务A对数据进行操作，事务B还是可以用insert插入数据的，因为使用的是行锁，这样导致的各种奇葩问题就是幻读，表现形式很多，就不列举了。</p>
-<p><strong>TIPs</strong>
-<div class="alert info ">
-  <p>@DS 必须加在 @Transactional 对应的类或者方法上<br>
-如在 mapper中加了@DS，但是 @Transactional 加在 service 方法中，此时则会获取默认的datasource
-(因为在事务中已经获取了一次datasource的connection，而此时无DS注解)</p>
-</div></p>
-
-
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
-
-
-  
-    
-  
-  
-
-<figure class="codeblock codeblock--tabbed">
-  <figcaption>
-    
-      <span>MultiDSTransactional</span>
-    
-    <ul class="tabs">
-      
-        <li class="tab active">sinterface</li>
-      
-        <li class="tab ">ointerface</li>
-      
-        <li class="tab ">oimpl</li>
-      
-        <li class="tab ">combo</li>
-      
-        <li class="tab ">comboimpl</li>
-      
-    </ul>
-  </figcaption>
-  <div class="tabs-content">
-    
-      
-      <figure class="highlight language-sinterface sinterface" style="display: block;">
-        <table>
-          <tbody>
-            <tr>
-              <td class="gutter">
-                <pre><span>1</span><br></pre>
-              </td>
-              <td class="code">
-                <pre class="code-highlight language-sinterface sinterface"><code class="sinterface">public interface SomeService extends IService&lt;Some&gt; {}</code></pre>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </figure>
-    
-      
-      <figure class="highlight language-ointerface ointerface" style="display: none;">
-        <table>
-          <tbody>
-            <tr>
-              <td class="gutter">
-                <pre><span>1</span><br></pre>
-              </td>
-              <td class="code">
-                <pre class="code-highlight language-ointerface ointerface"><code class="ointerface">public interface OtherService extends IService&lt;Other&gt; {}</code></pre>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </figure>
-    
-      
-      <figure class="highlight language-oimpl oimpl" style="display: none;">
-        <table>
-          <tbody>
-            <tr>
-              <td class="gutter">
-                <pre><span>1</span><br><span>2</span><br><span>3</span><br></pre>
-              </td>
-              <td class="code">
-                <pre class="code-highlight language-oimpl oimpl"><code class="oimpl">@Service
-@DS(&#34;db2&#34;)
-public class OtherServiceImpl extends ServiceImpl&lt;OtherRepository, Other&gt; implements OtherService {}</code></pre>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </figure>
-    
-      
-      <figure class="highlight language-combo combo" style="display: none;">
-        <table>
-          <tbody>
-            <tr>
-              <td class="gutter">
-                <pre><span>1</span><br><span>2</span><br><span>3</span><br></pre>
-              </td>
-              <td class="code">
-                <pre class="code-highlight language-combo combo"><code class="combo">public interface CombineService {
-    Boolean save(CombineRequest request);
-}</code></pre>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </figure>
-    
-      
-      <figure class="highlight language-comboimpl comboimpl" style="display: none;">
-        <table>
-          <tbody>
-            <tr>
-              <td class="gutter">
-                <pre><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br></pre>
-              </td>
-              <td class="code">
-                <pre class="code-highlight language-comboimpl comboimpl"><code class="comboimpl">@Service
-public class CombineServiceImpl implements CombineService {
-    @Resource
-    private SomeService someService;
-
-    @Resource
-    private OtherService otherService;
-
-    @Override
-    @DSTransactional
-    public Boolean save(CombineRequest request) {
-        Boolean r1 = saveSome(request);
-        Boolean r2 = saveOthers(request);
-        return r1 &amp;&amp; r2;
-    }
-
-    @Transactional(isolation = Isolation.SERIALIZABLE, propagation = Propagation.REQUIRES_NEW)
-    protected Boolean saveOthers(CombineRequest request) {
-        List&lt;Other&gt; others = methodToGetOthers(request);
-        return otherService.saveBatch(others);
-    }
-
-    private Boolean saveSome(CombineRequest request) {
-        Some some = methodToGetSome(request);
-        return someService.save(some);
-    }
-}</code></pre>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </figure>
-    
-  </div>
-</figure>
-
-<p><a href="%E6%95%B4%E7%90%86">TODO</a>:
-MyBatis的手动切换, 后续再深入学习<br>
-And how to <code>DynamicDataSourceContextHolder.push()</code> and <code>DynamicDataSourceContextHolder.poll()</code>?</p>
+<p>这里不会讲原理, 只讲注意点, 设计思路, 详细文章见java-spring.md</p>
 <h4 id="2-job">2. Job</h4>
 <p>Quartz</p>
 <h4 id="3-third-part-api">3. Third-part API</h4>
+<p>以下2种都是Spring官方推荐的, 都是对HttpClient的封装, 简化使用, 提高效率</p>
 <ul>
 <li>RestTemplate: Sync</li>
 <li>WebClient: Async, since Sping 5.0</li>
 </ul>
+<h4 id="4-applicationevent-monitor">4. ApplicationEvent Monitor</h4>
+<p>module-bpm模块中有用到, 拿来主义, 上游入库后&quot;生产&quot;出下游库存就依靠这个监听者观察客户定制的BOM原料是否满足, 满足即可生产
+<a href="%E6%95%B4%E7%90%86">TODO</a>:</p>
 <h3 id="c-dao-mapper">C. DAO Mapper</h3>
+<p>以下记录暂且留存, 是SpringBoot框架一路走来的思路变化
 <blockquote>
   <p>
 **JUST** use MyBatisPLus maven and use default CRUD methods.  
@@ -803,6 +585,8 @@ Reason as below:
 - MybatisPlus的QueryWrapper越看越像Python SQLAlchemy这类ORM, 学习成本高, 且一旦语句优化不得当, 会造成性能损失
 - 性能和稳定性等不稳定因素越来越多, 比如一旦手动干预, 很多所谓的"便利"瞬间全无, 还是得依靠MyBatis
 - 按照MyBatis写XML更像原生SQL, 熟练运用SQL是一件愉快的事情
+
+**非**分布式数据库, 不推荐使用雪花算法, 使用数据库自增ID即可, 涉及到分布式了再说
 </p>
   <footer>
     <strong></strong>
@@ -812,9 +596,8 @@ Reason as below:
       
     
   </footer>
-</blockquote>
-<p><strong>非</strong>分布式数据库, 不推荐使用雪花算法, 使用数据库自增ID即可, 涉及到分布式了再说</p>
-<h4 id="multiple-db">Multiple DB</h4>
+</blockquote></p>
+<h4 id="1-multiple-db">1. Multiple DB</h4>
 <p><strong>Settings</strong></p>
 <ul>
 <li>
@@ -841,50 +624,35 @@ Reason as below:
 因为如果驼峰被自动转译为横线分隔符, 会导致PageHelper切换多数据源时失效</p>
 </li>
 </ul>
-<h2 id="chapter-5">V. OPERATION</h2>
+<h2 id="chapter-3">III. TESTING</h2>
+<hr>
+<h2 id="chapter-4">IV. OPERATION</h2>
 <hr>
 <p>运营, 软文推广, 运维, 部署, 自动化测试, 自动化接口文档等</p>
 <h3 id="ci">CI</h3>
-<h3 id="monitor">Monitor</h3>
-<h3 id="api-document">API DOCUMENT</h3>
+<h3 id="api-document">API Document</h3>
 <ul>
 <li><input disabled="" type="checkbox"> Swagger UI category, description and list</li>
 <li><input disabled="" type="checkbox"> With session token</li>
 </ul>
-<h3 id="deployment">DEPLOYMENT</h3>
+<h3 id="deployment">Deployment</h3>
 <h4 id="docker">Docker</h4>
 <ul>
 <li><input disabled="" type="checkbox"> DockerCompose deployment in single server?</li>
 </ul>
 <h4 id="jar">JAR</h4>
-<h3 id="others">Others</h3>
-<ul>
-<li>个人订阅号, 熟悉内容的编辑/发布, 练习写作, 提高排版/拍照等后期技能</li>
-<li>运营, 尝试推送文章</li>
-</ul>
-<h2 id="chapter-3">III. IMPORTANT SUPPORT</h2>
-<hr>
-<h3 id="a-security">A. Security</h3>
-<p><strong>Configure</strong>
-这里包含初始化, 注册哪些filter</p>
-<p><strong>Filter</strong>
-具体拦截, 并把相对应的且support()的provider传进去</p>
-<p><strong>Provider</strong>
-提供自己的认证比对实现方法, 并且实现<code>support()</code>满足filter查找</p>
-<p><strong>Handler</strong>
-增加成功与失败的handler</p>
-<h4 id="permission">Permission</h4>
-<h4 id="protection">Protection</h4>
 <h3 id="b-input">B. Input</h3>
-<p>@RequestParam(&ldquo;file&rdquo;) MultipartFile[] submissions
-The files are not the request body, they are part of it and there is no built-in HttpMessageConverter that can convert the request to an array of MultiPartFile.</p>
-<p>You can also replace HttpServletRequest with MultipartHttpServletRequest, which gives you access to the headers of the individual parts.</p>
 <h3 id="c-output">C. Output</h3>
-<h3 id="d-exception">D. Exception</h3>
-<h3 id="e-api">E. API</h3>
-<h3 id="f-log">F. Log</h3>
-<h3 id="g-background-job">G. Background Job</h3>
-<h3 id="h-cache">H. Cache</h3>
+<h2 id="chapter-5">V. COMMON</h2>
+<hr>
+<p>理解源码的核心设计思路, 具体技术知识见java-spring.md</p>
+<h3 id="a-exception">A. Exception</h3>
+<h3 id="b-log">B. Log</h3>
+<h3 id="c-cache">C. Cache</h3>
+<h3 id="d-streamutils">D. StreamUtils</h3>
+<h3 id="epaylock">E.PayLock</h3>
+<h3 id="ftenant">F.Tenant</h3>
+<p>MyBatisPlusX</p>
 <h2 id="chapter-6">VI. APPENDIX</h2>
 <hr>
 <p>摘抄自网络, 不一定合理, 仅保存一些文字, 以便以后少写一些文字</p>
@@ -919,10 +687,6 @@ The files are not the request body, they are part of it and there is no built-in
 </ul>
 </li>
 </ul>
-<h2 id="笔记">笔记</h2>
-<p>Sep 29, 2024</p>
-<p>有点理解, 为啥代码中Enum中有各种状态, 而Dict中又有. 其实有一部分字典数据, 是为了前端而提供的, 这样前端后端就不用各自存储各个字段数值代表什么意思了</p>
-<p>test utf-8</p>
               
 
 

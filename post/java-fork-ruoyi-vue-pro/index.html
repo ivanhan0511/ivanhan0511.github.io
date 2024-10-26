@@ -318,17 +318,7 @@ But the stronger, the more complex. This post is the annotation for this project
 <h1 id="table-of-contents">Table of Contents</h1>
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#目录">目录</a>
-      <ul>
-        <li><a href="#connection-pool">Connection Pool</a></li>
-        <li><a href="#cache">Cache</a></li>
-        <li><a href="#redis">Redis</a></li>
-        <li><a href="#annotation">Annotation</a></li>
-        <li><a href="#mybatis-cache">MyBatis Cache</a></li>
-        <li><a href="#logger">Logger</a></li>
-        <li><a href="#beans注册-启动顺序等">Beans注册, 启动顺序等</a></li>
-      </ul>
-    </li>
+    <li><a href="#目录">目录</a></li>
     <li><a href="#chapter-1">I. ARCHITECTURE PRINCIPLE</a></li>
     <li><a href="#chapter-2">II. BUSINESS DESIGN</a>
       <ul>
@@ -364,8 +354,6 @@ But the stronger, the more complex. This post is the annotation for this project
             <li><a href="#jar">JAR</a></li>
           </ul>
         </li>
-        <li><a href="#b-input">B. Input</a></li>
-        <li><a href="#c-output">C. Output</a></li>
       </ul>
     </li>
     <li><a href="#chapter-5">V. COMMON</a>
@@ -376,6 +364,7 @@ But the stronger, the more complex. This post is the annotation for this project
         <li><a href="#d-streamutils">D. StreamUtils</a></li>
         <li><a href="#epaylock">E.PayLock</a></li>
         <li><a href="#ftenant">F.Tenant</a></li>
+        <li><a href="#g-connection-pool">G. Connection Pool</a></li>
       </ul>
     </li>
     <li><a href="#chapter-6">VI. APPENDIX</a>
@@ -387,7 +376,7 @@ But the stronger, the more complex. This post is the annotation for this project
   </ul>
 </nav>
 
-<p>The most important TECH cores are design and architecture which service for business, and then the second is tech like IoC, AoP and so on.</p>
+<p>TIP: The most really important TECH cores, like design and architecture, service for BUSINESS.</p>
 <p>NO BEST, ONLY BETTER.</p>
 <h2 id="目录">目录</h2>
 <ul>
@@ -397,66 +386,6 @@ But the stronger, the more complex. This post is the annotation for this project
 <li><a href="#chapter-4">IV. OPERATION</a></li>
 <li><a href="#chapter-5">V. COMMON</a></li>
 </ul>
-<h3 id="connection-pool">Connection Pool</h3>
-<p>Druid or Hikari -&gt; PearAdminPro用的是Hikari, 也是Springboot官方选用的
-Druid是淘宝选用的, 高并发的情况会适用一些</p>
-<h3 id="cache">Cache</h3>
-<h3 id="redis">Redis</h3>
-<p><a href="https://javaguide.cn/database/redis/redis-data-structures-01.html#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF-1">参考该文章</a></p>
-<h3 id="annotation">Annotation</h3>
-<ul>
-<li><input disabled="" type="checkbox"> <code>@CacheException</code></li>
-</ul>
-<h3 id="mybatis-cache">MyBatis Cache</h3>
-<p>MyBatis的一级缓存和二级缓存, 都存在可能脏读的情况, 所以一般惯用Redis做缓存
-引入Redis后只需要将MyBatis配置文件中Cache 的类型定义为RedisCache
-Log</p>
-<h3 id="logger">Logger</h3>
-<p><strong>slf4j.Logger and log4j.Logger</strong>
-<blockquote>
-  <p>
-Comparison SLF4J and Log4j<br/>
-
-Unlike log4j, SLF4J (Simple Logging Facade for Java) is not an implementation of logging framework, 
-it is an abstraction for all those logging frameworks in Java similar to log4J. Therefore, you cannot compare both. 
-However, it is always difficult to prefer one between the two.
-</p>
-  <footer>
-    <strong>LEARN SLF4J</strong>
-    
-      <cite><a href="https://www.tutorialspoint.com/slf4j/slf4j_vs_log4j.htm#:~:text=Comparison%20SLF4J%20and%20Log4j,prefer%20one%20between%20the%20two." target="_blank" rel="external">SLF4J Vs Log4j</a></cite>
-    
-  </footer>
-</blockquote></p>
-<p>
-
- 
-  
-  
-  
-  
-    
-  
-    
-      
-    
-  
-
-<div class="figure fig-100" >
-  
-    <a class="fancybox" href="https://www.tutorialspoint.com/slf4j/images/application.jpg" data-fancybox="">
-  
-    <img class="fig-img" src="https://www.tutorialspoint.com/slf4j/images/application.jpg" >
-  
-    </a>
-  
-  
-</div>
-
-CommonResult
-Redis
-cache</p>
-<h3 id="beans注册-启动顺序等">Beans注册, 启动顺序等</h3>
 <h2 id="chapter-1">I. ARCHITECTURE PRINCIPLE</h2>
 <hr>
 <p>So far, Sep 24, 2024</p>
@@ -497,7 +426,7 @@ cache</p>
 </ol>
 <p>With the infra code-auto-generation, most backend and frontend codes can be generated. Very helpful and so handy</p>
 <h3 id="a-controller">A. Controller</h3>
-<p><a href="%E6%95%B4%E7%90%86">TODO</a>: 继续描述源码在前后端结合时, 互相传递的参数以及显示字段的设计思路</p>
+<p>[TODO]: 继续描述源码在前后端结合时, 互相传递的参数以及显示字段的设计思路</p>
 <h4 id="1-input-validation">1. Input validation</h4>
 <p><strong>NOT</strong> the RESTful style</p>
 <p>Btw, considering for the conveniece of frontend, some
@@ -572,7 +501,7 @@ public class ProductSpuRespVO {
 </ul>
 <h4 id="4-applicationevent-monitor">4. ApplicationEvent Monitor</h4>
 <p>module-bpm模块中有用到, 拿来主义, 上游入库后&quot;生产&quot;出下游库存就依靠这个监听者观察客户定制的BOM原料是否满足, 满足即可生产
-<a href="%E6%95%B4%E7%90%86">TODO</a>:</p>
+[TODO]:</p>
 <h3 id="c-dao-mapper">C. DAO Mapper</h3>
 <p>以下记录暂且留存, 是SpringBoot框架一路走来的思路变化
 <blockquote>
@@ -641,18 +570,65 @@ Reason as below:
 <li><input disabled="" type="checkbox"> DockerCompose deployment in single server?</li>
 </ul>
 <h4 id="jar">JAR</h4>
-<h3 id="b-input">B. Input</h3>
-<h3 id="c-output">C. Output</h3>
 <h2 id="chapter-5">V. COMMON</h2>
 <hr>
 <p>理解源码的核心设计思路, 具体技术知识见java-spring.md</p>
 <h3 id="a-exception">A. Exception</h3>
 <h3 id="b-log">B. Log</h3>
+<p><strong>slf4j.Logger and log4j.Logger</strong>
+<blockquote>
+  <p>
+Comparison SLF4J and Log4j<br/>
+
+Unlike log4j, SLF4J (Simple Logging Facade for Java) is not an implementation of logging framework, 
+it is an abstraction for all those logging frameworks in Java similar to log4J. Therefore, you cannot compare both. 
+However, it is always difficult to prefer one between the two.
+</p>
+  <footer>
+    <strong>LEARN SLF4J</strong>
+    
+      <cite><a href="https://www.tutorialspoint.com/slf4j/slf4j_vs_log4j.htm#:~:text=Comparison%20SLF4J%20and%20Log4j,prefer%20one%20between%20the%20two." target="_blank" rel="external">SLF4J Vs Log4j</a></cite>
+    
+  </footer>
+</blockquote></p>
+
+
+ 
+  
+  
+  
+  
+    
+  
+    
+      
+    
+  
+
+<div class="figure fig-100" >
+  
+    <a class="fancybox" href="https://www.tutorialspoint.com/slf4j/images/application.jpg" data-fancybox="">
+  
+    <img class="fig-img" src="https://www.tutorialspoint.com/slf4j/images/application.jpg" >
+  
+    </a>
+  
+  
+</div>
+
 <h3 id="c-cache">C. Cache</h3>
+<p>Redis cache</p>
+<p><a href="https://javaguide.cn/database/redis/redis-data-structures-01.html#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF-1">参考该文章</a></p>
+<p>MyBatis Cache</p>
+<p>MyBatis的一级缓存和二级缓存, 都存在可能脏读的情况, 所以一般惯用Redis做缓存
+引入Redis后只需要将MyBatis配置文件中Cache 的类型定义为RedisCache</p>
 <h3 id="d-streamutils">D. StreamUtils</h3>
 <h3 id="epaylock">E.PayLock</h3>
 <h3 id="ftenant">F.Tenant</h3>
 <p>MyBatisPlusX</p>
+<h3 id="g-connection-pool">G. Connection Pool</h3>
+<p>Druid or Hikari -&gt; PearAdminPro用的是Hikari, 也是Springboot官方选用的
+Druid是淘宝选用的, 高并发的情况会适用一些</p>
 <h2 id="chapter-6">VI. APPENDIX</h2>
 <hr>
 <p>摘抄自网络, 不一定合理, 仅保存一些文字, 以便以后少写一些文字</p>

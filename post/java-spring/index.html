@@ -309,7 +309,7 @@
     <li><a href="#目录">目录</a></li>
     <li><a href="#chapter-1">I. IOC</a>
       <ul>
-        <li><a href="#bean生命周期">Bean生命周期</a></li>
+        <li><a href="#a-lifecircle-configuration">A. LifeCircle-@Configuration</a></li>
       </ul>
     </li>
     <li><a href="#chapter-2">II. AOP</a>
@@ -318,9 +318,6 @@
         <li><a href="#易混淆注解的对比">易混淆注解的对比</a>
           <ul>
             <li><a href="#component-bean-service-configurable">@Component @Bean @Service @Configurable</a></li>
-            <li><a href="#resource-autowired">@Resource @Autowired</a></li>
-            <li><a href="#repository-mapper">@Repository @Mapper</a></li>
-            <li><a href="#validate-valid">@Validate @Valid</a></li>
           </ul>
         </li>
       </ul>
@@ -355,8 +352,8 @@
 </ul>
 <h2 id="chapter-1">I. IOC</h2>
 <hr>
-<h3 id="bean生命周期">Bean生命周期</h3>
-<p><a href="%E7%BB%A7%E7%BB%AD%E6%95%B4%E7%90%86">TODO</a>: 插入图片 &ldquo;备注&rdquo;, 用自己的域名及云服务器做图床</p>
+<h3 id="a-lifecircle-configuration">A. LifeCircle-@Configuration</h3>
+<p><a href="https://www.cnblogs.com/java-chen-hao/p/11640177.html">https://www.cnblogs.com/java-chen-hao/p/11640177.html</a></p>
 <h2 id="chapter-2">II. AOP</h2>
 <hr>
 <p>JetBrains IDEA 中如果想了解某个注解的实现, 没有太好的办法, 就像想查找一个类在哪里被反射并调用了, 试行的办法:</p>
@@ -403,7 +400,7 @@
 <p><code>@Bean</code>一般是调用第三方的</p>
 <p><code>@Component</code>与<code>@Service</code>没有区别, <code>@Service</code>还没想好, 是一个预留的注解定义</p>
 <p><code>@Configurable</code>是单例模式, 在启动时加载</p>
-<h4 id="resource-autowired">@Resource @Autowired</h4>
+<p><strong>@Resource @Autowired</strong></p>
 <blockquote>
   <p>
 Both @Autowired (or @Inject) and @Resource work equally well. But there is a conceptual difference or a difference in the meaning<br/><br/>
@@ -420,13 +417,13 @@ While this fallback is convenient, IMHO it causes a lot of confusion, because pe
     
   </footer>
 </blockquote>
-<h4 id="repository-mapper">@Repository @Mapper</h4>
+<p><strong>@Repository @Mapper</strong></p>
 <ul>
 <li>@Mapper 一定要有，否则 Mybatis 找不到 mapper。</li>
 <li>@Repository 可有可无，可以消去依赖注入的报错信息。</li>
 <li>@MapperScan 可以替代 @Mapper。</li>
 </ul>
-<h4 id="validate-valid">@Validate @Valid</h4>
+<p><strong>@Validate @Valid</strong></p>
 <ul>
 <li>@Validate是org.springframework.validation.annotation.Validated 导入的</li>
 <li>@Validate 可以分组</li>
@@ -748,7 +745,7 @@ module-bpm模块中有用到, 拿来主义, 上游入库后&quot;生产&quot;出
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/welcome/" data-tooltip="Welcome to Ivan&#39;s Blog" aria-label="NEXT: Welcome to Ivan&#39;s Blog">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/c-plus-plus/" data-tooltip="C&#43;&#43;" aria-label="NEXT: C&#43;&#43;">
           
               <i class="fa fa-angle-left"></i>
               <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -849,7 +846,7 @@ module-bpm模块中有用到, 拿来主义, 上游入库后&quot;生产&quot;出
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/welcome/" data-tooltip="Welcome to Ivan&#39;s Blog" aria-label="NEXT: Welcome to Ivan&#39;s Blog">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/c-plus-plus/" data-tooltip="C&#43;&#43;" aria-label="NEXT: C&#43;&#43;">
           
               <i class="fa fa-angle-left"></i>
               <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>

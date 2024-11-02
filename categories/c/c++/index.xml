@@ -7,6 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://ivanhan0511.github.io/categories/c/c++/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>C&#43;&#43;</title>
+      <link>https://ivanhan0511.github.io/post/c-plus-plus/</link>
+      <pubDate>Sat, 02 Nov 2024 10:46:00 +0800</pubDate>
+      
+      <guid>https://ivanhan0511.github.io/post/c-plus-plus/</guid>
+      <description>&lt;p&gt;This is a custom summary and does &lt;em&gt;NOT&lt;/em&gt; appear in the post.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>C Miscellaneous</title>
       <link>https://ivanhan0511.github.io/post/c-miscellaneous/</link>
       <pubDate>Thu, 09 Jun 2022 21:32:20 +0800</pubDate>

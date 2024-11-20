@@ -324,7 +324,24 @@
     </li>
     <li><a href="#chapter-3">III. SERVLET</a></li>
     <li><a href="#chapter-4">IV. SECURITY</a></li>
-    <li><a href="#chapter-5">V. TRANSACTIONAL</a></li>
+    <li><a href="#chapter-5">V. TRANSACTIONAL</a>
+      <ul>
+        <li><a href="#a-propagation">A. Propagation</a></li>
+        <li><a href="#b-isolation">B. Isolation</a>
+          <ul>
+            <li><a href="#1-read-uncommitted">1. Read Uncommitted</a></li>
+          </ul>
+        </li>
+        <li><a href="#2-read-committed">2. Read Committed</a>
+          <ul>
+            <li><a href="#3-repeatable-read-mysql默认">3. Repeatable Read (MySQL默认)</a></li>
+            <li><a href="#4-serializable">4. Serializable</a></li>
+            <li><a href="#总结表格">总结表格</a></li>
+          </ul>
+        </li>
+        <li><a href="#c-多数据源">C. 多数据源</a></li>
+      </ul>
+    </li>
     <li><a href="#chapter-6">VI. JOB</a></li>
     <li><a href="#chapter-7">VII. THIRD-PART HTTP API</a></li>
     <li><a href="#chapter-8">VIII. EVENT MONITOR</a></li>
@@ -363,7 +380,7 @@
 </ul>
 <h3 id="常用注解的深入理解">常用注解的深入理解</h3>
 <ul>
-<li><a href="%E7%BB%A7%E7%BB%AD%E6%95%B4%E7%90%86">TODO</a>: 各种继承关系的注解, 类似RestController, 包含了ResponseBody等, 后续补充</li>
+<li>[TODO]: 各种继承关系的注解, 类似RestController, 包含了ResponseBody等, 后续补充</li>
 <li>Controller中设置Headers, 指定Content-Type/Accept
 <ul>
 <li>Springboot中Controller中的comsumes所指定的是HTTP客户端的Content-Type的内容, 默认application/x-www-form-urlencoded</li>
@@ -380,10 +397,10 @@
 - application/xml<br>
 <br>
 前后组合如下:<br>
-- 服务端使用Content-Type:"application/json"编码http响应body内容返回给前端；前端使用Content-Type:"application/json"解码http响应body内容。<br>
-- 服务端返回Response Content-Type:application/json，前端dataType不指定值。此时，解码http响应body内容，data类型是Object。<br>
-- 服务端不返回Response Content-Type:application/json，前端dataType指定值json。些时，解码http响应body内容，data类型是Object。<br>
-- 服务端不返回Response Content-Type:application/json，前端dataType不指定值"json"。此时，不能解码http响应body的json字符串，data类型是String。<br>
+- 服务端使用   Content-Type:"application/json"编码http响应body内容返回给前端；前端使用Content-Type:"application/json"解码http响应body内容。<br>
+- 服务端返回   Response Content-Type:application/json，前端dataType 不指定值 "json". 此时，解码http响应body内容，   data类型是Object。<br>
+- 服务端不返回 Response Content-Type:application/json，前端dataType 指定值   "json". 些时，解码http响应body内容，   data类型是Object。<br>
+- 服务端不返回 Response Content-Type:application/json，前端dataType 不指定值 "json". 此时，不能解码http响应body内容，data类型是String。<br>
 </p>
   <footer>
     <strong>HTTP回顾</strong>
@@ -397,7 +414,7 @@
 <h3 id="易混淆注解的对比">易混淆注解的对比</h3>
 <h4 id="component-bean-service-configurable">@Component @Bean @Service @Configurable</h4>
 <p>With this annotation, a class can be scaned manually or automaticlly</p>
-<p><code>@Bean</code>一般是调用第三方的</p>
+<p><code>@Bean</code>,</p>
 <p><code>@Component</code>与<code>@Service</code>没有区别, <code>@Service</code>还没想好, 是一个预留的注解定义</p>
 <p><code>@Configurable</code>是单例模式, 在启动时加载</p>
 <p><strong>@Resource @Autowired</strong></p>
@@ -452,62 +469,93 @@ While this fallback is convenient, IMHO it causes a lot of confusion, because pe
 增加成功与失败的handler</p>
 <h2 id="chapter-5">V. TRANSACTIONAL</h2>
 <hr>
-<ul>
-<li>跨多数据源, 调用各个资源服务, 各个Service的实现类有@DS(&ldquo;customer&rdquo;)注解指定数据源</li>
-<li>事务管理, 通过@DSTransactional 根据各个服务所指定的数据源进行切换</li>
-</ul>
-<p><strong>Propagation</strong>
-TODO</p>
+<h3 id="a-propagation">A. Propagation</h3>
 <ul>
 <li>事务传播, 需要时则加入传播的扩散要求<br>
 @Transactional(isolation = Isolation.SERIALIZABLE, propagation = Propagation.REQUIRES_NEW)</li>
 </ul>
-<p><strong>Isolation</strong>
-不同于&quot;传播规则&quot;是Spring提到的概念, 隔离级别这个概念是数据库事务自带的</p>
+<h3 id="b-isolation">B. Isolation</h3>
+<p>以下是 MySQL 事务隔离级别的简要场景及效果区别：</p>
+<h4 id="1-read-uncommitted">1. Read Uncommitted</h4>
+<p><strong>场景</strong>: 允许读取未提交的数据。<br>
+<strong>效果</strong>:</p>
+<ul>
+<li><strong>脏读</strong>: 可能发生，读取其他事务未提交的数据。</li>
+<li><strong>不可重复读</strong>: 可能发生，因为事务间可能修改已读取数据。</li>
+<li><strong>幻读</strong>: 可能发生，因为可能插入新数据。</li>
+</ul>
+<h3 id="2-read-committed">2. Read Committed</h3>
+<p><strong>场景</strong>: 只读取已提交的数据，避免读取未提交事务的内容。<br>
+<strong>效果</strong>:</p>
+<ul>
+<li><strong>脏读</strong>: 不会发生，保证读取的是已提交数据。</li>
+<li><strong>不可重复读</strong>: 可能发生，因为同一事务中重复读取时，数据可能被其他事务修改。</li>
+<li><strong>幻读</strong>: 可能发生，因为其他事务可能插入新记录。</li>
+</ul>
+<p><strong>Tips</strong></p>
+<p>不可重复读重点在于update和delete</p>
+<h4 id="3-repeatable-read-mysql默认">3. Repeatable Read (MySQL默认)</h4>
+<p><strong>场景</strong>: 保证同一事务中，读取的结果是固定的，即便其他事务修改了数据。<br>
+<strong>效果</strong>:</p>
+<ul>
+<li><strong>脏读</strong>: 不会发生。</li>
+<li><strong>不可重复读</strong>: 不会发生，事务中数据一致。</li>
+<li><strong>幻读</strong>: 通过<strong>间隙锁</strong>避免，查询范围内的数据是固定的。</li>
+</ul>
+<p><strong>Tips</strong></p>
+<p>该级别产生幻读的重点场景在于insert, 总的来说就是事务A对数据进行操作，事务B还是可以用insert插入数据的，因为使用的是行锁，这样导致的各种奇葩问题就是幻读，表现形式很多
+TODO: MySQL的间隙锁在开源代码中是否已经默认被应用</p>
+<h4 id="4-serializable">4. Serializable</h4>
+<p><strong>场景</strong>: 强制事务串行化，确保事务间完全隔离。<br>
+<strong>效果</strong>:</p>
+<ul>
+<li><strong>脏读</strong>: 不会发生。</li>
+<li><strong>不可重复读</strong>: 不会发生。</li>
+<li><strong>幻读</strong>: 不会发生，因为会对范围内的操作加锁，阻止插入或修改。</li>
+</ul>
+<h4 id="总结表格">总结表格</h4>
 <table>
 <thead>
 <tr>
-<th style="text-align:left">Isolation Level</th>
-<th style="text-align:left">脏读(Dirty Read)</th>
-<th style="text-align:left">不可重复读(Non Repeatable Read)</th>
-<th style="text-align:left">幻读(Phantom Read)</th>
+<th>Isolation Level</th>
+<th>脏读(Dirty Read)</th>
+<th>不可重复读(Non Repeatable Read)</th>
+<th>幻读(Phantom Read)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left">Read Uncommitted</td>
-<td style="text-align:left">Yes</td>
-<td style="text-align:left">Yes</td>
-<td style="text-align:left">Yes</td>
+<td>Read Uncommitted</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
 </tr>
 <tr>
-<td style="text-align:left">Read Committed</td>
-<td style="text-align:left">-</td>
-<td style="text-align:left">Yes</td>
-<td style="text-align:left">Yes</td>
+<td>Read Committed</td>
+<td>❌</td>
+<td>✅</td>
+<td>✅</td>
 </tr>
 <tr>
-<td style="text-align:left">Repeatable Read</td>
-<td style="text-align:left">-</td>
-<td style="text-align:left">-</td>
-<td style="text-align:left">Yes</td>
+<td>Repeatable Read</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
 </tr>
 <tr>
-<td style="text-align:left">Serializable</td>
-<td style="text-align:left">-</td>
-<td style="text-align:left">-</td>
-<td style="text-align:left">-</td>
+<td>Serializable</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
 </tr>
 </tbody>
 </table>
-<p>很多人容易搞混不可重复读和幻读，确实这两者有些相似. 但不可重复读重点在于update和delete, 而幻读的重点在于insert.</p>
-<p>总的来说幻读就是事务A对数据进行操作，事务B还是可以用insert插入数据的，因为使用的是行锁，这样导致的各种奇葩问题就是幻读，表现形式很多，就不列举了。</p>
-<p><strong>TIPs</strong>
+<h3 id="c-多数据源">C. 多数据源</h3>
 <div class="alert info ">
   <p>@DS 必须加在 @Transactional 对应的类或者方法上<br>
 如在 mapper中加了@DS，但是 @Transactional 加在 service 方法中，此时则会获取默认的datasource
 (因为在事务中已经获取了一次datasource的connection，而此时无DS注解)</p>
-</div></p>
+</div>
 
 
   
@@ -680,7 +728,7 @@ public class CombineServiceImpl implements CombineService {
   </div>
 </figure>
 
-<p><a href="%E7%BB%A7%E7%BB%AD%E6%95%B4%E7%90%86">TODO</a>:
+<p>[TODO]:
 MyBatis的手动切换, 后续再深入学习<br>
 And how to <code>DynamicDataSourceContextHolder.push()</code> and <code>DynamicDataSourceContextHolder.poll()</code>?</p>
 <h2 id="chapter-6">VI. JOB</h2>
@@ -710,7 +758,7 @@ NOTE: As of 6.1, RestClient offers a more modern API for synchronous HTTP access
 <hr>
 <p>ApplicationEvent Monitor
 module-bpm模块中有用到, 拿来主义, 上游入库后&quot;生产&quot;出下游库存就依靠这个监听者观察客户定制的BOM原料是否满足, 满足即可生产
-<a href="%E7%BB%A7%E7%BB%AD%E6%95%B4%E7%90%86">TODO</a>:</p>
+[TODO]:</p>
 <h2 id="chapter-9">IX. DAO MAPPER</h2>
 <hr>
 <h2 id="chapter-10">X. UTILS</h2>

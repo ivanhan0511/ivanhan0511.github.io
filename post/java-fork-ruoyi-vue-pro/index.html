@@ -325,7 +325,7 @@ But the stronger, the more complex. This post is the annotation for this project
         <li><a href="#a-controller">A. Controller</a>
           <ul>
             <li><a href="#1-input-validation">1. Input validation</a></li>
-            <li><a href="#2-outnput-convertor">2. Outnput convertor</a></li>
+            <li><a href="#2-output-convertor">2. Output convertor</a></li>
           </ul>
         </li>
         <li><a href="#b-service">B. Service</a>
@@ -432,6 +432,38 @@ But the stronger, the more complex. This post is the annotation for this project
 </li>
 </ol>
 <p>With the infra code-auto-generation, most backend and frontend codes can be generated. Very helpful and so handy</p>
+<p>基于现役SpringBoot业务流层面的全栈开发的经验, 制定出更优雅的代码设计规范</p>
+<ul>
+<li>设计初期, 后端概要/前端原型图 均不要太正式, 需要不断试错, 兼容前端表现(<em>基于源码尽可能少量修改</em>)与后端数据结构(<em>尽可能解耦</em>)的合理性</li>
+<li>Controller入参VO中的字段, 基本遵从DO中的设计, 直接传输ID即可
+<ul>
+<li>因为前端加载页面时, 就已经通过多个接口的simple-list获取了各种下拉框的数据</li>
+<li>提交时也就不需要<code>name</code>之类的input字符串数据, 后台再通过字符串查询blablabla. 而是直接提交其ID即可, 后端直接用</li>
+<li>本着创建与更新都采用同一套xxxSaveReqVO的原则</li>
+</ul>
+</li>
+<li>Service中, 只体现业务. 而需要CRUD的时候, 调用Mapper的方法
+<ul>
+<li>service中的数据流转, 视情况而定, VO / DTO / DO 均可以</li>
+<li>SQL事务, 需要做好规划
+<ul>
+<li>通用事务方法的抽象</li>
+<li>哪里添加事务注解</li>
+<li>获取数据时是否已经提交事务</li>
+<li>事务的隔离与传播, 是否运用得当</li>
+<li>事务调用的生命周期/context</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Mapper中, 做统一抽象, 例如<code>selectPage</code>, <code>selectByMobile</code>(而不是直接暴露<code>selectOne</code>), <code>deleteByIds</code>等
+<ul>
+<li>但需要控制mapper中的SQL join</li>
+<li>复杂查询都放在service中解耦, 分别简单查询</li>
+</ul>
+</li>
+<li>Controller返回的VO数据, 通过在controller中的private xxxBuilder方法, 使用stream流, 返回对应的字符串</li>
+</ul>
 <p><strong>可能需要大改ERP</strong>, 原因如下:</p>
 <ul>
 <li>定义的产品没有原料和成品之分</li>
@@ -469,28 +501,57 @@ But the stronger, the more complex. This post is the annotation for this project
 </ul>
 <h3 id="a-controller">A. Controller</h3>
 <p>[TODO]: 继续描述源码在前后端结合时, 互相传递的参数以及显示字段的设计思路</p>
+<p><strong>NOT</strong> the RESTful style, the **tridi</p>
 <h4 id="1-input-validation">1. Input validation</h4>
-<p><strong>NOT</strong> the RESTful style</p>
-<p>Btw, considering for the conveniece of frontend, some
-Good place to convert DO/DTO to VO. Especially with java.stream</p>
-<p>前后端传递的都是字典值, 方便服务和数据库直接存储使用</p>
-<p>删除?
-@RequestParam(&ldquo;file&rdquo;) MultipartFile[] submissions
-The files are not the request body, they are part of it and there is no built-in HttpMessageConverter that can convert the request to an array of MultiPartFile.</p>
-<p>You can also replace HttpServletRequest with MultipartHttpServletRequest, which gives you access to the headers of the individual parts.</p>
-<h4 id="2-outnput-convertor">2. Outnput convertor</h4>
-<p>前后端传递的都是字典值, 方便服务和数据库直接存储使用</p>
-<p>前端如何显示? 如下:</p>
+<p><strong>@InEnum &amp; @DictFormat</strong></p>
+<p><code>@InEnum</code>, 是程序枚举类约定好的, 不受普通用户在Admin Web管理的<br>
+<code>@DictFormat</code>, 是在Excel导入/导出时自动转化用的</p>
+<p>
+  
+    
+  
+  
+    
+  
+  
+  
+
+
+<figure class="highlight java language-java">
+  <figcaption>
+    
+      <span>validInput</span>
+    
+  </figcaption>
+  <table>
+    <tbody>
+      <tr>
+        <td class="gutter">
+          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre>
+        </td>
+        <td class="code">
+          <pre class="code-highlight language-java java"><code class="java">@Schema(description = &#34;管理后台 - Measure 图像绑定 Request VO&#34;)
+@Data
+public class MeasureBindPicReqVO {
+    @Schema(description = &#34;放大倍率&#34;, requiredMode = Schema.RequiredMode.REQUIRED, example = &#34;200&#34;)
+    @NotNull(message = &#34;放大倍率不能为空&#34;)
+    @InEnum(value = XxxEnum.class, message = &#34;xxx必须是 {value}&#34;)
+    private Integer magnification;
+}</code></pre>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+
+前后端传递的都是字典值, 方便服务和数据库直接存储使用</p>
+<h4 id="2-output-convertor">2. Output convertor</h4>
+<p><strong>getPage</strong></p>
 <ul>
-<li>
-<p>Like xxxPageRespVO, output the userId and userName at the same time, because it&rsquo;s bad to fetch each userName in the frontend table</p>
-</li>
-<li>
-<p>Like xxxRespVO, whether to output either the userId or userName at the same time, depends on the business. For this single object line data, frontend could fetch
-its detail by id easily</p>
-</li>
+<li>如果是姓名 / 产品名 等, 无论是分页查询还是通过ID单体查询, 各个字段都是字典数字的话, 前端二次轮询其字典对应的名称, 就消耗太大, 所以需要后端通过Java stream复杂组装</li>
+<li>如果是性别等通用字段, 输出也仍然是字典数值, 前端代码指定其字典类型, 通过字典接口从后端获取, 并转换为带有标签(成功/失败等)颜色标签文字</li>
 </ul>
-<p>TODO: 以下这段注解主要是为了Excel导出服务的, 参考java-spring.md文章
+<p><strong>Excel导出</strong>
 
   
     
@@ -689,17 +750,22 @@ Reason as below:
 <hr>
 <p>运营, 软文推广, 运维, 部署, 自动化测试, 自动化接口文档等</p>
 <h3 id="ci">CI</h3>
+<p>TODO</p>
 <h3 id="api-document">API Document</h3>
 <ul>
 <li><input disabled="" type="checkbox"> Swagger UI category, description and list</li>
 <li><input disabled="" type="checkbox"> With session token</li>
 </ul>
 <h3 id="deployment">Deployment</h3>
+<p>Temp use jar</p>
 <h4 id="docker">Docker</h4>
 <ul>
 <li><input disabled="" type="checkbox"> DockerCompose deployment in single server?</li>
 </ul>
 <h4 id="jar">JAR</h4>
+<p>.env.local
+.env.dev
+.env.pro</p>
 <h2 id="chapter-5">V. COMMON</h2>
 <hr>
 <p>理解源码的核心设计思路, 具体技术知识见java-spring.md</p>

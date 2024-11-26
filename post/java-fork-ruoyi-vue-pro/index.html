@@ -380,10 +380,11 @@ But the stronger, the more complex. This post is the annotation for this project
         <li><a href="#命名规范">命名规范</a></li>
       </ul>
     </li>
+    <li><a href="#vii-tmp">VII. TMP</a></li>
   </ul>
 </nav>
 
-<p>TIP: The most really important TECH cores, like design and architecture, service for BUSINESS.</p>
+<p>Tip: The most really important TECH cores, like design and architecture, service for BUSINESS.</p>
 <p>NO BEST, ONLY BETTER.</p>
 <h2 id="目录">目录</h2>
 <ul>
@@ -414,15 +415,20 @@ But the stronger, the more complex. This post is the annotation for this project
 <li>
 <p>尽管代码中有DO, 但并不采用DDD(领域驱动设计)!!!</p>
 </li>
+<li>
+<p>不使用RESTful style, 因为RESTful仍然有表达不明确的业务场景, 仍然需要使用传统&quot;动词&quot;来描述接口性质/意图, 且对团队要求较高, 一不小心就会破坏掉所谓的RESTful style</p>
+</li>
 </ol>
+<p><a href="https://mp.weixin.qq.com/s/4QvwyRH6Q1Ut4usYKRKpAA">写代码有这16个好习惯，可以减少80%非业务的BUG！</a></p>
 <h2 id="chapter-2">II. BUSINESS DESIGN</h2>
 <hr>
+<p>基于现役SpringBoot业务流层面的全栈开发的经验, 制定出更优雅的代码设计规范</p>
 <ol>
 <li>
 <p>Write down all the details of requirement seriously</p>
 </li>
 <li>
-<p>Draw UML(work flow)</p>
+<p>Draw UML(work flow)设计初期, 后端概要/前端原型图 均不要太正式, 需要不断试错, 兼容前端表现(<em>基于源码尽可能少量修改</em>)与后端数据结构(<em>尽可能解耦</em>)的合理性</p>
 </li>
 <li>
 <p>Designing the data structure and its relationship on the paper / iPad is the most important thing!</p>
@@ -432,81 +438,20 @@ But the stronger, the more complex. This post is the annotation for this project
 </li>
 </ol>
 <p>With the infra code-auto-generation, most backend and frontend codes can be generated. Very helpful and so handy</p>
-<p>基于现役SpringBoot业务流层面的全栈开发的经验, 制定出更优雅的代码设计规范</p>
+<h3 id="a-controller">A. Controller</h3>
+<p>[TODO]: 继续描述源码在前后端结合时, 互相传递的参数以及显示字段的设计思路</p>
+<h4 id="1-input-validation">1. Input validation</h4>
+<p><strong>入参VO中的字段</strong></p>
 <ul>
-<li>设计初期, 后端概要/前端原型图 均不要太正式, 需要不断试错, 兼容前端表现(<em>基于源码尽可能少量修改</em>)与后端数据结构(<em>尽可能解耦</em>)的合理性</li>
-<li>Controller入参VO中的字段, 基本遵从DO中的设计, 直接传输ID即可
-<ul>
+<li>基本遵从DO中的设计, 直接传输ID即可</li>
 <li>因为前端加载页面时, 就已经通过多个接口的simple-list获取了各种下拉框的数据</li>
 <li>提交时也就不需要<code>name</code>之类的input字符串数据, 后台再通过字符串查询blablabla. 而是直接提交其ID即可, 后端直接用</li>
 <li>本着创建与更新都采用同一套xxxSaveReqVO的原则</li>
 </ul>
-</li>
-<li>Service中, 只体现业务. 而需要CRUD的时候, 调用Mapper的方法
-<ul>
-<li>service中的数据流转, 视情况而定, VO / DTO / DO 均可以</li>
-<li>SQL事务, 需要做好规划
-<ul>
-<li>通用事务方法的抽象</li>
-<li>哪里添加事务注解</li>
-<li>获取数据时是否已经提交事务</li>
-<li>事务的隔离与传播, 是否运用得当</li>
-<li>事务调用的生命周期/context</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Mapper中, 做统一抽象, 例如<code>selectPage</code>, <code>selectByMobile</code>(而不是直接暴露<code>selectOne</code>), <code>deleteByIds</code>等
-<ul>
-<li>但需要控制mapper中的SQL join</li>
-<li>复杂查询都放在service中解耦, 分别简单查询</li>
-</ul>
-</li>
-<li>Controller返回的VO数据, 通过在controller中的private xxxBuilder方法, 使用stream流, 返回对应的字符串</li>
-</ul>
-<p><strong>可能需要大改ERP</strong>, 原因如下:</p>
-<ul>
-<li>定义的产品没有原料和成品之分</li>
-<li>产品的barCode给Mall使用是比较恰当的(Tip: barCode可以帮助Mall区分一部手机的颜色/内存等). 而对外的商品SPU/SKU由Mall定义</li>
-<li>注意, BtoC的Mall没有客户的概念, 只有C端用户而已</li>
-<li>而对于BtoB的ERP, 有客户的概念, 但却缺少商品Code的定义, 比如<code>hf001</code>, <code>盛趣点券</code>等</li>
-<li>另外, 结合现有业务产品线
-<ul>
-<li>背景:
-<ol>
-<li>门票类, BtoC, 不依赖上游, 平台在ERP生产入库, 供Mall使用. 而Mall中因为需要绑定虚拟身份的事情, 在Mall中做旁路</li>
-<li>手办类, BtoC, 依赖实体上游, 却(暂时)不用在系统中体现, 优先用Mall满足需求, 有进一步需求时再启用ERP支持</li>
-<li>充值类, BtoB, 依赖上游, 对下游提供接口, 其中比如<code>hf001</code>, <code>盛趣点券</code>等自定义码, 需要DIY</li>
-</ol>
-</li>
-<li>统筹:
-<ul>
-<li>ERP的销售订单入口
-<ul>
-<li>可以专供背景<code>3.</code>, 其余两项的入口在小程序Mall</li>
-<li>(暂时)不太需要在Controller中抽象通用的业务订单入口(指: 通过前端传递业务类别, 以区分调用哪种业务服务)</li>
-<li>盛趣/网龙/话费, 多种ToB产品, <strong>是否能通用抽象?</strong></li>
-</ul>
-</li>
-<li>ERP的产品定义
-<ul>
-<li><del>ERP的产品定义, 只需旁路增加<code>productNo</code>即可, 供下游使用, 与Mall无关</del> 偷懒使用<code>barCode</code>了, <strong>待定</strong></li>
-<li>(严重)依赖其<code>categoryId</code>进行区分&quot;原料&quot;or&quot;成品&quot;, 供&quot;生产监听服务&quot;生产/组装</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="a-controller">A. Controller</h3>
-<p>[TODO]: 继续描述源码在前后端结合时, 互相传递的参数以及显示字段的设计思路</p>
-<p><strong>NOT</strong> the RESTful style, the **tridi</p>
-<h4 id="1-input-validation">1. Input validation</h4>
 <p><strong>@InEnum &amp; @DictFormat</strong></p>
 <p><code>@InEnum</code>, 是程序枚举类约定好的, 不受普通用户在Admin Web管理的<br>
 <code>@DictFormat</code>, 是在Excel导入/导出时自动转化用的</p>
-<p>
+
   
     
   
@@ -544,12 +489,12 @@ public class MeasureBindPicReqVO {
   </table>
 </figure>
 
-前后端传递的都是字典值, 方便服务和数据库直接存储使用</p>
 <h4 id="2-output-convertor">2. Output convertor</h4>
 <p><strong>getPage</strong></p>
 <ul>
-<li>如果是姓名 / 产品名 等, 无论是分页查询还是通过ID单体查询, 各个字段都是字典数字的话, 前端二次轮询其字典对应的名称, 就消耗太大, 所以需要后端通过Java stream复杂组装</li>
-<li>如果是性别等通用字段, 输出也仍然是字典数值, 前端代码指定其字典类型, 通过字典接口从后端获取, 并转换为带有标签(成功/失败等)颜色标签文字</li>
+<li>如果是产品名(等文字类描述), 无论是分页查询还是通过ID单体查询, 如果传输数字, 依靠前端二次轮询其对应的名称(等文字类描述), 则消耗太大, 所以需要后端通过Java stream复杂组装</li>
+<li>如果是性别等通用字段, 输出也仍然是字典数值, 前端代码指定其字典类型, 通过字典接口从后端获取,<br>
+并转换为带有标签颜色的文字(<span class="highlight-text green">成功</span> / <span class="highlight-text red">失败</span>等)</li>
 </ul>
 <p><strong>Excel导出</strong>
 
@@ -591,6 +536,22 @@ public class ProductSpuRespVO {
 </p>
 <h3 id="b-service">B. Service</h3>
 <p>Just work for <strong>BUSINESS</strong> only</p>
+<ul>
+<li>Service中, 只体现业务. 而需要CRUD的时候, 调用Mapper的方法
+<ul>
+<li>service中的数据流转, 视情况而定, VO / DTO / DO 均可以</li>
+<li>SQL事务, 需要做好规划
+<ul>
+<li>通用事务方法的抽象</li>
+<li>哪里添加事务注解</li>
+<li>获取数据时是否已经提交事务</li>
+<li>事务的隔离与传播, 是否运用得当</li>
+<li>事务调用的生命周期/context</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <p>基本遵循源码自动生成的代码, 在良好的数据结构设计的基础上, 很多问题都能迎刃而解. 需要额外定制的几个参考用例, 如后文</p>
 <p>业务流主方法中, 尽量只描述几个清晰的动作, 通用大部分业务流程, 有差异的处理流程, 放在前置or后置的<code>handler</code>中
 
@@ -694,19 +655,13 @@ public Long createSaleOrder(ErpSaleOrderSaveReqVO createReqVO) {
 <p>module-bpm模块中有用到, 拿来主义, 上游入库后&quot;生产&quot;出下游库存就依靠这个监听者观察客户定制的BOM原料是否满足, 满足即可生产
 [TODO]:</p>
 <h3 id="c-dao-mapper">C. DAO Mapper</h3>
-<p>以下记录暂且留存, 是SpringBoot框架一路走来的思路变化
+<p>曾经我是拒绝的
 <blockquote>
   <p>
-**JUST** use MyBatisPLus maven and use default CRUD methods.  
-But **REFUSE** to use `QueryWrapper`, use MyBatis' XML mapper.
-
-Reason as below:
-- IService和BaseMapper中"充分利用"了Java新规定中Interface可以有default的用法, 基本的CRUD确实不用重复写了
+- **JUST** use MyBatisPLus maven and use default CRUD methods.  
+- **REFUSE** to use `QueryWrapper`, only use MyBatis' XML mapper.
 - MybatisPlus的QueryWrapper越看越像Python SQLAlchemy这类ORM, 学习成本高, 且一旦语句优化不得当, 会造成性能损失
-- 性能和稳定性等不稳定因素越来越多, 比如一旦手动干预, 很多所谓的"便利"瞬间全无, 还是得依靠MyBatis
 - 按照MyBatis写XML更像原生SQL, 熟练运用SQL是一件愉快的事情
-
-**非**分布式数据库, 不推荐使用雪花算法, 使用数据库自增ID即可, 涉及到分布式了再说
 </p>
   <footer>
     <strong></strong>
@@ -717,6 +672,66 @@ Reason as below:
     
   </footer>
 </blockquote></p>
+<p>真香打脸
+<blockquote>
+  <p>
+- Mapper中, 做统一抽象, 例如`selectPage`, `selectByMobile`, 而不是直接暴露`selectOne`
+- 需要控制mapper中的SQL join(如下文)
+- 复杂业务都放在service中解耦, 各个业务尽量减少连接次数, 批量查询, stream / mapper / set 拼接, 批量updateOrInsert
+</p>
+  <footer>
+    <strong></strong>
+    
+      
+        <cite></cite>
+      
+    
+  </footer>
+</blockquote></p>
+<p><a href="https://www.cnblogs.com/youmingDDD/p/11921187.html">MySQL多次单表查询和多表联合查询</a></p>
+<blockquote>
+<p>Tip:不建议执行三张表以上的多表联合查询
+对数据量不大的应用来说，多表联合查询开发高效，但是多表联合查询在表数据量大，并且没有索引的时候，如果进行笛卡儿积，那数据量会非常大，sql执行效率会非常低</p>
+<p>多次单表查询在service层进行合并好处：
+1、缓存效率更高,许多应用程序可以方便地缓存单表查询对应的结果对象。如果关联中的某个表发生了变化，那么就无法使用查询缓存了，而拆分后，如果某个表很少改变，那么基于该表的查询就可以重复利用查询缓存结果了。
+2、多表信息联合的列表页面分页显示，只需要显示一部分的数据，如果是多表联合查询那要把所有数据联结查出来再执行limit，如果是多次单表查询，先对单表进行筛选，先执行limit再与其余表去关联，数据量会大大减小
+3、如果数据库没有进行读写分离（主从备份），在并发量高的时候，由于写表会加排他锁，把多表联合查询改成单表查询后锁的粒度变小，减少了锁的竞争
+4、在数据量变大之后，普遍会采用分库分表的方法来缓解数据库的压力，采用单表查询比多表联合查询更容易进行分库，不需要对sql语句进行大量的修改，更易扩展.分库分表的中间件一般对跨库join都支持不好
+5、查询本身效率也可能会有所提升。查询 id 集的时候，使用 IN（）代替关联查询，可以让 MySQL 按照 ID 顺序进行查询，这可能比随机的关联要更高效。
+6、业务高速增长时，数据库作为最底层，最容易遇到瓶颈，单机数据库计算资源很贵，数据库同时要服务写和读，都需要消耗CPU，为了能让数据库的吞吐变得更高，
+而业务又不在乎那几百微妙到毫秒级的延时差距，业务会把更多计算放到service层做，毕竟计算资源很好水平扩展，数据库很难啊，这是一种重业务，轻DB的架构
+7、可以减少冗余记录的查询，在应用层做关联查询，意味着对于某条记录应用只需要查询一次，而在数据库中做关联查询，则可能需要重复地访问一部分数据。
+更进一步，这样做相当于在应用中实现了哈希关联，而不是使用 MySQL 的嵌套循环关联。某些场景哈希关联的效率要高很多。</p>
+<p>多次单表查询在service层进行合并缺点：
+1、需要进行多次的数据库连接
+2、代码更复杂</p>
+<p>总结：
+个人觉得还是做多次单表查询更好，更易扩展，当然数据量不大时，直接联合查询开发更方便</p>
+</blockquote>
+<p><a href="https://cloud.tencent.com/developer/article/1443320">为什么mysql不建议执行超过3表以上的多表关联查询</a></p>
+<blockquote>
+<p>简单地，例如分类和商品, 或者部门和员工, 一对多, 可以对每个表进行一次单表查询，然后将结果在应用程序中进行关联。例如，下面这个查询：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">select</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">from</span> <span style="color:#a6e22e">tag</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">join</span> <span style="color:#a6e22e">tag_post</span> <span style="color:#a6e22e">on</span> <span style="color:#a6e22e">tag_post</span>.<span style="color:#a6e22e">tag_id</span><span style="color:#f92672">=</span><span style="color:#a6e22e">tag</span>.<span style="color:#a6e22e">id</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">join</span> <span style="color:#a6e22e">post</span> <span style="color:#a6e22e">on</span> <span style="color:#a6e22e">tag_post</span>.<span style="color:#a6e22e">post_id</span><span style="color:#f92672">=</span><span style="color:#a6e22e">post</span>.<span style="color:#a6e22e">id</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">where</span> <span style="color:#a6e22e">tag</span>.<span style="color:#a6e22e">tag</span><span style="color:#f92672">=</span><span style="color:#960050;background-color:#1e0010">’</span><span style="color:#a6e22e">mysql</span><span style="color:#960050;background-color:#1e0010">’</span>;
+</span></span></code></pre></div><p>可以分解成下面这些查询来代替：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">Select</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">from</span> <span style="color:#a6e22e">tag</span> <span style="color:#a6e22e">where</span> <span style="color:#a6e22e">tag</span><span style="color:#f92672">=</span><span style="color:#960050;background-color:#1e0010">’</span><span style="color:#a6e22e">mysql</span><span style="color:#960050;background-color:#1e0010">’</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Select</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">from</span> <span style="color:#a6e22e">tag_post</span> <span style="color:#a6e22e">where</span> <span style="color:#a6e22e">tag_id</span><span style="color:#f92672">=</span><span style="color:#ae81ff">1234</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Select</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">from</span> <span style="color:#a6e22e">post</span> <span style="color:#a6e22e">where</span> <span style="color:#a6e22e">id</span> <span style="color:#66d9ef">in</span>(<span style="color:#ae81ff">123</span>,<span style="color:#ae81ff">456</span>,<span style="color:#ae81ff">567</span>,<span style="color:#ae81ff">9989</span>,<span style="color:#ae81ff">8909</span>);
+</span></span></code></pre></div><p>为什么会这样做呢？原本一条查询，这里却变成了多条查询，返回结果又是一模一样。</p>
+<p>事实上，用分解关联查询的方式重构查询具有如下优势：</p>
+<ol>
+<li>让缓存的效率更高。 许多应用程序可以方便地缓存单表查询对应的结果对象。另外对于MySQL的查询缓存来说，如果关联中的某个表发生了变化，那么就无法使用查询缓存了，而拆分后，如果某个表很少改变，那么基于该表的查询就可以重复利用查询缓存结果了。</li>
+<li>将查询分解后，执行单个查询可以减少锁的竞争。</li>
+<li>在应用层做关联，可以更容易对数据库进行拆分，更容易做到高性能和可扩展。</li>
+<li>查询本身效率也可能会有所提升</li>
+<li>可以减少冗余记录的查询。</li>
+<li>更进一步，这样做相当于在应用中实现了哈希关联，而不是使用MySQL的嵌套环关联，某些场景哈希关联的效率更高很多。</li>
+</ol>
+</blockquote>
+<p><a href="https://www.zhihu.com/question/56236190">《阿里巴巴JAVA开发手册》里面写超过三张表禁止join 这是为什么？这样的话那sql要怎么写？</a></p>
+<p><a href="https://www.zhihu.com/question/68258877">MySQL多表关联查询效率高点还是多次单表查询效率高，为什么？</a></p>
 <h4 id="1-multiple-db">1. Multiple DB</h4>
 <p><strong>Settings</strong></p>
 <ul>
@@ -837,6 +852,36 @@ Druid是淘宝选用的, 高并发的情况会适用一些</p>
 <h4 id="2-登录方式有哪些">2. 登录方式有哪些</h4>
 <h4 id="3-permission权限设置-部门数据隔离">3. permission权限设置, 部门数据隔离</h4>
 <p>PermissionServiceImpl</p>
+<p>基于RBAC0模型，增加了对角色的一些限制：角色互斥、基数约束、先决条件角色等。</p>
+<p>角色互斥：同一用户不能分配到一组互斥角色集合中的多个角色，互斥角色是指权限互相制约的两个角色。
+案例：请款系统中一个用户不能同时被指派给申请角色和审批员角色。</p>
+<p>基数约束：一个角色被分配的用户数量受限，它指的是有多少用户能拥有这个角色。
+案例：一个角色专门为公司CEO创建的，那这个角色的数量是有限的。</p>
+<p>先决条件角色：指要想获得较高的权限，要首先拥有低一级的权限。
+案例：先有副总经理权限，才能有总经理权限。</p>
+<p>运行时互斥：例如，允许一个用户具有两个角色的成员资格，但在运行中不可同时激活这两个角色，
+案例：同一个用户拥有多个角色，角色的权限有重叠，以较大权限为准。</p>
+<p><strong>岗位权限与角色权限有什么不同</strong></p>
+<p>你可能没理解透彻，这里的【灵活】是可以解决实际问题的，从组织架构上来说，岗位&gt;角色（成员）</p>
+<p>举个例子：</p>
+<p>公司新增【销售经理】这个岗位，计划招20个【销售经理】，</p>
+<p>1、第一步，新建岗位【销售经理】，配置该岗位的使用权限</p>
+<p>2、开始招人，人员入职，新建员工信息，配置员工（角色）权限，此时就可以直接引用【销售经理】岗的配置权限，入职一个，引用一次，方便快捷</p>
+<p>3、当公司想关闭某位【销售经理】的一些系统权限时，那么，单独配置角色权限的优势就显现了出来，可以直接找到该角色，关闭需要关闭的权限即可</p>
+<p>岗位和角色的区别是，岗位是一个被引用者（模版），角色是使用者（应用），单个角色的变动不影响岗位原有的配置，不会影响到其他使用者或者后来使用者；并且权限结构与组织结构保持一致性</p>
+<p>看你描述中的论证逻辑是</p>
+<hr>
+<p>因为岗位的权限跟角色都是需要在创建的时候配置的</p>
+<p>因为角色权限能够跟岗位权限一样去做继承</p>
+<p>所以“岗位”跟“角色”的本质是“一样”。</p>
+<hr>
+<p>这是对三段论的错误应用，因为第二条跟第一条没有逻辑关系。</p>
+<p>岗位是这个用户的审批关系以及组织层级关系的体现，对应于物理上的组织架构并且有较严格的上下级关系，公司没有前台小姐姐就不会去设置“前台行政”这个“岗位”，在软件系统的应用中主要体现在OA审批流上，按岗位来判断流程节点的处理人是OA审批流一个常见场景；</p>
+<p>角色是体现这个用户能够做什么功能，在软件系统中就是用户可以看到哪些功能按钮跟页面。功能做出来后没有对应的人去使用那你可以不给这个功能设置角色。</p>
+<p>能够体现差异的场景：</p>
+<p>（1）财务可以没有研发部的角色权限，但是他/她能够在研发部的经费审批流程进行审核。</p>
+<p>（2）大多数软件都会内置“系统管理员”“admin”这样的角色，但很少公司会为每一个软件系统设置一个这样的岗位，小公司甚至直接就没有这个岗位没有人拥有这个角色的账号。</p>
+<p>（3）用户A要填行政的每日考勤又要填人事的面试登记，但不涉及流程审批，这个可以直接就不设定“岗位”只给用户A设置一个行政角色跟一个人事角色。</p>
 <h2 id="chapter-6">VI. APPENDIX</h2>
 <hr>
 <p>摘抄自网络, 不一定合理, 仅保存一些文字, 以便以后少写一些文字</p>
@@ -855,7 +900,7 @@ Druid是淘宝选用的, 高并发的情况会适用一些</p>
 <li>Service/DAO层方法命名规约
 <ul>
 <li>获取单个对象的方法用get做前缀</li>
-<li>获取多个对象的方法用list做前缀</li>
+<li><del>获取多个对象的方法用list做前缀</del></li>
 <li>获取统计值的方法用count做前缀</li>
 <li>插入的方法用save/insert做前缀</li>
 <li>删除的方法用remove/delete做前缀</li>
@@ -870,6 +915,54 @@ Druid是淘宝选用的, 高并发的情况会适用一些</p>
 <li>POJO是DO/DTO/BO/VO的统称, 禁止命名成xxxPOJO</li>
 </ul>
 </li>
+</ul>
+<h2 id="vii-tmp">VII. TMP</h2>
+<hr>
+<p><strong>可能需要大改ERP</strong>, 原因如下:</p>
+<ul>
+<li>定义的产品没有原料和成品之分</li>
+<li>产品的barCode给Mall使用是比较恰当的(Tip: barCode可以帮助Mall区分一部手机的颜色/内存等). 而对外的商品SPU/SKU由Mall定义</li>
+<li>注意, BtoC的Mall没有客户的概念, 只有C端用户而已</li>
+<li>而对于BtoB的ERP, 有客户的概念, 但却缺少商品Code的定义, 比如<code>hf001</code>, <code>盛趣点券</code>等</li>
+<li>另外, 结合现有业务产品线
+<ul>
+<li>背景:
+<ol>
+<li>门票类, BtoC, 不依赖上游, 平台在ERP生产入库, 供Mall使用. 而Mall中因为需要绑定虚拟身份的事情, 在Mall中做旁路(不使用类别作限制, 在产品中添加<code>needVirtualIdentity</code>)</li>
+<li>手办类, BtoC, 依赖实体上游, 却(暂时)不用在系统中体现, 优先用Mall满足需求, 有进一步需求时再启用ERP支持</li>
+<li>抽赏类, BtoC, 依赖实体上游, 系统管理手办及配赏, 优先用Mall满足需求, 有进一步需求时再启用ERP支持</li>
+<li>充值类, BtoB, 依赖上游, 对下游提供接口, 其中比如<code>hf001</code>, <code>盛趣点券</code>等自定义码, 需要DIY</li>
+</ol>
+</li>
+<li>统筹:
+<ul>
+<li>ERP的销售订单入口
+<ul>
+<li>可以专供背景<code>4.</code>, 其余三项的入口在小程序Mall</li>
+<li>(暂时)不太需要在Controller中抽象通用的业务订单入口(指: 通过前端传递业务类别, 以区分调用哪种业务服务)</li>
+<li>盛趣/网龙/话费, 多种toB产品, 前端分流, 后端</li>
+</ul>
+</li>
+<li>ERP的产品定义
+<ul>
+<li><del>ERP的产品定义, 只需旁路增加<code>productNo</code>即可, 供下游使用, 与Mall无关</del> 偷懒使用<code>barCode</code>了, <strong>待定</strong></li>
+<li><del>(严重)依赖其<code>categoryId</code>进行区分&quot;原料&quot;or&quot;成品&quot;,</del> 产品中增加字段,区分原料还是成品, 供&quot;生产监听服务&quot;生产/组装</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>源码数据隔离的需求越来越大了</strong></p>
+<p>搞定其原理, 测试数据隔离</p>
+<ul>
+<li>创展(Mall)</li>
+<li>星尚(Mall)</li>
+<li>智渔(ERP)</li>
+<li>答案(ERP)</li>
+<li>MMCZ(Measure)</li>
+<li>佰娱(Kuji)</li>
 </ul>
               
 

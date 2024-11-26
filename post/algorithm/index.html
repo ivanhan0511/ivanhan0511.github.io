@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <script type="application/ld+json">
+
+{  
+  "@context":"http://schema.org",
+  "@type":"Website",
+  "@id":"https:\/\/ivanhan0511.github.io\/",
+  "author": {
+    "@type": "Person",
+    "name": "Ivan Han",
+    
+    "image": "https://www.gravatar.com/avatar/0cac315e34e792213d5fa694dc39777b"
+    
+  },
+  "name":"Ivan Blog",
+  "description":"\u003cp\u003eThis is a custom summary and does \u003cem\u003eNOT\u003c\/em\u003e appear in the post.\u003c\/p\u003e",
+  "url":"https:\/\/ivanhan0511.github.io\/post\/algorithm\/",
+  "keywords":"[algorithm, Ivan, SoftwareEngineer, C\/C\u002b\u002b, Java, Coffee, Bass, Bicycle, Badminton]"
+}
+
+</script>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.117.0 with theme Tranquilpeak 0.5.3-BETA">
+<meta name="author" content="Ivan Han">
+<meta name="keywords" content="algorithm, Ivan, SoftwareEngineer, C/C&#43;&#43;, Java, Coffee, Bass, Bicycle, Badminton">
+<meta name="description" content="This is a custom summary and does NOT appear in the post.">
+
+
+<meta property="og:description" content="This is a custom summary and does NOT appear in the post.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ALGORITHM">
+<meta name="twitter:title" content="ALGORITHM">
+<meta property="og:url" content="https://ivanhan0511.github.io/post/algorithm/">
+<meta property="twitter:url" content="https://ivanhan0511.github.io/post/algorithm/">
+<meta property="og:site_name" content="Ivan Blog">
+<meta property="og:description" content="This is a custom summary and does NOT appear in the post.">
+<meta name="twitter:description" content="This is a custom summary and does NOT appear in the post.">
+<meta property="og:locale" content="en-us">
+
+  
+    <meta property="article:published_time" content="2024-11-27T00:04:57">
+  
+  
+    <meta property="article:modified_time" content="2024-11-27T00:04:57">
+  
+  
+  
+    
+      <meta property="article:section" content="Algorithm">
+    
+  
+  
+    
+      <meta property="article:tag" content="Algorithm">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+  <meta name="twitter:site" content="@ivanhan0511">
+
+
+  <meta name="twitter:creator" content="@ivanhan0511">
+
+
+
+
+
+
+  <meta property="og:image" content="https://www.gravatar.com/avatar/0cac315e34e792213d5fa694dc39777b?s=640">
+  <meta property="twitter:image" content="https://www.gravatar.com/avatar/0cac315e34e792213d5fa694dc39777b?s=640">
+
+
+
+
+  <meta property="og:image" content="https://ivanhan0511.github.io/image-2.png">
+  <meta property="twitter:image" content="https://ivanhan0511.github.io/image-2.png">
+
+
+  <meta property="og:image" content="https://ivanhan0511.github.io/image-1.png">
+  <meta property="twitter:image" content="https://ivanhan0511.github.io/image-1.png">
+
+
+    <title>ALGORITHM</title>
+
+    <link rel="icon" href="https://ivanhan0511.github.io/favicon.png">
+    
+
+    
+
+    <link rel="canonical" href="https://ivanhan0511.github.io/post/algorithm/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha512-H9jrZiiopUdsLpg94A333EfumgUBpO9MdbxStdeITo+KEIMaNfHNvwyjjDJb+ERPaRS6DpyRlKbvPUasNItRyw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    
+    
+    <link rel="stylesheet" href="https://ivanhan0511.github.io/css/style-h6ccsoet3mzkbb0wngshlfbaweimexgqcxj0h5hu4h82olsdzz6wmqdkajm.min.css" />
+    
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="4">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://ivanhan0511.github.io/" aria-label="Go to homepage">Ivan Blog</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://ivanhan0511.github.io/#about" aria-label="Open the link: /#about">
+    
+    
+    
+      
+        <img class="header-picture" src="https://www.gravatar.com/avatar/0cac315e34e792213d5fa694dc39777b?s=90" alt="Author&#39;s picture" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="4">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://ivanhan0511.github.io/#about" aria-label="Read more about the author">
+          <img class="sidebar-profile-picture" src="https://www.gravatar.com/avatar/0cac315e34e792213d5fa694dc39777b?s=110" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">Ivan Han</h4>
+        
+          <h5 class="sidebar-profile-bio">I need <strong>slow down</strong></h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://ivanhan0511.github.io/" title="Home">
+    
+      <i class="sidebar-button-icon fas fa-lg fa-home" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://ivanhan0511.github.io/categories" title="Categories">
+    
+      <i class="sidebar-button-icon fas fa-lg fa-bookmark" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">Categories</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://ivanhan0511.github.io/tags" title="Tags">
+    
+      <i class="sidebar-button-icon fas fa-lg fa-tags" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">Tags</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://ivanhan0511.github.io/archives" title="Archives">
+    
+      <i class="sidebar-button-icon fas fa-lg fa-archive" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">Archives</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://ivanhan0511.github.io/#about" title="About">
+    
+      <i class="sidebar-button-icon fas fa-lg fa-question" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">About</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/ivanhan0511" target="_blank" rel="noopener" title="GitHub">
+    
+      <i class="sidebar-button-icon fab fa-lg fa-github" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://stackoverflow.com/users/14423790/ivan-han" target="_blank" rel="noopener" title="Stack Overflow">
+    
+      <i class="sidebar-button-icon fab fa-lg fa-stack-overflow" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">Stack Overflow</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://ivanhan0511.github.io/index.xml" title="RSS">
+    
+      <i class="sidebar-button-icon fas fa-lg fa-rss" aria-hidden="true"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+  <div class="post-header-cover
+              text-center
+              post-header-cover--full"
+       style="background-image:url('/image-2.png')"
+       data-behavior="4">
+    
+  </div>
+
+
+      <div id="main" data-behavior="4"
+        class="hasCover
+               hasCoverMetaOut
+               hasCoverCaption">
+        <article class="post" id="top">
+          
+            <span class="post-header-cover-caption caption">A beautiful image</span>
+          
+          
+            <div class="post-header main-content-wrap text-center">
+  
+    <h1 class="post-title">
+      ALGORITHM
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time datetime="2024-11-27T00:04:57&#43;08:00">
+        
+  
+  
+  
+  
+    November 27, 2024
+  
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://ivanhan0511.github.io/categories/algorithm">Algorithm</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown">
+            <div class="main-content-wrap">
+              <p>This is a custom summary and does <em>NOT</em> appear in the post.</p>
+<h1 id="table-of-contents">Table of Contents</h1>
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#Ê’Ê½">Éè¼Æ·¶Ê½</a></li>
+            <li><a href="#Ï¸">ÏêÏ¸½âÎö</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+<p>×÷Õß£º¹ù¾¸
+Á´½Ó£ºhttps://www.zhihu.com/question/562037084/answer/2730259900
+À´Ô´£ºÖªºõ
+Öø×÷È¨¹é×÷ÕßËùÓÐ¡£ÉÌÒµ×ªÔØÇëÁªÏµ×÷Õß»ñµÃÊÚÈ¨£¬·ÇÉÌÒµ×ªÔØÇë×¢Ã÷³ö´¦¡£</p>
+<p>ÎÒ¾Í·Ç³£Ï²»¶Ð´ stream£¬²¢ÇÒÒªÇóÎÒµÄÏÂÊôÒ²¾¡Á¿Ð´ stream¡£</p>
+<p>for Ñ­»·Àï¸´ÔÓµÄ³¬¹ý 5 ÐÐµÄÂß¼­£¬ÐèÒªµ¥¶ÀÐ´º¯Êý£¬ËùÒÔÒ²²»»áÔÊÐíÔÚ map ÀïÐ´³¬¼¶¸´ÔÓµÄ for µÄÂß¼­¡£³¬¹ýÕâÐ©ÐÐÊýµÄ´úÂë¶Î£¬¼´±ãÐ´ÔÚ for Ñ­»·Àï£¬Ê¹µÃÒ»¸öº¯ÊýÀïÒ»´ó¶Ñ for Ñ­»·£¬Í¬Ñù²»ºÃ¶Á¡£ËùÒÔÎÒ¸üÍÆ¼öº¯Êý¶à£¬¶øÃ¿¸öº¯ÊýÐÐÊýÉÙ¡£</p>
+<p>ÖÁÓÚÎªÊ²Ã´ÍÆ¼ö stream£¬ÎÒ¾õµÃ stream ·Ç³£ÊÊºÏ³éÏóË¼Î¬È¥½â¾öÒµÎñ£¬¶øÇÒÎÒÃÇ**¾ÍËã×ö** CRM£¬ERP µÈÒµÎñÏµÍ³£¬ÎÒ£¬ÖÁÉÙÎÒ×Ô¼º£¬¶ÔÔËÐÐÖÐµÄËã·¨¸´ÔÓ¶ÈºÍ<a href="https://zhida.zhihu.com/search?q=¿%D5%BC%E4%B8%B4%D4%D3¶%C8%26zhida_source=entity&amp;is_preview=1">¿Õ¼ä¸´ÔÓ¶È</a>¶¼ÊÇºÜ¿´ÖØµÄ£¨²¢ÇÒÎÒÃÇ²»ÔÊÐí MySQL µÄ join£©¡£ËùÒÔ¾­³£ÔÚÒµÎñÂß¼­ÖÐÓÃÊý×é£¬¹þÏ£±í£¬Ê÷£¬¶ÔÎÒÀ´Ëµ£¬ºó¶ËµÄÊý¾Ý¶¼ÊÇ¸÷ÖÖ map filter distinct µÈ³éÏó¶øÀ´µÄ£¬¶øÇÒÐ´ÆðÀ´ºÜÓÐÊýÑ§+³éÏó+Âß¼­Ë¼Î¬¡£ÕâÒ»µãÉÏ£¬ÎÒ·Ç³£Ï²»¶ stream¡£²¢ÇÒ stream µÄÒ»Ð©ÌØÐÔÒ²·Ç³£ºÃÓÃ£¬±ÈÈç±£³ÖÔ­ÓÐµÄË³Ðò¡£</p>
+<p>¿öÇÒÎÒ·Ç³£Ï²»¶º¯ÊýÊ½µÄË¼Î¬£¬ÎÞÂÛÊÇÔÚÒµÎñ¿ª·¢£¬»¹ÊÇ AI£¬»¹ÊÇ²ßÂÔ¿ª·¢£¬»¹ÊÇÔËÎ¬¸÷¸öÁìÓò£¬ÉõÖÁµ½¼Ü¹¹£¬º¯ÊýÊ½µÄË¼Î¬Ò²·Ç³£ÓÐÓÃ£¬ÉõÖÁÊÇ·Ç³£ÓÐÒâÒåµÄ¡£±ÈÈç serverless£¬ÓÐÃ»ÓÐÏë¹ý£¬ÔÚµ×²ãÂß¼­ÉÏ£¬ÕâÁ½×ÅÖ®¼äÓÐ¹²Í¬Ö®´¦ÄØ£¿Linux µÄ terminal µÄ pipeline£¬ÆäÊµÒ²ºÍ stream ºÜÏñ¡£</p>
+<p>ÕâÊÇÎÒÏ²»¶ÓÃ stream µÄÂß¼­¡£</p>
+<p>&mdash;&mdash;&ndash; ²¹³äµÄ·Ö¸îÏß &mdash;&mdash;&mdash;&ndash;</p>
+<p>ÎÒÖ®Ç°Ã»ÓÐÌí¼Ó¸ü¶àµÄÀý×ÓµÄÔ­ÒòÊÇ£¬µÚÒ»ÎÒ²»ÖªµÀÓÐÃ»ÓÐÈË¿´£¬µÚ¶þÎÒ¿´ÆäËûµÄ»Ø´ðÈÏÍ¬Õâ¸öµÀÀíµÄ¾Í»áÀí½â£¬²»ÈÏÍ¬µÄÒ²ÎÞËùÎ½£¬µ«ÊÇ¿´µ½×î½üµÄÆÀÂÛ£¬¶øÇÒÒ²ÓÐ²»ÉÙÈËµãÁËÔÞºÍÏ²»¶£¬ÎÒ¾õµÃÓÐ±ØÒªÒª²¹³äÒ»ÏÂ¡£</p>
+<p>ÕâÀïÓÐÒ»¸öÕùÒéÊÇ£¬MySQL ÎÒÃÇ²»ÔÊÐí join£¬ÔÚÒ»Ð©¸´ÔÓ³¡¾°ÏÂ£¬ÊµÔÚ²»ÐÐ£¬¿ÉÒÔÏÈÃãÇ¿ join£¬µ«ÊÇÎªÊ²Ã´²»ÔÊÐí£¬ÒòÎªµ±·þÎñ×ö²ð·ÖµÄÊ±ºò£¬ÕâÐ© join ÊÇ×îÂé·³×îÓÐÎÊÌâµÄ£¬»ú·¿²»ÔÚÒ»¸öµØ·½£¬Êý¾Ý¿âÒ²ÊÇ±È½ÏÄÑÎ¬»¤µÄ¡£ÎÒÖ°ÒµÉúÑÄ10¼¸Äê£¬join µÄÇé¿ö·Ç³£ÉÙ£¬¼´±ãÊÇÒµÎñ¸´ÔÓµÄÇé¿ö¡£ÄÇÃ´ÏÂÃæÎÒÀ´¸ø´ó¼Ò½²½âÒ»ÏÂ¼ÆËã»ú»ù´¡¿Î¡£¡£¡£</p>
+<p>²»¹ýÖªºõ¿Ï¶¨»áÓÐÈËÖÊÒÉ¸÷ÖÖ£¬Ã»°ì·¨£¬ËäÈ»ÎÒºÜÌÖÑá±³¾°½éÉÜ£¬µ«ÊÇ¡£¡£°¥¡£¡£ÎÒÔÚ´ó³§¹¤×÷½«½ü10Äê£¬´ó²¿·Ö¶¼ÊÇ´´ÒµµÄÊ±ºò¾ÍÔÚ£¬×î¶à´øÈË30ÈË£¬ÔÚºËÐÄ²¿ÃÅ×öºËÐÄÒµÎñ£¬¸ß¼¶¿ª·¢£¬¼Ü¹¹Ê¦£¬¼¼Êõ¹ÜÀí£¬Éæ¼°BºÍC»¹ÓÐAI Ops£¬web3 ¶¼Ïà¹Ø¡£ÎÒÒ²ÊÇBÕ¾UP£¬ËäÈ»¸ü¶àÊÇ×öÉãÓ°ºÍÉú»îµÄ£¬ÎÒÂ¶Á³£¬Äã²»Â¶Á³·ÖÏí£¬Ò²Ã»É¶ºÃËµµÄÁË¡£¶øÇÒÎÒÆ½Ê±Ò²ºÜµÍµ÷²»ÔÚÍøÉÏÉæ¼°¼¼ÊõÏà¹ØµÄ¶«Î÷£¬´æÔÚÍøÉÏµÄ¼¼ÊõÄÚÈÝ²»¶à¡£</p>
+<p><a href="https://link.zhihu.com/?target=https%3A//www.bilibili.com/video/BV1zF411x7NR/">»¹ÊÇ´ÇµôÁËÄêÐ½°ÙÍòµÄ¹¤×÷£¬¹þ¹þ_ßÙÁ¨ßÙÁ¨_bilibiliwww.bilibili.com/video/BV1zF411x7NR/<img src="https://pic4.zhimg.com/v2-e3faae6bb6f504b77ada3f7485e33315_180x120.jpg" alt="img"></a></p>
+<p>&mdash;&mdash;&ndash; ¿´µÃ¶®¾Í¿´µÃ¶®£¬¿´²»¶®¾Í¿´²»¶®µÄ²¹³äµÄ·Ö¸îÏß &mdash;&mdash;&mdash;&ndash;</p>
+<p>ÎªÊ²Ã´ÎÒÖ®Ç°Ëµ stream ·Ç³£ºÃÓÃ£¬ÎÒ¾õµÃ´ó²¿·Ö³õ¼¶³ÌÐòÔ±»áÈÏÎªÖ»ÊÇÐ´·¨µÄÇø±ð£¬¶øÎÒÈÏÎª×îÖØÒªµÄÊÇË¼Â·µÄÎÊÌâ£¬´ó²¿·ÖÈË×öÒµÎñÈ·ÊµÊÇ CRUD£¬²¢ÇÒ£¬Ò²²»¿¼ÂÇ¼Ü¹¹ºÍÐÔÄÜ£¬Ò»¸ö¼òµ¥µÄ MySQL join£¬ÒìµØ»ú·¿¼æÈÝ£¬¾ÍÈÃºÜ¶àÖ»×öÒµÎñ¿ª·¢µÄ³ÌÐòÔ±ÎªÄÑ£¬ËùÒÔÖ»ÄÜËµÀí½â¾ÍÊÇÀí½â£¬²»Àí½â¾ÍÊÇ²»Àí½â¡£¶øÇÒ£¬ÓÐÃ»ÓÐÏë¹ýÎªÊ²Ã´ÍâÆó×ÜÊÇ¿¼Ëã·¨£¿ËùÒÔ£¬ÎÒ»áÒ»Ö±Ç¿µ÷ ¿Õ¼ä¸´ÔÓ¶È ºÍ<a href="https://zhida.zhihu.com/search?q=%CA%B1¼%E4%B8%B4%D4%D3¶%C8%26zhida_source=entity&amp;is_preview=1">Ê±¼ä¸´ÔÓ¶È</a>¡£</p>
+<h4 id="Ê’Ê½">Éè¼Æ·¶Ê½</h4>
+<p>ÎÒÏÈËµÎÒÃÇµÄ¿ª·¢Ä£Ê½£¬²»ÄÜËµÎÒÃÇµÄ¾ÍÊÇ¶Ô£¬Ö»ÊÇÓÐÕâÑùÒ»¸ö·¶Ê½£¬´ó²¿·ÖÇé¿öÏÂ£¬Âß¼­ÊÇ£º</p>
+<ol>
+<li>´ÓÊý¾Ý¿â²éÑ¯³öÀ´µÄ£¬ÊÇ id£¬²»°üº¬È«²¿Êý¾Ý£¬Èç select id from xxx where xxx&hellip;</li>
+<li>where xxx ±ØÐëÃüÖÐË÷Òý</li>
+<li>Í¨¹ý id ÔÙÈ¥²éÊý¾Ý¿âµÄÈ«²¿Êý¾Ý select xxx,xxx from xxx where id=id£¬²¢ÇÒ²»ÄÜÓÃ *</li>
+</ol>
+<p>Õâ¸öÊ±ºòÄã»áËµ£¬²éÄÇÃ´¶à´ÎÓÐÊ²Ã´ÓÃ£¬ÐÔÄÜ»¹½µµÍÁË¡£ÄÇÃ´ÔÚÎÒÃÇµÄ¿ò¼ÜÀï£¬Í¨¹ý id È¥²éÊý¾Ý¿âµÄÊý¾Ý£¬Ò»¶¨»áÔÚ»º´æÖÐ£¬Õâ¸ö»º´æÊ¹ÓÃ redis¡£ËùÒÔÎÒÃÇÌá¹©ÁË¼¸¸ö½Ó¿Ú£º</p>
+<ol>
+<li>get(id)£¬ÏÈÈ¥»º´æÖÐÈ¡£¬Èç¹ûÓÐ¾ÍÖ±½Ó·µ»Ø£¬Èç¹ûÃ»ÓÐ¾Í´ÓÊý¾Ý¿âÖÐÈ¡£¬²¢ÇÒ¼ÓÈëµ½»º´æÖÐ</li>
+<li>getByIds(ids)£¬ÅúÁ¿£¨batch£©µÄ´Ó»º´æÖÐÈ¡£¬Èç¹ûÓÐÖ±½Ó´Ó»º´æÖÐÈ¡£¬Ã»ÓÐ¾Í´ÓÊý¾Ý¿âÖÐÈ¡£¬²¢¼ÓÈëµ½»º´æÖÐ</li>
+</ol>
+<p>Õâ¸öÄ£Ê½ÔÚºÜ¶à´ó³§µÄ¹«Ë¾ÄÚµÄÉè¼Æ·¶Ê½ÖÐ¶¼ÒÑ¾­ºÜ³ÉÊìÁË£¬ÕâÑùµÄºÃ´¦¾ÍÊÇ£¬µ±²éÑ¯±È½Ï´óµÄÊ±ºò£¬Ö»·µ»Ø id£¬ÔÚÍøÂç°üÉÏÏà¶Ô½ÏÉÙ£¬¾Ù¸öÀý×Ó£¬¾ÍËãÊÇ 1ÍòµÄ id£¬ÍøÂç°üÓÐ¶à´ó£¿ÓÐµÄÈË¾ÍËãÃüÖÐË÷ÒýµÄ²éÑ¯ÁË 1Íò¸öÈ«Êý¾Ý£¬MySQL ·µ»Øµ½²Ù×÷ÏµÍ³£¬ÔÙÍ¨¹ýÍøÂç·µ»Øµ½ºó¶Ë·þÎñÆ÷£¬¹âÍøÂç¾ÍÒª 5 Ãë£¬ËùÒÔÎÒÃÇÒªÇó·µ»Ø¾ÍËã±È½Ï´ó£¬Ò²ÄÜÔÚÒ»¸ö¿É½ÓÊÜµÄ·¶Î§ÄÚ¡£ÕâÊÇËã·¨¸´ÔÓ¶È£¬MySQL µÄÒýÇæ»ùÓÚ B+ Ê÷£¬ÎÒÃÇ¾ÍÒÔ»ù´¡µÄ B+ Ê÷À´Ëµ£¬ÃüÖÐË÷ÒýµÄ²éÑ¯ÔÚ O(logn) ÉõÖÁ O(n)£¬ÍøÂçµÄ·µ»ØÊý¾ÝÁ¿Ò²Ð¡£¬Ò»°ãÀ´Ëµ¼¸°Ù¸ö id£¬¿ÉÒÔºöÂÔ±¾µØÍøÂçµÄÑÓ³Ù¡£</p>
+<p>ÄÃµ½ id ºó£¬È¥»º´æ·þÎñÆ÷»»ÏêÏ¸Êý¾Ý£¬ÔÚÕâÀï£¬ÎÒÃÇÌá¹©µÄÖÐ¼ä¼þ»áÅúÁ¿È¥È¡£¬Èç¹ûÒ»¸öÒ»¸öµÄÈ¡£¬ÍøÂçÇëÇóÊý¶à£¬tcp Õ¼ÓÃ¶à£¬redis ·þÎñÆ÷Ò²ÈÝÒ×ÇëÇó²»¹ýÀ´£¨ËäÈ» qps ´ïµ½ 4 ÍòÃ»Ê²Ã´ÎÊÌâ£©£¬ËùÒÔÎÒÃÇ»áÓÃ mget ºÍ pipeline È¡½øÐÐ²Ù×÷£¬Õâ¸öÊÇÔÚµ×²ãÊµÏÖ£¬¿ª·¢ÕßÎÞÐè×Ô¼ºË¼¿¼£¨´ó³§¾ÍÊÇÕâÑù£¬»ù½¨ºÃ£¬ËäÈ»ÎÒÊÇ×öÕâ¸ö¿ª·¢µÄ£©£¬»º´æµÄ get£¬mget£¬Ëã·¨¸´ÔÓ¶ÈÊÇ O(1)£¬n ¸ö O(1) ½Ó½üÏßÐÔ O(n)£¬ÅúÁ¿ 50 ¸ö key£¬»òÕß 100 ¸ö key È¥²éÑ¯£¬ÐÔÄÜ½Ó½ü O(1)¡£Êý¾Ý°ü´óÐ¡½Ó½üÊý¾Ý¿â×Ö¶ÎµÄ´óÐ¡³ËÒÔ key µÄÊýÁ¿£¬ÕâÃ»°ì·¨¡£</p>
+<p>ËùÒÔ£¬´ÓÕâ¸ö·¶Ê½ÖÐ£¬Äã¿ÉÒÔÇå³þµÄÖªµÀ£¬ÄãµÄÒµÎñÏµÍ³µÄËã·¨¸´ÔÓ¶È£¬¿Õ¼ä¸´ÔÓ¶ÈÔÚÄÄÀï£¬Èç¹ûÒªÓÅ»¯µÄ»°£¬Êý¾Ý¿âÂý£¿ÄÇÄã¿ÉÒÔÓÅ»¯Ë÷Òý£¬Èç¹ûÊÇ´Ó»º´æÖÐ¶ÁÈ¡Âý£¿¿ÉÒÔÓÅ»¯´æ´¢¡££¨±ÈÈçÑ¹ËõËã·¨£©</p>
+<p>Í¬Ê±£¬ÎÒÃÇ»¹»á×Ô¶¯´æ´¢£¨Java£© vo ²ãÃæµÄÊý¾Ý£¬»º´æÒ²ÓÐÉè¼Æ·¶Ê½£º</p>
+<ol>
+<li>Ö»Í¨¹ý id »º´æ¶ÔÏó£¬dao ºÍ vo</li>
+<li>ÁÐ±í»º´æ ids£¬²»»º´æ¶ÔÏóÄÚÈÝ</li>
+<li>Êý¾Ý¸üÐÂ×Ô¶¯É¾³ý»º´æ</li>
+</ol>
+<p>¾ÙÀý£º</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>// Î±ï¿½ï¿½ï¿½ï¿½
+</span></span><span style="display:flex;"><span>@Cacheable
+</span></span><span style="display:flex;"><span>ABC get(Long id) {}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>@Cacheable
+</span></span><span style="display:flex;"><span>List&lt;Long&gt; getIdsBy(...) {}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>List&lt;Long&gt; ids1 = abcService.getIdsBy(...)
+</span></span><span style="display:flex;"><span>List&lt;Long&gt; ids2 = bcdService.getABCIdsBy(...)
+</span></span><span style="display:flex;"><span>List&lt;Long&gt; myIds = ids1 - ids2 // ï¿½î¼¯ï¿½ï¿½Î±ï¿½ï¿½ï¿½ï¿½
+</span></span><span style="display:flex;"><span>List&lt;ABC&gt; abcList = ids1.steam().map(abcService::get).collect..
+</span></span><span style="display:flex;"><span>List&lt;ABCVo&gt; abcViewList = abcList.stream().map(vo::convert).collect // convert Ò²ï¿½ï¿½ @Cacheable
+</span></span></code></pre></div><p>¿ÉÒÔ´ÓÉÏÃæ¿´³ö£¬ÎªÊ²Ã´ÎÒÃÇÒªÓÃ stream£¬ÒòÎª stream ·Ç³£ÊÊºÏÊý¾ÝµÄ´¦Àí£¬Ò»½øÒ»³ö£¬ÖÐ¼ä×ö×ª»»£¬¶øÇÒÔÚÖÐ¼ä¼þÖ§³ÖµÄÇé¿öÏÂ£¬×Ô¶¯ÃüÖÐ»º´æ¡£´ÓÕâ¸ö·¶Ê½Äã¿ÉÒÔÖªµÀ£¬Í¨¹ýÌõ¼þ²é id ÁÐ±í£¬ÃüÖÐË÷Òý£¬ids ÃüÖÐ»º´æ£¬ÅúÁ¿È¡ id£¬ÃüÖÐ»º´æ£¬×ª»º´æ¸ö vo ¶ÔÏó£¬Ò²ÃüÖÐ»º´æ¡£</p>
+<p>ÉÏÃæËµµÄÊÇÉè¼Æ·¶Ê½¡£</p>
+<p>ÕâÒ²ÊÇÎªÊ²Ã´ÎÒÃÇÃæÊÔ»áÏ²»¶Ëã·¨Ë¼Â·ÇåÎúµÄ£¬·´ÕýÎÒ´ÓÀ´²»ÎÊ Java Ê²Ã´ String ºÍ StringBuilder ÓÐÊ²Ã´Çø±ð¡£¡£¡£</p>
+<h4 id="Ï¸">ÏêÏ¸½âÎö</h4>
+<p>*<strong>CASE 1: ÏµÍ³Éè¼Æ - Ê±¼äÆ¥ÅäÏµÍ³*</strong></p>
+<p>ÎÒÃÇÒªÉè¼ÆÒ»¸öÏµÍ³£¬Õâ¸öÏµÍ³ÊÇÓÐÁ½±ßµÄÓÃ»§£¬S ÊÇÑ§Éú£¬T ÊÇÀÏÊ¦£¬ÀÏÊ¦¸øÑ§ÉúÉÏ¿Î£¬ÒªÉè¼ÆÒ»¸öÊ±¼ä¹ÜÀíÏµÍ³£¬ÀÏÊ¦¿ÉÒÔ<strong>ËæÒâµÄ</strong>·ÅÊ±¼ä£¬Ñ§Éú¿ÉÒÔ<strong>Ñ¡ÔñÅúÁ¿µÄÊ±¼ä</strong>£¬´ÓÕâÐ©ÀÏÊ¦ÖÐÕÒµ½ÊÊºÏÑ§ÉúÐèÇóµÄÊ±¼ä¶Î¡£</p>
+<p>ÔÚ¿´Ë¼Â·µÄÊ±ºò´ó¼Ò¿ÉÒÔÏÈ×Ô¼ºÏëÏë£¬ÉóÒ»ÏÂÌâ¡£</p>
+<ol>
+<li>ÀÏÊ¦ËæÒâ·ÅÊ±¼ä£¬Ê±¼ä³¤¶ÈÒ²²»¹Ì¶¨£¬¾ÍÏñÔ¤¶¨»áÒéÊÒÄÇÑù</li>
+<li>Ñ§ÉúÅúÁ¿Ñ¡Ôñ£¬ÊÇ°´ÕÕ·¶Ê½Ñ¡£¬±ÈÈç£¬ÖÜÒ»£¬ÖÜÈý£¬ÖÜÎå£¬ÏÂÎç 7 µãµ½ 8 µã£¬´Ó 10ÔÂ1 ºÅ¿ªÊ¼µ½ 11 ÔÂ 1 ºÅ½áÊø£¬n ¸öÑ§ÉúÒ»×é£¨Èç¹ûÌ«ÄÑ¾ÍÒ»¸öÒ²ÐÐ£©</li>
+<li>½Ú¼ÙÈÕ×Ô¶¯Ìø¹ý</li>
+</ol>
+<p>ÕâÊÇÎÒÃÇÕâ¸öÏµÍ³×îÔç°æ±¾µÄÐèÇó£¬ÆäÊµÊÇÓÐÒ»µãÄÑ¶ÈµÄ£¬ÄÇÃ´´ó¼ÒÏÈÏëÏë£¬Êý¾Ý¿âÔõÃ´´¦Àí¡£</p>
+<p>´ó²¿·ÖÈËÉÏÀ´¾ÍÊÇ£º</p>
+<p>id, student_id, teacher_id, start_time, end_time, status</p>
+<p>È»ºóÓÐ n ¸ö student ¾Í¶à¸ö id£¬ÏÈ²»Ìá ÓÐµÄÑ§Éú ÖÐ¼ä¿ÉÄÜ»áÍË³ö£¬ÓÐµÄÀÏÊ¦ÖÐ¼ä²»¸ÉÁË£¬Êý¾Ý×´Ì¬±ä»¯ºÜ´ó£¬¾ÍÏÈ´ÓÕâ¸ö <strong>ËæÒâ·ÅÖÃ</strong> Ê±¼ä£¬¾Í»áÓÐÏÞÖÆ¡£</p>
+<p>ËäÈ»ÊÇÏµÍ³Ö§³ÖËæÒâ·ÅÖÃ£¬µ«ÊÇÒµÎñÊÇ¹Ì¶¨Ê±¼ä£¬µ«ÊÇ£¡µ«ÊÇÏµÍ³ÒªÖ§³ÖËæÒâ£¡ÒòÎª£¬ÓÐµÄ¿Î³ÌÊÇ 40 ·ÖÖÓ£¬ÓÐµÄ¿Î³ÌÊÇ 1¸öÐ¡Ê±¡£</p>
+<p>ºÃ£¬ÏÖÔÚ¿ªÊ¼ÌáÎÊ£¬ÏÈ´Ó¼òµ¥µÄÀ´£º</p>
+<ol>
+<li>ÔõÃ´ÏÔÊ¾ÔÚÈÕÀúÉÏ</li>
+<li>Ò»¸öÀÏÊ¦·ÅÊ±¼äµÄÊ±ºò£¬ÔõÃ´¸ßÐ§£¨Ä¬ÈÏÊý¾ÝÁ¿ÖÁÉÙ´óÓÚ°ÙÍò£©µÄ²éµ½Ê±¼äÖØµþ£¬¾ÍÊÇ£¬ÀÏÊ¦·ÅÁËÒ»¸ö 6-7 µãµÄÊ±¼ä£¬ÔÙ·Å 5µã50 µ½ 6µã10·Ö£¬¿ìËÙ¸æËßËûÊ±¼äÓÐÖØµþÁË</li>
+<li>ÈçºÎÕÒµ½ ÖÜÒ»£¬ÖÜÈý£¬ÖÜÎå£¬ÏÂÎç 7 µãµ½ 8 µãÁ¬ÐøµÄÊ±¼ä¶Î£¬²¢ÇÒ½Ú¼ÙÈÕÌø¹ý£¬¶øÇÒ£¬Õâ¸ö¡¾ÖÜÒ»£¬ÖÜÈý£¬ÖÜÎå ÏÂÎç7µãµ½8µã¡¿ÊÇ¿ÉÒÔÅäÖÃµÄ£¬±ÈÈç¡¾ÖÜÒ»£¬ÖÜÁù ÉÏÎç 10µã¡¿£¬Í¬Ñù£¬Ñ¡ÔñµÄÊ±ºòÁ½¸öÊ±¼ä²»ÄÜÖØµþ</li>
+</ol>
+<p>ÕâÑùºÜ¶àÈË¾Í»áÔÚÔ­À´µÄÊý¾ÝÉÏÐ´ÉÏ</p>
+<p>id, student_id, teacher_id, start_time, end_time, status, week_type, day_type, time_long &hellip; À´Íê³ÉÕâ¸öÐèÇó¡£</p>
+<p>¾ÍËãÕâÑù£¬»¹ÓÐºÜ¶àºÜ¶àÎÊÌâ£¬¶øÇÒÒ²²»¹»³éÏó¡£Ö»´ÓÊý¾Ý¿âÀïÈ¥×ö£¬Õâ¸ö³éÏóºÜÄÑ£¬¶øÇÒÒ²ºÜÄÑÃüÖÐË÷Òý£¬²éÑ¯ÐÔÄÜÒ²µÍ¡£<strong>Ò²ÐíÄã»áËµ£¬ÕâºÍ stream ÓÐÊ²Ã´¹ØÏµ£¬ÎÒÏëËµµÄÊÇ£¬Èç¹ûÄã³£ÓÃ stream£¬ÓÃÊý¾Ý½á¹¹µÄ·½Ê½È¥Ë¼¿¼£¬Äã»áºÜ¿ìÕÒµ½Õâ¸ö´ð°¸£¬Èç¹ûÓÃ for Ñ­»·ÔÚ POJO ºÍÊý×éÖ®¼ä add Ò»ÏÂ£¬remove Ò»ÏÂ£¬ÄãÏëµ½Õâ¸ö´ð°¸µÄÊ±¼ä»áºÜÂý£¬²»¸ßÐ§¡£×îÖ÷ÒªµÄ£¬»¹ÊÇË¼Â·£¡</strong></p>
+<p>ËùÒÔ£¬ÓÐÒ»¸ö¼òµ¥µÄÉè¼Æ£¬Êý¾Ý¿â¾ÍÊÇ£º</p>
+<p>id, teacher_id, start_timestamp, end_timestamp, status</p>
+<p>ÕâÑù¼ò¶Ì¾Í¿ÉÒÔÁË¡£</p>
+<p>ÎÒÃÇ¿ÉÒÔ°ÑÕâ¸ö½á¹¹³éÏó³ÉÒ»¸ö <strong>¾ØÕó</strong>¡££¨Êý×éÒ²¿ÉÒÔÊµÏÖ£©</p>
+<ol>
+<li>¾ØÕóµÄºá×ø±êÊÇ£¬Ìì£¬ÖÜÒ»µ½ÖÜÈÕ</li>
+<li>¾ØÕóµÄ×Ý×ø±êÊÇ°´·ÖÖÓ·Ö¸îµÄÊ±¼ä¶Î£¬±ÈÈç 5 ·ÖÖÓ£¬10·ÖÖÓ£¬1·ÖÖÓÒ²¿ÉÒÔ£¬µ«ÊÇ¾ØÕó»áºÜ´ó</li>
+<li>Äã»á·¢ÏÖ´ó²¿·ÖÇé¿öÏÂ¾ØÕó¶¼ºÜ¿Õ£¬¿ÉÒÔÑ¹Ëõ¾ØÕó</li>
+<li>¾ØÕó°´ÖÜ´æ´¢ÔÚ redis Àï£¬Ò»ÄêµÄ¾ØÕóÊýÁ¿ÊÇ¹Ì¶¨µÄ</li>
+<li>ÀÏÊ¦µÄÁ¿ x Äê¾ØÕóÊýÁ¿Ò²ÊÇ¹Ì¶¨µÄ</li>
+<li>ÀÏÊ¦·ÅÖÃµÄÊ±¼ä / ×ÜÊ±¼ä = ¾ØÕó¿ÕÖÃÁ¿£¬´ó¸ÅÂÊ 80% ¶¼ÊÇ¿ÕµÄ£¬Ñ¹ËõÖ®ºó¿Õ¼äºÜÐ¡</li>
+<li>¾ØÕóÖÐ°üº¬Õâ¸öÊ±¼äµÄÖÃÎª1£¬¿ÕµÄÖÃÎª 0</li>
+</ol>
+<p>¼òµ¥±íÊ¾Ò»ÏÂ£º</p>
+<table>
+<thead>
+<tr>
+<th>00-10 = 0:10</th>
+<th>ÖÜÒ»</th>
+<th>ÖÜ¶þ</th>
+<th>ÖÜÈý</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>00-10</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>10-20</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>20-30</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p>Êý¾Ý¿â±ä³É¾ØÕóµÄ·½Ê½Ò²ºÜ¼òµ¥£º</p>
+<ol>
+<li>´ÓÊý¾Ý¿âÖÐ²é³öÊý¾Ý£¬stream ±äÎª¾ØÕó£¨Âß¼­»¥Ïà¶ÀÁ¢£©£¬µü´úÐÔÄÜÒ²¸ß£¬ËäÈ»ÄÚ´æ¶àÁËÒ»Ð©£¬µ«²»ÊÇÍêÕû POJO£¬Ö»ÊÇ id ºÍ Ê±¼ä£¬»ù±¾¿ÉÒÔºöÂÔ O(logn) »ò O(N)</li>
+<li>¹¹½¨¾ØÕó O(N)£¬key ÎªÖÜ¿ªÊ¼µÄÊ±¼ä´æ´¢</li>
+<li>´æ´¢ÔÚ redis Àï£¬k Á¿¼¶</li>
+</ol>
+<p>ÏÖÔÚÄã¾Í»á·¢ÏÖ£¬Õâ¸ö¾ØÕó¾ÍÊÇÊý¾Ý¿âµÄÒ»¸öÓ³Éä£¬Ò»¸öÖ¸ÕëÁË¡£</p>
+<p>ÄÇÃ´£¬Âß¼­¾Í¼òµ¥ÁË£º</p>
+<ol>
+<li>Èç¹ûÀÏÊ¦Òª·ÅÊ±¼ä£¬±ÈÈç 3:20£¬Í¨¹ý 3:20 ÕÒµ½¾ØÕó x ºÍ y£¬¿´¿´ÊÇ²»ÊÇµÈÓÚ 1 ¾Í¿ÉÒÔÁË£¬O(N) µÄ¸´ÔÓ¶È£¬ºÃµÄÊ±ºò£¬O(1) ¾ÍÄÜ²éµ½</li>
+<li>Èç¹ûÒª²éÊ±¼ä¶ÎµÄ£¬±ÈÈç 9ÔÂ1ºÅµ½7ÔÂ22ºÅ£¬Í¨¹ý¿ªÊ¼Ê±¼äºÍ½áÊøÊ±¼äÕÒµ½¾ØÕóÁÐ±í£¨ÒòÎª key ÊÇ¿ªÊ¼Ê±¼ä£©£¬O(N)£¬k Á¿¼¶µÄ´æ´¢</li>
+<li>Ñ§ÉúÒªÇóÊÇËæ±ãÄÄÌì¿ªÊ¼£¬ÄÄÌì½áÊø£¬Ëæ±ãµÄÊ±¼ä·¶Î§£¬Ò²**¿ÉÒÔÉú³É¾ØÕó**£¬Ñ§ÉúµÄÔÚÄÚ´æÖÐÉú³É</li>
+</ol>
+<p>¼òµ¥±íÊ¾Ò»ÏÂ£¬ÎÒÃÇ¶¨ÒåÎªÄ¿±ê¾ØÕó£º</p>
+<table>
+<thead>
+<tr>
+<th>00-10 = 0:10</th>
+<th>ÖÜÒ»</th>
+<th>ÖÜ¶þ</th>
+<th>ÖÜÈý</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>00-10</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>10-20</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>20-30</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p>ÕâÑùÑ§ÉúµÄÒªÇó¿ÉÒÔËæÒâ¡£</p>
+<p>ÎÒÃÇµÄÂß¼­¾Í³éÏóÎª£º</p>
+<p>ÀÏÊ¦¾ØÕó - Ñ§Éú¾ØÕó Ã»ÓÐÊýÖµ ´æÔÚÐ¡ÓÚ 0 µÄÖµµÄ£¬Ôò·ûºÏ¡£</p>
+<p>Èç£ºÀÏÊ¦£º101, Ñ§Éú 101£¬101-101=000£¬·ûºÏ¡£ÀÏÊ¦£º111£¬Ñ§Éú 110£¬111-110=001£¬Ôò·ûºÏ¡£ÀÏÊ¦£º010£¬Ñ§Éú£º101£¬010-101=-11-1£¬Ôò²»·ûºÏ£¨µ±È»£¬ÔÚµÚÒ»¸ö-1µÄÊ±ºò¾ÍÒÑ¾­¿ÉÒÔÌø³öµü´úÆ÷ÁË£©¡£</p>
+<p>¾ØÕóµÄ¼Ó¼õ·¨ O(N)£¬Âß¼­Ò²ºÜ¼òµ¥¡£</p>
+<p>ËùÒÔ´úÂë¾ÍÊÇ£º</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>teacherMatrixList.stream().filter(x-&gt; x-s &gt; 0).collect...
+</span></span></code></pre></div><p>Èç¹ûÒµÎñÒª¿´Ò»¹²ÓÐ¶àÉÙÀÏÊ¦¶àÉÙÏÔÊ¾£¬·µ»Ø¾ØÕóµÄ×ÜºÍ£º</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>teacherMatrixList.stream().sum().collect...
+</span></span></code></pre></div><p>ÒµÎñ·¢ÏÖÕâ¶ÎÊ±¼äÀÏÊ¦±»Ñ¡ÍêÁË£¬ÍÆ¼öÑ§ÉúÑ¡ÆäËûÀÏÊ¦£¬Ò²¿ÉÒÔÍ¨¹ýÉÏÃæÂß¼­À´É¸Ñ¡¡£</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>teacherMatrixList.stream().sum().filter(rowCount&gt;0).collect...
+</span></span></code></pre></div><p>×îºó</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>List&lt;Long&gt; teacherIds = teacherMatrixList.stream().map(X::getId).distinct().collect
+</span></span></code></pre></div><p>Õâ¸öÂß¼­¾ÍºÜ¼òµ¥ÁË¡£</p>
+<p>³éÏóÆðÀ´¾ÍÊÇ£¬¾ØÕó¼Ó¼õ·¨¡£</p>
+<p>ÓÅµã£º</p>
+<ol>
+<li>Êý¾Ý¿â×Ö¶ÎÉÙ£¬ÉÏÇ§ÍòÊý¾Ý£¬Ë÷ÒýÒ²Ã»ÎÊÌâ</li>
+<li>Ë÷ÒýºÃÉè¼Æ</li>
+<li>¹¹½¨¾ØÕóÖ®ºó£¬Âß¼­È«²¿³éÏóÎª¼Ó¼õ·¨</li>
+<li>¿Õ¼ä¸´ÔÓ¶È¿ÉÒÔ¼ÆËã£¨100ÍòÀÏÊ¦£¬Ò»Äê52ÖÜ£¬·ÅÖÃÂÊ 30%£¬redis ¹ö¶¯³¬Ê±£¬×Ô¶¯¹¹½¨£©£¬Ê±¼ä¸´ÔÓ¶ÈÒ²¿ÉÒÔ¼ÆËã£¨Êý¾Ý¿â¶Á³öÀ´µÄ¸´ÔÓ¶ÈÍêÈ«ÁËÈ»ÓÚÐÄ£¬¹¹½¨³É¾ØÕóÃ»ÎÊÌâ£¬O(N)£¬µü´ú£¬O(N))</li>
+<li>Èç¹ûÖÐ¼ä³öÏÖÐÔÄÜÎÊÌâ£¬ÍêÈ«ÖªµÀÊÇÄÄÀïÓÐÎÊÌâ£¬·½±ãÓÅ»¯</li>
+<li>¼Ü¹¹²ãÃæ£¬¿ÉÒÔ²ð·Ö£¬ÇáËÉ²ð·Ö</li>
+<li>ÔËÎ¬²ãÃæ£¬Êý¾Ý¿âºÍ»º´æµÄÔËÎ¬¿ÉÒÔÍêÈ«·Ö¿ª£¬ÔðÈÎµ½ÈË</li>
+</ol>
+<p>È±µã£º</p>
+<ol>
+<li>ÎÒ¸Ð¾õ¾ÍÊÇÓÐµãÄÑÐ´£¬¶ÔÆäËûÈËÀ´Ëµ£¬ÔÆÀïÎíÀïµÄ</li>
+</ol>
+<p><strong>×îºó²¹³äÒ»ÏÂ°¡£¬ÎÒÃÇÊÇÒªÇó³ÌÐòÔ±Ð´µ¥Ôª²âÊÔºÍÐÔÄÜ²âÊÔ£¬200ÍòÊý¾ÝÆð£¬²¢ÇÒÌá½»µÄÊ±ºò»á×Ô¶¯ÅÜ£¬¹ýÁË²ÅÄÜÌá½»¡£</strong></p>
+<p><strong>Õâ¸öÏîÄ¿µ¥Ôª²âÊÔ¸²¸ÇÂÊ 99%£¬ÐÔÄÜ²âÊÔ 200 ÍòÊý¾ÝÔÚÒ»ÖÜÖ®ÄÚ£¬Âú¾ØÕóµÄÇé¿öÏÂ£¬²éÑ¯´ó¸ÅÔÚ 3Ãë£¬ÏßÉÏµÄÇé¿öÒª¿ÕºÜ¶à¡£</strong></p>
+<p><strong>Õâ¸öÂß¼­±»·â×°³É°ü£¬¶ÔÒµÎñ¿ª·¢²»¿É¼û£¬ÄÚºËÉÏÏßºó 3 ÄêÃ»ÓÐ¸Ä¶¯¡£</strong></p>
+<p>ÕâÀïµÄÖØµã¾ÍÔÚÓÚ£¬stream ¸øÄãµÄ¸Ð¾õÊÇÁ÷Ë®ÏßµÄ¸Ð¾õ£¬¾ÍÊÇ£¬Êý¾Ý½ø£¬Êý¾Ý³ö£¬¾ÍÏñÍæÄÇ¸ö¹ý¼Ò¼Ò×°°çÍæÅ¼ÄÇ¸öÓÎÏ·Ò»Ñù£¬ÏÈ»»·¢ÐÍ£¬ÔÙ»»ÑÕÉ«£¬ÔÙÑ¡ÒÂ·þ£¬µÈµÈ£¬Ò»¸öÁ÷Ë®ÏßÏÂÀ´£¬³ÉÎªÁË×îÖÕµÄÊý¾Ý¡£</p>
+<p>´ÓÉÏÃæÄÇÃ´¶à filter ×îºó£¬Ò»Ò³¿ÉÄÜÖ»ÏÔÊ¾ 20 ¸ö id£¬×îºó£¬ÎÒÃÇÔÙÍ¨¹ý 20 ¸ö id È¥ÅúÁ¿¶Á POJO£¬¿Õ¼ä¸´ÔÓ¶ÈºÍËã·¨¸´ÔÓ¶È£¬ÍêÈ«ÁËÈ»ÓÚÐÄ£¬Äã»á·¢ÏÖÕû¸ö²Ù×÷ÏµÍ³¶ÔÄãÀ´Ëµ¶¼ÍêÈ«ÊÇÍ¸Ã÷µÄ¡£</p>
+<p>Õâ¸öÏµÍ³ÊÇÎÒ×öµÄµ×²ã£¬ÔÚÎÒ×öÖ®Ç°£¬¾ÍÊÇ×îÔçµÄ´¿Êý¾Ý¿âÉè¼Æ£¬ÎªÁË²»Í¬µÄÐèÇó join ÁË×Ô¼ºÖÁÉÙ 3 ´Î£¬¸ü²»ÒªËµ join ±ðµÄ±íÁË¡£ÔÚÓÃ»§Á¿Ö»ÓÐ 1 ÍòµÄÊ±ºò£¬ÏµÍ³ÐÔÄÜ¾Í±ÀÁË£¬ÎªÁË»îÃü£¬ÂòÁË AWS ×î¹óµÄÊý¾Ý¿â£¬Ò»Äê´ó¸Å°ÙÍòµÄ·ÑÓÃ¡£ÉÏÁËÖ®ºó£¬Ê¡ÁË¡£¡£</p>
+<p>ºÃ°É£¬ÕâÊÇ²¹³äµÄµÚÒ»¸öÒµÎñ²ãÃæµÄ Case£¬Äã»á·¢ÏÖÎÒÃ»ÌáºÜ¶à stream ÓïÑÔµÄÐ´·¨£¬±Ï¾¹Ö»ÊÇÓïÑÔ£¬µ«ÊÇ stream ÄÜ¹»°ïÖúÓÐº¯ÊýÊ½Ë¼Î¬µÄÍ¬Ñ§£¬¸üºÃµÄÈ¥³éÏó£¬¶øÇÒ×îºóÄã·¢ÏÖÒ»¸ö·Ç³£¸´ÔÓµÄÒµÎñÄÜÓÃ¼¸¸ö¹«Ê½À´³éÏó£¨¶øÇÒ²úÆ·Ò²ÄÜ¿´¶®£©£¬ÊÇ·Ç³£ÓÐ³É¾Í¸ÐµÄ¡£</p>
+<p>Èç¹ûÓÐÈË¶ÁÁË£¬ÎÒÔÙ²¹³ä¼Ü¹¹²ãÃæµÄ¡£ÎÒÖ»ÊÇÏëÇ¿µ÷£¬ÅàÑøÐ´ stream£¬ÊÇÅàÑøË¼Â·£¬²»ÊÇÔÚÓïÑÔ²ãÃæ£¬¸ñ¾Ö´ò¿ª¡£</p>
+<p>Å¶£¬¶ÔÁË£¬ÆÀÂÛÀïÓÐËµ£¬²»ÅÂ GC µÄÎÊÌâ£¬ÎÒÐ´µÄÕâÃ´Ï¸ÁË£¬Äã¾õµÃÎÒÅÂ GC Ã´¡£¡£¡£</p>
+<p>*<strong>Õâ¸ö Case ÎÒ¿ÉÒÔÁôÒ»¸öË¼¿¼Ìâ£º*</strong></p>
+<p>Èç¹ûÒ»¸öÏµÍ³ÖÐÃ»ÓÐÀÏÊ¦¿ÉÒÔÓÐÁ¬ÐøµÄÊ±¼ä·þÎñÒ»¸ö°à¼¶£¬ÓÐÃ»ÓÐ°ì·¨ÕÒµ½Á½¸öÀÏÊ¦£¬²¢ÇÒ£¬Ò»¸öÀÏÊ¦Õ¼´ó¶àÊýÊ±¼ä£¨¹Ì¶¨ÀÏÊ¦£©£¿ÌáÐÑÒ»ÏÂ£¬Ò»¸öÀÏÊ¦ÔÚÖÜÒ»£¬ÖÜÈý£¬ÖÜÎåµÄÊ±¼ä¶ÎÀï£¬Ò»¸öÔÂÄÚ£¬Ö»ÓÐ<strong>Ä³Ò»¸ö</strong>ÖÜÎå²»ÄÜ·þÎñ£¬¶ªÁËÌ«¿ÉÏ§ÁË£¬ÎªÁË½ÚÔ¼³É±¾£¬ÐèÒªÒªÕÒµ½ÁíÒ»¸öÀÏÊ¦£¬²¢ÇÒ²»»áÀË·ÑµôÁíÒ»¸öÀÏÊ¦£¨±ÈÈçÁíÒ»¸öÀÏÊ¦Ê±¼äÊÇ±È½ÏÂúµÄ£¬¿ÛµôÁËÒ»¸ö£¬¾Í±ä³ÉÎÞÓÃÀÏÊ¦ÁË£©¡£</p>
+<p>£º£©</p>
+<p>2022.11.1</p>
+<p>*<strong>CASE 2: Ð´´úÂë - ±íµ¥´æ´¢*</strong></p>
+<p>ÔÙ¸ú´ó¼Ò·ÖÏíÒ»¸ö·Ç³£¼òµ¥µÄ£¬µ«ÊÇÓÐµãÁíÀàµÄ case£¬¾ÍÊÇÎÒ×Ô¼º×öÎª³ÌÐòÔ±µÄÍêÃÀ½àñ±µÄ¶«Î÷¡£¾ÍÊÇÒ»¸ö¼òµ¥µÄ±íµ¥´æ´¢¡£</p>
+<p>Õâ¸ö±íµ¥ÊÇÒ»¸ö¼òÀúÏµÍ³£¬¼òÀúÏµÍ³°üÀ¨»ù±¾ÐÅÏ¢£¬°üÀ¨À©Õ¹ÐÅÏ¢£¬±ÈÈçÑ§Àú£¬¾ÍÓÐ¶à¼Ò´óÑ§ÐÅÏ¢£¬¹¤×÷¾­Àú£¬¾ÍÊÇËµ£¬ÓÐ¶à¸ö¹¤×÷¾­ÀúÐÅÏ¢¡£</p>
+<p>Õâ¸ö±íµ¥ËäÈ»ËµºÜ¼òµ¥°É£¬µ«ÊÇ»¹ÓÐÒ»¸ö·Ç³£ÖØÒªµÄ¹¦ÄÜ£¬Õâ¸ö¹¦ÄÜ¾ÍÊÇ¡¾ÊµÊ±±£´æ¡¿£¬Ò²¾ÍÊÇËµÔÚ 50-70 ¸ö±íµ¥ÖÐ£¬Ã¿ÒÆ³öÒ»¸öÎÄ±¾¿ò£¬¾ÍÐèÒª±£´æ£¬Õâ¸öÂß¼­ºÜ¼òµ¥¡£µ±È»£¬ÓÐµÄÈËÔÚÒ»¿ªÊ¼»áÏë£¬ÄÇÔÛÃÇÓÃ ES »òÕßÈÎºÎÒ»ÖÖ NoSQL ´æ´¢¾ÍÐÐÑ½£¬²»ÓÃÏñÄãËµµÄÄÇÃ´¸´ÔÓ¡£µ«ÊÇ£¬Ê×ÏÈ£¬ÎÒÃÇµ±Ê±Ã»ÓÐ ES ºÍ NoSQL µÄÔ¤ËãºÍÔËÎ¬À´Î¬»¤£¬Êý¾ÝÁ¿Ò²Ã»ÓÐÄÇÃ´´ó£¨´ó³§¶ÔÓÚÐÂ¼¼ÊõµÄÔ¤ËãÊÇºÜÑÏ¸ñµÄ£¬¾ÍËãÓÐÕâ¸ö»ù½¨£¬Èç¹ûÁ¿²»´ó£¬ÉêÇëÒ²²»Ò»¶¨»á¸øÅú£©£¬»¹ÐèÒª½øÐÐ·´ÏòË÷Òý¡£¾Ù¸öÀý×Ó£¬ÓÐÒ»¸öÈËÐ´¼òÀú£¬Õâ¸ö¼òÀúÓÐÒ»¸öÑ§Ð£ÊÇ£¬Çå»ª´óÑ§£¬ÄÇÃ´ÎÒÃÇÊÇÐèÒªÄÃµ½Çå»ª´óÑ§µÄ¼òÀúÁÐ±íµÄ¡£¶øÕâ¸ö¶ÔÓ¦¹ØÏµÊÇ <strong>1¶Ô¶à</strong>£¬ËùÒÔÊÇ²»Í¬µÄ±í´æ´¢¡£µ±È»£¬ES ºÍ NoSQL Ò²¿ÉÒÔ×öË÷Òý£¬ÓÐºÜºÃµÄ»ù½¨ÔÛÃÇ²»Ì¸¡£</p>
+<p>ËùÒÔ£¬½á¹¹ÊÇ£º</p>
+<ol>
+<li>¸öÈË¼òÀúÐÅÏ¢£ºid, student_id, name, mobile ¡­ ¶¼ÊÇ»ù±¾ÐÅÏ¢</li>
+<li>Ñ§Ð£ÐÅÏ¢£ºid, school_name, ¡­ »ù±¾ÐÅÏ¢</li>
+<li>¹¤×÷¹«Ë¾£ºid, company_name, »ù±¾ÐÅÏ¢</li>
+<li>¸öÈË¼òÀúºÍÑ§Ð£µÄÓ³Éä¹ØÏµ school_map_id, student_id, school_id</li>
+<li>¸öÈË¼òÀúºÍ¹«Ë¾µÄÓ³Éä¹ØÏµ£¬²»×¸ÊöÁË</li>
+</ol>
+<p>Õâ¸ö½á¹¹ºÜ¼òµ¥°É£¬¶øÇÒÊµÏÖÆðÀ´Ò²²»ÄÑ¡£</p>
+<p>µ«ÊÇ£¬µ«ÊÇ£¬Î¨Ò»µÄÒ»µã¾ÍÊÇÒª<strong>ÊµÊ±±£´æ</strong>£¬ºÜ¶àÈË¶ÔÓÚÓ³Éä¹ØÏµµÄ½â¾ö·½°¸ÊÇ£¬È«²¿É¾³ý£¬È»ºóÔÙÈ«²¿Ôö¼Ó£¬»òÕß²éÑ¯ in£¬Èç¹û²» in ¾ÍÔö¼Ó¡£ºóÃæµÄ·½Ê½ÊµÏÖµÄºÜÂé·³£¬Êý¾Ý¿â¿ÉÄÜÒª join »òÕßÒª in£¬µ±Êý¾ÝÁ¿´óÓÖÊÇÐèÒªÓÅ»¯µÄ¡£¶øÇ°ÃæµÄ·½Ê½×î´óµÄÎÊÌâÊÇ£¬Êý¾Ý¿âµÄ×ÔÔö id »áÔö¼Ó¡£±ÈÈç£¬Èç¹ûÓÐ 50 ¸ö±íµ¥£¬Ã¿´Î¶¼ÒªÉ¾³ýÓ³Éä¹ØÏµ£¬ÔÙÔö¼ÓÓ³Éä¹ØÏµ£¬Õâ¸ö id »áÔö¼ÓµÄºÜ¿ì£¨¼´±ã²»ÐÞ¸ÄÈÎºÎÐÅÏ¢µã»÷±£´æ£¬Ò²»áÉ¾³ýÓ³Éä¹ØÏµ£©¡£Ò»¸öÈË£¬ÓÐ¿ÉÄÜ id »áÔöµ½ 50 ¶à£¬Èç¹ûÓÐÒ»Íò¸öÈËÄØ£¿ÄÇÃ´ÔöËÙÊÇ·Ç³£¿ìµÄ£¬ËäÈ»£¬Òª´ïµ½ÉÏÏÞ»¹ÐèÒªÒ»µãÊ±¼ä£¬µ«ÊÇ£¬ÔÚÉè¼Æ´óÐÍÏµÍ³µÄÊ±ºò£¬Ï¸½ÚÊÇºÜÖØÒªµÄ¡£</p>
+<p>Í¬Ê±£¬ÎÒÃÇÒ²ÖªµÀ£¬Ò»¸öÈËµÄ¼òÀúÐÅÏ¢Ö»ÓÐÒ»Ìõ£¨ÀúÊ·¼ÇÂ¼¿ÉÒÔ·ÅÔÚÀä¿âÀï£©£¬Ò»¸öÈËÔÚµÄÑ§Ð£Ò²ÊÇÓÐÏÞµÄ£¬²»¿ÉÄÜ³¬¹ý 20 ¸ö£¬Ò»¸öÈËµÄ¹¤×÷¾­ÀúÒ²ÊÇÓÐÏÞµÄ£¬ÔÙ¿äÕÅÒ²¾Í 100 ¸öÁË¡£ËùÒÔ£¬Ö»Í¨¹ý student_id Ë÷ÒýÄÃµ½µÄÐÅÏ¢£¬Ö±½ÓÔÚÄÚ´æ´¦Àí£¬Òª±ÈÊý¾ÝÁ¿´óÁËÖ®ºó£¬Êý¾Ý¿âµÄ in Òª¸ßÐ§£¬²¢ÇÒ£¬Õâ¸öÐÔÄÜ²»ÊÇÏßÐÔ½µµÍµÄ£¬Ö»ÒªË÷ÒýÕý³££¬ÐÔÄÜ»ù±¾²»»á±ä¡£</p>
+<p>ËùÒÔ£¬ÎÒÃÇµÄÄ¿µÄÊÇ£¬ÊµÊ±±£´æµÄÍ¬Ê±²¢ÇÒ id ¾¡¿ÉÄÜ²»Ôö¼Ó£¬ËùÒÔÎÒÃÇÖ»ÒªÄÃµ½ÄÄÐ©ÐÅÏ¢ÒªÔö¼Ó£¬ÄÄÐ©ÐÅÏ¢ÒªÉ¾³ý£¬ÄÄÐ©ÐÅÏ¢Òª¸üÐÂ¾ÍÐÐÁË£¬ËùÒÔ¡£</p>
+<p>Ç°¶Ë´«Ñ§Ð£/¹«Ë¾Ãû³Æ£¨¼ÙÉèÔÚÊý¾Ý¿âÖÐÎ¨Ò»£©£¬ÎÒÃÇÈ¥¸üÐÂ£º</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>//Î±ï¿½ï¿½ï¿½ï¿½
+</span></span><span style="display:flex;"><span>List&lt;Long&gt; hadSchoolIds = schoolMapService.getIdsByStudentId(studentId);
+</span></span><span style="display:flex;"><span>List&lt;Long&gt; schoolIdsInRequest = schoolNames.stream().map(studentService::getByName).collect
+</span></span><span style="display:flex;"><span>// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð²ï¿½ï¿½ï¿½ï¿½ï¿½ id ï¿½ï¿½Ëµï¿½ï¿½ï¿½ï¿½ÒªÉ¾ï¿½ï¿½ï¿½ï¿½
+</span></span><span style="display:flex;"><span>List&lt;Long&gt; needToDeleteIds = hadSchoolIds.stream().filter(!schoolIdsInRequest::contains).collect
+</span></span><span style="display:flex;"><span>// ï¿½ï¿½ï¿½ï¿½ï¿½Ðµï¿½ id ï¿½ï¿½ï¿½Ç²ï¿½ï¿½ï¿½ï¿½Ñ¾ï¿½ï¿½ÐµÄ£ï¿½Ëµï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½
+</span></span><span style="display:flex;"><span>List&lt;StudentSchoolMap&gt; needToAdd = schoolIdsInRequest.stream().filter(!hadSchoolIds::contains).map(StudentSchoolMap::toEntity).collect
+</span></span><span style="display:flex;"><span>List&lt;StudentSchoolMap&gt; needToUpdate = ..
+</span></span></code></pre></div><p>ÉÏÃæµÄÂß¼­Ëæ±ãÊÖÐ´µÄ£¬¿ÉÄÜÓÐbug£¬µ«´óÒâ¾ÍÊÇÍ¨¹ýÁ½¸ö id ÁÐ±íµÄ£¬½»¼¯£¬²î¼¯£¬¿ÉÒÔÖªµÀÄÄÐ©ÊÇÐèÒª¸üÐÂ£¬ÄÄÐ©ÊÇÐèÒªÉ¾³ýµÄ¡£Õâ¸öÂß¼­»¹ÊÇ»ùÓÚ id µÄÂß¼­¡£</p>
+<p>±ÈÈç£¬Ç°¶ËÏÈÇëÇó £¨A£¬B£©¡£È»ºóÔÙÇëÇó £¨B£©£¬»á·¢ÏÖÒÑÓÐµÄ£¨A£¬B£©ÖÐ£¬A Ã»ÓÐÔÚÇëÇóÖÐÁË£¬ÔòÉ¾³ý A¡£Õâ¸öÊ±ºò¾ÍÊÇ£¨B£©£¬È»ºóÔÙ´«£¨B£¬C£©£¬·¢ÏÖÒÑÓÐµÄÊÇ£¨B£©£¬¿ÉÒÔÖªµÀ£¨C£©ÊÇÐÂÔöµÄ£¬B ¿ÉÒÔ²»ÓÃ¹Ü¡£ÔÙ´«£¨A£©£¬¿ÉÒÔÖªµÀÒÑÓÐµÄÊÂ£¨B£¬C£©£¬½»¼¯Îª¿Õ£¬ËùÒÔ£¨B£¬C£©É¾³ý£¬Ôö¼Ó A¡£ËùÒÔ£¬³ý·ÇÃ¿´Î½»¼¯¶¼Îª¿Õ£¬±ä³É×î»µµÄÇé¿ö£¬¾ÍÊÇÃ¿´ÎÈ«É¾³ý£¬Ã¿´ÎÈ«Ìí¼Ó£¬µ«´ó²¿·ÖµÄÇé¿ö¶¼²»»áÔö¼Ó£¬ÒòÎª´ó²¿·ÖÊ±ºò¶¼ÊÇ¸üÐÂÆäËû×Ö¶Î£¬¶ø²»¸üÐÂÕâ¸ö×Ö¶Î£¬µ«ÊÇ×Ô¶¯¸üÐÂ¾ÍÒ»¶¨Òª¿¼ÂÇµ½Õâ¸öÇé¿ö¡£</p>
+<p>µ±È»£¬Õâ¸ö case ±È½Ï¼òµ¥£¬Ò²±È½ÏÏ¸½Ú£¬Äã»áÏë£¬Õâ¸öºÍ stream ÓÐÊ²Ã´¹ØÏµÄØ£¬ÓÃ for Ñ­»·²»ÊÇ¸üºÃÂï£¬ÄãÕâ»¹ÓÃÁË¶à¸öµü´ú¡£ÎÒÏëËµ£¬Èç¹ûÄãÊÇÓÃÒµÎñÂß¼­µÄ·½Ê½³éÏóµÄ»°£¬ÔÚÊµÏÖÒµÎñÂß¼­ÉÏ£¬ÓÃ for Ñ­»·ÊÇÃ»ÎÊÌâµÄ£¨µ«´ó²¿·ÖÈËÓÃ for µÄÊ±ºòÊÇ²»»áÓÃÕâÖÖ½»¼¯²î¼¯µÄ·½Ê½Ë¼¿¼µÄ£©£¬µ«ÊÇ for Ð´ÆðÀ´ÒªÔÚ for Âß¼­Àï¼ì²éÊÇ·ñ in£¬Ôö¼Óµ½ for Ñ­»·ÍâÃæµÄÊý×é£¬ÅÅÐòµÈµÈ¶¼ºÜÂé·³£¬Èç¹ûÓÃ stream Ð´£¬¾ÍºÜ¼òµ¥ÁË£¬±äÁ¿ÃûÇåÎú£¬ºóÃæµÄÃ¿Ò»²½ÊÇÔÚ×ö filter£¬ÔÚ×ö¶ÔÏóµÄ×ª»»£¬¶¼ºÜÇåÎú¡£</p>
+<p>Õâ¸ö¼òµ¥µÄ case Àï£¬stream Ò²¿ÉÒÔºÏ³ÉÒ»¸ö£¬±ä³É map£¬È»ºó map Àï·Ö±ð±£´æÐèÒªÔö¼ÓµÄ£¬ÐèÒªÉ¾³ýµÄ£¬ÐèÒª¸üÐÂµÄ£¬È»ºó³éÏó³É¼¯ºÏ utils£¬¾Í±äµÃ¸ü¼òµ¥¸üÈÝÒ×Àí½âÁË¡£´ó¼Ò¿ÉÒÔ×Ô¼º¿¼ÂÇÒ»ÏÂ¡£</p>
+<p>Ö®Ç°µÄÍ¬Ñ§¾ÍÊÇÍ¨¹ýÈ«²¿É¾³ýºÍÈ«²¿Ôö¼ÓÈ¥´¦ÀíÕâ¸öµÄ£¬Ò»ÏÂ×Ó¾ÍÔö¼ÓÁË¼¸ÍòµÄ id£¬ËäÈ»ÓÃ»§Á¿²»´ó£¬ÔÚ¸üÐÂÕâ¸öÂß¼­ºó£¬id Ôö³¤´ó¸ÅÎªÔ­À´µÄ 1/20¡££¨´ó²¿·ÖÈËÒ»°ã²»¸üÐÂÓ³ÉäÐÅÏ¢£¬¿ÉÄÜÖ»ÊÇÐÞ¸ÄÒ»¸öÐÕÃû¡£¡££©</p>
+<p>ÎÒ¾õµÃºÜÖØÒªµÄÒ»µã¾ÍÊÇ£¬<strong>stream£¬ÓÀÔ¶¸øÈËµÄ¸Ð¾õÊÇ input Êý¾Ý£¬Í¨¹ýÒ»Ð©²Ù×÷£¬Ò»Ð©×ª»»£¬±ä³É output Êý¾ÝµÄÂß¼­¡£Õâ¸öÔÚË¼Î¬ÉÏºÍ for ÊÇÍêÈ«²»Í¬µÄ¡£</strong></p>
+<p>Í¬Ñù£¬ÓÐ¸öË¼¿¼Ìâ£¬±ÈÈç£¬ÔÚ×öÎ¢²©ÏµÍ³µÄÊ±ºò£¬ÎÒ¹Ø×¢µÄ£¬ºÍ¹Ø×¢ÎÒµÄ£¬»¹ÓÐ»¥Ïà¹Ø×¢µÄ£¬ÊÇ²»ÊÇÒ²¿ÉÒÔ³éÏó³É¼¯ºÏµÄ¸ÅÄî£¿ÄÇÃ´´óµÄÏµÍ³£¬×Ü²»ÄÜÓÃ MySQL µÄ join »òÕß in °É¡£</p>
+<p>*<strong>CASE 3: ¼Ü¹¹ - AI Ops Êý¾Ý²ßÂÔÆ½Ì¨¼Ü¹¹¿ª·¢*</strong></p>
+<p>×îºóÔÙÐ´Ò»µã¼Ü¹¹µÄÉè¼Æ°É£¬ÎÒÒ»Ö±ÔÚÎÄÕÂÀïÇ¿µ÷µÄÊÇ£¬stream µÄÉè¼ÆË¼Â·£¬ÊÇÊý¾Ý´¦ÀíµÄË¼Â·£¬ºÍ for µÄË¼Â·ÊÇ²»Ò»ÑùµÄ£¬ÎÒÃÇ²»ÊÇ½ûÖ¹Ê¹ÓÃ for£¬¶øÊÇ¸üÏ£ÍûÓÃ stream À´³éÏó£¬ËùÒÔÎÒÃÇ²¢²»Ö»ÊÇÌ¸ Java µÄ stream <a href="https://zhida.zhihu.com/search?q=%D3%EF·¨%CC%C7&amp;zhida_source=entity&amp;is_preview=1">Óï·¨ÌÇ</a>£¬¸ü¶àµÄÊÇÁÄ stream Õâ¸ö¶«Î÷£¬²»Í¬µÄÓïÑÔ¶Ô stream ÓÐ²»Í¬µÄÖ§³Ö£¬ÎÊÌâ¿ÉÄÜÊÇÁÄµÄÊÇ¡¾ÎªÊ²Ã´Ï²»¶Ð´ stream¡¿£¬ÎÒ¸üÔ¸ÒâËµ£¬¶®µÃÊ¹ÓÃ stream Ë¼Â·µÄ³ÌÐòÔ±ÊÇ¸üÀ÷º¦µÄ£¬¸ü¶®µÃ³éÏóµÄ¡£</p>
+<p>Ç°Ãæ½²ÁË¼¸¸öÉè¼ÆºÍ´úÂëÖÐ¶ÔÓÚ stream µÄË¼¿¼£¬ÎÒÀ´ËµÒ»¸ö¼Ü¹¹µÄÉè¼Æ°É£¬ÆäÊµ stream µÄË¼Â·£¬ÎÒ¸Ð¾õÊÇ mini »¯µÄ map reduce µÄ¸Ð¾õ£¬ÔÚ¼Ü¹¹ÉÏ£¬Î¢·þÎñ¼Ü¹¹£¬lambda£¬ÆäÊµÒ²¶à¶àÉÙÉÙ¹á³¹ÁËÕâÑùµÄË¼Î¬¡£ËùÒÔÔÚÕâµãÉÏ£¬Èç¹ûÄã×ö¼Ü¹¹Éè¼Æ£¬¾Í±ØÐëÒª¿¼ÂÇ´æ´¢µÄÆ½Ì¨ÐÔÖÊ£¬¼´²»ÄÜÔÚÒ»Ì¨»úÆ÷ÉÏ¡£ÔÚ·þÎñ¼Ü¹¹ºÍ·þÎñÖÎÀíÉÏ£¬Ò²ÐèÒªÓÐÊý¾Ý in ºÍ out µÄ¸Ð¾õ£¬²»È»¹æ»®ÆðÒµÎñ¼Ü¹¹À´£¬¸üÊÇÎÞ´ÓÏÂÊÖ¡£ËùÒÔºÜ¶àÈËÃ»ÓÐ×Ô¼ºµÄËùÎ½¡¾¼Ü¹¹Éè¼ÆµÄ¼ÛÖµ¹Û¡¿£¬Ö»ÓÐ¡¾°¢ÀïÕâÃ´×öÁËËùÒÔÎÒÃÇ²ÅÕâÃ´×ö¡¿µÄÆæ¹ÖÀíÓÉ¡£</p>
+<p>¾Ù¸öÀý×Ó°É£¬ÎÒÃÇµÄÒ»¸öÏµÍ³ÐèÒªÍ¨¹ý²»Í¬µÄ²ßÂÔÀ´×îÖÕ¶¨¼ÛºÍ¶¨ÊýÁ¿£¬¼ÙÉèÕâ¸öÏµÍ³ÊÇÒ»¸öÌÔ±¦µÄÉÌ³ÇµÄÏµÍ³£¬ÎÒÃÇÐèÒª¸ù¾ÝÌìÆø£¬Ê±¼ä£¬ÀúÊ·Êý¾Ý£¬µÈµÈÌõ¼þ£¬Í¨¹ý»úÆ÷Ñ§Ï°£¨´ó²¿·ÖÊÇ¸ÅÂÊµÄ¹¤¾ßºÍ<a href="https://zhida.zhihu.com/search?q=%D6%C3%D0%C5%C7%F8¼%E4%26zhida_source=entity&amp;is_preview=1">ÖÃÐÅÇø¼ä</a>µÄÑéÖ¤£©ºÍÒ»Ð©²ßÂÔ½Å±¾À´½øÐÐ×îÖÕµÄ½á¹ûµÄÍÆËÍ£¬°ïÖúÒµÎñ½øÐÐ×îÖÕµÄ¾ö²ß¡£ÄÇÃ´Õâ¸ö²ßÂÔ·Ç³£¶à£¬ÓÐºÜ¶à°æ±¾£¬ÐèÒªºÜ¶àÌáÇ°ÑéÖ¤£¬ÊÂºóÑéÖ¤£¬¾ÍÊÇÆÀ²âºÍ»Ø²âµÄÂß¼­¡£</p>
+<p>ÄÇÃ´ÏÖÔÚµÄ¼Ü¹¹Çé¿öÊÇ£º</p>
+<ol>
+<li>Ã¿¸ö²¿ÃÅÓÐÉÏ°Ù¸ö°æ±¾µÄ½Å±¾£¬°üÀ¨µ«²»ÏÞÓÚ Python ½Å±¾£¬SQL£¬Spark£¬Hadoop ÈÎÎñ</li>
+<li>Ã¿¸öÎÄ¼þÃ»ÓÐ°æ±¾£¬ËæÊ±¸üÐÂ¸²¸Ç£¬¾ÍÊÇÆÕÍ¨µÄÎÄ¼þ</li>
+<li>ÓÐÒ»¸öµ÷¶ÈÆ÷£¬ÓÃÀ´µ÷¶È½Å±¾£¬Ò»¸ö½Å±¾Ö´ÐÐÍêÖ®ºó£¬ÔÙÖ´ÐÐÁíÒ»¸ö½Å±¾</li>
+<li>½Å±¾ÓÐ¼¸Íò¸öÖ®¶à</li>
+</ol>
+<p>Õâ¸öÆäÊµ¾ÍÊÇÒ»¸ö AI Ops µÄ¹¤³ÌÎÊÌâ£¬ÏñÏÖÔÚ£¬ÓÐºÜ¶à AI Ä£ÐÍ£¬AI µÄ¿ò¼Ü¿ÉÒÔ¿ìËÙµÄ½øÐÐÄ£ÐÍµÄÑµÁ·£¬Ò²ÓÐºÜ¶à´æ´¢ºÍ¹¤¾ß£¬¿ÉÒÔ´óÁ¿´æ´¢Êý¾Ý£¬Ò²¿ÉÒÔÊ¹ÓÃ map reduce µÄ·½·¨È¥¶à»úÆ÷Ö´ÐÐ¼ÆËã£¨±ÈÈç Scala ÔÚÕâÀïÐ´³ÉÀàËÆ stream ºÍº¯ÊýÊ½·½·¨£¬¾ÍÌØ±ðÊÊºÏ AI ºÍÊýÑ§µÄ³¡¾°£©£¬µ«ÊÇ±àÅÅµÄ¹¤³ÌÄÜÁ¦ºÜÈõ¡£ÎÒÖªµÀµÄ Databricks ×öµÄ»¹²»´í£¬½Ð<a href="https://zhida.zhihu.com/search?q=%CC%D8%D5%F7¹¤³%CC%26zhida_source=entity&amp;is_preview=1">ÌØÕ÷¹¤³Ì</a>Æ½Ì¨£¬½ñÄêÄê³õ²ÅÓÐÊÔÓÃ°æ¡£µ«£¬²»¹ÜÔõÃ´Ñù°É£¬ÏÖÔÚµÄÇé¿ö¾ÍÊÇÕâÃ´¸öÇé¿ö¡£</p>
+<p>Õâ¸öÊ±ºò¾ÍÐèÒªÓÃÒ»µã³éÏóºÍ stream µÄ·½·¨À´Éè¼ÆÁË¡£stream Ç¿µ÷µÄÊÇÊ²Ã´£¬ÊÇÁ÷Ë®ÏßµÄ¸Ð¾õ£¬Êý¾Ý in Êý¾Ý out£¬ËùÒÔ£¬ÎÒÃÇ¿ÉÒÔÕâÑù³éÏó¡£</p>
+<ol>
+<li>¶¨ÒåÒ»¸ö½ÐËã×ÓµÄ¸ÅÄî£¨¼´¼ÆËãµ¥Ôª£©£¬Õâ¸öËã×ÓÊÇ¿ÉÖ´ÐÐµÄ´úÂëÎÄ¼þ£¬¿ÉÒÔÊÇ Python£¬¿ÉÒÔÊÇ SQL£¬Ò²¿ÉÒÔÊÇ Spark ÈÎÎñ</li>
+<li>Ëã×ÓÊäÈëÊÇ Dataset£¬Êä³öÒ²ÊÇ Dataset</li>
+<li>ÓÃ±í´ïÊ½¸³ÓèËã×ÓÖ®¼äµÄ¹ØÏµ</li>
+<li>£¨¼¼ÊõÏ¸½Ú£©Ëã×ÓËã³öÀ´µÄ½á¹û£¬×Ô¶¯¸ù¾ÝÃû³ÆºÍÊ±¼äºÍ°æ±¾±£´æÔÚÖÐ¼ä±í£¬¿ÉÒÔ×÷Îª½á¹û£¬»òÕß×÷Îª»º´æ</li>
+<li>¿ÉÒÔ¶ÔËã×Ó½øÐÐ°æ±¾¿ØÖÆ</li>
+</ol>
+<p>ÏÂÃæÎÒÀ´½âÊÍÒ»ÏÂÉÏÃæµÄÉè¼Æ£¬°üÀ¨ÎªÊ²Ã´ÓÃÁË steam ÄÇ¸ö¸Ð¾õµÄË¼Î¬¡£²»¹ýÔÚ½éÉÜÖ®Ç°£¬ÎÒÏÈËµÒ»ÏÂÖ®Ç°µÄ×î´óÎÊÌâ£¬¾ÍÊÇ£º</p>
+<ol>
+<li>Ã¿¸öÈËÎ¬»¤×Ô¼ºµÄÎÄ¼þ£¬ÎÄ¼þÎÞ·¨Æ½Ì¨»¯£¬ËùÓÐµÄÅÜÂß¼­¶¼¿¿ÈË</li>
+<li>ÅÜ³öÀ´µÄÊý¾ÝÎÞ·¨±ê×¼»¯</li>
+<li>Ã¿¸öÎÄ¼þ¶¼Ã»ÓÐ°æ±¾£¬ËùÒÔÎÞ·¨¸ù¾ÝÄ³ÖÖÇé¿öÀ´²âÊÔ</li>
+<li>¸ÅÄîÃ»ÓÐ³éÏó£¬ËùÒÔÎÞ·¨½øÐÐÓÐÐ§µÄ½øÐÐ¾ö²ßµÄ¸üÐÂ</li>
+</ol>
+<p>Ç°ÃæÁ½µãÓÐ¾­ÑéµÄÍ¬Ñ§¿ÉÒÔ×Ô¼ºÀí½â£¬ºóÃæÔõÃ´ËµÄØ£¬¿ÉÄÜÃ»ÓÐ×ö¹ý AI Ops ¼Ü¹¹µÄÍ¬Ñ§²»Ì«ÁË½â£¬Ëµ°×ÁË£¬¾ÍÊÇÅÜ½Å±¾ A£¬³ö½á¹û£¬ÔÙÅÜ B£¬ÔÙ³ö½á¹û£¬ÔÙÅÜ C£¬ÏÖÔÚÒª¶Ô B ½øÐÐ¸üÐÂ£¬È»ºó½á¹ûÔõÃ´ÑùÄØ£¿µÃÊÖ¶¯¸Ä B£¬È»ºóÖØÅÜ B£¬½á¹ûºÃ»òÕß²»ºÃ£¬ÎÞ·¨¶Ô±È£¬²»È»»¹µÃÅÜ A¡£È»ºóËùÓÐµÄ½Å±¾¶¼¿ÉÄÜÊÇ²»Í¬²¿ÃÅµÄÈËÎ¬»¤µÄ£¬Ã¿¸öÈËÃ»°ì·¨ÓÐÍêÕûµÄÊ±¼äÖ§³Ö£¬ËùÒÔÔÚÕû¸ö¹«Ë¾ÊÇÎÞ·¨ÍÆ¶¯µÄ¡£ÖÐ¼äÒ²Ã»ÓÐ×Ô¶¯ÅÜÊý£¬ºÍ»º´æÂß¼­£¬¾Í·Ç³£¸´ÔÓ¡£ÌØ±ðÊÇÒ»¸ö²ßÂÔ¿ÉÄÜÇ£³¶µ½ÉÏ°Ù¸ö½Å±¾µÄÊ±ºò£¬¸üÊÇÃ»·¢È¥×ö²âÊÔ¡£¶øÇÒ£¬µ½ÕâÀï£¬ÎÒ¶¼ÎÞ·¨¸úÄãËµÕâ¸ö³éÏóµÄÂß¼­ÊÇÊ²Ã´¡£</p>
+<p>ÏÖÔÚ£¬Ê¹ÓÃËã×ÓÕâ¸ö¸ÅÄîÖ®ºó£¬ÎÒ¿ÉÒÔ¸úÄã¼òµ¥µÄ³éÏóÎª£¬¾ÍÊÇ²ßÂÔµÄ¼ÆËã¹«Ê½¡£ËùÒÔ³éÏóÈçÏÂ£º</p>
+<ol>
+<li>¶¨ÒåÒ»¸öËã×Ó£¬ÊÇ¿ÉÖ´ÐÐÎÄ¼þ£¬Èç A, B, C</li>
+<li>Ã¿·¢²¼Ò»¸ö°æ±¾£¬°æ±¾ºÅ×Ô¶¯¸üÐÂÈç A1, B1, C1</li>
+<li>²ßÂÔÓÃ DAG ÓÐÏòÎÞ»·Í¼À´±àÅÅ£¬È·±£Ã»ÓÐÑ­»·ÒýÓÃ</li>
+<li>²ßÂÔ£¬ÓÃ¹«Ê½À´³éÏó£¬Èç£¬(A + B) - C£¬Èç¹ûÊÇ²»Í¬µÄ°æ±¾£¬Ôò (A + B1) - C</li>
+<li>Ã¿´ÎËã×ÓÅÜ³öÀ´µÄÊý£¬¹ö¶¯´æ´¢£¬Èç A_1_20221101£¬ÕâÑùÔÚÖ´ÐÐµÄÊ±ºò£¬¿ÉÒÔÀûÓÃÇ°ÃæµÄÊý¾ÝÀ´½øÐÐ¿ìËÙÖØÅÜ£¬Èç (A(cached) + B1(not cached)) - C(cached)</li>
+<li>½á¹û¸ù¾Ý¹«Ê½µÄ hash À´´æ´¢£¬¿ÉÒÔ½øÐÐ²»Í¬²ßÂÔµÄ½á¹û½øÐÐ¶Ô±È£¬¿ÉÒÔ½øÐÐÆÀ²âºÍ»Ø²â</li>
+</ol>
+<p>×¢Òâ£ºÔÚÕâÀï +£¬- ·ûºÅ½ö½öÊÇ´ú±í³éÏó£¬±ÈÈç²»Í¬µÄ Dataset ×Ö¶Î²»Í¬£¬¸ñÊ½Ò²²»Í¬£¬ÄÇÔõÃ´´¦ÀíÄØ£¿´ÏÃ÷µÄÄãÒÑ¾­Ïëµ½ÁË£¬ÄÇ¾ÍÊÇ map °¡£¡</p>
+<p>Èç£º</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>(A + B) - C
+</span></span></code></pre></div><p>ÎÒÃÇ¿ÉÒÔ¶¨ÒåÎª +£¬ÎªÁ½¸ö±í¸ñµÄµÑ¿¨¶û»ý£¬- ÎªÍ¬×Ö¶ÎÊý×ÖÏà¼õ¡£µ±È»ÕâÑù£¬¿Ï¶¨²»·ûºÏÂß¼­ÁË¡£ÏÖÔÚ£¬´ÏÃ÷µÄÄãÓÖ¿ÉÒÔËµ£¬ÎÒÃÇ²»ÓÃ +£¬- ·ûºÅÁË£¬ÎÒÃÇ¶¨Òåº¯Êý²»¾ÍÐÐÁË¡£Èç£º</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>ï¿½ï¿½ï¿½ï¿½ 1Function = È¡ A ï¿½Ä¼Û¸ï¿½ï¿½Ö¶ï¿½ ï¿½Ö±ï¿½ï¿½ï¿½ï¿½ï¿½ B ï¿½ï¿½ï¿½Û¿ï¿½ï¿½Ö¶Î£ï¿½ È»ï¿½ï¿½ï¿½ï¿½ï¿½Ãµï¿½ï¿½ï¿½ï¿½ï¿½
+</span></span><span style="display:flex;"><span>ï¿½ï¿½ï¿½ï¿½ 2Function = È¥ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼Û¸ï¿½ï¿½Ð£ï¿½ï¿½ï¿½È¥ C ï¿½Ðµï¿½ï¿½ï¿½ï¿½ï¿½
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ï¿½ï¿½Ã´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(A 1Function B) 2Function C
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ï¿½ï¿½ï¿½ï¿½ï¿½Üºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É£ï¿½È»ï¿½ï¿½
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(A 3Function B1) 2Function C2
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ï¿½ï¿½ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã²ï¿½Í¬ï¿½æ±¾ï¿½ï¿½ï¿½ï¿½ï¿½Ó£ï¿½ï¿½ï¿½Í¬ï¿½æ±¾ï¿½Ä²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð²ï¿½ï¿½Ôµï¿½ï¿½ï¿½ï¿½ï¿½
+</span></span></code></pre></div><p>Ëµµ½ÕâÀï£¬ºÍ stream µÄË¼Â·ÓÐÊ²Ã´¹ØÏµÄØ¡£¡£ÄÇ¾Í¼òµ¥ÁË¡£</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Î±ï¿½ï¿½ï¿½ë£¬Java ï¿½ï¿½ï¿½ï¿½ï¿½ï²¢ï¿½ï¿½Ö§ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð´ï¿½ï¿½
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>A.stream().map(1Function, B).map(2Function, C).collect
+</span></span></code></pre></div><p>ËùÒÔÔÚ´úÂë²ãÃæ£¬map Ïàµ±ÓÚ×öº¯Êýµ÷ÓÃ£¬Ó³ÉäµÈÂß¼­¡£Èç¹ûÄãËµ Java ÓïÑÔ±¾Éí£¬Õâ¸ö stream Óï·¨ÌÇ¿ÉÄÜ²»Ö§³Ö£¬µ«ÊÇÕâ¸öË¼Â·ÔÚ Spark ºÍ Hadoop ×öµÄºÜÍêÉÆ£¬¸ü²»ÒªËµÓÃ Scala Ð´µÄ»°£¬¸Ð¾õ¾ÍÏñÊýÑ§¹«Ê½Ò»Ñù¡£±ÈÈç¿ÉÒÔÕâÃ´Ð´¡£¡£</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>f(x) = sum( g(h(x) - i(x)) )
+</span></span></code></pre></div><p>¡£¡£¡£</p>
+<p>Õâ¸ö Case ÊÇÒ»¸ö¼Ü¹¹Éè¼ÆµÄ Case£¬ºÍÓïÑÔ²ãÃæµÄ stream Ã»¹ØÏµ£¬µ«ÊÇºÍ±³ºóµÄË¼Â·ºÍË¼¿¼Âß¼­ÓÐºÜ´óµÄ¹ØÏµ£¬ÔÚ´óÐÍÓ¦ÓÃÖÐ£¬ÈçÉÏÇ§µÄÎ¢·þÎñÉè¼Æ£¬ÄãÐèÒª¿¼ÂÇÊý¾ÝÁ÷ÔõÃ´½øÔõÃ´³ö£¬Êý¾ÝÔõÃ´½øÐÐ¼ÆËã£¨Èç¼Ó¼õ·¨ÕâÑùµÄ³éÏó£©£¬ÔÚ AI Ops µÄÉè¼ÆÖÐ£¨×î½üÌØ±ð»ð£©£¬Èç¹ûÃ»Ë¼Â·£¬Ò²¿ÉÒÔÄ£Äâ Spark ºÍ Map Reduce µÄË¼Â·£¬ÔÚ¹¤³ÌÊµÏÖÉÏ£¬¿ÉÒÔÄ£·Â²Ù×÷ÏµÍ³µÄÏß³Ìµ÷¶ÈµÈË¼Â·£¬°üÀ¨Ò»¼¶»º´æºÍ¶þ¼¶»º´æ£¬¶¼¿ÉÒÔ¿¼ÂÇ¡£³éÏó³ÉÊý¾Ý×ª»»£¬ÎÞÂÛÊÇÔÚÎ¢·þÎñÉè¼Æ»¹ÊÇ AI Ops£¬»¹ÓÐ K8S µÈÖ»ÒªÐèÒª½øÐÐµ÷¶È£¬ÒµÎñ±ß½çµÄ»®·Ö£¬¶¼¿ÉÒÔÓÃÕâÖÖË¼Î¬¡£</p>
+<p>²»¹ý£¬¿ÉÄÜÎÒËµ stream Ë¼Î¬£¬ÊÇ·Ç³£²»×¼È·µÄ£¬´ó¼ÒÀí½âÕâ¸öÒâË¼¾ÍÐÐ¡£</p>
+<p>ÁíÍâ£¬ÎÒËµµÄÕâ¸ö½â·¨£¬¿ÉÊÇºÜÖµÇ®µÄ¡£Èç¹ûÄÜÂäµØµÄ»°£¬ÄêÐ½ 200 Íò²»³ÉÎÊÌâ£¬»¹¿ÉÒÔ¸ü¸ß¡£¡£¡£</p>
+<p>ÏàÐÅÎÒ£¬Òª×ÔÐÅ¡££ºD</p>
+              
+
+
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">TAGGED IN</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://ivanhan0511.github.io/tags/algorithm/">Algorithm</a>
+
+                  </div>
+                
+              
+            
+            
+<div class="post-actions-wrap">
+  <nav >
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--disabled">
+          
+              <i class="fa fa-angle-left"></i>
+              <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+            </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/c-plus-plus/" data-tooltip="C&#43;&#43;" aria-label="PREVIOUS: C&#43;&#43;">
+          
+              <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
+        </li>
+      
+    </ul>
+  </nav>
+<ul class="post-actions post-action-share" >
+  
+    <li class="post-action hide-lg hide-md hide-sm">
+      <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </a>
+    </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://ivanhan0511.github.io/post/algorithm/" title="Share on Facebook" aria-label="Share on Facebook">
+          <i class="fab fa-facebook-square" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://ivanhan0511.github.io/post/algorithm/" title="Share on Twitter" aria-label="Share on Twitter">
+          <i class="fab fa-twitter" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+  
+  
+    <li class="post-action">
+      <a class="post-action-btn btn btn--default" href="#disqus_thread" aria-label="Leave a comment">
+        <i class="far fa-comment"></i>
+      </a>
+    </li>
+  
+  <li class="post-action">
+    
+      <a class="post-action-btn btn btn--default" href="#top" aria-label="Back to top">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    
+    </a>
+  </li>
+</ul>
+</div>
+
+
+            
+  
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+    <script type="text/javascript">
+      var disqus_config = function() {
+        this.page.url = 'https:\/\/ivanhan0511.github.io\/post\/algorithm\/';
+        
+          this.page.identifier = '\/post\/algorithm\/'
+        
+      };
+      (function() {
+        
+        
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+          document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+          return;
+        }
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        var disqus_shortname = 'ivan-blog-disqus';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+  
+
+
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2024 <a href="https://github.com/ivanhan0511">Ivan Han</a>. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+        
+<div class="post-actions-wrap">
+  <nav >
+    <ul class="post-actions post-action-nav">
+      
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--disabled">
+          
+              <i class="fa fa-angle-left"></i>
+              <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+            </a>
+        </li>
+        <li class="post-action">
+          
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/c-plus-plus/" data-tooltip="C&#43;&#43;" aria-label="PREVIOUS: C&#43;&#43;">
+          
+              <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+              <i class="fa fa-angle-right"></i>
+            </a>
+        </li>
+      
+    </ul>
+  </nav>
+<ul class="post-actions post-action-share" >
+  
+    <li class="post-action hide-lg hide-md hide-sm">
+      <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </a>
+    </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://ivanhan0511.github.io/post/algorithm/" title="Share on Facebook" aria-label="Share on Facebook">
+          <i class="fab fa-facebook-square" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+      <li class="post-action hide-xs">
+        <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://ivanhan0511.github.io/post/algorithm/" title="Share on Twitter" aria-label="Share on Twitter">
+          <i class="fab fa-twitter" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+  
+  
+    <li class="post-action">
+      <a class="post-action-btn btn btn--default" href="#disqus_thread" aria-label="Leave a comment">
+        <i class="far fa-comment"></i>
+      </a>
+    </li>
+  
+  <li class="post-action">
+    
+      <a class="post-action-btn btn btn--default" href="#top" aria-label="Back to top">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    
+    </a>
+  </li>
+</ul>
+</div>
+
+
+      </div>
+      
+<div id="share-options-bar" class="share-options-bar" data-behavior="4">
+  <i id="btn-close-shareoptions" class="fa fa-times"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fivanhan0511.github.io%2Fpost%2Falgorithm%2F" aria-label="Share on Facebook">
+          <i class="fab fa-facebook-square" aria-hidden="true"></i><span>Share on Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fivanhan0511.github.io%2Fpost%2Falgorithm%2F" aria-label="Share on Twitter">
+          <i class="fab fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+
+
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-times"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://www.gravatar.com/avatar/0cac315e34e792213d5fa694dc39777b?s=110" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">Ivan Han</h4>
+    
+      <div id="about-card-bio">I need <strong>slow down</strong></div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        Software Engineer
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker-alt"></i>
+        <br/>
+        China
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    
+      <div id="cover" style="background-image:url('https://ivanhan0511.github.io/images/cover.jpg');"></div>
+    
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/highlight.min.js" integrity="sha512-z+/WWfyD5tccCukM4VvONpEtLmbAm5LDu7eKiyMQJ9m7OfPEDL7gENyDRL3Yfe8XAuGsS2fS4xSMnl6d30kqGQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+<script src="https://ivanhan0511.github.io/js/script-yqzy9wdlzix4lbbwdnzvwx3egsne77earqmn73v9uno8aupuph8wfguccut.min.js"></script>
+
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-gE8KAQyFIzV1C9+GZ8TKJHZS2s+n7EjNtC+IMRn1l5+WYJTHOODUM6JSjZhFhqXmc7bG8Av6XXpckA4tYhflnw==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/apache.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-EWROca+bote+7Oaaar1F6y74iZj1r1F9rm/ly7o+/FwJopbBaWtsFDmaKoZDd3QiGU2pGacBirHJNivmGLYrow==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/go.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-GDVzAn0wpx1yVtQsRWmFc6PhJiLBPdUic+h4GWgljBh904O3JU10fk9EKNpVyIoPqkFn54rgL2QBG4BmUTMpiQ==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/http.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-UgZlma8NzkrDb/NWgmLIcTrH7i/CSnLLDRFqCSNF5NGPpjKmzyM25qcoXGOup8+cDakKyaiTDd7N4dyH4YT+IA==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/less.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-lot9koe73sfXIrUvIPM/UEhuMciN56RPyBdOyZgfO53P2lkWyyXN7J+njcxIIBRV+nVDQeiWtiXg+bLAJZDTfg==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/nginx.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-Zd3e7XxHP00TD0Imr0PIfeM0fl0v95kMWuhyAS3Wn1UTSXTkz0OhtRgBAr4JlmADRgiXr4x7lpeUdqaGN8xIog==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/puppet.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-qtqDO052iXMSP+5d/aE/jMtL9vIIGvONgTJziC2K/ZIB1yEGa55WVxGE9/08rSQ62EoDifS9SWVGZ7ihSLhzMA==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/scss.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-1NmkjnEDnwwwcu28KoQF8vs3oaPFokQHbmbtwGhFfeDsQZtVFI8zW2aE9O8yMYdpdyKV/5blE4pSWw4Z/Sv97w==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/stylus.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-B2wSfruPjr8EJL6IIzQr1eAuDwrsfIfccNf/LCEdxELCgC/S/ZMt/Uvk80aD79m7IqOqW+Sw8nbkvha20yZpzg==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/swift.min.js"></script>
+  
+
+  
+    <script async crossorigin="anonymous" defer integrity="sha512-28oDiQZGKUVN6wQ7PSLPNipOcmkCALXKwOi7bnkyFf8QiMZQxG9EQoy/iiNx6Zxj2cG2SbVa4dXKigQhu7GiFw==" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.1.0/languages/yaml.min.js"></script>
+  
+
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+
+
+    
+  </body>
+</html>
+

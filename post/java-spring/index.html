@@ -339,6 +339,15 @@
             <li><a href="#总结表格">总结表格</a></li>
           </ul>
         </li>
+        <li><a href="#十一serializable">十一、Serializable</a></li>
+        <li><a href="#readview">ReadView</a>
+          <ul>
+            <li><a href="#1m_ids">1.m_ids</a></li>
+            <li><a href="#2min_trx_id">2.min_trx_id</a></li>
+            <li><a href="#3max_trx_id">3.max_trx_id</a></li>
+            <li><a href="#4creator_trx_id">4.creator_trx_id</a></li>
+          </ul>
+        </li>
         <li><a href="#c-多数据源">C. 多数据源</a></li>
       </ul>
     </li>
@@ -550,6 +559,39 @@ TODO: MySQL的间隙锁在开源代码中是否已经默认被应用</p>
 </tr>
 </tbody>
 </table>
+<p><a href="https://www.cnblogs.com/zhengzhaoxiang/p/13972252.html">Mysql 事务隔离级别和锁的关系</a></p>
+<blockquote>
+<p>**锁防止别的事务修改或删除，GAP锁防止别的事务新增，**行锁和 GAP锁结合形成的的 Next-Key锁共同解决了 RR级别在写数据时的幻读问题。</p>
+<h3 id="十一serializable">十一、Serializable</h3>
+<p>这个级别很简单，读加共享锁，写加排他锁，读写互斥。使用的悲观锁的理论，实现简单，数据更加安全，但是并发能力非常差。如果你的业务并发的特别少或者没有并发，同时又要求数据及时可靠的话，可以使用这种模式。</p>
+<blockquote>
+<p>这里要吐槽一句，不要看到 select就说不会加锁了，在Serializable这个级别，还是会加锁的！</p>
+</blockquote>
+</blockquote>
+<p><a href="https://juejin.cn/post/6920072842935533576">Java面试必问的MySQL锁与事务隔离级别</a></p>
+<blockquote>
+<h3 id="readview">ReadView</h3>
+<p>如果数据库隔离级别是未提交读（READ UNCOMMITTED），那么读取版本链中最新版本的记录即可。如果是是串行化（SERIALIZABLE），事务之间是加锁执行的，不存在读不一致的问题。但是如果是已提交读（READ COMMITTED）或者可重复读（REPEATABLE READ），就需要遍历版本链中的每一条记录，判断该条记录是否对当前事务可见，直到找到为止(遍历完还没找到就说明记录不存在)。InnoDB通过ReadView实现了这个功能。ReadView中主要包含以下4个内容：</p>
+<h4 id="1m_ids">1.m_ids</h4>
+<p>表示在生成ReadView时当前系统中活跃的读写事务的事务id列表。</p>
+<h4 id="2min_trx_id">2.min_trx_id</h4>
+<p>表示在生成ReadView时当前系统中活跃的读写事务中最小的事务id，也就是m_ids中的最小值。</p>
+<h4 id="3max_trx_id">3.max_trx_id</h4>
+<p>表示生成ReadView时系统中应该分配给下一个事务的id值。</p>
+<h4 id="4creator_trx_id">4.creator_trx_id</h4>
+<p>表示生成该ReadView事务的事务id。</p>
+<p>有了ReadView之后，我们可以基于以下步骤判断某个版本的记录是否对当前事务可见。</p>
+<p>1.如果被访问版本的trx_id属性值与ReadView中的creator_trx_id值相同，意味着当前事务在访问它自己修改过的记录，所以该版本可以被当前事务访问。</p>
+<p>2.如果被访问版本的trx_id属性值小于ReadView中的min_trx_id值，表明生成该版本的事务在当前事务生成ReadView前已经提交，所以该版本可以被当前事务访问。</p>
+<p>3.如果被访问版本的trx_id属性值大于或等于ReadView中的max_trx_id值，表明生成该版本的事务在当前事务生成ReadView后才开启，所以该版本不可以被当前事务访问。</p>
+<p>4.如果被访问版本的trx_id属性值在ReadView的min_trx_id和max_trx_id之间，那就需要判断一下trx_id属性值是不是在m_ids列表中，如果在，说明创建ReadView时生成该版本的事务还是活跃的，该版本不可以被访问；如果不在，说明创建ReadView时生成该版本的事务已经被提交，该版本可以被访问。</p>
+<p>在MySQL中，READ COMMITTED和REPEATABLE READ隔离级别的的一个非常大的区别就是它们生成ReadView的时机不同。READ COMMITTED在每次读取数据前都会生成一个ReadView，这样就能保证每次都能读到其它事务已提交的数据。REPEATABLE READ 只在第一次读取数据时生成一个ReadView，这样就能保证后续读取的结果完全一致。</p>
+<p>作者：IT中心
+链接：https://juejin.cn/post/6920072842935533576
+来源：稀土掘金
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+</blockquote>
+<p><a href="https://cloud.tencent.com/developer/article/1121737">数据库事务、隔离级别和锁ACID的真实含义隔离级别和并发控制MySQL和PostgreSQL对比如何写代码</a>略读</p>
 <h3 id="c-多数据源">C. 多数据源</h3>
 <div class="alert info ">
   <p>@DS 必须加在 @Transactional 对应的类或者方法上<br>

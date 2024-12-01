@@ -316,33 +316,38 @@
 <h1 id="table-of-contents">Table of Contents</h1>
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#backup">BACKUP</a></li>
-    <li><a href="#boot-device">BOOT DEVICE</a></li>
-    <li><a href="#base">BASE</a></li>
-    <li><a href="#proxy">Proxy</a></li>
-    <li><a href="#db">DB</a></li>
-    <li><a href="#visualstudiopro2022">VisualStudioPro2022</a></li>
-    <li><a href="#pycharm">PyCharm</a></li>
-    <li><a href="#idea">IDEA</a>
+    <li><a href="#i-backup">I. BACKUP</a></li>
+    <li><a href="#ii-prepare-boot-device">II. PREPARE BOOT DEVICE</a></li>
+    <li><a href="#iii-base">III. BASE</a></li>
+    <li><a href="#iv-proxy">IV. Proxy</a></li>
+    <li><a href="#v-db">V. DB</a></li>
+    <li><a href="#vi-visualstudiopro2022">VI. VisualStudioPro2022</a></li>
+    <li><a href="#vii-pycharm">VII. PyCharm</a>
       <ul>
-        <li><a href="#configuration">Configuration</a></li>
-        <li><a href="#plugins">Plugins</a></li>
-        <li><a href="#maven">Maven</a></li>
+        <li><a href="#a-configuration">A. Configuration</a></li>
+        <li><a href="#b-plugins">B. Plugins</a></li>
+        <li><a href="#a-anaconda">A. Anaconda</a></li>
       </ul>
     </li>
-    <li><a href="#hbuilderx">HBuilderX</a></li>
-    <li><a href="#vmware">VMWare</a>
+    <li><a href="#viii-idea">VIII. IDEA</a>
       <ul>
-        <li><a href="#windows">Windows</a></li>
-        <li><a href="#ubuntu-desktopdeprecated">Ubuntu Desktop(Deprecated)</a></li>
+        <li><a href="#a-configuration-1">A. Configuration</a></li>
+        <li><a href="#b-plugins-1">B. Plugins</a></li>
+        <li><a href="#c-maven">C. Maven</a></li>
       </ul>
     </li>
-    <li><a href="#others">Others</a></li>
-    <li><a href="#bitcoin">BITCOIN</a></li>
+    <li><a href="#ix-hbuilderx">IX. HBuilderX</a></li>
+    <li><a href="#x-vmware">X. VMWare</a>
+      <ul>
+        <li><a href="#a-windows">A. Windows</a></li>
+        <li><a href="#b-ubuntu-desktopdeprecated">B. Ubuntu Desktop(Deprecated)</a></li>
+      </ul>
+    </li>
+    <li><a href="#xi-others">XI. Others</a></li>
   </ul>
 </nav>
 
-<h2 id="backup">BACKUP</h2>
+<h2 id="i-backup">I. BACKUP</h2>
 <hr>
 <p>主力开发操作系统是Windows, 如果要重装系统, 需要提前备份好本地文件</p>
 <ul>
@@ -351,12 +356,7 @@
 <li>TODO</li>
 </ul>
 </li>
-<li>PyCharm
-<ul>
-<li>TODO</li>
-</ul>
-</li>
-<li>IDEA
+<li>PyCharm/IDEA
 <ul>
 <li>git commit and push</li>
 <li>IDEA开发用的每一条SQL console, 右键Refactor -&gt; Copy file, 存储到项目sql文件夹中随Git上传</li>
@@ -388,13 +388,13 @@
 <li>Video</li>
 <li>Music</li>
 </ul>
-<h2 id="boot-device">BOOT DEVICE</h2>
+<h2 id="ii-prepare-boot-device">II. PREPARE BOOT DEVICE</h2>
 <hr>
 <ul>
 <li>Create Windows official MediaCreationTool</li>
 <li>Choose boot device in BIOS</li>
 </ul>
-<h2 id="base">BASE</h2>
+<h2 id="iii-base">III. BASE</h2>
 <hr>
 <p>只要连接互联网, 现有的Windows11会自动联网安装驱动, 只需要等待更新/重启</p>
 <p>趁着没有使用网络代理, 先安装基本工具</p>
@@ -403,7 +403,7 @@
 <ul>
 <li>Prefer English language</li>
 <li>Libs</li>
-<li>Git?</li>
+<li><del>Git</del></li>
 </ul>
 </li>
 <li>Input method, config only <code>ctrl + space</code> to switch</li>
@@ -411,8 +411,8 @@
 <li>HHKB</li>
 <li>Logitech
 <ul>
-<li>Anywhere3 and OptionPlus</li>
-<li>G309 and G Hub</li>
+<li><del>Anywhere3 and OptionPlus</del></li>
+<li>G70r and G Hub</li>
 </ul>
 </li>
 <li>文件夹选项 -&gt; 隐私
@@ -423,15 +423,15 @@
 </li>
 <li>Active WSL2</li>
 </ul>
-<h2 id="proxy">Proxy</h2>
+<h2 id="iv-proxy">IV. Proxy</h2>
 <hr>
 <p>v2rayN(Need DotNet6.0)</p>
 <p>注意新安装的Windows, 要确保对时准确, 精准到1分钟以内, 否则代理建立连接失败</p>
-<h2 id="db">DB</h2>
+<h2 id="v-db">V. DB</h2>
 <hr>
 <p>真机傻瓜式安装, 之后只用<code>MySQL 8.1 Command Line Clien</code>登录用于DCL(Data Control Language)管理<br>
 然后用IDEA(Ultimate)的Import/Export 工具进行数据到导入/导出, ER图也可以导出, <a href="https://ivanhan0511.github.io/post/sql-mysql/">各种DDL(Data Definition Language), DML(Data Manipulation Language)</a>都可以在IDEA中完成</p>
-<h2 id="visualstudiopro2022">VisualStudioPro2022</h2>
+<h2 id="vi-visualstudiopro2022">VI. VisualStudioPro2022</h2>
 <hr>
 <ul>
 <li>设置项目存储路径, Tools -&gt; Options -&gt; Projects and Solutions -&gt; Locations</li>
@@ -453,12 +453,14 @@
 </ul>
 </li>
 </ul>
-<h2 id="pycharm">PyCharm</h2>
+<h2 id="vii-pycharm">VII. PyCharm</h2>
 <hr>
-<p>TODO</p>
-<h2 id="idea">IDEA</h2>
+<h3 id="a-configuration">A. Configuration</h3>
+<h3 id="b-plugins">B. Plugins</h3>
+<h3 id="a-anaconda">A. Anaconda</h3>
+<h2 id="viii-idea">VIII. IDEA</h2>
 <hr>
-<h3 id="configuration">Configuration</h3>
+<h3 id="a-configuration-1">A. Configuration</h3>
 <ul>
 <li>Enable <code>Settings Sync</code></li>
 <li>在各个项目中分别选择Java JDK环境, 不安装Java在裸机</li>
@@ -466,7 +468,7 @@
 <li>数据库导入时, 右键某个数据库 -&gt; Import/Export -&gt; Restore with &lsquo;mysql&rsquo; -&gt; Path to mysql -&gt; <code>C:/Program Files/MySQL/MySQL Server 8.1/bin/mysql.exe</code></li>
 <li>数据库导出时, 右键某个数据库 -&gt; Import/Export -&gt; Export with &lsquo;mysqldump&rsquo; -&gt; Path to mysqldump -&gt; <code>C:/Program Files/MySQL/MySQL Server 8.1/bin/mysqldump.exe</code></li>
 </ul>
-<h3 id="plugins">Plugins</h3>
+<h3 id="b-plugins-1">B. Plugins</h3>
 <ul>
 <li>IdeaVim
 <ul>
@@ -479,7 +481,7 @@
 <li>Redis</li>
 <li>RemoteHost <code>java -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005 -jar pear-admin-pro-1.11.9-SNAPSHOT.jar</code></li>
 </ul>
-<h3 id="maven">Maven</h3>
+<h3 id="c-maven">C. Maven</h3>
 <p>Maven 3.8.1 blocked http connection</p>
 <ul>
 <li>
@@ -602,27 +604,34 @@
 <p>Reload pom.xml file in IDEA and automaticlly download the dependencies</p>
 </li>
 </ul>
-<h2 id="hbuilderx">HBuilderX</h2>
+<h2 id="ix-hbuilderx">IX. HBuilderX</h2>
 <hr>
 <p>开发环境部署, 参照<a href="https://ivanhan0511.github.io/post/js-vue3/">js-vue3.md</a></p>
-<h2 id="vmware">VMWare</h2>
+<h2 id="x-vmware">X. VMWare</h2>
 <hr>
 <p>VMWare WorkStation Pro, 规划好哪些工具安装在裸机, 哪些安装在VMWare</p>
 <ul>
 <li>切换安装路径到<code>D:\VirtualMachines\</code>盘</li>
 <li>编辑 -&gt; 首选项 -&gt; 内存 -&gt; 额外内存 &ldquo;调整所有虚拟机内存使其适应预留的主机RAM&rdquo;</li>
 </ul>
-<h3 id="windows">Windows</h3>
+<h3 id="a-windows">A. Windows</h3>
 <ul>
 <li>
-<p>电源管理, 从不休眠</p>
+<p>Base镜像: 电源管理, 从不休眠</p>
 </li>
 <li>
 <p>MS SQL Server + SSMS</p>
 <p>Init, export, import refer to<a href="https://ivanhan0511.github.io/post/sql-sqlserver/">MS SQL Server Opertaions</a></p>
 </li>
+<li>
+<p>RD镜像: 开发试验用, 或安装垃圾软件等</p>
+</li>
+<li>
+<p>Finance镜像: Download Bitcoin wallet from <a href="https://bitcoin.org/en/choose-your-wallet">here</a> and choose <code>Bitcoin Core</code></p>
+</li>
 </ul>
-<h3 id="ubuntu-desktopdeprecated">Ubuntu Desktop(Deprecated)</h3>
+<p>Login <a href="https://www.huobi.com/en-us/login/">this website</a> to trans BTC</p>
+<h3 id="b-ubuntu-desktopdeprecated">B. Ubuntu Desktop(Deprecated)</h3>
 <p>Refer to <a href="https://blog.csdn.net/weixin_43862116/article/details/107731631">this post</a>挂载host主机的文件夹到Ubuntu挂在点, 用于共享</p>
 
   
@@ -662,18 +671,18 @@ sudo vi /etc/fstab</code></pre>
 </figure>
 
 <p><code>.host:WinDownloads /mnt/hgfs/downloads/ fuse.vmhgfs-fuse allow_other 0 0</code></p>
-<h2 id="others">Others</h2>
+<h2 id="xi-others">XI. Others</h2>
 <hr>
 <p>常用的跨平台工具, 兼容iOS / macOS / Windows / Android</p>
 <ul>
 <li>Chrome</li>
-<li>Postman(Deprecated)</li>
+<li><del>Postman</del></li>
 <li>XShell/XFtp(转用WSL2)
 <ul>
 <li><code>telnet &lt;IP&gt; &lt;Port&gt;</code></li>
 </ul>
 </li>
-<li>hugo(转用WSL2)
+<li><del>hugo</del>(转用WSL2)
 <ul>
 <li>在<a href="https://github.com/gohugoio/hugo/releases">HUGO的GitHub</a>的releases中下载适用于Windows的文件压缩包</li>
 <li>比如放在<code>C:\Program Files\Git\usr\bin</code>中, 并添加到环境变量中</li>
@@ -689,12 +698,8 @@ sudo vi /etc/fstab</code></pre>
 <li>亿图Edraw</li>
 <li>Fiio driver</li>
 <li>Notepad++</li>
-<li>Axure RP 9 (Axure Rapid Prototyping)(Deprecated, use Mock in iPad)</li>
+<li><del>Axure RP 9(Axure Rapid Prototyping)</del>(Deprecated, use Mock in iPad)</li>
 </ul>
-<h2 id="bitcoin">BITCOIN</h2>
-<hr>
-<p>Download Bitcoin wallet from <a href="https://bitcoin.org/en/choose-your-wallet">here</a> and choose <code>Bitcoin Core</code></p>
-<p>Login <a href="https://www.huobi.com/en-us/login/">this website</a> to trans BTC</p>
               
 
 

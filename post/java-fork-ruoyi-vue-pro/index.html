@@ -348,12 +348,7 @@ But the stronger, the more complex. This post is the annotation for this project
       <ul>
         <li><a href="#ci">CI</a></li>
         <li><a href="#api-document">API Document</a></li>
-        <li><a href="#deployment">Deployment</a>
-          <ul>
-            <li><a href="#docker">Docker</a></li>
-            <li><a href="#jar">JAR</a></li>
-          </ul>
-        </li>
+        <li><a href="#deployment">Deployment</a></li>
       </ul>
     </li>
     <li><a href="#chapter-5">V. COMMON</a>
@@ -772,15 +767,226 @@ public Long createSaleOrder(ErpSaleOrderSaveReqVO createReqVO) {
 <li><input disabled="" type="checkbox"> With session token</li>
 </ul>
 <h3 id="deployment">Deployment</h3>
-<p>Temp use jar</p>
-<h4 id="docker">Docker</h4>
+<p>No best, only better! We <strong>DON&rsquo;T</strong> want to use Docker.</p>
+<p><strong>个人开发</strong></p>
 <ul>
-<li><input disabled="" type="checkbox"> DockerCompose deployment in single server?</li>
+<li>前端:
+<ul>
+<li>使用<code>.env.local</code>配置文件, 指向<code>http://127.0.0.1:48080</code></li>
+<li>调试命令<code>npm run dev</code></li>
 </ul>
-<h4 id="jar">JAR</h4>
-<p>.env.local
-.env.dev
-.env.pro</p>
+</li>
+<li>后端:
+<ul>
+<li>使用<code>application-local.yaml</code>配置文件, 数据源指向localhost</li>
+<li>IDE调试即可</li>
+</ul>
+</li>
+</ul>
+<p><strong>开发联调</strong></p>
+<ul>
+<li>前端:
+<ul>
+<li>使用<code>.env.dev</code>配置文件, 指向<code>https://mall-srv.xxx.com</code></li>
+<li>调试命令<code>npm run dev-server</code></li>
+<li>打包命令<code>npm run build:dev</code></li>
+</ul>
+</li>
+<li>后端:
+<ul>
+<li>使用<code>application-dev.yaml</code>配置文件, 数据源指向localhost (服务器本地)</li>
+<li>配置<code>https://mall.xxx.com</code>和<code>https://mall-srv.xxx.com</code>, 域名解析, 开放端口及备案, SSL证书</li>
+<li>使用<code>screen</code>运行在云服务器即可, 供前端调试用</li>
+<li>Nginx采用独立域名访问的方式, 配置如下</li>
+</ul>
+</li>
+</ul>
+<p><strong>生产环境</strong></p>
+<ul>
+<li>前端:
+<ul>
+<li>使用<code>.env.prod</code>配置文件, 指向<code>http://127.0.0.1:48080</code></li>
+<li>打包命令<code>npm run build:prod</code></li>
+</ul>
+</li>
+<li>后端:
+<ul>
+<li>使用<code>application-prod.yaml</code>配置文件, 数据源指向localhost (服务器本地)</li>
+<li>配置<code>https://mall.xxx.com</code>, 域名解析, 开放端口及备案, SSL证书</li>
+<li>使用<code>screen</code>运行在云服务器即可, 供前端调试用</li>
+<li>Nginx采用服务器局域网IP访问的方式, 配置如下</li>
+</ul>
+</li>
+</ul>
+
+
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+
+
+  
+    
+  
+  
+
+<figure class="codeblock codeblock--tabbed">
+  <figcaption>
+    
+      <span>nginx</span>
+    
+    <ul class="tabs">
+      
+        <li class="tab active">dev</li>
+      
+        <li class="tab ">prod</li>
+      
+    </ul>
+  </figcaption>
+  <div class="tabs-content">
+    
+      
+      <figure class="highlight language-dev dev" style="display: block;">
+        <table>
+          <tbody>
+            <tr>
+              <td class="gutter">
+                <pre><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br><span>36</span><br><span>37</span><br><span>38</span><br><span>39</span><br><span>40</span><br><span>41</span><br><span>42</span><br><span>43</span><br><span>44</span><br><span>45</span><br><span>46</span><br><span>47</span><br><span>48</span><br><span>49</span><br><span>50</span><br><span>51</span><br><span>52</span><br><span>53</span><br><span>54</span><br></pre>
+              </td>
+              <td class="code">
+                <pre class="code-highlight language-dev dev"><code class="dev">worker_processes  1;
+
+events {
+    worker_connections  1024;
+}
+
+http {
+    include       mime.types;
+    default_type  application/octet-stream;
+    sendfile        on;
+    keepalive_timeout  65;
+
+    gzip on;
+    gzip_min_length 1k;     # 设置允许压缩的页面最小字节数
+    gzip_buffers 4 16k;     # 用来存储 gzip 的压缩结果
+    gzip_http_version 1.1;  # 识别 HTTP 协议版本
+    gzip_comp_level 2;      # 设置 gzip 的压缩比 1-9。1 压缩比最小但最快，而 9 相反
+    gzip_types text/plain application/x-javascript text/css application/xml application/javascript; # 指定压缩类型
+    gzip_proxied any;       # 无论后端服务器的 headers 头返回什么信息，都无条件启用压缩
+
+    server { ## 前端项目
+        listen       80;
+        server_name  mall.xxx.com; ## 重要！！！修改成你的前端域名
+
+        location / { ## 前端项目
+            root   /work/projects/yudao-ui-admin;
+            index  index.html index.htm;
+            try_files $uri $uri/ /index.html;
+        }
+    }
+
+    server { ## 后端项目
+        listen       80;
+        server_name  api.iocoder.cn; ## 重要！！！修改成你的外网 IP/域名
+
+        ## 不要使用 location / 转发到后端项目，因为 druid、admin 等监控，不需要外网可访问。或者增加 Nginx IP 白名单限制也可以。
+
+        location /admin-api/ { ## 后端项目 - 管理后台
+            proxy_pass http://localhost:48080/admin-api/; ## 重要！！！proxy_pass 需要设置为后端项目所在服务器的 IP
+            proxy_set_header Host $http_host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header REMOTE-HOST $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        }
+
+        location /app-api/ { ## 后端项目 - 用户 App
+            proxy_pass http://localhost:48080/app-api/; ## 重要！！！proxy_pass 需要设置为后端项目所在服务器的 IP
+            proxy_set_header Host $http_host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header REMOTE-HOST $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        }
+    }
+}</code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </figure>
+    
+      
+      <figure class="highlight language-prod prod" style="display: none;">
+        <table>
+          <tbody>
+            <tr>
+              <td class="gutter">
+                <pre><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br><span>36</span><br><span>37</span><br><span>38</span><br><span>39</span><br><span>40</span><br><span>41</span><br><span>42</span><br><span>43</span><br><span>44</span><br><span>45</span><br><span>46</span><br><span>47</span><br></pre>
+              </td>
+              <td class="code">
+                <pre class="code-highlight language-prod prod"><code class="prod">worker_processes  1;
+
+events {
+    worker_connections  1024;
+}
+
+http {
+    include       mime.types;
+    default_type  application/octet-stream;
+    sendfile        on;
+    keepalive_timeout  65;
+
+    gzip on;
+    gzip_min_length 1k;     # 设置允许压缩的页面最小字节数
+    gzip_buffers 4 16k;     # 用来存储 gzip 的压缩结果
+    gzip_http_version 1.1;  # 识别 HTTP 协议版本
+    gzip_comp_level 2;      # 设置 gzip 的压缩比 1-9。1 压缩比最小但最快，而 9 相反
+    gzip_types gzip_types text/plain text/css application/json application/javascript text/xml application/xml application/xml&#43;rss text/javascript; # 指定压缩类型
+    gzip_proxied any;       # 无论后端服务器的 headers 头返回什么信息，都无条件启用压缩
+
+    server {
+        listen       80;
+        server_name  192.168.225.2; ## 重要！！！修改成你的外网 IP/域名
+
+        location / { ## 前端项目
+            root   /work/projects/yudao-ui-admin;
+            index  index.html index.htm;
+            try_files $uri $uri/ /index.html;
+        }
+
+        location /admin-api/ { ## 后端项目 - 管理后台
+            proxy_pass http://localhost:48080/admin-api/; ## 重要！！！proxy_pass 需要设置为后端项目所在服务器的 IP
+            proxy_set_header Host $http_host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header REMOTE-HOST $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        }
+
+        location /app-api/ { ## 后端项目 - 用户 App
+            proxy_pass http://localhost:48080/app-api/; ## 重要！！！proxy_pass 需要设置为后端项目所在服务器的 IP
+            proxy_set_header Host $http_host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header REMOTE-HOST $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        }
+    }
+}</code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </figure>
+    
+  </div>
+</figure>
+
 <h2 id="chapter-5">V. COMMON</h2>
 <hr>
 <p>理解源码的核心设计思路, 具体技术知识见java-spring.md</p>

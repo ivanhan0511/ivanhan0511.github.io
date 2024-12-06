@@ -25,7 +25,7 @@
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Hugo 0.117.0 with theme Tranquilpeak 0.5.3-BETA">
+<meta name="generator" content="Hugo 0.123.7 with theme Tranquilpeak 0.5.3-BETA">
 <meta name="author" content="Ivan Han">
 <meta name="keywords" content="windows, init, config, Ivan, SoftwareEngineer, C/C&#43;&#43;, Java, Coffee, Bass, Bicycle, Badminton">
 <meta name="description" content="After initialization of Windows 11, here is the TODO list.">
@@ -317,43 +317,36 @@
 <nav id="TableOfContents">
   <ul>
     <li><a href="#i-backup">I. BACKUP</a></li>
-    <li><a href="#ii-prepare-boot-device">II. PREPARE BOOT DEVICE</a></li>
-    <li><a href="#iii-base">III. BASE</a></li>
-    <li><a href="#iv-proxy">IV. Proxy</a></li>
-    <li><a href="#v-db">V. DB</a></li>
-    <li><a href="#vi-visualstudiopro2022">VI. VisualStudioPro2022</a></li>
-    <li><a href="#vii-pycharm">VII. PyCharm</a>
+    <li><a href="#ii-base">II. BASE</a></li>
+    <li><a href="#iii-wsl2">III. WSL2</a>
       <ul>
-        <li><a href="#a-configuration">A. Configuration</a></li>
-        <li><a href="#b-plugins">B. Plugins</a></li>
-        <li><a href="#a-anaconda">A. Anaconda</a></li>
+        <li><a href="#a-active-wsl2">A. Active WSL2</a></li>
+        <li><a href="#b-vim">B. Vim</a></li>
+        <li><a href="#c-mysql">C. Mysql</a></li>
+        <li><a href="#d-redis">D. Redis</a></li>
       </ul>
     </li>
-    <li><a href="#viii-idea">VIII. IDEA</a>
+    <li><a href="#iv-ide">IV. IDE</a>
       <ul>
-        <li><a href="#a-configuration-1">A. Configuration</a></li>
-        <li><a href="#b-plugins-1">B. Plugins</a></li>
-        <li><a href="#c-maven">C. Maven</a></li>
+        <li><a href="#a-jetbrains-pycharmidea">A. Jetbrains PyCharm/IDEA</a></li>
+        <li><a href="#b-visualstudio-pro-2022--vs-code">B. VisualStudio Pro 2022 / VS Code</a></li>
       </ul>
     </li>
-    <li><a href="#ix-hbuilderx">IX. HBuilderX</a></li>
-    <li><a href="#x-vmware">X. VMWare</a>
+    <li><a href="#v-vmware--">V. VMWare  ?</a>
       <ul>
         <li><a href="#a-windows">A. Windows</a></li>
         <li><a href="#b-ubuntu-desktopdeprecated">B. Ubuntu Desktop(Deprecated)</a></li>
       </ul>
     </li>
-    <li><a href="#xi-others">XI. Others</a></li>
   </ul>
 </nav>
 
 <h2 id="i-backup">I. BACKUP</h2>
-<hr>
 <p>主力开发操作系统是Windows, 如果要重装系统, 需要提前备份好本地文件</p>
 <ul>
 <li>VisualStudio
 <ul>
-<li>TODO</li>
+<li>git commit and push</li>
 </ul>
 </li>
 <li>PyCharm/IDEA
@@ -361,20 +354,29 @@
 <li>git commit and push</li>
 <li>IDEA开发用的每一条SQL console, 右键Refactor -&gt; Copy file, 存储到项目sql文件夹中随Git上传</li>
 <li>Scratch代码</li>
+<li><del>.ideavimrc</del></li>
 </ul>
 </li>
 <li><del>HBuildX</del>改用VSCode
 <ul>
 <li>No local file, all in git</li>
+<li>据说可以通过vue-cli创建uni-app工程? 不太喜欢uni-app</li>
 </ul>
 </li>
-<li>坚果云文档: 公司文档, 仅限文档, 其余通过本地文件存储</li>
+<li>坚果云文档: 仅限文档, 其余通过本地文件存储</li>
 <li>本地文档
 <ul>
 <li>公司超大文件</li>
 <li>各个项目的 密钥/证书</li>
-<li>服务器所涉及的 登录方式/用户名/密码 的文档</li>
+<li>服务器所涉及的 登录方式/用户名/密码 等文档</li>
+</ul>
+</li>
+<li>Terminal
+<ul>
 <li>SSH密钥对</li>
+<li>SSH config</li>
+<li>.vimrc, vim bundle</li>
+<li>.gitconfig</li>
 </ul>
 </li>
 <li>虚拟机
@@ -387,222 +389,81 @@
 <li>Image</li>
 <li>Video</li>
 <li>Music</li>
+<li>Create a bootable USB by Microsoft official <code>MediaCreationTool</code></li>
 </ul>
-<h2 id="ii-prepare-boot-device">II. PREPARE BOOT DEVICE</h2>
-<hr>
-<ul>
-<li>Create Windows official MediaCreationTool</li>
-<li>Choose boot device in BIOS</li>
-</ul>
-<h2 id="iii-base">III. BASE</h2>
-<hr>
+<h2 id="ii-base">II. BASE</h2>
 <p>只要连接互联网, 现有的Windows11会自动联网安装驱动, 只需要等待更新/重启</p>
+<p>常用的跨平台工具, 兼容iOS / macOS / Windows / Android</p>
 <ul>
-<li>Input method, config only <code>ctrl + space</code> to switch</li>
-<li>Chrome as default browser</li>
+<li>Input method, config only <code>ctrl + space</code> to switch(微软输入法与IDEA关于重命名变量的热键冲突已经被修复)</li>
+<li>Chrome as default browser, 下载工具, 查询密码, 都需要它, 优先安装</li>
 <li>HHKB</li>
-<li>Logitech
-<ul>
-<li><del>Anywhere3 and OptionPlus</del></li>
-<li>G703 and G Hub</li>
-</ul>
-</li>
+<li>Logitech G703 and G Hub</li>
 <li>文件夹选项 -&gt; 隐私
 <ul>
 <li>取消勾选&quot;显示最近使用的文件&quot;</li>
 <li>取消勾选&quot;显示常用文件夹&quot;</li>
 </ul>
 </li>
-<li>Active WSL2, install Ubuntu and configure Ubuntu as default</li>
-<li>Chrome, 下载工具, 查询密码, 都需要它</li>
-</ul>
-<h2 id="iv-proxy">IV. Proxy</h2>
-<hr>
-<p>v2rayN(Need DotNet6.0)</p>
-<p>注意新安装的Windows, 要确保对时准确, 精准到1分钟以内, 否则代理建立连接失败</p>
-<h2 id="v-db">V. DB</h2>
-<hr>
-<p>真机傻瓜式安装, 之后只用<code>MySQL 8.1 Command Line Clien</code>登录用于DCL(Data Control Language)管理<br>
-然后用IDEA(Ultimate)的Import/Export 工具进行数据到导入/导出, ER图也可以导出, <a href="https://ivanhan0511.github.io/post/sql-mysql/">各种DDL(Data Definition Language), DML(Data Manipulation Language)</a>都可以在IDEA中完成</p>
-<h2 id="vi-visualstudiopro2022">VI. VisualStudioPro2022</h2>
-<hr>
-<p>Try V-box this time(Dec 03, 2024)</p>
+<li>v2rayN(Need DotNet6.0) 注意新安装的Windows, 要确保对时准确, 精准到1分钟以内, 否则代理建立连接失败</li>
+<li><del>Postman</del></li>
+<li><del>XShell/XFtp <code>telnet &lt;IP&gt; &lt;Port&gt;</code></del> (转用WSL2)</li>
+<li><del>hugo</del>(转用WSL2)
 <ul>
-<li>设置项目存储路径, Tools -&gt; Options -&gt; Projects and Solutions -&gt; Locations</li>
-<li>Install VsVim extension
-<ul>
-<li>Check which directories the VsVim searchs for config files by using the command <code>:set vimrcpaths?</code></li>
-<li>This is typically the <code>HOME</code>, <code>VIM</code> or <code>USERPROFILE</code> directories</li>
-<li>Place your <code>.vimrc</code> file in one of these directories, restart Visual Studio and VsVim will load those settings</li>
-<li>You can verify which vimrc file is currently loaded in VsVim by using the command <code>:set vimrc?</code></li>
+<li>在<a href="https://github.com/gohugoio/hugo/releases">HUGO的GitHub</a>的releases中下载适用于Windows的文件压缩包</li>
+<li>比如放在<code>C:\Program Files\Git\usr\bin</code>中, 并添加到环境变量中</li>
 </ul>
 </li>
-<li>设置字体? 默认DejaVu Sans Mono? 避免像CMD.exe一样无法分辨小写L与数字1</li>
-<li><a href="https://blog.csdn.net/qq_41868108/article/details/105750175">Visual Studio 增加菜单来修改字符集编码</a></li>
-<li>自动补全: Enter or Tab?
+<li>向日葵Sunlogin</li>
+<li>WireShark</li>
+<li>Typora</li>
+<li>坚果云</li>
+<li>Office365(Outlook, Excel, Word, PowerPoint)</li>
+<li>WeChat</li>
+<li>腾讯会议</li>
+<li>亿图Edraw</li>
+<li><a href="https://www.fiio.com/Driver_Download">Fiio driver</a></li>
+<li>Notepad++</li>
+<li><del>Axure RP 9(Axure Rapid Prototyping)</del>(Deprecated, use Mock in iPad)</li>
+</ul>
+<h2 id="iii-wsl2">III. WSL2</h2>
+<h3 id="a-active-wsl2">A. Active WSL2</h3>
 <ul>
-<li>Visual Studio 2022是使用Tab进行代码补全的, 但一般习惯回车补全的时候就需要重新设置</li>
-<li>个人选择用Tab，原因是Linux默认的补全键是Tab, Notpad++ / Nacicat 也都是Tab补全</li>
-<li>具体路径: 工具 –&gt; 选项 –&gt; 文本编辑器 –&gt; C/C++ -&gt; 高级 –&gt; 主动提交成员列表</li>
+<li>Install Ubuntu, configure Ubuntu as default and configure color themes</li>
+<li>Autostart WSL2 with Win11 boot up</li>
+<li>SSH key-pairs, config file</li>
+<li><code>.gitconfig</code> file</li>
+<li><code>C:\User\Ivan\.wslconfig</code>?</li>
 </ul>
-</li>
-</ul>
-<h2 id="vii-pycharm">VII. PyCharm</h2>
-<hr>
-<h3 id="a-configuration">A. Configuration</h3>
-<h3 id="b-plugins">B. Plugins</h3>
-<h3 id="a-anaconda">A. Anaconda</h3>
-<h2 id="viii-idea">VIII. IDEA</h2>
-<hr>
-<h3 id="a-configuration-1">A. Configuration</h3>
+<h3 id="b-vim">B. Vim</h3>
 <ul>
-<li>Enable <code>Settings Sync</code></li>
-<li>在各个项目中分别选择Java JDK环境, 不安装Java在裸机</li>
-<li>settsings(Ctrl+Alt+S) -&gt; Editor -&gt; Code Style -&gt; SQL -&gt; 将keywords设置为大写(To upper), and then<code>ctrl + alt + L</code></li>
-<li>数据库导入时, 右键某个数据库 -&gt; Import/Export -&gt; Restore with &lsquo;mysql&rsquo; -&gt; Path to mysql -&gt; <code>C:/Program Files/MySQL/MySQL Server 8.1/bin/mysql.exe</code></li>
-<li>数据库导出时, 右键某个数据库 -&gt; Import/Export -&gt; Export with &lsquo;mysqldump&rsquo; -&gt; Path to mysqldump -&gt; <code>C:/Program Files/MySQL/MySQL Server 8.1/bin/mysqldump.exe</code></li>
+<li>Put <code>.vimrc</code> into <code>/root</code>目录(Dec 04, 2024, 新安装的Ubuntu默认使用的是root用户)</li>
+<li>Install bundle, which is recorded on the top</li>
 </ul>
-<h3 id="b-plugins-1">B. Plugins</h3>
+<h3 id="c-mysql">C. Mysql</h3>
+<p>参见sql-mysql.md</p>
+<h3 id="d-redis">D. Redis</h3>
+<p>参见sql-mysql.md</p>
+<h2 id="iv-ide">IV. IDE</h2>
+<p>关于开发语言, 暂时都在物理机上管理</p>
 <ul>
-<li>IdeaVim
+<li>Java, 使用IDEA安装JDK</li>
+<li>Python, 使用Anaconda管理Python环境</li>
+<li>C++, TODO @Ivan</li>
+<li>JavaScript, 使用nvm管理nodejs环境</li>
+</ul>
+<h3 id="a-jetbrains-pycharmidea">A. Jetbrains PyCharm/IDEA</h3>
+<p>参见python-basic.md/java-basic.md中步骤</p>
+<p>另外, 配置好WSL2之后, PyCharm/IDEA中的git可以自动检测到<code>Auto-detected: \\wsl.localhost\Ubuntu\usr\bin\git</code></p>
+<h3 id="b-visualstudio-pro-2022--vs-code">B. VisualStudio Pro 2022 / VS Code</h3>
+<p>暂不使用Visual Studio, 多尝试VS Code</p>
 <ul>
-<li>在IDEA中创建<code>~/.ideavimrc</code>文件(实际创建在<code>C:\Users\Ivan\.ideavimrc</code>)</li>
-<li>只需在最后一行增加配置引用即可<code>source ~/.vimrc</code></li>
-<li>&ldquo;IDEA中自动切换输入法暂时没搞定&rdquo; &ldquo;Windows VisualStudio的VsVim插件倒是自动有这个配置, 没琢磨明白, 有的用&rdquo;</li>
+<li>hugo, 参见README.md</li>
+<li>C++, 参见c-plus-plus.md</li>
+<li>Vue3, 参见js-vue3.md</li>
 </ul>
-</li>
-<li>MyBatisCodeHelperPro(貌似有官方版, 下次试试)</li>
-<li>Redis</li>
-<li>RemoteHost <code>java -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005 -jar pear-admin-pro-1.11.9-SNAPSHOT.jar</code></li>
-</ul>
-<h3 id="c-maven">C. Maven</h3>
-<p>Maven 3.8.1 blocked http connection</p>
-<ul>
-<li>
-<p>Do <span class="highlight-text red">NOT</span> edit this original IDEA maven settings file
-<code>C:\Program Files\JetBrains\IntelliJ IDEA 2022.2.1\plugins\maven\lib\maven3\conf\settings.xml</code>
-
-  
-    
-  
-  
-    
-  
-  
-  
-
-
-<figure class="highlight xml language-xml">
-  <figcaption>
-    
-      <span>settings.xml</span>
-    
-  </figcaption>
-  <table>
-    <tbody>
-      <tr>
-        <td class="gutter">
-          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre>
-        </td>
-        <td class="code">
-          <pre class="code-highlight language-xml xml"><code class="xml">  ...
-  &lt;mirrors&gt;
-    &lt;!-- mirror
-     | Specifies a repository mirror site to use instead of a given repository. The repository that
-     | this mirror serves has an ID that matches the mirrorOf element of this mirror. IDs are used
-     | for inheritance and direct lookup purposes, and must be unique across the set of mirrors.
-     |
-    &lt;mirror&gt;
-      &lt;id&gt;mirrorId&lt;/id&gt;
-      &lt;mirrorOf&gt;repositoryId&lt;/mirrorOf&gt;
-      &lt;name&gt;Human Readable Name for this Mirror.&lt;/name&gt;
-      &lt;url&gt;http://my.repository.com/repo/path&lt;/url&gt;
-    &lt;/mirror&gt;
-     --&gt;
-    &lt;mirror&gt;
-      &lt;id&gt;maven-default-http-blocker&lt;/id&gt;
-      &lt;mirrorOf&gt;external:http:*&lt;/mirrorOf&gt;
-      &lt;name&gt;Pseudo repository to mirror external repositories initially using HTTP.&lt;/name&gt;
-      &lt;url&gt;http://0.0.0.0/&lt;/url&gt;
-      &lt;blocked&gt;true&lt;/blocked&gt;
-    &lt;/mirror&gt;
-  &lt;/mirrors&gt;
-  ...
-  </code></pre>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</figure>
-</p>
-</li>
-<li>
-<p>Find personal maven setting path in IDEA settings and DIY it <code>C:\Users\ivan\.m2\settings.xml</code> (If not exists, create this file)</p>
-
-  
-    
-  
-  
-    
-  
-  
-  
-
-
-<figure class="highlight xml language-xml">
-  <figcaption>
-    
-      <span>settings.xml</span>
-    
-  </figcaption>
-  <table>
-    <tbody>
-      <tr>
-        <td class="gutter">
-          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre>
-        </td>
-        <td class="code">
-          <pre class="code-highlight language-xml xml"><code class="xml">&lt;settings xmlns=&#34;http://maven.apache.org/SETTINGS/1.2.0&#34;
-      xmlns:xsi=&#34;http://www.w3.org/2001/XMLSchema-instance&#34;
-      xsi:schemaLocation=&#34;http://maven.apache.org/SETTINGS/1.2.0 http://maven.apache.org/xsd/settings-1.2.0.xsd&#34;&gt;
-  &lt;mirrors&gt;
-    &lt;!-- mirror
-     | Specifies a repository mirror site to use instead of a given repository. The repository that
-     | this mirror serves has an ID that matches the mirrorOf element of this mirror. IDs are used
-     | for inheritance and direct lookup purposes, and must be unique across the set of mirrors.
-     |
-    &lt;mirror&gt;
-      &lt;id&gt;mirrorId&lt;/id&gt;
-      &lt;mirrorOf&gt;repositoryId&lt;/mirrorOf&gt;
-      &lt;name&gt;Human Readable Name for this Mirror.&lt;/name&gt;
-      &lt;url&gt;http://my.repository.com/repo/path&lt;/url&gt;
-    &lt;/mirror&gt;
-    --&gt;
-    &lt;mirror&gt;
-      &lt;id&gt;aliyunmaven&lt;/id&gt;
-      &lt;mirrorOf&gt;*&lt;/mirrorOf&gt;
-      &lt;name&gt;阿里云公共仓库&lt;/name&gt;
-      &lt;url&gt;https://maven.aliyun.com/repository/public&lt;/url&gt;
-    &lt;/mirror&gt;
-  &lt;/mirrors&gt;
-&lt;/settings&gt;
-  </code></pre>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</figure>
-
-</li>
-<li>
-<p>Reload pom.xml file in IDEA and automaticlly download the dependencies</p>
-</li>
-</ul>
-<h2 id="ix-hbuilderx">IX. HBuilderX</h2>
-<hr>
-<p>开发环境部署, 参照<a href="https://ivanhan0511.github.io/post/js-vue3/">js-vue3.md</a></p>
-<h2 id="x-vmware">X. VMWare</h2>
-<hr>
+<h2 id="v-vmware--">V. VMWare  ?</h2>
+<p>Try V-box this time(Dec 03, 2024) ?</p>
 <p>VMWare WorkStation Pro, 规划好哪些工具安装在裸机, 哪些安装在VMWare</p>
 <ul>
 <li>切换安装路径到<code>D:\VirtualMachines\</code>盘</li>
@@ -665,34 +526,6 @@ sudo vi /etc/fstab</code></pre>
 </figure>
 
 <p><code>.host:WinDownloads /mnt/hgfs/downloads/ fuse.vmhgfs-fuse allow_other 0 0</code></p>
-<h2 id="xi-others">XI. Others</h2>
-<hr>
-<p>常用的跨平台工具, 兼容iOS / macOS / Windows / Android</p>
-<ul>
-<li><del>Postman</del></li>
-<li>XShell/XFtp(转用WSL2)
-<ul>
-<li><code>telnet &lt;IP&gt; &lt;Port&gt;</code></li>
-</ul>
-</li>
-<li><del>hugo</del>(转用WSL2)
-<ul>
-<li>在<a href="https://github.com/gohugoio/hugo/releases">HUGO的GitHub</a>的releases中下载适用于Windows的文件压缩包</li>
-<li>比如放在<code>C:\Program Files\Git\usr\bin</code>中, 并添加到环境变量中</li>
-</ul>
-</li>
-<li>向日葵Sunlogin</li>
-<li>WireShark</li>
-<li>Typora</li>
-<li>坚果云</li>
-<li>Office365(Outlook, Excel, Word, PowerPoint)</li>
-<li>WeChat</li>
-<li>腾讯会议</li>
-<li>亿图Edraw</li>
-<li>Fiio driver</li>
-<li>Notepad++</li>
-<li><del>Axure RP 9(Axure Rapid Prototyping)</del>(Deprecated, use Mock in iPad)</li>
-</ul>
               
 
 

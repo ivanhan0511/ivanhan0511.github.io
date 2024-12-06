@@ -25,7 +25,7 @@
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Hugo 0.117.0 with theme Tranquilpeak 0.5.3-BETA">
+<meta name="generator" content="Hugo 0.123.7 with theme Tranquilpeak 0.5.3-BETA">
 <meta name="author" content="Ivan Han">
 <meta name="keywords" content="python, Ivan, SoftwareEngineer, C/C&#43;&#43;, Java, Coffee, Bass, Bicycle, Badminton">
 <meta name="description" content="Some basic records of Python">
@@ -285,38 +285,29 @@
           <div class="post-content markdown">
             <div class="main-content-wrap">
               <p>Some basic records of Python</p>
-<h2 id="environment">ENVIRONMENT</h2>
+<h2 id="i-environment">I. ENVIRONMENT</h2>
 <hr>
-
-  
-    
-  
-  
-    
-  
-  
-  
-
-
-<figure class="highlight shell language-shell">
-  <figcaption>
-    
-      <span>create</span>
-    
-  </figcaption>
-  <table>
-    <tbody>
-      <tr>
-        <td class="gutter">
-          <pre><span class="line">1</span><br></pre>
-        </td>
-        <td class="code">
-          <pre class="code-highlight language-shell shell"><code class="shell"></code></pre>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</figure>
+<h3 id="a-backup-and-sync">A. Backup and Sync</h3>
+<p>同步之后, 大部分的配置和插件都可以同步下来, 以下仅作备考</p>
+<h4 id="1-configuration">1. Configuration</h4>
+<ul>
+<li>Enable Backup and Sync -&gt; <code>Enable Backup and Sync</code></li>
+<li>在各个项目中分别选择Anaconda的环境, 不安装Python在裸机</li>
+<li>Settsings -&gt; Editor -&gt; Code Style -&gt; SQL -&gt; General, 将<code>keywords</code> 和 <code>Built-in types</code>设置为大写(To upper)</li>
+</ul>
+<h4 id="2-plugins">2. Plugins</h4>
+<ul>
+<li>IdeaVim
+<ul>
+<li>在IDEA中找到(无则创建)<code>~/.ideavimrc</code>文件(在<code>C:\Users\Ivan\.ideavimrc</code>可以找到)</li>
+<li>只需在最后一行增加配置引用即可<code>source //wsl.localhost/Ubuntu/root/.vimrc</code>, 已经可以使用WSL中的配置文件了</li>
+<li>配置完, 需要退出并重新打开PyCharm</li>
+<li>IDEA的vim插件, 从插入模式退出到普通模式后, 自动切换为英文输入法, 暂时没搞定, Windows VisualStudio的VsVim插件倒是自动有这个配置, 暂时没琢磨明白</li>
+</ul>
+</li>
+<li>Redis</li>
+</ul>
+<h3 id="b-anaconda">B. Anaconda</h3>
               
 
 

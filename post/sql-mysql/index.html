@@ -25,7 +25,7 @@
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Hugo 0.117.0 with theme Tranquilpeak 0.5.3-BETA">
+<meta name="generator" content="Hugo 0.123.7 with theme Tranquilpeak 0.5.3-BETA">
 <meta name="author" content="Ivan Han">
 <meta name="keywords" content="mysql, init, dcl, ddl, dml, tcl, view, backup, Ivan, SoftwareEngineer, C/C&#43;&#43;, Java, Coffee, Bass, Bicycle, Badminton">
 <meta name="description" content="Some usual operations examples in MySQL 8.0">
@@ -367,7 +367,7 @@
 <h2 id="init">INIT</h2>
 <hr>
 <p>Refer to <code>https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-20-04</code></p>
-<p>Ubuntu Server 22.04 LTS as example</p>
+<p>Ubuntu 24.04 as example in Win11 WSL2</p>
 
 
   
@@ -417,14 +417,15 @@
           <tbody>
             <tr>
               <td class="gutter">
-                <pre><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br></pre>
+                <pre><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></pre>
               </td>
               <td class="code">
-                <pre class="code-highlight language-shell shell"><code class="shell">sudo apt update
-sudo apt install mysql-server-8.0 -y
-sudo systemctl status mysql.service
+                <pre class="code-highlight language-shell shell"><code class="shell"># root user
+apt update
+apt install mysql-server-8.0 -y
+systemctl status mysql.service
 
-sudo mysql</code></pre>
+mysql</code></pre>
               </td>
             </tr>
           </tbody>
@@ -461,15 +462,17 @@ FLUSH PRIVILEGES;</code></pre>
           <tbody>
             <tr>
               <td class="gutter">
-                <pre><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></pre>
+                <pre><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br></pre>
               </td>
               <td class="code">
-                <pre class="code-highlight language-shell shell"><code class="shell">sudo vi /etc/mysql/mysql.conf.d/mysqld.cnf
+                <pre class="code-highlight language-shell shell"><code class="shell"># root user
+vi /etc/mysql/mysql.conf.d/mysqld.cnf
 # ...
 # Comment this line
 #bind-address = 127.0.0.1
 # ...
-sudo systemctl restart mysql.service</code></pre>
+
+systemctl restart mysql.service</code></pre>
               </td>
             </tr>
           </tbody>

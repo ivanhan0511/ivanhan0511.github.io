@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>beans on Ivan Blog</title>
+    <title>Beans on Ivan Blog</title>
     <link>https://ivanhan0511.github.io/tags/beans/</link>
-    <description>Recent content in beans on Ivan Blog</description>
+    <description>Recent content in Beans on Ivan Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 05 Dec 2022 14:33:05 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/tags/beans/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 05 Dec 2022 14:33:05 +0800</lastBuildDate>
+    <atom:link href="https://ivanhan0511.github.io/tags/beans/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Coffee Beans</title>
       <link>https://ivanhan0511.github.io/post/coffee-barista/</link>
       <pubDate>Mon, 05 Dec 2022 14:33:05 +0800</pubDate>
-      
       <guid>https://ivanhan0511.github.io/post/coffee-barista/</guid>
       <description>&lt;p&gt;Whick kind of coffee beans do you like?&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

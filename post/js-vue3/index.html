@@ -25,7 +25,7 @@
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Hugo 0.117.0 with theme Tranquilpeak 0.5.3-BETA">
+<meta name="generator" content="Hugo 0.123.7 with theme Tranquilpeak 0.5.3-BETA">
 <meta name="author" content="Ivan Han">
 <meta name="keywords" content="js, vue3, frontend, Ivan, SoftwareEngineer, C/C&#43;&#43;, Java, Coffee, Bass, Bicycle, Badminton">
 <meta name="description" content="HAVE TO study some knowlege about frontend">
@@ -310,8 +310,14 @@
   <ul>
     <li><a href="#i-env">I. ENV</a>
       <ul>
-        <li><a href="#a-nvm">A. nvm</a></li>
+        <li><a href="#a-nvm--nodejs--npm">A. nvm / nodejs / npm</a></li>
         <li><a href="#b-npm-and-yarn">B. npm and yarn</a></li>
+        <li><a href="#b-vs-code">B. VS Code</a>
+          <ul>
+            <li><a href="#1-git">1. Git</a></li>
+            <li><a href="#2-npm-env">2. npm env</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
     <li><a href="#ii-grammar">II. GRAMMAR</a>
@@ -324,11 +330,13 @@
 
 <h2 id="i-env">I. ENV</h2>
 <hr>
-<h3 id="a-nvm">A. nvm</h3>
+<h3 id="a-nvm--nodejs--npm">A. nvm / nodejs / npm</h3>
 <p>Node Version Manager</p>
 <p>nvm管理的是node, 但会同时把npm也安装好, node的版本和npm的版本是不一样的</p>
 <p>Download <a href="https://github.com/coreybutler/nvm-windows/releases">nvm-setup.exe</a> and install.</p>
-<p>And use it in CMD:
+<p>安装在C:\Users\Ivan\AppData\Roaming\nvm中</p>
+<p>执行<code>nvm use 20.11.1</code>之后会在C:\Program File\nodejs中创建当前版本的nodejs</p>
+<p>And use it in PowerShell:
 
   
     
@@ -341,7 +349,7 @@
 <figure class="highlight  language-">
   <figcaption>
     
-      <span>cmd</span>
+      <span>powershell</span>
     
   </figcaption>
   <table>
@@ -351,8 +359,8 @@
           <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre>
         </td>
         <td class="code">
-          <pre class="code-highlight language- "><code class="">#nvm install 16.14.0 -g
-nvm install 20.11.1 -g
+          <pre class="code-highlight language- "><code class="">nvm list available
+nvm install 22.12.0 -g
 #nvm uninstall 16.17.1</code></pre>
         </td>
       </tr>
@@ -439,10 +447,11 @@ nvm use 20.11.1
           <tbody>
             <tr>
               <td class="gutter">
-                <pre><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br></pre>
+                <pre><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br></pre>
               </td>
               <td class="code">
-                <pre class="code-highlight language-yarn yarn"><code class="yarn"># 遇到npm无法调用的问题, 网上有记录, 但重启解决问题
+                <pre class="code-highlight language-yarn yarn"><code class="yarn"># 目前(Dec 04, 2024), 没有大量使用yarn
+# 遇到npm无法调用的问题, 网上有记录, 但重启解决问题
 npm install yarn -g
 
 yarn install
@@ -459,6 +468,10 @@ yarn run serve-dev
   </div>
 </figure>
 
+<h3 id="b-vs-code">B. VS Code</h3>
+<p>在WSL中输入了一个<code>code</code>, 安装VS Code Server, 不知道啥作用</p>
+<h4 id="1-git">1. Git</h4>
+<h4 id="2-npm-env">2. npm env</h4>
 <h2 id="ii-grammar">II. GRAMMAR</h2>
 <hr>
 <h3 id="a-杂记">A. 杂记</h3>

@@ -25,7 +25,7 @@
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Hugo 0.117.0 with theme Tranquilpeak 0.5.3-BETA">
+<meta name="generator" content="Hugo 0.123.7 with theme Tranquilpeak 0.5.3-BETA">
 <meta name="author" content="Ivan Han">
 <meta name="keywords" content="java, basic, Ivan, SoftwareEngineer, C/C&#43;&#43;, Java, Coffee, Bass, Bicycle, Badminton">
 <meta name="description" content="This post is not aboud Java knowledge, it just a handy TIP">
@@ -288,6 +288,17 @@
 <h1 id="table-of-contents">Table of Contents</h1>
 <nav id="TableOfContents">
   <ul>
+    <li><a href="#i-environment">I. ENVIRONMENT</a>
+      <ul>
+        <li><a href="#a-backup-and-sync">A. Backup and Sync</a>
+          <ul>
+            <li><a href="#1-configuration">1. Configuration</a></li>
+            <li><a href="#2-plugins">2. Plugins</a></li>
+          </ul>
+        </li>
+        <li><a href="#b-maven">B. Maven</a></li>
+      </ul>
+    </li>
     <li><a href="#type">TYPE</a>
       <ul>
         <li><a href="#string">String[]</a></li>
@@ -319,6 +330,154 @@
   </ul>
 </nav>
 
+<h2 id="i-environment">I. ENVIRONMENT</h2>
+<hr>
+<p>Use IDE of &ldquo;InteliJ IDEA&rdquo;, and <strong>download JDK wihin IDEA</strong></p>
+<h3 id="a-backup-and-sync">A. Backup and Sync</h3>
+<p>同步之后, 大部分的配置和插件都可以同步下来, 以下仅作备考</p>
+<h4 id="1-configuration">1. Configuration</h4>
+<ul>
+<li>Enable Backup and Sync -&gt; <code>Enable Backup and Sync</code></li>
+<li>在各个项目中分别选择Java JDK环境, 不安装Java在裸机</li>
+<li>Settsings -&gt; Editor -&gt; Code Style -&gt; SQL -&gt; General, 将<code>keywords</code> 和 <code>Built-in types</code>设置为大写(To upper)</li>
+</ul>
+<h4 id="2-plugins">2. Plugins</h4>
+<ul>
+<li>IdeaVim
+<ul>
+<li>在IDEA中创建<code>~/.ideavimrc</code>文件(实际创建在<code>C:\Users\Ivan\.ideavimrc</code>)</li>
+<li>只需在最后一行增加配置引用即可<code>source //wsl.localhost/Ubuntu/root/.vimrc</code>, 已经可以使用WSL中的配置文件了</li>
+<li>配置完, 需要退出并重新打开IDEA</li>
+<li>IDEA的vim插件, 从插入模式退出到普通模式后, 自动切换为英文输入法, 暂时没搞定, Windows VisualStudio的VsVim插件倒是自动有这个配置, 暂时没琢磨明白</li>
+</ul>
+</li>
+<li>MyBatisCodeHelperPro(貌似有官方版, 下次试试)</li>
+<li>Redis</li>
+<li>RemoteHost <code>java -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005 -jar pear-admin-pro-1.11.9-SNAPSHOT.jar</code></li>
+</ul>
+<h3 id="b-maven">B. Maven</h3>
+<p>Maven 3.8.1 blocked http connection</p>
+<ul>
+<li>
+<p>Do <span class="highlight-text red">NOT</span> edit this original IDEA maven settings file
+<code>C:\Program Files\JetBrains\IntelliJ IDEA 2022.2.1\plugins\maven\lib\maven3\conf\settings.xml</code>
+
+  
+    
+  
+  
+    
+  
+  
+  
+
+
+<figure class="highlight xml language-xml">
+  <figcaption>
+    
+      <span>settings.xml</span>
+    
+  </figcaption>
+  <table>
+    <tbody>
+      <tr>
+        <td class="gutter">
+          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre>
+        </td>
+        <td class="code">
+          <pre class="code-highlight language-xml xml"><code class="xml">  ...
+  &lt;mirrors&gt;
+    &lt;!-- mirror
+     | Specifies a repository mirror site to use instead of a given repository. The repository that
+     | this mirror serves has an ID that matches the mirrorOf element of this mirror. IDs are used
+     | for inheritance and direct lookup purposes, and must be unique across the set of mirrors.
+     |
+    &lt;mirror&gt;
+      &lt;id&gt;mirrorId&lt;/id&gt;
+      &lt;mirrorOf&gt;repositoryId&lt;/mirrorOf&gt;
+      &lt;name&gt;Human Readable Name for this Mirror.&lt;/name&gt;
+      &lt;url&gt;http://my.repository.com/repo/path&lt;/url&gt;
+    &lt;/mirror&gt;
+     --&gt;
+    &lt;mirror&gt;
+      &lt;id&gt;maven-default-http-blocker&lt;/id&gt;
+      &lt;mirrorOf&gt;external:http:*&lt;/mirrorOf&gt;
+      &lt;name&gt;Pseudo repository to mirror external repositories initially using HTTP.&lt;/name&gt;
+      &lt;url&gt;http://0.0.0.0/&lt;/url&gt;
+      &lt;blocked&gt;true&lt;/blocked&gt;
+    &lt;/mirror&gt;
+  &lt;/mirrors&gt;
+  ...
+  </code></pre>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+</p>
+</li>
+<li>
+<p>Find personal maven setting path in IDEA settings and DIY it <code>C:\Users\ivan\.m2\settings.xml</code> (If not exists, create this file)</p>
+
+  
+    
+  
+  
+    
+  
+  
+  
+
+
+<figure class="highlight xml language-xml">
+  <figcaption>
+    
+      <span>settings.xml</span>
+    
+  </figcaption>
+  <table>
+    <tbody>
+      <tr>
+        <td class="gutter">
+          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre>
+        </td>
+        <td class="code">
+          <pre class="code-highlight language-xml xml"><code class="xml">&lt;settings xmlns=&#34;http://maven.apache.org/SETTINGS/1.2.0&#34;
+      xmlns:xsi=&#34;http://www.w3.org/2001/XMLSchema-instance&#34;
+      xsi:schemaLocation=&#34;http://maven.apache.org/SETTINGS/1.2.0 http://maven.apache.org/xsd/settings-1.2.0.xsd&#34;&gt;
+  &lt;mirrors&gt;
+    &lt;!-- mirror
+     | Specifies a repository mirror site to use instead of a given repository. The repository that
+     | this mirror serves has an ID that matches the mirrorOf element of this mirror. IDs are used
+     | for inheritance and direct lookup purposes, and must be unique across the set of mirrors.
+     |
+    &lt;mirror&gt;
+      &lt;id&gt;mirrorId&lt;/id&gt;
+      &lt;mirrorOf&gt;repositoryId&lt;/mirrorOf&gt;
+      &lt;name&gt;Human Readable Name for this Mirror.&lt;/name&gt;
+      &lt;url&gt;http://my.repository.com/repo/path&lt;/url&gt;
+    &lt;/mirror&gt;
+    --&gt;
+    &lt;mirror&gt;
+      &lt;id&gt;aliyunmaven&lt;/id&gt;
+      &lt;mirrorOf&gt;*&lt;/mirrorOf&gt;
+      &lt;name&gt;阿里云公共仓库&lt;/name&gt;
+      &lt;url&gt;https://maven.aliyun.com/repository/public&lt;/url&gt;
+    &lt;/mirror&gt;
+  &lt;/mirrors&gt;
+&lt;/settings&gt;
+  </code></pre>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+
+</li>
+<li>
+<p>Reload pom.xml file in IDEA and automaticlly download the dependencies</p>
+</li>
+</ul>
 <h2 id="type">TYPE</h2>
 <hr>
 <h3 id="string">String[]</h3>

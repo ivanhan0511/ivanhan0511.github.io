@@ -1,21 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>gaggiuino on Ivan Blog</title>
+    <title>Gaggiuino on Ivan Blog</title>
     <link>https://ivanhan0511.github.io/tags/gaggiuino/</link>
-    <description>Recent content in gaggiuino on Ivan Blog</description>
+    <description>Recent content in Gaggiuino on Ivan Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 05 Dec 2023 13:39:32 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/tags/gaggiuino/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 05 Dec 2023 13:39:32 +0800</lastBuildDate>
+    <atom:link href="https://ivanhan0511.github.io/tags/gaggiuino/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Gaggiuino For Coffee(Stranded)</title>
       <link>https://ivanhan0511.github.io/post/coffee-gaggiuino/</link>
       <pubDate>Tue, 05 Dec 2023 13:39:32 +0800</pubDate>
-      
       <guid>https://ivanhan0511.github.io/post/coffee-gaggiuino/</guid>
-      <description>&lt;p&gt;If &amp;ldquo;Uino&amp;rdquo; is from Ladin, it means wine.&lt;/p&gt;
-&lt;p&gt;PID temprature controllation can be replaced by Gaggiuino, which is a system based on MCU(STM32)&lt;/p&gt;</description>
+      <description>&lt;p&gt;If &amp;ldquo;Uino&amp;rdquo; is from Ladin, it means wine.&lt;/p&gt;&#xA;&lt;p&gt;PID temprature controllation can be replaced by Gaggiuino, which is a system based on MCU(STM32)&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

@@ -6,546 +6,427 @@
     <description>Recent content in Tags on Ivan Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 27 Nov 2024 10:46:07 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 27 Nov 2024 10:46:07 +0800</lastBuildDate>
+    <atom:link href="https://ivanhan0511.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ivan Han</title>
       <link>https://ivanhan0511.github.io/tags/ivan-han/</link>
       <pubDate>Wed, 27 Nov 2024 10:46:07 +0800</pubDate>
-      
       <guid>https://ivanhan0511.github.io/tags/ivan-han/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Welcome</title>
       <link>https://ivanhan0511.github.io/tags/welcome/</link>
       <pubDate>Wed, 27 Nov 2024 10:46:07 +0800</pubDate>
-      
       <guid>https://ivanhan0511.github.io/tags/welcome/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Algorithm</title>
       <link>https://ivanhan0511.github.io/tags/algorithm/</link>
       <pubDate>Wed, 27 Nov 2024 00:04:57 +0800</pubDate>
-      
       <guid>https://ivanhan0511.github.io/tags/algorithm/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>C</title>
       <link>https://ivanhan0511.github.io/tags/c/</link>
       <pubDate>Sat, 02 Nov 2024 10:46:00 +0800</pubDate>
-      
       <guid>https://ivanhan0511.github.io/tags/c/</guid>
       <description></description>
     </item>
-    
+    <item>
+      <title>C/C&#43;&#43;</title>
+      <link>https://ivanhan0511.github.io/tags/c/c&#43;&#43;/</link>
+      <pubDate>Sat, 02 Nov 2024 10:46:00 +0800</pubDate>
+      <guid>https://ivanhan0511.github.io/tags/c/c&#43;&#43;/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Java</title>
       <link>https://ivanhan0511.github.io/tags/java/</link>
       <pubDate>Sat, 26 Oct 2024 11:22:00 +0800</pubDate>
-      
       <guid>https://ivanhan0511.github.io/tags/java/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Spring</title>
       <link>https://ivanhan0511.github.io/tags/spring/</link>
       <pubDate>Sat, 26 Oct 2024 11:22:00 +0800</pubDate>
-      
       <guid>https://ivanhan0511.github.io/tags/spring/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>ruoyi-vue-pro</title>
+      <title>Ruoyi-Vue-Pro</title>
       <link>https://ivanhan0511.github.io/tags/ruoyi-vue-pro/</link>
       <pubDate>Fri, 25 Oct 2024 11:22:00 +0800</pubDate>
-      
       <guid>https://ivanhan0511.github.io/tags/ruoyi-vue-pro/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Springboot</title>
       <link>https://ivanhan0511.github.io/tags/springboot/</link>
       <pubDate>Fri, 25 Oct 2024 11:22:00 +0800</pubDate>
-      
       <guid>https://ivanhan0511.github.io/tags/springboot/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Configuration</title>
       <link>https://ivanhan0511.github.io/tags/configuration/</link>
       <pubDate>Mon, 30 Sep 2024 10:39:00 +0800</pubDate>
-      
       <guid>https://ivanhan0511.github.io/tags/configuration/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>HBuildX</title>
       <link>https://ivanhan0511.github.io/tags/hbuildx/</link>
       <pubDate>Mon, 30 Sep 2024 10:39:00 +0800</pubDate>
-      
       <guid>https://ivanhan0511.github.io/tags/hbuildx/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>IDEA</title>
       <link>https://ivanhan0511.github.io/tags/idea/</link>
       <pubDate>Mon, 30 Sep 2024 10:39:00 +0800</pubDate>
-      
       <guid>https://ivanhan0511.github.io/tags/idea/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Init</title>
       <link>https://ivanhan0511.github.io/tags/init/</link>
       <pubDate>Mon, 30 Sep 2024 10:39:00 +0800</pubDate>
-      
       <guid>https://ivanhan0511.github.io/tags/init/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Proxy</title>
       <link>https://ivanhan0511.github.io/tags/proxy/</link>
       <pubDate>Mon, 30 Sep 2024 10:39:00 +0800</pubDate>
-      
       <guid>https://ivanhan0511.github.io/tags/proxy/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>VisualStudio</title>
       <link>https://ivanhan0511.github.io/tags/visualstudio/</link>
       <pubDate>Mon, 30 Sep 2024 10:39:00 +0800</pubDate>
-      
       <guid>https://ivanhan0511.github.io/tags/visualstudio/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Windows</title>
       <link>https://ivanhan0511.github.io/tags/windows/</link>
       <pubDate>Mon, 30 Sep 2024 10:39:00 +0800</pubDate>
-      
       <guid>https://ivanhan0511.github.io/tags/windows/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Architecture</title>
       <link>https://ivanhan0511.github.io/tags/architecture/</link>
       <pubDate>Mon, 19 Feb 2024 16:40:00 +0800</pubDate>
-      
       <guid>https://ivanhan0511.github.io/tags/architecture/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Design</title>
       <link>https://ivanhan0511.github.io/tags/design/</link>
       <pubDate>Mon, 19 Feb 2024 16:40:00 +0800</pubDate>
-      
       <guid>https://ivanhan0511.github.io/tags/design/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Deploy</title>
       <link>https://ivanhan0511.github.io/tags/deploy/</link>
       <pubDate>Fri, 19 Jan 2024 11:52:32 +0800</pubDate>
-      
       <guid>https://ivanhan0511.github.io/tags/deploy/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Flask</title>
       <link>https://ivanhan0511.github.io/tags/flask/</link>
       <pubDate>Fri, 19 Jan 2024 11:52:32 +0800</pubDate>
-      
       <guid>https://ivanhan0511.github.io/tags/flask/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>PearAdmin</title>
       <link>https://ivanhan0511.github.io/tags/pearadmin/</link>
       <pubDate>Fri, 19 Jan 2024 11:52:32 +0800</pubDate>
-      
       <guid>https://ivanhan0511.github.io/tags/pearadmin/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Python</title>
       <link>https://ivanhan0511.github.io/tags/python/</link>
       <pubDate>Thu, 18 Jan 2024 15:26:10 +0800</pubDate>
-      
       <guid>https://ivanhan0511.github.io/tags/python/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>opencv</title>
+      <title>Opencv</title>
       <link>https://ivanhan0511.github.io/tags/opencv/</link>
       <pubDate>Tue, 16 Jan 2024 16:40:26 +0800</pubDate>
-      
       <guid>https://ivanhan0511.github.io/tags/opencv/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>music</title>
+      <title>Music</title>
       <link>https://ivanhan0511.github.io/tags/music/</link>
       <pubDate>Mon, 18 Dec 2023 16:21:57 +0800</pubDate>
-      
       <guid>https://ivanhan0511.github.io/tags/music/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Piano</title>
       <link>https://ivanhan0511.github.io/tags/piano/</link>
       <pubDate>Mon, 18 Dec 2023 16:21:57 +0800</pubDate>
-      
       <guid>https://ivanhan0511.github.io/tags/piano/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>coffee</title>
+      <title>Coffee</title>
       <link>https://ivanhan0511.github.io/tags/coffee/</link>
       <pubDate>Tue, 05 Dec 2023 13:39:32 +0800</pubDate>
-      
       <guid>https://ivanhan0511.github.io/tags/coffee/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>gaggiuino</title>
+      <title>Gaggiuino</title>
       <link>https://ivanhan0511.github.io/tags/gaggiuino/</link>
       <pubDate>Tue, 05 Dec 2023 13:39:32 +0800</pubDate>
-      
       <guid>https://ivanhan0511.github.io/tags/gaggiuino/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Principle</title>
       <link>https://ivanhan0511.github.io/tags/principle/</link>
       <pubDate>Tue, 05 Dec 2023 13:39:32 +0800</pubDate>
-      
       <guid>https://ivanhan0511.github.io/tags/principle/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>backup</title>
+      <title>Backup</title>
       <link>https://ivanhan0511.github.io/tags/backup/</link>
       <pubDate>Tue, 07 Nov 2023 15:40:00 +0800</pubDate>
-      
       <guid>https://ivanhan0511.github.io/tags/backup/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>DCL</title>
       <link>https://ivanhan0511.github.io/tags/dcl/</link>
       <pubDate>Tue, 07 Nov 2023 15:40:00 +0800</pubDate>
-      
       <guid>https://ivanhan0511.github.io/tags/dcl/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>DDL</title>
       <link>https://ivanhan0511.github.io/tags/ddl/</link>
       <pubDate>Tue, 07 Nov 2023 15:40:00 +0800</pubDate>
-      
       <guid>https://ivanhan0511.github.io/tags/ddl/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>DML</title>
       <link>https://ivanhan0511.github.io/tags/dml/</link>
       <pubDate>Tue, 07 Nov 2023 15:40:00 +0800</pubDate>
-      
       <guid>https://ivanhan0511.github.io/tags/dml/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>MySQL8.0</title>
       <link>https://ivanhan0511.github.io/tags/mysql8.0/</link>
       <pubDate>Tue, 07 Nov 2023 15:40:00 +0800</pubDate>
-      
       <guid>https://ivanhan0511.github.io/tags/mysql8.0/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>TCL</title>
       <link>https://ivanhan0511.github.io/tags/tcl/</link>
       <pubDate>Tue, 07 Nov 2023 15:40:00 +0800</pubDate>
-      
       <guid>https://ivanhan0511.github.io/tags/tcl/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>VIEW</title>
       <link>https://ivanhan0511.github.io/tags/view/</link>
       <pubDate>Tue, 07 Nov 2023 15:40:00 +0800</pubDate>
-      
       <guid>https://ivanhan0511.github.io/tags/view/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>macOS</title>
+      <title>MacOS</title>
       <link>https://ivanhan0511.github.io/tags/macos/</link>
       <pubDate>Fri, 03 Nov 2023 15:52:00 +0800</pubDate>
-      
       <guid>https://ivanhan0511.github.io/tags/macos/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>frontend</title>
+      <title>Frontend</title>
       <link>https://ivanhan0511.github.io/tags/frontend/</link>
       <pubDate>Thu, 26 Oct 2023 14:13:00 +0800</pubDate>
-      
       <guid>https://ivanhan0511.github.io/tags/frontend/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>js</title>
+      <title>Js</title>
       <link>https://ivanhan0511.github.io/tags/js/</link>
       <pubDate>Thu, 26 Oct 2023 14:13:00 +0800</pubDate>
-      
       <guid>https://ivanhan0511.github.io/tags/js/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>vue3</title>
+      <title>Vue3</title>
       <link>https://ivanhan0511.github.io/tags/vue3/</link>
       <pubDate>Thu, 26 Oct 2023 14:13:00 +0800</pubDate>
-      
       <guid>https://ivanhan0511.github.io/tags/vue3/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>SQLServer</title>
       <link>https://ivanhan0511.github.io/tags/sqlserver/</link>
       <pubDate>Thu, 10 Aug 2023 17:32:00 +0800</pubDate>
-      
       <guid>https://ivanhan0511.github.io/tags/sqlserver/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>bass</title>
+      <title>Bass</title>
       <link>https://ivanhan0511.github.io/tags/bass/</link>
       <pubDate>Mon, 19 Jun 2023 10:11:00 +0800</pubDate>
-      
       <guid>https://ivanhan0511.github.io/tags/bass/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>fender</title>
+      <title>Fender</title>
       <link>https://ivanhan0511.github.io/tags/fender/</link>
       <pubDate>Mon, 19 Jun 2023 10:11:00 +0800</pubDate>
-      
       <guid>https://ivanhan0511.github.io/tags/fender/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>ping</title>
+      <title>Ping</title>
       <link>https://ivanhan0511.github.io/tags/ping/</link>
       <pubDate>Wed, 31 May 2023 17:10:07 +0800</pubDate>
-      
       <guid>https://ivanhan0511.github.io/tags/ping/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Config</title>
       <link>https://ivanhan0511.github.io/tags/config/</link>
       <pubDate>Tue, 21 Feb 2023 15:06:52 +0800</pubDate>
-      
       <guid>https://ivanhan0511.github.io/tags/config/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>CORS</title>
       <link>https://ivanhan0511.github.io/tags/cors/</link>
       <pubDate>Tue, 21 Feb 2023 15:06:52 +0800</pubDate>
-      
       <guid>https://ivanhan0511.github.io/tags/cors/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Nginx</title>
       <link>https://ivanhan0511.github.io/tags/nginx/</link>
       <pubDate>Tue, 21 Feb 2023 15:06:52 +0800</pubDate>
-      
       <guid>https://ivanhan0511.github.io/tags/nginx/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>beans</title>
+      <title>Beans</title>
       <link>https://ivanhan0511.github.io/tags/beans/</link>
       <pubDate>Mon, 05 Dec 2022 14:33:05 +0800</pubDate>
-      
       <guid>https://ivanhan0511.github.io/tags/beans/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>ethiopia</title>
+      <title>Ethiopia</title>
       <link>https://ivanhan0511.github.io/tags/ethiopia/</link>
       <pubDate>Mon, 05 Dec 2022 14:33:05 +0800</pubDate>
-      
       <guid>https://ivanhan0511.github.io/tags/ethiopia/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Health</title>
       <link>https://ivanhan0511.github.io/tags/health/</link>
       <pubDate>Mon, 17 Oct 2022 17:21:51 +0800</pubDate>
-      
       <guid>https://ivanhan0511.github.io/tags/health/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>MQTT</title>
       <link>https://ivanhan0511.github.io/tags/mqtt/</link>
       <pubDate>Wed, 29 Jun 2022 16:52:42 +0800</pubDate>
-      
       <guid>https://ivanhan0511.github.io/tags/mqtt/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>Double-entry Bookkeeping</title>
+      <title>Double-Entry Bookkeeping</title>
       <link>https://ivanhan0511.github.io/tags/double-entry-bookkeeping/</link>
       <pubDate>Mon, 27 Jun 2022 12:48:05 +0800</pubDate>
-      
       <guid>https://ivanhan0511.github.io/tags/double-entry-bookkeeping/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Naming Convention</title>
       <link>https://ivanhan0511.github.io/tags/naming-convention/</link>
       <pubDate>Thu, 09 Jun 2022 21:32:20 +0800</pubDate>
-      
       <guid>https://ivanhan0511.github.io/tags/naming-convention/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Pointer *</title>
-      <link>https://ivanhan0511.github.io/tags/pointer/</link>
+      <link>https://ivanhan0511.github.io/tags/pointer-/</link>
       <pubDate>Thu, 09 Jun 2022 21:32:20 +0800</pubDate>
-      
-      <guid>https://ivanhan0511.github.io/tags/pointer/</guid>
+      <guid>https://ivanhan0511.github.io/tags/pointer-/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>C Memory</title>
       <link>https://ivanhan0511.github.io/tags/c-memory/</link>
       <pubDate>Thu, 09 Jun 2022 16:55:06 +0800</pubDate>
-      
       <guid>https://ivanhan0511.github.io/tags/c-memory/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Distinguish</title>
       <link>https://ivanhan0511.github.io/tags/distinguish/</link>
       <pubDate>Thu, 09 Jun 2022 01:02:32 +0800</pubDate>
-      
       <guid>https://ivanhan0511.github.io/tags/distinguish/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Road Bicycle</title>
       <link>https://ivanhan0511.github.io/tags/road-bicycle/</link>
       <pubDate>Wed, 01 Jun 2022 17:01:07 +0800</pubDate>
-      
       <guid>https://ivanhan0511.github.io/tags/road-bicycle/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>cURL</title>
+      <title>CURL</title>
       <link>https://ivanhan0511.github.io/tags/curl/</link>
       <pubDate>Wed, 01 Jun 2022 16:56:35 +0800</pubDate>
-      
       <guid>https://ivanhan0511.github.io/tags/curl/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Cert</title>
       <link>https://ivanhan0511.github.io/tags/cert/</link>
       <pubDate>Wed, 25 May 2022 20:10:41 +0800</pubDate>
-      
       <guid>https://ivanhan0511.github.io/tags/cert/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>coffee machine</title>
+      <title>Coffee Machine</title>
       <link>https://ivanhan0511.github.io/tags/coffee-machine/</link>
       <pubDate>Tue, 24 May 2022 05:49:34 +0800</pubDate>
-      
       <guid>https://ivanhan0511.github.io/tags/coffee-machine/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>grinder</title>
+      <title>Grinder</title>
       <link>https://ivanhan0511.github.io/tags/grinder/</link>
       <pubDate>Tue, 24 May 2022 05:49:34 +0800</pubDate>
-      
       <guid>https://ivanhan0511.github.io/tags/grinder/</guid>
       <description></description>
     </item>
-    
-    <item>
-      <title>C/C&#43;&#43;</title>
-      <link>https://ivanhan0511.github.io/tags/c/c&#43;&#43;/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://ivanhan0511.github.io/tags/c/c&#43;&#43;/</guid>
-      <description></description>
-    </item>
-    
   </channel>
 </rss>

@@ -6,15 +6,14 @@
     <description>Recent content in OpenCV on Ivan Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 16 Jan 2024 16:40:26 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/categories/opencv/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 16 Jan 2024 16:40:26 +0800</lastBuildDate>
+    <atom:link href="https://ivanhan0511.github.io/categories/opencv/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>OpenCV</title>
       <link>https://ivanhan0511.github.io/post/opencv-basic/</link>
       <pubDate>Tue, 16 Jan 2024 16:40:26 +0800</pubDate>
-      
       <guid>https://ivanhan0511.github.io/post/opencv-basic/</guid>
       <description>&lt;p&gt;Hope new chapter opened on OpenCV!&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

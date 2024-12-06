@@ -6,15 +6,14 @@
     <description>Recent content in Nginx on Ivan Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 21 Feb 2023 15:06:52 +0800</lastBuildDate><atom:link href="https://ivanhan0511.github.io/tags/nginx/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 21 Feb 2023 15:06:52 +0800</lastBuildDate>
+    <atom:link href="https://ivanhan0511.github.io/tags/nginx/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Nginx Configuration</title>
       <link>https://ivanhan0511.github.io/post/network-nginx/</link>
       <pubDate>Tue, 21 Feb 2023 15:06:52 +0800</pubDate>
-      
       <guid>https://ivanhan0511.github.io/post/network-nginx/</guid>
       <description>&lt;p&gt;Nginx config&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

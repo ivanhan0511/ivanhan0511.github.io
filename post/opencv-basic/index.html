@@ -304,148 +304,24 @@
 <h1 id="table-of-contents">Table of Contents</h1>
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#1-">1. ±³¾°</a></li>
-    <li><a href="#2-Êµ">2. ÊµÏÖ²½Öè</a>
+    <li><a href="#i-environment">I. ENVIRONMENT</a>
       <ul>
-        <li><a href="#21-Í¼">2.1 Í¼Ïñ×¼±¸</a></li>
-        <li><a href="#22-Ø¼Æ¥">2.2 ¹Ø¼üµãÆ¥Åä</a></li>
-        <li><a href="#23-">2.3 ¼ÆËã¾àÀë</a></li>
+        <li><a href="#x-labelme">X. labelme</a></li>
       </ul>
     </li>
-    <li><a href="#3-">3. ½áÂÛ</a></li>
+    <li><a href="#æ‚">æ‚</a></li>
   </ul>
 </nav>
 
-<h2 id="1-">1. ±³¾°</h2>
-<hr>
-<p>ÔÚĞí¶àÍ¼Ïñ´¦ÀíºÍ¼ÆËã»úÊÓ¾õÓ¦ÓÃÖĞ£¬²âÁ¿Í¼ÏñÖĞ¹Ø¼üµãÖ®¼äµÄ¾àÀëÊÇÒ»¸ö³£¼ûµÄĞèÇó¡£ÕâÖÖ²âÁ¿²»½ö¿ÉÒÔÓÃÓÚ¶¨Á¿·ÖÎö£¬»¹¿ÉÒÔÔÚĞí¶àÁìÓò£¬ÈçÒ½Ñ§¡¢¹¤³ÌºÍÒÕÊõ£¬Ìá¹©ÓĞ¼ÛÖµµÄĞÅÏ¢¡£OpenCV×÷ÎªÒ»¸ö¹¦ÄÜÇ¿´óµÄ¼ÆËã»úÊÓ¾õ¿â£¬Ìá¹©ÁËÊµÏÖÕâÖÖ²âÁ¿µÄ¹¤¾ßºÍËã·¨¡£</p>
-<h2 id="2-Êµ">2. ÊµÏÖ²½Öè</h2>
-<hr>
-<h3 id="21-Í¼">2.1 Í¼Ïñ×¼±¸</h3>
-<p>Ê×ÏÈ£¬ĞèÒªÈ·±£ÒÑ¾­°²×°ÁËOpenCV¿â¡£È»ºó£¬¼ÓÔØÄ¿±êÍ¼Ïñ²¢¼ì²â¹Ø¼üµã¡£Õâ¿ÉÒÔÍ¨¹ıÊ¹ÓÃOpenCVµÄÌØÕ÷¼ì²âËã·¨£¨ÈçSIFT¡¢SURF»òORB£©À´ÊµÏÖ¡£</p>
-
-  
-    
-  
-  
-    
-  
-  
-  
-
-
-<figure class="highlight python language-python">
-  <figcaption>
-    
-      <span>test1</span>
-    
-  </figcaption>
-  <table>
-    <tbody>
-      <tr>
-        <td class="gutter">
-          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre>
-        </td>
-        <td class="code">
-          <pre class="code-highlight language-python python"><code class="python">import cv2
-
-# ¼ÓÔØÍ¼Ïñ
-image = cv2.imread(&#39;path_to_your_image.jpg&#39;, cv2.IMREAD_GRAYSCALE)
-
-# ³õÊ¼»¯¹Ø¼üµã¼ì²âÆ÷£¨ÒÔSIFTÎªÀı£©
-detector = cv2.SIFT_create()
-keypoints = detector.detect(image, None)</code></pre>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</figure>
-
-<h3 id="22-Ø¼Æ¥">2.2 ¹Ø¼üµãÆ¥Åä</h3>
-<p>ÔÚÈ·¶¨ÁË¹Ø¼üµãÖ®ºó£¬¿ÉÄÜĞèÒª½øĞĞÆ¥Åä£¨Èç¹ûÓĞ¶à·ùÍ¼Ïñ£©¡£ÕâÒ»²½¿ÉÒÔÊ¹ÓÃÌØÕ÷ÃèÊö·û£¨ÈçSIFT»òSURFÃèÊö·û£©À´ÊµÏÖ¡£</p>
-
-  
-    
-  
-  
-    
-  
-  
-  
-
-
-<figure class="highlight python language-python">
-  <figcaption>
-    
-      <span>test2</span>
-    
-  </figcaption>
-  <table>
-    <tbody>
-      <tr>
-        <td class="gutter">
-          <pre><span class="line">1</span><br><span class="line">2</span><br></pre>
-        </td>
-        <td class="code">
-          <pre class="code-highlight language-python python"><code class="python"># ¼ÆËã¹Ø¼üµãÃèÊö·û
-keypoints, descriptors = detector.detectAndCompute(image, None)</code></pre>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</figure>
-
-<h3 id="23-">2.3 ¼ÆËã¾àÀë</h3>
-<p>Ò»µ©È·¶¨ÁË¹Ø¼üµã£¬¾Í¿ÉÒÔ¼ÆËãËüÃÇÖ®¼äµÄ¾àÀë¡£ÔÚÍ¼ÏñÆ½ÃæÉÏ£¬Õâ¿ÉÒÔÍ¨¹ıÅ·¼¸ÀïµÃ¾àÀë¹«Ê½À´ÊµÏÖ¡£</p>
-
-  
-    
-  
-  
-    
-  
-  
-  
-
-
-<figure class="highlight python language-python">
-  <figcaption>
-    
-      <span>test3</span>
-    
-  </figcaption>
-  <table>
-    <tbody>
-      <tr>
-        <td class="gutter">
-          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre>
-        </td>
-        <td class="code">
-          <pre class="code-highlight language-python python"><code class="python">import numpy as np
-
-# Ñ¡ÔñÁ½¸ö¹Ø¼üµã½øĞĞÊ¾Àı¼ÆËã
-pt1 = keypoints[0].pt
-pt2 = keypoints[1].pt
-
-
-# ¼ÆËãÁ½µãÖ®¼äµÄÅ·¼¸ÀïµÃ¾àÀë
-distance = np.sqrt((pt1[0] - pt2[0])**2 &#43; (pt1[1] - pt2[1])**2)
-print(f&#34;The distance between keypoints is: {distance} pixels.&#34;)</code></pre>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</figure>
-
-<h2 id="3-">3. ½áÂÛ</h2>
-<hr>
-<p>Í¨¹ıÉÏÊö²½Öè£¬ÎÒÃÇ³É¹¦µØÊ¹ÓÃOpenCV¼¼Êõ²âÁ¿ÁËÍ¼ÏñÖĞ¹Ø¼üµãÖ®¼äµÄ¾àÀë¡£ÕâÎª½øÒ»²½µÄÍ¼Ïñ·ÖÎöºÍÓ¦ÓÃÌá¹©ÁË»ù´¡¡£</p>
-<p>Çë×¢Òâ£¬Êµ¼ÊÓ¦ÓÃÖĞ¿ÉÄÜĞèÒª¿¼ÂÇÍ¼ÏñµÄ³ß¶ÈÒò×Ó¡¢»û±äĞ£ÕıµÈÒòËØ£¬ÒÔÈ·±£¾àÀë²âÁ¿µÄ×¼È·ĞÔ¡£</p>
-<p>¸ßµÈÊıÑ§ÖªÊ¶£¬Ö»ÓĞÔÚÓÃµ½Ê±£¬²ÅÄÜ×¼È·µØÀí½â¡£
-×î½ü½øĞĞÈË¹¤ÖÇÄÜµÄ±à³ÌÑ§Ï°£¬¸Ğ¾õpython¡¢openCVÕæÊÇºÜºÃÓÃ£¬ÓÈÆäÊÇÔÚÉî¶ÈÑ§Ï°µÄÓĞ¹Ø±à³ÌÖĞ¡£ÔÚÑ§Ï°ÖĞ£¬Éæ¼°ºÜ¶àËã·¨¡£ÈçÏßĞÔ»Ø¹é£¨Linear Regression£©¡¢Âß¼­»Ø¹é£¨Logistic Regression£©¡¢×îĞ¡¶ş³Ë·¨£¬¾í»ıÉñ¾­ÍøÂç£¨Convolutional Neural Network£©¡¢±´Ò¶Ë¹Àà£¨Bayesin£©µÈÀíÂÛ¡£</p>
-<p>ÕâĞ©ÀíÂÛ£¬´ó¶àÔÚ´óÑ§µÄ¸ÅÂÊÂÛ¡¢ÊıÀíÍ³¼ÆÖĞÑ§µ½¹ı£¬¿¼ÊÔÒ²Í¨¹ıÁË£¬µ«Ò»Ö±¶ÔÕâĞ©¸ÅÄîºÜÄ£ºı¡£Ö±µ½Õâ´Î±à³ÌÑ§Ï°£¬ÎªÁË¼ÓÉî¼ÇÒä£¬ÓÖ°Ñ¸ÅÂÊÂÛ¡¢ÊıÀíÍ³¼ÆÏà¹ØÕÂ½ÚÏêÏ¸·­¿´ÁËÒ»±é£¬½áºÏpython£¬Àí½âÒª¸üÉî¿Ì¡£</p>
-<p>ÈË¹¤ÖÇÄÜ£¬±à³ÌÊÇ¹Ø¼ü¡£Éî¶ÈÑ§Ï°µÄ¾í»ıÉñ¾­ÍøÂçËã·¨£¬Èç¹û²»½øĞĞÓÅ»¯´¦Àí£¬ÊÇÎŞ·¨½øĞĞÑµÁ·¼°Ê¶±ğµÄ£¬×îÖÕÒÔºÃµÄËã·¨È¡Ê¤¡£
-ÊıÑ§Óë±à³Ì¿Î³Ì£¬Ó¦µ±Í¬²½¿ªÉè×îºÃ¡£Ò»±ßÑ§ÊıÑ§ÀíÂÛ£¬Ò»±ß½«ÀíÂÛ×ª»¯³É³ÌĞò°ü£¬²»Ê¶ÎªÒ»ÖÖ¼«ºÃµÄÑ§Ï°·½·¨¡£</p>
+<h2 id="i-environment">I. ENVIRONMENT</h2>
+<h3 id="x-labelme">X. labelme</h3>
+<p>Download and install anaconda, create a new env within anaconda and activide it</p>
+<p>{{ codeblock install shell }}
+conda install pyqt
+conda install pillow
+pip install labelme
+{{ /codeblock }}</p>
+<h2 id="æ‚">æ‚</h2>
 <p>&ldquo;Magnification&rdquo; and &ldquo;zoom&rdquo; are related terms often used in the context of optics, photography, and microscopy. While they are related, they refer to slightly different concepts:</p>
 <ol>
 <li>Magnification:
@@ -458,8 +334,6 @@ print(f&#34;The distance between keypoints is: {distance} pixels.&#34;)</code></
 - Zoom lenses have a variable focal length, allowing users to adjust the magnification level by changing the zoom setting.</li>
 </ol>
 <p>In summary, magnification is a measure of how much larger an object appears compared to its actual size, often a fixed value, while zoom refers to the ability to adjust the magnification level by changing the focal length of a lens or adjusting the field of view of an optical system.</p>
-<p>¿ªÔ´µ÷É«Èí¼ş</p>
-<p><a href="https://www.music4x.com/post/7489">https://www.music4x.com/post/7489</a></p>
               
 
 

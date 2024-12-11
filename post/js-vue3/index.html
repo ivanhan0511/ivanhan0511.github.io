@@ -308,14 +308,13 @@
 <h1 id="table-of-contents">Table of Contents</h1>
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#i-env">I. ENV</a>
+    <li><a href="#i-environment">I. ENVIRONMENT</a>
       <ul>
-        <li><a href="#a-nvm--nodejs--npm">A. nvm / nodejs / npm</a></li>
-        <li><a href="#b-npm-and-yarn">B. npm and yarn</a></li>
-        <li><a href="#b-vs-code">B. VS Code</a>
+        <li><a href="#a-nvm--nodejs--npm--yarn">A. nvm / nodejs / npm / yarn</a></li>
+        <li><a href="#b-vscode">B. VSCode</a>
           <ul>
-            <li><a href="#1-git">1. Git</a></li>
-            <li><a href="#2-npm-env">2. npm env</a></li>
+            <li><a href="#1-configuration">1. Configuration</a></li>
+            <li><a href="#2-extensions">2. Extensions</a></li>
           </ul>
         </li>
       </ul>
@@ -328,14 +327,13 @@
   </ul>
 </nav>
 
-<h2 id="i-env">I. ENV</h2>
-<hr>
-<h3 id="a-nvm--nodejs--npm">A. nvm / nodejs / npm</h3>
+<h2 id="i-environment">I. ENVIRONMENT</h2>
+<h3 id="a-nvm--nodejs--npm--yarn">A. nvm / nodejs / npm / yarn</h3>
 <p>Node Version Manager</p>
 <p>nvm管理的是node, 但会同时把npm也安装好, node的版本和npm的版本是不一样的</p>
 <p>Download <a href="https://github.com/coreybutler/nvm-windows/releases">nvm-setup.exe</a> and install.</p>
-<p>安装在C:\Users\Ivan\AppData\Roaming\nvm中</p>
-<p>执行<code>nvm use 20.11.1</code>之后会在C:\Program File\nodejs中创建当前版本的nodejs</p>
+<p>安装在<code>C:\Users\Ivan\AppData\Roaming\nvm</code>, 执行<code>nvm use 20.11.1</code>之后会将nodejs链接到<code>C:\Program Files\nodejs\</code>.
+Windows通过VSCode的<code>Remote - WSL</code>插件连接到WSL, 通过命令行操作<code>npm run dev</code>等</p>
 <p>And use it in PowerShell:
 
   
@@ -389,7 +387,7 @@ nvm use 20.11.1
     
   </footer>
 </blockquote>
-<h3 id="b-npm-and-yarn">B. npm and yarn</h3>
+<p>npm and yarn</p>
 
 
   
@@ -468,10 +466,27 @@ yarn run serve-dev
   </div>
 </figure>
 
-<h3 id="b-vs-code">B. VS Code</h3>
-<p>在WSL中输入了一个<code>code</code>, 安装VS Code Server, 不知道啥作用</p>
-<h4 id="1-git">1. Git</h4>
-<h4 id="2-npm-env">2. npm env</h4>
+<h3 id="b-vscode">B. VSCode</h3>
+<h4 id="1-configuration">1. Configuration</h4>
+<p>VSCode通过<code>Remote - WSL</code>插件连接到WSL, 反而通过WSL与Windows共用环境变量(可能)识别到了npm命令, 前端项目可以跑起来了</p>
+<p>左侧边栏的<code>Source Control</code>中的Git要物理机安装Git, 暂时没能共用WSL中git, 暂且隐藏掉, 眼不见心不烦, 反正通过cli可以操作git即可</p>
+<p>搜索<code>end of line</code>可以找到&quot;Text Editor&quot; 和 扩展&quot;prettier&quot;都有设置&quot;eol&quot;, 将行尾结束符统一设置为<code>LF(\n)</code></p>
+<h4 id="2-extensions">2. Extensions</h4>
+<p><em>VSCode推荐的插件, 并不见得都好用</em></p>
+<ul>
+<li>
+<p>vim, 需要修改Vim.path设置, 此次设置了<code>$HOME.vscodevimrc</code>
+{{ codeblock settings.json json }}
+{
+&ldquo;vim.vimrc.enable&rdquo;: true,
+&ldquo;vim.vimrc.path&rdquo;: &ldquo;$HOME/.vscodevimrc&rdquo;,
+}
+{{ /codeblock }}</p>
+</li>
+<li>
+<p>prettier</p>
+</li>
+</ul>
 <h2 id="ii-grammar">II. GRAMMAR</h2>
 <hr>
 <h3 id="a-杂记">A. 杂记</h3>

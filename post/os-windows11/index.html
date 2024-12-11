@@ -344,22 +344,16 @@
 <h2 id="i-backup">I. BACKUP</h2>
 <p>主力开发操作系统是Windows, 如果要重装系统, 需要提前备份好本地文件</p>
 <ul>
-<li>VisualStudio
-<ul>
-<li>git commit and push</li>
-</ul>
-</li>
 <li>PyCharm/IDEA
 <ul>
 <li>git commit and push</li>
 <li>IDEA开发用的每一条SQL console, 右键Refactor -&gt; Copy file, 存储到项目sql文件夹中随Git上传</li>
 <li>Scratch代码</li>
-<li><del>.ideavimrc</del></li>
 </ul>
 </li>
 <li><del>HBuildX</del>改用VSCode
 <ul>
-<li>No local file, all in git</li>
+<li>git commit and push</li>
 <li>据说可以通过vue-cli创建uni-app工程? 不太喜欢uni-app</li>
 </ul>
 </li>
@@ -373,17 +367,17 @@
 </li>
 <li>Terminal
 <ul>
-<li>SSH密钥对</li>
-<li>SSH config</li>
-<li>.vimrc, vim bundle</li>
+<li>SSH密钥对, config</li>
+<li>.vimrc(暂时没有必要备份, 重装后, 配置<code>.ideavimrc</code>和<code>.vscodevimrc</code>即可), vim bundle</li>
+<li>.bashrc(暂时没有必要备份, 重装后, 配置<code>apssh</code>即可)</li>
 <li>.gitconfig</li>
 </ul>
 </li>
+<li>Proxy文件夹</li>
 <li>虚拟机
 <ul>
-<li>数据库: 转储数据和数据结构, MySQL和SQLServer的所有库</li>
-<li>SSH密钥</li>
-<li>证书</li>
+<li>Finance</li>
+<li>其它特种数据?</li>
 </ul>
 </li>
 <li>Image</li>
@@ -406,7 +400,6 @@
 </ul>
 </li>
 <li>v2rayN(Need DotNet6.0) 注意新安装的Windows, 要确保对时准确, 精准到1分钟以内, 否则代理建立连接失败</li>
-<li><del>Postman</del></li>
 <li><del>XShell/XFtp <code>telnet &lt;IP&gt; &lt;Port&gt;</code></del> (转用WSL2)</li>
 <li><del>hugo</del>(转用WSL2)
 <ul>
@@ -445,12 +438,12 @@
 <h3 id="d-redis">D. Redis</h3>
 <p>参见sql-mysql.md</p>
 <h2 id="iv-ide">IV. IDE</h2>
-<p>关于开发语言, 暂时都在物理机上管理</p>
+<p>关于开发语言/开发环境, 暂时都在物理机上安装和管理</p>
 <ul>
-<li>Java, 使用IDEA安装JDK</li>
-<li>Python, 使用Anaconda管理Python环境</li>
+<li>Java, 使用IDEA管理JDK环境, 存放在<code>C:\Users\Ivan\.jdks</code></li>
+<li>Python, 使用Anaconda管理Python环境, 安装在<code>C:\Users\anaconda3</code>, PyCharm选择并调用</li>
 <li>C++, TODO @Ivan</li>
-<li>JavaScript, 使用nvm管理nodejs环境</li>
+<li>JavaScript, 使用nvm管理nodejs环境, 安装在<code>C:\Users\Ivan\AppData\Roaming\nvm</code>, VSCode通过<code>Remote - WSL</code>插件连接到WSL, 通过命令行操作<code>npm run dev</code>等</li>
 </ul>
 <h3 id="a-jetbrains-pycharmidea">A. Jetbrains PyCharm/IDEA</h3>
 <p>参见python-basic.md/java-basic.md中步骤</p>
@@ -463,7 +456,8 @@
 <li>Vue3, 参见js-vue3.md</li>
 </ul>
 <h2 id="v-vmware--">V. VMWare  ?</h2>
-<p>Try V-box this time(Dec 03, 2024) ?</p>
+<p>Try V-box this time(Dec 03, 2024) ?
+网上银行, BitCoin, 百度云盘 安装在哪里?</p>
 <p>VMWare WorkStation Pro, 规划好哪些工具安装在裸机, 哪些安装在VMWare</p>
 <ul>
 <li>切换安装路径到<code>D:\VirtualMachines\</code>盘</li>

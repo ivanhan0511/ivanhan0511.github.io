@@ -6,15 +6,8 @@
     <description>Recent content in Init on Ivan Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 30 Sep 2024 10:39:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 07 Nov 2023 15:40:00 +0800</lastBuildDate>
     <atom:link href="https://ivanhan0511.github.io/tags/init/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>DIY My Windows</title>
-      <link>https://ivanhan0511.github.io/post/os-windows11/</link>
-      <pubDate>Mon, 30 Sep 2024 10:39:00 +0800</pubDate>
-      <guid>https://ivanhan0511.github.io/post/os-windows11/</guid>
-      <description>&lt;p&gt;After initialization of Windows 11, here is the TODO list.&lt;/p&gt;</description>
-    </item>
     <item>
       <title>MySQL8.0 Operations</title>
       <link>https://ivanhan0511.github.io/post/sql-mysql/</link>

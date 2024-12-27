@@ -6,14 +6,21 @@
     <description>Recent content on Ivan Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 27 Nov 2024 10:46:07 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 26 Dec 2024 16:20:07 +0800</lastBuildDate>
     <atom:link href="https://ivanhan0511.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Welcome to Ivan&#39;s Blog</title>
       <link>https://ivanhan0511.github.io/post/welcome/</link>
-      <pubDate>Wed, 27 Nov 2024 10:46:07 +0800</pubDate>
+      <pubDate>Thu, 26 Dec 2024 16:20:07 +0800</pubDate>
       <guid>https://ivanhan0511.github.io/post/welcome/</guid>
       <description>&lt;p&gt;Some records for software, coffee, music and sports.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Customize My OS</title>
+      <link>https://ivanhan0511.github.io/post/os-backup-reinstall/</link>
+      <pubDate>Tue, 24 Dec 2024 10:19:00 +0800</pubDate>
+      <guid>https://ivanhan0511.github.io/post/os-backup-reinstall/</guid>
+      <description>&lt;p&gt;After initialization of a Windows 11 or a macOS, here is the TODO list.&lt;/p&gt;</description>
     </item>
     <item>
       <title>ALGORITHM</title>
@@ -42,13 +49,6 @@
       <pubDate>Fri, 25 Oct 2024 11:22:00 +0800</pubDate>
       <guid>https://ivanhan0511.github.io/post/java-fork-ruoyi-vue-pro/</guid>
       <description>&lt;p&gt;To deploy a Springboot web framework, whatever development or production, and whatever single or distributed entity,&#xA;&lt;a href=&#34;https://github.com/YunaiV/ruoyi-vue-pro&#34;&gt;ruoyi-vue-pro&lt;/a&gt; is a good project&lt;/p&gt;&#xA;&lt;p&gt;But the stronger, the more complex. This post is the annotation for this project, by my personer opinion&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>DIY My Windows</title>
-      <link>https://ivanhan0511.github.io/post/os-windows11/</link>
-      <pubDate>Mon, 30 Sep 2024 10:39:00 +0800</pubDate>
-      <guid>https://ivanhan0511.github.io/post/os-windows11/</guid>
-      <description>&lt;p&gt;After initialization of Windows 11, here is the TODO list.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Software Architecture</title>
@@ -98,13 +98,6 @@
       <pubDate>Tue, 07 Nov 2023 15:40:00 +0800</pubDate>
       <guid>https://ivanhan0511.github.io/post/sql-mysql/</guid>
       <description>&lt;p&gt;Some usual operations examples in MySQL 8.0&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>DIY My macOS</title>
-      <link>https://ivanhan0511.github.io/post/os-macos/</link>
-      <pubDate>Fri, 03 Nov 2023 15:52:00 +0800</pubDate>
-      <guid>https://ivanhan0511.github.io/post/os-macos/</guid>
-      <description>&lt;p&gt;Some record for configuring macOS&lt;/p&gt;</description>
     </item>
     <item>
       <title>VUE3</title>

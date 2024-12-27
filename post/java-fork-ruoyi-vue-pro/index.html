@@ -369,13 +369,18 @@ But the stronger, the more complex. This post is the annotation for this project
         </li>
       </ul>
     </li>
-    <li><a href="#chapter-6">VI. APPENDIX</a>
+    <li><a href="#vi-frontend">VI. FRONTEND</a>
+      <ul>
+        <li><a href="#a-设计思路理解">A. 设计思路理解</a></li>
+        <li><a href="#b-菜单配置">B. 菜单配置</a></li>
+      </ul>
+    </li>
+    <li><a href="#chapter-6">VII. APPENDIX</a>
       <ul>
         <li><a href="#缩写信息">缩写信息</a></li>
         <li><a href="#命名规范">命名规范</a></li>
       </ul>
     </li>
-    <li><a href="#vii-tmp">VII. TMP</a></li>
   </ul>
 </nav>
 
@@ -414,7 +419,7 @@ But the stronger, the more complex. This post is the annotation for this project
 <p>不使用RESTful style, 因为RESTful仍然有表达不明确的业务场景, 仍然需要使用传统&quot;动词&quot;来描述接口性质/意图, 且对团队要求较高, 一不小心就会破坏掉所谓的RESTful style</p>
 </li>
 <li>
-<p>吸取<a href="https://en.wikipedia.org/wiki/Unix_philosophy">Unix设计哲学</a>
+<p>吸取<a href="https://en.wikipedia.org/wiki/Unix_philosophy">Unix设计哲学</a>:
 {{ blockquote }}
 It was later summarized by Peter H. Salus in A Quarter-Century of Unix (1994):</p>
 </li>
@@ -430,19 +435,21 @@ It was later summarized by Peter H. Salus in A Quarter-Century of Unix (1994):</
 <p>基于现役SpringBoot业务流层面的全栈开发的经验, 制定出更优雅的代码设计规范</p>
 <ol>
 <li>
-<p>Write down all the details of requirement seriously</p>
+<p>Write down all the details of requirement <strong>seriously</strong></p>
 </li>
 <li>
-<p>Draw UML(work flow)设计初期, 后端概要/前端原型图 均不要太正式, 需要不断试错, 兼容前端表现(<em>基于源码尽可能少量修改</em>)与后端数据结构(<em>尽可能解耦</em>)的合理性</p>
+<p>Draw UML(work flow), 设计初期, 后端概要/前端原型图 均不要太正式, 需要不断修正, 兼容前端表现(<em>基于源码尽可能少量修改</em>)与后端数据结构(<em>尽可能解耦</em>)的合理性</p>
 </li>
 <li>
-<p>Designing the data structure and its relationship on the paper / iPad is the most important thing!</p>
+<p>Designing the data structure and its relationship on the paper / iPad is the most important thing, <strong>with all detail fields</strong></p>
 </li>
 <li>
-<p>Record the SQL into the <code>./sql/mysql/</code>. If need ER, export from MySQL, of course, my personal choice</p>
+<p>Record the SQL into the <code>./sql/mysql/</code> and its System Manual SQL records. If need ER, export from MySQL, of course, my personal choice</p>
+</li>
+<li>
+<p>With its Infra code-auto-generation, most backend and frontend codes can be generated. Very helpful and so handy</p>
 </li>
 </ol>
-<p>With the infra code-auto-generation, most backend and frontend codes can be generated. Very helpful and so handy</p>
 <h3 id="a-controller">A. Controller</h3>
 <p>[TODO]: 继续描述源码在前后端结合时, 互相传递的参数以及显示字段的设计思路</p>
 <h4 id="1-input-validation">1. Input validation</h4>
@@ -618,7 +625,7 @@ public Long createSaleOrder(ErpSaleOrderSaveReqVO createReqVO) {
 <h4 id="2-job">2. Job</h4>
 <p>Quartz</p>
 <h4 id="3-third-part-api">3. Third-part API</h4>
-<p>以下2种都是Spring官方推荐的, 都是对HttpClient的封装, 简化使用, 提高效率</p>
+<p><del>以下2种都是Spring官方推荐的</del>, 都是对HttpClient的封装, 简化使用, 提高效率</p>
 <ul>
 <li>RestTemplate: Sync,
 
@@ -1098,7 +1105,19 @@ Druid是淘宝选用的, 高并发的情况会适用一些</p>
 <p>（1）财务可以没有研发部的角色权限，但是他/她能够在研发部的经费审批流程进行审核。</p>
 <p>（2）大多数软件都会内置“系统管理员”“admin”这样的角色，但很少公司会为每一个软件系统设置一个这样的岗位，小公司甚至直接就没有这个岗位没有人拥有这个角色的账号。</p>
 <p>（3）用户A要填行政的每日考勤又要填人事的面试登记，但不涉及流程审批，这个可以直接就不设定“岗位”只给用户A设置一个行政角色跟一个人事角色。</p>
-<h2 id="chapter-6">VI. APPENDIX</h2>
+<h2 id="vi-frontend">VI. FRONTEND</h2>
+<h3 id="a-设计思路理解">A. 设计思路理解</h3>
+<p>对于前端的理解为: 更多地通过多接口异步从后端获取获取多种数据, 组装成页面, 不是一个接口获取N多数据</p>
+<p>既降低了后端组装数据的复杂度, 也对于前后端的数据进行解耦</p>
+<p>前后端约定好数据库字段<code>INT</code>所代表的意义, 前端通过字典接口获取该数值所对应的文字/字符, 并赋予颜色标签的显示, 增加友好度</p>
+<h3 id="b-菜单配置">B. 菜单配置</h3>
+<ul>
+<li>路由地址: <code>user</code>, 与源码前端代码的代码文件夹名称一致</li>
+<li>组件地址: <code>system/user/index</code>, 与代码同路径index.vue一致</li>
+<li>组件名称: <code>SystemUser</code>, 与index.vue中<code>defineOptions({ name: 'SystemUser' })</code>一致</li>
+<li>权限名称: <code>system:user:list</code>, 与index.vue中的<!-- raw HTML omitted -->中的<code>v-hasPermi=&quot;system:user:list&quot;</code>一致</li>
+</ul>
+<h2 id="chapter-6">VII. APPENDIX</h2>
 <hr>
 <p>摘抄自网络, 不一定合理, 仅保存一些文字, 以便以后少写一些文字</p>
 <h3 id="缩写信息">缩写信息</h3>
@@ -1131,54 +1150,6 @@ Druid是淘宝选用的, 高并发的情况会适用一些</p>
 <li>POJO是DO/DTO/BO/VO的统称, 禁止命名成xxxPOJO</li>
 </ul>
 </li>
-</ul>
-<h2 id="vii-tmp">VII. TMP</h2>
-<hr>
-<p><strong>可能需要大改ERP</strong>, 原因如下:</p>
-<ul>
-<li>定义的产品没有原料和成品之分</li>
-<li>产品的barCode给Mall使用是比较恰当的(Tip: barCode可以帮助Mall区分一部手机的颜色/内存等). 而对外的商品SPU/SKU由Mall定义</li>
-<li>注意, BtoC的Mall没有客户的概念, 只有C端用户而已</li>
-<li>而对于BtoB的ERP, 有客户的概念, 但却缺少商品Code的定义, 比如<code>hf001</code>, <code>盛趣点券</code>等</li>
-<li>另外, 结合现有业务产品线
-<ul>
-<li>背景:
-<ol>
-<li>门票类, BtoC, 不依赖上游, 平台在ERP生产入库, 供Mall使用. 而Mall中因为需要绑定虚拟身份的事情, 在Mall中做旁路(不使用类别作限制, 在产品中添加<code>needVirtualIdentity</code>)</li>
-<li>手办类, BtoC, 依赖实体上游, 却(暂时)不用在系统中体现, 优先用Mall满足需求, 有进一步需求时再启用ERP支持</li>
-<li>抽赏类, BtoC, 依赖实体上游, 系统管理手办及配赏, 优先用Mall满足需求, 有进一步需求时再启用ERP支持</li>
-<li>充值类, BtoB, 依赖上游, 对下游提供接口, 其中比如<code>hf001</code>, <code>盛趣点券</code>等自定义码, 需要DIY</li>
-</ol>
-</li>
-<li>统筹:
-<ul>
-<li>ERP的销售订单入口
-<ul>
-<li>可以专供背景<code>4.</code>, 其余三项的入口在小程序Mall</li>
-<li>(暂时)不太需要在Controller中抽象通用的业务订单入口(指: 通过前端传递业务类别, 以区分调用哪种业务服务)</li>
-<li>盛趣/网龙/话费, 多种toB产品, 前端分流, 后端</li>
-</ul>
-</li>
-<li>ERP的产品定义
-<ul>
-<li><del>ERP的产品定义, 只需旁路增加<code>productNo</code>即可, 供下游使用, 与Mall无关</del> 偷懒使用<code>barCode</code>了, <strong>待定</strong></li>
-<li><del>(严重)依赖其<code>categoryId</code>进行区分&quot;原料&quot;or&quot;成品&quot;,</del> 产品中增加字段,区分原料还是成品, 供&quot;生产监听服务&quot;生产/组装</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p><strong>源码数据隔离的需求越来越大了</strong></p>
-<p>搞定其原理, 测试数据隔离</p>
-<ul>
-<li>创展(Mall)</li>
-<li>星尚(Mall)</li>
-<li>智渔(ERP)</li>
-<li>答案(ERP)</li>
-<li>MMCZ(Measure)</li>
-<li>佰娱(Kuji)</li>
 </ul>
               
 
@@ -1218,7 +1189,7 @@ Druid是淘宝选用的, 高并发的情况会适用一些</p>
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/os-windows11/" data-tooltip="DIY My Windows" aria-label="PREVIOUS: DIY My Windows">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/software-architecture/" data-tooltip="Software Architecture" aria-label="PREVIOUS: Software Architecture">
           
               <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
               <i class="fa fa-angle-right"></i>
@@ -1319,7 +1290,7 @@ Druid是淘宝选用的, 高并发的情况会适用一些</p>
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/os-windows11/" data-tooltip="DIY My Windows" aria-label="PREVIOUS: DIY My Windows">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/software-architecture/" data-tooltip="Software Architecture" aria-label="PREVIOUS: Software Architecture">
           
               <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
               <i class="fa fa-angle-right"></i>

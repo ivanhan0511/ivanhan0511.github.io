@@ -6,13 +6,20 @@
     <description>Recent content in Categories on Ivan Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 27 Nov 2024 10:46:07 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 26 Dec 2024 16:20:07 +0800</lastBuildDate>
     <atom:link href="https://ivanhan0511.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Welcome</title>
       <link>https://ivanhan0511.github.io/categories/welcome/</link>
-      <pubDate>Wed, 27 Nov 2024 10:46:07 +0800</pubDate>
+      <pubDate>Thu, 26 Dec 2024 16:20:07 +0800</pubDate>
       <guid>https://ivanhan0511.github.io/categories/welcome/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>OS</title>
+      <link>https://ivanhan0511.github.io/categories/os/</link>
+      <pubDate>Tue, 24 Dec 2024 10:19:00 +0800</pubDate>
+      <guid>https://ivanhan0511.github.io/categories/os/</guid>
       <description></description>
     </item>
     <item>
@@ -41,20 +48,6 @@
       <link>https://ivanhan0511.github.io/categories/webframework/</link>
       <pubDate>Sat, 26 Oct 2024 11:22:00 +0800</pubDate>
       <guid>https://ivanhan0511.github.io/categories/webframework/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>OS</title>
-      <link>https://ivanhan0511.github.io/categories/os/</link>
-      <pubDate>Mon, 30 Sep 2024 10:39:00 +0800</pubDate>
-      <guid>https://ivanhan0511.github.io/categories/os/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Windows</title>
-      <link>https://ivanhan0511.github.io/categories/windows/</link>
-      <pubDate>Mon, 30 Sep 2024 10:39:00 +0800</pubDate>
-      <guid>https://ivanhan0511.github.io/categories/windows/</guid>
       <description></description>
     </item>
     <item>
@@ -139,13 +132,6 @@
       <link>https://ivanhan0511.github.io/categories/sql/</link>
       <pubDate>Tue, 07 Nov 2023 15:40:00 +0800</pubDate>
       <guid>https://ivanhan0511.github.io/categories/sql/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>MacOS</title>
-      <link>https://ivanhan0511.github.io/categories/macos/</link>
-      <pubDate>Fri, 03 Nov 2023 15:52:00 +0800</pubDate>
-      <guid>https://ivanhan0511.github.io/categories/macos/</guid>
       <description></description>
     </item>
     <item>

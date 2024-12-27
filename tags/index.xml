@@ -6,20 +6,34 @@
     <description>Recent content in Tags on Ivan Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 27 Nov 2024 10:46:07 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 26 Dec 2024 16:20:07 +0800</lastBuildDate>
     <atom:link href="https://ivanhan0511.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ivan Han</title>
       <link>https://ivanhan0511.github.io/tags/ivan-han/</link>
-      <pubDate>Wed, 27 Nov 2024 10:46:07 +0800</pubDate>
+      <pubDate>Thu, 26 Dec 2024 16:20:07 +0800</pubDate>
       <guid>https://ivanhan0511.github.io/tags/ivan-han/</guid>
       <description></description>
     </item>
     <item>
       <title>Welcome</title>
       <link>https://ivanhan0511.github.io/tags/welcome/</link>
-      <pubDate>Wed, 27 Nov 2024 10:46:07 +0800</pubDate>
+      <pubDate>Thu, 26 Dec 2024 16:20:07 +0800</pubDate>
       <guid>https://ivanhan0511.github.io/tags/welcome/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>MacOS</title>
+      <link>https://ivanhan0511.github.io/tags/macos/</link>
+      <pubDate>Tue, 24 Dec 2024 10:19:00 +0800</pubDate>
+      <guid>https://ivanhan0511.github.io/tags/macos/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Windows</title>
+      <link>https://ivanhan0511.github.io/tags/windows/</link>
+      <pubDate>Tue, 24 Dec 2024 10:19:00 +0800</pubDate>
+      <guid>https://ivanhan0511.github.io/tags/windows/</guid>
       <description></description>
     </item>
     <item>
@@ -69,55 +83,6 @@
       <link>https://ivanhan0511.github.io/tags/springboot/</link>
       <pubDate>Fri, 25 Oct 2024 11:22:00 +0800</pubDate>
       <guid>https://ivanhan0511.github.io/tags/springboot/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Configuration</title>
-      <link>https://ivanhan0511.github.io/tags/configuration/</link>
-      <pubDate>Mon, 30 Sep 2024 10:39:00 +0800</pubDate>
-      <guid>https://ivanhan0511.github.io/tags/configuration/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>HBuildX</title>
-      <link>https://ivanhan0511.github.io/tags/hbuildx/</link>
-      <pubDate>Mon, 30 Sep 2024 10:39:00 +0800</pubDate>
-      <guid>https://ivanhan0511.github.io/tags/hbuildx/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>IDEA</title>
-      <link>https://ivanhan0511.github.io/tags/idea/</link>
-      <pubDate>Mon, 30 Sep 2024 10:39:00 +0800</pubDate>
-      <guid>https://ivanhan0511.github.io/tags/idea/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Init</title>
-      <link>https://ivanhan0511.github.io/tags/init/</link>
-      <pubDate>Mon, 30 Sep 2024 10:39:00 +0800</pubDate>
-      <guid>https://ivanhan0511.github.io/tags/init/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Proxy</title>
-      <link>https://ivanhan0511.github.io/tags/proxy/</link>
-      <pubDate>Mon, 30 Sep 2024 10:39:00 +0800</pubDate>
-      <guid>https://ivanhan0511.github.io/tags/proxy/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>VisualStudio</title>
-      <link>https://ivanhan0511.github.io/tags/visualstudio/</link>
-      <pubDate>Mon, 30 Sep 2024 10:39:00 +0800</pubDate>
-      <guid>https://ivanhan0511.github.io/tags/visualstudio/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Windows</title>
-      <link>https://ivanhan0511.github.io/tags/windows/</link>
-      <pubDate>Mon, 30 Sep 2024 10:39:00 +0800</pubDate>
-      <guid>https://ivanhan0511.github.io/tags/windows/</guid>
       <description></description>
     </item>
     <item>
@@ -233,6 +198,13 @@
       <description></description>
     </item>
     <item>
+      <title>Init</title>
+      <link>https://ivanhan0511.github.io/tags/init/</link>
+      <pubDate>Tue, 07 Nov 2023 15:40:00 +0800</pubDate>
+      <guid>https://ivanhan0511.github.io/tags/init/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>MySQL8.0</title>
       <link>https://ivanhan0511.github.io/tags/mysql8.0/</link>
       <pubDate>Tue, 07 Nov 2023 15:40:00 +0800</pubDate>
@@ -251,13 +223,6 @@
       <link>https://ivanhan0511.github.io/tags/view/</link>
       <pubDate>Tue, 07 Nov 2023 15:40:00 +0800</pubDate>
       <guid>https://ivanhan0511.github.io/tags/view/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>MacOS</title>
-      <link>https://ivanhan0511.github.io/tags/macos/</link>
-      <pubDate>Fri, 03 Nov 2023 15:52:00 +0800</pubDate>
-      <guid>https://ivanhan0511.github.io/tags/macos/</guid>
       <description></description>
     </item>
     <item>

@@ -3,28 +3,40 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://ivanhan0511.github.io/categories/</loc>
-    <lastmod>2024-11-27T10:46:07+08:00</lastmod>
+    <lastmod>2024-12-26T16:20:07+08:00</lastmod>
   </url><url>
     <loc>https://ivanhan0511.github.io/</loc>
-    <lastmod>2024-11-27T10:46:07+08:00</lastmod>
+    <lastmod>2024-12-26T16:20:07+08:00</lastmod>
   </url><url>
     <loc>https://ivanhan0511.github.io/tags/ivan-han/</loc>
-    <lastmod>2024-11-27T10:46:07+08:00</lastmod>
+    <lastmod>2024-12-26T16:20:07+08:00</lastmod>
   </url><url>
     <loc>https://ivanhan0511.github.io/post/</loc>
-    <lastmod>2024-11-27T10:46:07+08:00</lastmod>
+    <lastmod>2024-12-26T16:20:07+08:00</lastmod>
   </url><url>
     <loc>https://ivanhan0511.github.io/tags/</loc>
-    <lastmod>2024-11-27T10:46:07+08:00</lastmod>
+    <lastmod>2024-12-26T16:20:07+08:00</lastmod>
   </url><url>
     <loc>https://ivanhan0511.github.io/tags/welcome/</loc>
-    <lastmod>2024-11-27T10:46:07+08:00</lastmod>
+    <lastmod>2024-12-26T16:20:07+08:00</lastmod>
   </url><url>
     <loc>https://ivanhan0511.github.io/categories/welcome/</loc>
-    <lastmod>2024-11-27T10:46:07+08:00</lastmod>
+    <lastmod>2024-12-26T16:20:07+08:00</lastmod>
   </url><url>
     <loc>https://ivanhan0511.github.io/post/welcome/</loc>
-    <lastmod>2024-11-27T10:46:07+08:00</lastmod>
+    <lastmod>2024-12-26T16:20:07+08:00</lastmod>
+  </url><url>
+    <loc>https://ivanhan0511.github.io/post/os-backup-reinstall/</loc>
+    <lastmod>2024-12-24T10:19:00+08:00</lastmod>
+  </url><url>
+    <loc>https://ivanhan0511.github.io/tags/macos/</loc>
+    <lastmod>2024-12-24T10:19:00+08:00</lastmod>
+  </url><url>
+    <loc>https://ivanhan0511.github.io/categories/os/</loc>
+    <lastmod>2024-12-24T10:19:00+08:00</lastmod>
+  </url><url>
+    <loc>https://ivanhan0511.github.io/tags/windows/</loc>
+    <lastmod>2024-12-24T10:19:00+08:00</lastmod>
   </url><url>
     <loc>https://ivanhan0511.github.io/tags/algorithm/</loc>
     <lastmod>2024-11-27T00:04:57+08:00</lastmod>
@@ -70,36 +82,6 @@
   </url><url>
     <loc>https://ivanhan0511.github.io/tags/springboot/</loc>
     <lastmod>2024-10-25T11:22:00+08:00</lastmod>
-  </url><url>
-    <loc>https://ivanhan0511.github.io/tags/configuration/</loc>
-    <lastmod>2024-09-30T10:39:00+08:00</lastmod>
-  </url><url>
-    <loc>https://ivanhan0511.github.io/post/os-windows11/</loc>
-    <lastmod>2024-09-30T10:39:00+08:00</lastmod>
-  </url><url>
-    <loc>https://ivanhan0511.github.io/tags/hbuildx/</loc>
-    <lastmod>2024-09-30T10:39:00+08:00</lastmod>
-  </url><url>
-    <loc>https://ivanhan0511.github.io/tags/idea/</loc>
-    <lastmod>2024-09-30T10:39:00+08:00</lastmod>
-  </url><url>
-    <loc>https://ivanhan0511.github.io/tags/init/</loc>
-    <lastmod>2024-09-30T10:39:00+08:00</lastmod>
-  </url><url>
-    <loc>https://ivanhan0511.github.io/categories/os/</loc>
-    <lastmod>2024-09-30T10:39:00+08:00</lastmod>
-  </url><url>
-    <loc>https://ivanhan0511.github.io/tags/proxy/</loc>
-    <lastmod>2024-09-30T10:39:00+08:00</lastmod>
-  </url><url>
-    <loc>https://ivanhan0511.github.io/tags/visualstudio/</loc>
-    <lastmod>2024-09-30T10:39:00+08:00</lastmod>
-  </url><url>
-    <loc>https://ivanhan0511.github.io/tags/windows/</loc>
-    <lastmod>2024-09-30T10:39:00+08:00</lastmod>
-  </url><url>
-    <loc>https://ivanhan0511.github.io/categories/windows/</loc>
-    <lastmod>2024-09-30T10:39:00+08:00</lastmod>
   </url><url>
     <loc>https://ivanhan0511.github.io/tags/architecture/</loc>
     <lastmod>2024-02-19T16:40:00+08:00</lastmod>
@@ -197,6 +179,9 @@
     <loc>https://ivanhan0511.github.io/tags/dml/</loc>
     <lastmod>2023-11-07T15:40:00+08:00</lastmod>
   </url><url>
+    <loc>https://ivanhan0511.github.io/tags/init/</loc>
+    <lastmod>2023-11-07T15:40:00+08:00</lastmod>
+  </url><url>
     <loc>https://ivanhan0511.github.io/categories/mysql/</loc>
     <lastmod>2023-11-07T15:40:00+08:00</lastmod>
   </url><url>
@@ -214,15 +199,6 @@
   </url><url>
     <loc>https://ivanhan0511.github.io/tags/view/</loc>
     <lastmod>2023-11-07T15:40:00+08:00</lastmod>
-  </url><url>
-    <loc>https://ivanhan0511.github.io/post/os-macos/</loc>
-    <lastmod>2023-11-03T15:52:00+08:00</lastmod>
-  </url><url>
-    <loc>https://ivanhan0511.github.io/tags/macos/</loc>
-    <lastmod>2023-11-03T15:52:00+08:00</lastmod>
-  </url><url>
-    <loc>https://ivanhan0511.github.io/categories/macos/</loc>
-    <lastmod>2023-11-03T15:52:00+08:00</lastmod>
   </url><url>
     <loc>https://ivanhan0511.github.io/tags/frontend/</loc>
     <lastmod>2023-10-26T14:13:00+08:00</lastmod>

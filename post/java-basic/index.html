@@ -16,7 +16,7 @@
     
   },
   "name":"Ivan Blog",
-  "description":"\u003cp\u003eThis post is not aboud Java knowledge, it just a handy TIP\u003c\/p\u003e",
+  "description":"\u003cp\u003eThis post is NOT aboud Java knowledge, it just a handy TIP\u003c\/p\u003e",
   "url":"https:\/\/ivanhan0511.github.io\/post\/java-basic\/",
   "keywords":"[java, basic, Ivan, SoftwareEngineer, C\/C\u002b\u002b, Java, Coffee, Bass, Bicycle, Badminton]"
 }
@@ -28,18 +28,18 @@
 <meta name="generator" content="Hugo 0.123.7 with theme Tranquilpeak 0.5.3-BETA">
 <meta name="author" content="Ivan Han">
 <meta name="keywords" content="java, basic, Ivan, SoftwareEngineer, C/C&#43;&#43;, Java, Coffee, Bass, Bicycle, Badminton">
-<meta name="description" content="This post is not aboud Java knowledge, it just a handy TIP">
+<meta name="description" content="This post is NOT aboud Java knowledge, it just a handy TIP">
 
 
-<meta property="og:description" content="This post is not aboud Java knowledge, it just a handy TIP">
+<meta property="og:description" content="This post is NOT aboud Java knowledge, it just a handy TIP">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java Basic">
 <meta name="twitter:title" content="Java Basic">
 <meta property="og:url" content="https://ivanhan0511.github.io/post/java-basic/">
 <meta property="twitter:url" content="https://ivanhan0511.github.io/post/java-basic/">
 <meta property="og:site_name" content="Ivan Blog">
-<meta property="og:description" content="This post is not aboud Java knowledge, it just a handy TIP">
-<meta name="twitter:description" content="This post is not aboud Java knowledge, it just a handy TIP">
+<meta property="og:description" content="This post is NOT aboud Java knowledge, it just a handy TIP">
+<meta name="twitter:description" content="This post is NOT aboud Java knowledge, it just a handy TIP">
 <meta property="og:locale" content="en-us">
 
   
@@ -284,29 +284,28 @@
           
           <div class="post-content markdown">
             <div class="main-content-wrap">
-              <p>This post is not aboud Java knowledge, it just a handy TIP</p>
+              <p>This post is NOT aboud Java knowledge, it just a handy TIP</p>
 <h1 id="table-of-contents">Table of Contents</h1>
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#i-environment">I. ENVIRONMENT</a>
+    <li><a href="#目录">目录</a></li>
+    <li><a href="#chapter-1">I. ENVIRONMENT</a>
       <ul>
-        <li><a href="#a-backup-and-sync">A. Backup and Sync</a>
+        <li><a href="#a-rd-env">A. R&amp;D Env</a>
           <ul>
-            <li><a href="#1-configuration">1. Configuration</a></li>
-            <li><a href="#2-plugins">2. Plugins</a></li>
+            <li><a href="#1-backup-and-sync">1. Backup and Sync</a></li>
           </ul>
         </li>
-        <li><a href="#b-maven">B. Maven</a></li>
+        <li><a href="#b-product-env">B. Product Env</a></li>
       </ul>
     </li>
-    <li><a href="#knowledge">KNOWLEDGE</a>
+    <li><a href="#chapter-2">II. PACKAGE MANAGEMENT</a>
       <ul>
-        <li><a href="#string">String[]</a></li>
-        <li><a href="#arraylist">ArrayList</a></li>
-        <li><a href="#int-or-integer">int or Integer</a></li>
+        <li><a href="#a-first-of-all">A. First of All</a></li>
+        <li><a href="#b-how-to-use-maven">B. How to use maven</a></li>
       </ul>
     </li>
-    <li><a href="#泛型">泛型</a></li>
+    <li><a href="#泛型tips">泛型Tips</a></li>
     <li><a href="#exception">EXCEPTION</a>
       <ul>
         <li><a href="#trycatchfinally">TryCatchFinally</a></li>
@@ -330,12 +329,20 @@
   </ul>
 </nav>
 
-<h2 id="i-environment">I. ENVIRONMENT</h2>
-<hr>
+<h2 id="目录">目录</h2>
+<ul>
+<li><a href="#chapter-1">I. ENVIRONMENT</a></li>
+<li><a href="#chapter-2">II. PACKAGE MANAGEMENT</a></li>
+<li><a href="#chapter-3">III. TESTING</a></li>
+<li><a href="#chapter-4">IV. OPERATION</a></li>
+<li><a href="#chapter-5">V. COMMON</a></li>
+</ul>
+<h2 id="chapter-1">I. ENVIRONMENT</h2>
+<h3 id="a-rd-env">A. R&amp;D Env</h3>
 <p>Use IDE of &ldquo;InteliJ IDEA&rdquo;, and <strong>download JDK wihin IDEA</strong></p>
-<h3 id="a-backup-and-sync">A. Backup and Sync</h3>
+<h4 id="1-backup-and-sync">1. Backup and Sync</h4>
 <p>同步之后, 大部分的配置和插件都可以同步下来, 以下仅作备考</p>
-<h4 id="1-configuration">1. Configuration</h4>
+<p><strong>Configuration</strong></p>
 <ul>
 <li>Enable Backup and Sync -&gt; <code>Enable Backup and Sync</code></li>
 <li><strong>在各个项目中分别选择Java JDK环境, 不安装Java在裸机</strong></li>
@@ -346,7 +353,7 @@
 </ul>
 </li>
 </ul>
-<h4 id="2-plugins">2. Plugins</h4>
+<p><strong>Plugins</strong></p>
 <ul>
 <li>IdeaVim
 <ul>
@@ -360,7 +367,21 @@
 <li>Redis</li>
 <li>RemoteHost <code>java -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005 -jar pear-admin-pro-1.11.9-SNAPSHOT.jar</code></li>
 </ul>
-<h3 id="b-maven">B. Maven</h3>
+<h3 id="b-product-env">B. Product Env</h3>
+<p>Install the <code>jdk-21_windows-x64_bin.exe</code> on MicroSoft Windows, or <code>apt install openjdk-21-jdk</code> on Ubuntu Service</p>
+<p>And make sure the right <code>$PATH</code> on any kind of system</p>
+<p><strong>Additionally</strong>, record more Java in MicroSoft Windows 10/11 as below:</p>
+<ul>
+<li>在系统环境变量中增加一条, 以防止在不同环境下的命令行输入乱码
+<ul>
+<li>变量名称: <code>JAVA_TOOL_OPTIONS</code></li>
+<li>值: <code>-Duser.language=en</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="chapter-2">II. PACKAGE MANAGEMENT</h2>
+<hr>
+<h3 id="a-first-of-all">A. First of All</h3>
 <p>Maven 3.8.1 blocked http connection</p>
 <ul>
 <li>
@@ -483,26 +504,8 @@
 <p>Reload pom.xml file in IDEA and automaticlly download the dependencies</p>
 </li>
 </ul>
-<h2 id="knowledge">KNOWLEDGE</h2>
-<p>思前想后, 这里的记录只是描述一些个人理解, 更多的是做一个关于&lt;Java编程核心&gt;的人工索引</p>
-<p>以下内容TODO,</p>
-<h3 id="string">String[]</h3>
-<h3 id="arraylist">ArrayList</h3>
-<h3 id="int-or-integer">int or Integer</h3>
-<p>用int还是用Integer?<br>
-昨天例行code review时大家有讨论到int和Integer的比较和使用。 这里做个整理，发表一下个人的看法。</p>
-<p>【int和Integer的区别】</p>
-<p>int是java提供的8种原始类型之一，java为每个原始类型提供了封装类，Integer是int的封装类。int默认值是0，而Integer默认值是null；</p>
-<p>int和Integer（无论是否new）比较，都为true， 因为会把Integer自动拆箱为int再去比；</p>
-<p>Integer是引用类型，用==比较两个对象，其实比较的是它们的内存地址，所以不同的Integer对象肯定是不同的；</p>
-<p>但是对于Integer i=<em>，java在编译时会将其解释成Integer i=Integer.valueOf(</em>)；。但是，Integer类缓存了[-128,127]之间的整数， 所以对于Integer i1=127；与Integer i2=127； 来说，i1==i2，因为这二个对象指向同一个内存单元。 而Integer i1=128；与Integer i2=128； 来说，i1==i2为false。</p>
-<p>【各自的应用场景】</p>
-<p>Integer默认值是null，可以区分未赋值和值为0的情况。比如未参加考试的学生和考试成绩为0的学生</p>
-<p>加减乘除和比较运算较多，用int</p>
-<p>容器里推荐用Integer。 对于PO实体类，如果db里int型字段允许null，则属性应定义为Integer。————默认也应当定义为包装类型，从而兼容数据为null的情况，规避NPE异常。诸如mybatis这些代码生成器生成的属性就是包装类型，我们从阿里开发规范里也可以找到类似声明———— 当然，如果系统限定db里int字段不允许null值，则也可考虑将属性定义为int。</p>
-<p>对于应用程序里定义的枚举类型， 其值如果是整型，则最好定义为int，方便与相关的其他int值或Integer值的比较</p>
-<p>Integer提供了一系列数据的成员和操作，如Integer.MAX_VALUE，Integer.valueOf(),Integer.compare(),compareTo(),不过一般用的比较少。建议，一般用int类型，这样一方面省去了拆装箱，另一方面也会规避数据比较时可能带来的bug。</p>
-<h2 id="泛型">泛型</h2>
+<h3 id="b-how-to-use-maven">B. How to use maven</h3>
+<h2 id="泛型tips">泛型Tips</h2>
 <hr>
 
   

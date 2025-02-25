@@ -319,6 +319,37 @@
 <li>curl用法：</li>
 </ol>
 <p>curl  -k  &ndash;cert  a.pem <a href="https://test.com/">https://test.com/</a></p>
+<p><strong>上传文件</strong></p>
+
+  
+    
+  
+  
+    
+  
+  
+  
+
+
+<figure class="highlight uploadfile language-uploadfile">
+  <figcaption>
+    
+      <span>shell</span>
+    
+  </figcaption>
+  <table>
+    <tbody>
+      <tr>
+        <td class="gutter">
+          <pre><span class="line">1</span><br></pre>
+        </td>
+        <td class="code">
+          <pre class="code-highlight language-uploadfile uploadfile"><code class="uploadfile">curl -X POST -H &#39;tenant-id: 123&#39; -H &#39;Authorization: xxx&#39; -H &#39;Content-Type: multipart/form-data&#39; -F &#39;file=@/path/to/Pictures/Dazzle.jpg&#39; http://192.168.50.19:48080/admin-api/infra/file/upload</code></pre>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
               
 
 

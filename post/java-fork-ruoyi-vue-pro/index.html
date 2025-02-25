@@ -800,7 +800,7 @@ public Long createSaleOrder(ErpSaleOrderSaveReqVO createReqVO) {
 </ul>
 </li>
 </ul>
-<p><strong>开发联调</strong></p>
+<p><strong>开发互联网联调</strong></p>
 <ul>
 <li>前端:
 <ul>
@@ -812,7 +812,7 @@ public Long createSaleOrder(ErpSaleOrderSaveReqVO createReqVO) {
 <li>后端:
 <ul>
 <li>使用<code>application-dev.yaml</code>配置文件, 数据源指向localhost (服务器本地)</li>
-<li>配置<code>https://mall.xxx.com</code>和<code>https://mall-srv.xxx.com</code>, 域名解析, 开放端口及备案, SSL证书</li>
+<li>云服务配置<code>https://mall.xxx.com</code>和<code>https://mall-srv.xxx.com</code>, 域名解析, 开放端口及备案, SSL证书</li>
 <li>使用<code>screen</code>运行在云服务器即可, 供前端调试用</li>
 <li>Nginx采用独立域名访问的方式, 配置如下</li>
 </ul>
@@ -829,12 +829,13 @@ public Long createSaleOrder(ErpSaleOrderSaveReqVO createReqVO) {
 <li>后端:
 <ul>
 <li>使用<code>application-prod.yaml</code>配置文件, 数据源指向localhost (服务器本地)</li>
-<li>配置<code>https://mall.xxx.com</code>, 域名解析, 开放端口及备案, SSL证书</li>
-<li>使用<code>screen</code>运行在云服务器即可, 供前端调试用</li>
+<li>云服务配置<code>https://mall.xxx.com</code>, 域名解析, 开放端口及备案, SSL证书</li>
+<li>使用<code>screen</code>运行在云服务器即可, 供前端调试用 -&gt; 后续稍微考虑一下Docker环境</li>
 <li>Nginx采用服务器局域网IP访问的方式, 配置如下</li>
 </ul>
 </li>
 </ul>
+<p>// TODO: 与network-nginx.md合并, 优化整理
 
 
   
@@ -1003,7 +1004,7 @@ http {
     
   </div>
 </figure>
-
+</p>
 <h2 id="chapter-5">V. COMMON</h2>
 <hr>
 <p>理解源码的核心设计思路, 具体技术知识见java-spring.md</p>

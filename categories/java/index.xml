@@ -22,12 +22,5 @@
       <guid>https://ivanhan0511.github.io/post/java-fork-ruoyi-vue-pro/</guid>
       <description>&lt;p&gt;To deploy a Springboot web framework, whatever development or production, and whatever single or distributed entity,&#xA;&lt;a href=&#34;https://github.com/YunaiV/ruoyi-vue-pro&#34;&gt;ruoyi-vue-pro&lt;/a&gt; is a good project&lt;/p&gt;&#xA;&lt;p&gt;But the stronger, the more complex. This post is the annotation for this project, by my personer opinion&lt;/p&gt;</description>
     </item>
-    <item>
-      <title>Java Basic</title>
-      <link>https://ivanhan0511.github.io/post/java-basic/</link>
-      <pubDate>Wed, 26 Oct 2022 14:05:15 +0800</pubDate>
-      <guid>https://ivanhan0511.github.io/post/java-basic/</guid>
-      <description>&lt;p&gt;This post is NOT aboud Java knowledge, it just a handy TIP&lt;/p&gt;</description>
-    </item>
   </channel>
 </rss>

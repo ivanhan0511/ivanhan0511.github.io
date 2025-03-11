@@ -302,8 +302,8 @@
   <ul>
     <li><a href="#i-evironment">I. EVIRONMENT</a>
       <ul>
-        <li><a href="#a-visualstudiopro2022">A. VisualStudioPro2022</a></li>
-        <li><a href="#b-cmake等等">B. CMake等等</a></li>
+        <li><a href="#a-ide-visualstudiopro2022">A. IDE: VisualStudioPro2022</a></li>
+        <li><a href="#b-编译器">B. 编译器</a></li>
       </ul>
     </li>
     <li><a href="#gramma-style">GRAMMA STYLE</a>
@@ -322,10 +322,11 @@
 </nav>
 
 <h2 id="i-evironment">I. EVIRONMENT</h2>
+<hr>
 <p>关于 C++ IDE,</p>
 <ul>
 <li>VisualStudio is more traditional, but it&rsquo;s a IDE</li>
-<li>VSCode is more fassion, but it&rsquo;s a editor</li>
+<li>VSCode is more fassion, but it&rsquo;s only a editor, need more extensions</li>
 <li>CLion
 <ul>
 <li>暂时不想付钱</li>
@@ -335,12 +336,19 @@
 </ul>
 </li>
 </ul>
-<h3 id="a-visualstudiopro2022">A. VisualStudioPro2022</h3>
+<h3 id="a-ide-visualstudiopro2022">A. IDE: VisualStudioPro2022</h3>
 <ul>
-<li>设置项目存储路径: Tools -&gt; Options -&gt; Projects and Solutions -&gt; Locations, 指定Project location: <code>D:\oopt\</code></li>
-<li>将Tabs 改为 Spaces: ???</li>
-<li>显示行号: Tools -&gt; Options -&gt; Text Editor -&gt; All Languages -&gt; General -&gt; choose &ldquo;line numbers&rdquo;</li>
-<li>安装<code>VsVim</code>插件, 并增加<code>.vsvimrc</code>专用的配置文件(比自用的<code>.vimrc</code>少了<code>Vundle</code>等配置)
+<li>
+<p>设置项目存储路径: Tools -&gt; Options -&gt; Projects and Solutions -&gt; Locations, 指定Project location: <code>D:\oopt\</code></p>
+</li>
+<li>
+<p>将Tabs 改为 Spaces: ???</p>
+</li>
+<li>
+<p>显示行号: Tools -&gt; Options -&gt; Text Editor -&gt; All Languages -&gt; General -&gt; choose &ldquo;line numbers&rdquo;</p>
+</li>
+<li>
+<p>安装<code>VsVim</code>插件, 并增加<code>.vsvimrc</code>专用的配置文件(比自用的<code>.vimrc</code>少了<code>Vundle</code>等配置)
 <blockquote>
   <p>
 The VsVim extension for Visual Studio supports a lot of the Vim commands that are commonly used. A Vim user should feel comfortable navigating and editing in Visual Studio using this extension. 
@@ -358,18 +366,43 @@ Place your vimrc file in one of these directories, restart Visual Studio and VsV
       
     
   </footer>
-</blockquote></li>
-<li>设置字体? 默认DejaVu Sans Mono? 避免像CMD.exe一样无法分辨小写L与数字1(VisualStudioPro2022没有再设置了)</li>
-<li><a href="https://blog.csdn.net/qq_41868108/article/details/105750175">增加菜单来修改字符集编码</a>: Tools -&gt; customize&hellip; -&gt; Commands tab -&gt; Choose &ldquo;File&rdquo; and &ldquo;Add command&hellip;&rdquo; -&gt; File(新弹窗) -&gt; Advanced Save Options&hellip;</li>
-<li>自动补全: Enter or Tab?
+</blockquote></p>
+</li>
+<li>
+<p>设置字体? 默认DejaVu Sans Mono? 避免像CMD.exe一样无法分辨小写L与数字1(VisualStudioPro2022没有再设置了)</p>
+</li>
+<li>
+<p><a href="https://blog.csdn.net/qq_41868108/article/details/105750175">增加菜单来修改字符集编码</a>: Tools -&gt; customize&hellip; -&gt; Commands tab -&gt; Choose &ldquo;File&rdquo; and &ldquo;Add command&hellip;&rdquo; -&gt; File(新弹窗) -&gt; Advanced Save Options&hellip;</p>
+</li>
+<li>
+<p>自动补全: Enter or Tab?</p>
 <ul>
-<li>Visual Studio 2022是使用Tab进行代码补全的, 但一般习惯回车补全的时候就需要重新设置</li>
-<li>个人选择用Tab，原因是Linux默认的补全键是Tab, Notpad++ / Nacicat 也都是Tab补全</li>
-<li>具体路径: 工具 –&gt; 选项 –&gt; 文本编辑器 –&gt; C/C++ -&gt; 高级 –&gt; 主动提交成员列表(Use Tab to commit&hellip;)</li>
+<li>
+<p>Visual Studio 2022是使用Tab进行代码补全的, 但一般习惯回车补全的时候就需要重新设置</p>
+</li>
+<li>
+<p>个人选择用Tab，原因是Linux默认的补全键是Tab, Notpad++ / Nacicat 也都是Tab补全</p>
+</li>
+<li>
+<p>具体路径: 工具 –&gt; 选项 –&gt; 文本编辑器 –&gt; C/C++ -&gt; 高级 –&gt; 主动提交成员列表(Use Tab to commit&hellip;)</p>
+</li>
 </ul>
 </li>
 </ul>
-<h3 id="b-cmake等等">B. CMake等等</h3>
+<h3 id="b-编译器">B. 编译器</h3>
+<p>gcc
+组织: GNU
+Windows移植版叫MinGW: mini GUN for Windows
+命令行也是gcc</p>
+<p>clang
+组织: LLVM
+分前中后3端, 跨平台
+前端是clang
+命令行是clang</p>
+<p>msvc
+组织: Microsoft
+其余不懂
+VisualStudioPro 2022, 选项Platform Toolset, 如果从Visual Studio 2022 改为后安装的LLVM(clang-cl), 调试都跑不起来, 弹出的提示也不太了解, &ldquo;保持不变&rdquo;</p>
 <p>CMake官网下载.msi安装</p>
 <p>一、预备知识—程序的内存分配
 一个由C/C++编译的程序占用的内存分为以下几个部分
@@ -400,8 +433,8 @@ Place your vimrc file in one of these directories, restart Visual Studio and VsV
 </ol>
 <p>CMake ———&gt; makefile （包含调用gcc的命令）————&gt; make工具 —————&gt; 编译链接源文件</p>
 <p>CMake 根据CMakeLists.txt生成乐谱（makefiles） make工具根据乐谱对过个源文件进行 编译和链接即可。</p>
-<!-- raw HTML omitted -->
 <h2 id="gramma-style">GRAMMA STYLE</h2>
+<hr>
 <h3 id="naming-convention">Naming Convention</h3>
 <p><strong>Example 1</strong></p>
 <ul>

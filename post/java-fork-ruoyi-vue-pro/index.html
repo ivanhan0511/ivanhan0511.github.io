@@ -382,12 +382,7 @@ NO BEST, ONLY BETTER.">
       <ul>
         <li><a href="#a-设计思路理解">A. 设计思路理解</a></li>
         <li><a href="#b-菜单配置">B. 菜单配置</a></li>
-        <li><a href="#c-常用修改">C. 常用修改</a>
-          <ul>
-            <li><a href="#1-首页文字修改">1. 首页文字修改</a></li>
-            <li><a href="#2-修改logo和icon">2. 修改logo和icon</a></li>
-          </ul>
-        </li>
+        <li><a href="#c-常用修改">C. 常用修改</a></li>
       </ul>
     </li>
     <li><a href="#vii-appendix">VII. APPENDIX</a>
@@ -1182,11 +1177,101 @@ Druid是淘宝选用的, 高并发的情况会适用一些</p>
 <li>权限名称: <code>system:user:list</code>, 与index.vue中的<!-- raw HTML omitted -->中的<code>v-hasPermi=&quot;system:user:list&quot;</code>一致</li>
 </ul>
 <h3 id="c-常用修改">C. 常用修改</h3>
-<h4 id="1-首页文字修改">1. 首页文字修改</h4>
-<p>内圈首页: src/views/Home/Index.vue</p>
-<p>外圈用户中心: src/components/UserInfo/src/UserInfo.vue</p>
-<h4 id="2-修改logo和icon">2. 修改logo和icon</h4>
-<p>在目录public/下面</p>
+<p>新代码clone下来后, 按照目录顺序修改如下内容:</p>
+<ul>
+<li>public
+<ul>
+<li>favicon.ico</li>
+<li>logo.gif</li>
+</ul>
+</li>
+<li>src
+<ul>
+<li>api
+<ul>
+<li>erp
+<ul>
+<li>sale, 临时增加了订单接口</li>
+</ul>
+</li>
+<li>measure, 增加自定义的接口</li>
+</ul>
+</li>
+<li>assets
+<ul>
+<li>imgs
+<ul>
+<li>avatar.gif, 替换</li>
+<li>logo.png, 替换</li>
+</ul>
+</li>
+<li>svgs
+<ul>
+<li>login-box-bg.svg, 替换</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>layout
+<ul>
+<li>components
+<ul>
+<li>UserInfo
+<ul>
+<li>src
+<ul>
+<li>UserInfo.vue, 取消web外圈 用户中心 鼠标悬停时的&quot;项目文档&quot;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>router
+<ul>
+<li>modules
+<ul>
+<li>remaining.ts, 按规则增加ERP模块中下游客户的销售策略, 以及Measure模块的测量结果 的路由设置</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>views
+<ul>
+<li>Home
+<ul>
+<li>Index.vue, 首页文字修改</li>
+</ul>
+</li>
+<li>Login
+<ul>
+<li>Login.vue, 修改登录页, 取消了LoginForm</li>
+<li>components
+<ul>
+<li>LoginForm.vue, 修改登录选项等</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>measure, 增加Measure模块</li>
+<li>erp
+<ul>
+<li>临时记录erp修改的订单页</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>.env
+<ul>
+<li>.env.dev, local, prod 按需修改即可</li>
+</ul>
+</li>
+<li>index.html, 修改文字等</li>
+</ul>
 <h2 id="vii-appendix">VII. APPENDIX</h2>
 <p>摘抄自网络, 不一定合理, 仅保存一些文字, 以便以后少写一些文字</p>
 <h3 id="缩写信息">缩写信息</h3>

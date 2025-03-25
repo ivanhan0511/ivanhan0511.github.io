@@ -310,81 +310,14 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#nginx-location-proxy_pass-后面的url-加于不加--的区别">nginx location proxy_pass 后面的url 加于不加 / 的区别</a></li>
+        <li><a href="#nginxlocation-proxy_pass后面的url-加与不加的区别">nginx<code>location proxy_pass</code>后面的url 加与不加<code>/</code>的区别</a></li>
       </ul>
     </li>
   </ul>
 </nav>
 
-<p>字段解析:</p>
-
-  
-    
-  
-  
-  
-  
-
-
-<figure class="highlight  language-">
-  <figcaption>
-    
-      <span>dev.conf</span>
-    
-  </figcaption>
-  <table>
-    <tbody>
-      <tr>
-        <td class="gutter">
-          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre>
-        </td>
-        <td class="code">
-          <pre class="code-highlight language- "><code class="">server {
-    listen 80;
-    server_name dev.xxx.com;
-    location / {
-        return 301 https://$host$request_uri;
-    }
-}
-
-server {
-    listen       80;
-    server_name  dev.xxx.com;
-
-    location ^~ /api {
-        proxy_pass http://192.168.1.66:9292;
-
-        # proxy_set_header作用：设置发送到后端服务器(上面proxy_pass)的请求头值
-        # 当Host设置为 $http_host 时，则不改变请求头的值;
-        # 当Host设置为 $proxy_host 时，则会重新设置请求头中的Host信息;
-        # 当为$host变量时，它的值在请求包含Host请求头时为Host字段的值，在请求未携带Host请求头时为虚拟主机的主域名;
-        # 当为$host:$proxy_port时，即携带端口发送 ex: $host:8080 
-
-        proxy_set_header Host $host;
-        proxy_set_header X-Real-IP $remote_addr;  # 在web服务器端获得用户的真实ip 需配置条件① $remote_addr值 = 用户ip
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;  # 在web服务器端获得用户的真实ip 需配置条件②
-        proxy_set_header REMOTE-HOST $remote_addr;
-        # proxy_set_header X-Forwarded-For $http_x_forwarded_for;  # $http_x_forwarded_for变量 = X-Forwarded-For变量
-    }
-
-    location / {
-        root /var/wwww/dev;
-        try_files $uri $uri/ /index.html;
-        index index.html index.htm;
-    }
-    
-    error_page   500 502 503 504  /50x.html;
-    location = /50x.html {
-        root   html;
-    }
-}</code></pre>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</figure>
-
-<h3 id="nginx-location-proxy_pass-后面的url-加于不加--的区别">nginx location proxy_pass 后面的url 加于不加 / 的区别</h3>
+<p>nginx配置文件的各个字段解析: TODO</p>
+<h3 id="nginxlocation-proxy_pass后面的url-加与不加的区别">nginx<code>location proxy_pass</code>后面的url 加与不加<code>/</code>的区别</h3>
 <p>Some examples</p>
 
 

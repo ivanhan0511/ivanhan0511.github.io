@@ -6,14 +6,14 @@
     <description>Recent content in Springboot on Ivan Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 11 Mar 2025 09:42:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 25 Mar 2025 11:45:00 +0800</lastBuildDate>
     <atom:link href="https://ivanhan0511.github.io/tags/springboot/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How to fork ruoyi-vue-pro</title>
       <link>https://ivanhan0511.github.io/post/java-fork-ruoyi-vue-pro/</link>
-      <pubDate>Tue, 11 Mar 2025 09:42:00 +0800</pubDate>
+      <pubDate>Tue, 25 Mar 2025 11:45:00 +0800</pubDate>
       <guid>https://ivanhan0511.github.io/post/java-fork-ruoyi-vue-pro/</guid>
-      <description>&lt;p&gt;To deploy a Springboot web framework, whatever development or production, and whatever single or distributed entity,&#xA;&lt;a href=&#34;https://github.com/YunaiV/ruoyi-vue-pro&#34;&gt;ruoyi-vue-pro&lt;/a&gt; is a good project&lt;/p&gt;&#xA;&lt;p&gt;But the stronger, the more complex. This post is the annotation for this project, by my personer opinion&lt;/p&gt;&#xA;&lt;p&gt;Tip: The most really important TECH cores, like design and architecture, service for BUSINESS.&lt;/p&gt;&#xA;&lt;p&gt;NO BEST, ONLY BETTER.&lt;/p&gt;</description>
+      <description>&lt;p&gt;To deploy a Springboot web framework, whatever development or production, and whatever single or distributed entity,&#xA;&lt;a href=&#34;https://github.com/YunaiV/ruoyi-vue-pro&#34;&gt;ruoyi-vue-pro&lt;/a&gt; is a good project&lt;/p&gt;&#xA;&lt;p&gt;But the stronger, the more complex. This post is the annotation for this project, by my personer opinion&lt;/p&gt;&#xA;&lt;p&gt;Tip: The most really important TECH cores, like design and architecture, they all service for BUSINESS.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;NO BEST, ONLY BETTER.&lt;/strong&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

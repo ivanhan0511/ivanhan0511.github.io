@@ -466,7 +466,6 @@ In their Unix paper of 1974, Ritchie and Thompson quote the following design con
 <li>提交时也就不需要<code>name</code>之类的input字符串数据, 后台再通过字符串查询blablabla. 而是直接提交其ID即可, 后端直接用</li>
 <li>本着创建与更新都采用同一套xxxSaveReqVO的原则</li>
 </ul>
-<p><strong>@InEnum &amp; @DictFormat</strong></p>
 
   
     
@@ -488,7 +487,7 @@ In their Unix paper of 1974, Ritchie and Thompson quote the following design con
     <tbody>
       <tr>
         <td class="gutter">
-          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre>
+          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre>
         </td>
         <td class="code">
           <pre class="code-highlight language-java java"><code class="java">@Schema(description = &#34;管理后台 - Measure 图像绑定 Request VO&#34;)
@@ -499,9 +498,14 @@ public class MeasureBindPicReqVO {
     @InEnum(value = XxxEnum.class, message = &#34;xxx必须是 {value}&#34;)  // 是程序枚举类约定好的, 不受web用户在字典页面中修改所变化  
     private Integer magnification;
 
+    @Schema(description = &#34;交易状态&#34;, requiredMode = Schema.RequiredMode.REQUIRED, example = &#34;20&#34;)
     @ExcelProperty(value = &#34;交易状态&#34;, converter = DictConvert.class)  // 导入时指定Excel某sheet中表头字段名称
     @DictFormat(DictTypeConstants.TOP_UP_RESULT)  // 将Excel中的文字结果转化为表结构中的数字
     private Integer result;
+
+    @Schema(description = &#34;创建时间&#34;)
+    @DateTimeFormat(pattern = FORMAT_YEAR_MONTH_DAY_HOUR_MINUTE_SECOND)
+    private LocalDateTime[] createTime;
 }</code></pre>
         </td>
       </tr>
@@ -557,7 +561,6 @@ public class ProductSpuRespVO {
 </figure>
 </p>
 <h3 id="b-service">B. Service</h3>
-<p>Just work for <strong>BUSINESS</strong> only</p>
 <ul>
 <li>Service中, 只体现业务. 而需要CRUD的时候, 调用Mapper的方法
 <ul>
@@ -631,7 +634,6 @@ public Long createSaleOrder(ErpSaleOrderSaveReqVO createReqVO) {
 </p>
 <h4 id="1-transactional">1. Transactional</h4>
 <p>这里不会讲原理, 只讲注意点, 设计思路, 详细文章见java-spring.md</p>
-<p>生命周期TODO</p>
 <p>事务传播: 业务设计好一点, 代码简约一点, 事务的传播的事情会遇到得很少</p>
 <p>事务隔离: MySQL默认是Repeatable Read, 暂且不太需要在代码中显式注明</p>
 
@@ -728,9 +730,9 @@ public Boolean uploadImage(String fileName, String path, String fileMd5, Long cl
 <p>曾经我是拒绝的
 <blockquote>
   <p>
-- **JUST** use MyBatisPLus maven and use default CRUD methods.  
-- **REFUSE** to use `QueryWrapper`, only use MyBatis' XML mapper.
-- MybatisPlus的QueryWrapper越看越像Python SQLAlchemy这类ORM, 学习成本高, 且一旦语句优化不得当, 会造成性能损失
+- JUST use MyBatisPLus maven and use default CRUD methods</br>
+- REFUSE to use QueryWrapper, only use MyBatis' XML mapper</br>
+- MybatisPlus的QueryWrapper越看越像Python SQLAlchemy这类ORM, 学习成本高, 且一旦语句优化不得当, 会造成性能损失</br>
 - 按照MyBatis写XML更像原生SQL, 熟练运用SQL是一件愉快的事情
 </p>
   <footer>
@@ -745,10 +747,9 @@ public Boolean uploadImage(String fileName, String path, String fileMd5, Long cl
 <p>真香打脸
 <blockquote>
   <p>
-
-- Mapper中, 做统一抽象, 例如`selectPage`, `selectByMobile`, 而不是直接暴露`selectOne` `selectList`
-- 需要控制mapper中的SQL join(如下文)
-- 复杂业务都放在service中解耦, 各个业务尽量减少连接次数, 批量查询, 在Java内存中运用 stream / mapper / set 拼接, 批量updateOrInsert
+- Mapper中, 做统一抽象, 例如selectPage, selectByMobile... 而不是直接暴露selectOne selectList</br>
+- 需要控制mapper中的SQL join(如下文)</br>
+- 复杂业务都放在service中解耦, 周边模块的数据单独查询, 在Java内存中运用stream各种工具进行拼接
 </p>
   <footer>
     <strong></strong>
@@ -1163,11 +1164,27 @@ Druid是淘宝选用的, 高并发的情况会适用一些</p>
 </li>
 </ul>
 </li>
+<li>locales
+<ul>
+<li>en.ts, 修改英文相关的</li>
+<li>zh-CN.ts, 修改中文相关的</li>
+<li>jp?.ts, 修改日文相关的</li>
+</ul>
+</li>
 <li>router
 <ul>
 <li>modules
 <ul>
 <li>remaining.ts, 按规则增加ERP模块中下游客户的销售策略, 以及Measure模块的测量结果 的路由设置</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>store
+<ul>
+<li>modules
+<ul>
+<li>locales.ts, 增加多语言下拉选项</li>
 </ul>
 </li>
 </ul>
@@ -1203,6 +1220,11 @@ Druid是淘宝选用的, 高并发的情况会适用一些</p>
 </li>
 </ul>
 </li>
+</ul>
+</li>
+<li>types
+<ul>
+<li>global.d.ts, 增加<code>type LocaleType = 'zh-CN' | 'en'</code> 日语支持</li>
 </ul>
 </li>
 <li>.env, 修改标题, 租户, 用户, 密码, 文档开关

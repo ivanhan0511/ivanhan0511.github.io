@@ -306,78 +306,49 @@
 <h1 id="table-of-contents">Table of Contents</h1>
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#目录">目录</a></li>
-    <li><a href="#chapter-1">I. ENVIRONMENT</a>
+    <li><a href="#i-environment">I. ENVIRONMENT</a>
       <ul>
-        <li><a href="#a-rd-env">A. R&amp;D Env</a>
+        <li><a href="#a-rd-and-testing-env">A. R&amp;D and Testing Env</a>
           <ul>
             <li><a href="#1-backup-and-sync">1. Backup and Sync</a></li>
           </ul>
         </li>
-        <li><a href="#b-product-env">B. Product Env</a></li>
+        <li><a href="#b-product-env-and-fixing-bugs">B. Product Env and Fixing Bugs</a></li>
+        <li><a href="#c-demo-env">C. Demo Env</a></li>
       </ul>
     </li>
-    <li><a href="#chapter-2">II. PACKAGE MANAGEMENT</a>
+    <li><a href="#ii-package-management">II. PACKAGE MANAGEMENT</a>
       <ul>
         <li><a href="#a-first-of-all">A. First of All</a></li>
         <li><a href="#b-how-to-use-maven">B. How to use maven</a></li>
       </ul>
     </li>
-    <li><a href="#泛型tips">泛型Tips</a></li>
-    <li><a href="#exception">EXCEPTION</a>
-      <ul>
-        <li><a href="#trycatchfinally">TryCatchFinally</a></li>
-      </ul>
-    </li>
-    <li><a href="#thread">THREAD</a>
-      <ul>
-        <li><a href="#threadlocal">ThreadLocal</a></li>
-        <li><a href="#thread-lock">Thread Lock</a></li>
-      </ul>
-    </li>
-    <li><a href="#jdbc">JDBC</a></li>
-    <li><a href="#jvm">JVM</a></li>
-    <li><a href="#tools">TOOLS</a>
-      <ul>
-        <li><a href="#判断类实例中的各个属性是否有null">判断类实例中的各个属性是否有null</a></li>
-        <li><a href="#兼容多种时间格式的输入">兼容多种时间格式的输入</a></li>
-      </ul>
-    </li>
-    <li><a href="#snowflake">SNOWFLAKE</a></li>
-    <li><a href="#目录-1">目录</a></li>
-    <li><a href="#chapter-1">I. IOC</a>
+    <li><a href="#iii-jvm">III. JVM</a></li>
+    <li><a href="#iv-ioc">IV. IOC</a>
       <ul>
         <li><a href="#a-lifecircle-configuration">A. LifeCircle-@Configuration</a></li>
       </ul>
     </li>
-    <li><a href="#chapter-2">II. AOP</a>
+    <li><a href="#chapter-2">V. AOP</a>
       <ul>
-        <li><a href="#常用注解的深入理解">常用注解的深入理解</a></li>
-        <li><a href="#易混淆注解的对比">易混淆注解的对比</a>
-          <ul>
-            <li><a href="#component-bean-service-configurable">@Component @Bean @Service @Configurable</a></li>
-          </ul>
-        </li>
+        <li><a href="#a-http-请求注解">A. HTTP 请求注解</a></li>
+        <li><a href="#b-易混淆注解的对比">B. 易混淆注解的对比</a></li>
+        <li><a href="#c-transactional">C. @Transactional</a></li>
       </ul>
     </li>
-    <li><a href="#chapter-3">III. SERVLET</a></li>
-    <li><a href="#chapter-4">IV. SECURITY</a></li>
-    <li><a href="#chapter-5">V. TRANSACTIONAL</a>
+    <li><a href="#vi-servlet">VI. SERVLET</a></li>
+    <li><a href="#vii-security">VII. SECURITY</a></li>
+    <li><a href="#viii-job">VIII. JOB</a></li>
+    <li><a href="#ix-third-part-http-api">IX. THIRD-PART HTTP API</a></li>
+    <li><a href="#x-event-monitor">X. EVENT MONITOR</a></li>
+    <li><a href="#xi-dao-mapper">XI. DAO MAPPER</a>
       <ul>
-        <li><a href="#a-propagation">A. Propagation</a></li>
-        <li><a href="#b-isolation">B. Isolation</a>
+        <li><a href="#a-transactional">A. Transactional</a>
           <ul>
-            <li><a href="#1-read-uncommitted">1. Read Uncommitted</a></li>
+            <li><a href="#1-propagation">1. Propagation</a></li>
+            <li><a href="#2-isolation">2. Isolation</a></li>
           </ul>
         </li>
-        <li><a href="#2-read-committed">2. Read Committed</a>
-          <ul>
-            <li><a href="#3-repeatable-read-mysql默认">3. Repeatable Read (MySQL默认)</a></li>
-            <li><a href="#4-serializable">4. Serializable</a></li>
-            <li><a href="#总结表格">总结表格</a></li>
-          </ul>
-        </li>
-        <li><a href="#十一serializable">十一、Serializable</a></li>
         <li><a href="#readview">ReadView</a>
           <ul>
             <li><a href="#1m_ids">1.m_ids</a></li>
@@ -386,31 +357,25 @@
             <li><a href="#4creator_trx_id">4.creator_trx_id</a></li>
           </ul>
         </li>
-        <li><a href="#c-多数据源">C. 多数据源</a></li>
+        <li><a href="#b-jdbc">B. JDBC</a></li>
       </ul>
     </li>
-    <li><a href="#chapter-6">VI. JOB</a></li>
-    <li><a href="#chapter-7">VII. THIRD-PART HTTP API</a></li>
-    <li><a href="#chapter-8">VIII. EVENT MONITOR</a></li>
-    <li><a href="#chapter-9">IX. DAO MAPPER</a></li>
-    <li><a href="#chapter-10">X. UTILS</a></li>
-    <li><a href="#chapter-11">XI. MISCELLANEOUS</a></li>
+    <li><a href="#xii-utils">XII. UTILS</a>
+      <ul>
+        <li><a href="#判断类实例中的各个属性是否有null">判断类实例中的各个属性是否有null</a></li>
+        <li><a href="#兼容多种时间格式的输入">兼容多种时间格式的输入</a></li>
+        <li><a href="#snowflake">Snowflake</a></li>
+      </ul>
+    </li>
+    <li><a href="#xiii-miscellaneous">XIII. MISCELLANEOUS</a></li>
   </ul>
 </nav>
 
 <p>站在巨人的肩膀上, 多看看<a href="https://www.liaoxuefeng.com/wiki/1539348902182944">廖雪峰手写Sping</a>以便了解Spring的核心逻辑思想</p>
 <p>自己只记录一些自己觉得有用的小Tip</p>
-<p>TODO @Ivan : 合并Java Basic和Java Spring, 预留Maven板块, 整理源码以及maven包整体定制迁移问题</p>
-<h2 id="目录">目录</h2>
-<ul>
-<li><a href="#chapter-1">I. ENVIRONMENT</a></li>
-<li><a href="#chapter-2">II. PACKAGE MANAGEMENT</a></li>
-<li><a href="#chapter-3">III. TESTING</a></li>
-<li><a href="#chapter-4">IV. OPERATION</a></li>
-<li><a href="#chapter-5">V. COMMON</a></li>
-</ul>
-<h2 id="chapter-1">I. ENVIRONMENT</h2>
-<h3 id="a-rd-env">A. R&amp;D Env</h3>
+<h2 id="i-environment">I. ENVIRONMENT</h2>
+<hr>
+<h3 id="a-rd-and-testing-env">A. R&amp;D and Testing Env</h3>
 <p>Use IDE of &ldquo;InteliJ IDEA&rdquo;, and <strong>download JDK wihin IDEA</strong></p>
 <h4 id="1-backup-and-sync">1. Backup and Sync</h4>
 <p>同步之后, 大部分的配置和插件都可以同步下来, 以下仅作备考</p>
@@ -439,9 +404,6 @@
 <li>Redis</li>
 <li>RemoteHost <code>java -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005 -jar pear-admin-pro-1.11.9-SNAPSHOT.jar</code></li>
 </ul>
-<h3 id="b-product-env">B. Product Env</h3>
-<p>Install the <code>jdk-21_windows-x64_bin.exe</code> on MicroSoft Windows, or <code>apt install openjdk-21-jdk</code> on Ubuntu Service</p>
-<p>And make sure the right <code>$PATH</code> on any kind of system</p>
 <p><strong>Additionally</strong>, record more Java in MicroSoft Windows 10/11 as below:</p>
 <ul>
 <li>在系统环境变量中增加一条, 以防止在不同环境下的命令行输入乱码
@@ -451,7 +413,16 @@
 </ul>
 </li>
 </ul>
-<h2 id="chapter-2">II. PACKAGE MANAGEMENT</h2>
+<h3 id="b-product-env-and-fixing-bugs">B. Product Env and Fixing Bugs</h3>
+<p>Install the <code>jdk-21_windows-x64_bin.exe</code> on MicroSoft Windows, or <code>apt install openjdk-21-jdk</code> on Ubuntu Service</p>
+<p>And make sure the right <code>$PATH</code> on any kind of system</p>
+<p>使用公司的开发服务器作为部署服务器, 与客户生产环境保持一样的数据库结构和代码打包</p>
+<p>如果遇到生产环境的问题, 使用该环境用于验证, 备份和修复</p>
+<h3 id="c-demo-env">C. Demo Env</h3>
+<p>Install the <code>jdk-21_windows-x64_bin.exe</code> on MicroSoft Windows, or <code>apt install openjdk-21-jdk</code> on Ubuntu Service</p>
+<p>And make sure the right <code>$PATH</code> on any kind of system</p>
+<p>部署在云上, 使用域名, 仅作对外演示, 使用当前的生产版本</p>
+<h2 id="ii-package-management">II. PACKAGE MANAGEMENT</h2>
 <hr>
 <h3 id="a-first-of-all">A. First of All</h3>
 <p>Maven 3.8.1 blocked http connection</p>
@@ -577,213 +548,268 @@
 </li>
 </ul>
 <h3 id="b-how-to-use-maven">B. How to use maven</h3>
-<h2 id="泛型tips">泛型Tips</h2>
+<h2 id="iii-jvm">III. JVM</h2>
 <hr>
-
-  
-    
-  
-  
-    
-  
-  
-  
-
-
-<figure class="highlight https://www.163.com language-https://www.163.com">
-  <figcaption>
-    
-      <span>A.java</span>
-    
-  </figcaption>
-  <table>
-    <tbody>
-      <tr>
-        <td class="gutter">
-          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre>
-        </td>
-        <td class="code">
-          <pre class="code-highlight language-https://www.163.com https://www.163.com"><code class="https://www.163.com">public class A {}
-
-public static &lt;A&gt; List&lt;A&gt; asList(A... a);
-
-public static List&lt;A&gt; asList(A... a);</code></pre>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</figure>
-
-<p><code>&lt;T&gt;</code>是申明T为泛型，以区别于类名</p>
-<p>即：<code>&lt;T&gt;</code> List<code>&lt;T&gt;</code> 中，第一个T是告诉大家，T不是类T.class，而是泛型T
-（如果只写List<code>&lt;T&gt;</code>则编译器以为是类T.class，如果不存在T.class类，则报错）。</p>
-<p>案例1中A为“泛型A”，参数可以传入任何类型对象的数组；案例2则不是，其中A为&quot;类A&quot;，参数只能传入&quot;类A&quot;的对象的数组。</p>
-<div class="alert info ">
-  <p>案例1中使用泛型绝不是因为要使参数可以传入任意类型，如果仅仅是这样，直接用Object就可以了。<br>
-用泛型是因为可以使该方法的返回值成为一个指定类型的集合，这样再次使用该集合的时候就有一个明确的类型了，
-这使的在将来该类型发生改变的时候编译器会报错，提醒你做相应的修改，而不是让问题暴露在运行阶段。</p>
-</div>
-<h2 id="exception">EXCEPTION</h2>
+<p>TODO: Some basic JVM knowledge</p>
+<h2 id="iv-ioc">IV. IOC</h2>
 <hr>
-<h3 id="trycatchfinally">TryCatchFinally</h3>
-<p>首先看个例子：</p>
-
-
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
-
-
-  
-    
-  
-  
-
-<figure class="codeblock codeblock--tabbed">
-  <figcaption>
-    
-      <span>tryCatchFinally</span>
-    
-    <ul class="tabs">
-      
-        <li class="tab active">return2</li>
-      
-        <li class="tab ">return3</li>
-      
-    </ul>
-  </figcaption>
-  <div class="tabs-content">
-    
-      
-      <figure class="highlight language-return2 return2" style="display: block;">
-        <table>
-          <tbody>
-            <tr>
-              <td class="gutter">
-                <pre><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br></pre>
-              </td>
-              <td class="code">
-                <pre class="code-highlight language-return2 return2"><code class="return2">public class TestReturn {
-    public int test() {
-        int x  = 1;
-        try {
-            return &#43;&#43;x;
-        } catch(Exception e) {
-
-        } finally {
-            &#43;&#43;x;
-        }
-
-        return x;
-    }
-
-    public static void main(String[] args) {
-        TestReturn t = new TestReturn();
-        int result = t.test();
-        System.out.println(result);
-    }
-}
-
-// 输出结果是2</code></pre>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </figure>
-    
-      
-      <figure class="highlight language-return3 return3" style="display: none;">
-        <table>
-          <tbody>
-            <tr>
-              <td class="gutter">
-                <pre><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br></pre>
-              </td>
-              <td class="code">
-                <pre class="code-highlight language-return3 return3"><code class="return3">public class TestReturn {
-    public int test() {
-        int x  = 1;
-        try {
-            return &#43;&#43;x;
-        } catch(Exception e) {
-
-        } finally {
-            return &#43;&#43;x;
-        }
-    }
-
-    public static void main(String[] args) {
-        TestReturn t = new TestReturn();
-        int result = t.test();
-        System.out.println(result);
-    }
-}
-
-// 输出结果是3</code></pre>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </figure>
-    
-  </div>
-</figure>
-
-<p>查阅资料得到下面的说法：</p>
-<p>当try语句退出时肯定会执行finally语句。这确保了即使发了一个意想不到的异常也会执行finally语句块。
-但是finally的用处不仅是用来处理异常——它可以让程序员不会因为return、continue、或者break语句而忽略了清理代码。
-把清理代码放在finally语句块里是一个很好的做法，即便可能不会有异常发生也要这样做。</p>
-<div class="alert warning ">
-  <p>注意，当try或者catch的代码在运行的时候，JVM退出了。那么finally语句块就不会执行。同样，如果线程在运行try或者catch的代码时被中断了或者被杀死了(killed)，那么finally语句可能也不会执行了，即使整个运用还会继续执行。</p>
-</div>
-<p>说明：如果在try语句里有return语句，finally语句还是会执行。它会在把控制权转移到该方法的调用者或者构造器前执行finally语句。也就是说，使用return语句把控制权转移给其他的方法前会执行finally语句。</p>
-<p><strong>那么结果为什么是3不是2呢?</strong></p>
-<p>当执行到<code>return ++x;</code>时，jvm在执行完 ++x 后会在局部变量表里另外分配一个空间来保存当前x的值。<br>
-现在还没把值返回给y，而是继续执行finally语句里的语句。等执行完后再把之前保存的值**(是2, 不是x)**返回给y。所以就有了y是2不是3的情况。</p>
-<p>其实这里还有一点要注意的是，如果你在finally里也用了return语句，比如<code>return +xx;</code>, 那么y会是3。<br>
-因为规范规定了，当try和finally里都有return时，会忽略try的return，而使用finally的return。</p>
-<p>原文链接：https://blog.csdn.net/wujingjing_crystal/article/details/52495189</p>
-<h2 id="thread">THREAD</h2>
+<h3 id="a-lifecircle-configuration">A. LifeCircle-@Configuration</h3>
+<p><a href="https://www.cnblogs.com/java-chen-hao/p/11640177.html">https://www.cnblogs.com/java-chen-hao/p/11640177.html</a></p>
+<h2 id="chapter-2">V. AOP</h2>
 <hr>
-<h3 id="threadlocal">ThreadLocal</h3>
-<h3 id="thread-lock">Thread Lock</h3>
-<p>一、ReentrantLock是用来做什么的？
-二、ReentrantLock的实现原理是什么？
-三、ReentrantLock对比于Synchronized有哪些优缺点？
-四、ReentrantLock的简单使用</p>
-<p>一、ReentrantLock是用来做什么的？
-这个类是JUC工具包中对线程安全问题提供的一种解决方案，它主要是用来给对象上锁，保证同一时间这能有一个线程在访问当前对象。这样处理是为了防止如果一个线程对某个公共变量进行了改变，而其它线程读取时读出来的是原有数据导致脏读的问题。</p>
-<p>二、ReentrantLock的实现原理是什么？
-ReentrantLock主要是通过同步队列和CAS机制来实现的，它实现的过程中主要包含下面几个属性：</p>
-<p>status：锁状态，0表示没有线程获取锁，1表示已有线程获取锁
-exclusiveOwnerThread：当前持有锁的线程
-Node：节点，是ReentrantLock内部维持的一个双向链表（同步阻塞队列）的基本构成
-具体流程</p>
-<p>1、上锁更新锁状态：当A线程持有锁时，会通过CAS将status状态置为1，并将A线程自身存入exclusiveOwnerThread属性当中；
-2、线程入队：而后线程B通过CAS获取锁时发现无法获取锁，此时就会获取node信息，但是由于node双向链表是null所以会通过CAS来创建一个双向链表的head对象，之后再把线程B封装成的Node节点通过尾插法接入双向链表的尾部；
-3、线程阻塞：入队完成后再调用park方法进行阻塞；
-4、释放锁并更新锁状态：当A线程释放锁时会将status属性重置为0，且把exclusiveOwnerThread置为null；
-5、唤醒线程：A线程释放锁完毕后会调用unpark方法来唤醒双向链表中下一节点的线程B;</p>
-<p>三、ReentrantLock对比于Synchronized有哪些优缺点？
-1、ReentrantLock的锁状态是可见的，而Synchronized的锁状态是不可见的；
-2、ReentrantLock是JDK层面的实现，而Synchronized是JVM层面的实现；
-3、ReentrantLock需要手动释放锁，而Synchronized不需要手动释放锁；
-4、ReentrantLock可以是非公平锁也可以是公平锁，而Synchronized只能是非公平锁；
-5、ReentrantLock是可被中断的，而Synchronized是不可被中断的；
-6、Synchronized在特定条件下是后来的线程先获取锁，而ReentrantLock是先来的线程先获取锁；
-四、ReentrantLock的简单使用</p>
-<p><a href="https://blog.csdn.net/sqL520lT/article/details/122096431">示例</a>
-<a href="https://www.cnblogs.com/huanshilang/p/16872660.html">ReentrantLock原理</a></p>
-<h2 id="jdbc">JDBC</h2>
+<p>JetBrains IDEA 中如果想了解某个注解的实现, 没有太好的办法, 就像想查找一个类在哪里被反射并调用了, 试行的办法:</p>
+<ul>
+<li>阅读大厂的源码, 文档, 了解该注解的内部实现逻辑</li>
+<li>小厂的代码, 只能是全文查找类似这样的<code>getAnnotation(DictFormat.class)</code>代码</li>
+</ul>
+<h3 id="a-http-请求注解">A. HTTP 请求注解</h3>
+<ul>
+<li>[TODO]: 各种继承关系的注解, 类似RestController, 包含了ResponseBody等, 后续补充</li>
+<li>Controller中设置Headers, 指定Content-Type/Accept
+<ul>
+<li>Springboot中Controller中的comsumes所指定的是HTTP客户端的Content-Type的内容, 默认application/x-www-form-urlencoded</li>
+<li>Springboot中Controller中的produces所指定的是HTTP客户端的Accept的内容</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+  <p>
+常见的http头部Content-Type:<br>
+- application/x-www-form-urlencoded<br>
+- multipart/form-data<br>
+- application/json<br>
+- application/xml<br>
+<br>
+前后组合如下:<br>
+- 服务端使用   Content-Type:"application/json"编码http响应body内容返回给前端；前端使用Content-Type:"application/json"解码http响应body内容。<br>
+- 服务端返回   Response Content-Type:application/json，前端dataType 不指定值 "json". 此时，解码http响应body内容，   data类型是Object。<br>
+- 服务端不返回 Response Content-Type:application/json，前端dataType 指定值   "json". 些时，解码http响应body内容，   data类型是Object。<br>
+- 服务端不返回 Response Content-Type:application/json，前端dataType 不指定值 "json". 此时，不能解码http响应body内容，data类型是String。<br>
+</p>
+  <footer>
+    <strong>HTTP回顾</strong>
+    
+      
+        <cite>来自于网络</cite>
+      
+    
+  </footer>
+</blockquote>
+<h3 id="b-易混淆注解的对比">B. 易混淆注解的对比</h3>
+<p>@Component @Bean @Service @Configurable, With this annotation, a class can be scaned manually or automaticlly</p>
+<p><code>@Bean</code>,</p>
+<p><code>@Component</code>与<code>@Service</code>没有区别, <code>@Service</code>还没想好, 是一个预留的注解定义</p>
+<p><code>@Configurable</code>是单例模式, 在启动时加载</p>
+<p><strong>@Resource @Autowired</strong></p>
+<blockquote>
+  <p>
+Both @Autowired (or @Inject) and @Resource work equally well. But there is a conceptual difference or a difference in the meaning<br/><br/>
+@Resource means get me a known resource by name. The name is extracted from the name of the annotated setter or field, or it is taken from the name-Parameter.<br/><br/>
+@Inject or @Autowired try to wire in a suitable other component by type.<br/><br/>
+So, basically these are two quite distinct concepts. Unfortunately the Spring-Implementation of @Resource has a built-in fallback, which kicks in when resolution by-name fails. In this case, it falls back to the @Autowired-kind resolution by-type.<br/>
+While this fallback is convenient, IMHO it causes a lot of confusion, because people are unaware of the conceptual difference and tend to use @Resource for type-based autowiring.
+
+</p>
+  <footer>
+    <strong>stackoverflow</strong>
+    
+      <cite><a href="https://stackoverflow.com/questions/4093504/resource-vs-autowired" target="_blank" rel="external">@Resource vs @Autowired</a></cite>
+    
+  </footer>
+</blockquote>
+<p><strong>@Repository @Mapper</strong></p>
+<ul>
+<li>@Mapper 一定要有，否则 Mybatis 找不到 mapper。</li>
+<li>@Repository 可有可无，可以消去依赖注入的报错信息。</li>
+<li>@MapperScan 可以替代 @Mapper。</li>
+</ul>
+<p><strong>@Validate @Valid</strong></p>
+<ul>
+<li>@Validate是org.springframework.validation.annotation.Validated 导入的</li>
+<li>@Validate 可以分组</li>
+<li>@Valid是javax.validation.Valid 导入的</li>
+<li>@Valid 可以递归</li>
+<li>controller类上写: @Validated
+<ul>
+<li>如果是Bean的对象xxxRequest类限制参数, 则参数类中各自校验; 在controller类中的方法参数括号内写: @Valid</li>
+<li>如果是属性String number限制, 在controller类中的方法入参前写: @NotBlank(message = &ldquo;xxx不能为空&rdquo;)</li>
+</ul>
+</li>
+</ul>
+<p>PS:</p>
+<p>@RequestParam()不那么好用, 返回信息不友好</p>
+<h3 id="c-transactional">C. @Transactional</h3>
+<p>详见 DAO Mapper章节</p>
+<h2 id="vi-servlet">VI. SERVLET</h2>
 <hr>
+<h2 id="vii-security">VII. SECURITY</h2>
+<hr>
+<p>以下大概描述的是Java Security的主要组件结构, 即使遗忘了实现细节, 掌握其结构和机制, 就容易理解得多</p>
+<p><strong>Configure</strong>
+这里包含初始化, 注册哪些filter</p>
+<p><strong>Filter</strong>
+具体拦截, 并把相对应的且support()的provider传进去</p>
+<p><strong>Provider</strong>
+提供自己的认证比对实现方法, 并且实现<code>support()</code>满足filter查找</p>
+<p><strong>Handler</strong>
+增加成功与失败的handler</p>
+<h2 id="viii-job">VIII. JOB</h2>
+<hr>
+<p>Quartz</p>
+<h2 id="ix-third-part-http-api">IX. THIRD-PART HTTP API</h2>
+<hr>
+<p>RestTemplate 是从Spring3.0开始支持的一个远程HTTP请求工具，RestTemplate提供了常见的Rest服务(Rest风格、Rest架构)的客户端请求的模版，能够大大提高客户端的编写效率</p>
+<p>多年来，Spring框架的RestTemplate一直是客户端HTTP访问的首选解决方案，它提供了同步、阻塞API以简洁的方式处理HTTP请求。然而，随着对非阻塞、反应式编程以更少的资源处理并发的需求不断增加，特别是在微服务架构中，RestTemplate已经显露出其局限性。
+从Spring Framework 5开始，RestTemplate已被标记为已弃用，Spring团队推荐WebClient作为其继任者。在这篇文章中，我们将通过实际示例深入探讨RestTemplate被弃用的原因、采用WebClient的优势以及如何有效过渡。</p>
+<blockquote>
+  <p>
+Synchronous client to perform HTTP requests, exposing a simple, template method API over underlying HTTP client libraries such as the JDK HttpURLConnection.
+
+NOTE: As of 6.1, RestClient offers a more modern API for synchronous HTTP access. For asynchronous and streaming scenarios, consider the reactive org. springframework. web. reactive. function. client. WebClient.
+</p>
+  <footer>
+    <strong></strong>
+    
+      
+        <cite></cite>
+      
+    
+  </footer>
+</blockquote>
+<p>传统应用: 新的RestClient</p>
+<p>流式应用: 才考虑WebClient</p>
+<h2 id="x-event-monitor">X. EVENT MONITOR</h2>
+<hr>
+<p>ApplicationEvent Monitor
+module-bpm模块中有用到, 拿来主义, 上游入库后&quot;生产&quot;出下游库存就依靠这个监听者观察客户定制的BOM原料是否满足, 满足即可生产
+[TODO]:</p>
+<h2 id="xi-dao-mapper">XI. DAO MAPPER</h2>
+<hr>
+<p>把事务传播放在这里, 主要是借鉴了<a href="https://chatgpt.com/c/67f53a1e-c224-8006-8be6-47110ff83864">ChatGPT的解答</a></p>
+<h3 id="a-transactional">A. Transactional</h3>
+<h4 id="1-propagation">1. Propagation</h4>
+<ul>
+<li>
+<p>事务传播, 需要时则加入传播的扩散要求<br>
+@Transactional(isolation = Isolation.SERIALIZABLE, propagation = Propagation.REQUIRES_NEW)</p>
+</li>
+<li>
+<p>何时该扩散, 内层事务如何处理, 可以组合考虑</p>
+</li>
+</ul>
+<h4 id="2-isolation">2. Isolation</h4>
+<p>以下是 MySQL 事务隔离级别的简要场景及效果区别：</p>
+<ul>
+<li>
+<p>Read Uncommitted</p>
+<p><strong>场景</strong>: 允许读取未提交的数据。</p>
+<p><strong>效果</strong>:</p>
+<p><strong>脏读</strong>: 可能发生，读取其他事务未提交的数据。</p>
+<p><strong>不可重复读</strong>: 可能发生，因为事务间可能修改已读取数据。</p>
+<p><strong>幻读</strong>: 可能发生，因为可能插入新数据。</p>
+</li>
+<li>
+<p>Read Committed</p>
+<p><strong>场景</strong>: 只读取已提交的数据，避免读取未提交事务的内容。</p>
+<p><strong>效果</strong>:</p>
+<p><strong>脏读</strong>: 不会发生，保证读取的是已提交数据。</p>
+<p><strong>不可重复读</strong>: 可能发生，因为同一事务中重复读取时，数据可能被其他事务修改。</p>
+<p><strong>幻读</strong>: 可能发生，因为其他事务可能插入新记录。</p>
+<p><strong>Tips</strong>: 不可重复读重点在于update和delete</p>
+</li>
+<li>
+<p>Repeatable Read (MySQL默认)
+<strong>场景</strong>: 保证同一事务中，读取的结果是固定的，即便其他事务修改了数据。<br>
+<strong>效果</strong>:<br>
+<strong>脏读</strong>: 不会发生。<br>
+<strong>不可重复读</strong>: 不会发生，事务中数据一致。<br>
+<strong>幻读</strong>: 通过<strong>间隙锁</strong>避免，查询范围内的数据是固定的。</p>
+<p><strong>Tips</strong>: 该级别产生幻读的重点场景在于insert, 总的来说就是事务A对数据进行操作，事务B还是可以用insert插入数据的，因为使用的是行锁，这样导致的各种奇葩问题就是幻读，表现形式很多</p>
+<pre><code>      TODO: MySQL的间隙锁在开源代码中是否已经默认被应用
+</code></pre>
+</li>
+<li>
+<p>Serializable
+<strong>场景</strong>: 强制事务串行化，确保事务间完全隔离。<br>
+<strong>效果</strong>:<br>
+<strong>脏读</strong>: 不会发生。<br>
+<strong>不可重复读</strong>: 不会发生。<br>
+<strong>幻读</strong>: 不会发生，因为会对范围内的操作加锁，阻止插入或修改。</p>
+</li>
+<li>
+<p>总结表格</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Isolation Level</th>
+<th>脏读(Dirty Read)</th>
+<th>不可重复读(Non Repeatable Read)</th>
+<th>幻读(Phantom Read)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Read Uncommitted</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Read Committed</td>
+<td>❌</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Repeatable Read</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>Serializable</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+</tr>
+</tbody>
+</table>
+<p><a href="https://www.cnblogs.com/zhengzhaoxiang/p/13972252.html">Mysql 事务隔离级别和锁的关系</a></p>
+<blockquote>
+<p>**锁防止别的事务修改或删除，GAP锁防止别的事务新增，**行锁和 GAP锁结合形成的的 Next-Key锁共同解决了 RR级别在写数据时的幻读问题。</p>
+<p>十一、Serializable</p>
+<p>这个级别很简单，读加共享锁，写加排他锁，读写互斥。使用的悲观锁的理论，实现简单，数据更加安全，但是并发能力非常差。如果你的业务并发的特别少或者没有并发，同时又要求数据及时可靠的话，可以使用这种模式。</p>
+<blockquote>
+<p>这里要吐槽一句，不要看到 select就说不会加锁了，在Serializable这个级别，还是会加锁的！</p>
+</blockquote>
+</blockquote>
+<p><a href="https://juejin.cn/post/6920072842935533576">Java面试必问的MySQL锁与事务隔离级别</a></p>
+<blockquote>
+<h3 id="readview">ReadView</h3>
+<p>如果数据库隔离级别是未提交读（READ UNCOMMITTED），那么读取版本链中最新版本的记录即可。如果是是串行化（SERIALIZABLE），事务之间是加锁执行的，不存在读不一致的问题。但是如果是已提交读（READ COMMITTED）或者可重复读（REPEATABLE READ），就需要遍历版本链中的每一条记录，判断该条记录是否对当前事务可见，直到找到为止(遍历完还没找到就说明记录不存在)。InnoDB通过ReadView实现了这个功能。ReadView中主要包含以下4个内容：</p>
+<h4 id="1m_ids">1.m_ids</h4>
+<p>表示在生成ReadView时当前系统中活跃的读写事务的事务id列表。</p>
+<h4 id="2min_trx_id">2.min_trx_id</h4>
+<p>表示在生成ReadView时当前系统中活跃的读写事务中最小的事务id，也就是m_ids中的最小值。</p>
+<h4 id="3max_trx_id">3.max_trx_id</h4>
+<p>表示生成ReadView时系统中应该分配给下一个事务的id值。</p>
+<h4 id="4creator_trx_id">4.creator_trx_id</h4>
+<p>表示生成该ReadView事务的事务id。</p>
+<p>有了ReadView之后，我们可以基于以下步骤判断某个版本的记录是否对当前事务可见。</p>
+<p>1.如果被访问版本的trx_id属性值与ReadView中的creator_trx_id值相同，意味着当前事务在访问它自己修改过的记录，所以该版本可以被当前事务访问。</p>
+<p>2.如果被访问版本的trx_id属性值小于ReadView中的min_trx_id值，表明生成该版本的事务在当前事务生成ReadView前已经提交，所以该版本可以被当前事务访问。</p>
+<p>3.如果被访问版本的trx_id属性值大于或等于ReadView中的max_trx_id值，表明生成该版本的事务在当前事务生成ReadView后才开启，所以该版本不可以被当前事务访问。</p>
+<p>4.如果被访问版本的trx_id属性值在ReadView的min_trx_id和max_trx_id之间，那就需要判断一下trx_id属性值是不是在m_ids列表中，如果在，说明创建ReadView时生成该版本的事务还是活跃的，该版本不可以被访问；如果不在，说明创建ReadView时生成该版本的事务已经被提交，该版本可以被访问。</p>
+<p>在MySQL中，READ COMMITTED和REPEATABLE READ隔离级别的的一个非常大的区别就是它们生成ReadView的时机不同。READ COMMITTED在每次读取数据前都会生成一个ReadView，这样就能保证每次都能读到其它事务已提交的数据。REPEATABLE READ 只在第一次读取数据时生成一个ReadView，这样就能保证后续读取的结果完全一致。</p>
+<p>作者：IT中心
+链接：https://juejin.cn/post/6920072842935533576
+来源：稀土掘金
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+</blockquote>
+<p><a href="https://cloud.tencent.com/developer/article/1121737">数据库事务、隔离级别和锁ACID的真实含义隔离级别和并发控制MySQL和PostgreSQL对比如何写代码</a>略读</p>
+<h3 id="b-jdbc">B. JDBC</h3>
 <p>Once a connection is obtained we can interact with the database.
 The JDBC Statement, CallableStatement, and PreparedStatement interfaces define the methods
 and properties that enable you to send SQL or PL/SQL commands and receive data from your database.</p>
@@ -811,10 +837,9 @@ and properties that enable you to send SQL or PL/SQL commands and receive data f
 </tr>
 </tbody>
 </table>
-<h2 id="jvm">JVM</h2>
+<h2 id="xii-utils">XII. UTILS</h2>
 <hr>
-<h2 id="tools">TOOLS</h2>
-<hr>
+<p>很多源码中总结的Utils很好用, 多学习一下</p>
 <h3 id="判断类实例中的各个属性是否有null">判断类实例中的各个属性是否有null</h3>
 
   
@@ -1006,8 +1031,7 @@ public class DateFormatUtil {
   </div>
 </figure>
 
-<h2 id="snowflake">SNOWFLAKE</h2>
-<hr>
+<h3 id="snowflake">Snowflake</h3>
 <p>Tmp record</p>
 <p>自己的项目中已经不再使用, 但作为算法案例, 临时记录于此</p>
 <p>前面文章在谈论分布式唯一ID生成的时候，有提到雪花算法，这一次，我们详细点讲解，只讲它。
@@ -1247,262 +1271,12 @@ txt复制代码-1L 原码：1000 0001
 链接：https://juejin.cn/post/7030825216162922510
 来源：稀土掘金
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
-<h2 id="目录-1">目录</h2>
-<ul>
-<li><a href="#chapter-1">I. IOC</a></li>
-<li><a href="#chapter-2">II. AOP</a></li>
-<li><a href="#chapter-3">III. SERVLET</a></li>
-<li><a href="#chapter-4">IV. SECURITY</a></li>
-<li><a href="#chapter-5">V. TRANSACTIONAL</a></li>
-<li><a href="#chapter-6">VI. JOB</a></li>
-<li><a href="#chapter-7">VII. THIRD-PART HTTP API</a></li>
-<li><a href="#chapter-8">VIII. EVENT MONITOR</a></li>
-<li><a href="#chapter-9">IX. DAO MAPPER</a></li>
-<li><a href="#chapter-10">X. UTILS</a></li>
-<li><a href="#chapter-11">XI. MISCELLANEOUS</a></li>
-</ul>
-<h2 id="chapter-1">I. IOC</h2>
+<h2 id="xiii-miscellaneous">XIII. MISCELLANEOUS</h2>
 <hr>
-<h3 id="a-lifecircle-configuration">A. LifeCircle-@Configuration</h3>
-<p><a href="https://www.cnblogs.com/java-chen-hao/p/11640177.html">https://www.cnblogs.com/java-chen-hao/p/11640177.html</a></p>
-<h2 id="chapter-2">II. AOP</h2>
-<hr>
-<p>JetBrains IDEA 中如果想了解某个注解的实现, 没有太好的办法, 就像想查找一个类在哪里被反射并调用了, 试行的办法:</p>
-<ul>
-<li>阅读大厂的源码, 文档, 了解该注解的内部实现逻辑</li>
-<li>小厂的代码, 只能是全文查找类似这样的<code>getAnnotation(DictFormat.class)</code>代码</li>
-</ul>
-<h3 id="常用注解的深入理解">常用注解的深入理解</h3>
-<ul>
-<li>[TODO]: 各种继承关系的注解, 类似RestController, 包含了ResponseBody等, 后续补充</li>
-<li>Controller中设置Headers, 指定Content-Type/Accept
-<ul>
-<li>Springboot中Controller中的comsumes所指定的是HTTP客户端的Content-Type的内容, 默认application/x-www-form-urlencoded</li>
-<li>Springboot中Controller中的produces所指定的是HTTP客户端的Accept的内容</li>
-</ul>
-</li>
-</ul>
-<blockquote>
-  <p>
-常见的http头部Content-Type:<br>
-- application/x-www-form-urlencoded<br>
-- multipart/form-data<br>
-- application/json<br>
-- application/xml<br>
-<br>
-前后组合如下:<br>
-- 服务端使用   Content-Type:"application/json"编码http响应body内容返回给前端；前端使用Content-Type:"application/json"解码http响应body内容。<br>
-- 服务端返回   Response Content-Type:application/json，前端dataType 不指定值 "json". 此时，解码http响应body内容，   data类型是Object。<br>
-- 服务端不返回 Response Content-Type:application/json，前端dataType 指定值   "json". 些时，解码http响应body内容，   data类型是Object。<br>
-- 服务端不返回 Response Content-Type:application/json，前端dataType 不指定值 "json". 此时，不能解码http响应body内容，data类型是String。<br>
-</p>
-  <footer>
-    <strong>HTTP回顾</strong>
-    
-      
-        <cite>来自于网络</cite>
-      
-    
-  </footer>
-</blockquote>
-<h3 id="易混淆注解的对比">易混淆注解的对比</h3>
-<h4 id="component-bean-service-configurable">@Component @Bean @Service @Configurable</h4>
-<p>With this annotation, a class can be scaned manually or automaticlly</p>
-<p><code>@Bean</code>,</p>
-<p><code>@Component</code>与<code>@Service</code>没有区别, <code>@Service</code>还没想好, 是一个预留的注解定义</p>
-<p><code>@Configurable</code>是单例模式, 在启动时加载</p>
-<p><strong>@Resource @Autowired</strong></p>
-<blockquote>
-  <p>
-Both @Autowired (or @Inject) and @Resource work equally well. But there is a conceptual difference or a difference in the meaning<br/><br/>
-@Resource means get me a known resource by name. The name is extracted from the name of the annotated setter or field, or it is taken from the name-Parameter.<br/><br/>
-@Inject or @Autowired try to wire in a suitable other component by type.<br/><br/>
-So, basically these are two quite distinct concepts. Unfortunately the Spring-Implementation of @Resource has a built-in fallback, which kicks in when resolution by-name fails. In this case, it falls back to the @Autowired-kind resolution by-type.<br/>
-While this fallback is convenient, IMHO it causes a lot of confusion, because people are unaware of the conceptual difference and tend to use @Resource for type-based autowiring.
+<p><strong>EXCEPTION</strong></p>
+<p>TryCatchFinally</p>
+<p>首先看个例子：</p>
 
-</p>
-  <footer>
-    <strong>stackoverflow</strong>
-    
-      <cite><a href="https://stackoverflow.com/questions/4093504/resource-vs-autowired" target="_blank" rel="external">@Resource vs @Autowired</a></cite>
-    
-  </footer>
-</blockquote>
-<p><strong>@Repository @Mapper</strong></p>
-<ul>
-<li>@Mapper 一定要有，否则 Mybatis 找不到 mapper。</li>
-<li>@Repository 可有可无，可以消去依赖注入的报错信息。</li>
-<li>@MapperScan 可以替代 @Mapper。</li>
-</ul>
-<p><strong>@Validate @Valid</strong></p>
-<ul>
-<li>@Validate是org.springframework.validation.annotation.Validated 导入的</li>
-<li>@Validate 可以分组</li>
-<li>@Valid是javax.validation.Valid 导入的</li>
-<li>@Valid 可以递归</li>
-<li>controller类上写: @Validated
-<ul>
-<li>如果是Bean的对象xxxRequest类限制参数, 则参数类中各自校验; 在controller类中的方法参数括号内写: @Valid</li>
-<li>如果是属性String number限制, 在controller类中的方法入参前写: @NotBlank(message = &ldquo;xxx不能为空&rdquo;)</li>
-</ul>
-</li>
-</ul>
-<p>PS:</p>
-<p>@RequestParam()不那么好用, 返回信息不友好</p>
-<h2 id="chapter-3">III. SERVLET</h2>
-<hr>
-<h2 id="chapter-4">IV. SECURITY</h2>
-<hr>
-<p>以下大概描述的是Java Security的主要组件结构, 即使遗忘了实现细节, 掌握其结构和机制, 就容易理解得多</p>
-<p><strong>Configure</strong>
-这里包含初始化, 注册哪些filter</p>
-<p><strong>Filter</strong>
-具体拦截, 并把相对应的且support()的provider传进去</p>
-<p><strong>Provider</strong>
-提供自己的认证比对实现方法, 并且实现<code>support()</code>满足filter查找</p>
-<p><strong>Handler</strong>
-增加成功与失败的handler</p>
-<h2 id="chapter-5">V. TRANSACTIONAL</h2>
-<hr>
-<h3 id="a-propagation">A. Propagation</h3>
-<ul>
-<li>事务传播, 需要时则加入传播的扩散要求<br>
-@Transactional(isolation = Isolation.SERIALIZABLE, propagation = Propagation.REQUIRES_NEW)</li>
-</ul>
-<h3 id="b-isolation">B. Isolation</h3>
-<p>以下是 MySQL 事务隔离级别的简要场景及效果区别：</p>
-<h4 id="1-read-uncommitted">1. Read Uncommitted</h4>
-<p><strong>场景</strong>: 允许读取未提交的数据。<br>
-<strong>效果</strong>:</p>
-<ul>
-<li><strong>脏读</strong>: 可能发生，读取其他事务未提交的数据。</li>
-<li><strong>不可重复读</strong>: 可能发生，因为事务间可能修改已读取数据。</li>
-<li><strong>幻读</strong>: 可能发生，因为可能插入新数据。</li>
-</ul>
-<h3 id="2-read-committed">2. Read Committed</h3>
-<p><strong>场景</strong>: 只读取已提交的数据，避免读取未提交事务的内容。<br>
-<strong>效果</strong>:</p>
-<ul>
-<li><strong>脏读</strong>: 不会发生，保证读取的是已提交数据。</li>
-<li><strong>不可重复读</strong>: 可能发生，因为同一事务中重复读取时，数据可能被其他事务修改。</li>
-<li><strong>幻读</strong>: 可能发生，因为其他事务可能插入新记录。</li>
-</ul>
-<p><strong>Tips</strong></p>
-<p>不可重复读重点在于update和delete</p>
-<h4 id="3-repeatable-read-mysql默认">3. Repeatable Read (MySQL默认)</h4>
-<p><strong>场景</strong>: 保证同一事务中，读取的结果是固定的，即便其他事务修改了数据。<br>
-<strong>效果</strong>:</p>
-<ul>
-<li><strong>脏读</strong>: 不会发生。</li>
-<li><strong>不可重复读</strong>: 不会发生，事务中数据一致。</li>
-<li><strong>幻读</strong>: 通过<strong>间隙锁</strong>避免，查询范围内的数据是固定的。</li>
-</ul>
-<p><strong>Tips</strong></p>
-<p>该级别产生幻读的重点场景在于insert, 总的来说就是事务A对数据进行操作，事务B还是可以用insert插入数据的，因为使用的是行锁，这样导致的各种奇葩问题就是幻读，表现形式很多
-TODO: MySQL的间隙锁在开源代码中是否已经默认被应用</p>
-<h4 id="4-serializable">4. Serializable</h4>
-<p><strong>场景</strong>: 强制事务串行化，确保事务间完全隔离。<br>
-<strong>效果</strong>:</p>
-<ul>
-<li><strong>脏读</strong>: 不会发生。</li>
-<li><strong>不可重复读</strong>: 不会发生。</li>
-<li><strong>幻读</strong>: 不会发生，因为会对范围内的操作加锁，阻止插入或修改。</li>
-</ul>
-<h4 id="总结表格">总结表格</h4>
-<table>
-<thead>
-<tr>
-<th>Isolation Level</th>
-<th>脏读(Dirty Read)</th>
-<th>不可重复读(Non Repeatable Read)</th>
-<th>幻读(Phantom Read)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Read Uncommitted</td>
-<td>✅</td>
-<td>✅</td>
-<td>✅</td>
-</tr>
-<tr>
-<td>Read Committed</td>
-<td>❌</td>
-<td>✅</td>
-<td>✅</td>
-</tr>
-<tr>
-<td>Repeatable Read</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-</tr>
-<tr>
-<td>Serializable</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-</tr>
-</tbody>
-</table>
-<p><a href="https://www.cnblogs.com/zhengzhaoxiang/p/13972252.html">Mysql 事务隔离级别和锁的关系</a></p>
-<blockquote>
-<p>**锁防止别的事务修改或删除，GAP锁防止别的事务新增，**行锁和 GAP锁结合形成的的 Next-Key锁共同解决了 RR级别在写数据时的幻读问题。</p>
-<h3 id="十一serializable">十一、Serializable</h3>
-<p>这个级别很简单，读加共享锁，写加排他锁，读写互斥。使用的悲观锁的理论，实现简单，数据更加安全，但是并发能力非常差。如果你的业务并发的特别少或者没有并发，同时又要求数据及时可靠的话，可以使用这种模式。</p>
-<blockquote>
-<p>这里要吐槽一句，不要看到 select就说不会加锁了，在Serializable这个级别，还是会加锁的！</p>
-</blockquote>
-</blockquote>
-<p><a href="https://juejin.cn/post/6920072842935533576">Java面试必问的MySQL锁与事务隔离级别</a></p>
-<blockquote>
-<h3 id="readview">ReadView</h3>
-<p>如果数据库隔离级别是未提交读（READ UNCOMMITTED），那么读取版本链中最新版本的记录即可。如果是是串行化（SERIALIZABLE），事务之间是加锁执行的，不存在读不一致的问题。但是如果是已提交读（READ COMMITTED）或者可重复读（REPEATABLE READ），就需要遍历版本链中的每一条记录，判断该条记录是否对当前事务可见，直到找到为止(遍历完还没找到就说明记录不存在)。InnoDB通过ReadView实现了这个功能。ReadView中主要包含以下4个内容：</p>
-<h4 id="1m_ids">1.m_ids</h4>
-<p>表示在生成ReadView时当前系统中活跃的读写事务的事务id列表。</p>
-<h4 id="2min_trx_id">2.min_trx_id</h4>
-<p>表示在生成ReadView时当前系统中活跃的读写事务中最小的事务id，也就是m_ids中的最小值。</p>
-<h4 id="3max_trx_id">3.max_trx_id</h4>
-<p>表示生成ReadView时系统中应该分配给下一个事务的id值。</p>
-<h4 id="4creator_trx_id">4.creator_trx_id</h4>
-<p>表示生成该ReadView事务的事务id。</p>
-<p>有了ReadView之后，我们可以基于以下步骤判断某个版本的记录是否对当前事务可见。</p>
-<p>1.如果被访问版本的trx_id属性值与ReadView中的creator_trx_id值相同，意味着当前事务在访问它自己修改过的记录，所以该版本可以被当前事务访问。</p>
-<p>2.如果被访问版本的trx_id属性值小于ReadView中的min_trx_id值，表明生成该版本的事务在当前事务生成ReadView前已经提交，所以该版本可以被当前事务访问。</p>
-<p>3.如果被访问版本的trx_id属性值大于或等于ReadView中的max_trx_id值，表明生成该版本的事务在当前事务生成ReadView后才开启，所以该版本不可以被当前事务访问。</p>
-<p>4.如果被访问版本的trx_id属性值在ReadView的min_trx_id和max_trx_id之间，那就需要判断一下trx_id属性值是不是在m_ids列表中，如果在，说明创建ReadView时生成该版本的事务还是活跃的，该版本不可以被访问；如果不在，说明创建ReadView时生成该版本的事务已经被提交，该版本可以被访问。</p>
-<p>在MySQL中，READ COMMITTED和REPEATABLE READ隔离级别的的一个非常大的区别就是它们生成ReadView的时机不同。READ COMMITTED在每次读取数据前都会生成一个ReadView，这样就能保证每次都能读到其它事务已提交的数据。REPEATABLE READ 只在第一次读取数据时生成一个ReadView，这样就能保证后续读取的结果完全一致。</p>
-<p>作者：IT中心
-链接：https://juejin.cn/post/6920072842935533576
-来源：稀土掘金
-著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
-</blockquote>
-<p><a href="https://cloud.tencent.com/developer/article/1121737">数据库事务、隔离级别和锁ACID的真实含义隔离级别和并发控制MySQL和PostgreSQL对比如何写代码</a>略读</p>
-<h3 id="c-多数据源">C. 多数据源</h3>
-<div class="alert info ">
-  <p>@DS 必须加在 @Transactional 对应的类或者方法上<br>
-如在 mapper中加了@DS，但是 @Transactional 加在 service 方法中，此时则会获取默认的datasource
-(因为在事务中已经获取了一次datasource的connection，而此时无DS注解)</p>
-</div>
-
-
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
 
   
   
@@ -1525,128 +1299,84 @@ TODO: MySQL的间隙锁在开源代码中是否已经默认被应用</p>
 <figure class="codeblock codeblock--tabbed">
   <figcaption>
     
-      <span>MultiDSTransactional</span>
+      <span>tryCatchFinally</span>
     
     <ul class="tabs">
       
-        <li class="tab active">sinterface</li>
+        <li class="tab active">return2</li>
       
-        <li class="tab ">ointerface</li>
-      
-        <li class="tab ">oimpl</li>
-      
-        <li class="tab ">combo</li>
-      
-        <li class="tab ">comboimpl</li>
+        <li class="tab ">return3</li>
       
     </ul>
   </figcaption>
   <div class="tabs-content">
     
       
-      <figure class="highlight language-sinterface sinterface" style="display: block;">
+      <figure class="highlight language-return2 return2" style="display: block;">
         <table>
           <tbody>
             <tr>
               <td class="gutter">
-                <pre><span>1</span><br></pre>
+                <pre><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br></pre>
               </td>
               <td class="code">
-                <pre class="code-highlight language-sinterface sinterface"><code class="sinterface">public interface SomeService extends IService&lt;Some&gt; {}</code></pre>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </figure>
-    
-      
-      <figure class="highlight language-ointerface ointerface" style="display: none;">
-        <table>
-          <tbody>
-            <tr>
-              <td class="gutter">
-                <pre><span>1</span><br></pre>
-              </td>
-              <td class="code">
-                <pre class="code-highlight language-ointerface ointerface"><code class="ointerface">public interface OtherService extends IService&lt;Other&gt; {}</code></pre>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </figure>
-    
-      
-      <figure class="highlight language-oimpl oimpl" style="display: none;">
-        <table>
-          <tbody>
-            <tr>
-              <td class="gutter">
-                <pre><span>1</span><br><span>2</span><br><span>3</span><br></pre>
-              </td>
-              <td class="code">
-                <pre class="code-highlight language-oimpl oimpl"><code class="oimpl">@Service
-@DS(&#34;db2&#34;)
-public class OtherServiceImpl extends ServiceImpl&lt;OtherRepository, Other&gt; implements OtherService {}</code></pre>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </figure>
-    
-      
-      <figure class="highlight language-combo combo" style="display: none;">
-        <table>
-          <tbody>
-            <tr>
-              <td class="gutter">
-                <pre><span>1</span><br><span>2</span><br><span>3</span><br></pre>
-              </td>
-              <td class="code">
-                <pre class="code-highlight language-combo combo"><code class="combo">public interface CombineService {
-    Boolean save(CombineRequest request);
-}</code></pre>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </figure>
-    
-      
-      <figure class="highlight language-comboimpl comboimpl" style="display: none;">
-        <table>
-          <tbody>
-            <tr>
-              <td class="gutter">
-                <pre><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br></pre>
-              </td>
-              <td class="code">
-                <pre class="code-highlight language-comboimpl comboimpl"><code class="comboimpl">@Service
-public class CombineServiceImpl implements CombineService {
-    @Resource
-    private SomeService someService;
+                <pre class="code-highlight language-return2 return2"><code class="return2">public class TestReturn {
+    public int test() {
+        int x  = 1;
+        try {
+            return &#43;&#43;x;
+        } catch(Exception e) {
 
-    @Resource
-    private OtherService otherService;
+        } finally {
+            &#43;&#43;x;
+        }
 
-    @Override
-    @DSTransactional
-    public Boolean save(CombineRequest request) {
-        Boolean r1 = saveSome(request);
-        Boolean r2 = saveOthers(request);
-        return r1 &amp;&amp; r2;
+        return x;
     }
 
-    @Transactional(isolation = Isolation.SERIALIZABLE, propagation = Propagation.REQUIRES_NEW)
-    protected Boolean saveOthers(CombineRequest request) {
-        List&lt;Other&gt; others = methodToGetOthers(request);
-        return otherService.saveBatch(others);
+    public static void main(String[] args) {
+        TestReturn t = new TestReturn();
+        int result = t.test();
+        System.out.println(result);
+    }
+}
+
+// 输出结果是2</code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </figure>
+    
+      
+      <figure class="highlight language-return3 return3" style="display: none;">
+        <table>
+          <tbody>
+            <tr>
+              <td class="gutter">
+                <pre><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br></pre>
+              </td>
+              <td class="code">
+                <pre class="code-highlight language-return3 return3"><code class="return3">public class TestReturn {
+    public int test() {
+        int x  = 1;
+        try {
+            return &#43;&#43;x;
+        } catch(Exception e) {
+
+        } finally {
+            return &#43;&#43;x;
+        }
     }
 
-    private Boolean saveSome(CombineRequest request) {
-        Some some = methodToGetSome(request);
-        return someService.save(some);
+    public static void main(String[] args) {
+        TestReturn t = new TestReturn();
+        int result = t.test();
+        System.out.println(result);
     }
-}</code></pre>
+}
+
+// 输出结果是3</code></pre>
               </td>
             </tr>
           </tbody>
@@ -1656,46 +1386,50 @@ public class CombineServiceImpl implements CombineService {
   </div>
 </figure>
 
-<p>[TODO]:
-MyBatis的手动切换, 后续再深入学习<br>
-And how to <code>DynamicDataSourceContextHolder.push()</code> and <code>DynamicDataSourceContextHolder.poll()</code>?</p>
-<h2 id="chapter-6">VI. JOB</h2>
-<hr>
-<p>Quartz</p>
-<h2 id="chapter-7">VII. THIRD-PART HTTP API</h2>
-<hr>
-<p>RestTemplate 是从Spring3.0开始支持的一个远程HTTP请求工具，RestTemplate提供了常见的Rest服务(Rest风格、Rest架构)的客户端请求的模版，能够大大提高客户端的编写效率</p>
-<p>多年来，Spring框架的RestTemplate一直是客户端HTTP访问的首选解决方案，它提供了同步、阻塞API以简洁的方式处理HTTP请求。然而，随着对非阻塞、反应式编程以更少的资源处理并发的需求不断增加，特别是在微服务架构中，RestTemplate已经显露出其局限性。
-从Spring Framework 5开始，RestTemplate已被标记为已弃用，Spring团队推荐WebClient作为其继任者。在这篇文章中，我们将通过实际示例深入探讨RestTemplate被弃用的原因、采用WebClient的优势以及如何有效过渡。</p>
-<blockquote>
-  <p>
-Synchronous client to perform HTTP requests, exposing a simple, template method API over underlying HTTP client libraries such as the JDK HttpURLConnection.
-
-NOTE: As of 6.1, RestClient offers a more modern API for synchronous HTTP access. For asynchronous and streaming scenarios, consider the reactive org. springframework. web. reactive. function. client. WebClient.
-</p>
-  <footer>
-    <strong></strong>
-    
-      
-        <cite></cite>
-      
-    
-  </footer>
-</blockquote>
-<p>传统应用: 新的RestClient</p>
-<p>流式应用: 才考虑WebClient</p>
-<h2 id="chapter-8">VIII. EVENT MONITOR</h2>
-<hr>
-<p>ApplicationEvent Monitor
-module-bpm模块中有用到, 拿来主义, 上游入库后&quot;生产&quot;出下游库存就依靠这个监听者观察客户定制的BOM原料是否满足, 满足即可生产
-[TODO]:</p>
-<h2 id="chapter-9">IX. DAO MAPPER</h2>
-<hr>
-<h2 id="chapter-10">X. UTILS</h2>
-<hr>
-<p>很多源码中总结的Utils很好用, 多学习一下</p>
-<h2 id="chapter-11">XI. MISCELLANEOUS</h2>
-<hr>
+<p>查阅资料得到下面的说法：</p>
+<p>当try语句退出时肯定会执行finally语句。这确保了即使发了一个意想不到的异常也会执行finally语句块。
+但是finally的用处不仅是用来处理异常——它可以让程序员不会因为return、continue、或者break语句而忽略了清理代码。
+把清理代码放在finally语句块里是一个很好的做法，即便可能不会有异常发生也要这样做。</p>
+<div class="alert warning ">
+  <p>注意，当try或者catch的代码在运行的时候，JVM退出了。那么finally语句块就不会执行。同样，如果线程在运行try或者catch的代码时被中断了或者被杀死了(killed)，那么finally语句可能也不会执行了，即使整个运用还会继续执行。</p>
+</div>
+<p>说明：如果在try语句里有return语句，finally语句还是会执行。它会在把控制权转移到该方法的调用者或者构造器前执行finally语句。也就是说，使用return语句把控制权转移给其他的方法前会执行finally语句。</p>
+<p><strong>那么结果为什么是3不是2呢?</strong></p>
+<p>当执行到<code>return ++x;</code>时，jvm在执行完 ++x 后会在局部变量表里另外分配一个空间来保存当前x的值。<br>
+现在还没把值返回给y，而是继续执行finally语句里的语句。等执行完后再把之前保存的值**(是2, 不是x)**返回给y。所以就有了y是2不是3的情况。</p>
+<p>其实这里还有一点要注意的是，如果你在finally里也用了return语句，比如<code>return +xx;</code>, 那么y会是3。<br>
+因为规范规定了，当try和finally里都有return时，会忽略try的return，而使用finally的return。</p>
+<p>原文链接：https://blog.csdn.net/wujingjing_crystal/article/details/52495189</p>
+<p>THREAD</p>
+<p>ThreadLocal</p>
+<p>Thread Lock</p>
+<p>一、ReentrantLock是用来做什么的？
+二、ReentrantLock的实现原理是什么？
+三、ReentrantLock对比于Synchronized有哪些优缺点？
+四、ReentrantLock的简单使用</p>
+<p>一、ReentrantLock是用来做什么的？
+这个类是JUC工具包中对线程安全问题提供的一种解决方案，它主要是用来给对象上锁，保证同一时间这能有一个线程在访问当前对象。这样处理是为了防止如果一个线程对某个公共变量进行了改变，而其它线程读取时读出来的是原有数据导致脏读的问题。</p>
+<p>二、ReentrantLock的实现原理是什么？
+ReentrantLock主要是通过同步队列和CAS机制来实现的，它实现的过程中主要包含下面几个属性：</p>
+<p>status：锁状态，0表示没有线程获取锁，1表示已有线程获取锁
+exclusiveOwnerThread：当前持有锁的线程
+Node：节点，是ReentrantLock内部维持的一个双向链表（同步阻塞队列）的基本构成
+具体流程</p>
+<p>1、上锁更新锁状态：当A线程持有锁时，会通过CAS将status状态置为1，并将A线程自身存入exclusiveOwnerThread属性当中；
+2、线程入队：而后线程B通过CAS获取锁时发现无法获取锁，此时就会获取node信息，但是由于node双向链表是null所以会通过CAS来创建一个双向链表的head对象，之后再把线程B封装成的Node节点通过尾插法接入双向链表的尾部；
+3、线程阻塞：入队完成后再调用park方法进行阻塞；
+4、释放锁并更新锁状态：当A线程释放锁时会将status属性重置为0，且把exclusiveOwnerThread置为null；
+5、唤醒线程：A线程释放锁完毕后会调用unpark方法来唤醒双向链表中下一节点的线程B;</p>
+<p>三、ReentrantLock对比于Synchronized有哪些优缺点？
+1、ReentrantLock的锁状态是可见的，而Synchronized的锁状态是不可见的；
+2、ReentrantLock是JDK层面的实现，而Synchronized是JVM层面的实现；
+3、ReentrantLock需要手动释放锁，而Synchronized不需要手动释放锁；
+4、ReentrantLock可以是非公平锁也可以是公平锁，而Synchronized只能是非公平锁；
+5、ReentrantLock是可被中断的，而Synchronized是不可被中断的；
+6、Synchronized在特定条件下是后来的线程先获取锁，而ReentrantLock是先来的线程先获取锁；
+四、ReentrantLock的简单使用</p>
+<p><a href="https://blog.csdn.net/sqL520lT/article/details/122096431">示例</a>
+<a href="https://www.cnblogs.com/huanshilang/p/16872660.html">ReentrantLock原理</a></p>
               
 
 

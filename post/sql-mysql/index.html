@@ -302,70 +302,79 @@
 <h1 id="table-of-contents">Table of Contents</h1>
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#init">INIT</a></li>
-    <li><a href="#dcl">DCL</a>
+    <li><a href="#i-basic">I. BASIC</a>
       <ul>
-        <li><a href="#grant">GRANT</a></li>
-        <li><a href="#revoke">REVOKE</a></li>
-        <li><a href="#deny">DENY</a></li>
-      </ul>
-    </li>
-    <li><a href="#ddl">DDL</a>
-      <ul>
-        <li><a href="#create">CREATE</a></li>
-        <li><a href="#alter">ALTER</a></li>
-        <li><a href="#drop">DROP</a></li>
-        <li><a href="#truncate">TRUNCATE</a></li>
-        <li><a href="#comment">COMMENT</a></li>
-        <li><a href="#rename">RENAME</a></li>
-      </ul>
-    </li>
-    <li><a href="#dml">DML</a>
-      <ul>
-        <li><a href="#insert">INSERT</a></li>
-        <li><a href="#select">SELECT</a></li>
-        <li><a href="#update">UPDATE</a></li>
-        <li><a href="#delete">DELETE</a></li>
-        <li><a href="#merge">MERGE</a></li>
-        <li><a href="#call">CALL</a></li>
-        <li><a href="#explain-plan">EXPLAIN PLAN</a></li>
-        <li><a href="#lock-table">LOCK TABLE</a></li>
-        <li><a href="#examples">EXAMPLES</a>
+        <li><a href="#a-init">A. Init</a></li>
+        <li><a href="#b-data">B. Data</a>
           <ul>
-            <li><a href="#kill">Kill</a></li>
+            <li><a href="#1-export">1. Export</a></li>
+            <li><a href="#2-import">2. Import</a></li>
           </ul>
         </li>
-        <li><a href="#join">JOIN</a></li>
       </ul>
     </li>
-    <li><a href="#tcl">TCL</a>
+    <li><a href="#ii-operations">II. OPERATIONS</a>
       <ul>
-        <li><a href="#commit">COMMIT</a></li>
-        <li><a href="#rollback">ROLLBACK</a></li>
-        <li><a href="#savepoint">SAVEPOINT</a></li>
-        <li><a href="#start-transaction">START TRANSACTION</a></li>
+        <li><a href="#a-dcl">A. DCL</a>
+          <ul>
+            <li><a href="#1-grant">1. GRANT</a></li>
+            <li><a href="#2-revoke">2. REVOKE</a></li>
+            <li><a href="#3-deny">3. DENY</a></li>
+          </ul>
+        </li>
+        <li><a href="#b-ddl">B. DDL</a>
+          <ul>
+            <li><a href="#1-create">1. CREATE</a></li>
+            <li><a href="#2-alter">2. ALTER</a></li>
+            <li><a href="#3-drop">3. DROP</a></li>
+            <li><a href="#4-truncate">4. TRUNCATE</a></li>
+            <li><a href="#5-comment">5. COMMENT</a></li>
+            <li><a href="#6-rename">6. RENAME</a></li>
+          </ul>
+        </li>
+        <li><a href="#c-dml">C. DML</a>
+          <ul>
+            <li><a href="#1-insert">1. INSERT</a></li>
+            <li><a href="#2-update">2. UPDATE</a></li>
+            <li><a href="#3-delete">3. DELETE</a></li>
+            <li><a href="#4-merge">4. MERGE</a></li>
+            <li><a href="#5-call">5. CALL</a></li>
+            <li><a href="#6-explain-plan">6. EXPLAIN PLAN</a></li>
+            <li><a href="#7-lock-table">7. LOCK TABLE</a></li>
+            <li><a href="#8-examples">8. Examples</a></li>
+          </ul>
+        </li>
+        <li><a href="#d-dql">D. DQL</a>
+          <ul>
+            <li><a href="#1-select">1. SELECT</a></li>
+          </ul>
+        </li>
+        <li><a href="#e-tcl">E. TCL</a>
+          <ul>
+            <li><a href="#1-commit">1. COMMIT</a></li>
+            <li><a href="#2-rollback">2. ROLLBACK</a></li>
+            <li><a href="#3-savepoint">3. SAVEPOINT</a></li>
+            <li><a href="#4-start-transaction">4. START TRANSACTION</a></li>
+          </ul>
+        </li>
+        <li><a href="#f-view">F. VIEW</a></li>
       </ul>
     </li>
-    <li><a href="#view">VIEW</a></li>
-    <li><a href="#锁">锁</a>
+    <li><a href="#iii-锁">III. 锁</a>
       <ul>
-        <li><a href="#行锁">行锁</a></li>
-        <li><a href="#表锁">表锁</a></li>
-        <li><a href="#乐观锁">乐观锁</a></li>
-        <li><a href="#悲观锁">悲观锁</a></li>
+        <li><a href="#a-行锁">A. 行锁</a></li>
+        <li><a href="#b-表锁">B. 表锁</a></li>
+        <li><a href="#c-乐观锁">C. 乐观锁</a></li>
+        <li><a href="#d-悲观锁">D. 悲观锁</a></li>
       </ul>
     </li>
-    <li><a href="#export--import">EXPORT &amp; IMPORT</a>
-      <ul>
-        <li><a href="#export">Export</a></li>
-        <li><a href="#import">IMPORT</a></li>
-      </ul>
-    </li>
+    <li><a href="#iv-驱动">IV. 驱动</a></li>
   </ul>
 </nav>
 
-<h2 id="init">INIT</h2>
+<h2 id="i-basic">I. BASIC</h2>
 <hr>
+<h3 id="a-init">A. Init</h3>
 <p>Refer to <code>https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-20-04</code></p>
 <p>Ubuntu 24.04 as example in Win11 WSL2</p>
 
@@ -438,7 +447,7 @@ mysql</code></pre>
           <tbody>
             <tr>
               <td class="gutter">
-                <pre><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br></pre>
+                <pre><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br></pre>
               </td>
               <td class="code">
                 <pre class="code-highlight language-sql sql"><code class="sql"># Collect infomation
@@ -449,6 +458,10 @@ SELECT host, user, plugin FROM mysql.user;
 CREATE DATABASE `some-db` CHARACTER SET UTF8;
 CREATE USER &#39;rd&#39;@&#39;%&#39; IDENTIFIED WITH mysql_native_password BY &#39;your_password&#39;;
 GRANT ALL PRIVILEGES ON `some-db`.* TO &#39;rd&#39;@&#39;%&#39;;
+# 由于 PROCESS 权限可以查看所有连接的线程和运行的 SQL，具有一定的敏感性，建议仅授予信任的内部账号或在备份服务器使用的账号
+#GRANT PROCESS, LOCK TABLES, SHOW VIEW, EVENT, TRIGGER ON *.* TO &#39;rd&#39;@&#39;%&#39;;
+FLUSH PRIVILEGES;
+
 FLUSH PRIVILEGES;</code></pre>
               </td>
             </tr>
@@ -482,13 +495,176 @@ systemctl restart mysql.service</code></pre>
   </div>
 </figure>
 
-<p>区别</p>
+<p><em>区别</em></p>
 <p>| caching_sha2_password |<br>
 |  mysql_native_password |</p>
-<h2 id="dcl">DCL</h2>
+<h3 id="b-data">B. Data</h3>
+<h4 id="1-export">1. Export</h4>
+
+  
+    
+  
+  
+    
+  
+  
+  
+
+
+<figure class="highlight shell language-shell">
+  <figcaption>
+    
+      <span>export</span>
+    
+  </figcaption>
+  <table>
+    <tbody>
+      <tr>
+        <td class="gutter">
+          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre>
+        </td>
+        <td class="code">
+          <pre class="code-highlight language-shell shell"><code class="shell"># 导出整个数据库结构和数据
+mysqldump -h localhost -P 3306 -urd -p123456 database &gt; test.sql
+# 导出整个数据库结构(不包含数据)
+mysqldump -h localhost -P 3306 -urd -p123456 -d database &gt; test.sql
+
+# 导出单个数据表结构和数据
+mysqldump -h localhost -P 3306 -urd -p123456 database table &gt; test.sql
+# 导出单个数据表结构(不包含数据)
+mysqldump -h localhost -P 3306 -urd -p123456 -d database table &gt; test.sql
+
+# 说明:
+# -P参数, 是大P, 且有空格, 不同于后面密码的小P，没有空格</code></pre>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+
+<h4 id="2-import">2. Import</h4>
+
+
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+
+
+  
+    
+  
+  
+
+<figure class="codeblock codeblock--tabbed">
+  <figcaption>
+    
+      <span>import</span>
+    
+    <ul class="tabs">
+      
+        <li class="tab active">shell</li>
+      
+        <li class="tab ">sql</li>
+      
+    </ul>
+  </figcaption>
+  <div class="tabs-content">
+    
+      
+      <figure class="highlight language-shell shell" style="display: block;">
+        <table>
+          <tbody>
+            <tr>
+              <td class="gutter">
+                <pre><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br></pre>
+              </td>
+              <td class="code">
+                <pre class="code-highlight language-shell shell"><code class="shell"># 恢复到指定数据库
+mysql -hhostname -uusername -ppassword databasename &lt; test.sql
+
+# 恢复到指定数据库中的表
+mysql -hhostname -uusername -ppassword databasename tablename &lt; test.sql</code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </figure>
+    
+      
+      <figure class="highlight language-sql sql" style="display: none;">
+        <table>
+          <tbody>
+            <tr>
+              <td class="gutter">
+                <pre><span>1</span><br><span>2</span><br></pre>
+              </td>
+              <td class="code">
+                <pre class="code-highlight language-sql sql"><code class="sql">use some_db;
+source /data/test.sql;</code></pre>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </figure>
+    
+  </div>
+</figure>
+
+<h2 id="ii-operations">II. OPERATIONS</h2>
 <hr>
+<table>
+<thead>
+<tr>
+<th>类别</th>
+<th>名称</th>
+<th>常见语句</th>
+<th>功能说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DDL</td>
+<td>Data Definition Language</td>
+<td>CREATE, DROP, ALTER</td>
+<td>定义或修改数据库结构（表、索引、视图等）</td>
+</tr>
+<tr>
+<td>DML</td>
+<td>Data Manipulation Language</td>
+<td>INSERT, UPDATE, DELETE, MERGE</td>
+<td>操作表中的数据（增、改、删）</td>
+</tr>
+<tr>
+<td>DQL</td>
+<td>Data Query Language</td>
+<td>SELECT</td>
+<td>只查询数据，不做任何修改</td>
+</tr>
+<tr>
+<td>DCL</td>
+<td>Data Control Language</td>
+<td>GRANT, REVOKE</td>
+<td>权限控制（授权与回收）</td>
+</tr>
+<tr>
+<td>TCL</td>
+<td>Transaction Control Language</td>
+<td>COMMIT, ROLLBACK, SAVEPOINT</td>
+<td>事务管理</td>
+</tr>
+</tbody>
+</table>
+<h3 id="a-dcl">A. DCL</h3>
 <p>DCL: Data Control Language, like <code>GRANT</code>, <code>REVOKE</code>, <code>DENY</code></p>
-<h3 id="grant">GRANT</h3>
+<h4 id="1-grant">1. GRANT</h4>
 
   
     
@@ -521,12 +697,12 @@ FLUSH PRIVILEGES;</code></pre>
   </table>
 </figure>
 
-<h3 id="revoke">REVOKE</h3>
-<h3 id="deny">DENY</h3>
-<h2 id="ddl">DDL</h2>
+<h4 id="2-revoke">2. REVOKE</h4>
+<h4 id="3-deny">3. DENY</h4>
+<h3 id="b-ddl">B. DDL</h3>
 <hr>
 <p>DDL: Data Definition Language, like <code>CREATE</code>, <code>ALTER</code>, <code>DROP</code>, <code>TRUNCATE</code>, <code>COMMENT</code>, <code>RENAME</code></p>
-<h3 id="create">CREATE</h3>
+<h4 id="1-create">1. CREATE</h4>
 
 
   
@@ -701,7 +877,7 @@ Source_table where 1 &lt;&gt; 1;</code></pre>
   </div>
 </figure>
 </p>
-<h3 id="alter">ALTER</h3>
+<h4 id="2-alter">2. ALTER</h4>
 
   
     
@@ -734,7 +910,7 @@ Source_table where 1 &lt;&gt; 1;</code></pre>
   </table>
 </figure>
 
-<h3 id="drop">DROP</h3>
+<h4 id="3-drop">3. DROP</h4>
 
 
   
@@ -829,13 +1005,12 @@ Source_table where 1 &lt;&gt; 1;</code></pre>
   </div>
 </figure>
 
-<h3 id="truncate">TRUNCATE</h3>
-<h3 id="comment">COMMENT</h3>
-<h3 id="rename">RENAME</h3>
-<h2 id="dml">DML</h2>
-<hr>
-<p>DML: Data Manipulation Language, like <code>INSERT</code>, <code>SELECT</code>, <code>UPDATE</code>, <code>DELETE</code>, <code>MERGE</code>, <code>CALL</code>, <code>EXPLAIN PLAN</code>, <code>LOCK TABLE</code></p>
-<h3 id="insert">INSERT</h3>
+<h4 id="4-truncate">4. TRUNCATE</h4>
+<h4 id="5-comment">5. COMMENT</h4>
+<h4 id="6-rename">6. RENAME</h4>
+<h3 id="c-dml">C. DML</h3>
+<p>DML: Data Manipulation Language, like <code>INSERT</code>, <code>UPDATE</code>, <code>DELETE</code>, <code>MERGE</code>, <code>CALL</code>, <code>EXPLAIN PLAN</code>, <code>LOCK TABLE</code></p>
+<h4 id="1-insert">1. INSERT</h4>
 
 
   
@@ -908,7 +1083,127 @@ VALUES (1, 2), (3, 4)</code></pre>
   </div>
 </figure>
 
-<h3 id="select">SELECT</h3>
+<h4 id="2-update">2. UPDATE</h4>
+
+  
+    
+  
+  
+    
+  
+  
+  
+
+
+<figure class="highlight sql language-sql">
+  <figcaption>
+    
+      <span>UPDATE</span>
+    
+  </figcaption>
+  <table>
+    <tbody>
+      <tr>
+        <td class="gutter">
+          <pre><span class="line">1</span><br><span class="line">2</span><br></pre>
+        </td>
+        <td class="code">
+          <pre class="code-highlight language-sql sql"><code class="sql">UPDATE &lt;table_name&gt; SET ...;
+[TODO]: To be continued...</code></pre>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+
+<h4 id="3-delete">3. DELETE</h4>
+
+  
+    
+  
+  
+    
+  
+  
+  
+
+
+<figure class="highlight sql language-sql">
+  <figcaption>
+    
+      <span>DELETE</span>
+    
+  </figcaption>
+  <table>
+    <tbody>
+      <tr>
+        <td class="gutter">
+          <pre><span class="line">1</span><br></pre>
+        </td>
+        <td class="code">
+          <pre class="code-highlight language-sql sql"><code class="sql">DELETE FROM &lt;table_name&gt; WHERE ...;</code></pre>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+
+<h4 id="4-merge">4. MERGE</h4>
+<h4 id="5-call">5. CALL</h4>
+<h4 id="6-explain-plan">6. EXPLAIN PLAN</h4>
+<h4 id="7-lock-table">7. LOCK TABLE</h4>
+<h4 id="8-examples">8. Examples</h4>
+<p><strong>Kill</strong>
+数据库锁死的问题解决
+
+  
+    
+  
+  
+    
+  
+  
+  
+
+
+<figure class="highlight sql language-sql">
+  <figcaption>
+    
+      <span>Kill lock</span>
+    
+  </figcaption>
+  <table>
+    <tbody>
+      <tr>
+        <td class="gutter">
+          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre>
+        </td>
+        <td class="code">
+          <pre class="code-highlight language-sql sql"><code class="sql">select *
+from information_schema.PROCESSLIST;
+
+select *
+from information_schema.INNODB_TRX;
+
+select A.trx_started, B.*
+from information_schema.INNODB_TRX A
+left join (select * from information_schema.PROCESSLIST) B on A.trx_mysql_thread_id = B.ID;
+
+kill 12345;</code></pre>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+</p>
+<h3 id="d-dql">D. DQL</h3>
+<p>DQL: Data Query Language, like <code>SELECT</code></p>
+<p>🤔 那为什么很多人以为 SELECT 是 DML 呢？
+因为 SELECT 也是“对数据的操作”，但它不改变数据，只是“读取”。</p>
+<p>在某些旧教材或非标准文档中，有时会把 DQL 归并到 DML 里，但这是不准确的。</p>
+<p>✅ 正统 SQL 标准（比如 ANSI SQL）中：
+SELECT = 只读查询语言，属于 DQL，与 DML 的“写操作”分开定义。</p>
+<h4 id="1-select">1. SELECT</h4>
 
   
     
@@ -981,257 +1276,42 @@ SELECT * FROM 表名 WHERE YEAR(时间字段名) = YEAR(DATE_SUB(NOW(),INTERVAL 
   </table>
 </figure>
 
-<h3 id="update">UPDATE</h3>
-
-  
-    
-  
-  
-    
-  
-  
-  
-
-
-<figure class="highlight sql language-sql">
-  <figcaption>
-    
-      <span>UPDATE</span>
-    
-  </figcaption>
-  <table>
-    <tbody>
-      <tr>
-        <td class="gutter">
-          <pre><span class="line">1</span><br><span class="line">2</span><br></pre>
-        </td>
-        <td class="code">
-          <pre class="code-highlight language-sql sql"><code class="sql">UPDATE &lt;table_name&gt; SET ...;
-[TODO]: To be continued...</code></pre>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</figure>
-
-<h3 id="delete">DELETE</h3>
-
-  
-    
-  
-  
-    
-  
-  
-  
-
-
-<figure class="highlight sql language-sql">
-  <figcaption>
-    
-      <span>DELETE</span>
-    
-  </figcaption>
-  <table>
-    <tbody>
-      <tr>
-        <td class="gutter">
-          <pre><span class="line">1</span><br></pre>
-        </td>
-        <td class="code">
-          <pre class="code-highlight language-sql sql"><code class="sql">DELETE FROM &lt;table_name&gt; WHERE ...;</code></pre>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</figure>
-
-<h3 id="merge">MERGE</h3>
-<h3 id="call">CALL</h3>
-<h3 id="explain-plan">EXPLAIN PLAN</h3>
-<h3 id="lock-table">LOCK TABLE</h3>
-<h3 id="examples">EXAMPLES</h3>
-<h4 id="kill">Kill</h4>
-<p>数据库锁死的问题解决
-
-  
-    
-  
-  
-    
-  
-  
-  
-
-
-<figure class="highlight sql language-sql">
-  <figcaption>
-    
-      <span>Kill lock</span>
-    
-  </figcaption>
-  <table>
-    <tbody>
-      <tr>
-        <td class="gutter">
-          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre>
-        </td>
-        <td class="code">
-          <pre class="code-highlight language-sql sql"><code class="sql">select *
-from information_schema.PROCESSLIST;
-
-select *
-from information_schema.INNODB_TRX;
-
-select A.trx_started, B.*
-from information_schema.INNODB_TRX A
-left join (select * from information_schema.PROCESSLIST) B on A.trx_mysql_thread_id = B.ID;
-
-kill 12345;</code></pre>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</figure>
-</p>
-<h3 id="join">JOIN</h3>
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/9/9d/SQL_Joins.svg" alt="Joins"></p>
-<h2 id="tcl">TCL</h2>
-<hr>
+<p>mysql&gt; select table_schema, table_name, column_name, column_default, is_nullable, column_type, column_type, column_key, column_comment from information_schema.COLUMNS
+where table_schema = &lsquo;ruoyi-vue-pro&rsquo; and table_name = &lsquo;measure_pic&rsquo;;
++&mdash;&mdash;&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;-+&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-+&mdash;&mdash;&mdash;&mdash;-+&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;+
+| TABLE_SCHEMA  | TABLE_NAME  | COLUMN_NAME     | COLUMN_DEFAULT    | IS_NULLABLE | COLUMN_TYPE  | COLUMN_TYPE  | COLUMN_KEY | COLUMN_COMMENT                    |
++&mdash;&mdash;&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;-+&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-+&mdash;&mdash;&mdash;&mdash;-+&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;+
+| ruoyi-vue-pro | measure_pic | id              | NULL              | NO          | bigint       | bigint       | PRI        | 编号                              |
+| ruoyi-vue-pro | measure_pic | measure_task_id | 0                 | NO          | bigint       | bigint       |            | 测量任务编号                      |
+| ruoyi-vue-pro | measure_pic | pic_url         |                   | NO          | varchar(512) | varchar(512) |            | 图像地址                          |
+| ruoyi-vue-pro | measure_pic | client_id       | NULL              | NO          | bigint       | bigint       |            | 客户端编号                        |
+| ruoyi-vue-pro | measure_pic | category_id     | NULL              | NO          | bigint       | bigint       |            | 类别编号                          |
+| ruoyi-vue-pro | measure_pic | magnification   | NULL              | NO          | int          | int          |            | 放大倍率, 是否可以删除?           |
+| ruoyi-vue-pro | measure_pic | creator         |                   | YES         | varchar(64)  | varchar(64)  |            | 创建者                            |
+| ruoyi-vue-pro | measure_pic | create_time     | CURRENT_TIMESTAMP | NO          | datetime     | datetime     |            | 创建时间                          |
+| ruoyi-vue-pro | measure_pic | updater         |                   | YES         | varchar(64)  | varchar(64)  |            | 更新者                            |
+| ruoyi-vue-pro | measure_pic | update_time     | CURRENT_TIMESTAMP | NO          | datetime     | datetime     |            | 更新时间                          |
+| ruoyi-vue-pro | measure_pic | deleted         | b'0&rsquo;              | NO          | bit(1)       | bit(1)       |            | 是否删除                          |
+| ruoyi-vue-pro | measure_pic | tenant_id       | 0                 | NO          | bigint       | bigint       |            | 租户编号                          |
++&mdash;&mdash;&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;-+&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-+&mdash;&mdash;&mdash;&mdash;-+&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;+
+12 rows in set (0.00 sec)</p>
+<h3 id="e-tcl">E. TCL</h3>
 <p>TCL: Transaction Control Language, like <code>COMMIT</code>, <code>ROLLBACK</code>, <code>SAVEPOINT</code>, <code>START TRANSACTION</code></p>
-<h3 id="commit">COMMIT</h3>
-<h3 id="rollback">ROLLBACK</h3>
-<h3 id="savepoint">SAVEPOINT</h3>
-<h3 id="start-transaction">START TRANSACTION</h3>
-<h2 id="view">VIEW</h2>
-<hr>
+<h4 id="1-commit">1. COMMIT</h4>
+<h4 id="2-rollback">2. ROLLBACK</h4>
+<h4 id="3-savepoint">3. SAVEPOINT</h4>
+<h4 id="4-start-transaction">4. START TRANSACTION</h4>
+<h3 id="f-view">F. VIEW</h3>
 <p>Create a SQLView to make query fast</p>
-<h2 id="锁">锁</h2>
+<h2 id="iii-锁">III. 锁</h2>
 <hr>
-<h3 id="行锁">行锁</h3>
-<h3 id="表锁">表锁</h3>
-<h3 id="乐观锁">乐观锁</h3>
-<h3 id="悲观锁">悲观锁</h3>
-<h2 id="export--import">EXPORT &amp; IMPORT</h2>
+<h3 id="a-行锁">A. 行锁</h3>
+<h3 id="b-表锁">B. 表锁</h3>
+<h3 id="c-乐观锁">C. 乐观锁</h3>
+<h3 id="d-悲观锁">D. 悲观锁</h3>
+<h2 id="iv-驱动">IV. 驱动</h2>
 <hr>
-<h3 id="export">Export</h3>
-
-  
-    
-  
-  
-    
-  
-  
-  
-
-
-<figure class="highlight shell language-shell">
-  <figcaption>
-    
-      <span>export</span>
-    
-  </figcaption>
-  <table>
-    <tbody>
-      <tr>
-        <td class="gutter">
-          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre>
-        </td>
-        <td class="code">
-          <pre class="code-highlight language-shell shell"><code class="shell"># 导出整个数据库结构和数据
-mysqldump -h localhost -P 3306 -urd -p123456 database &gt; test.sql
-# 导出整个数据库结构(不包含数据)
-mysqldump -h localhost -P 3306 -urd -p123456 -d database &gt; test.sql
-
-# 导出单个数据表结构和数据
-mysqldump -h localhost -P 3306 -urd -p123456 database table &gt; test.sql
-# 导出单个数据表结构(不包含数据)
-mysqldump -h localhost -P 3306 -urd -p123456 -d database table &gt; test.sql
-
-# 说明:
-# -P参数, 是大P, 且有空格, 不同于后面密码的小P，没有空格</code></pre>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</figure>
-
-<h3 id="import">IMPORT</h3>
-
-
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
-
-
-  
-    
-  
-  
-
-<figure class="codeblock codeblock--tabbed">
-  <figcaption>
-    
-      <span>import</span>
-    
-    <ul class="tabs">
-      
-        <li class="tab active">shell</li>
-      
-        <li class="tab ">sql</li>
-      
-    </ul>
-  </figcaption>
-  <div class="tabs-content">
-    
-      
-      <figure class="highlight language-shell shell" style="display: block;">
-        <table>
-          <tbody>
-            <tr>
-              <td class="gutter">
-                <pre><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br></pre>
-              </td>
-              <td class="code">
-                <pre class="code-highlight language-shell shell"><code class="shell"># 恢复到指定数据库
-mysql -hhostname -uusername -ppassword databasename &lt; test.sql
-
-# 恢复到指定数据库中的表
-mysql -hhostname -uusername -ppassword databasename tablename &lt; test.sql</code></pre>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </figure>
-    
-      
-      <figure class="highlight language-sql sql" style="display: none;">
-        <table>
-          <tbody>
-            <tr>
-              <td class="gutter">
-                <pre><span>1</span><br><span>2</span><br></pre>
-              </td>
-              <td class="code">
-                <pre class="code-highlight language-sql sql"><code class="sql">use some_db;
-source /data/test.sql;</code></pre>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </figure>
-    
-  </div>
-</figure>
+<p>TODO</p>
               
 
 

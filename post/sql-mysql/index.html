@@ -1309,6 +1309,10 @@ where table_schema = &lsquo;ruoyi-vue-pro&rsquo; and table_name = &lsquo;measure
 <h3 id="b-表锁">B. 表锁</h3>
 <h3 id="c-乐观锁">C. 乐观锁</h3>
 <h3 id="d-悲观锁">D. 悲观锁</h3>
+<p>二、概念和用法
+通常情况下，select语句是不会对数据加锁，妨碍影响其他的DML和DDL操作。同时，在多版本一致读机制的支持下，select语句也不会被其他类型语句所阻碍。
+而selec&hellip; for update 语句是我们经常使用手工加锁语句。在数据库中执行select.for update,大家会发现会对数据库中的表或某些行数据进行锁表，在mysql四中，如果查询条件带有主键，会锁行数据，如果没有，会锁表。
+由于InnoDB预设是Row-LevelLock，所以只有「明确」的指定主键，MySQL才会执行Row lock(只锁住被选取的资料例)，否则MySQL将会执行Table Lock(将整个资料表单给锁住)。</p>
 <h2 id="iv-驱动">IV. 驱动</h2>
 <hr>
 <p>TODO</p>

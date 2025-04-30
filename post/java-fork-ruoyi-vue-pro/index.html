@@ -435,11 +435,6 @@ In their Unix paper of 1974, Ritchie and Thompson quote the following design con
 <li>
 <p>不使用RESTful style, 因为RESTful仍然有表达不明确的业务场景, 仍然需要使用传统&quot;动词&quot;来描述接口性质/意图, 且对团队要求较高, 一不小心就会破坏掉所谓的RESTful style</p>
 </li>
-</ol>
-<h2 id="ii-business-design">II. BUSINESS DESIGN</h2>
-<hr>
-<p>基于现役SpringBoot业务流层面的全栈开发的经验, 制定出更优雅的代码设计规范</p>
-<ol>
 <li>
 <p>Write down all the details of requirement <strong>seriously</strong></p>
 </li>
@@ -456,6 +451,41 @@ In their Unix paper of 1974, Ritchie and Thompson quote the following design con
 <p>With its Infra code-auto-generation, most backend and frontend codes can be generated. Very helpful and so handy</p>
 </li>
 </ol>
+<h2 id="ii-business-design">II. BUSINESS DESIGN</h2>
+<hr>
+<ul>
+<li>
+<p>mall只作为小程序B2C商城的载体</p>
+<ul>
+<li>通过<strong>商品</strong>的SKU的barCode与ERP模块的<strong>产品</strong>建立联系</li>
+<li>通过定时任务与ERP模块同步库存</li>
+</ul>
+</li>
+<li>
+<p>ERP模块作为后台B2B的载体</p>
+<ul>
+<li>
+<p>产品倒卖
+遵循源码结构, 产品即&quot;成品&quot;, 不需要隐藏/保护上游产品码</p>
+<ul>
+<li>管理mall的<strong>实体手办</strong>的库存(货源来自线下采购, 登记入库)</li>
+<li>管理mall的<strong>虚拟票券</strong>的库存(货源来自本平台, 生成入库)</li>
+</ul>
+</li>
+<li>
+<p>产品生产
+定制化开发, 额外添加&quot;原料&quot;, 隐藏/保护上游产品码</p>
+<ul>
+<li>从上游采购回来的原料, 触发&quot;生产&quot;事件, 将原料转换为产品</li>
+<li>增加flow自动化流程链, 完整的源码ERP流程自动化完成</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>其它独立模块分别建立代码仓库, 单独维护</p>
+</li>
+</ul>
 <h3 id="a-controller">A. Controller</h3>
 <p>[TODO]: 继续描述源码在前后端结合时, 互相传递的参数以及显示字段的设计思路</p>
 <h4 id="1-input-validation">1. Input validation</h4>

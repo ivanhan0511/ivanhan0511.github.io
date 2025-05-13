@@ -465,18 +465,20 @@ In their Unix paper of 1974, Ritchie and Thompson quote the following design con
 <p>ERP模块作为后台B2B的载体</p>
 <ul>
 <li>
-<p>产品倒卖
-遵循源码结构, 产品即&quot;成品&quot;, 不需要隐藏/保护上游产品码</p>
+<p>产品倒卖</p>
+<p>增加字段<code>supplier</code>, 默认&quot;0:本平台&quot;</p>
+<p>增加字段<code>type</code>, 默认<code>成品</code></p>
 <ul>
-<li>管理mall的<strong>实体手办</strong>的库存(货源来自线下采购, 登记入库)</li>
-<li>管理mall的<strong>虚拟票券</strong>的库存(货源来自本平台, 生成入库)</li>
+<li>管理mall的<strong>实体手办</strong>的库存(货源来自线下采购, 成品, 登记入库), 也不需要隐藏/保护上游产品码</li>
+<li>管理mall的<strong>虚拟票券</strong>的库存(货源来自本平台, 成品, 生成入库)</li>
 </ul>
 </li>
 <li>
-<p>产品生产
-定制化开发, 额外添加&quot;原料&quot;, 隐藏/保护上游产品码</p>
+<p>产品生产</p>
+<p>增加字段<code>supplier</code>, 填写&quot;(供应商ID):xx供应商&quot;</p>
+<p>增加字段<code>type</code>, 填写<code>原料</code></p>
 <ul>
-<li>从上游采购回来的原料, 触发&quot;生产&quot;事件, 将原料转换为产品</li>
+<li>从上游采购回来的原料, 触发&quot;生产&quot;事件, 原料库存转化为成品库存, 隐藏/保护上游产品码</li>
 <li>增加flow自动化流程链, 完整的源码ERP流程自动化完成</li>
 </ul>
 </li>

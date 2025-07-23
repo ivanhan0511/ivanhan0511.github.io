@@ -336,6 +336,7 @@ But the stronger, the more complex. This post is the annotation for this project
           </ul>
         </li>
         <li><a href="#c-dao-mapper">C. DAO Mapper</a></li>
+        <li><a href="#d-completablefuture">D. CompletableFuture</a></li>
       </ul>
     </li>
     <li><a href="#iii-testing">III. TESTING</a></li>
@@ -792,50 +793,37 @@ public Boolean uploadImage(String fileName, String path, String fileMd5, Long cl
     
   </footer>
 </blockquote></p>
-<p><a href="https://www.cnblogs.com/youmingDDD/p/11921187.html">MySQL多次单表查询和多表联合查询</a></p>
+<p>众多原因, 在符合各自需求的前提下, 适当取舍. 目前(May 27, 2025)的需求下, 引用如下作为主要概括还算是合适的:
 <blockquote>
-<p>Tip:不建议执行三张表以上的多表联合查询
-对数据量不大的应用来说，多表联合查询开发高效，但是多表联合查询在表数据量大，并且没有索引的时候，如果进行笛卡儿积，那数据量会非常大，sql执行效率会非常低</p>
-<p>多次单表查询在service层进行合并好处：
-1、缓存效率更高,许多应用程序可以方便地缓存单表查询对应的结果对象。如果关联中的某个表发生了变化，那么就无法使用查询缓存了，而拆分后，如果某个表很少改变，那么基于该表的查询就可以重复利用查询缓存结果了。
-2、多表信息联合的列表页面分页显示，只需要显示一部分的数据，如果是多表联合查询那要把所有数据联结查出来再执行limit，如果是多次单表查询，先对单表进行筛选，先执行limit再与其余表去关联，数据量会大大减小
-3、如果数据库没有进行读写分离（主从备份），在并发量高的时候，由于写表会加排他锁，把多表联合查询改成单表查询后锁的粒度变小，减少了锁的竞争
-4、在数据量变大之后，普遍会采用分库分表的方法来缓解数据库的压力，采用单表查询比多表联合查询更容易进行分库，不需要对sql语句进行大量的修改，更易扩展.分库分表的中间件一般对跨库join都支持不好
-5、查询本身效率也可能会有所提升。查询 id 集的时候，使用 IN（）代替关联查询，可以让 MySQL 按照 ID 顺序进行查询，这可能比随机的关联要更高效。
+  <p>
+Tip:不建议执行三张表以上的多表联合查询</br>
+对数据量不大的应用来说，多表联合查询开发高效，但是多表联合查询在表数据量大，并且没有索引的时候，如果进行笛卡儿积，那数据量会非常大，sql执行效率会非常低</br>
+</br>
+多次单表查询在service层进行合并好处：</br>
+1、缓存效率更高, 许多应用程序可以方便地缓存单表查询对应的结果对象。如果关联中的某个表发生了变化，那么就无法使用查询缓存了，而拆分后，如果某个表很少改变，那么基于该表的查询就可以重复利用查询缓存结果了。</br>
+2、多表信息联合的列表页面分页显示，只需要显示一部分的数据，如果是多表联合查询那要把所有数据联结查出来再执行limit，如果是多次单表查询，先对单表进行筛选，先执行limit再与其余表去关联，数据量会大大减小</br>
+3、如果数据库没有进行读写分离（主从备份），在并发量高的时候，由于写表会加排他锁，把多表联合查询改成单表查询后锁的粒度变小，减少了锁的竞争</br>
+4、在数据量变大之后，普遍会采用分库分表的方法来缓解数据库的压力，采用单表查询比多表联合查询更容易进行分库，不需要对sql语句进行大量的修改，更易扩展.分库分表的中间件一般对跨库join都支持不好</br>
+5、查询本身效率也可能会有所提升。查询 id 集的时候，使用 IN（）代替关联查询，可以让 MySQL 按照 ID 顺序进行查询，这可能比随机的关联要更高效。</br>
 6、业务高速增长时，数据库作为最底层，最容易遇到瓶颈，单机数据库计算资源很贵，数据库同时要服务写和读，都需要消耗CPU，为了能让数据库的吞吐变得更高，
-而业务又不在乎那几百微妙到毫秒级的延时差距，业务会把更多计算放到service层做，毕竟计算资源很好水平扩展，数据库很难啊，这是一种重业务，轻DB的架构
+而业务又不在乎那几百微妙到毫秒级的延时差距，业务会把更多计算放到service层做，毕竟计算资源很好水平扩展，数据库很难啊，这是一种重业务，轻DB的架构</br>
 7、可以减少冗余记录的查询，在应用层做关联查询，意味着对于某条记录应用只需要查询一次，而在数据库中做关联查询，则可能需要重复地访问一部分数据。
-更进一步，这样做相当于在应用中实现了哈希关联，而不是使用 MySQL 的嵌套循环关联。某些场景哈希关联的效率要高很多。</p>
-<p>多次单表查询在service层进行合并缺点：
-1、需要进行多次的数据库连接
-2、代码更复杂</p>
-<p>总结：
-个人觉得还是做多次单表查询更好，更易扩展，当然数据量不大时，直接联合查询开发更方便</p>
-</blockquote>
-<p><a href="https://cloud.tencent.com/developer/article/1443320">为什么mysql不建议执行超过3表以上的多表关联查询</a></p>
-<blockquote>
-<p>简单地，例如分类和商品, 或者部门和员工, 一对多, 可以对每个表进行一次单表查询，然后将结果在应用程序中进行关联。例如，下面这个查询：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">select</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">from</span> <span style="color:#a6e22e">tag</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">join</span> <span style="color:#a6e22e">tag_post</span> <span style="color:#a6e22e">on</span> <span style="color:#a6e22e">tag_post</span>.<span style="color:#a6e22e">tag_id</span><span style="color:#f92672">=</span><span style="color:#a6e22e">tag</span>.<span style="color:#a6e22e">id</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">join</span> <span style="color:#a6e22e">post</span> <span style="color:#a6e22e">on</span> <span style="color:#a6e22e">tag_post</span>.<span style="color:#a6e22e">post_id</span><span style="color:#f92672">=</span><span style="color:#a6e22e">post</span>.<span style="color:#a6e22e">id</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">where</span> <span style="color:#a6e22e">tag</span>.<span style="color:#a6e22e">tag</span><span style="color:#f92672">=</span><span style="color:#960050;background-color:#1e0010">’</span><span style="color:#a6e22e">mysql</span><span style="color:#960050;background-color:#1e0010">’</span>;
-</span></span></code></pre></div><p>可以分解成下面这些查询来代替：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">Select</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">from</span> <span style="color:#a6e22e">tag</span> <span style="color:#a6e22e">where</span> <span style="color:#a6e22e">tag</span><span style="color:#f92672">=</span><span style="color:#960050;background-color:#1e0010">’</span><span style="color:#a6e22e">mysql</span><span style="color:#960050;background-color:#1e0010">’</span>;
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Select</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">from</span> <span style="color:#a6e22e">tag_post</span> <span style="color:#a6e22e">where</span> <span style="color:#a6e22e">tag_id</span><span style="color:#f92672">=</span><span style="color:#ae81ff">1234</span>;
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Select</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">from</span> <span style="color:#a6e22e">post</span> <span style="color:#a6e22e">where</span> <span style="color:#a6e22e">id</span> <span style="color:#66d9ef">in</span>(<span style="color:#ae81ff">123</span>,<span style="color:#ae81ff">456</span>,<span style="color:#ae81ff">567</span>,<span style="color:#ae81ff">9989</span>,<span style="color:#ae81ff">8909</span>);
-</span></span></code></pre></div><p>为什么会这样做呢？原本一条查询，这里却变成了多条查询，返回结果又是一模一样。</p>
-<p>事实上，用分解关联查询的方式重构查询具有如下优势：</p>
-<ol>
-<li>让缓存的效率更高。 许多应用程序可以方便地缓存单表查询对应的结果对象。另外对于MySQL的查询缓存来说，如果关联中的某个表发生了变化，那么就无法使用查询缓存了，而拆分后，如果某个表很少改变，那么基于该表的查询就可以重复利用查询缓存结果了。</li>
-<li>将查询分解后，执行单个查询可以减少锁的竞争。</li>
-<li>在应用层做关联，可以更容易对数据库进行拆分，更容易做到高性能和可扩展。</li>
-<li>查询本身效率也可能会有所提升</li>
-<li>可以减少冗余记录的查询。</li>
-<li>更进一步，这样做相当于在应用中实现了哈希关联，而不是使用MySQL的嵌套环关联，某些场景哈希关联的效率更高很多。</li>
-</ol>
-</blockquote>
-<p><a href="https://www.zhihu.com/question/56236190">《阿里巴巴JAVA开发手册》里面写超过三张表禁止join 这是为什么？这样的话那sql要怎么写？</a></p>
-<p><a href="https://www.zhihu.com/question/68258877">MySQL多表关联查询效率高点还是多次单表查询效率高，为什么？</a></p>
+更进一步，这样做相当于在应用中实现了哈希关联，而不是使用 MySQL 的嵌套循环关联。某些场景哈希关联的效率要高很多。</br>
+</br>
+多次单表查询在service层进行合并缺点：</br>
+1、需要进行多次的数据库连接</br>
+2、代码更复杂</br>
+</br>
+总结：</br>
+个人觉得还是做多次单表查询更好，更易扩展，当然数据量不大时，直接联合查询开发更方便
+</p>
+  <footer>
+    <strong>马又虫</strong>
+    
+      <cite><a href="MySQL%e5%a4%9a%e6%ac%a1%e5%8d%95%e8%a1%a8%e6%9f%a5%e8%af%a2%e5%92%8c%e5%a4%9a%e8%a1%a8%e8%81%94%e5%90%88%e6%9f%a5%e8%af%a2" target="_blank" rel="external">https://www.cnblogs.com/youmingDDD/p/11921187.html</a></cite>
+    
+  </footer>
+</blockquote></p>
 <p><strong>Multiple DB Settings</strong></p>
 <ul>
 <li>
@@ -862,6 +850,43 @@ public Boolean uploadImage(String fileName, String path, String fileMd5, Long cl
 因为如果驼峰被自动转译为横线分隔符, 会导致PageHelper切换多数据源时失效</p>
 </li>
 </ul>
+<h3 id="d-completablefuture">D. CompletableFuture</h3>
+<table>
+<thead>
+<tr>
+<th>场景</th>
+<th>是否 <code>completeExceptionally</code></th>
+<th>是否 <code>return false</code></th>
+<th>推荐策略</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🟥 严重错误，流程必须终止（如数据缺失、关键服务不可用）</td>
+<td>✅ 是</td>
+<td>✅ 是</td>
+<td>抛异常、日志、告警、主线程感知失败</td>
+</tr>
+<tr>
+<td>🟧 次要异常，但允许流程继续（如第三方接口调用失败）</td>
+<td>❌ 否</td>
+<td>❌ 否</td>
+<td>写补偿任务，流程照常继续</td>
+</tr>
+<tr>
+<td>🟨 需要人工介入或延后执行（如库存不足）</td>
+<td>❌ 否</td>
+<td>✅ 是</td>
+<td>挂起流程，等待外部回调 resume</td>
+</tr>
+<tr>
+<td>🟩 正常成功</td>
+<td>❌ 否</td>
+<td>❌ 否</td>
+<td>正常流程链推进</td>
+</tr>
+</tbody>
+</table>
 <h2 id="iii-testing">III. TESTING</h2>
 <hr>
 <p>TODO: 2025年争取实现, 不再简单调用JetBrains的HTTP client, 而是使用UnitTest进行用例覆盖</p>
@@ -1333,7 +1358,7 @@ Druid是淘宝选用的, 高并发的情况会适用一些</p>
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/welcome/" data-tooltip="Welcome to Ivan&#39;s Blog" aria-label="NEXT: Welcome to Ivan&#39;s Blog">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/outdoor-records/" data-tooltip="Records of Outdoors" aria-label="NEXT: Records of Outdoors">
           
               <i class="fa fa-angle-left"></i>
               <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -1341,7 +1366,7 @@ Druid是淘宝选用的, 高并发的情况会适用一些</p>
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/outdoor-records/" data-tooltip="Records of Outdoors" aria-label="PREVIOUS: Records of Outdoors">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/os-backup-reinstall/" data-tooltip="Customize My OS" aria-label="PREVIOUS: Customize My OS">
           
               <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
               <i class="fa fa-angle-right"></i>
@@ -1434,7 +1459,7 @@ Druid是淘宝选用的, 高并发的情况会适用一些</p>
       
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/welcome/" data-tooltip="Welcome to Ivan&#39;s Blog" aria-label="NEXT: Welcome to Ivan&#39;s Blog">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/outdoor-records/" data-tooltip="Records of Outdoors" aria-label="NEXT: Records of Outdoors">
           
               <i class="fa fa-angle-left"></i>
               <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -1442,7 +1467,7 @@ Druid是淘宝选用的, 高并发的情况会适用一些</p>
         </li>
         <li class="post-action">
           
-            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/outdoor-records/" data-tooltip="Records of Outdoors" aria-label="PREVIOUS: Records of Outdoors">
+            <a class="post-action-btn btn btn--default tooltip--top" href="https://ivanhan0511.github.io/post/os-backup-reinstall/" data-tooltip="Customize My OS" aria-label="PREVIOUS: Customize My OS">
           
               <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
               <i class="fa fa-angle-right"></i>

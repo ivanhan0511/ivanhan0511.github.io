@@ -447,7 +447,7 @@ mysql</code></pre>
           <tbody>
             <tr>
               <td class="gutter">
-                <pre><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br></pre>
+                <pre><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br></pre>
               </td>
               <td class="code">
                 <pre class="code-highlight language-sql sql"><code class="sql"># Collect infomation
@@ -460,7 +460,6 @@ CREATE USER &#39;rd&#39;@&#39;%&#39; IDENTIFIED WITH mysql_native_password BY &#
 GRANT ALL PRIVILEGES ON `some-db`.* TO &#39;rd&#39;@&#39;%&#39;;
 # 由于 PROCESS 权限可以查看所有连接的线程和运行的 SQL，具有一定的敏感性，建议仅授予信任的内部账号或在备份服务器使用的账号
 #GRANT PROCESS, LOCK TABLES, SHOW VIEW, EVENT, TRIGGER ON *.* TO &#39;rd&#39;@&#39;%&#39;;
-FLUSH PRIVILEGES;
 
 FLUSH PRIVILEGES;</code></pre>
               </td>
@@ -631,6 +630,12 @@ source /data/test.sql;</code></pre>
 </thead>
 <tbody>
 <tr>
+<td>DCL</td>
+<td>Data Control Language</td>
+<td>GRANT, REVOKE</td>
+<td>权限控制（授权与回收）</td>
+</tr>
+<tr>
 <td>DDL</td>
 <td>Data Definition Language</td>
 <td>CREATE, DROP, ALTER</td>
@@ -647,12 +652,6 @@ source /data/test.sql;</code></pre>
 <td>Data Query Language</td>
 <td>SELECT</td>
 <td>只查询数据，不做任何修改</td>
-</tr>
-<tr>
-<td>DCL</td>
-<td>Data Control Language</td>
-<td>GRANT, REVOKE</td>
-<td>权限控制（授权与回收）</td>
 </tr>
 <tr>
 <td>TCL</td>
@@ -899,11 +898,12 @@ Source_table where 1 &lt;&gt; 1;</code></pre>
     <tbody>
       <tr>
         <td class="gutter">
-          <pre><span class="line">1</span><br><span class="line">2</span><br></pre>
+          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre>
         </td>
         <td class="code">
-          <pre class="code-highlight language-sql sql"><code class="sql">ALTER TABLE ...
-[TODO]: To be continued...</code></pre>
+          <pre class="code-highlight language-sql sql"><code class="sql">-- Add field
+ALTER TABLE ADD remark VARCHAR(255) AFTER `id`;
+ALTER TABLE MODIFY COLUMN a_number INT NOT NULL DEFAULT 0;</code></pre>
         </td>
       </tr>
     </tbody>

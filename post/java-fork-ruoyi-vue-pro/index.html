@@ -1142,8 +1142,13 @@ However, it is always difficult to prefer one between the two.
 <h3 id="epaylock">E.PayLock</h3>
 <h3 id="ftenant">F.Tenant</h3>
 <p>MyBatisPlusX中有AoP控制</p>
-<p>Mar 24, 2025, 源码采用的非数据库隔离的租户机制, 始终觉得有隐患, <strong>弃用</strong></p>
+<p>Mar 24, 2025, 源码采用的是单数据库, 表单字段 隔离的租户机制</p>
+<ul>
+<li>隔离效果, 始终觉得有隐患, <strong>弃用</strong></li>
+<li>但将来会可能面对多数据源事务, 到时再说XD</li>
+</ul>
 <p><strong>宁可采用:兄弟公司相似业务+隔离复制部署+通用部分远程升级 的机制</strong></p>
+<p>另外, <strong>断面自动测量系统</strong>直接在<code>application.yaml</code>中<code>yudao.tenant.enable:false</code>关闭了租户功能</p>
 <h3 id="g-connection-pool">G. Connection Pool</h3>
 <p>Druid or Hikari -&gt; PearAdminPro用的是Hikari, 也是Springboot官方选用的
 Druid是淘宝选用的, 高并发的情况会适用一些</p>
